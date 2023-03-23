@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/utils.dart';
+import 'starter-1.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
@@ -62,7 +63,11 @@ class SignUp extends StatelessWidget {
                                 0 * fem, 2 * fem, 0 * fem, 0 * fem),
                             child: TextButton(
                               onPressed: () {
-                                Navigator.pop(context);
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Starter()),
+                                );
                               },
                               style: TextButton.styleFrom(
                                 padding: EdgeInsets.zero,

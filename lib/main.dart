@@ -1,8 +1,10 @@
+
 import 'package:flutter/material.dart';
 import 'package:myapp/utils.dart';
-import 'package:myapp/cenima-app-user/home-page.dart';
+// import 'package:myapp/cenima-app-user/home-page.dart';
 // import 'package:myapp/cenima-app-user/starter-1.dart';
 // import 'package:myapp/cenima-app-user/food-menu-selection.dart';
+import 'package:myapp/cenima-app-user/rent-movie.dart';
 
 // import 'package:myapp/cenima-app-user/help-payment-.dart';
 // import 'package:myapp/cenima-app-user/change-email-1.dart';
@@ -77,7 +79,6 @@ import 'package:myapp/cenima-app-user/home-page.dart';
 // import 'package:myapp/cenima-app-user/my-bookings-current-details.dart';
 // import 'package:myapp/cenima-app-user/drop-food-locations.dart';
 // import 'package:myapp/cenima-app-user/search-results.dart';
-// import 'package:myapp/cenima-app-user/rent-movie.dart';
 // import 'package:myapp/cenima-app-user/pick-a-seat-a.dart';
 // import 'package:myapp/cenima-app-user/seat-layout.dart';
 // import 'package:myapp/cenima-app-user/seat-layour-completion.dart';
@@ -172,7 +173,7 @@ class MyApp extends StatelessWidget {
       ),
       home: const Scaffold(
         body: SingleChildScrollView(
-          child: HomePage(),
+          child: RentMovie(),
         ),
       ),
     );

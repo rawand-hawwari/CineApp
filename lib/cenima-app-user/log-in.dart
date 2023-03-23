@@ -293,7 +293,7 @@ class LogIn extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Scene()),
+                    MaterialPageRoute(builder: (context) => Starter()),
                   );
                 },
                 style: TextButton.styleFrom(
