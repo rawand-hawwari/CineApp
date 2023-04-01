@@ -166,7 +166,7 @@ class Starter extends StatefulWidget {
                       textAlign: TextAlign.center,
                       style: SafeGoogleFont(
                         'Lucida Bright',
-                        fontSize: 25 * ffem,
+                        25 * ffem,
                         fontWeight: FontWeight.w600,
                         height: 1.2575 * ffem / fem,
                         color: const Color(0xff555555),
@@ -188,7 +188,7 @@ class Starter extends StatefulWidget {
                       textAlign: TextAlign.center,
                       style: SafeGoogleFont(
                         'Lucida Bright',
-                        fontSize: 20 * ffem,
+                        20 * ffem,
                         fontWeight: FontWeight.w600,
                         height: 1.2575 * ffem / fem,
                         color: const Color(0xff777777),
@@ -241,7 +241,7 @@ class Starter extends StatefulWidget {
                                   textAlign: TextAlign.center,
                                   style: SafeGoogleFont(
                                     'Lucida Bright',
-                                    fontSize: 19.8325920105 * ffem,
+                                    19.8325920105 * ffem,
                                     fontWeight: FontWeight.w600,
                                     height: 1.2575 * ffem / fem,
                                     color: const Color(0xffffffff),
@@ -283,7 +283,7 @@ class Starter extends StatefulWidget {
                                 textAlign: TextAlign.center,
                                 style: SafeGoogleFont(
                                   'Lucida Bright',
-                                  fontSize: 19.8325920105 * ffem,
+                                  19.8325920105 * ffem,
                                   fontWeight: FontWeight.w600,
                                   height: 1.2575 * ffem / fem,
                                   color: const Color(0xff000000),

@@ -103,7 +103,7 @@ class Scene extends StatelessWidget {
                             '9:41',
                             style: SafeGoogleFont (
                               'SF Pro Text',
-                              fontSize: 15*ffem,
+                              15*ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.4*ffem/fem,
                               letterSpacing: -0.3199999928*fem,

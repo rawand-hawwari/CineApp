@@ -49,7 +49,7 @@ class Scene extends StatelessWidget {
                     'You\'ll find an "unsubscribe" button at the end of each email you get from us, just click on it and you\'ll be automatically excluded.',
                     style: SafeGoogleFont (
                       'Segoe UI',
-                      fontSize: 21*ffem,
+                      21*ffem,
                       fontWeight: FontWeight.w400,
                       height: 1.2575*ffem/fem,
                       color: Color(0xff000000),
@@ -111,7 +111,7 @@ class Scene extends StatelessWidget {
                         text: TextSpan(
                           style: SafeGoogleFont (
                             'Segoe UI',
-                            fontSize: 20*ffem,
+                            20*ffem,
                             fontWeight: FontWeight.w700,
                             height: 0.8850781441*ffem/fem,
                             color: Color(0xff000000),
@@ -121,7 +121,7 @@ class Scene extends StatelessWidget {
                               text: 'HOW DO I',
                               style: SafeGoogleFont (
                                 'Segoe UI',
-                                fontSize: 16.5*ffem,
+                                16.5*ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 0.8850781412*ffem/fem,
                                 color: Color(0xff000000),
@@ -131,7 +131,7 @@ class Scene extends StatelessWidget {
                               text: ' UNSUBSCRIBE FROM EMAIL \nNEWSLETTERS',
                               style: SafeGoogleFont (
                                 'Segoe UI',
-                                fontSize: 16.5*ffem,
+                                16.5*ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 0.8850781412*ffem/fem,
                                 color: Color(0xff000000),
@@ -211,7 +211,7 @@ class Scene extends StatelessWidget {
                             '9:41',
                             style: SafeGoogleFont (
                               'SF Pro Text',
-                              fontSize: 15*ffem,
+                              15*ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.4*ffem/fem,
                               letterSpacing: -0.3199999928*fem,

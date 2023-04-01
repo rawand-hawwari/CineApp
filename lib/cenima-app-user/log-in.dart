@@ -75,7 +75,7 @@ class LogIn extends StatelessWidget {
                         'Password',
                         style: SafeGoogleFont(
                           'Tw Cen MT',
-                          fontSize: 20 * ffem,
+                          20 * ffem,
                           fontWeight: FontWeight.w400,
                           height: 1.2 * ffem / fem,
                           letterSpacing: 0.150000006 * fem,
@@ -112,7 +112,7 @@ class LogIn extends StatelessWidget {
                   'Have no account?',
                   style: SafeGoogleFont(
                     'Segoe UI',
-                    fontSize: 20 * ffem,
+                    20 * ffem,
                     fontWeight: FontWeight.w700,
                     height: 1.2575 * ffem / fem,
                     color: Color(0xff000000),
@@ -133,7 +133,7 @@ class LogIn extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: SafeGoogleFont(
                       'Lucida Bright',
-                      fontSize: 25 * ffem,
+                      25 * ffem,
                       fontWeight: FontWeight.w600,
                       height: 1.2575 * ffem / fem,
                       color: Color(0xff7e132b),
@@ -155,7 +155,7 @@ class LogIn extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: SafeGoogleFont(
                       'Lucida Bright',
-                      fontSize: 13 * ffem,
+                      13 * ffem,
                       fontWeight: FontWeight.w600,
                       height: 1.2575 * ffem / fem,
                       color: Color(0xff828282),
@@ -177,7 +177,7 @@ class LogIn extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: SafeGoogleFont(
                       'Lucida Bright',
-                      fontSize: 13 * ffem,
+                      13 * ffem,
                       fontWeight: FontWeight.w600,
                       height: 1.2575 * ffem / fem,
                       color: Color(0xff828282),
@@ -204,7 +204,7 @@ class LogIn extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: SafeGoogleFont(
                         'Lucida Bright',
-                        fontSize: 13 * ffem,
+                        13 * ffem,
                         fontWeight: FontWeight.w600,
                         height: 1.2575 * ffem / fem,
                         color: Color(0xffff2153),
@@ -232,7 +232,7 @@ class LogIn extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: SafeGoogleFont(
                         'Lucida Bright',
-                        fontSize: 13 * ffem,
+                        13 * ffem,
                         fontWeight: FontWeight.w600,
                         height: 1.2575 * ffem / fem,
                         color: Color(0xffff2153),
@@ -274,7 +274,7 @@ class LogIn extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: SafeGoogleFont(
                           'Lucida Bright',
-                          fontSize: 19.8325920105 * ffem,
+                          19.8325920105 * ffem,
                           fontWeight: FontWeight.w600,
                           height: 1.2575 * ffem / fem,
                           color: Color(0xffffffff),
@@ -354,7 +354,7 @@ class LogIn extends StatelessWidget {
                         'Email',
                         style: SafeGoogleFont(
                           'Tw Cen MT',
-                          fontSize: 20 * ffem,
+                          20 * ffem,
                           fontWeight: FontWeight.w400,
                           height: 1.2 * ffem / fem,
                           letterSpacing: 0.150000006 * fem,
@@ -398,7 +398,7 @@ class LogIn extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: SafeGoogleFont(
                           'Lucida Bright',
-                          fontSize: 19.8325920105 * ffem,
+                          19.8325920105 * ffem,
                           fontWeight: FontWeight.w600,
                           height: 1.2575 * ffem / fem,
                           color: Color(0xff000000),
@@ -493,7 +493,7 @@ class LogIn extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont(
                                 'Segoe UI',
-                                fontSize: 20 * ffem,
+                                20 * ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2575 * ffem / fem,
                                 color: Color(0xffff1e60),

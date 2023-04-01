@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/cenima-app-user/cinema-list.dart';
 import 'package:myapp/utils.dart';
 import 'food-menu-selection.dart';
@@ -85,8 +86,7 @@ class RentMovie extends StatelessWidget {
                                         1 * fem, 0 * fem, 0 * fem, 0 * fem),
                                     child: Text(
                                       'The Shawshank Redemption',
-                                      style: SafeGoogleFont(
-                                        'Lucida Bright',
+                                      style: GoogleFonts.caveat(
                                         fontSize: 15 * ffem,
                                         fontWeight: FontWeight.w600,
                                         height: 1.2575 * ffem / fem,
@@ -100,8 +100,7 @@ class RentMovie extends StatelessWidget {
                                   Text(
                                     // dramapr1 (1:1552)
                                     'Drama',
-                                    style: SafeGoogleFont(
-                                      'Lucida Bright',
+                                    style: GoogleFonts.caveat(
                                       fontSize: 15 * ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.2575 * ffem / fem,
@@ -126,8 +125,7 @@ class RentMovie extends StatelessWidget {
                                               0 * fem, 19 * fem, 0 * fem),
                                           child: Text(
                                             'Duration:-',
-                                            style: SafeGoogleFont(
-                                              'Lucida Bright',
+                                            style: GoogleFonts.caveat(
                                               fontSize: 15 * ffem,
                                               fontWeight: FontWeight.w400,
                                               height: 1.2575 * ffem / fem,
@@ -138,8 +136,7 @@ class RentMovie extends StatelessWidget {
                                         Text(
                                           // h22m2UD (1:1554)
                                           '2h 22m',
-                                          style: SafeGoogleFont(
-                                            'Lucida Bright',
+                                          style: GoogleFonts.caveat(
                                             fontSize: 15 * ffem,
                                             fontWeight: FontWeight.w400,
                                             height: 1.2575 * ffem / fem,
@@ -175,8 +172,7 @@ class RentMovie extends StatelessWidget {
                                         Text(
                                           // F81 (1:1555)
                                           '9.3/10',
-                                          style: SafeGoogleFont(
-                                            'Lucida Bright',
+                                          style: GoogleFonts.caveat(
                                             fontSize: 17 * ffem,
                                             fontWeight: FontWeight.w600,
                                             height: 1.2575 * ffem / fem,
@@ -245,8 +241,7 @@ class RentMovie extends StatelessWidget {
                                                   12 * fem),
                                               child: Text(
                                                 'The Godfather',
-                                                style: SafeGoogleFont(
-                                                  'Lucida Bright',
+                                                style: GoogleFonts.caveat(
                                                   fontSize: 15 * ffem,
                                                   fontWeight: FontWeight.w600,
                                                   height: 1.2575 * ffem / fem,
@@ -258,8 +253,7 @@ class RentMovie extends StatelessWidget {
                                             Text(
                                               // dramacrime1im (1:1559)
                                               'Drama, Crime',
-                                              style: SafeGoogleFont(
-                                                'Lucida Bright',
+                                              style: GoogleFonts.caveat(
                                                 fontSize: 15 * ffem,
                                                 fontWeight: FontWeight.w400,
                                                 height: 1.2575 * ffem / fem,
@@ -287,8 +281,7 @@ class RentMovie extends StatelessWidget {
                                                   0 * fem),
                                               child: Text(
                                                 'Duration:-',
-                                                style: SafeGoogleFont(
-                                                  'Lucida Bright',
+                                                style: GoogleFonts.caveat(
                                                   fontSize: 15 * ffem,
                                                   fontWeight: FontWeight.w400,
                                                   height: 1.2575 * ffem / fem,
@@ -300,8 +293,7 @@ class RentMovie extends StatelessWidget {
                                             Text(
                                               // h55mWBf (1:1561)
                                               '2h 55m',
-                                              style: SafeGoogleFont(
-                                                'Lucida Bright',
+                                              style: GoogleFonts.caveat(
                                                 fontSize: 15 * ffem,
                                                 fontWeight: FontWeight.w400,
                                                 height: 1.2575 * ffem / fem,
@@ -337,8 +329,7 @@ class RentMovie extends StatelessWidget {
                                             Text(
                                               // mQR (1:1562)
                                               '9.2/10',
-                                              style: SafeGoogleFont(
-                                                'Lucida Bright',
+                                              style: GoogleFonts.caveat(
                                                 fontSize: 17 * ffem,
                                                 fontWeight: FontWeight.w600,
                                                 height: 1.2575 * ffem / fem,
@@ -389,8 +380,7 @@ class RentMovie extends StatelessWidget {
                                             1 * fem, 0 * fem, 0 * fem, 0 * fem),
                                         child: Text(
                                           'The Lord of the Rings: The Two Towers',
-                                          style: SafeGoogleFont(
-                                            'Lucida Bright',
+                                          style: GoogleFonts.caveat(
                                             fontSize: 15 * ffem,
                                             fontWeight: FontWeight.w600,
                                             height: 1.2575 * ffem / fem,
@@ -404,8 +394,7 @@ class RentMovie extends StatelessWidget {
                                       Text(
                                         // actionadventuredramaqj3 (1:1566)
                                         'Action, Adventure, Drama',
-                                        style: SafeGoogleFont(
-                                          'Lucida Bright',
+                                        style: GoogleFonts.caveat(
                                           fontSize: 15 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.2575 * ffem / fem,
@@ -433,8 +422,7 @@ class RentMovie extends StatelessWidget {
                                                   0 * fem),
                                               child: Text(
                                                 'Duration:-',
-                                                style: SafeGoogleFont(
-                                                  'Lucida Bright',
+                                                style: GoogleFonts.caveat(
                                                   fontSize: 15 * ffem,
                                                   fontWeight: FontWeight.w400,
                                                   height: 1.2575 * ffem / fem,
@@ -446,8 +434,7 @@ class RentMovie extends StatelessWidget {
                                             Text(
                                               // h59mshf (1:1568)
                                               '2h 59m',
-                                              style: SafeGoogleFont(
-                                                'Lucida Bright',
+                                              style: GoogleFonts.caveat(
                                                 fontSize: 15 * ffem,
                                                 fontWeight: FontWeight.w400,
                                                 height: 1.2575 * ffem / fem,
@@ -486,8 +473,7 @@ class RentMovie extends StatelessWidget {
                                             Text(
                                               // 9SD (1:1569)
                                               '8.8/10',
-                                              style: SafeGoogleFont(
-                                                'Lucida Bright',
+                                              style: GoogleFonts.caveat(
                                                 fontSize: 17 * ffem,
                                                 fontWeight: FontWeight.w600,
                                                 height: 1.2575 * ffem / fem,
@@ -538,8 +524,7 @@ class RentMovie extends StatelessWidget {
                                             1 * fem, 0 * fem, 0 * fem, 0 * fem),
                                         child: Text(
                                           'Inception',
-                                          style: SafeGoogleFont(
-                                            'Lucida Bright',
+                                          style: GoogleFonts.caveat(
                                             fontSize: 15 * ffem,
                                             fontWeight: FontWeight.w600,
                                             height: 1.2575 * ffem / fem,
@@ -553,8 +538,7 @@ class RentMovie extends StatelessWidget {
                                       Text(
                                         // actionadventurescifiAAH (1:1573)
                                         'Action, Adventure, Sci-Fi',
-                                        style: SafeGoogleFont(
-                                          'Lucida Bright',
+                                        style: GoogleFonts.caveat(
                                           fontSize: 15 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.2575 * ffem / fem,
@@ -582,8 +566,7 @@ class RentMovie extends StatelessWidget {
                                                   0 * fem),
                                               child: Text(
                                                 'Duration:-',
-                                                style: SafeGoogleFont(
-                                                  'Lucida Bright',
+                                                style: GoogleFonts.caveat(
                                                   fontSize: 15 * ffem,
                                                   fontWeight: FontWeight.w400,
                                                   height: 1.2575 * ffem / fem,
@@ -595,8 +578,7 @@ class RentMovie extends StatelessWidget {
                                             Text(
                                               // h28mmho (1:1575)
                                               '2h 28m',
-                                              style: SafeGoogleFont(
-                                                'Lucida Bright',
+                                              style: GoogleFonts.caveat(
                                                 fontSize: 15 * ffem,
                                                 fontWeight: FontWeight.w400,
                                                 height: 1.2575 * ffem / fem,
@@ -635,8 +617,7 @@ class RentMovie extends StatelessWidget {
                                             Text(
                                               // 3x9 (1:1576)
                                               '8.8/10',
-                                              style: SafeGoogleFont(
-                                                'Lucida Bright',
+                                              style: GoogleFonts.caveat(
                                                 fontSize: 17 * ffem,
                                                 fontWeight: FontWeight.w600,
                                                 height: 1.2575 * ffem / fem,
@@ -700,8 +681,7 @@ class RentMovie extends StatelessWidget {
                                                   0 * fem),
                                               child: Text(
                                                 'The Matrix',
-                                                style: SafeGoogleFont(
-                                                  'Lucida Bright',
+                                                style: GoogleFonts.caveat(
                                                   fontSize: 15 * ffem,
                                                   fontWeight: FontWeight.w600,
                                                   height: 1.2575 * ffem / fem,
@@ -716,8 +696,7 @@ class RentMovie extends StatelessWidget {
                                             Text(
                                               // actionscifi55X (1:1580)
                                               'Action, Sci-Fi',
-                                              style: SafeGoogleFont(
-                                                'Lucida Bright',
+                                              style: GoogleFonts.caveat(
                                                 fontSize: 15 * ffem,
                                                 fontWeight: FontWeight.w400,
                                                 height: 1.2575 * ffem / fem,
@@ -730,8 +709,7 @@ class RentMovie extends StatelessWidget {
                                             Text(
                                               // duration3Rf (1:1581)
                                               'Duration:-',
-                                              style: SafeGoogleFont(
-                                                'Lucida Bright',
+                                              style: GoogleFonts.caveat(
                                                 fontSize: 15 * ffem,
                                                 fontWeight: FontWeight.w400,
                                                 height: 1.2575 * ffem / fem,
@@ -770,8 +748,7 @@ class RentMovie extends StatelessWidget {
                                                   Text(
                                                     // Vyo (1:1583)
                                                     '8.7/10',
-                                                    style: SafeGoogleFont(
-                                                      'Lucida Bright',
+                                                    style: GoogleFonts.caveat(
                                                       fontSize: 17 * ffem,
                                                       fontWeight:
                                                           FontWeight.w600,
@@ -793,8 +770,7 @@ class RentMovie extends StatelessWidget {
                                             0 * fem, 0 * fem, 31 * fem),
                                         child: Text(
                                           '2h 16m',
-                                          style: SafeGoogleFont(
-                                            'Lucida Bright',
+                                          style: GoogleFonts.caveat(
                                             fontSize: 15 * ffem,
                                             fontWeight: FontWeight.w400,
                                             height: 1.2575 * ffem / fem,
@@ -856,8 +832,7 @@ class RentMovie extends StatelessWidget {
                                                   12 * fem),
                                               child: Text(
                                                 'Seven Samurai',
-                                                style: SafeGoogleFont(
-                                                  'Lucida Bright',
+                                                style: GoogleFonts.caveat(
                                                   fontSize: 15 * ffem,
                                                   fontWeight: FontWeight.w600,
                                                   height: 1.2575 * ffem / fem,
@@ -869,8 +844,7 @@ class RentMovie extends StatelessWidget {
                                             Text(
                                               // actiondramazWZ (1:1587)
                                               'Action, Drama',
-                                              style: SafeGoogleFont(
-                                                'Lucida Bright',
+                                              style: GoogleFonts.caveat(
                                                 fontSize: 15 * ffem,
                                                 fontWeight: FontWeight.w400,
                                                 height: 1.2575 * ffem / fem,
@@ -898,8 +872,7 @@ class RentMovie extends StatelessWidget {
                                                   0 * fem),
                                               child: Text(
                                                 'Duration:-',
-                                                style: SafeGoogleFont(
-                                                  'Lucida Bright',
+                                                style: GoogleFonts.caveat(
                                                   fontSize: 15 * ffem,
                                                   fontWeight: FontWeight.w400,
                                                   height: 1.2575 * ffem / fem,
@@ -911,8 +884,7 @@ class RentMovie extends StatelessWidget {
                                             Text(
                                               // h27mGF7 (1:1589)
                                               '3h 27m',
-                                              style: SafeGoogleFont(
-                                                'Lucida Bright',
+                                              style: GoogleFonts.caveat(
                                                 fontSize: 15 * ffem,
                                                 fontWeight: FontWeight.w400,
                                                 height: 1.2575 * ffem / fem,
@@ -948,8 +920,7 @@ class RentMovie extends StatelessWidget {
                                             Text(
                                               // aHj (1:1590)
                                               '8.6/10',
-                                              style: SafeGoogleFont(
-                                                'Lucida Bright',
+                                              style: GoogleFonts.caveat(
                                                 fontSize: 17 * ffem,
                                                 fontWeight: FontWeight.w600,
                                                 height: 1.2575 * ffem / fem,
@@ -1000,8 +971,7 @@ class RentMovie extends StatelessWidget {
                                             1 * fem, 0 * fem, 0 * fem, 0 * fem),
                                         child: Text(
                                           'It\'s a Wonderful Life',
-                                          style: SafeGoogleFont(
-                                            'Lucida Bright',
+                                          style: GoogleFonts.caveat(
                                             fontSize: 15 * ffem,
                                             fontWeight: FontWeight.w600,
                                             height: 1.2575 * ffem / fem,
@@ -1015,8 +985,7 @@ class RentMovie extends StatelessWidget {
                                       Text(
                                         // dramafamilyfantasyES9 (1:1594)
                                         'Drama, Family, Fantasy',
-                                        style: SafeGoogleFont(
-                                          'Lucida Bright',
+                                        style: GoogleFonts.caveat(
                                           fontSize: 15 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.2575 * ffem / fem,
@@ -1044,8 +1013,7 @@ class RentMovie extends StatelessWidget {
                                                   0 * fem),
                                               child: Text(
                                                 'Duration:-',
-                                                style: SafeGoogleFont(
-                                                  'Lucida Bright',
+                                                style: GoogleFonts.caveat(
                                                   fontSize: 15 * ffem,
                                                   fontWeight: FontWeight.w400,
                                                   height: 1.2575 * ffem / fem,
@@ -1057,8 +1025,7 @@ class RentMovie extends StatelessWidget {
                                             Text(
                                               // h10mu4R (1:1596)
                                               '2h 10m',
-                                              style: SafeGoogleFont(
-                                                'Lucida Bright',
+                                              style: GoogleFonts.caveat(
                                                 fontSize: 15 * ffem,
                                                 fontWeight: FontWeight.w400,
                                                 height: 1.2575 * ffem / fem,
@@ -1097,8 +1064,7 @@ class RentMovie extends StatelessWidget {
                                             Text(
                                               // LxM (1:1597)
                                               '8.6/10',
-                                              style: SafeGoogleFont(
-                                                'Lucida Bright',
+                                              style: GoogleFonts.caveat(
                                                 fontSize: 17 * ffem,
                                                 fontWeight: FontWeight.w600,
                                                 height: 1.2575 * ffem / fem,
@@ -1149,8 +1115,7 @@ class RentMovie extends StatelessWidget {
                                             1 * fem, 0 * fem, 0 * fem, 0 * fem),
                                         child: Text(
                                           'The Silence of the Lambs',
-                                          style: SafeGoogleFont(
-                                            'Lucida Bright',
+                                          style: GoogleFonts.caveat(
                                             fontSize: 15 * ffem,
                                             fontWeight: FontWeight.w600,
                                             height: 1.2575 * ffem / fem,
@@ -1164,8 +1129,7 @@ class RentMovie extends StatelessWidget {
                                       Text(
                                         // dramacrimethrillerC2q (1:1601)
                                         'Drama, Crime, Thriller',
-                                        style: SafeGoogleFont(
-                                          'Lucida Bright',
+                                        style: GoogleFonts.caveat(
                                           fontSize: 15 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.2575 * ffem / fem,
@@ -1193,8 +1157,7 @@ class RentMovie extends StatelessWidget {
                                                   0 * fem),
                                               child: Text(
                                                 'Duration:-',
-                                                style: SafeGoogleFont(
-                                                  'Lucida Bright',
+                                                style: GoogleFonts.caveat(
                                                   fontSize: 15 * ffem,
                                                   fontWeight: FontWeight.w400,
                                                   height: 1.2575 * ffem / fem,
@@ -1206,8 +1169,7 @@ class RentMovie extends StatelessWidget {
                                             Text(
                                               // h58mc8V (1:1603)
                                               '1h 58m',
-                                              style: SafeGoogleFont(
-                                                'Lucida Bright',
+                                              style: GoogleFonts.caveat(
                                                 fontSize: 15 * ffem,
                                                 fontWeight: FontWeight.w400,
                                                 height: 1.2575 * ffem / fem,
@@ -1246,8 +1208,7 @@ class RentMovie extends StatelessWidget {
                                             Text(
                                               // feV (1:1604)
                                               '8.6/10',
-                                              style: SafeGoogleFont(
-                                                'Lucida Bright',
+                                              style: GoogleFonts.caveat(
                                                 fontSize: 17 * ffem,
                                                 fontWeight: FontWeight.w600,
                                                 height: 1.2575 * ffem / fem,
@@ -1298,8 +1259,7 @@ class RentMovie extends StatelessWidget {
                                             1 * fem, 0 * fem, 0 * fem, 0 * fem),
                                         child: Text(
                                           'Spirited Away',
-                                          style: SafeGoogleFont(
-                                            'Lucida Bright',
+                                          style: GoogleFonts.caveat(
                                             fontSize: 15 * ffem,
                                             fontWeight: FontWeight.w600,
                                             height: 1.2575 * ffem / fem,
@@ -1313,8 +1273,7 @@ class RentMovie extends StatelessWidget {
                                       Text(
                                         // adventurefamilyanimationn2H (1:1608)
                                         'Adventure, Family, Animation',
-                                        style: SafeGoogleFont(
-                                          'Lucida Bright',
+                                        style: GoogleFonts.caveat(
                                           fontSize: 15 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.2575 * ffem / fem,
@@ -1342,8 +1301,7 @@ class RentMovie extends StatelessWidget {
                                                   0 * fem),
                                               child: Text(
                                                 'Duration:-',
-                                                style: SafeGoogleFont(
-                                                  'Lucida Bright',
+                                                style: GoogleFonts.caveat(
                                                   fontSize: 15 * ffem,
                                                   fontWeight: FontWeight.w400,
                                                   height: 1.2575 * ffem / fem,
@@ -1355,8 +1313,7 @@ class RentMovie extends StatelessWidget {
                                             Text(
                                               // h5mQLV (1:1610)
                                               '2h 5m',
-                                              style: SafeGoogleFont(
-                                                'Lucida Bright',
+                                              style: GoogleFonts.caveat(
                                                 fontSize: 15 * ffem,
                                                 fontWeight: FontWeight.w400,
                                                 height: 1.2575 * ffem / fem,
@@ -1395,8 +1352,7 @@ class RentMovie extends StatelessWidget {
                                             Text(
                                               // Dam (1:1611)
                                               '8.6/10',
-                                              style: SafeGoogleFont(
-                                                'Lucida Bright',
+                                              style: GoogleFonts.caveat(
                                                 fontSize: 17 * ffem,
                                                 fontWeight: FontWeight.w600,
                                                 height: 1.2575 * ffem / fem,
@@ -1460,8 +1416,7 @@ class RentMovie extends StatelessWidget {
                                                   12 * fem),
                                               child: Text(
                                                 'Parasite',
-                                                style: SafeGoogleFont(
-                                                  'Lucida Bright',
+                                                style: GoogleFonts.caveat(
                                                   fontSize: 15 * ffem,
                                                   fontWeight: FontWeight.w600,
                                                   height: 1.2575 * ffem / fem,
@@ -1473,8 +1428,7 @@ class RentMovie extends StatelessWidget {
                                             Text(
                                               // dramathriller2Eh (1:1615)
                                               'Drama, Thriller',
-                                              style: SafeGoogleFont(
-                                                'Lucida Bright',
+                                              style: GoogleFonts.caveat(
                                                 fontSize: 15 * ffem,
                                                 fontWeight: FontWeight.w400,
                                                 height: 1.2575 * ffem / fem,
@@ -1502,8 +1456,7 @@ class RentMovie extends StatelessWidget {
                                                   0 * fem),
                                               child: Text(
                                                 'Duration:-',
-                                                style: SafeGoogleFont(
-                                                  'Lucida Bright',
+                                                style: GoogleFonts.caveat(
                                                   fontSize: 15 * ffem,
                                                   fontWeight: FontWeight.w400,
                                                   height: 1.2575 * ffem / fem,
@@ -1515,8 +1468,7 @@ class RentMovie extends StatelessWidget {
                                             Text(
                                               // h12mEdb (1:1617)
                                               '2h 12m',
-                                              style: SafeGoogleFont(
-                                                'Lucida Bright',
+                                              style: GoogleFonts.caveat(
                                                 fontSize: 15 * ffem,
                                                 fontWeight: FontWeight.w400,
                                                 height: 1.2575 * ffem / fem,
@@ -1552,8 +1504,7 @@ class RentMovie extends StatelessWidget {
                                             Text(
                                               // 9Gh (1:1618)
                                               '8.5/10',
-                                              style: SafeGoogleFont(
-                                                'Lucida Bright',
+                                              style: GoogleFonts.caveat(
                                                 fontSize: 17 * ffem,
                                                 fontWeight: FontWeight.w600,
                                                 height: 1.2575 * ffem / fem,
@@ -1604,8 +1555,7 @@ class RentMovie extends StatelessWidget {
                                             1 * fem, 0 * fem, 0 * fem, 0 * fem),
                                         child: Text(
                                           'The Lion King',
-                                          style: SafeGoogleFont(
-                                            'Lucida Bright',
+                                          style: GoogleFonts.caveat(
                                             fontSize: 15 * ffem,
                                             fontWeight: FontWeight.w600,
                                             height: 1.2575 * ffem / fem,
@@ -1619,8 +1569,7 @@ class RentMovie extends StatelessWidget {
                                       Text(
                                         // adventureanimationdramaAWZ (1:1622)
                                         'Adventure, Animation, Drama',
-                                        style: SafeGoogleFont(
-                                          'Lucida Bright',
+                                        style: GoogleFonts.caveat(
                                           fontSize: 15 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.2575 * ffem / fem,
@@ -1648,8 +1597,7 @@ class RentMovie extends StatelessWidget {
                                                   0 * fem),
                                               child: Text(
                                                 'Duration:-',
-                                                style: SafeGoogleFont(
-                                                  'Lucida Bright',
+                                                style: GoogleFonts.caveat(
                                                   fontSize: 15 * ffem,
                                                   fontWeight: FontWeight.w400,
                                                   height: 1.2575 * ffem / fem,
@@ -1661,8 +1609,7 @@ class RentMovie extends StatelessWidget {
                                             Text(
                                               // h28mnJy (1:1624)
                                               '1h 28m',
-                                              style: SafeGoogleFont(
-                                                'Lucida Bright',
+                                              style: GoogleFonts.caveat(
                                                 fontSize: 15 * ffem,
                                                 fontWeight: FontWeight.w400,
                                                 height: 1.2575 * ffem / fem,
@@ -1701,8 +1648,7 @@ class RentMovie extends StatelessWidget {
                                             Text(
                                               // 31w (1:1625)
                                               '8.5/10',
-                                              style: SafeGoogleFont(
-                                                'Lucida Bright',
+                                              style: GoogleFonts.caveat(
                                                 fontSize: 17 * ffem,
                                                 fontWeight: FontWeight.w600,
                                                 height: 1.2575 * ffem / fem,
@@ -1775,8 +1721,7 @@ class RentMovie extends StatelessWidget {
                               child: Text(
                                 'Book Ticket',
                                 textAlign: TextAlign.center,
-                                style: SafeGoogleFont(
-                                  'Segoe Script',
+                                style: GoogleFonts.beauRivage(
                                   fontSize: 10 * ffem,
                                   fontWeight: FontWeight.w700,
                                   height: 1.2575 * ffem / fem,
@@ -1820,8 +1765,7 @@ class RentMovie extends StatelessWidget {
                             child: Text(
                               'Rent Movies',
                               textAlign: TextAlign.center,
-                              style: SafeGoogleFont(
-                                'Segoe Script',
+                              style: GoogleFonts.beauRivage(
                                 fontSize: 10 * ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2575 * ffem / fem,
@@ -1867,8 +1811,7 @@ class RentMovie extends StatelessWidget {
                               child: Text(
                                 'Cinema List',
                                 textAlign: TextAlign.center,
-                                style: SafeGoogleFont(
-                                  'Segoe Script',
+                                style: GoogleFonts.beauRivage(
                                   fontSize: 10 * ffem,
                                   fontWeight: FontWeight.w700,
                                   height: 1.2575 * ffem / fem,
@@ -1913,8 +1856,7 @@ class RentMovie extends StatelessWidget {
                               child: Text(
                                 'Food\nMenu',
                                 textAlign: TextAlign.center,
-                                style: SafeGoogleFont(
-                                  'Segoe Script',
+                                style: GoogleFonts.beauRivage(
                                   fontSize: 10 * ffem,
                                   fontWeight: FontWeight.w700,
                                   height: 1.2575 * ffem / fem,
@@ -1949,8 +1891,7 @@ class RentMovie extends StatelessWidget {
                             // profile3oB (I106:9300;18:329;1:172)
                             'Profile',
                             textAlign: TextAlign.center,
-                            style: SafeGoogleFont(
-                              'Segoe Script',
+                            style: GoogleFonts.beauRivage(
                               fontSize: 10 * ffem,
                               fontWeight: FontWeight.w700,
                               height: 1.2575 * ffem / fem,
@@ -2014,8 +1955,7 @@ class RentMovie extends StatelessWidget {
                       child: Text(
                         'CINÉ',
                         textAlign: TextAlign.center,
-                        style: SafeGoogleFont(
-                          'Nature Beauty Personal Use',
+                        style: GoogleFonts.pacifico(
                           fontSize: 25 * ffem,
                           fontWeight: FontWeight.w400,
                           height: 1.1 * ffem / fem,

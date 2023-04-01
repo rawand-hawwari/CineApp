@@ -100,7 +100,7 @@ class Snacks1 extends StatelessWidget {
                                             'FRIED CHICKEN',
                                             style: SafeGoogleFont(
                                               'Cambria',
-                                              fontSize: 20 * ffem,
+                                              20 * ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 1.2575 * ffem / fem,
                                               color: Color(0xff000000),
@@ -112,7 +112,7 @@ class Snacks1 extends StatelessWidget {
                                           'Regular, Spicy ',
                                           style: SafeGoogleFont(
                                             'Cambria',
-                                            fontSize: 15 * ffem,
+                                            15 * ffem,
                                             fontWeight: FontWeight.w700,
                                             height: 1.2575 * ffem / fem,
                                             color: Color(0xffff2153),
@@ -178,7 +178,7 @@ class Snacks1 extends StatelessWidget {
                                             'POPCORN',
                                             style: SafeGoogleFont(
                                               'Cambria',
-                                              fontSize: 20 * ffem,
+                                              20 * ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 1.2575 * ffem / fem,
                                               color: Color(0xff000000),
@@ -193,7 +193,7 @@ class Snacks1 extends StatelessWidget {
                                             'Butter, Caramel, Cheese',
                                             style: SafeGoogleFont(
                                               'Cambria',
-                                              fontSize: 15 * ffem,
+                                              15 * ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 1.2575 * ffem / fem,
                                               color: Color(0xffff2153),
@@ -205,7 +205,7 @@ class Snacks1 extends StatelessWidget {
                                           'Small, Medium, Large',
                                           style: SafeGoogleFont(
                                             'Cambria',
-                                            fontSize: 15 * ffem,
+                                            15 * ffem,
                                             fontWeight: FontWeight.w700,
                                             height: 1.2575 * ffem / fem,
                                             color: Color(0xffff2153),
@@ -270,7 +270,7 @@ class Snacks1 extends StatelessWidget {
                                             'NACHOS',
                                             style: SafeGoogleFont(
                                               'Cambria',
-                                              fontSize: 20 * ffem,
+                                              20 * ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 1.2575 * ffem / fem,
                                               color: Color(0xff000000),
@@ -286,7 +286,7 @@ class Snacks1 extends StatelessWidget {
                                             'Ketchup, Mayonnaise, Salsa, Garlic, Buffalo, Mustard,  ',
                                             style: SafeGoogleFont(
                                               'Cambria',
-                                              fontSize: 15 * ffem,
+                                              15 * ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 1.2575 * ffem / fem,
                                               color: Color(0xffff2153),
@@ -352,7 +352,7 @@ class Snacks1 extends StatelessWidget {
                                             'PIZZA',
                                             style: SafeGoogleFont(
                                               'Cambria',
-                                              fontSize: 20 * ffem,
+                                              20 * ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 1.2575 * ffem / fem,
                                               color: Color(0xff000000),
@@ -368,7 +368,7 @@ class Snacks1 extends StatelessWidget {
                                             'Margherita, Meat lover, Chicken, Hot',
                                             style: SafeGoogleFont(
                                               'Cambria',
-                                              fontSize: 15 * ffem,
+                                              15 * ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 1.2575 * ffem / fem,
                                               color: Color(0xffff2153),
@@ -434,7 +434,7 @@ class Snacks1 extends StatelessWidget {
                                             'FRENCH FRIES',
                                             style: SafeGoogleFont(
                                               'Cambria',
-                                              fontSize: 20 * ffem,
+                                              20 * ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 1.2575 * ffem / fem,
                                               color: Color(0xff000000),
@@ -446,7 +446,7 @@ class Snacks1 extends StatelessWidget {
                                           'Regular, Spicy , Cheese, Paprika',
                                           style: SafeGoogleFont(
                                             'Cambria',
-                                            fontSize: 15 * ffem,
+                                            15 * ffem,
                                             fontWeight: FontWeight.w700,
                                             height: 1.2575 * ffem / fem,
                                             color: Color(0xffff2153),
@@ -510,7 +510,7 @@ class Snacks1 extends StatelessWidget {
                                             'SPRING ROLLS',
                                             style: SafeGoogleFont(
                                               'Cambria',
-                                              fontSize: 20 * ffem,
+                                              20 * ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 1.2575 * ffem / fem,
                                               color: Color(0xff000000),
@@ -522,7 +522,7 @@ class Snacks1 extends StatelessWidget {
                                           'Vegetables, chicken',
                                           style: SafeGoogleFont(
                                             'Cambria',
-                                            fontSize: 15 * ffem,
+                                            15 * ffem,
                                             fontWeight: FontWeight.w700,
                                             height: 1.2575 * ffem / fem,
                                             color: Color(0xffff2153),
@@ -583,7 +583,7 @@ class Snacks1 extends StatelessWidget {
                                       'POTATO CHIPS',
                                       style: SafeGoogleFont(
                                         'Cambria',
-                                        fontSize: 20 * ffem,
+                                        20 * ffem,
                                         fontWeight: FontWeight.w700,
                                         height: 1.2575 * ffem / fem,
                                         color: Color(0xff000000),
@@ -595,7 +595,7 @@ class Snacks1 extends StatelessWidget {
                                     'Salt, Ketchup, Cheese, Salt & Vinegar, Paprika',
                                     style: SafeGoogleFont(
                                       'Cambria',
-                                      fontSize: 15 * ffem,
+                                      15 * ffem,
                                       fontWeight: FontWeight.w700,
                                       height: 1.2575 * ffem / fem,
                                       color: Color(0xffff2153),
@@ -665,7 +665,7 @@ class Snacks1 extends StatelessWidget {
                                             'HOT DOG',
                                             style: SafeGoogleFont(
                                               'Cambria',
-                                              fontSize: 20 * ffem,
+                                              20 * ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 1.2575 * ffem / fem,
                                               color: Color(0xff000000),
@@ -677,7 +677,7 @@ class Snacks1 extends StatelessWidget {
                                           'Ketchup, Mustard, Mayonnaise',
                                           style: SafeGoogleFont(
                                             'Cambria',
-                                            fontSize: 15 * ffem,
+                                            15 * ffem,
                                             fontWeight: FontWeight.w700,
                                             height: 1.2575 * ffem / fem,
                                             color: Color(0xffff2153),
@@ -742,7 +742,7 @@ class Snacks1 extends StatelessWidget {
                                             'WAFFLE FRIES',
                                             style: SafeGoogleFont(
                                               'Cambria',
-                                              fontSize: 20 * ffem,
+                                              20 * ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 1.2575 * ffem / fem,
                                               color: Color(0xff000000),
@@ -754,7 +754,7 @@ class Snacks1 extends StatelessWidget {
                                           'Salt, Cheese, Paprika',
                                           style: SafeGoogleFont(
                                             'Cambria',
-                                            fontSize: 15 * ffem,
+                                            15 * ffem,
                                             fontWeight: FontWeight.w700,
                                             height: 1.2575 * ffem / fem,
                                             color: Color(0xffff2153),
@@ -819,7 +819,7 @@ class Snacks1 extends StatelessWidget {
                                             'FRIED TOAST SANDWHICH',
                                             style: SafeGoogleFont(
                                               'Cambria',
-                                              fontSize: 20 * ffem,
+                                              20 * ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 1.2575 * ffem / fem,
                                               color: Color(0xff000000),
@@ -831,7 +831,7 @@ class Snacks1 extends StatelessWidget {
                                           'Ketchup, Mustard, Mayonnaise',
                                           style: SafeGoogleFont(
                                             'Cambria',
-                                            fontSize: 15 * ffem,
+                                            15 * ffem,
                                             fontWeight: FontWeight.w700,
                                             height: 1.2575 * ffem / fem,
                                             color: Color(0xffff2153),
@@ -896,7 +896,7 @@ class Snacks1 extends StatelessWidget {
                                             'CHICKEN TORTILLA WRAP SANDWICH',
                                             style: SafeGoogleFont(
                                               'Cambria',
-                                              fontSize: 17 * ffem,
+                                              17 * ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 1.2575 * ffem / fem,
                                               color: Color(0xff000000),
@@ -908,7 +908,7 @@ class Snacks1 extends StatelessWidget {
                                           'Ketchup, Mustard, Mayonnaise',
                                           style: SafeGoogleFont(
                                             'Cambria',
-                                            fontSize: 15 * ffem,
+                                            15 * ffem,
                                             fontWeight: FontWeight.w700,
                                             height: 1.2575 * ffem / fem,
                                             color: Color(0xffff2153),
@@ -963,7 +963,7 @@ class Snacks1 extends StatelessWidget {
                           textAlign: TextAlign.center,
                           style: SafeGoogleFont(
                             'Lucida Bright',
-                            fontSize: 20 * ffem,
+                            20 * ffem,
                             fontWeight: FontWeight.w400,
                             height: 1.2575 * ffem / fem,
                             color: Color(0xffff1e60),
@@ -990,7 +990,7 @@ class Snacks1 extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: SafeGoogleFont(
                               'Lucida Bright',
-                              fontSize: 20 * ffem,
+                              20 * ffem,
                               fontWeight: FontWeight.w400,
                               height: 1.2575 * ffem / fem,
                               color: Color(0xff464646),
@@ -1018,7 +1018,7 @@ class Snacks1 extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: SafeGoogleFont(
                               'Lucida Bright',
-                              fontSize: 20 * ffem,
+                              20 * ffem,
                               fontWeight: FontWeight.w400,
                               height: 1.2575 * ffem / fem,
                               color: Color(0xff464646),
@@ -1074,7 +1074,7 @@ class Snacks1 extends StatelessWidget {
                             'First Cinema',
                             style: SafeGoogleFont(
                               'Lucida Bright',
-                              fontSize: 22.0362129211 * ffem,
+                              22.0362129211 * ffem,
                               fontWeight: FontWeight.w400,
                               height: 1.2575 * ffem / fem,
                               color: Color(0xff464646),
@@ -1150,7 +1150,7 @@ class Snacks1 extends StatelessWidget {
                                 textAlign: TextAlign.center,
                                 style: SafeGoogleFont(
                                   'Segoe Script',
-                                  fontSize: 10 * ffem,
+                                  10 * ffem,
                                   fontWeight: FontWeight.w700,
                                   height: 1.2575 * ffem / fem,
                                   color: Color(0xff000000),
@@ -1189,7 +1189,7 @@ class Snacks1 extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont(
                                 'Segoe Script',
-                                fontSize: 10 * ffem,
+                                10 * ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2575 * ffem / fem,
                                 color: Color(0xff000000),
@@ -1228,7 +1228,7 @@ class Snacks1 extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont(
                                 'Segoe Script',
-                                fontSize: 10 * ffem,
+                                10 * ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2575 * ffem / fem,
                                 color: Color(0xff000000),
@@ -1272,7 +1272,7 @@ class Snacks1 extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont(
                                 'Segoe Script',
-                                fontSize: 10 * ffem,
+                                10 * ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2575 * ffem / fem,
                                 color: Color(0xffff2153),
@@ -1307,7 +1307,7 @@ class Snacks1 extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: SafeGoogleFont(
                               'Segoe Script',
-                              fontSize: 10 * ffem,
+                              10 * ffem,
                               fontWeight: FontWeight.w700,
                               height: 1.2575 * ffem / fem,
                               color: Color(0xff000000),

@@ -49,7 +49,7 @@ class Scene extends StatelessWidget {
                     'have you ever considered subscribing to an online watching service but knew you wouldn’t be using it a lot?\ndo you want to watch a certain movie but prefer not paying for a whole subscription for it?\nfor solving these issues we made the idea of renting\nrenting is making a movie available for watching for a certain amount of time for a small fee, in this period you’re allowed to watch the movie as much as you want, and then at the end of the period you can no longer access it.\n\n ',
                     style: SafeGoogleFont (
                       'Segoe UI',
-                      fontSize: 20*ffem,
+                      20*ffem,
                       fontWeight: FontWeight.w400,
                       height: 1.2575*ffem/fem,
                       color: Color(0xff000000),
@@ -101,8 +101,7 @@ class Scene extends StatelessWidget {
                         'WHAT IS RENTING',
                         textAlign: TextAlign.center,
                         style: SafeGoogleFont (
-                          'Segoe UI',
-                          fontSize: 16.5*ffem,
+                          'Segoe UI',16.5*ffem,
                           fontWeight: FontWeight.w700,
                           height: 1.2575*ffem/fem,
                           color: Color(0xff000000),
@@ -179,7 +178,7 @@ class Scene extends StatelessWidget {
                             '9:41',
                             style: SafeGoogleFont (
                               'SF Pro Text',
-                              fontSize: 15*ffem,
+                              15*ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.4*ffem/fem,
                               letterSpacing: -0.3199999928*fem,

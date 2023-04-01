@@ -83,7 +83,7 @@ class Profile extends StatelessWidget {
                         'My Account',
                         style: SafeGoogleFont(
                           'Lucida Bright',
-                          fontSize: 22 * ffem,
+                          22 * ffem,
                           fontWeight: FontWeight.w600,
                           height: 1.2575 * ffem / fem,
                           color: Color(0xff7e132b),
@@ -140,7 +140,7 @@ class Profile extends StatelessWidget {
                           text: TextSpan(
                             style: SafeGoogleFont(
                               'Lucida Bright',
-                              fontSize: 22 * ffem,
+                              22 * ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.2575 * ffem / fem,
                               color: Color(0xff7e132b),
@@ -150,7 +150,7 @@ class Profile extends StatelessWidget {
                                 text: 'My Booking',
                                 style: SafeGoogleFont(
                                   'Lucida Bright',
-                                  fontSize: 22 * ffem,
+                                  22 * ffem,
                                   fontWeight: FontWeight.w600,
                                   height: 1.2575 * ffem / fem,
                                   color: Color(0xff7e132b),
@@ -211,7 +211,7 @@ class Profile extends StatelessWidget {
                         'Settings',
                         style: SafeGoogleFont(
                           'Lucida Bright',
-                          fontSize: 22 * ffem,
+                          22 * ffem,
                           fontWeight: FontWeight.w600,
                           height: 1.2575 * ffem / fem,
                           color: Color(0xff7e132b),
@@ -265,7 +265,7 @@ class Profile extends StatelessWidget {
                         'My Movies',
                         style: SafeGoogleFont(
                           'Lucida Bright',
-                          fontSize: 22 * ffem,
+                          22 * ffem,
                           fontWeight: FontWeight.w600,
                           height: 1.2575 * ffem / fem,
                           color: Color(0xff7e132b),
@@ -288,7 +288,7 @@ class Profile extends StatelessWidget {
                     'Welcome, Name',
                     style: SafeGoogleFont(
                       'Tw Cen MT',
-                      fontSize: 27 * ffem,
+                      27 * ffem,
                       fontWeight: FontWeight.w400,
                       height: 1.2575 * ffem / fem,
                       color: Color(0xffaf1b1b),
@@ -360,7 +360,7 @@ class Profile extends StatelessWidget {
                         'Log Out',
                         style: SafeGoogleFont(
                           'Lucida Bright',
-                          fontSize: 22 * ffem,
+                          22 * ffem,
                           fontWeight: FontWeight.w600,
                           height: 1.2575 * ffem / fem,
                           color: const Color(0xff7e132b),
@@ -423,7 +423,7 @@ class Profile extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: SafeGoogleFont(
                           'Nature Beauty Personal Use',
-                          fontSize: 25 * ffem,
+                          25 * ffem,
                           fontWeight: FontWeight.w400,
                           height: 1.1 * ffem / fem,
                           color: Color(0xffdd204a),
@@ -493,7 +493,7 @@ class Profile extends StatelessWidget {
                             '9:41',
                             style: SafeGoogleFont(
                               'SF Pro Text',
-                              fontSize: 15 * ffem,
+                              15 * ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.4 * ffem / fem,
                               letterSpacing: -0.3199999928 * fem,
@@ -610,7 +610,7 @@ class Profile extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont(
                                 'Segoe Script',
-                                fontSize: 10 * ffem,
+                                10 * ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2575 * ffem / fem,
                                 color: Color(0xff000000),
@@ -648,7 +648,7 @@ class Profile extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont(
                                 'Segoe Script',
-                                fontSize: 10 * ffem,
+                                10 * ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2575 * ffem / fem,
                                 color: Color(0xff000000),
@@ -687,7 +687,7 @@ class Profile extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont(
                                 'Segoe Script',
-                                fontSize: 10 * ffem,
+                                10 * ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2575 * ffem / fem,
                                 color: Color(0xff000000),
@@ -725,7 +725,7 @@ class Profile extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont(
                                 'Segoe Script',
-                                fontSize: 10 * ffem,
+                                10 * ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2575 * ffem / fem,
                                 color: Color(0xff000000),
@@ -767,7 +767,7 @@ class Profile extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: SafeGoogleFont(
                               'Segoe Script',
-                              fontSize: 10 * ffem,
+                              10 * ffem,
                               fontWeight: FontWeight.w700,
                               height: 1.2575 * ffem / fem,
                               color: Color(0xffff2153),

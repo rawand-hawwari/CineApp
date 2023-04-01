@@ -34,7 +34,7 @@ class Scene extends StatelessWidget {
                 'Your email have been changed',
                 style: SafeGoogleFont (
                   'Lucida Bright',
-                  fontSize: 22*ffem,
+                  22*ffem,
                   fontWeight: FontWeight.w600,
                   height: 1.2575*ffem/fem,
                   color: Color(0xff4b4a4a),
@@ -48,7 +48,7 @@ class Scene extends StatelessWidget {
                 'Check out your email for a cerification code',
                 style: SafeGoogleFont (
                   'Cambria',
-                  fontSize: 15*ffem,
+                  15*ffem,
                   fontWeight: FontWeight.w400,
                   height: 1.2575*ffem/fem,
                   color: Color(0xffff2153),
@@ -82,7 +82,7 @@ class Scene extends StatelessWidget {
                       'CONFIRM',
                       style: SafeGoogleFont (
                         'Lucida Bright',
-                        fontSize: 17.6289710999*ffem,
+                        17.6289710999*ffem,
                         fontWeight: FontWeight.w600,
                         height: 1.2575*ffem/fem,
                         color: Color(0xffffffff),

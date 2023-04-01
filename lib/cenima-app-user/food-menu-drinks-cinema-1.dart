@@ -79,7 +79,7 @@ class Scene extends StatelessWidget {
                                     'Soft Drinks',
                                     style: SafeGoogleFont (
                                       'Cambria',
-                                      fontSize: 20*ffem,
+                                      20*ffem,
                                       fontWeight: FontWeight.w700,
                                       height: 1.2575*ffem/fem,
                                       color: Color(0xff000000),
@@ -93,7 +93,7 @@ class Scene extends StatelessWidget {
                                     'Cola, Sprite, Fanta',
                                     style: SafeGoogleFont (
                                       'Cambria',
-                                      fontSize: 15*ffem,
+                                      15*ffem,
                                       fontWeight: FontWeight.w700,
                                       height: 1.2575*ffem/fem,
                                       color: Color(0xffff2153),
@@ -105,7 +105,7 @@ class Scene extends StatelessWidget {
                                   'Small, Medium, Large',
                                   style: SafeGoogleFont (
                                     'Cambria',
-                                    fontSize: 15*ffem,
+                                    15*ffem,
                                     fontWeight: FontWeight.w700,
                                     height: 1.2575*ffem/fem,
                                     color: Color(0xffff2153),
@@ -177,7 +177,7 @@ class Scene extends StatelessWidget {
                                                   'Juice',
                                                   style: SafeGoogleFont (
                                                     'Cambria',
-                                                    fontSize: 20*ffem,
+                                                    20*ffem,
                                                     fontWeight: FontWeight.w700,
                                                     height: 1.2575*ffem/fem,
                                                     color: Color(0xff000000),
@@ -194,7 +194,7 @@ class Scene extends StatelessWidget {
                                                   'Orange, Strawberry, Lemon, Mango, Apple',
                                                   style: SafeGoogleFont (
                                                     'Cambria',
-                                                    fontSize: 15*ffem,
+                                                    15*ffem,
                                                     fontWeight: FontWeight.w700,
                                                     height: 1.2575*ffem/fem,
                                                     color: Color(0xffff2153),
@@ -206,7 +206,7 @@ class Scene extends StatelessWidget {
                                                 'Small, Medium, Large',
                                                 style: SafeGoogleFont (
                                                   'Cambria',
-                                                  fontSize: 15*ffem,
+                                                  15*ffem,
                                                   fontWeight: FontWeight.w700,
                                                   height: 1.2575*ffem/fem,
                                                   color: Color(0xffff2153),
@@ -227,7 +227,7 @@ class Scene extends StatelessWidget {
                                       'Orange, Strawberry, Lemon, Mango, Apple',
                                       style: SafeGoogleFont (
                                         'Cambria',
-                                        fontSize: 15*ffem,
+                                        15*ffem,
                                         fontWeight: FontWeight.w700,
                                         height: 1.2575*ffem/fem,
                                         color: Color(0xffff2153),
@@ -283,7 +283,7 @@ class Scene extends StatelessWidget {
                                             'Slush',
                                             style: SafeGoogleFont (
                                               'Cambria',
-                                              fontSize: 20*ffem,
+                                              20*ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 1.2575*ffem/fem,
                                               color: Color(0xff000000),
@@ -295,7 +295,7 @@ class Scene extends StatelessWidget {
                                           'Small, Medium, Large',
                                           style: SafeGoogleFont (
                                             'Cambria',
-                                            fontSize: 15*ffem,
+                                            15*ffem,
                                             fontWeight: FontWeight.w700,
                                             height: 1.2575*ffem/fem,
                                             color: Color(0xffff2153),
@@ -358,7 +358,7 @@ class Scene extends StatelessWidget {
                                     'Iced Tea',
                                     style: SafeGoogleFont (
                                       'Cambria',
-                                      fontSize: 20*ffem,
+                                      20*ffem,
                                       fontWeight: FontWeight.w700,
                                       height: 1.2575*ffem/fem,
                                       color: Color(0xff000000),
@@ -374,7 +374,7 @@ class Scene extends StatelessWidget {
                                     'Lemon, Apricot, Peach, Ginger',
                                     style: SafeGoogleFont (
                                       'Cambria',
-                                      fontSize: 15*ffem,
+                                      15*ffem,
                                       fontWeight: FontWeight.w700,
                                       height: 1.2575*ffem/fem,
                                       color: Color(0xffff2153),
@@ -426,7 +426,7 @@ class Scene extends StatelessWidget {
                           textAlign: TextAlign.center,
                           style: SafeGoogleFont (
                             'Lucida Bright',
-                            fontSize: 20*ffem,
+                            20*ffem,
                             fontWeight: FontWeight.w400,
                             height: 1.2575*ffem/fem,
                             color: Color(0xff515151),
@@ -453,7 +453,7 @@ class Scene extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: SafeGoogleFont (
                               'Lucida Bright',
-                              fontSize: 20*ffem,
+                              20*ffem,
                               fontWeight: FontWeight.w400,
                               height: 1.2575*ffem/fem,
                               color: Color(0xff464646),
@@ -476,7 +476,7 @@ class Scene extends StatelessWidget {
                           textAlign: TextAlign.center,
                           style: SafeGoogleFont (
                             'Lucida Bright',
-                            fontSize: 20*ffem,
+                            20*ffem,
                             fontWeight: FontWeight.w400,
                             height: 1.2575*ffem/fem,
                             color: Color(0xffff1e60),
@@ -528,7 +528,7 @@ class Scene extends StatelessWidget {
                             'First Cinema',
                             style: SafeGoogleFont (
                               'Lucida Bright',
-                              fontSize: 22.0362129211*ffem,
+                              22.0362129211*ffem,
                               fontWeight: FontWeight.w400,
                               height: 1.2575*ffem/fem,
                               color: Color(0xff464646),
@@ -591,7 +591,7 @@ class Scene extends StatelessWidget {
                             '9:41',
                             style: SafeGoogleFont (
                               'SF Pro Text',
-                              fontSize: 15*ffem,
+                              15*ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.4*ffem/fem,
                               letterSpacing: -0.3199999928*fem,
@@ -700,7 +700,7 @@ class Scene extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont (
                                 'Segoe Script',
-                                fontSize: 10*ffem,
+                                10*ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2575*ffem/fem,
                                 color: Color(0xff000000),
@@ -736,7 +736,7 @@ class Scene extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont (
                                 'Segoe Script',
-                                fontSize: 10*ffem,
+                                10*ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2575*ffem/fem,
                                 color: Color(0xff000000),
@@ -773,7 +773,7 @@ class Scene extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont (
                                 'Segoe Script',
-                                fontSize: 10*ffem,
+                                10*ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2575*ffem/fem,
                                 color: Color(0xff000000),
@@ -815,7 +815,7 @@ class Scene extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont (
                                 'Segoe Script',
-                                fontSize: 10*ffem,
+                                10*ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2575*ffem/fem,
                                 color: Color(0xffff2153),
@@ -848,7 +848,7 @@ class Scene extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: SafeGoogleFont (
                               'Segoe Script',
-                              fontSize: 10*ffem,
+                              10*ffem,
                               fontWeight: FontWeight.w700,
                               height: 1.2575*ffem/fem,
                               color: Color(0xff000000),

@@ -64,7 +64,7 @@ class HomePage extends StatelessWidget {
                               'Upcoming',
                               style: SafeGoogleFont(
                                 'Cambria',
-                                fontSize: 20 * ffem,
+                                20 * ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2575 * ffem / fem,
                                 color: const Color(0xff000000),
@@ -85,7 +85,7 @@ class HomePage extends StatelessWidget {
                                 textAlign: TextAlign.center,
                                 style: SafeGoogleFont(
                                   'Cambria',
-                                  fontSize: 15 * ffem,
+                                  15 * ffem,
                                   fontWeight: FontWeight.w700,
                                   height: 1.2575 * ffem / fem,
                                   color: const Color(0xffff2153),
@@ -142,7 +142,7 @@ class HomePage extends StatelessWidget {
                                           text: TextSpan(
                                             style: SafeGoogleFont(
                                               'Lucida Bright',
-                                              fontSize: 15 * ffem,
+                                              15 * ffem,
                                               fontWeight: FontWeight.w400,
                                               height: 1.2575 * ffem / fem,
                                               color: const Color(0xff464646),
@@ -152,7 +152,7 @@ class HomePage extends StatelessWidget {
                                                 text: 'Avatar: ',
                                                 style: SafeGoogleFont(
                                                   'Lucida Bright',
-                                                  fontSize: 15 * ffem,
+                                                  15 * ffem,
                                                   fontWeight: FontWeight.w400,
                                                   height: 1.2575 * ffem / fem,
                                                   color:
@@ -198,7 +198,7 @@ class HomePage extends StatelessWidget {
                                       text: TextSpan(
                                         style: SafeGoogleFont(
                                           'Lucida Bright',
-                                          fontSize: 15 * ffem,
+                                          15 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.2575 * ffem / fem,
                                           color: const Color(0xff464646),
@@ -208,7 +208,7 @@ class HomePage extends StatelessWidget {
                                             text: 'Puss in ',
                                             style: SafeGoogleFont(
                                               'Lucida Bright',
-                                              fontSize: 15 * ffem,
+                                              15 * ffem,
                                               fontWeight: FontWeight.w400,
                                               height: 1.2575 * ffem / fem,
                                               color: const Color(0xff464646),
@@ -251,7 +251,7 @@ class HomePage extends StatelessWidget {
                                       text: TextSpan(
                                         style: SafeGoogleFont(
                                           'Lucida Bright',
-                                          fontSize: 15 * ffem,
+                                          15 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.2575 * ffem / fem,
                                           color: const Color(0xff464646),
@@ -261,7 +261,7 @@ class HomePage extends StatelessWidget {
                                             text: 'I Wanna ',
                                             style: SafeGoogleFont(
                                               'Lucida Bright',
-                                              fontSize: 15 * ffem,
+                                              15 * ffem,
                                               fontWeight: FontWeight.w400,
                                               height: 1.2575 * ffem / fem,
                                               color: const Color(0xff464646),
@@ -299,7 +299,7 @@ class HomePage extends StatelessWidget {
                                   textAlign: TextAlign.center,
                                   style: SafeGoogleFont(
                                     'Lucida Bright',
-                                    fontSize: 15 * ffem,
+                                    15 * ffem,
                                     fontWeight: FontWeight.w400,
                                     height: 1.2575 * ffem / fem,
                                     color: const Color(0xff464646),
@@ -334,7 +334,7 @@ class HomePage extends StatelessWidget {
                                       text: TextSpan(
                                         style: SafeGoogleFont(
                                           'Lucida Bright',
-                                          fontSize: 15 * ffem,
+                                          15 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.2575 * ffem / fem,
                                           color: const Color(0xff464646),
@@ -344,7 +344,7 @@ class HomePage extends StatelessWidget {
                                             text: 'Operatio',
                                             style: SafeGoogleFont(
                                               'Lucida Bright',
-                                              fontSize: 15 * ffem,
+                                              15 * ffem,
                                               fontWeight: FontWeight.w400,
                                               height: 1.2575 * ffem / fem,
                                               color: const Color(0xff464646),
@@ -431,7 +431,7 @@ class HomePage extends StatelessWidget {
                                           text: TextSpan(
                                             style: SafeGoogleFont(
                                               'Tw Cen MT',
-                                              fontSize: 25 * ffem,
+                                              25 * ffem,
                                               fontWeight: FontWeight.w400,
                                               height: 1.0888671875 * ffem / fem,
                                               color: const Color(0xffffffff),
@@ -441,7 +441,7 @@ class HomePage extends StatelessWidget {
                                                 text: '50%',
                                                 style: SafeGoogleFont(
                                                   'Tw Cen MT',
-                                                  fontSize: 27 * ffem,
+                                                  27 * ffem,
                                                   fontWeight: FontWeight.w400,
                                                   height: 1.2575 * ffem / fem,
                                                   color:
@@ -453,7 +453,7 @@ class HomePage extends StatelessWidget {
                                                     ' off on 2 tickets\n\nusing code 50OFF!',
                                                 style: SafeGoogleFont(
                                                   'Tw Cen MT',
-                                                  fontSize: 25 * ffem,
+                                                  25 * ffem,
                                                   fontWeight: FontWeight.w400,
                                                   height: 1.2575 * ffem / fem,
                                                   color:
@@ -632,7 +632,7 @@ class HomePage extends StatelessWidget {
                                     textAlign: TextAlign.center,
                                     style: SafeGoogleFont(
                                       'Cambria',
-                                      fontSize: 20 * ffem,
+                                      20 * ffem,
                                       fontWeight: FontWeight.w700,
                                       height: 1.2575 * ffem / fem,
                                       color: const Color(0xff000000),
@@ -653,7 +653,7 @@ class HomePage extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont(
                                         'Cambria',
-                                        fontSize: 15 * ffem,
+                                        15 * ffem,
                                         fontWeight: FontWeight.w700,
                                         height: 1.2575 * ffem / fem,
                                         color: const Color(0xffff2153),
@@ -709,7 +709,7 @@ class HomePage extends StatelessWidget {
                                               textAlign: TextAlign.center,
                                               style: SafeGoogleFont(
                                                 'Lucida Bright',
-                                                fontSize: 15 * ffem,
+                                                15 * ffem,
                                                 fontWeight: FontWeight.w400,
                                                 height: 1.2575 * ffem / fem,
                                                 color: const Color(0xff464646),
@@ -763,7 +763,7 @@ class HomePage extends StatelessWidget {
                                                   text: TextSpan(
                                                     style: SafeGoogleFont(
                                                       'Lucida Bright',
-                                                      fontSize: 15 * ffem,
+                                                      15 * ffem,
                                                       fontWeight:
                                                           FontWeight.w400,
                                                       height:
@@ -776,7 +776,7 @@ class HomePage extends StatelessWidget {
                                                         text: 'PREY FOR',
                                                         style: SafeGoogleFont(
                                                           'Lucida Bright',
-                                                          fontSize: 15 * ffem,
+                                                          15 * ffem,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                           height: 1.2575 *
@@ -830,7 +830,7 @@ class HomePage extends StatelessWidget {
                                                   text: TextSpan(
                                                     style: SafeGoogleFont(
                                                       'Lucida Bright',
-                                                      fontSize: 15 * ffem,
+                                                      15 * ffem,
                                                       fontWeight:
                                                           FontWeight.w400,
                                                       height:
@@ -843,7 +843,7 @@ class HomePage extends StatelessWidget {
                                                         text: 'VIOLENT ',
                                                         style: SafeGoogleFont(
                                                           'Lucida Bright',
-                                                          fontSize: 15 * ffem,
+                                                          15 * ffem,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                           height: 1.2575 *
@@ -897,7 +897,7 @@ class HomePage extends StatelessWidget {
                                                   textAlign: TextAlign.center,
                                                   style: SafeGoogleFont(
                                                     'Lucida Bright',
-                                                    fontSize: 15 * ffem,
+                                                    15 * ffem,
                                                     fontWeight: FontWeight.w400,
                                                     height: 1.2575 * ffem / fem,
                                                     color:
@@ -937,7 +937,7 @@ class HomePage extends StatelessWidget {
                                                   text: TextSpan(
                                                     style: SafeGoogleFont(
                                                       'Lucida Bright',
-                                                      fontSize: 15 * ffem,
+                                                      15 * ffem,
                                                       fontWeight:
                                                           FontWeight.w400,
                                                       height:
@@ -950,7 +950,7 @@ class HomePage extends StatelessWidget {
                                                         text: 'Black Pa',
                                                         style: SafeGoogleFont(
                                                           'Lucida Bright',
-                                                          fontSize: 15 * ffem,
+                                                          15 * ffem,
                                                           fontWeight:
                                                               FontWeight.w400,
                                                           height: 1.2575 *
@@ -1034,7 +1034,7 @@ class HomePage extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont(
                                           'Roboto',
-                                          fontSize: 24 * ffem,
+                                          24 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.3333333333 * ffem / fem,
                                           color: const Color(0xff020202),
@@ -1052,7 +1052,7 @@ class HomePage extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont(
                                           'Roboto',
-                                          fontSize: 24 * ffem,
+                                          24 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.3333333333 * ffem / fem,
                                           color: const Color(0xff020202),
@@ -1070,7 +1070,7 @@ class HomePage extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont(
                                           'Roboto',
-                                          fontSize: 24 * ffem,
+                                          24 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.3333333333 * ffem / fem,
                                           color: const Color(0xff020202),
@@ -1088,7 +1088,7 @@ class HomePage extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont(
                                           'Roboto',
-                                          fontSize: 24 * ffem,
+                                          24 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.3333333333 * ffem / fem,
                                           color: const Color(0xff020202),
@@ -1106,7 +1106,7 @@ class HomePage extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont(
                                           'Roboto',
-                                          fontSize: 24 * ffem,
+                                          24 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.3333333333 * ffem / fem,
                                           color: const Color(0xff020202),
@@ -1124,7 +1124,7 @@ class HomePage extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont(
                                           'Roboto',
-                                          fontSize: 24 * ffem,
+                                          24 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.3333333333 * ffem / fem,
                                           color: const Color(0xff020202),
@@ -1142,7 +1142,7 @@ class HomePage extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont(
                                           'Roboto',
-                                          fontSize: 24 * ffem,
+                                          24 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.3333333333 * ffem / fem,
                                           color: const Color(0xff020202),
@@ -1160,7 +1160,7 @@ class HomePage extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont(
                                           'Roboto',
-                                          fontSize: 24 * ffem,
+                                          24 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.3333333333 * ffem / fem,
                                           color: const Color(0xff020202),
@@ -1178,7 +1178,7 @@ class HomePage extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont(
                                           'Roboto',
-                                          fontSize: 24 * ffem,
+                                          24 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.3333333333 * ffem / fem,
                                           color: const Color(0xff020202),
@@ -1193,7 +1193,7 @@ class HomePage extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont(
                                         'Roboto',
-                                        fontSize: 24 * ffem,
+                                        24 * ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.3333333333 * ffem / fem,
                                         color: const Color(0xff020202),
@@ -1221,7 +1221,7 @@ class HomePage extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont(
                                           'Roboto',
-                                          fontSize: 24 * ffem,
+                                          24 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.3333333333 * ffem / fem,
                                           color: const Color(0xff020202),
@@ -1239,7 +1239,7 @@ class HomePage extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont(
                                           'Roboto',
-                                          fontSize: 24 * ffem,
+                                          24 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.3333333333 * ffem / fem,
                                           color: const Color(0xff020202),
@@ -1257,7 +1257,7 @@ class HomePage extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont(
                                           'Roboto',
-                                          fontSize: 24 * ffem,
+                                          24 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.3333333333 * ffem / fem,
                                           color: const Color(0xff020202),
@@ -1275,7 +1275,7 @@ class HomePage extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont(
                                           'Roboto',
-                                          fontSize: 24 * ffem,
+                                          24 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.3333333333 * ffem / fem,
                                           color: const Color(0xff020202),
@@ -1293,7 +1293,7 @@ class HomePage extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont(
                                           'Roboto',
-                                          fontSize: 24 * ffem,
+                                          24 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.3333333333 * ffem / fem,
                                           color: const Color(0xff020202),
@@ -1311,7 +1311,7 @@ class HomePage extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont(
                                           'Roboto',
-                                          fontSize: 24 * ffem,
+                                          24 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.3333333333 * ffem / fem,
                                           color: const Color(0xff020202),
@@ -1329,7 +1329,7 @@ class HomePage extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont(
                                           'Roboto',
-                                          fontSize: 24 * ffem,
+                                          24 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.3333333333 * ffem / fem,
                                           color: const Color(0xff020202),
@@ -1347,7 +1347,7 @@ class HomePage extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont(
                                           'Roboto',
-                                          fontSize: 24 * ffem,
+                                          24 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.3333333333 * ffem / fem,
                                           color: const Color(0xff020202),
@@ -1362,7 +1362,7 @@ class HomePage extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont(
                                         'Roboto',
-                                        fontSize: 24 * ffem,
+                                        24 * ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.3333333333 * ffem / fem,
                                         color: const Color(0xff020202),
@@ -1404,7 +1404,7 @@ class HomePage extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont(
                                           'Roboto',
-                                          fontSize: 24 * ffem,
+                                          24 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.3333333333 * ffem / fem,
                                           color: const Color(0xff020202),
@@ -1422,7 +1422,7 @@ class HomePage extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont(
                                           'Roboto',
-                                          fontSize: 24 * ffem,
+                                          24 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.3333333333 * ffem / fem,
                                           color: const Color(0xff020202),
@@ -1440,7 +1440,7 @@ class HomePage extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont(
                                           'Roboto',
-                                          fontSize: 24 * ffem,
+                                          24 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.3333333333 * ffem / fem,
                                           color: const Color(0xff020202),
@@ -1458,7 +1458,7 @@ class HomePage extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont(
                                           'Roboto',
-                                          fontSize: 24 * ffem,
+                                          24 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.3333333333 * ffem / fem,
                                           color: const Color(0xff020202),
@@ -1476,7 +1476,7 @@ class HomePage extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont(
                                           'Roboto',
-                                          fontSize: 24 * ffem,
+                                          24 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.3333333333 * ffem / fem,
                                           color: const Color(0xff020202),
@@ -1494,7 +1494,7 @@ class HomePage extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont(
                                           'Roboto',
-                                          fontSize: 24 * ffem,
+                                          24 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.3333333333 * ffem / fem,
                                           color: const Color(0xff020202),
@@ -1512,7 +1512,7 @@ class HomePage extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont(
                                           'Roboto',
-                                          fontSize: 24 * ffem,
+                                          24 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.3333333333 * ffem / fem,
                                           color: const Color(0xff020202),
@@ -1553,7 +1553,7 @@ class HomePage extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont(
                                           'Roboto',
-                                          fontSize: 14 * ffem,
+                                          14 * ffem,
                                           fontWeight: FontWeight.w500,
                                           height: 1.7142857143 * ffem / fem,
                                           letterSpacing: 1.5 * fem,
@@ -1572,7 +1572,7 @@ class HomePage extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont(
                                           'Roboto',
-                                          fontSize: 24 * ffem,
+                                          24 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.3333333333 * ffem / fem,
                                           color: const Color(0xff020202),
@@ -1602,7 +1602,7 @@ class HomePage extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont(
                                           'Roboto',
-                                          fontSize: 24 * ffem,
+                                          24 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.3333333333 * ffem / fem,
                                           color: const Color(0xff020202),
@@ -1698,7 +1698,7 @@ class HomePage extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: SafeGoogleFont(
                           'Nature Beauty Personal Use',
-                          fontSize: 25 * ffem,
+                          25 * ffem,
                           fontWeight: FontWeight.w400,
                           height: 1.1 * ffem / fem,
                           color: const Color(0xffdd204a),
@@ -1764,7 +1764,7 @@ class HomePage extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont(
                                 'Segoe Script',
-                                fontSize: 10 * ffem,
+                                10 * ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2575 * ffem / fem,
                                 color: const Color(0xffff1e60),
@@ -1802,7 +1802,7 @@ class HomePage extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont(
                                 'Segoe Script',
-                                fontSize: 10 * ffem,
+                                10 * ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2575 * ffem / fem,
                                 color: const Color(0xff000000),
@@ -1841,7 +1841,7 @@ class HomePage extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont(
                                 'Segoe Script',
-                                fontSize: 10 * ffem,
+                                10 * ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2575 * ffem / fem,
                                 color: const Color(0xff000000),
@@ -1886,7 +1886,7 @@ class HomePage extends StatelessWidget {
                                 textAlign: TextAlign.center,
                                 style: SafeGoogleFont(
                                   'Segoe Script',
-                                  fontSize: 10 * ffem,
+                                  10 * ffem,
                                   fontWeight: FontWeight.w700,
                                   height: 1.2575 * ffem / fem,
                                   color: const Color(0xff000000),
@@ -1930,7 +1930,7 @@ class HomePage extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: SafeGoogleFont(
                               'Segoe Script',
-                              fontSize: 10 * ffem,
+                              10 * ffem,
                               fontWeight: FontWeight.w700,
                               height: 1.2575 * ffem / fem,
                               color: const Color(0xff000000),

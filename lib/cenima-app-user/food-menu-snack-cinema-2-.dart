@@ -89,7 +89,7 @@ class Scene extends StatelessWidget {
                                             'GUACAMOLE',
                                             style: SafeGoogleFont (
                                               'Cambria',
-                                              fontSize: 20*ffem,
+                                              20*ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 1.2575*ffem/fem,
                                               color: Color(0xff000000),
@@ -101,7 +101,7 @@ class Scene extends StatelessWidget {
                                           'Regular, Spicy ',
                                           style: SafeGoogleFont (
                                             'Cambria',
-                                            fontSize: 15*ffem,
+                                            15*ffem,
                                             fontWeight: FontWeight.w700,
                                             height: 1.2575*ffem/fem,
                                             color: Color(0xffff2153),
@@ -160,7 +160,7 @@ class Scene extends StatelessWidget {
                                             'POPCORN',
                                             style: SafeGoogleFont (
                                               'Cambria',
-                                              fontSize: 20*ffem,
+                                              20*ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 1.2575*ffem/fem,
                                               color: Color(0xff000000),
@@ -174,7 +174,7 @@ class Scene extends StatelessWidget {
                                             'Butter, Caramel, Cheese',
                                             style: SafeGoogleFont (
                                               'Cambria',
-                                              fontSize: 15*ffem,
+                                              15*ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 1.2575*ffem/fem,
                                               color: Color(0xffff2153),
@@ -186,7 +186,7 @@ class Scene extends StatelessWidget {
                                           'Small, Medium, Large',
                                           style: SafeGoogleFont (
                                             'Cambria',
-                                            fontSize: 15*ffem,
+                                            15*ffem,
                                             fontWeight: FontWeight.w700,
                                             height: 1.2575*ffem/fem,
                                             color: Color(0xffff2153),
@@ -244,7 +244,7 @@ class Scene extends StatelessWidget {
                                             'NACHOS',
                                             style: SafeGoogleFont (
                                               'Cambria',
-                                              fontSize: 20*ffem,
+                                              20*ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 1.2575*ffem/fem,
                                               color: Color(0xff000000),
@@ -260,7 +260,7 @@ class Scene extends StatelessWidget {
                                             'Ketchup, Mayonnaise, Salsa, Garlic, Buffalo, Mustard,  ',
                                             style: SafeGoogleFont (
                                               'Cambria',
-                                              fontSize: 15*ffem,
+                                              15*ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 1.2575*ffem/fem,
                                               color: Color(0xffff2153),
@@ -319,7 +319,7 @@ class Scene extends StatelessWidget {
                                             'ONION RINGS',
                                             style: SafeGoogleFont (
                                               'Cambria',
-                                              fontSize: 20*ffem,
+                                              20*ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 1.2575*ffem/fem,
                                               color: Color(0xff000000),
@@ -335,7 +335,7 @@ class Scene extends StatelessWidget {
                                             'Ketchup, Mustard, Mayonnaise',
                                             style: SafeGoogleFont (
                                               'Cambria',
-                                              fontSize: 15*ffem,
+                                              15*ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 1.2575*ffem/fem,
                                               color: Color(0xffff2153),
@@ -394,7 +394,7 @@ class Scene extends StatelessWidget {
                                             'FRENCH FRIES',
                                             style: SafeGoogleFont (
                                               'Cambria',
-                                              fontSize: 20*ffem,
+                                              20*ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 1.2575*ffem/fem,
                                               color: Color(0xff000000),
@@ -406,7 +406,7 @@ class Scene extends StatelessWidget {
                                           'Regular, Spicy , Cheese, Paprika',
                                           style: SafeGoogleFont (
                                             'Cambria',
-                                            fontSize: 15*ffem,
+                                            15*ffem,
                                             fontWeight: FontWeight.w700,
                                             height: 1.2575*ffem/fem,
                                             color: Color(0xffff2153),
@@ -463,7 +463,7 @@ class Scene extends StatelessWidget {
                                             'SLIDERS',
                                             style: SafeGoogleFont (
                                               'Cambria',
-                                              fontSize: 20*ffem,
+                                              20*ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 1.2575*ffem/fem,
                                               color: Color(0xff000000),
@@ -475,7 +475,7 @@ class Scene extends StatelessWidget {
                                           'Vegetables, chicken',
                                           style: SafeGoogleFont (
                                             'Cambria',
-                                            fontSize: 15*ffem,
+                                            15*ffem,
                                             fontWeight: FontWeight.w700,
                                             height: 1.2575*ffem/fem,
                                             color: Color(0xffff2153),
@@ -542,7 +542,7 @@ class Scene extends StatelessWidget {
                                             'CHICKEN BITES',
                                             style: SafeGoogleFont (
                                               'Cambria',
-                                              fontSize: 20*ffem,
+                                              20*ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 1.2575*ffem/fem,
                                               color: Color(0xff000000),
@@ -554,7 +554,7 @@ class Scene extends StatelessWidget {
                                           'Ketchup, Mustard, Mayonnaise',
                                           style: SafeGoogleFont (
                                             'Cambria',
-                                            fontSize: 15*ffem,
+                                            15*ffem,
                                             fontWeight: FontWeight.w700,
                                             height: 1.2575*ffem/fem,
                                             color: Color(0xffff2153),
@@ -620,7 +620,7 @@ class Scene extends StatelessWidget {
                                       'VIGGIE TORTILLA WRAP SANDWICH',
                                       style: SafeGoogleFont (
                                         'Cambria',
-                                        fontSize: 20*ffem,
+                                        20*ffem,
                                         fontWeight: FontWeight.w700,
                                         height: 1.2575*ffem/fem,
                                         color: Color(0xff000000),
@@ -632,7 +632,7 @@ class Scene extends StatelessWidget {
                                     'Ketchup, Mustard, Mayonnaise',
                                     style: SafeGoogleFont (
                                       'Cambria',
-                                      fontSize: 15*ffem,
+                                      15*ffem,
                                       fontWeight: FontWeight.w700,
                                       height: 1.2575*ffem/fem,
                                       color: Color(0xffff2153),
@@ -703,7 +703,7 @@ class Scene extends StatelessWidget {
                                             'BURGUR',
                                             style: SafeGoogleFont (
                                               'Cambria',
-                                              fontSize: 20*ffem,
+                                              20*ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 1.2575*ffem/fem,
                                               color: Color(0xff000000),
@@ -715,7 +715,7 @@ class Scene extends StatelessWidget {
                                           'Ketchup, Mustard, Mayonnaise',
                                           style: SafeGoogleFont (
                                             'Cambria',
-                                            fontSize: 15*ffem,
+                                            15*ffem,
                                             fontWeight: FontWeight.w700,
                                             height: 1.2575*ffem/fem,
                                             color: Color(0xffff2153),
@@ -782,7 +782,7 @@ class Scene extends StatelessWidget {
                                             'CHEESE BITES',
                                             style: SafeGoogleFont (
                                               'Cambria',
-                                              fontSize: 20*ffem,
+                                              20*ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 1.2575*ffem/fem,
                                               color: Color(0xff000000),
@@ -794,7 +794,7 @@ class Scene extends StatelessWidget {
                                           'Ketchup, Mustard, Mayonnaise',
                                           style: SafeGoogleFont (
                                             'Cambria',
-                                            fontSize: 15*ffem,
+                                            15*ffem,
                                             fontWeight: FontWeight.w700,
                                             height: 1.2575*ffem/fem,
                                             color: Color(0xffff2153),
@@ -861,7 +861,7 @@ class Scene extends StatelessWidget {
                                             'TACOS',
                                             style: SafeGoogleFont (
                                               'Cambria',
-                                              fontSize: 20*ffem,
+                                              20*ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 1.2575*ffem/fem,
                                               color: Color(0xff000000),
@@ -873,7 +873,7 @@ class Scene extends StatelessWidget {
                                           'Spicy, Regular',
                                           style: SafeGoogleFont (
                                             'Cambria',
-                                            fontSize: 15*ffem,
+                                            15*ffem,
                                             fontWeight: FontWeight.w700,
                                             height: 1.2575*ffem/fem,
                                             color: Color(0xffff2153),
@@ -928,7 +928,7 @@ class Scene extends StatelessWidget {
                           textAlign: TextAlign.center,
                           style: SafeGoogleFont (
                             'Lucida Bright',
-                            fontSize: 20*ffem,
+                            20*ffem,
                             fontWeight: FontWeight.w400,
                             height: 1.2575*ffem/fem,
                             color: Color(0xffff1e60),
@@ -955,7 +955,7 @@ class Scene extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: SafeGoogleFont (
                               'Lucida Bright',
-                              fontSize: 20*ffem,
+                              20*ffem,
                               fontWeight: FontWeight.w400,
                               height: 1.2575*ffem/fem,
                               color: Color(0xff464646),
@@ -983,7 +983,7 @@ class Scene extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: SafeGoogleFont (
                               'Lucida Bright',
-                              fontSize: 20*ffem,
+                              20*ffem,
                               fontWeight: FontWeight.w400,
                               height: 1.2575*ffem/fem,
                               color: Color(0xff464646),
@@ -1036,7 +1036,7 @@ class Scene extends StatelessWidget {
                             'Second Cinema',
                             style: SafeGoogleFont (
                               'Lucida Bright',
-                              fontSize: 22.0362129211*ffem,
+                              22.0362129211*ffem,
                               fontWeight: FontWeight.w400,
                               height: 1.2575*ffem/fem,
                               color: Color(0xff464646),
@@ -1099,7 +1099,7 @@ class Scene extends StatelessWidget {
                             '9:41',
                             style: SafeGoogleFont (
                               'SF Pro Text',
-                              fontSize: 15*ffem,
+                              15*ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.4*ffem/fem,
                               letterSpacing: -0.3199999928*fem,
@@ -1208,7 +1208,7 @@ class Scene extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont (
                                 'Segoe Script',
-                                fontSize: 10*ffem,
+                                10*ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2575*ffem/fem,
                                 color: Color(0xff000000),
@@ -1244,7 +1244,7 @@ class Scene extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont (
                                 'Segoe Script',
-                                fontSize: 10*ffem,
+                                10*ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2575*ffem/fem,
                                 color: Color(0xff000000),
@@ -1281,7 +1281,7 @@ class Scene extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont (
                                 'Segoe Script',
-                                fontSize: 10*ffem,
+                                10*ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2575*ffem/fem,
                                 color: Color(0xff000000),
@@ -1323,7 +1323,7 @@ class Scene extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont (
                                 'Segoe Script',
-                                fontSize: 10*ffem,
+                                10*ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2575*ffem/fem,
                                 color: Color(0xffff2153),
@@ -1356,7 +1356,7 @@ class Scene extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: SafeGoogleFont (
                               'Segoe Script',
-                              fontSize: 10*ffem,
+                              10*ffem,
                               fontWeight: FontWeight.w700,
                               height: 1.2575*ffem/fem,
                               color: Color(0xff000000),

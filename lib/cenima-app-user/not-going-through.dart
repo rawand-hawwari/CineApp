@@ -49,7 +49,7 @@ class Scene extends StatelessWidget {
                     'We advice you to check your card details for accuracy\n\nsometimes just trying again solves the problem, if you keep having problems try adding another payment method.\n\nif none of this works you can always contact us for more personalized solutions.',
                     style: SafeGoogleFont (
                       'Segoe UI',
-                      fontSize: 20*ffem,
+                      20*ffem,
                       fontWeight: FontWeight.w400,
                       height: 1.2575*ffem/fem,
                       color: Color(0xff000000),
@@ -108,7 +108,7 @@ class Scene extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: SafeGoogleFont (
                           'Segoe UI',
-                          fontSize: 16.5*ffem,
+                          16.5*ffem,
                           fontWeight: FontWeight.w700,
                           height: 1.2575*ffem/fem,
                           color: Color(0xff000000),
@@ -185,7 +185,7 @@ class Scene extends StatelessWidget {
                             '9:41',
                             style: SafeGoogleFont (
                               'SF Pro Text',
-                              fontSize: 15*ffem,
+                              15*ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.4*ffem/fem,
                               letterSpacing: -0.3199999928*fem,

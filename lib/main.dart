@@ -1,10 +1,10 @@
-
 import 'package:flutter/material.dart';
-import 'package:myapp/utils.dart';
 // import 'package:myapp/cenima-app-user/home-page.dart';
 // import 'package:myapp/cenima-app-user/starter-1.dart';
+
+import 'cenima-app-user/starter.dart';
 // import 'package:myapp/cenima-app-user/food-menu-selection.dart';
-import 'package:myapp/cenima-app-user/rent-movie.dart';
+// import 'package:myapp/cenima-app-user/rent-movie.dart';
 
 // import 'package:myapp/cenima-app-user/help-payment-.dart';
 // import 'package:myapp/cenima-app-user/change-email-1.dart';
@@ -159,23 +159,38 @@ import 'package:myapp/cenima-app-user/rent-movie.dart';
 // import 'package:myapp/components/frame-6.dart';
 // import 'package:myapp/components/frame-29.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter',
-      debugShowCheckedModeBanner: false,
-      scrollBehavior: MyCustomScrollBehavior(),
+      title: 'Cine App Starter',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.pink,
       ),
-      home: const Scaffold(
-        body: SingleChildScrollView(
-          child: RentMovie(),
-        ),
-      ),
+      home: const MyHomePage(title: 'Cine app starter page'),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key, required this.title});
+  final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body:
+          // SingleChildScrollView(
+          Starter(),
     );
   }
 }

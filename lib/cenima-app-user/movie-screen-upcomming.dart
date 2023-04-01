@@ -81,7 +81,7 @@ class Scene extends StatelessWidget {
                     '3 Hours 12 Min',
                     style: SafeGoogleFont (
                       'Lucida Bright',
-                      fontSize: 20*ffem,
+                      20*ffem,
                       fontWeight: FontWeight.w400,
                       height: 1.2575*ffem/fem,
                       color: Color(0xffffffff),
@@ -116,7 +116,7 @@ class Scene extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: SafeGoogleFont (
                         'Segoe UI',
-                        fontSize: 23*ffem,
+                        23*ffem,
                         fontWeight: FontWeight.w700,
                         height: 1.2575*ffem/fem,
                         color: Color(0xffffffff),
@@ -162,7 +162,7 @@ class Scene extends StatelessWidget {
                                   textAlign: TextAlign.center,
                                   style: SafeGoogleFont (
                                     'Segoe UI',
-                                    fontSize: 22*ffem,
+                                    22*ffem,
                                     fontWeight: FontWeight.w700,
                                     height: 1.2575*ffem/fem,
                                     color: Color(0xff000000),
@@ -203,7 +203,7 @@ class Scene extends StatelessWidget {
                                   text: TextSpan(
                                     style: SafeGoogleFont (
                                       'Segoe UI',
-                                      fontSize: 15*ffem,
+                                      15*ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.330078125*ffem/fem,
                                       color: Color(0xffff1e60),
@@ -213,7 +213,7 @@ class Scene extends StatelessWidget {
                                         text: 'Jake Sully lives with his newfound family formed on the extrasolar moon Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Na\'vi race to protect their home.\n\n',
                                         style: SafeGoogleFont (
                                           'Lucida Bright',
-                                          fontSize: 15*ffem,
+                                          15*ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.2575*ffem/fem,
                                           color: Color(0xff464646),
@@ -223,7 +223,7 @@ class Scene extends StatelessWidget {
                                         text: 'Genres:-',
                                         style: SafeGoogleFont (
                                           'Lucida Bright',
-                                          fontSize: 15*ffem,
+                                          15*ffem,
                                           fontWeight: FontWeight.w600,
                                           height: 1.2575*ffem/fem,
                                           color: Color(0xff7e132b),
@@ -233,7 +233,7 @@ class Scene extends StatelessWidget {
                                         text: ' ',
                                         style: SafeGoogleFont (
                                           'Segoe UI',
-                                          fontSize: 15*ffem,
+                                          15*ffem,
                                           fontWeight: FontWeight.w700,
                                           height: 1.2575*ffem/fem,
                                           color: Color(0xff000000),
@@ -243,7 +243,7 @@ class Scene extends StatelessWidget {
                                         text: 'Action, Adventure, Fantasy\n',
                                         style: SafeGoogleFont (
                                           'Cambria',
-                                          fontSize: 15*ffem,
+                                          15*ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.2575*ffem/fem,
                                           color: Color(0xffff1e60),
@@ -253,7 +253,7 @@ class Scene extends StatelessWidget {
                                         text: '\n',
                                         style: SafeGoogleFont (
                                           'Segoe UI',
-                                          fontSize: 15*ffem,
+                                          15*ffem,
                                           fontWeight: FontWeight.w700,
                                           height: 1.2575*ffem/fem,
                                           color: Color(0xff000000),
@@ -263,7 +263,7 @@ class Scene extends StatelessWidget {
                                         text: 'Language:-\n\nRating:-\n',
                                         style: SafeGoogleFont (
                                           'Lucida Bright',
-                                          fontSize: 15*ffem,
+                                          15*ffem,
                                           fontWeight: FontWeight.w600,
                                           height: 1.2575*ffem/fem,
                                           color: Color(0xff7e132b),
@@ -273,7 +273,7 @@ class Scene extends StatelessWidget {
                                         text: '\n',
                                         style: SafeGoogleFont (
                                           'Segoe UI',
-                                          fontSize: 15*ffem,
+                                          15*ffem,
                                           fontWeight: FontWeight.w700,
                                           height: 1.2575*ffem/fem,
                                           color: Color(0xff000000),
@@ -283,7 +283,7 @@ class Scene extends StatelessWidget {
                                         text: 'Director:-',
                                         style: SafeGoogleFont (
                                           'Lucida Bright',
-                                          fontSize: 15*ffem,
+                                          15*ffem,
                                           fontWeight: FontWeight.w600,
                                           height: 1.2575*ffem/fem,
                                           color: Color(0xff7e132b),
@@ -293,7 +293,7 @@ class Scene extends StatelessWidget {
                                         text: ' ',
                                         style: SafeGoogleFont (
                                           'Segoe UI',
-                                          fontSize: 15*ffem,
+                                          15*ffem,
                                           fontWeight: FontWeight.w700,
                                           height: 1.2575*ffem/fem,
                                           color: Color(0xff000000),
@@ -303,7 +303,7 @@ class Scene extends StatelessWidget {
                                         text: 'James Cameron\n\n',
                                         style: SafeGoogleFont (
                                           'Segoe UI',
-                                          fontSize: 15*ffem,
+                                          15*ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.2575*ffem/fem,
                                           color: Color(0xff000000),
@@ -313,7 +313,7 @@ class Scene extends StatelessWidget {
                                         text: 'Writers:- ',
                                         style: SafeGoogleFont (
                                           'Lucida Bright',
-                                          fontSize: 15*ffem,
+                                          15*ffem,
                                           fontWeight: FontWeight.w600,
                                           height: 1.2575*ffem/fem,
                                           color: Color(0xff7e132b),
@@ -323,7 +323,7 @@ class Scene extends StatelessWidget {
                                         text: 'James Cameron- Rick Jaffa - Amanda Silver\n \n',
                                         style: SafeGoogleFont (
                                           'Segoe UI',
-                                          fontSize: 15*ffem,
+                                          15*ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.2575*ffem/fem,
                                           color: Color(0xffff1e60),
@@ -333,7 +333,7 @@ class Scene extends StatelessWidget {
                                         text: 'Stars:-',
                                         style: SafeGoogleFont (
                                           'Lucida Bright',
-                                          fontSize: 15*ffem,
+                                          15*ffem,
                                           fontWeight: FontWeight.w600,
                                           height: 1.2575*ffem/fem,
                                           color: Color(0xff7e132b),
@@ -343,7 +343,7 @@ class Scene extends StatelessWidget {
                                         text: ' ',
                                         style: SafeGoogleFont (
                                           'Segoe UI',
-                                          fontSize: 15*ffem,
+                                          15*ffem,
                                           fontWeight: FontWeight.w700,
                                           height: 1.2575*ffem/fem,
                                           color: Color(0xff000000),
@@ -353,7 +353,7 @@ class Scene extends StatelessWidget {
                                         text: 'Sam Worthington- Zoe Saldana- Sigourney Weaver\n\n',
                                         style: SafeGoogleFont (
                                           'Segoe UI',
-                                          fontSize: 15*ffem,
+                                          15*ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.2575*ffem/fem,
                                           color: Color(0xff000000),
@@ -381,7 +381,7 @@ class Scene extends StatelessWidget {
                                   'English',
                                   style: SafeGoogleFont (
                                     'Lucida Bright',
-                                    fontSize: 16.5271606445*ffem,
+                                    16.5271606445*ffem,
                                     fontWeight: FontWeight.w400,
                                     height: 1.2575*ffem/fem,
                                     color: Color(0xffffffff),
@@ -413,7 +413,7 @@ class Scene extends StatelessWidget {
                     'PG-13',
                     style: SafeGoogleFont (
                       'Lucida Bright',
-                      fontSize: 22.0362129211*ffem,
+                      22.0362129211*ffem,
                       fontWeight: FontWeight.w600,
                       height: 1.2575*ffem/fem,
                       color: Color(0xffffffff),
@@ -462,7 +462,7 @@ class Scene extends StatelessWidget {
                             '9:41',
                             style: SafeGoogleFont (
                               'SF Pro Text',
-                              fontSize: 15*ffem,
+                              15*ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.4*ffem/fem,
                               letterSpacing: -0.3199999928*fem,

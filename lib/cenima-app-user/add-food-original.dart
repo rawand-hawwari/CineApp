@@ -88,7 +88,7 @@ class Scene extends StatelessWidget {
                                               'Fried chicken',
                                               style: SafeGoogleFont (
                                                 'Cambria',
-                                                fontSize: 20*ffem,
+                                                20*ffem,
                                                 fontWeight: FontWeight.w700,
                                                 height: 1.2575*ffem/fem,
                                                 color: Color(0xff000000),
@@ -115,7 +115,7 @@ class Scene extends StatelessWidget {
                                                 'ADD',
                                                 style: SafeGoogleFont (
                                                   'Lucida Bright',
-                                                  fontSize: 14*ffem,
+                                                  14*ffem,
                                                   fontWeight: FontWeight.w600,
                                                   height: 1.2575*ffem/fem,
                                                   color: Color(0xffffffff),
@@ -182,7 +182,7 @@ class Scene extends StatelessWidget {
                                                       'Popcorn',
                                                       style: SafeGoogleFont (
                                                         'Cambria',
-                                                        fontSize: 20*ffem,
+                                                        20*ffem,
                                                         fontWeight: FontWeight.w700,
                                                         height: 1.2575*ffem/fem,
                                                         color: Color(0xff000000),
@@ -216,7 +216,7 @@ class Scene extends StatelessWidget {
                                                   'ADD',
                                                   style: SafeGoogleFont (
                                                     'Lucida Bright',
-                                                    fontSize: 14*ffem,
+                                                    14*ffem,
                                                     fontWeight: FontWeight.w600,
                                                     height: 1.2575*ffem/fem,
                                                     color: Color(0xffffffff),
@@ -272,7 +272,7 @@ class Scene extends StatelessWidget {
                                                       'Nachos',
                                                       style: SafeGoogleFont (
                                                         'Cambria',
-                                                        fontSize: 20*ffem,
+                                                        20*ffem,
                                                         fontWeight: FontWeight.w700,
                                                         height: 1.2575*ffem/fem,
                                                         color: Color(0xff000000),
@@ -321,7 +321,7 @@ class Scene extends StatelessWidget {
                                                       'Pizza',
                                                       style: SafeGoogleFont (
                                                         'Cambria',
-                                                        fontSize: 20*ffem,
+                                                        20*ffem,
                                                         fontWeight: FontWeight.w700,
                                                         height: 1.2575*ffem/fem,
                                                         color: Color(0xff000000),
@@ -370,7 +370,7 @@ class Scene extends StatelessWidget {
                                                       'Spring Rolls',
                                                       style: SafeGoogleFont (
                                                         'Cambria',
-                                                        fontSize: 20*ffem,
+                                                        20*ffem,
                                                         fontWeight: FontWeight.w700,
                                                         height: 1.2575*ffem/fem,
                                                         color: Color(0xff000000),
@@ -420,7 +420,7 @@ class Scene extends StatelessWidget {
                                                       'French Fries',
                                                       style: SafeGoogleFont (
                                                         'Cambria',
-                                                        fontSize: 20*ffem,
+                                                        20*ffem,
                                                         fontWeight: FontWeight.w700,
                                                         height: 1.2575*ffem/fem,
                                                         color: Color(0xff000000),
@@ -470,7 +470,7 @@ class Scene extends StatelessWidget {
                                                       'Potato Chips',
                                                       style: SafeGoogleFont (
                                                         'Cambria',
-                                                        fontSize: 20*ffem,
+                                                        20*ffem,
                                                         fontWeight: FontWeight.w700,
                                                         height: 1.2575*ffem/fem,
                                                         color: Color(0xff000000),
@@ -514,7 +514,7 @@ class Scene extends StatelessWidget {
                                                         'ADD',
                                                         style: SafeGoogleFont (
                                                           'Lucida Bright',
-                                                          fontSize: 14*ffem,
+                                                          14*ffem,
                                                           fontWeight: FontWeight.w600,
                                                           height: 1.2575*ffem/fem,
                                                           color: Color(0xffd2d2d2),
@@ -545,7 +545,7 @@ class Scene extends StatelessWidget {
                                                         'ADD',
                                                         style: SafeGoogleFont (
                                                           'Lucida Bright',
-                                                          fontSize: 14*ffem,
+                                                          14*ffem,
                                                           fontWeight: FontWeight.w600,
                                                           height: 1.2575*ffem/fem,
                                                           color: Color(0xffd2d2d2),
@@ -576,7 +576,7 @@ class Scene extends StatelessWidget {
                                                         'ADD',
                                                         style: SafeGoogleFont (
                                                           'Lucida Bright',
-                                                          fontSize: 14*ffem,
+                                                          14*ffem,
                                                           fontWeight: FontWeight.w600,
                                                           height: 1.2575*ffem/fem,
                                                           color: Color(0xffd2d2d2),
@@ -607,7 +607,7 @@ class Scene extends StatelessWidget {
                                                         'ADD',
                                                         style: SafeGoogleFont (
                                                           'Lucida Bright',
-                                                          fontSize: 14*ffem,
+                                                          14*ffem,
                                                           fontWeight: FontWeight.w600,
                                                           height: 1.2575*ffem/fem,
                                                           color: Color(0xffd2d2d2),
@@ -638,7 +638,7 @@ class Scene extends StatelessWidget {
                                                         'ADD',
                                                         style: SafeGoogleFont (
                                                           'Lucida Bright',
-                                                          fontSize: 14*ffem,
+                                                          14*ffem,
                                                           fontWeight: FontWeight.w600,
                                                           height: 1.2575*ffem/fem,
                                                           color: Color(0xffd2d2d2),
@@ -726,7 +726,7 @@ class Scene extends StatelessWidget {
                                         'Soft Drinks',
                                         style: SafeGoogleFont (
                                           'Cambria',
-                                          fontSize: 20*ffem,
+                                          20*ffem,
                                           fontWeight: FontWeight.w700,
                                           height: 1.2575*ffem/fem,
                                           color: Color(0xff000000),
@@ -777,7 +777,7 @@ class Scene extends StatelessWidget {
                                         'Juice',
                                         style: SafeGoogleFont (
                                           'Cambria',
-                                          fontSize: 20*ffem,
+                                          20*ffem,
                                           fontWeight: FontWeight.w700,
                                           height: 1.2575*ffem/fem,
                                           color: Color(0xff000000),
@@ -827,7 +827,7 @@ class Scene extends StatelessWidget {
                                         'Slush',
                                         style: SafeGoogleFont (
                                           'Cambria',
-                                          fontSize: 20*ffem,
+                                          20*ffem,
                                           fontWeight: FontWeight.w700,
                                           height: 1.2575*ffem/fem,
                                           color: Color(0xff000000),
@@ -878,7 +878,7 @@ class Scene extends StatelessWidget {
                                         'Iced Tea',
                                         style: SafeGoogleFont (
                                           'Cambria',
-                                          fontSize: 20*ffem,
+                                          20*ffem,
                                           fontWeight: FontWeight.w700,
                                           height: 1.2575*ffem/fem,
                                           color: Color(0xff000000),
@@ -912,7 +912,7 @@ class Scene extends StatelessWidget {
                                     'ADD',
                                     style: SafeGoogleFont (
                                       'Lucida Bright',
-                                      fontSize: 14*ffem,
+                                      14*ffem,
                                       fontWeight: FontWeight.w600,
                                       height: 1.2575*ffem/fem,
                                       color: Color(0xffd2d2d2),
@@ -944,7 +944,7 @@ class Scene extends StatelessWidget {
                                     'ADD',
                                     style: SafeGoogleFont (
                                       'Lucida Bright',
-                                      fontSize: 14*ffem,
+                                      14*ffem,
                                       fontWeight: FontWeight.w600,
                                       height: 1.2575*ffem/fem,
                                       color: Color(0xffd2d2d2),
@@ -976,7 +976,7 @@ class Scene extends StatelessWidget {
                                     'ADD',
                                     style: SafeGoogleFont (
                                       'Lucida Bright',
-                                      fontSize: 14*ffem,
+                                      14*ffem,
                                       fontWeight: FontWeight.w600,
                                       height: 1.2575*ffem/fem,
                                       color: Color(0xffd2d2d2),
@@ -1059,7 +1059,7 @@ class Scene extends StatelessWidget {
                                                       'Extra Gum Peppermint Chewing Gum\n',
                                                       style: SafeGoogleFont (
                                                         'Cambria',
-                                                        fontSize: 15*ffem,
+                                                        15*ffem,
                                                         fontWeight: FontWeight.w700,
                                                         height: 1.2575*ffem/fem,
                                                         color: Color(0xff000000),
@@ -1115,7 +1115,7 @@ class Scene extends StatelessWidget {
                                                             'KIT KAT Milk Chocolate Wafer Candy',
                                                             style: SafeGoogleFont (
                                                               'Cambria',
-                                                              fontSize: 15*ffem,
+                                                              15*ffem,
                                                               fontWeight: FontWeight.w700,
                                                               height: 1.2575*ffem/fem,
                                                               color: Color(0xff000000),
@@ -1142,7 +1142,7 @@ class Scene extends StatelessWidget {
                                                               'ADD',
                                                               style: SafeGoogleFont (
                                                                 'Lucida Bright',
-                                                                fontSize: 14*ffem,
+                                                                14*ffem,
                                                                 fontWeight: FontWeight.w600,
                                                                 height: 1.2575*ffem/fem,
                                                                 color: Color(0xffd2d2d2),
@@ -1202,7 +1202,7 @@ class Scene extends StatelessWidget {
                                                             'Twix Full Size Caramel Chocolate Cookie Candy Bar',
                                                             style: SafeGoogleFont (
                                                               'Cambria',
-                                                              fontSize: 15*ffem,
+                                                              15*ffem,
                                                               fontWeight: FontWeight.w700,
                                                               height: 1.2575*ffem/fem,
                                                               color: Color(0xff000000),
@@ -1229,7 +1229,7 @@ class Scene extends StatelessWidget {
                                                               'ADD',
                                                               style: SafeGoogleFont (
                                                                 'Lucida Bright',
-                                                                fontSize: 14*ffem,
+                                                                14*ffem,
                                                                 fontWeight: FontWeight.w600,
                                                                 height: 1.2575*ffem/fem,
                                                                 color: Color(0xffd2d2d2),
@@ -1289,7 +1289,7 @@ class Scene extends StatelessWidget {
                                                             'M&M\'S Milk Chocolate Candy',
                                                             style: SafeGoogleFont (
                                                               'Cambria',
-                                                              fontSize: 20*ffem,
+                                                              20*ffem,
                                                               fontWeight: FontWeight.w700,
                                                               height: 1.2575*ffem/fem,
                                                               color: Color(0xff000000),
@@ -1316,7 +1316,7 @@ class Scene extends StatelessWidget {
                                                               'ADD',
                                                               style: SafeGoogleFont (
                                                                 'Lucida Bright',
-                                                                fontSize: 14*ffem,
+                                                                14*ffem,
                                                                 fontWeight: FontWeight.w600,
                                                                 height: 1.2575*ffem/fem,
                                                                 color: Color(0xffd2d2d2),
@@ -1376,7 +1376,7 @@ class Scene extends StatelessWidget {
                                                             'EXTRA Gum Sweet Watermelon Sugarfree Chewing Gum',
                                                             style: SafeGoogleFont (
                                                               'Cambria',
-                                                              fontSize: 15*ffem,
+                                                              15*ffem,
                                                               fontWeight: FontWeight.w700,
                                                               height: 1.2575*ffem/fem,
                                                               color: Color(0xff000000),
@@ -1403,7 +1403,7 @@ class Scene extends StatelessWidget {
                                                               'ADD',
                                                               style: SafeGoogleFont (
                                                                 'Lucida Bright',
-                                                                fontSize: 14*ffem,
+                                                                14*ffem,
                                                                 fontWeight: FontWeight.w600,
                                                                 height: 1.2575*ffem/fem,
                                                                 color: Color(0xffd2d2d2),
@@ -1463,7 +1463,7 @@ class Scene extends StatelessWidget {
                                                             'SNICKERS Full Size Bulk Milk Chocolate Candy Bars',
                                                             style: SafeGoogleFont (
                                                               'Cambria',
-                                                              fontSize: 15*ffem,
+                                                              15*ffem,
                                                               fontWeight: FontWeight.w700,
                                                               height: 1.2575*ffem/fem,
                                                               color: Color(0xff000000),
@@ -1490,7 +1490,7 @@ class Scene extends StatelessWidget {
                                                               'ADD',
                                                               style: SafeGoogleFont (
                                                                 'Lucida Bright',
-                                                                fontSize: 14*ffem,
+                                                                14*ffem,
                                                                 fontWeight: FontWeight.w600,
                                                                 height: 1.2575*ffem/fem,
                                                                 color: Color(0xffd2d2d2),
@@ -1554,7 +1554,7 @@ class Scene extends StatelessWidget {
                                                       'M&M\'S, SNICKERS, 3 MUSKETEERS, SKITTLES & STARBURST Full Size Chocolate Candy Variety Mix 56 Ounce 30-Count Box',
                                                       style: SafeGoogleFont (
                                                         'Cambria',
-                                                        fontSize: 15*ffem,
+                                                        15*ffem,
                                                         fontWeight: FontWeight.w700,
                                                         height: 1.2575*ffem/fem,
                                                         color: Color(0xff000000),
@@ -1582,7 +1582,7 @@ class Scene extends StatelessWidget {
                                                         'ADD',
                                                         style: SafeGoogleFont (
                                                           'Lucida Bright',
-                                                          fontSize: 14*ffem,
+                                                          14*ffem,
                                                           fontWeight: FontWeight.w600,
                                                           height: 1.2575*ffem/fem,
                                                           color: Color(0xffd2d2d2),
@@ -1651,7 +1651,7 @@ class Scene extends StatelessWidget {
                                                             'REESE\'S PIECES Candy, Peanut Butter Candy',
                                                             style: SafeGoogleFont (
                                                               'Cambria',
-                                                              fontSize: 15*ffem,
+                                                              15*ffem,
                                                               fontWeight: FontWeight.w700,
                                                               height: 1.2575*ffem/fem,
                                                               color: Color(0xff000000),
@@ -1678,7 +1678,7 @@ class Scene extends StatelessWidget {
                                                               'ADD',
                                                               style: SafeGoogleFont (
                                                                 'Lucida Bright',
-                                                                fontSize: 14*ffem,
+                                                                14*ffem,
                                                                 fontWeight: FontWeight.w600,
                                                                 height: 1.2575*ffem/fem,
                                                                 color: Color(0xffd2d2d2),
@@ -1738,7 +1738,7 @@ class Scene extends StatelessWidget {
                                                             'HERSHEY\'S Milk Chocolate XL Candy, Bulk Gluten Free',
                                                             style: SafeGoogleFont (
                                                               'Cambria',
-                                                              fontSize: 15*ffem,
+                                                              15*ffem,
                                                               fontWeight: FontWeight.w700,
                                                               height: 1.2575*ffem/fem,
                                                               color: Color(0xff000000),
@@ -1765,7 +1765,7 @@ class Scene extends StatelessWidget {
                                                               'ADD',
                                                               style: SafeGoogleFont (
                                                                 'Lucida Bright',
-                                                                fontSize: 14*ffem,
+                                                                14*ffem,
                                                                 fontWeight: FontWeight.w600,
                                                                 height: 1.2575*ffem/fem,
                                                                 color: Color(0xffd2d2d2),
@@ -1825,7 +1825,7 @@ class Scene extends StatelessWidget {
                                                             'WHOPPERS Malted Milk Balls Candy',
                                                             style: SafeGoogleFont (
                                                               'Cambria',
-                                                              fontSize: 15*ffem,
+                                                              15*ffem,
                                                               fontWeight: FontWeight.w700,
                                                               height: 1.2575*ffem/fem,
                                                               color: Color(0xff000000),
@@ -1852,7 +1852,7 @@ class Scene extends StatelessWidget {
                                                               'ADD',
                                                               style: SafeGoogleFont (
                                                                 'Lucida Bright',
-                                                                fontSize: 14*ffem,
+                                                                14*ffem,
                                                                 fontWeight: FontWeight.w600,
                                                                 height: 1.2575*ffem/fem,
                                                                 color: Color(0xffd2d2d2),
@@ -1893,7 +1893,7 @@ class Scene extends StatelessWidget {
                                             'ADD',
                                             style: SafeGoogleFont (
                                               'Lucida Bright',
-                                              fontSize: 14*ffem,
+                                              14*ffem,
                                               fontWeight: FontWeight.w600,
                                               height: 1.2575*ffem/fem,
                                               color: Color(0xffffffff),
@@ -1945,7 +1945,7 @@ class Scene extends StatelessWidget {
                                   textAlign: TextAlign.center,
                                   style: SafeGoogleFont (
                                     'Lucida Bright',
-                                    fontSize: 20*ffem,
+                                    20*ffem,
                                     fontWeight: FontWeight.w400,
                                     height: 1.2575*ffem/fem,
                                     color: Color(0xffff1e60),
@@ -1972,7 +1972,7 @@ class Scene extends StatelessWidget {
                                     textAlign: TextAlign.center,
                                     style: SafeGoogleFont (
                                       'Lucida Bright',
-                                      fontSize: 20*ffem,
+                                      20*ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.2575*ffem/fem,
                                       color: Color(0xff464646),
@@ -2000,7 +2000,7 @@ class Scene extends StatelessWidget {
                                     textAlign: TextAlign.center,
                                     style: SafeGoogleFont (
                                       'Lucida Bright',
-                                      fontSize: 20*ffem,
+                                      20*ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.2575*ffem/fem,
                                       color: Color(0xff464646),
@@ -2036,7 +2036,7 @@ class Scene extends StatelessWidget {
                             'ADD',
                             style: SafeGoogleFont (
                               'Lucida Bright',
-                              fontSize: 14*ffem,
+                              14*ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.2575*ffem/fem,
                               color: Color(0xffffffff),
@@ -2127,7 +2127,7 @@ class Scene extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: SafeGoogleFont (
                       'Lucida Bright',
-                      fontSize: 22*ffem,
+                      22*ffem,
                       fontWeight: FontWeight.w600,
                       height: 1.2575*ffem/fem,
                       color: Color(0xff4b4a4a),
@@ -2149,7 +2149,7 @@ class Scene extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: SafeGoogleFont (
                       'Lucida Bright',
-                      fontSize: 13*ffem,
+                      13*ffem,
                       fontWeight: FontWeight.w600,
                       height: 1.2575*ffem/fem,
                       color: Color(0xff797979),
@@ -2203,7 +2203,7 @@ class Scene extends StatelessWidget {
                                           'Tickets',
                                           style: SafeGoogleFont (
                                             'Lucida Bright',
-                                            fontSize: 18*ffem,
+                                            18*ffem,
                                             fontWeight: FontWeight.w600,
                                             height: 1.2575*ffem/fem,
                                             color: Color(0xff7e132b),
@@ -2224,7 +2224,7 @@ class Scene extends StatelessWidget {
                                                 text: TextSpan(
                                                   style: SafeGoogleFont (
                                                     'Segoe UI',
-                                                    fontSize: 14*ffem,
+                                                    14*ffem,
                                                     fontWeight: FontWeight.w300,
                                                     height: 1.2575*ffem/fem,
                                                     fontStyle: FontStyle.italic,
@@ -2235,7 +2235,7 @@ class Scene extends StatelessWidget {
                                                       text: '0 Standard tic',
                                                       style: SafeGoogleFont (
                                                         'Segoe UI',
-                                                        fontSize: 14*ffem,
+                                                        14*ffem,
                                                         fontWeight: FontWeight.w300,
                                                         height: 1.2575*ffem/fem,
                                                         fontStyle: FontStyle.italic,
@@ -2256,7 +2256,7 @@ class Scene extends StatelessWidget {
                                                 '00.00 JOD',
                                                 style: SafeGoogleFont (
                                                   'Segoe UI',
-                                                  fontSize: 14*ffem,
+                                                  14*ffem,
                                                   fontWeight: FontWeight.w300,
                                                   height: 1.2575*ffem/fem,
                                                   fontStyle: FontStyle.italic,
@@ -2281,7 +2281,7 @@ class Scene extends StatelessWidget {
                                                 '0 Prime ticket',
                                                 style: SafeGoogleFont (
                                                   'Segoe UI',
-                                                  fontSize: 14*ffem,
+                                                  14*ffem,
                                                   fontWeight: FontWeight.w300,
                                                   height: 1.2575*ffem/fem,
                                                   fontStyle: FontStyle.italic,
@@ -2296,7 +2296,7 @@ class Scene extends StatelessWidget {
                                                 '00.00 JOD',
                                                 style: SafeGoogleFont (
                                                   'Segoe UI',
-                                                  fontSize: 14*ffem,
+                                                  14*ffem,
                                                   fontWeight: FontWeight.w300,
                                                   height: 1.2575*ffem/fem,
                                                   fontStyle: FontStyle.italic,
@@ -2326,7 +2326,7 @@ class Scene extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont (
                                           'Lucida Bright',
-                                          fontSize: 16*ffem,
+                                          16*ffem,
                                           fontWeight: FontWeight.w600,
                                           height: 1.2575*ffem/fem,
                                           color: Color(0xff9e9e9e),
@@ -2340,7 +2340,7 @@ class Scene extends StatelessWidget {
                                         '00.00 JOD',
                                         style: SafeGoogleFont (
                                           'Segoe UI',
-                                          fontSize: 16*ffem,
+                                          16*ffem,
                                           fontWeight: FontWeight.w300,
                                           height: 1.2575*ffem/fem,
                                           fontStyle: FontStyle.italic,
@@ -2407,7 +2407,7 @@ class Scene extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont (
                                           'Lucida Bright',
-                                          fontSize: 16*ffem,
+                                          16*ffem,
                                           fontWeight: FontWeight.w600,
                                           height: 1.2575*ffem/fem,
                                           color: Color(0xff9e9e9e),
@@ -2420,7 +2420,7 @@ class Scene extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Lucida Bright',
-                                        fontSize: 18*ffem,
+                                        18*ffem,
                                         fontWeight: FontWeight.w600,
                                         height: 1.2575*ffem/fem,
                                         color: Color(0xff777777),
@@ -2474,7 +2474,7 @@ class Scene extends StatelessWidget {
                                 textAlign: TextAlign.center,
                                 style: SafeGoogleFont (
                                   'Lucida Bright',
-                                  fontSize: 19.8325920105*ffem,
+                                  19.8325920105*ffem,
                                   fontWeight: FontWeight.w600,
                                   height: 1.2575*ffem/fem,
                                   color: Color(0xffffffff),
@@ -2529,7 +2529,7 @@ class Scene extends StatelessWidget {
                             '9:41',
                             style: SafeGoogleFont (
                               'SF Pro Text',
-                              fontSize: 15*ffem,
+                              15*ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.4*ffem/fem,
                               letterSpacing: -0.3199999928*fem,

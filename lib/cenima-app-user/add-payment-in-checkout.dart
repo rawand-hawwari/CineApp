@@ -74,7 +74,7 @@ class Scene extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: SafeGoogleFont (
                       'Lucida Bright',
-                      fontSize: 22*ffem,
+                      22*ffem,
                       fontWeight: FontWeight.w600,
                       height: 1.2575*ffem/fem,
                       color: Color(0xff4b4a4a),
@@ -95,7 +95,7 @@ class Scene extends StatelessWidget {
                     text: TextSpan(
                       style: SafeGoogleFont (
                         'Segoe UI',
-                        fontSize: 16*ffem,
+                        16*ffem,
                         fontWeight: FontWeight.w300,
                         height: 1.2575*ffem/fem,
                         fontStyle: FontStyle.italic,
@@ -106,7 +106,7 @@ class Scene extends StatelessWidget {
                           text: 'Save for futur',
                           style: SafeGoogleFont (
                             'Segoe UI',
-                            fontSize: 16*ffem,
+                            16*ffem,
                             fontWeight: FontWeight.w300,
                             height: 1.2575*ffem/fem,
                             fontStyle: FontStyle.italic,
@@ -200,7 +200,7 @@ class Scene extends StatelessWidget {
                               'Card number',
                               style: SafeGoogleFont (
                                 'Segoe UI',
-                                fontSize: 16*ffem,
+                                16*ffem,
                                 fontWeight: FontWeight.w300,
                                 height: 1.2575*ffem/fem,
                                 fontStyle: FontStyle.italic,
@@ -222,7 +222,7 @@ class Scene extends StatelessWidget {
                               '0000 0000 0000 0000',
                               style: SafeGoogleFont (
                                 'Segoe UI',
-                                fontSize: 16*ffem,
+                                16*ffem,
                                 fontWeight: FontWeight.w300,
                                 height: 1.2575*ffem/fem,
                                 fontStyle: FontStyle.italic,
@@ -249,7 +249,7 @@ class Scene extends StatelessWidget {
                                   'Expiry date',
                                   style: SafeGoogleFont (
                                     'Segoe UI',
-                                    fontSize: 16*ffem,
+                                    16*ffem,
                                     fontWeight: FontWeight.w300,
                                     height: 1.2575*ffem/fem,
                                     fontStyle: FontStyle.italic,
@@ -262,7 +262,7 @@ class Scene extends StatelessWidget {
                                 'Cvv',
                                 style: SafeGoogleFont (
                                   'Segoe UI',
-                                  fontSize: 16*ffem,
+                                  16*ffem,
                                   fontWeight: FontWeight.w300,
                                   height: 1.2575*ffem/fem,
                                   fontStyle: FontStyle.italic,
@@ -290,7 +290,7 @@ class Scene extends StatelessWidget {
                                   '00 / 00',
                                   style: SafeGoogleFont (
                                     'Segoe UI',
-                                    fontSize: 16*ffem,
+                                    16*ffem,
                                     fontWeight: FontWeight.w300,
                                     height: 1.2575*ffem/fem,
                                     fontStyle: FontStyle.italic,
@@ -303,7 +303,7 @@ class Scene extends StatelessWidget {
                                 '000',
                                 style: SafeGoogleFont (
                                   'Segoe UI',
-                                  fontSize: 16*ffem,
+                                  16*ffem,
                                   fontWeight: FontWeight.w300,
                                   height: 1.2575*ffem/fem,
                                   fontStyle: FontStyle.italic,
@@ -371,7 +371,7 @@ class Scene extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: SafeGoogleFont (
                           'Lucida Bright',
-                          fontSize: 19.8325920105*ffem,
+                          19.8325920105*ffem,
                           fontWeight: FontWeight.w600,
                           height: 1.2575*ffem/fem,
                           color: Color(0xffffffff),
@@ -422,7 +422,7 @@ class Scene extends StatelessWidget {
                             '9:41',
                             style: SafeGoogleFont (
                               'SF Pro Text',
-                              fontSize: 15*ffem,
+                              15*ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.4*ffem/fem,
                               letterSpacing: -0.3199999928*fem,

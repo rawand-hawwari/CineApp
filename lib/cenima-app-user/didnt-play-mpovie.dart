@@ -49,7 +49,7 @@ class Scene extends StatelessWidget {
                     'In an event that there\'s an error in schedules, or a show have been canceled, you can contact us for a refund\nit takes around 3 threes for your problem to be processed',
                     style: SafeGoogleFont (
                       'Segoe UI',
-                      fontSize: 20*ffem,
+                      20*ffem,
                       fontWeight: FontWeight.w400,
                       height: 1.2575*ffem/fem,
                       color: Color(0xff000000),
@@ -108,7 +108,7 @@ class Scene extends StatelessWidget {
                         text: TextSpan(
                           style: SafeGoogleFont (
                             'Segoe UI',
-                            fontSize: 20*ffem,
+                            20*ffem,
                             fontWeight: FontWeight.w700,
                             height: 1.330078125*ffem/fem,
                             color: Color(0xff000000),
@@ -118,7 +118,7 @@ class Scene extends StatelessWidget {
                               text: 'THE CINEMA D',
                               style: SafeGoogleFont (
                                 'Segoe UI',
-                                fontSize: 16.5*ffem,
+                                16.5*ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2575*ffem/fem,
                                 color: Color(0xff000000),
@@ -128,7 +128,7 @@ class Scene extends StatelessWidget {
                               text: 'IDN\'T PLAY THE MOVIE',
                               style: SafeGoogleFont (
                                 'Segoe UI',
-                                fontSize: 16.5*ffem,
+                                16.5*ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2575*ffem/fem,
                                 color: Color(0xff000000),
@@ -208,7 +208,7 @@ class Scene extends StatelessWidget {
                             '9:41',
                             style: SafeGoogleFont (
                               'SF Pro Text',
-                              fontSize: 15*ffem,
+                              15*ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.4*ffem/fem,
                               letterSpacing: -0.3199999928*fem,

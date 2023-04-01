@@ -70,7 +70,7 @@ class Scene extends StatelessWidget {
                                   textAlign: TextAlign.center,
                                   style: SafeGoogleFont (
                                     'Tw Cen MT',
-                                    fontSize: 19*ffem,
+                                    19*ffem,
                                     fontWeight: FontWeight.w400,
                                     height: 1.2575*ffem/fem,
                                     color: Color(0xff5d5d5d),
@@ -91,7 +91,7 @@ class Scene extends StatelessWidget {
                                   'This List is empty',
                                   style: SafeGoogleFont (
                                     'Tw Cen MT',
-                                    fontSize: 30*ffem,
+                                    30*ffem,
                                     fontWeight: FontWeight.w400,
                                     height: 1.2575*ffem/fem,
                                     color: Color(0xffff1e60),
@@ -130,7 +130,7 @@ class Scene extends StatelessWidget {
                               'START RENTING',
                               style: SafeGoogleFont (
                                 'Lucida Bright',
-                                fontSize: 16*ffem,
+                                16*ffem,
                                 fontWeight: FontWeight.w600,
                                 height: 1.2575*ffem/fem,
                                 color: Color(0xffffffff),
@@ -201,7 +201,7 @@ class Scene extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: SafeGoogleFont (
                           'Segoe UI',
-                          fontSize: 20*ffem,
+                          20*ffem,
                           fontWeight: FontWeight.w700,
                           height: 1.2575*ffem/fem,
                           color: Color(0xff000000),
@@ -262,7 +262,7 @@ class Scene extends StatelessWidget {
                             '9:41',
                             style: SafeGoogleFont (
                               'SF Pro Text',
-                              fontSize: 15*ffem,
+                              15*ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.4*ffem/fem,
                               letterSpacing: -0.3199999928*fem,

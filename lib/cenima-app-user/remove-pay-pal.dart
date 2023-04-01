@@ -43,8 +43,8 @@ class Scene extends StatelessWidget {
                     child: Text(
                       'Are you sure you want to\nUnlink this Account?',
                       textAlign: TextAlign.center,
-                      style: SafeGoogleFont (
-                        'Lucida Bright',
+                      style: 
+                         GoogleFonts.caveat(
                         fontSize: 21*ffem,
                         fontWeight: FontWeight.w600,
                         height: 1.2575*ffem/fem,
@@ -84,8 +84,7 @@ class Scene extends StatelessWidget {
               margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 24*fem, 87*fem),
               child: Text(
                 'This action cannot be undone',
-                style: SafeGoogleFont (
-                  'Cambria',
+                style: GoogleFonts.lato(
                   fontSize: 15*ffem,
                   fontWeight: FontWeight.w400,
                   height: 1.2575*ffem/fem,
@@ -126,8 +125,8 @@ class Scene extends StatelessWidget {
                         child: Center(
                           child: Text(
                             'CANCEL',
-                            style: SafeGoogleFont (
-                              'Lucida Bright',
+                            style: 
+                               GoogleFonts.caveat(
                               fontSize: 17.6289710999*ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.2575*ffem/fem,
@@ -161,8 +160,8 @@ class Scene extends StatelessWidget {
                       child: Center(
                         child: Text(
                           'CONFIRM',
-                          style: SafeGoogleFont (
-                            'Lucida Bright',
+                          style: 
+                             GoogleFonts.caveat(
                             fontSize: 17.6289710999*ffem,
                             fontWeight: FontWeight.w600,
                             height: 1.2575*ffem/fem,

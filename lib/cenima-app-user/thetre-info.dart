@@ -64,7 +64,7 @@ class Scene extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: SafeGoogleFont (
                           'Lucida Bright',
-                          fontSize: 19.8325920105*ffem,
+                          19.8325920105*ffem,
                           fontWeight: FontWeight.w600,
                           height: 1.2575*ffem/fem,
                           color: Color(0xffffffff),
@@ -87,7 +87,7 @@ class Scene extends StatelessWidget {
                     'First cinema\n\n\n ',
                     style: SafeGoogleFont (
                       'Lucida Bright',
-                      fontSize: 20*ffem,
+                      20*ffem,
                       fontWeight: FontWeight.w400,
                       height: 1.2575*ffem/fem,
                       color: Color(0xff000000),
@@ -108,7 +108,7 @@ class Scene extends StatelessWidget {
                     'Firstcinema@gmail.com\n\n\n ',
                     style: SafeGoogleFont (
                       'Lucida Bright',
-                      fontSize: 20*ffem,
+                      20*ffem,
                       fontWeight: FontWeight.w400,
                       height: 1.2575*ffem/fem,
                       color: Color(0xff000000),
@@ -129,7 +129,7 @@ class Scene extends StatelessWidget {
                     '000 000 000 000',
                     style: SafeGoogleFont (
                       'Lucida Bright',
-                      fontSize: 20*ffem,
+                      20*ffem,
                       fontWeight: FontWeight.w400,
                       height: 1.2575*ffem/fem,
                       color: Color(0xff000000),
@@ -150,7 +150,7 @@ class Scene extends StatelessWidget {
                     'Greenlawn Ave, Islip Terrace, New York(NY), 11752\n',
                     style: SafeGoogleFont (
                       'Lucida Bright',
-                      fontSize: 20*ffem,
+                      20*ffem,
                       fontWeight: FontWeight.w400,
                       height: 1.2575*ffem/fem,
                       color: Color(0xff000000),
@@ -171,7 +171,7 @@ class Scene extends StatelessWidget {
                     'Name:-',
                     style: SafeGoogleFont (
                       'Tw Cen MT',
-                      fontSize: 22.0362129211*ffem,
+                      22.0362129211*ffem,
                       fontWeight: FontWeight.w700,
                       height: 1.2575*ffem/fem,
                       color: Color(0xff7e132b),
@@ -192,7 +192,7 @@ class Scene extends StatelessWidget {
                     'Address:-',
                     style: SafeGoogleFont (
                       'Tw Cen MT',
-                      fontSize: 22.0362129211*ffem,
+                      22.0362129211*ffem,
                       fontWeight: FontWeight.w700,
                       height: 1.2575*ffem/fem,
                       color: Color(0xff7e132b),
@@ -213,7 +213,7 @@ class Scene extends StatelessWidget {
                     'Website:-',
                     style: SafeGoogleFont (
                       'Tw Cen MT',
-                      fontSize: 22.0362129211*ffem,
+                      22.0362129211*ffem,
                       fontWeight: FontWeight.w700,
                       height: 1.2575*ffem/fem,
                       color: Color(0xff7e132b),
@@ -234,7 +234,7 @@ class Scene extends StatelessWidget {
                     'Phone\nNumber:-',
                     style: SafeGoogleFont (
                       'Tw Cen MT',
-                      fontSize: 22.0362129211*ffem,
+                      22.0362129211*ffem,
                       fontWeight: FontWeight.w700,
                       height: 1.2575*ffem/fem,
                       color: Color(0xff7e132b),
@@ -255,7 +255,7 @@ class Scene extends StatelessWidget {
                     'Email:-',
                     style: SafeGoogleFont (
                       'Tw Cen MT',
-                      fontSize: 22.0362129211*ffem,
+                      22.0362129211*ffem,
                       fontWeight: FontWeight.w700,
                       height: 1.2575*ffem/fem,
                       color: Color(0xff7e132b),
@@ -384,7 +384,7 @@ class Scene extends StatelessWidget {
                             '9:41',
                             style: SafeGoogleFont (
                               'SF Pro Text',
-                              fontSize: 15*ffem,
+                              15*ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.4*ffem/fem,
                               letterSpacing: -0.3199999928*fem,
@@ -485,7 +485,7 @@ class Scene extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: SafeGoogleFont (
                           'Segoe UI',
-                          fontSize: 20*ffem,
+                          20*ffem,
                           fontWeight: FontWeight.w700,
                           height: 1.2575*ffem/fem,
                           color: Color(0xff000000),

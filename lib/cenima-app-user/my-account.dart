@@ -72,7 +72,7 @@ class Scene extends StatelessWidget {
                               'Last Name',
                               style: SafeGoogleFont (
                                 'Tw Cen MT',
-                                fontSize: 22.0362129211*ffem,
+                                22.0362129211*ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2575*ffem/fem,
                                 color: Color(0xff7e132b),
@@ -89,7 +89,7 @@ class Scene extends StatelessWidget {
                               'Edit',
                               style: SafeGoogleFont (
                                 'Tw Cen MT',
-                                fontSize: 20.9344024658*ffem,
+                                20.9344024658*ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2575*ffem/fem,
                                 color: Color(0xffff1e60),
@@ -106,7 +106,7 @@ class Scene extends StatelessWidget {
                         'name',
                         style: SafeGoogleFont (
                           'Tw Cen MT',
-                          fontSize: 22.0362129211*ffem,
+                          22.0362129211*ffem,
                           fontWeight: FontWeight.w400,
                           height: 1.2575*ffem/fem,
                           color: Color(0xff383838),
@@ -150,7 +150,7 @@ class Scene extends StatelessWidget {
                               text: TextSpan(
                                 style: SafeGoogleFont (
                                   'Tw Cen MT',
-                                  fontSize: 22.0362129211*ffem,
+                                  22.0362129211*ffem,
                                   fontWeight: FontWeight.w400,
                                   height: 1.2575*ffem/fem,
                                   color: Color(0xff7e132b),
@@ -160,7 +160,7 @@ class Scene extends StatelessWidget {
                                     text: 'Date of bir',
                                     style: SafeGoogleFont (
                                       'Tw Cen MT',
-                                      fontSize: 22.0362129211*ffem,
+                                      22.0362129211*ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.2575*ffem/fem,
                                       color: Color(0xff7e132b),
@@ -185,7 +185,7 @@ class Scene extends StatelessWidget {
                                 'Edit',
                                 style: SafeGoogleFont (
                                   'Tw Cen MT',
-                                  fontSize: 20.9344024658*ffem,
+                                  20.9344024658*ffem,
                                   fontWeight: FontWeight.w400,
                                   height: 1.2575*ffem/fem,
                                   color: Color(0xffff1e60),
@@ -209,7 +209,7 @@ class Scene extends StatelessWidget {
                               'Day',
                               style: SafeGoogleFont (
                                 'Tw Cen MT',
-                                fontSize: 17.6289710999*ffem,
+                                17.6289710999*ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2575*ffem/fem,
                                 color: Color(0xff7e132b),
@@ -223,7 +223,7 @@ class Scene extends StatelessWidget {
                               'Mon',
                               style: SafeGoogleFont (
                                 'Tw Cen MT',
-                                fontSize: 17.6289710999*ffem,
+                                17.6289710999*ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2575*ffem/fem,
                                 color: Color(0xff7e132b),
@@ -235,7 +235,7 @@ class Scene extends StatelessWidget {
                             'Year ',
                             style: SafeGoogleFont (
                               'Tw Cen MT',
-                              fontSize: 17.6289710999*ffem,
+                              17.6289710999*ffem,
                               fontWeight: FontWeight.w400,
                               height: 1.2575*ffem/fem,
                               color: Color(0xff7e132b),
@@ -259,7 +259,7 @@ class Scene extends StatelessWidget {
                               '00',
                               style: SafeGoogleFont (
                                 'Tw Cen MT',
-                                fontSize: 17.6289710999*ffem,
+                                17.6289710999*ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2575*ffem/fem,
                                 color: Color(0xff383838),
@@ -285,7 +285,7 @@ class Scene extends StatelessWidget {
                                         '00',
                                         style: SafeGoogleFont (
                                           'Tw Cen MT',
-                                          fontSize: 17.6289710999*ffem,
+                                          17.6289710999*ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.2575*ffem/fem,
                                           color: Color(0xff383838),
@@ -323,7 +323,7 @@ class Scene extends StatelessWidget {
                                 '0000',
                                 style: SafeGoogleFont (
                                   'Tw Cen MT',
-                                  fontSize: 17.6289710999*ffem,
+                                  17.6289710999*ffem,
                                   fontWeight: FontWeight.w400,
                                   height: 1.2575*ffem/fem,
                                   color: Color(0xff383838),
@@ -373,7 +373,7 @@ class Scene extends StatelessWidget {
                               'Location',
                               style: SafeGoogleFont (
                                 'Tw Cen MT',
-                                fontSize: 22.0362129211*ffem,
+                                22.0362129211*ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2575*ffem/fem,
                                 color: Color(0xff7e132b),
@@ -390,7 +390,7 @@ class Scene extends StatelessWidget {
                               'Edit',
                               style: SafeGoogleFont (
                                 'Tw Cen MT',
-                                fontSize: 20.9344024658*ffem,
+                                20.9344024658*ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2575*ffem/fem,
                                 color: Color(0xffff1e60),
@@ -407,7 +407,7 @@ class Scene extends StatelessWidget {
                         'location',
                         style: SafeGoogleFont (
                           'Tw Cen MT',
-                          fontSize: 22.0362129211*ffem,
+                          22.0362129211*ffem,
                           fontWeight: FontWeight.w400,
                           height: 1.2575*ffem/fem,
                           color: Color(0xff383838),
@@ -453,7 +453,7 @@ class Scene extends StatelessWidget {
                               'Last Name',
                               style: SafeGoogleFont (
                                 'Tw Cen MT',
-                                fontSize: 22.0362129211*ffem,
+                                22.0362129211*ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2575*ffem/fem,
                                 color: Color(0xff7e132b),
@@ -470,7 +470,7 @@ class Scene extends StatelessWidget {
                               'Edit',
                               style: SafeGoogleFont (
                                 'Tw Cen MT',
-                                fontSize: 20.9344024658*ffem,
+                                20.9344024658*ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2575*ffem/fem,
                                 color: Color(0xffff1e60),
@@ -487,7 +487,7 @@ class Scene extends StatelessWidget {
                         'name',
                         style: SafeGoogleFont (
                           'Tw Cen MT',
-                          fontSize: 22.0362129211*ffem,
+                          22.0362129211*ffem,
                           fontWeight: FontWeight.w400,
                           height: 1.2575*ffem/fem,
                           color: Color(0xff383838),
@@ -533,7 +533,7 @@ class Scene extends StatelessWidget {
                               'Email',
                               style: SafeGoogleFont (
                                 'Tw Cen MT',
-                                fontSize: 22.0362129211*ffem,
+                                22.0362129211*ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2575*ffem/fem,
                                 color: Color(0xff7e132b),
@@ -550,7 +550,7 @@ class Scene extends StatelessWidget {
                               'Edit',
                               style: SafeGoogleFont (
                                 'Tw Cen MT',
-                                fontSize: 20.9344024658*ffem,
+                                20.9344024658*ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2575*ffem/fem,
                                 color: Color(0xffff1e60),
@@ -567,7 +567,7 @@ class Scene extends StatelessWidget {
                         '123@gmail.com',
                         style: SafeGoogleFont (
                           'Tw Cen MT',
-                          fontSize: 22.0362129211*ffem,
+                          22.0362129211*ffem,
                           fontWeight: FontWeight.w400,
                           height: 1.2575*ffem/fem,
                           color: Color(0xff383838),
@@ -613,7 +613,7 @@ class Scene extends StatelessWidget {
                               text: TextSpan(
                                 style: SafeGoogleFont (
                                   'Tw Cen MT',
-                                  fontSize: 22.0362129211*ffem,
+                                  22.0362129211*ffem,
                                   fontWeight: FontWeight.w400,
                                   height: 1.0888671674*ffem/fem,
                                   color: Color(0xff7e132b),
@@ -623,7 +623,7 @@ class Scene extends StatelessWidget {
                                     text: 'Mobile Numb',
                                     style: SafeGoogleFont (
                                       'Tw Cen MT',
-                                      fontSize: 20*ffem,
+                                      20*ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.2575*ffem/fem,
                                       color: Color(0xff7e132b),
@@ -633,7 +633,7 @@ class Scene extends StatelessWidget {
                                     text: 'er',
                                     style: SafeGoogleFont (
                                       'Tw Cen MT',
-                                      fontSize: 20*ffem,
+                                      20*ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.2575*ffem/fem,
                                       color: Color(0xff7e132b),
@@ -653,7 +653,7 @@ class Scene extends StatelessWidget {
                               'Edit',
                               style: SafeGoogleFont (
                                 'Tw Cen MT',
-                                fontSize: 20.9344024658*ffem,
+                                20.9344024658*ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2575*ffem/fem,
                                 color: Color(0xffff1e60),
@@ -670,7 +670,7 @@ class Scene extends StatelessWidget {
                         '+ 123 000 000 000',
                         style: SafeGoogleFont (
                           'Tw Cen MT',
-                          fontSize: 20*ffem,
+                          20*ffem,
                           fontWeight: FontWeight.w400,
                           height: 1.2575*ffem/fem,
                           color: Color(0xff383838),
@@ -714,7 +714,7 @@ class Scene extends StatelessWidget {
                         text: TextSpan(
                           style: SafeGoogleFont (
                             'Segoe UI',
-                            fontSize: 20*ffem,
+                            20*ffem,
                             fontWeight: FontWeight.w700,
                             height: 1.2575*ffem/fem,
                             color: Color(0xff000000),
@@ -724,7 +724,7 @@ class Scene extends StatelessWidget {
                               text: 'Account ',
                               style: SafeGoogleFont (
                                 'Segoe UI',
-                                fontSize: 20*ffem,
+                                20*ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2575*ffem/fem,
                                 color: Color(0xff000000),
@@ -791,7 +791,7 @@ class Scene extends StatelessWidget {
                             '9:41',
                             style: SafeGoogleFont (
                               'SF Pro Text',
-                              fontSize: 15*ffem,
+                              15*ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.4*ffem/fem,
                               letterSpacing: -0.3199999928*fem,

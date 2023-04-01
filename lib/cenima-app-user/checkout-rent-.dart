@@ -50,7 +50,7 @@ class Scene extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: SafeGoogleFont (
                       'Lucida Bright',
-                      fontSize: 13*ffem,
+                      13*ffem,
                       fontWeight: FontWeight.w600,
                       height: 1.2575*ffem/fem,
                       color: Color(0xffff2153),
@@ -86,7 +86,7 @@ class Scene extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: SafeGoogleFont (
                           'Lucida Bright',
-                          fontSize: 19.8325920105*ffem,
+                          19.8325920105*ffem,
                           fontWeight: FontWeight.w600,
                           height: 1.2575*ffem/fem,
                           color: Color(0xffffffff),
@@ -133,7 +133,7 @@ class Scene extends StatelessWidget {
                     'Total:-',
                     style: SafeGoogleFont (
                       'Lucida Bright',
-                      fontSize: 18*ffem,
+                      18*ffem,
                       fontWeight: FontWeight.w600,
                       height: 1.2575*ffem/fem,
                       color: Color(0xff7e132b),
@@ -155,7 +155,7 @@ class Scene extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: SafeGoogleFont (
                       'Lucida Bright',
-                      fontSize: 14*ffem,
+                      14*ffem,
                       fontWeight: FontWeight.w600,
                       height: 1.2575*ffem/fem,
                       color: Color(0xff797979),
@@ -182,7 +182,7 @@ class Scene extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: SafeGoogleFont (
                           'Lucida Bright',
-                          fontSize: 22*ffem,
+                          22*ffem,
                           fontWeight: FontWeight.w600,
                           height: 1.2575*ffem/fem,
                           color: Color(0xff4b4a4a),
@@ -199,7 +199,7 @@ class Scene extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: SafeGoogleFont (
                           'Lucida Bright',
-                          fontSize: 12*ffem,
+                          12*ffem,
                           fontWeight: FontWeight.w400,
                           height: 1.2575*ffem/fem,
                           color: Color(0xff797979),
@@ -232,7 +232,7 @@ class Scene extends StatelessWidget {
                           'Rent Movie',
                           style: SafeGoogleFont (
                             'Lucida Bright',
-                            fontSize: 18*ffem,
+                            18*ffem,
                             fontWeight: FontWeight.w600,
                             height: 1.2575*ffem/fem,
                             color: Color(0xff7e132b),
@@ -256,7 +256,7 @@ class Scene extends StatelessWidget {
                                 'Avatar The Way of Water \n(6 Months)',
                                 style: SafeGoogleFont (
                                   'Segoe UI',
-                                  fontSize: 14*ffem,
+                                  14*ffem,
                                   fontWeight: FontWeight.w300,
                                   height: 1.2575*ffem/fem,
                                   fontStyle: FontStyle.italic,
@@ -269,7 +269,7 @@ class Scene extends StatelessWidget {
                               '04.50 JOD',
                               style: SafeGoogleFont (
                                 'Segoe UI',
-                                fontSize: 14*ffem,
+                                14*ffem,
                                 fontWeight: FontWeight.w300,
                                 height: 1.2575*ffem/fem,
                                 fontStyle: FontStyle.italic,
@@ -296,7 +296,7 @@ class Scene extends StatelessWidget {
                     '04.50 JOD',
                     style: SafeGoogleFont (
                       'Segoe UI',
-                      fontSize: 16*ffem,
+                      16*ffem,
                       fontWeight: FontWeight.w300,
                       height: 1.2575*ffem/fem,
                       fontStyle: FontStyle.italic,
@@ -318,7 +318,7 @@ class Scene extends StatelessWidget {
                     text: TextSpan(
                       style: SafeGoogleFont (
                         'Segoe UI',
-                        fontSize: 12*ffem,
+                        12*ffem,
                         fontWeight: FontWeight.w300,
                         height: 1.2575*ffem/fem,
                         fontStyle: FontStyle.italic,
@@ -329,7 +329,7 @@ class Scene extends StatelessWidget {
                           text: 'Including Taxe',
                           style: SafeGoogleFont (
                             'Segoe UI',
-                            fontSize: 12*ffem,
+                            12*ffem,
                             fontWeight: FontWeight.w300,
                             height: 1.2575*ffem/fem,
                             fontStyle: FontStyle.italic,
@@ -378,7 +378,7 @@ class Scene extends StatelessWidget {
                         'Payment Method',
                         style: SafeGoogleFont (
                           'Lucida Bright',
-                          fontSize: 18*ffem,
+                          18*ffem,
                           fontWeight: FontWeight.w600,
                           height: 1.2575*ffem/fem,
                           color: Color(0xff7e132b),
@@ -453,7 +453,7 @@ class Scene extends StatelessWidget {
                                     'Credit card',
                                     style: SafeGoogleFont (
                                       'Segoe UI',
-                                      fontSize: 16*ffem,
+                                      16*ffem,
                                       fontWeight: FontWeight.w300,
                                       height: 1.2575*ffem/fem,
                                       fontStyle: FontStyle.italic,
@@ -468,7 +468,7 @@ class Scene extends StatelessWidget {
                                     text: TextSpan(
                                       style: SafeGoogleFont (
                                         'Segoe UI',
-                                        fontSize: 16*ffem,
+                                        16*ffem,
                                         fontWeight: FontWeight.w300,
                                         height: 1.2575*ffem/fem,
                                         fontStyle: FontStyle.italic,
@@ -479,7 +479,7 @@ class Scene extends StatelessWidget {
                                           text: 'cash on arriva',
                                           style: SafeGoogleFont (
                                             'Segoe UI',
-                                            fontSize: 16*ffem,
+                                            16*ffem,
                                             fontWeight: FontWeight.w300,
                                             height: 1.2575*ffem/fem,
                                             fontStyle: FontStyle.italic,
@@ -498,7 +498,7 @@ class Scene extends StatelessWidget {
                                   'Paypal',
                                   style: SafeGoogleFont (
                                     'Segoe UI',
-                                    fontSize: 16*ffem,
+                                    16*ffem,
                                     fontWeight: FontWeight.w300,
                                     height: 1.2575*ffem/fem,
                                     fontStyle: FontStyle.italic,
@@ -530,7 +530,7 @@ class Scene extends StatelessWidget {
                                         'Choose card',
                                         style: SafeGoogleFont (
                                           'Segoe UI',
-                                          fontSize: 16*ffem,
+                                          16*ffem,
                                           fontWeight: FontWeight.w300,
                                           height: 1.2575*ffem/fem,
                                           fontStyle: FontStyle.italic,
@@ -577,7 +577,7 @@ class Scene extends StatelessWidget {
                                             '**** **** **** 1222',
                                             style: SafeGoogleFont (
                                               'Segoe UI',
-                                              fontSize: 16*ffem,
+                                              16*ffem,
                                               fontWeight: FontWeight.w300,
                                               height: 1.2575*ffem/fem,
                                               fontStyle: FontStyle.italic,
@@ -675,7 +675,7 @@ class Scene extends StatelessWidget {
                             '9:41',
                             style: SafeGoogleFont (
                               'SF Pro Text',
-                              fontSize: 15*ffem,
+                              15*ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.4*ffem/fem,
                               letterSpacing: -0.3199999928*fem,

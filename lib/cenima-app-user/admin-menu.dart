@@ -58,7 +58,7 @@ class Scene extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: SafeGoogleFont (
                         'Segoe UI',
-                        fontSize: 20*ffem,
+                        20*ffem,
                         fontWeight: FontWeight.w700,
                         height: 1.2575*ffem/fem,
                         color: Color(0xff000000),
@@ -121,7 +121,7 @@ class Scene extends StatelessWidget {
                                       'My Account',
                                       style: SafeGoogleFont (
                                         'Tw Cen MT',
-                                        fontSize: 20*ffem,
+                                        20*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.2575*ffem/fem,
                                         color: Color(0xff7e132b),
@@ -167,7 +167,7 @@ class Scene extends StatelessWidget {
                                       'Settings',
                                       style: SafeGoogleFont (
                                         'Tw Cen MT',
-                                        fontSize: 20*ffem,
+                                        20*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.2575*ffem/fem,
                                         color: Color(0xff7e132b),
@@ -213,7 +213,7 @@ class Scene extends StatelessWidget {
                                       text: TextSpan(
                                         style: SafeGoogleFont (
                                           'Tw Cen MT',
-                                          fontSize: 20*ffem,
+                                          20*ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.2575*ffem/fem,
                                           color: Color(0xff7e132b),
@@ -223,7 +223,7 @@ class Scene extends StatelessWidget {
                                             text: 'Help and Su',
                                             style: SafeGoogleFont (
                                               'Tw Cen MT',
-                                              fontSize: 20*ffem,
+                                              20*ffem,
                                               fontWeight: FontWeight.w400,
                                               height: 1.2575*ffem/fem,
                                               color: Color(0xff7e132b),
@@ -275,7 +275,7 @@ class Scene extends StatelessWidget {
                                       'Contact Us',
                                       style: SafeGoogleFont (
                                         'Tw Cen MT',
-                                        fontSize: 20*ffem,
+                                        20*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.2575*ffem/fem,
                                         color: Color(0xff7e132b),
@@ -316,7 +316,7 @@ class Scene extends StatelessWidget {
                               'Log Out',
                               style: SafeGoogleFont (
                                 'Tw Cen MT',
-                                fontSize: 20*ffem,
+                                20*ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2575*ffem/fem,
                                 color: Color(0xff7e132b),

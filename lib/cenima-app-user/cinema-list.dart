@@ -95,7 +95,7 @@ class CinemaList extends StatelessWidget {
                                               'First Cinema ',
                                               style: SafeGoogleFont(
                                                 'Lucida Bright',
-                                                fontSize: 22 * ffem,
+                                                22 * ffem,
                                                 fontWeight: FontWeight.w600,
                                                 height: 1.2575 * ffem / fem,
                                                 color: const Color(0xff7e132b),
@@ -111,7 +111,7 @@ class CinemaList extends StatelessWidget {
                                               text: TextSpan(
                                                 style: SafeGoogleFont(
                                                   'Segoe UI',
-                                                  fontSize: 12 * ffem,
+                                                  12 * ffem,
                                                   fontWeight: FontWeight.w300,
                                                   height: 1.2575 * ffem / fem,
                                                   fontStyle: FontStyle.italic,
@@ -123,7 +123,7 @@ class CinemaList extends StatelessWidget {
                                                     text: 'Greenlawn Ave,',
                                                     style: SafeGoogleFont(
                                                       'Segoe UI',
-                                                      fontSize: 12 * ffem,
+                                                      12 * ffem,
                                                       fontWeight:
                                                           FontWeight.w300,
                                                       height:
@@ -180,7 +180,7 @@ class CinemaList extends StatelessWidget {
                                     'LOCATION',
                                     style: SafeGoogleFont(
                                       'Lucida Bright',
-                                      fontSize: 14.5 * ffem,
+                                      14.5 * ffem,
                                       fontWeight: FontWeight.w600,
                                       height: 1.2575 * ffem / fem,
                                       color: const Color(0xffffffff),
@@ -220,7 +220,7 @@ class CinemaList extends StatelessWidget {
                                     'SCHEDULE',
                                     style: SafeGoogleFont(
                                       'Lucida Bright',
-                                      fontSize: 14 * ffem,
+                                      14 * ffem,
                                       fontWeight: FontWeight.w600,
                                       height: 1.2575 * ffem / fem,
                                       color: const Color(0xffffffff),
@@ -296,7 +296,7 @@ class CinemaList extends StatelessWidget {
                                                     'Second Cinema ',
                                                     style: SafeGoogleFont(
                                                       'Lucida Bright',
-                                                      fontSize: 22 * ffem,
+                                                      22 * ffem,
                                                       fontWeight:
                                                           FontWeight.w600,
                                                       height:
@@ -315,7 +315,7 @@ class CinemaList extends StatelessWidget {
                                                     text: TextSpan(
                                                       style: SafeGoogleFont(
                                                         'Segoe UI',
-                                                        fontSize: 12 * ffem,
+                                                        12 * ffem,
                                                         fontWeight:
                                                             FontWeight.w300,
                                                         height:
@@ -331,7 +331,7 @@ class CinemaList extends StatelessWidget {
                                                               'Duncan St, Jac',
                                                           style: SafeGoogleFont(
                                                             'Segoe UI',
-                                                            fontSize: 12 * ffem,
+                                                            12 * ffem,
                                                             fontWeight:
                                                                 FontWeight.w300,
                                                             height: 1.2575 *
@@ -389,7 +389,7 @@ class CinemaList extends StatelessWidget {
                                           'LOCATION',
                                           style: SafeGoogleFont(
                                             'Lucida Bright',
-                                            fontSize: 14.5 * ffem,
+                                            14.5 * ffem,
                                             fontWeight: FontWeight.w600,
                                             height: 1.2575 * ffem / fem,
                                             color: const Color(0xffffffff),
@@ -429,7 +429,7 @@ class CinemaList extends StatelessWidget {
                                           'SCHEDULE',
                                           style: SafeGoogleFont(
                                             'Lucida Bright',
-                                            fontSize: 14 * ffem,
+                                            14 * ffem,
                                             fontWeight: FontWeight.w600,
                                             height: 1.2575 * ffem / fem,
                                             color: const Color(0xffffffff),
@@ -495,7 +495,7 @@ class CinemaList extends StatelessWidget {
                                                     'Third Cinema ',
                                                     style: SafeGoogleFont(
                                                       'Lucida Bright',
-                                                      fontSize: 22 * ffem,
+                                                      22 * ffem,
                                                       fontWeight:
                                                           FontWeight.w600,
                                                       height:
@@ -514,7 +514,7 @@ class CinemaList extends StatelessWidget {
                                                     text: TextSpan(
                                                       style: SafeGoogleFont(
                                                         'Segoe UI',
-                                                        fontSize: 12 * ffem,
+                                                        12 * ffem,
                                                         fontWeight:
                                                             FontWeight.w300,
                                                         height:
@@ -530,7 +530,7 @@ class CinemaList extends StatelessWidget {
                                                               'Davis Dr #1, B',
                                                           style: SafeGoogleFont(
                                                             'Segoe UI',
-                                                            fontSize: 12 * ffem,
+                                                            12 * ffem,
                                                             fontWeight:
                                                                 FontWeight.w300,
                                                             height: 1.2575 *
@@ -588,7 +588,7 @@ class CinemaList extends StatelessWidget {
                                           'LOCATION',
                                           style: SafeGoogleFont(
                                             'Lucida Bright',
-                                            fontSize: 14.5 * ffem,
+                                            14.5 * ffem,
                                             fontWeight: FontWeight.w600,
                                             height: 1.2575 * ffem / fem,
                                             color: const Color(0xffffffff),
@@ -628,7 +628,7 @@ class CinemaList extends StatelessWidget {
                                           'SCHEDULE',
                                           style: SafeGoogleFont(
                                             'Lucida Bright',
-                                            fontSize: 14 * ffem,
+                                            14 * ffem,
                                             fontWeight: FontWeight.w600,
                                             height: 1.2575 * ffem / fem,
                                             color: const Color(0xffffffff),
@@ -693,7 +693,7 @@ class CinemaList extends StatelessWidget {
                                               'Fourth Cinema ',
                                               style: SafeGoogleFont(
                                                 'Lucida Bright',
-                                                fontSize: 22 * ffem,
+                                                22 * ffem,
                                                 fontWeight: FontWeight.w600,
                                                 height: 1.2575 * ffem / fem,
                                                 color: const Color(0xff7e132b),
@@ -709,7 +709,7 @@ class CinemaList extends StatelessWidget {
                                               text: TextSpan(
                                                 style: SafeGoogleFont(
                                                   'Segoe UI',
-                                                  fontSize: 12 * ffem,
+                                                  12 * ffem,
                                                   fontWeight: FontWeight.w300,
                                                   height: 1.2575 * ffem / fem,
                                                   fontStyle: FontStyle.italic,
@@ -721,7 +721,7 @@ class CinemaList extends StatelessWidget {
                                                     text: 'Pennsylvania A',
                                                     style: SafeGoogleFont(
                                                       'Segoe UI',
-                                                      fontSize: 12 * ffem,
+                                                      12 * ffem,
                                                       fontWeight:
                                                           FontWeight.w300,
                                                       height:
@@ -778,7 +778,7 @@ class CinemaList extends StatelessWidget {
                                     'LOCATION',
                                     style: SafeGoogleFont(
                                       'Lucida Bright',
-                                      fontSize: 14.5 * ffem,
+                                      14.5 * ffem,
                                       fontWeight: FontWeight.w600,
                                       height: 1.2575 * ffem / fem,
                                       color: const Color(0xffffffff),
@@ -818,7 +818,7 @@ class CinemaList extends StatelessWidget {
                                     'SCHEDULE',
                                     style: SafeGoogleFont(
                                       'Lucida Bright',
-                                      fontSize: 14 * ffem,
+                                      14 * ffem,
                                       fontWeight: FontWeight.w600,
                                       height: 1.2575 * ffem / fem,
                                       color: const Color(0xffffffff),
@@ -887,7 +887,7 @@ class CinemaList extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: SafeGoogleFont(
                           'Nature Beauty Personal Use',
-                          fontSize: 25 * ffem,
+                          25 * ffem,
                           fontWeight: FontWeight.w400,
                           height: 1.1 * ffem / fem,
                           color: const Color(0xffdd204a),
@@ -962,7 +962,7 @@ class CinemaList extends StatelessWidget {
                                   textAlign: TextAlign.center,
                                   style: SafeGoogleFont(
                                     'Segoe Script',
-                                    fontSize: 10 * ffem,
+                                    10 * ffem,
                                     fontWeight: FontWeight.w700,
                                     height: 1.2575 * ffem / fem,
                                     color: const Color(0xff000000),
@@ -1002,7 +1002,7 @@ class CinemaList extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont(
                                 'Segoe Script',
-                                fontSize: 10 * ffem,
+                                10 * ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2575 * ffem / fem,
                                 color: const Color(0xff000000),
@@ -1047,7 +1047,7 @@ class CinemaList extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont(
                                 'Segoe Script',
-                                fontSize: 10 * ffem,
+                                10 * ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2575 * ffem / fem,
                                 color: const Color(0xffff2153),
@@ -1085,7 +1085,7 @@ class CinemaList extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont(
                                 'Segoe Script',
-                                fontSize: 10 * ffem,
+                                10 * ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2575 * ffem / fem,
                                 color: const Color(0xff000000),
@@ -1120,7 +1120,7 @@ class CinemaList extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: SafeGoogleFont(
                               'Segoe Script',
-                              fontSize: 10 * ffem,
+                              10 * ffem,
                               fontWeight: FontWeight.w700,
                               height: 1.2575 * ffem / fem,
                               color: const Color(0xff000000),

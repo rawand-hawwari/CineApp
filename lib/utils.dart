@@ -10,12 +10,12 @@ class MyCustomScrollBehavior extends MaterialScrollBehavior {
       };
 }
 
+// ignore: non_constant_identifier_names
 TextStyle SafeGoogleFont(
-  String fontFamily, {
+  String fontFamily, double fontSize, {
   TextStyle? textStyle,
   Color? color,
   Color? backgroundColor,
-  double? fontSize,
   FontWeight? fontWeight,
   FontStyle? fontStyle,
   double? letterSpacing,

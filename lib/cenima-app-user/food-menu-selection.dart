@@ -189,7 +189,7 @@ class FoodMenu extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: SafeGoogleFont(
                       'Bahnschrift',
-                      fontSize: 40 * ffem,
+                      40 * ffem,
                       fontWeight: FontWeight.w700,
                       height: 1.2575 * ffem / fem,
                       color: const Color(0xffffffff),
@@ -254,7 +254,7 @@ class FoodMenu extends StatelessWidget {
                   //         'SELECT A LOCATION',
                   //         style: SafeGoogleFont(
                   //           'Lucida Bright',
-                  //           fontSize: 22.0362129211 * ffem,
+                  //           22.0362129211 * ffem,
                   //           fontWeight: FontWeight.w400,
                   //           height: 1.2575 * ffem / fem,
                   //           color: const Color(0xff464646),
@@ -329,7 +329,7 @@ class FoodMenu extends StatelessWidget {
                                 textAlign: TextAlign.center,
                                 style: SafeGoogleFont(
                                   'Segoe Script',
-                                  fontSize: 10 * ffem,
+                                  10 * ffem,
                                   fontWeight: FontWeight.w700,
                                   height: 1.2575 * ffem / fem,
                                   color: const Color(0xff000000),
@@ -368,7 +368,7 @@ class FoodMenu extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont(
                                 'Segoe Script',
-                                fontSize: 10 * ffem,
+                                10 * ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2575 * ffem / fem,
                                 color: const Color(0xff000000),
@@ -407,7 +407,7 @@ class FoodMenu extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont(
                                 'Segoe Script',
-                                fontSize: 10 * ffem,
+                                10 * ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2575 * ffem / fem,
                                 color: const Color(0xff000000),
@@ -451,7 +451,7 @@ class FoodMenu extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont(
                                 'Segoe Script',
-                                fontSize: 10 * ffem,
+                                10 * ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2575 * ffem / fem,
                                 color: const Color(0xffff2153),
@@ -486,7 +486,7 @@ class FoodMenu extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: SafeGoogleFont(
                               'Segoe Script',
-                              fontSize: 10 * ffem,
+                              10 * ffem,
                               fontWeight: FontWeight.w700,
                               height: 1.2575 * ffem / fem,
                               color: const Color(0xff000000),

@@ -72,7 +72,7 @@ class Scene extends StatelessWidget {
                           text: TextSpan(
                             style: SafeGoogleFont (
                               'Lucida Bright',
-                              fontSize: 22*ffem,
+                              22*ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.177734375*ffem/fem,
                               color: Color(0xff7e132b),
@@ -82,7 +82,7 @@ class Scene extends StatelessWidget {
                                 text: 'HOW DO I U',
                                 style: SafeGoogleFont (
                                   'Lucida Bright',
-                                  fontSize: 22*ffem,
+                                  22*ffem,
                                   fontWeight: FontWeight.w600,
                                   height: 1.2575*ffem/fem,
                                   color: Color(0xff7e132b),
@@ -92,7 +92,7 @@ class Scene extends StatelessWidget {
                                 text: 'NSUBSCRIBE FROM EMAIL NEWSLETTERS',
                                 style: SafeGoogleFont (
                                   'Lucida Bright',
-                                  fontSize: 22*ffem,
+                                  22*ffem,
                                   fontWeight: FontWeight.w600,
                                   height: 1.2575*ffem/fem,
                                   color: Color(0xff7e132b),
@@ -134,7 +134,7 @@ class Scene extends StatelessWidget {
                     'WHAT IS RENTING?',
                     style: SafeGoogleFont (
                       'Lucida Bright',
-                      fontSize: 22*ffem,
+                      22*ffem,
                       fontWeight: FontWeight.w600,
                       height: 1.2575*ffem/fem,
                       color: Color(0xff7e132b),
@@ -178,7 +178,7 @@ class Scene extends StatelessWidget {
                           text: TextSpan(
                             style: SafeGoogleFont (
                               'Lucida Bright',
-                              fontSize: 22*ffem,
+                              22*ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.177734375*ffem/fem,
                               color: Color(0xff7e132b),
@@ -188,7 +188,7 @@ class Scene extends StatelessWidget {
                                 text: 'CINEMA DID',
                                 style: SafeGoogleFont (
                                   'Lucida Bright',
-                                  fontSize: 22*ffem,
+                                  22*ffem,
                                   fontWeight: FontWeight.w600,
                                   height: 1.2575*ffem/fem,
                                   color: Color(0xff7e132b),
@@ -198,7 +198,7 @@ class Scene extends StatelessWidget {
                                 text: 'N\'T PLAY THE MOVIE',
                                 style: SafeGoogleFont (
                                   'Lucida Bright',
-                                  fontSize: 22*ffem,
+                                  22*ffem,
                                   fontWeight: FontWeight.w600,
                                   height: 1.2575*ffem/fem,
                                   color: Color(0xff7e132b),
@@ -249,7 +249,7 @@ class Scene extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: SafeGoogleFont (
                           'Segoe UI',
-                          fontSize: 20*ffem,
+                          20*ffem,
                           fontWeight: FontWeight.w700,
                           height: 1.2575*ffem/fem,
                           color: Color(0xff000000),
@@ -326,7 +326,7 @@ class Scene extends StatelessWidget {
                             '9:41',
                             style: SafeGoogleFont (
                               'SF Pro Text',
-                              fontSize: 15*ffem,
+                              15*ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.4*ffem/fem,
                               letterSpacing: -0.3199999928*fem,

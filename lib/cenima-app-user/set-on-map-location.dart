@@ -54,7 +54,7 @@ class Scene extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: SafeGoogleFont (
                           'Lucida Bright',
-                          fontSize: 19.8325920105*ffem,
+                          19.8325920105*ffem,
                           fontWeight: FontWeight.w600,
                           height: 1.2575*ffem/fem,
                           color: Color(0xffffffff),
@@ -155,7 +155,7 @@ class Scene extends StatelessWidget {
                         'Search here',
                         style: SafeGoogleFont (
                           'Lucida Bright',
-                          fontSize: 19*ffem,
+                          19*ffem,
                           fontWeight: FontWeight.w600,
                           height: 1.1052631579*ffem/fem,
                           letterSpacing: -0.3199999928*fem,
@@ -334,7 +334,7 @@ class Scene extends StatelessWidget {
                             '9:41',
                             style: SafeGoogleFont (
                               'SF Pro Text',
-                              fontSize: 15*ffem,
+                              15*ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.4*ffem/fem,
                               letterSpacing: -0.3199999928*fem,

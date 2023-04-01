@@ -52,7 +52,7 @@ class Scene extends StatelessWidget {
                     'First Cinema',
                     style: SafeGoogleFont (
                       'Lucida Bright',
-                      fontSize: 22.0362129211*ffem,
+                      22.0362129211*ffem,
                       fontWeight: FontWeight.w400,
                       height: 1.2575*ffem/fem,
                       color: Color(0xff464646),
@@ -78,7 +78,7 @@ class Scene extends StatelessWidget {
                     'Second Cinema',
                     style: SafeGoogleFont (
                       'Lucida Bright',
-                      fontSize: 22.0362129211*ffem,
+                      22.0362129211*ffem,
                       fontWeight: FontWeight.w400,
                       height: 1.2575*ffem/fem,
                       color: Color(0xff464646),
@@ -99,7 +99,7 @@ class Scene extends StatelessWidget {
                   'Third Cinema',
                   style: SafeGoogleFont (
                     'Lucida Bright',
-                    fontSize: 22.0362129211*ffem,
+                    22.0362129211*ffem,
                     fontWeight: FontWeight.w400,
                     height: 1.2575*ffem/fem,
                     color: Color(0xffe1e1e1),
@@ -119,7 +119,7 @@ class Scene extends StatelessWidget {
                   'Forth Cinema',
                   style: SafeGoogleFont (
                     'Lucida Bright',
-                    fontSize: 22.0362129211*ffem,
+                    22.0362129211*ffem,
                     fontWeight: FontWeight.w400,
                     height: 1.2575*ffem/fem,
                     color: Color(0xffe1e1e1),
@@ -177,7 +177,7 @@ class Scene extends StatelessWidget {
                     'SELECT A LOCATION',
                     style: SafeGoogleFont (
                       'Lucida Bright',
-                      fontSize: 22.0362129211*ffem,
+                      22.0362129211*ffem,
                       fontWeight: FontWeight.w400,
                       height: 1.2575*ffem/fem,
                       color: Color(0xff464646),

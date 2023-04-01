@@ -81,7 +81,7 @@ class Scene extends StatelessWidget {
                     '1 Hours 47 Min',
                     style: SafeGoogleFont (
                       'Lucida Bright',
-                      fontSize: 20*ffem,
+                      20*ffem,
                       fontWeight: FontWeight.w400,
                       height: 1.2575*ffem/fem,
                       color: Color(0xffffffff),
@@ -116,7 +116,7 @@ class Scene extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: SafeGoogleFont (
                         'Segoe UI',
-                        fontSize: 23*ffem,
+                        23*ffem,
                         fontWeight: FontWeight.w700,
                         height: 1.2575*ffem/fem,
                         color: Color(0xffffffff),
@@ -163,7 +163,7 @@ class Scene extends StatelessWidget {
                             'R',
                             style: SafeGoogleFont (
                               'Lucida Bright',
-                              fontSize: 20*ffem,
+                              20*ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.2575*ffem/fem,
                               color: Color(0xffffffff),
@@ -219,7 +219,7 @@ class Scene extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont (
                                           'Segoe UI',
-                                          fontSize: 22*ffem,
+                                          22*ffem,
                                           fontWeight: FontWeight.w700,
                                           height: 1.2575*ffem/fem,
                                           color: Color(0xff000000),
@@ -260,7 +260,7 @@ class Scene extends StatelessWidget {
                                         text: TextSpan(
                                           style: SafeGoogleFont (
                                             'Segoe UI',
-                                            fontSize: 15*ffem,
+                                            15*ffem,
                                             fontWeight: FontWeight.w400,
                                             height: 1.330078125*ffem/fem,
                                             color: Color(0xff000000),
@@ -270,7 +270,7 @@ class Scene extends StatelessWidget {
                                               text: 'A young couple travels to a remote island to eat at an exclusive restaurant where the chef has prepared a lavish menu, with some shocking surprises.\n\n',
                                               style: SafeGoogleFont (
                                                 'Lucida Bright',
-                                                fontSize: 15*ffem,
+                                                15*ffem,
                                                 fontWeight: FontWeight.w400,
                                                 height: 1.2575*ffem/fem,
                                                 color: Color(0xff464646),
@@ -280,7 +280,7 @@ class Scene extends StatelessWidget {
                                               text: 'Genres:-',
                                               style: SafeGoogleFont (
                                                 'Lucida Bright',
-                                                fontSize: 15*ffem,
+                                                15*ffem,
                                                 fontWeight: FontWeight.w600,
                                                 height: 1.2575*ffem/fem,
                                                 color: Color(0xff7e132b),
@@ -290,7 +290,7 @@ class Scene extends StatelessWidget {
                                               text: ' ',
                                               style: SafeGoogleFont (
                                                 'Segoe UI',
-                                                fontSize: 15*ffem,
+                                                15*ffem,
                                                 fontWeight: FontWeight.w700,
                                                 height: 1.2575*ffem/fem,
                                                 color: Color(0xff000000),
@@ -300,7 +300,7 @@ class Scene extends StatelessWidget {
                                               text: 'Comedy, Horror, Thriller\n',
                                               style: SafeGoogleFont (
                                                 'Cambria',
-                                                fontSize: 15*ffem,
+                                                15*ffem,
                                                 fontWeight: FontWeight.w400,
                                                 height: 1.2575*ffem/fem,
                                                 color: Color(0xffff2153),
@@ -310,7 +310,7 @@ class Scene extends StatelessWidget {
                                               text: '\n',
                                               style: SafeGoogleFont (
                                                 'Segoe UI',
-                                                fontSize: 15*ffem,
+                                                15*ffem,
                                                 fontWeight: FontWeight.w700,
                                                 height: 1.2575*ffem/fem,
                                                 color: Color(0xff000000),
@@ -320,7 +320,7 @@ class Scene extends StatelessWidget {
                                               text: 'Language:-\n\nRating:- \n',
                                               style: SafeGoogleFont (
                                                 'Lucida Bright',
-                                                fontSize: 15*ffem,
+                                                15*ffem,
                                                 fontWeight: FontWeight.w600,
                                                 height: 1.2575*ffem/fem,
                                                 color: Color(0xff7e132b),
@@ -330,7 +330,7 @@ class Scene extends StatelessWidget {
                                               text: '\n',
                                               style: SafeGoogleFont (
                                                 'Segoe UI',
-                                                fontSize: 15*ffem,
+                                                15*ffem,
                                                 fontWeight: FontWeight.w700,
                                                 height: 1.2575*ffem/fem,
                                                 color: Color(0xff000000),
@@ -340,7 +340,7 @@ class Scene extends StatelessWidget {
                                               text: 'Director:-',
                                               style: SafeGoogleFont (
                                                 'Lucida Bright',
-                                                fontSize: 15*ffem,
+                                                15*ffem,
                                                 fontWeight: FontWeight.w600,
                                                 height: 1.2575*ffem/fem,
                                                 color: Color(0xff7e132b),
@@ -350,7 +350,7 @@ class Scene extends StatelessWidget {
                                               text: ' ',
                                               style: SafeGoogleFont (
                                                 'Segoe UI',
-                                                fontSize: 15*ffem,
+                                                15*ffem,
                                                 fontWeight: FontWeight.w700,
                                                 height: 1.2575*ffem/fem,
                                                 color: Color(0xff000000),
@@ -360,7 +360,7 @@ class Scene extends StatelessWidget {
                                               text: 'Mark Mylod\n\n',
                                               style: SafeGoogleFont (
                                                 'Segoe UI',
-                                                fontSize: 15*ffem,
+                                                15*ffem,
                                                 fontWeight: FontWeight.w400,
                                                 height: 1.2575*ffem/fem,
                                                 color: Color(0xff000000),
@@ -370,7 +370,7 @@ class Scene extends StatelessWidget {
                                               text: 'Writers:- ',
                                               style: SafeGoogleFont (
                                                 'Lucida Bright',
-                                                fontSize: 15*ffem,
+                                                15*ffem,
                                                 fontWeight: FontWeight.w600,
                                                 height: 1.2575*ffem/fem,
                                                 color: Color(0xff7e132b),
@@ -380,7 +380,7 @@ class Scene extends StatelessWidget {
                                               text: 'Seth Reiss-Will Tracy\n\n',
                                               style: SafeGoogleFont (
                                                 'Segoe UI',
-                                                fontSize: 15*ffem,
+                                                15*ffem,
                                                 fontWeight: FontWeight.w400,
                                                 height: 1.2575*ffem/fem,
                                                 color: Color(0xff000000),
@@ -390,7 +390,7 @@ class Scene extends StatelessWidget {
                                               text: 'Stars:-',
                                               style: SafeGoogleFont (
                                                 'Lucida Bright',
-                                                fontSize: 15*ffem,
+                                                15*ffem,
                                                 fontWeight: FontWeight.w600,
                                                 height: 1.2575*ffem/fem,
                                                 color: Color(0xff7e132b),
@@ -400,7 +400,7 @@ class Scene extends StatelessWidget {
                                               text: ' ',
                                               style: SafeGoogleFont (
                                                 'Segoe UI',
-                                                fontSize: 15*ffem,
+                                                15*ffem,
                                                 fontWeight: FontWeight.w700,
                                                 height: 1.2575*ffem/fem,
                                                 color: Color(0xff000000),
@@ -410,7 +410,7 @@ class Scene extends StatelessWidget {
                                               text: 'Ralph Fiennes-Anya Taylor-Joy- Nicholas Hoult\n\n',
                                               style: SafeGoogleFont (
                                                 'Segoe UI',
-                                                fontSize: 15*ffem,
+                                                15*ffem,
                                                 fontWeight: FontWeight.w400,
                                                 height: 1.2575*ffem/fem,
                                                 color: Color(0xff000000),
@@ -434,7 +434,7 @@ class Scene extends StatelessWidget {
                                         text: TextSpan(
                                           style: SafeGoogleFont (
                                             'Lucida Bright',
-                                            fontSize: 15*ffem,
+                                            15*ffem,
                                             fontWeight: FontWeight.w400,
                                             height: 1.177734375*ffem/fem,
                                             color: Color(0xffff2153),
@@ -444,7 +444,7 @@ class Scene extends StatelessWidget {
                                               text: '7.5',
                                               style: SafeGoogleFont (
                                                 'Lucida Bright',
-                                                fontSize: 17*ffem,
+                                                17*ffem,
                                                 fontWeight: FontWeight.w600,
                                                 height: 1.2575*ffem/fem,
                                                 color: Color(0xffff2153),
@@ -454,7 +454,7 @@ class Scene extends StatelessWidget {
                                               text: '/10 ',
                                               style: SafeGoogleFont (
                                                 'Lucida Bright',
-                                                fontSize: 15*ffem,
+                                                15*ffem,
                                                 fontWeight: FontWeight.w400,
                                                 height: 1.2575*ffem/fem,
                                                 color: Color(0xffff2153),
@@ -497,7 +497,7 @@ class Scene extends StatelessWidget {
                                         'English',
                                         style: SafeGoogleFont (
                                           'Lucida Bright',
-                                          fontSize: 16.5271606445*ffem,
+                                          16.5271606445*ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.2575*ffem/fem,
                                           color: Color(0xffffffff),
@@ -544,7 +544,7 @@ class Scene extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont (
                                           'Segoe UI',
-                                          fontSize: 22*ffem,
+                                          22*ffem,
                                           fontWeight: FontWeight.w700,
                                           height: 1.2575*ffem/fem,
                                           color: Color(0xff000000),
@@ -610,7 +610,7 @@ class Scene extends StatelessWidget {
                                                   textAlign: TextAlign.center,
                                                   style: SafeGoogleFont (
                                                     'Lucida Bright',
-                                                    fontSize: 16.5271606445*ffem,
+                                                    16.5271606445*ffem,
                                                     fontWeight: FontWeight.w600,
                                                     height: 1.2575*ffem/fem,
                                                     color: Color(0xff777777),
@@ -650,7 +650,7 @@ class Scene extends StatelessWidget {
                                               textAlign: TextAlign.center,
                                               style: SafeGoogleFont (
                                                 'Lucida Bright',
-                                                fontSize: 15*ffem,
+                                                15*ffem,
                                                 fontWeight: FontWeight.w600,
                                                 height: 1.2575*ffem/fem,
                                                 color: Color(0xff000000),
@@ -693,7 +693,7 @@ class Scene extends StatelessWidget {
                                                   'First Cinema',
                                                   style: SafeGoogleFont (
                                                     'Lucida Bright',
-                                                    fontSize: 22*ffem,
+                                                    22*ffem,
                                                     fontWeight: FontWeight.w600,
                                                     height: 1.2575*ffem/fem,
                                                     color: Color(0xff7e132b),
@@ -735,7 +735,7 @@ class Scene extends StatelessWidget {
                                                             '09:10 AM',
                                                             style: SafeGoogleFont (
                                                               'Lucida Bright',
-                                                              fontSize: 17.6289710999*ffem,
+                                                              17.6289710999*ffem,
                                                               fontWeight: FontWeight.w600,
                                                               height: 1.2575*ffem/fem,
                                                               color: Color(0xffffffff),
@@ -772,7 +772,7 @@ class Scene extends StatelessWidget {
                                                             '11:55 AM',
                                                             style: SafeGoogleFont (
                                                               'Lucida Bright',
-                                                              fontSize: 17.6289710999*ffem,
+                                                              17.6289710999*ffem,
                                                               fontWeight: FontWeight.w600,
                                                               height: 1.2575*ffem/fem,
                                                               color: Color(0xffffffff),
@@ -809,7 +809,7 @@ class Scene extends StatelessWidget {
                                                             '02:40 PM',
                                                             style: SafeGoogleFont (
                                                               'Lucida Bright',
-                                                              fontSize: 17.6289710999*ffem,
+                                                              17.6289710999*ffem,
                                                               fontWeight: FontWeight.w600,
                                                               height: 1.2575*ffem/fem,
                                                               color: Color(0xffffffff),
@@ -847,7 +847,7 @@ class Scene extends StatelessWidget {
                                                   'Second Cinema',
                                                   style: SafeGoogleFont (
                                                     'Lucida Bright',
-                                                    fontSize: 22*ffem,
+                                                    22*ffem,
                                                     fontWeight: FontWeight.w600,
                                                     height: 1.2575*ffem/fem,
                                                     color: Color(0xff7e132b),
@@ -898,7 +898,7 @@ class Scene extends StatelessWidget {
                                                                     '10:05 AM',
                                                                     style: SafeGoogleFont (
                                                                       'Lucida Bright',
-                                                                      fontSize: 17.6289710999*ffem,
+                                                                      17.6289710999*ffem,
                                                                       fontWeight: FontWeight.w600,
                                                                       height: 1.2575*ffem/fem,
                                                                       color: Color(0xffffffff),
@@ -933,7 +933,7 @@ class Scene extends StatelessWidget {
                                                                   '07:30 PM',
                                                                   style: SafeGoogleFont (
                                                                     'Lucida Bright',
-                                                                    fontSize: 17.6289710999*ffem,
+                                                                    17.6289710999*ffem,
                                                                     fontWeight: FontWeight.w600,
                                                                     height: 1.2575*ffem/fem,
                                                                     color: Color(0xffffffff),
@@ -982,7 +982,7 @@ class Scene extends StatelessWidget {
                                                                     '01:30 PM',
                                                                     style: SafeGoogleFont (
                                                                       'Lucida Bright',
-                                                                      fontSize: 17.6289710999*ffem,
+                                                                      17.6289710999*ffem,
                                                                       fontWeight: FontWeight.w600,
                                                                       height: 1.2575*ffem/fem,
                                                                       color: Color(0xffffffff),
@@ -1017,7 +1017,7 @@ class Scene extends StatelessWidget {
                                                                   '10:15 PM',
                                                                   style: SafeGoogleFont (
                                                                     'Lucida Bright',
-                                                                    fontSize: 17.6289710999*ffem,
+                                                                    17.6289710999*ffem,
                                                                     fontWeight: FontWeight.w600,
                                                                     height: 1.2575*ffem/fem,
                                                                     color: Color(0xffffffff),
@@ -1057,7 +1057,7 @@ class Scene extends StatelessWidget {
                                                             '04:30 PM',
                                                             style: SafeGoogleFont (
                                                               'Lucida Bright',
-                                                              fontSize: 17.6289710999*ffem,
+                                                              17.6289710999*ffem,
                                                               fontWeight: FontWeight.w600,
                                                               height: 1.2575*ffem/fem,
                                                               color: Color(0xffffffff),
@@ -1095,7 +1095,7 @@ class Scene extends StatelessWidget {
                                                   'Third Cinema',
                                                   style: SafeGoogleFont (
                                                     'Lucida Bright',
-                                                    fontSize: 22*ffem,
+                                                    22*ffem,
                                                     fontWeight: FontWeight.w600,
                                                     height: 1.2575*ffem/fem,
                                                     color: Color(0xff7e132b),
@@ -1143,7 +1143,7 @@ class Scene extends StatelessWidget {
                                                                   '09:20 AM',
                                                                   style: SafeGoogleFont (
                                                                     'Lucida Bright',
-                                                                    fontSize: 17.6289710999*ffem,
+                                                                    17.6289710999*ffem,
                                                                     fontWeight: FontWeight.w600,
                                                                     height: 1.2575*ffem/fem,
                                                                     color: Color(0xffffffff),
@@ -1180,7 +1180,7 @@ class Scene extends StatelessWidget {
                                                                   '10:45 AM',
                                                                   style: SafeGoogleFont (
                                                                     'Lucida Bright',
-                                                                    fontSize: 17.6289710999*ffem,
+                                                                    17.6289710999*ffem,
                                                                     fontWeight: FontWeight.w600,
                                                                     height: 1.2575*ffem/fem,
                                                                     color: Color(0xffffffff),
@@ -1217,7 +1217,7 @@ class Scene extends StatelessWidget {
                                                                   '12:05 PM',
                                                                   style: SafeGoogleFont (
                                                                     'Lucida Bright',
-                                                                    fontSize: 17.6289710999*ffem,
+                                                                    17.6289710999*ffem,
                                                                     fontWeight: FontWeight.w600,
                                                                     height: 1.2575*ffem/fem,
                                                                     color: Color(0xffffffff),
@@ -1264,7 +1264,7 @@ class Scene extends StatelessWidget {
                                                                   '01:35 PM',
                                                                   style: SafeGoogleFont (
                                                                     'Lucida Bright',
-                                                                    fontSize: 17.6289710999*ffem,
+                                                                    17.6289710999*ffem,
                                                                     fontWeight: FontWeight.w600,
                                                                     height: 1.2575*ffem/fem,
                                                                     color: Color(0xffffffff),
@@ -1301,7 +1301,7 @@ class Scene extends StatelessWidget {
                                                                   '04:25 PM',
                                                                   style: SafeGoogleFont (
                                                                     'Lucida Bright',
-                                                                    fontSize: 17.6289710999*ffem,
+                                                                    17.6289710999*ffem,
                                                                     fontWeight: FontWeight.w600,
                                                                     height: 1.2575*ffem/fem,
                                                                     color: Color(0xffffffff),
@@ -1338,7 +1338,7 @@ class Scene extends StatelessWidget {
                                                                   '07:15 PM',
                                                                   style: SafeGoogleFont (
                                                                     'Lucida Bright',
-                                                                    fontSize: 17.6289710999*ffem,
+                                                                    17.6289710999*ffem,
                                                                     fontWeight: FontWeight.w600,
                                                                     height: 1.2575*ffem/fem,
                                                                     color: Color(0xffffffff),
@@ -1388,7 +1388,7 @@ class Scene extends StatelessWidget {
                                                                     '09:00 PM',
                                                                     style: SafeGoogleFont (
                                                                       'Lucida Bright',
-                                                                      fontSize: 17.6289710999*ffem,
+                                                                      17.6289710999*ffem,
                                                                       fontWeight: FontWeight.w600,
                                                                       height: 1.2575*ffem/fem,
                                                                       color: Color(0xffffffff),
@@ -1423,7 +1423,7 @@ class Scene extends StatelessWidget {
                                                                   '10:00 PM',
                                                                   style: SafeGoogleFont (
                                                                     'Lucida Bright',
-                                                                    fontSize: 17.6289710999*ffem,
+                                                                    17.6289710999*ffem,
                                                                     fontWeight: FontWeight.w600,
                                                                     height: 1.2575*ffem/fem,
                                                                     color: Color(0xffffffff),
@@ -1463,7 +1463,7 @@ class Scene extends StatelessWidget {
                                                   'Fourth Cinema',
                                                   style: SafeGoogleFont (
                                                     'Lucida Bright',
-                                                    fontSize: 22*ffem,
+                                                    22*ffem,
                                                     fontWeight: FontWeight.w600,
                                                     height: 1.2575*ffem/fem,
                                                     color: Color(0xff7e132b),
@@ -1505,7 +1505,7 @@ class Scene extends StatelessWidget {
                                                             '09:15 AM',
                                                             style: SafeGoogleFont (
                                                               'Lucida Bright',
-                                                              fontSize: 17.6289710999*ffem,
+                                                              17.6289710999*ffem,
                                                               fontWeight: FontWeight.w600,
                                                               height: 1.2575*ffem/fem,
                                                               color: Color(0xffffffff),
@@ -1542,7 +1542,7 @@ class Scene extends StatelessWidget {
                                                             '11:00 AM',
                                                             style: SafeGoogleFont (
                                                               'Lucida Bright',
-                                                              fontSize: 17.6289710999*ffem,
+                                                              17.6289710999*ffem,
                                                               fontWeight: FontWeight.w600,
                                                               height: 1.2575*ffem/fem,
                                                               color: Color(0xffffffff),
@@ -1579,7 +1579,7 @@ class Scene extends StatelessWidget {
                                                             '12:15 PM',
                                                             style: SafeGoogleFont (
                                                               'Lucida Bright',
-                                                              fontSize: 17.6289710999*ffem,
+                                                              17.6289710999*ffem,
                                                               fontWeight: FontWeight.w600,
                                                               height: 1.2575*ffem/fem,
                                                               color: Color(0xffffffff),
@@ -1648,7 +1648,7 @@ class Scene extends StatelessWidget {
                             '9:41',
                             style: SafeGoogleFont (
                               'SF Pro Text',
-                              fontSize: 15*ffem,
+                              15*ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.4*ffem/fem,
                               letterSpacing: -0.3199999928*fem,

@@ -99,7 +99,7 @@ class Scene extends StatelessWidget {
                           'Extra Gum Peppermint Chewing Gum\n',
                           style: SafeGoogleFont (
                             'Cambria',
-                            fontSize: 15*ffem,
+                            15*ffem,
                             fontWeight: FontWeight.w700,
                             height: 1.2575*ffem/fem,
                             color: Color(0xff000000),
@@ -143,7 +143,7 @@ class Scene extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont (
                                           'Adamina',
-                                          fontSize: 25*ffem,
+                                          25*ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 0.84*ffem/fem,
                                           letterSpacing: -0.3199999928*fem,
@@ -162,7 +162,7 @@ class Scene extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Adamina',
-                                        fontSize: 19*ffem,
+                                        19*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.1052631579*ffem/fem,
                                         letterSpacing: -0.3199999928*fem,
@@ -183,7 +183,7 @@ class Scene extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Adamina',
-                                        fontSize: 25*ffem,
+                                        25*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 0.84*ffem/fem,
                                         letterSpacing: -0.3199999928*fem,
@@ -220,7 +220,7 @@ class Scene extends StatelessWidget {
                                     textAlign: TextAlign.center,
                                     style: SafeGoogleFont (
                                       'Tw Cen MT',
-                                      fontSize: 27*ffem,
+                                      27*ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.2575*ffem/fem,
                                       color: Color(0xff7e132b),
@@ -252,7 +252,7 @@ class Scene extends StatelessWidget {
                                         'ADD',
                                         style: SafeGoogleFont (
                                           'Lucida Bright',
-                                          fontSize: 17.6289710999*ffem,
+                                          17.6289710999*ffem,
                                           fontWeight: FontWeight.w600,
                                           height: 1.2575*ffem/fem,
                                           color: Color(0xffffffff),

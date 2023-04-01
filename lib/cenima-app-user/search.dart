@@ -72,7 +72,7 @@ class Scene extends StatelessWidget {
                                   textAlign: TextAlign.center,
                                   style: SafeGoogleFont (
                                     'Segoe UI',
-                                    fontSize: 22.0362129211*ffem,
+                                    22.0362129211*ffem,
                                     fontWeight: FontWeight.w700,
                                     height: 1.2575*ffem/fem,
                                     color: Color(0xff000000),
@@ -117,7 +117,7 @@ class Scene extends StatelessWidget {
                                   'SEARCH HERE ',
                                   style: SafeGoogleFont (
                                     'Lucida Bright',
-                                    fontSize: 15*ffem,
+                                    15*ffem,
                                     fontWeight: FontWeight.w600,
                                     height: 1.2575*ffem/fem,
                                     color: Color(0xff707070),
@@ -228,7 +228,7 @@ class Scene extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Roboto',
-                                        fontSize: 24*ffem,
+                                        24*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.3333333333*ffem/fem,
                                         color: Color(0xff020202),
@@ -245,7 +245,7 @@ class Scene extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Roboto',
-                                        fontSize: 24*ffem,
+                                        24*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.3333333333*ffem/fem,
                                         color: Color(0xff020202),
@@ -262,7 +262,7 @@ class Scene extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Roboto',
-                                        fontSize: 24*ffem,
+                                        24*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.3333333333*ffem/fem,
                                         color: Color(0xff020202),
@@ -279,7 +279,7 @@ class Scene extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Roboto',
-                                        fontSize: 24*ffem,
+                                        24*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.3333333333*ffem/fem,
                                         color: Color(0xff020202),
@@ -296,7 +296,7 @@ class Scene extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Roboto',
-                                        fontSize: 24*ffem,
+                                        24*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.3333333333*ffem/fem,
                                         color: Color(0xff020202),
@@ -313,7 +313,7 @@ class Scene extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Roboto',
-                                        fontSize: 24*ffem,
+                                        24*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.3333333333*ffem/fem,
                                         color: Color(0xff020202),
@@ -330,7 +330,7 @@ class Scene extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Roboto',
-                                        fontSize: 24*ffem,
+                                        24*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.3333333333*ffem/fem,
                                         color: Color(0xff020202),
@@ -347,7 +347,7 @@ class Scene extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Roboto',
-                                        fontSize: 24*ffem,
+                                        24*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.3333333333*ffem/fem,
                                         color: Color(0xff020202),
@@ -364,7 +364,7 @@ class Scene extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Roboto',
-                                        fontSize: 24*ffem,
+                                        24*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.3333333333*ffem/fem,
                                         color: Color(0xff020202),
@@ -379,7 +379,7 @@ class Scene extends StatelessWidget {
                                     textAlign: TextAlign.center,
                                     style: SafeGoogleFont (
                                       'Roboto',
-                                      fontSize: 24*ffem,
+                                      24*ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.3333333333*ffem/fem,
                                       color: Color(0xff020202),
@@ -405,7 +405,7 @@ class Scene extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Roboto',
-                                        fontSize: 24*ffem,
+                                        24*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.3333333333*ffem/fem,
                                         color: Color(0xff020202),
@@ -422,7 +422,7 @@ class Scene extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Roboto',
-                                        fontSize: 24*ffem,
+                                        24*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.3333333333*ffem/fem,
                                         color: Color(0xff020202),
@@ -439,7 +439,7 @@ class Scene extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Roboto',
-                                        fontSize: 24*ffem,
+                                        24*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.3333333333*ffem/fem,
                                         color: Color(0xff020202),
@@ -456,7 +456,7 @@ class Scene extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Roboto',
-                                        fontSize: 24*ffem,
+                                        24*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.3333333333*ffem/fem,
                                         color: Color(0xff020202),
@@ -473,7 +473,7 @@ class Scene extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Roboto',
-                                        fontSize: 24*ffem,
+                                        24*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.3333333333*ffem/fem,
                                         color: Color(0xff020202),
@@ -490,7 +490,7 @@ class Scene extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Roboto',
-                                        fontSize: 24*ffem,
+                                        24*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.3333333333*ffem/fem,
                                         color: Color(0xff020202),
@@ -507,7 +507,7 @@ class Scene extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Roboto',
-                                        fontSize: 24*ffem,
+                                        24*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.3333333333*ffem/fem,
                                         color: Color(0xff020202),
@@ -524,7 +524,7 @@ class Scene extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Roboto',
-                                        fontSize: 24*ffem,
+                                        24*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.3333333333*ffem/fem,
                                         color: Color(0xff020202),
@@ -539,7 +539,7 @@ class Scene extends StatelessWidget {
                                     textAlign: TextAlign.center,
                                     style: SafeGoogleFont (
                                       'Roboto',
-                                      fontSize: 24*ffem,
+                                      24*ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.3333333333*ffem/fem,
                                       color: Color(0xff020202),
@@ -576,7 +576,7 @@ class Scene extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Roboto',
-                                        fontSize: 24*ffem,
+                                        24*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.3333333333*ffem/fem,
                                         color: Color(0xff020202),
@@ -593,7 +593,7 @@ class Scene extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Roboto',
-                                        fontSize: 24*ffem,
+                                        24*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.3333333333*ffem/fem,
                                         color: Color(0xff020202),
@@ -610,7 +610,7 @@ class Scene extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Roboto',
-                                        fontSize: 24*ffem,
+                                        24*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.3333333333*ffem/fem,
                                         color: Color(0xff020202),
@@ -627,7 +627,7 @@ class Scene extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Roboto',
-                                        fontSize: 24*ffem,
+                                        24*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.3333333333*ffem/fem,
                                         color: Color(0xff020202),
@@ -644,7 +644,7 @@ class Scene extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Roboto',
-                                        fontSize: 24*ffem,
+                                        24*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.3333333333*ffem/fem,
                                         color: Color(0xff020202),
@@ -661,7 +661,7 @@ class Scene extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Roboto',
-                                        fontSize: 24*ffem,
+                                        24*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.3333333333*ffem/fem,
                                         color: Color(0xff020202),
@@ -678,7 +678,7 @@ class Scene extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Roboto',
-                                        fontSize: 24*ffem,
+                                        24*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.3333333333*ffem/fem,
                                         color: Color(0xff020202),
@@ -715,7 +715,7 @@ class Scene extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Roboto',
-                                        fontSize: 14*ffem,
+                                        14*ffem,
                                         fontWeight: FontWeight.w500,
                                         height: 1.7142857143*ffem/fem,
                                         letterSpacing: 1.5*fem,
@@ -733,7 +733,7 @@ class Scene extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Roboto',
-                                        fontSize: 24*ffem,
+                                        24*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.3333333333*ffem/fem,
                                         color: Color(0xff020202),
@@ -760,7 +760,7 @@ class Scene extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Roboto',
-                                        fontSize: 24*ffem,
+                                        24*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.3333333333*ffem/fem,
                                         color: Color(0xff020202),
@@ -828,7 +828,7 @@ class Scene extends StatelessWidget {
                             '9:41',
                             style: SafeGoogleFont (
                               'SF Pro Text',
-                              fontSize: 15*ffem,
+                              15*ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.4*ffem/fem,
                               letterSpacing: -0.3199999928*fem,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/cenima-app-user/starter.dart';
 import 'package:myapp/utils.dart';
-import 'starter-1.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
@@ -50,10 +50,10 @@ class SignUp extends StatelessWidget {
                               'Sign Up',
                               style: SafeGoogleFont(
                                 'Lucida Bright',
-                                fontSize: 25 * ffem,
+                                25 * ffem,
                                 fontWeight: FontWeight.w600,
                                 height: 1.2575 * ffem / fem,
-                                color: Color(0xff7e132b),
+                                color: const Color(0xff7e132b),
                               ),
                             ),
                           ),
@@ -126,7 +126,7 @@ class SignUp extends StatelessWidget {
                               'First Name*',
                               style: SafeGoogleFont(
                                 'Tw Cen MT',
-                                fontSize: 20 * ffem,
+                                20 * ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2 * ffem / fem,
                                 letterSpacing: 0.150000006 * fem,
@@ -171,7 +171,7 @@ class SignUp extends StatelessWidget {
                               'Last Name*',
                               style: SafeGoogleFont(
                                 'Tw Cen MT',
-                                fontSize: 20 * ffem,
+                                20 * ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2 * ffem / fem,
                                 letterSpacing: 0.150000006 * fem,
@@ -216,7 +216,7 @@ class SignUp extends StatelessWidget {
                               'Email*',
                               style: SafeGoogleFont(
                                 'Tw Cen MT',
-                                fontSize: 20 * ffem,
+                                20 * ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2 * ffem / fem,
                                 letterSpacing: 0.150000006 * fem,
@@ -271,7 +271,7 @@ class SignUp extends StatelessWidget {
                                       'Mobile Number*',
                                       style: SafeGoogleFont(
                                         'Tw Cen MT',
-                                        fontSize: 20 * ffem,
+                                        20 * ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.2 * ffem / fem,
                                         letterSpacing: 0.150000006 * fem,
@@ -308,7 +308,7 @@ class SignUp extends StatelessWidget {
                                         '+962',
                                         style: SafeGoogleFont(
                                           'Tw Cen MT',
-                                          fontSize: 22.0362129211 * ffem,
+                                          22.0362129211 * ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.2575 * ffem / fem,
                                           color: Color(0xffa6a6a6),
@@ -378,7 +378,7 @@ class SignUp extends StatelessWidget {
                                       'Location',
                                       style: SafeGoogleFont(
                                         'Tw Cen MT',
-                                        fontSize: 20 * ffem,
+                                        20 * ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.2 * ffem / fem,
                                         letterSpacing: 0.150000006 * fem,
@@ -408,7 +408,7 @@ class SignUp extends StatelessWidget {
                                   'Set on map',
                                   style: SafeGoogleFont(
                                     'Cambria',
-                                    fontSize: 15 * ffem,
+                                    15 * ffem,
                                     fontWeight: FontWeight.w700,
                                     height: 1.2575 * ffem / fem,
                                     color: Color(0xffff2153),
@@ -454,7 +454,7 @@ class SignUp extends StatelessWidget {
                               'Password*',
                               style: SafeGoogleFont(
                                 'Tw Cen MT',
-                                fontSize: 20 * ffem,
+                                20 * ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2 * ffem / fem,
                                 letterSpacing: 0.150000006 * fem,
@@ -511,7 +511,7 @@ class SignUp extends StatelessWidget {
                               'Confirm Password*',
                               style: SafeGoogleFont(
                                 'Tw Cen MT',
-                                fontSize: 20 * ffem,
+                                20 * ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2 * ffem / fem,
                                 letterSpacing: 0.150000006 * fem,
@@ -561,7 +561,7 @@ class SignUp extends StatelessWidget {
                                 textAlign: TextAlign.center,
                                 style: SafeGoogleFont(
                                   'Lucida Bright',
-                                  fontSize: 19.8325920105 * ffem,
+                                  19.8325920105 * ffem,
                                   fontWeight: FontWeight.w600,
                                   height: 1.2575 * ffem / fem,
                                   color: Color(0xffffffff),
@@ -589,7 +589,7 @@ class SignUp extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont(
                                 'Lucida Bright',
-                                fontSize: 13 * ffem,
+                                13 * ffem,
                                 fontWeight: FontWeight.w600,
                                 height: 1.2575 * ffem / fem,
                                 color: Color(0xff828282),
@@ -607,7 +607,7 @@ class SignUp extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont(
                                 'Lucida Bright',
-                                fontSize: 13 * ffem,
+                                13 * ffem,
                                 fontWeight: FontWeight.w600,
                                 height: 1.2575 * ffem / fem,
                                 color: Color(0xffff2153),
@@ -645,7 +645,7 @@ class SignUp extends StatelessWidget {
                           'Have an account?',
                           style: SafeGoogleFont(
                             'Segoe UI',
-                            fontSize: 20 * ffem,
+                            20 * ffem,
                             fontWeight: FontWeight.w700,
                             height: 1.2575 * ffem / fem,
                             color: Color(0xff000000),
@@ -676,7 +676,7 @@ class SignUp extends StatelessWidget {
                                 textAlign: TextAlign.center,
                                 style: SafeGoogleFont(
                                   'Lucida Bright',
-                                  fontSize: 19.8325920105 * ffem,
+                                  19.8325920105 * ffem,
                                   fontWeight: FontWeight.w600,
                                   height: 1.2575 * ffem / fem,
                                   color: Color(0xff000000),

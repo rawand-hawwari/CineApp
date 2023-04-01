@@ -45,7 +45,7 @@ class Scene extends StatelessWidget {
                         'Have a question? face a problem?\nplease write to us.',
                         style: SafeGoogleFont (
                           'Segoe UI',
-                          fontSize: 20*ffem,
+                          20*ffem,
                           fontWeight: FontWeight.w700,
                           height: 1.2575*ffem/fem,
                           color: Color(0xff000000),
@@ -82,7 +82,7 @@ class Scene extends StatelessWidget {
                               'First Name*',
                               style: SafeGoogleFont (
                                 'Tw Cen MT',
-                                fontSize: 20*ffem,
+                                20*ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2575*ffem/fem,
                                 color: Color(0xff8b8b8b),
@@ -122,7 +122,7 @@ class Scene extends StatelessWidget {
                               'Email*',
                               style: SafeGoogleFont (
                                 'Tw Cen MT',
-                                fontSize: 20*ffem,
+                                20*ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2575*ffem/fem,
                                 color: Color(0xff8b8b8b),
@@ -169,7 +169,7 @@ class Scene extends StatelessWidget {
                                   text: TextSpan(
                                     style: SafeGoogleFont (
                                       'Tw Cen MT',
-                                      fontSize: 20*ffem,
+                                      20*ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.2575*ffem/fem,
                                       color: Color(0xff8b8b8b),
@@ -179,7 +179,7 @@ class Scene extends StatelessWidget {
                                         text: 'Mobile Numb',
                                         style: SafeGoogleFont (
                                           'Tw Cen MT',
-                                          fontSize: 20*ffem,
+                                          20*ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.2575*ffem/fem,
                                           color: Color(0xff8b8b8b),
@@ -232,7 +232,7 @@ class Scene extends StatelessWidget {
                                         '+962',
                                         style: SafeGoogleFont (
                                           'Tw Cen MT',
-                                          fontSize: 22.0362129211*ffem,
+                                          22.0362129211*ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.2575*ffem/fem,
                                           color: Color(0xffa6a6a6),
@@ -287,7 +287,7 @@ class Scene extends StatelessWidget {
                               'Location',
                               style: SafeGoogleFont (
                                 'Tw Cen MT',
-                                fontSize: 20*ffem,
+                                20*ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2575*ffem/fem,
                                 color: Color(0xff8b8b8b),
@@ -312,7 +312,7 @@ class Scene extends StatelessWidget {
                         text: TextSpan(
                           style: SafeGoogleFont (
                             'Tw Cen MT',
-                            fontSize: 20*ffem,
+                            20*ffem,
                             fontWeight: FontWeight.w400,
                             height: 1.2575*ffem/fem,
                             color: Color(0xffa6a6a6),
@@ -322,7 +322,7 @@ class Scene extends StatelessWidget {
                               text: 'Your messag',
                               style: SafeGoogleFont (
                                 'Tw Cen MT',
-                                fontSize: 20*ffem,
+                                20*ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2575*ffem/fem,
                                 color: Color(0xffa6a6a6),
@@ -343,7 +343,7 @@ class Scene extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: SafeGoogleFont (
                           'Lucida Bright',
-                          fontSize: 11*ffem,
+                          11*ffem,
                           fontWeight: FontWeight.w600,
                           height: 1.2575*ffem/fem,
                           color: Color(0xffff2153),
@@ -378,7 +378,7 @@ class Scene extends StatelessWidget {
                                     'Choose file',
                                     style: SafeGoogleFont (
                                       'Tw Cen MT',
-                                      fontSize: 20*ffem,
+                                      20*ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.2575*ffem/fem,
                                       color: Color(0xff464646),
@@ -395,7 +395,7 @@ class Scene extends StatelessWidget {
                               text: TextSpan(
                                 style: SafeGoogleFont (
                                   'Tw Cen MT',
-                                  fontSize: 20*ffem,
+                                  20*ffem,
                                   fontWeight: FontWeight.w400,
                                   height: 1.2575*ffem/fem,
                                   color: Color(0xffa6a6a6),
@@ -405,7 +405,7 @@ class Scene extends StatelessWidget {
                                     text: 'Attach File',
                                     style: SafeGoogleFont (
                                       'Tw Cen MT',
-                                      fontSize: 20*ffem,
+                                      20*ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.2575*ffem/fem,
                                       color: Color(0xffa6a6a6),
@@ -449,7 +449,7 @@ class Scene extends StatelessWidget {
                               'Cine',
                               style: SafeGoogleFont (
                                 'Lucida Bright',
-                                fontSize: 22*ffem,
+                                22*ffem,
                                 fontWeight: FontWeight.w600,
                                 height: 1.2575*ffem/fem,
                                 color: Color(0xff7e132b),
@@ -461,7 +461,7 @@ class Scene extends StatelessWidget {
                             'Cine',
                             style: SafeGoogleFont (
                               'Lucida Bright',
-                              fontSize: 22*ffem,
+                              22*ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.2575*ffem/fem,
                               color: Color(0xff7e132b),
@@ -479,7 +479,7 @@ class Scene extends StatelessWidget {
                         text: TextSpan(
                           style: SafeGoogleFont (
                             'Segoe UI',
-                            fontSize: 12*ffem,
+                            12*ffem,
                             fontWeight: FontWeight.w300,
                             height: 1.2575*ffem/fem,
                             fontStyle: FontStyle.italic,
@@ -490,7 +490,7 @@ class Scene extends StatelessWidget {
                               text: 'Greenlawn Ave,',
                               style: SafeGoogleFont (
                                 'Segoe UI',
-                                fontSize: 12*ffem,
+                                12*ffem,
                                 fontWeight: FontWeight.w300,
                                 height: 1.2575*ffem/fem,
                                 fontStyle: FontStyle.italic,
@@ -533,7 +533,7 @@ class Scene extends StatelessWidget {
                                   text: TextSpan(
                                     style: SafeGoogleFont (
                                       'Segoe UI',
-                                      fontSize: 12*ffem,
+                                      12*ffem,
                                       fontWeight: FontWeight.w300,
                                       height: 1.2575*ffem/fem,
                                       fontStyle: FontStyle.italic,
@@ -544,7 +544,7 @@ class Scene extends StatelessWidget {
                                         text: '+123 555 555 5',
                                         style: SafeGoogleFont (
                                           'Segoe UI',
-                                          fontSize: 12*ffem,
+                                          12*ffem,
                                           fontWeight: FontWeight.w300,
                                           height: 1.2575*ffem/fem,
                                           fontStyle: FontStyle.italic,
@@ -585,7 +585,7 @@ class Scene extends StatelessWidget {
                                   text: TextSpan(
                                     style: SafeGoogleFont (
                                       'Segoe UI',
-                                      fontSize: 12*ffem,
+                                      12*ffem,
                                       fontWeight: FontWeight.w300,
                                       height: 1.2575*ffem/fem,
                                       fontStyle: FontStyle.italic,
@@ -596,7 +596,7 @@ class Scene extends StatelessWidget {
                                         text: '+123 555 555 6',
                                         style: SafeGoogleFont (
                                           'Segoe UI',
-                                          fontSize: 12*ffem,
+                                          12*ffem,
                                           fontWeight: FontWeight.w300,
                                           height: 1.2575*ffem/fem,
                                           fontStyle: FontStyle.italic,
@@ -637,7 +637,7 @@ class Scene extends StatelessWidget {
                                   text: TextSpan(
                                     style: SafeGoogleFont (
                                       'Segoe UI',
-                                      fontSize: 12*ffem,
+                                      12*ffem,
                                       fontWeight: FontWeight.w300,
                                       height: 1.2575*ffem/fem,
                                       fontStyle: FontStyle.italic,
@@ -648,7 +648,7 @@ class Scene extends StatelessWidget {
                                         text: 'Cine@Gmail.com',
                                         style: SafeGoogleFont (
                                           'Segoe UI',
-                                          fontSize: 12*ffem,
+                                          12*ffem,
                                           fontWeight: FontWeight.w300,
                                           height: 1.2575*ffem/fem,
                                           fontStyle: FontStyle.italic,
@@ -689,7 +689,7 @@ class Scene extends StatelessWidget {
                                   'View map',
                                   style: SafeGoogleFont (
                                     'Segoe UI',
-                                    fontSize: 12*ffem,
+                                    12*ffem,
                                     fontWeight: FontWeight.w300,
                                     height: 1.2575*ffem/fem,
                                     fontStyle: FontStyle.italic,
@@ -739,7 +739,7 @@ class Scene extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: SafeGoogleFont (
                           'Segoe UI',
-                          fontSize: 20*ffem,
+                          20*ffem,
                           fontWeight: FontWeight.w700,
                           height: 1.2575*ffem/fem,
                           color: Color(0xff000000),
@@ -800,7 +800,7 @@ class Scene extends StatelessWidget {
                             '9:41',
                             style: SafeGoogleFont (
                               'SF Pro Text',
-                              fontSize: 15*ffem,
+                              15*ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.4*ffem/fem,
                               letterSpacing: -0.3199999928*fem,
