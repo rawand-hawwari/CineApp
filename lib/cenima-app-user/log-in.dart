@@ -14,6 +14,9 @@ class LogIn extends StatefulWidget {
 }
 
 class _LoginPage extends State<LogIn> {
+  final _formKey = GlobalKey<FormState>();
+  // static const IconData envelope = IconData(0xf422, fontFamily: iconFont, fontPackage: iconFontPackage);
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 393;
@@ -29,6 +32,7 @@ class _LoginPage extends State<LogIn> {
             height: 852 * fem,
             child: Stack(
               children: [
+                // border for the whle page
                 Positioned(
                   // rectangle20SJZ (1:1035)
                   left: 1 * fem,
@@ -46,85 +50,8 @@ class _LoginPage extends State<LogIn> {
                     ),
                   ),
                 ),
-                // Positioned(
-                //   left: 29 * fem,
-                //   top: 415 * fem,
-                //   child: Container(
-                //     padding: EdgeInsets.fromLTRB(
-                //         19 * fem, 13 * fem, 17 * fem, 14 * fem),
-                //     width: 328 * fem,
-                //     height: 56 * fem,
-                //     decoration: BoxDecoration(
-                //       border: Border.all(color: const Color(0xff020202)),
-                //       color: const Color(0xffffffff),
-                //       borderRadius: BorderRadius.circular(25 * fem),
-                //     ),
-                //     child: Row(
-                //       crossAxisAlignment: CrossAxisAlignment.center,
-                //       children: [
-                //         Container(
-                //           margin: EdgeInsets.fromLTRB(
-                //               0 * fem, 0 * fem, 15 * fem, 0 * fem),
-                //           width: 29 * fem,
-                //           height: 29 * fem,
-                //           child: Image.asset(
-                //             'assets/cenima-app-user/images/phone-call-jJd.png',
-                //             fit: BoxFit.cover,
-                //           ),
-                //         ),
-                //         Container(
-                //           // textiaq (I51:847;51:956)
-                //           margin: EdgeInsets.fromLTRB(
-                //               0 * fem, 1 * fem, 144 * fem, 0 * fem),
-                //           child: Text(
-                //             'Password',
-                //             style: SafeGoogleFont(
-                //               'Tw Cen MT',
-                //               20 * ffem,
-                //               fontWeight: FontWeight.w400,
-                //               height: 1.2 * ffem / fem,
-                //               letterSpacing: 0.150000006 * fem,
-                //               color: const Color(0xff757575),
-                //             ),
-                //           ),
-                //         ),
-                //         Container(
-                //           // iconandroid24visibilitygRB (I51:847;51:957)
-                //           margin: EdgeInsets.fromLTRB(
-                //               0 * fem, 2 * fem, 0 * fem, 0 * fem),
-                //           width: 22 * fem,
-                //           height: 15 * fem,
-                //           child: Image.asset(
-                //             'assets/cenima-app-user/images/icon-android-24-visibility.png',
-                //             width: 22 * fem,
-                //             height: 15 * fem,
-                //           ),
-                //         ),
-                //       ],
-                //     ),
-                //   ),
-                // ),
-                Positioned(
-                  // logininbuttom27f (27:257)
-                  left: 0 * fem,
-                  top: 749 * fem,
-                  child: Container(
-                    padding: EdgeInsets.fromLTRB(
-                        44 * fem, 33 * fem, 44 * fem, 0 * fem),
-                    width: 408 * fem,
-                    height: 59 * fem,
-                    child: Text(
-                      'Have no account?',
-                      style: SafeGoogleFont(
-                        'Segoe UI',
-                        20 * ffem,
-                        fontWeight: FontWeight.w700,
-                        height: 1.2575 * ffem / fem,
-                        color: const Color(0xff000000),
-                      ),
-                    ),
-                  ),
-                ),
+
+                // page title
                 Positioned(
                   // loginuam (1:1043)
                   left: 160 * fem,
@@ -136,9 +63,8 @@ class _LoginPage extends State<LogIn> {
                       child: Text(
                         'Log In',
                         textAlign: TextAlign.center,
-                        style: SafeGoogleFont(
-                          'Lucida Bright',
-                          25 * ffem,
+                        style: GoogleFonts.lato(
+                          fontSize: 25 * ffem,
                           fontWeight: FontWeight.w600,
                           height: 1.2575 * ffem / fem,
                           color: const Color(0xff7e132b),
@@ -147,149 +73,8 @@ class _LoginPage extends State<LogIn> {
                     ),
                   ),
                 ),
-                Positioned(
-                  // forgetpasswordclickherebM7 (1:1048)
-                  left: 164.5 * fem,
-                  top: 479 * fem,
-                  child: Align(
-                    child: SizedBox(
-                      width: 99 * fem,
-                      height: 17 * fem,
-                      child: Text(
-                        'Forget password?',
-                        textAlign: TextAlign.center,
-                        style: SafeGoogleFont(
-                          'Lucida Bright',
-                          13 * ffem,
-                          fontWeight: FontWeight.w600,
-                          height: 1.2575 * ffem / fem,
-                          color: const Color(0xff828282),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  // forgetpasswordclickhereXe5 (115:13891)
-                  left: 84 * fem,
-                  top: 705 * fem,
-                  child: Align(
-                    child: SizedBox(
-                      width: 113 * fem,
-                      height: 17 * fem,
-                      child: Text(
-                        'A bussiness Owner? ',
-                        textAlign: TextAlign.center,
-                        style: SafeGoogleFont(
-                          'Lucida Bright',
-                          13 * ffem,
-                          fontWeight: FontWeight.w600,
-                          height: 1.2575 * ffem / fem,
-                          color: const Color(0xff828282),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  // forgetpasswordclickheredKj (53:306)
-                  left: 280 * fem,
-                  top: 479 * fem,
-                  child: Align(
-                    child: SizedBox(
-                      width: 55 * fem,
-                      height: 17 * fem,
-                      child: TextButton(
-                        onPressed: () {},
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.zero,
-                        ),
-                        child: Text(
-                          ' Click here',
-                          textAlign: TextAlign.center,
-                          style: SafeGoogleFont(
-                            'Lucida Bright',
-                            13 * ffem,
-                            fontWeight: FontWeight.w600,
-                            height: 1.2575 * ffem / fem,
-                            color: const Color(0xffff2153),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  // forgetpasswordclickhereffj (115:13892)
-                  left: 219 * fem,
-                  top: 705 * fem,
-                  child: Align(
-                    child: SizedBox(
-                      width: 55 * fem,
-                      height: 17 * fem,
-                      child: TextButton(
-                        onPressed: () {},
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.zero,
-                        ),
-                        child: Text(
-                          ' Click here',
-                          textAlign: TextAlign.center,
-                          style: SafeGoogleFont(
-                            'Lucida Bright',
-                            13 * ffem,
-                            fontWeight: FontWeight.w600,
-                            height: 1.2575 * ffem / fem,
-                            color: const Color(0xffff2153),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  // mainbuttonZuX (42:432)
-                  left: 211 * fem,
-                  top: 767 * fem,
-                  child: TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const SignUp()),
-                      );
-                    },
-                    style: TextButton.styleFrom(
-                      padding: EdgeInsets.zero,
-                    ),
-                    child: SizedBox(
-                      width: 159 * fem,
-                      height: 57 * fem,
-                      child: Container(
-                        // frame4Vwb (I42:432;18:475)
-                        width: double.infinity,
-                        height: double.infinity,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: const Color(0xff707070)),
-                          color: const Color(0xff9a2044),
-                          borderRadius: BorderRadius.circular(54 * fem),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'SIGN UP',
-                            textAlign: TextAlign.center,
-                            style: SafeGoogleFont(
-                              'Lucida Bright',
-                              19.8325920105 * ffem,
-                              fontWeight: FontWeight.w600,
-                              height: 1.2575 * ffem / fem,
-                              color: const Color(0xffffffff),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
+
+                // exit button
                 Positioned(
                   // close2q3 (31:258)
                   left: 337 * fem,
@@ -316,7 +101,7 @@ class _LoginPage extends State<LogIn> {
                           width: 24.24 * fem,
                           height: 24.24 * fem,
                           child: Image.asset(
-                            'assets/cenima-app-user/images/close-94Z.png',
+                            'assets/cenima-app-user/images/close.png',
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -325,135 +110,170 @@ class _LoginPage extends State<LogIn> {
                   ),
                 ),
 
-                //container for email field text
-                Padding(
-                    padding: const EdgeInsets.all(15),
-                    child: Column(
+                // logo container
+                Positioned(
+                  left: MediaQuery.of(context).size.width * 0.05,
+                  top: MediaQuery.of(context).size.height * 0.05,
+                  child: SizedBox(
+                    width: 310 * fem,
+                    height: 518 * fem,
+                    child: Center(
+                      child: Image.asset(
+                        'assets/cenima-app-user/images/auto-group-42rk.png',
+                      ),
+                    ),
+                  ),
+                ),
+
+                // container for form
+                Positioned(
+                  // left: 0 * fem,
+                  // top: MediaQuery.of(context).size.height * 0.05,
+                  child: Container(
+                    margin: const EdgeInsets.all(40.0),
+                    padding: const EdgeInsets.only(left: 5.0, top: 500),
+                    child: Form(
+                      key: _formKey,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          TextFormField(
+                            decoration: const InputDecoration(
+                              border: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(100.0)),
+                              ),
+                              prefixIcon: Icon(Icons.mail_outline),
+                              hintText: 'Enter your Email',
+                              labelText: 'Email',
+                            ),
+                          ),
+                          const Padding(padding: EdgeInsets.all(10.0)),
+                          TextFormField(
+                            decoration: const InputDecoration(
+                              border: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(100.0)),
+                              ),
+                              prefixIcon: Icon(Icons.lock_outline),
+                              hintText: 'Enter your password',
+                              labelText: 'Password',
+                            ),
+                          ),
+                          // Center(
+                          //   child: Container(
+                          //     padding: const EdgeInsets.only(top: 30.0),
+                          //     child: TextButton(
+                          //       onPressed: () {
+                          //         Navigator.push(
+                          //           context,
+                          //           MaterialPageRoute(
+                          //               builder: (context) => const HomePage()),
+                          //         );
+                          //       },
+                          //       style: TextButton.styleFrom(
+                          //         padding: EdgeInsets.zero,
+                          //       ),
+                          //       child: SizedBox(
+                          //         width: 144 * fem,
+                          //         height: 57 * fem,
+                          //         child: Container(
+                          //           // frame4EaH (I134:15173;18:475)
+                          //           width: double.infinity,
+                          //           height: double.infinity,
+                          //           decoration: BoxDecoration(
+                          //             border: Border.all(
+                          //                 color: const Color(0xff9a2044)),
+                          //             color: const Color(0xffffffff),
+                          //             borderRadius:
+                          //                 BorderRadius.circular(54 * fem),
+                          //           ),
+                          //           child: Center(
+                          //             child: Text(
+                          //               'Log In',
+                          //               textAlign: TextAlign.center,
+                          //               style: GoogleFonts.lato(
+                          //                 fontSize: 19.8325920105 * ffem,
+                          //                 fontWeight: FontWeight.w600,
+                          //                 height: 1.2575 * ffem / fem,
+                          //                 color: const Color(0xff000000),
+                          //               ),
+                          //             ),
+                          //           ),
+                          //         ),
+                          //       ),
+                          //     ),
+                          //   ),
+                          // ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+
+                Positioned(
+                  // logininbuttom27f (27:257)
+                  left: 0 * fem,
+                  top: 749 * fem,
+                  child: Container(
+                    padding: EdgeInsets.fromLTRB(
+                        44 * fem, 33 * fem, 44 * fem, 0 * fem),
+                    width: 408 * fem,
+                    height: 59 * fem,
+                    child: Text(
+                      'Have no account?',
+                      style: SafeGoogleFont(
+                        'Segoe UI',
+                        20 * ffem,
+                        fontWeight: FontWeight.w700,
+                        height: 1.2575 * ffem / fem,
+                        color: const Color(0xff000000),
+                      ),
+                    ),
+                  ),
+                ),
+
+                //container for forgetting password
+                Positioned(
+                    left: MediaQuery.of(context).size.width * 0.3,
+                    top: 520 * fem,
+                    child: Row(
                       children: [
-                        const Padding(
-                          padding: EdgeInsets.all(15),
-                          child: TextField(
-                            decoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(100.0)),
-                              ),
-                              hintText: 'Email',
-                            ),
+                        Text(
+                          'Forget password?',
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.lato(
+                            fontSize: 13 * ffem,
+                            fontWeight: FontWeight.w600,
+                            height: 1.2575 * ffem / fem,
+                            color: const Color(0xff828282),
                           ),
                         ),
-                        const Padding(
-                          padding: EdgeInsets.fromLTRB(15, 20, 15, 20),
-                          child: TextField(
-                            obscureText: true,
-                            decoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(100.0)),
-                              ),
-                              hintText: 'Password',
-                            ),
-                          ),
-                        ),
+                        const Padding(padding: EdgeInsets.all(5.0)),
                         TextButton(
-                          // mainbuttonHY1 (22:411)
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const LogIn()),
-                            );
-                          },
+                          onPressed: () {},
                           style: TextButton.styleFrom(
                             padding: EdgeInsets.zero,
                           ),
-                          child: SizedBox(
-                            width: 144 * fem,
-                            // height: double.infinity,
-                            child: Container(
-                              // frame4LmB (I22:411;18:475)
-                              // width: double.infinity,
-                              // height: double.infinity,
-                              decoration: BoxDecoration(
-                                border:
-                                    Border.all(color: const Color(0xff707070)),
-                                color: const Color(0xff9a2044),
-                                borderRadius: BorderRadius.circular(54 * fem),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  'LOG IN   ',
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.lato(
-                                    fontSize: 19.8325920105 * ffem,
-                                    fontWeight: FontWeight.bold,
-                                    height: 1.2575 * ffem / fem,
-                                    color: const Color(0xffffffff),
-                                  ),
-                                ),
-                              ),
+                          child: Text(
+                            ' Click here',
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.lato(
+                              fontSize: 13 * ffem,
+                              fontWeight: FontWeight.w600,
+                              height: 1.2575 * ffem / fem,
+                              color: const Color(0xffff2153),
                             ),
                           ),
                         ),
                       ],
                     )),
-                // Positioned(
-                //   left: 31 * fem,
-                //   top: 335 * fem,
-                //   child: Container(
-                //     padding: EdgeInsets.fromLTRB(
-                //         19 * fem, 13 * fem, 217 * fem, 14 * fem),
-                //     width: 328 * fem,
-                //     height: 56 * fem,
-                //     decoration: BoxDecoration(
-                //       border: Border.all(color: const Color(0xff020202)),
-                //       color: const Color(0xffffffff),
-                //       borderRadius: BorderRadius.circular(25 * fem),
-                //     ),
-                //     child: const TextField(
-                //       decoration: InputDecoration(
-                //         enabledBorder: OutlineInputBorder(),
-                //         labelText: 'Enter Name',
-                //       ),
-                //     ),
-                //     // child: Row(
-                //     //   crossAxisAlignment: CrossAxisAlignment.center,
-                //     //   children: [
-                //     //     Container(
-                //     //       // phonecalloPs (I51:839;738:5815)
-                //     //       margin: EdgeInsets.fromLTRB(
-                //     //           0 * fem, 0 * fem, 15 * fem, 0 * fem),
-                //     //       width: 29 * fem,
-                //     //       height: 29 * fem,
-                //     //       child: Image.asset(
-                //     //         'assets/cenima-app-user/images/phone-call.png',
-                //     //         fit: BoxFit.cover,
-                //     //       ),
-                //     //     ),
-                //     //     Container(
-                //     //       // textEVB (I51:839;51:956)
-                //     //       margin: EdgeInsets.fromLTRB(
-                //     //           0 * fem, 1 * fem, 0 * fem, 0 * fem),
-                //     //       child: Text(
-                //     //         'Email',
-                //     //         style: SafeGoogleFont(
-                //     //           'Tw Cen MT',
-                //     //           20 * ffem,
-                //     //           fontWeight: FontWeight.w400,
-                //     //           height: 1.2 * ffem / fem,
-                //     //           letterSpacing: 0.150000006 * fem,
-                //     //           color: const Color(0xff757575),
-                //     //         ),
-                //     //       ),
-                //     //     ),
-                //     //   ],
-                //     // ),
-                //   ),
-                // ),
+
+                // log in button container
                 Positioned(
                   // mainbuttonqHF (134:15173)
                   left: 117 * fem,
-                  top: 562 * fem,
+                  top: 600 * fem,
                   child: TextButton(
                     onPressed: () {
                       Navigator.push(
@@ -481,10 +301,89 @@ class _LoginPage extends State<LogIn> {
                           child: Text(
                             'LOG IN   ',
                             textAlign: TextAlign.center,
-                            style: SafeGoogleFont(
-                              'Lucida Bright',
-                              19.8325920105 * ffem,
+                            style: GoogleFonts.lato(
+                              fontSize: 19.8325920105 * ffem,
                               fontWeight: FontWeight.w600,
+                              height: 1.2575 * ffem / fem,
+                              color: const Color(0xff9a2044),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
+                // container for the admin login
+                Positioned(
+                    left: 84 * fem,
+                    top: 705 * fem,
+                    child: Row(
+                      children: [
+                        Text(
+                          'A bussiness Owner? ',
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.lato(
+                            fontSize: 13 * ffem,
+                            fontWeight: FontWeight.w600,
+                            height: 1.2575 * ffem / fem,
+                            color: const Color(0xff828282),
+                          ),
+                        ),
+                        const Padding(padding: EdgeInsets.all(5.0)),
+                        TextButton(
+                          onPressed: () {},
+                          style: TextButton.styleFrom(
+                            padding: EdgeInsets.zero,
+                          ),
+                          child: Text(
+                            ' Click here',
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.lato(
+                              fontSize: 13 * ffem,
+                              fontWeight: FontWeight.w600,
+                              height: 1.2575 * ffem / fem,
+                              color: const Color(0xffff2153),
+                            ),
+                          ),
+                        ),
+                      ],
+                    )),
+
+                // sign up button container
+                Positioned(
+                  // mainbuttonZuX (42:432)
+                  left: 211 * fem,
+                  top: 767 * fem,
+                  child: TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const SignUp()),
+                      );
+                    },
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                    ),
+                    child: SizedBox(
+                      width: 144 * fem,
+                      height: 57 * fem,
+                      child: Container(
+                        // frame4Vwb (I42:432;18:475)
+                        width: double.infinity,
+                        height: double.infinity,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: const Color(0xff9a2044)),
+                          color: const Color(0xffffffff),
+                          borderRadius: BorderRadius.circular(54 * fem),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'SIGN UP',
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.lato(
+                              fontSize: 14.8325920105 * ffem,
+                              fontWeight: FontWeight.w400,
                               height: 1.2575 * ffem / fem,
                               color: const Color(0xff000000),
                             ),
@@ -495,75 +394,61 @@ class _LoginPage extends State<LogIn> {
                   ),
                 ),
 
-                //the container for 'logo'
-                Positioned(
-                  left: MediaQuery.of(context).size.width * 0.05,
-                  top: MediaQuery.of(context).size.height * 0.05,
-                  child: SizedBox(
-                    width: 310 * fem,
-                    height: 518 * fem,
-                    child: Center(
-                      child: Image.asset(
-                        'assets/cenima-app-user/images/auto-group-42rk.png',
-                      ),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  // group174xiZ (287:21287)
-                  left: 24 * fem,
-                  top: 302 * fem,
-                  child: SizedBox(
-                    width: 384 * fem,
-                    height: 99 * fem,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Opacity(
-                          // pleasechooseanoptionajw (I287:21287;287:21254)
-                          opacity: 0,
-                          child: Container(
-                            margin: EdgeInsets.fromLTRB(
-                                0 * fem, 0 * fem, 44 * fem, 9 * fem),
-                            child: TextButton(
-                              onPressed: () {},
-                              style: TextButton.styleFrom(
-                                padding: EdgeInsets.zero,
-                              ),
-                              child: Container(
-                                padding: EdgeInsets.fromLTRB(
-                                    37 * fem, 0 * fem, 37 * fem, 0 * fem),
-                                height: 29 * fem,
-                                child: Text(
-                                  'Invalid username or password',
-                                  textAlign: TextAlign.center,
-                                  style: SafeGoogleFont(
-                                    'Segoe UI',
-                                    20 * ffem,
-                                    fontWeight: FontWeight.w700,
-                                    height: 1.2575 * ffem / fem,
-                                    color: const Color(0xffff1e60),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        TextButton(
-                          // rectangle103ZEV (I287:21287;287:21253)
-                          onPressed: () {},
-                          style: TextButton.styleFrom(
-                            padding: EdgeInsets.zero,
-                          ),
-                          child: SizedBox(
-                            width: double.infinity,
-                            height: 61 * fem,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                // Positioned(
+                //   // group174xiZ (287:21287)
+                //   left: 24 * fem,
+                //   top: 302 * fem,
+                //   child: SizedBox(
+                //     width: 384 * fem,
+                //     height: 99 * fem,
+                //     child: Column(
+                //       crossAxisAlignment: CrossAxisAlignment.start,
+                //       children: [
+                //         Opacity(
+                //           // pleasechooseanoptionajw (I287:21287;287:21254)
+                //           opacity: 0,
+                //           child: Container(
+                //             margin: EdgeInsets.fromLTRB(
+                //                 0 * fem, 0 * fem, 44 * fem, 9 * fem),
+                //             child: TextButton(
+                //               onPressed: () {},
+                //               style: TextButton.styleFrom(
+                //                 padding: EdgeInsets.zero,
+                //               ),
+                //               child: Container(
+                //                 padding: EdgeInsets.fromLTRB(
+                //                     37 * fem, 0 * fem, 37 * fem, 0 * fem),
+                //                 height: 29 * fem,
+                //                 child: Text(
+                //                   'Invalid username or password',
+                //                   textAlign: TextAlign.center,
+                //                   style: SafeGoogleFont(
+                //                     'Segoe UI',
+                //                     20 * ffem,
+                //                     fontWeight: FontWeight.w700,
+                //                     height: 1.2575 * ffem / fem,
+                //                     color: const Color(0xffff1e60),
+                //                   ),
+                //                 ),
+                //               ),
+                //             ),
+                //           ),
+                //         ),
+                //         TextButton(
+                //           // rectangle103ZEV (I287:21287;287:21253)
+                //           onPressed: () {},
+                //           style: TextButton.styleFrom(
+                //             padding: EdgeInsets.zero,
+                //           ),
+                //           child: SizedBox(
+                //             width: double.infinity,
+                //             height: 61 * fem,
+                //           ),
+                //         ),
+                //       ],
+                //     ),
+                //   ),
+                // ),
               ],
             ),
           ),
