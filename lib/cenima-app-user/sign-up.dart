@@ -191,7 +191,7 @@ class SignUp extends StatelessWidget {
                       width: double.infinity,
                       decoration: BoxDecoration(
                         border: Border.all(color: Color(0xff020202)),
-                        color: Color(0xffffffff),
+                        color: const Color(0xffffffff),
                         borderRadius: BorderRadius.circular(25 * fem),
                       ),
                       child: Row(
@@ -220,7 +220,7 @@ class SignUp extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 height: 1.2 * ffem / fem,
                                 letterSpacing: 0.150000006 * fem,
-                                color: Color(0xff757575),
+                                color: const Color(0xff757575),
                               ),
                             ),
                           ),

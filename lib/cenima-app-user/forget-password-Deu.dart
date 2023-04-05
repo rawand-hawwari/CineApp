@@ -105,7 +105,7 @@ class Scene extends StatelessWidget {
                             width: 15.27*fem,
                             height: 10.97*fem,
                             child: Image.asset(
-                              'assets/cenima-app-user/images/ios-icon-small-wifi-1Nd.png',
+                              'assets/cenima-app-user/images/ios-icon-small-wifi-1ND.png',
                               width: 15.27*fem,
                               height: 10.97*fem,
                             ),

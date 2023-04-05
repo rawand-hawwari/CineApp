@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:myapp/cenima-app-user/home-page.dart';
-// import 'package:myapp/cenima-app-user/starter-1.dart';
-
-import 'cenima-app-user/starter.dart';
+import 'package:myapp/cenima-app-user/log-in.dart';
+// import 'cenima-app-user/starter.dart';
 // import 'package:myapp/cenima-app-user/food-menu-selection.dart';
 // import 'package:myapp/cenima-app-user/rent-movie.dart';
 
@@ -55,7 +54,6 @@ import 'cenima-app-user/starter.dart';
 // import 'package:myapp/cenima-app-user/my-movies-updated.dart';
 // import 'package:myapp/cenima-app-user/varify-email.dart';
 // import 'package:myapp/cenima-app-user/my-bookings-past.dart';
-// import 'package:myapp/cenima-app-user/log-in.dart';
 // import 'package:myapp/cenima-app-user/bussiness-log-in.dart';
 // import 'package:myapp/cenima-app-user/cinema-list.dart';
 // import 'package:myapp/cenima-app-user/contact-us.dart';
@@ -190,7 +188,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return const Scaffold(
       body:
           // SingleChildScrollView(
-          Starter(),
+          LogIn(),
     );
   }
 }
