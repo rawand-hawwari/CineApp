@@ -36,7 +36,6 @@ List<String> paragraphs = [
 class _StarterPage extends State<Starter> {
   @override
   Widget build(BuildContext context) {
-    bool isPressed = false;
     double baseWidth = 393;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
