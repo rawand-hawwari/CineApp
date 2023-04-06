@@ -43,199 +43,227 @@ class _StarterPage extends State<Starter> {
     return Scaffold(
       body: SingleChildScrollView(
         child: SizedBox(
-          // width: double.infinity,
           child: Container(
-            // width: double.infinity,
             height: 852 * fem,
             decoration: const BoxDecoration(
               color: Color(0xfff1f1f1),
             ),
-            child: Stack(
+            child: Column(
               children: [
-                Container(
-                  alignment: Alignment.topLeft,
-                  child: CarouselSlider.builder(
-                      options: CarouselOptions(
-                          height: MediaQuery.of(context).size.height * 0.5,
-                          autoPlay: true,
-                          viewportFraction: 1,
-                          enableInfiniteScroll: false,
-                          autoPlayInterval: const Duration(seconds: 8),
-                          onPageChanged: (index, reason) => setState(
-                                () => activeIndex = index,
-                              )),
-                      itemCount: images.length,
-                      itemBuilder: (context, index, realIndex) {
-                        String urlImage = images[index];
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 1,
+                  height: MediaQuery.of(context).size.height * 0.5,
+                  child: Stack(
+                    children: [
+                      Container(
+                        alignment: Alignment.topLeft,
+                        child: CarouselSlider.builder(
+                            options: CarouselOptions(
+                                height:
+                                    MediaQuery.of(context).size.height * 0.5,
+                                autoPlay: true,
+                                viewportFraction: 1,
+                                enableInfiniteScroll: false,
+                                autoPlayInterval: const Duration(seconds: 8),
+                                onPageChanged: (index, reason) => setState(
+                                      () => activeIndex = index,
+                                    )),
+                            itemCount: images.length,
+                            itemBuilder: (context, index, realIndex) {
+                              String urlImage = images[index];
 
-                        return buildImage(urlImage, index);
-                      }),
-                ),
-                Positioned(
-                  top: MediaQuery.of(context).size.height * 0.77,
-                  left: MediaQuery.of(context).size.width * 0.42,
-                  child: buildIndicator(),
-                ),
-                Positioned(
-                  top: MediaQuery.of(context).size.height * 0.85,
-                  left: MediaQuery.of(context).size.width * 0.1,
-                  child: Container(
-                    margin: const EdgeInsets.fromLTRB(10.0, 50.0, 10.0, 50.0),
-                    child: Center(
-                      child: Container(
-                        width: 291 * fem,
-                        height: 200 * fem,
-                        margin: const EdgeInsets.all(10.0),
-                        child: Column(
-                          children: [
-                            Container(
-                              padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                              child: Text(
-                                titles[activeIndex],
-                                textAlign: TextAlign.center,
-                                style: GoogleFonts.caveat(
-                                  fontSize: 25 * ffem,
-                                  fontWeight: FontWeight.w600,
-                                  height: 1.2575 * ffem / fem,
-                                  color: const Color(0xff555555),
-                                ),
-                              ),
-                            ),
-                            Container(
-                              padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                              child: Text(
-                                paragraphs[activeIndex],
-                                textAlign: TextAlign.center,
-                                style: GoogleFonts.caveat(
-                                  fontSize: 20 * ffem,
-                                  fontWeight: FontWeight.w600,
-                                  height: 1.2575 * ffem / fem,
-                                  color: const Color(0xff777777),
-                                ),
-                              ),
-                            ),
-                          ],
+                              return buildImage(urlImage, index);
+                            }),
+                      ),
+                      Positioned(
+                        bottom: 10,
+                        right: 0,
+                        left: 0,
+                        child: Container(
+                          alignment: Alignment.center,
+                          child: buildIndicator(),
                         ),
+                      ),
+                      //         TextButton(
+                      //           // mainbuttonHY1 (22:411)
+                      //           onPressed: () => {
+                      //             setState(() {
+                      //               isPressed = !isPressed;
+                      //             }),
+                      //             Navigator.push(
+                      //               context,
+                      //               MaterialPageRoute(
+                      //                   builder: (context) => const LogIn()),
+                      //             )
+                      //           },
+                      //           style: TextButton.styleFrom(
+                      //             padding: EdgeInsets.zero,
+                      //           ),
+                      //           child: SizedBox(
+                      //             width: 144 * fem,
+                      //             // height: double.infinity,
+                      //             child: Container(
+                      //               // frame4LmB (I22:411;18:475)
+                      //               // width: double.infinity,
+                      //               // height: double.infinity,
+                      //               decoration: BoxDecoration(
+                      //                 border: Border.all(
+                      //                     color: isPressed
+                      //                         ? const Color(0xff707070)
+                      //                         : const Color(0xff9a2044)),
+                      //                 color: isPressed
+                      //                     ? const Color(0xff9a2044)
+                      //                     : const Color(0xffffffff),
+                      //                 borderRadius: BorderRadius.circular(54 * fem),
+                      //               ),
+                      //               child: Center(
+                      //                 child: Text(
+                      //                   'LOG IN   ',
+                      //                   textAlign: TextAlign.center,
+                      //                   style: GoogleFonts.lato(
+                      //                     fontSize: 19.8325920105 * ffem,
+                      //                     fontWeight: FontWeight.bold,
+                      //                     height: 1.2575 * ffem / fem,
+                      //                     color: isPressed
+                      //                         ? const Color(0xffffffff)
+                      //                         : const Color(0xff000000),
+                      //                   ),
+                      //                 ),
+                      //               ),
+                      //             ),
+                      //           ),
+                      //         ),
+                      //       ],
+                      //     ),
+                      //   ),
+                      // ),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.symmetric(vertical: 50),
+                  child: Center(
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.7,
+                      height: MediaQuery.of(context).size.height * 0.2,
+                      margin: const EdgeInsets.all(10.0),
+                      child: Column(
+                        children: [
+                          Text(
+                            titles[activeIndex],
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.caveat(
+                              fontSize: 25 * ffem,
+                              fontWeight: FontWeight.w600,
+                              height: 1.2575 * ffem / fem,
+                              color: const Color(0xff555555),
+                            ),
+                          ),
+                          const Padding(padding: EdgeInsets.all(10)),
+                          Text(
+                            paragraphs[activeIndex],
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.caveat(
+                              fontSize: 20 * ffem,
+                              fontWeight: FontWeight.w600,
+                              height: 1.2575 * ffem / fem,
+                              color: const Color(0xff777777),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
                 ),
-                Positioned(
-                  left: 30 * fem,
-                  top: 750 * fem,
-                  child: SizedBox(
-                    width: 342 * fem,
-                    height: 57 * fem,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          // mainbuttonQSH (22:408)
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 0 * fem, 39 * fem, 0 * fem),
-                          child: TextButton(
-                            onPressed: () => {
-                              setState(() {
-                                isPressed = !isPressed;
-                              }),
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const SignUp()),
-                              )
-                            },
-                            style: TextButton.styleFrom(
-                              padding: EdgeInsets.zero,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(10.0),
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SignUp()),
+                          );
+                        },
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                        ),
+                        child: SizedBox(
+                          width: 144 * fem,
+                          height: 57 * fem,
+                          child: Container(
+                            // frame4EaH (I134:15173;18:475)
+                            width: double.infinity,
+                            height: double.infinity,
+                            decoration: BoxDecoration(
+                              border:
+                                  Border.all(color: const Color(0xff707070)),
+                              color: const Color(0xff9a2044),
+                              borderRadius: BorderRadius.circular(54 * fem),
                             ),
-                            child: SizedBox(
-                              width: 159 * fem,
-                              height: double.infinity,
-                              child: Container(
-                                width: double.infinity,
-                                height: double.infinity,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                      color: isPressed
-                                          // ignore: dead_code
-                                          ? const Color(0xff707070)
-                                          : const Color(0xff9a2044)),
-                                  color: isPressed
-                                      // ignore: dead_code
-                                      ? const Color(0xff9a2044)
-                                      : const Color(0xffffffff),
-                                  borderRadius: BorderRadius.circular(54 * fem),
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    'SIGN UP',
-                                    textAlign: TextAlign.center,
-                                    style: GoogleFonts.lato(
-                                      fontSize: 19.8325920105 * ffem,
-                                      fontWeight: FontWeight.bold,
-                                      height: 1.2575 * ffem / fem,
-                                      color: isPressed
-                                          // ignore: dead_code
-                                          ? const Color(0xffffffff)
-                                          : const Color(0xff000000),
-                                    ),
-                                  ),
+                            child: Center(
+                              child: Text(
+                                'Sign Up',
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.lato(
+                                  fontSize: 19.8325920105 * ffem,
+                                  fontWeight: FontWeight.w600,
+                                  height: 1.2575 * ffem / fem,
+                                  color: const Color(0xffffffff),
                                 ),
                               ),
                             ),
                           ),
                         ),
-                        TextButton(
-                          // mainbuttonHY1 (22:411)
-                          onPressed: () => {
-                            setState(() {
-                              isPressed = !isPressed;
-                            }),
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const LogIn()),
-                            )
-                          },
-                          style: TextButton.styleFrom(
-                            padding: EdgeInsets.zero,
-                          ),
-                          child: SizedBox(
-                            width: 144 * fem,
-                            // height: double.infinity,
-                            child: Container(
-                              // frame4LmB (I22:411;18:475)
-                              // width: double.infinity,
-                              // height: double.infinity,
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                    color: isPressed
-                                        ? const Color(0xff707070)
-                                        : const Color(0xff9a2044)),
-                                color: isPressed
-                                    ? const Color(0xff9a2044)
-                                    : const Color(0xffffffff),
-                                borderRadius: BorderRadius.circular(54 * fem),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  'LOG IN   ',
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.lato(
-                                    fontSize: 19.8325920105 * ffem,
-                                    fontWeight: FontWeight.bold,
-                                    height: 1.2575 * ffem / fem,
-                                    color: isPressed
-                                        ? const Color(0xffffffff)
-                                        : const Color(0xff000000),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
-                  ),
+                    const Padding(padding: EdgeInsets.all(10)),
+                    Container(
+                      padding: const EdgeInsets.all(10.0),
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const LogIn()),
+                          );
+                        },
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                        ),
+                        child: SizedBox(
+                          width: 144 * fem,
+                          height: 57 * fem,
+                          child: Container(
+                            // frame4EaH (I134:15173;18:475)
+                            width: double.infinity,
+                            height: double.infinity,
+                            decoration: BoxDecoration(
+                              border:
+                                  Border.all(color: const Color(0xff707070)),
+                              color: const Color(0xff9a2044),
+                              borderRadius: BorderRadius.circular(54 * fem),
+                            ),
+                            child: Center(
+                              child: Text(
+                                'Log In',
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.lato(
+                                  fontSize: 19.8325920105 * ffem,
+                                  fontWeight: FontWeight.w600,
+                                  height: 1.2575 * ffem / fem,
+                                  color: const Color(0xffffffff),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -249,7 +277,7 @@ class _StarterPage extends State<Starter> {
         color: Colors.black87,
         child: Image.network(
           urlImage,
-          fit: BoxFit.cover,
+          fit: BoxFit.fill,
         ),
       );
 

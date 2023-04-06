@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/cenima-app-user/admin-log-in.dart';
+import 'package:myapp/cenima-app-user/starter.dart';
+// import 'package:myapp/cenima-app-user/admin-log-in.dart';
 // import 'package:myapp/cenima-app-user/home-page.dart';
 // import 'package:myapp/cenima-app-user/log-in.dart';
-// import 'cenima-app-user/starter.dart';
 // import 'package:myapp/cenima-app-user/food-menu-selection.dart';
 // import 'package:myapp/cenima-app-user/rent-movie.dart';
 // import 'package:myapp/cenima-app-user/sign-up.dart';
@@ -186,7 +186,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return const Scaffold(
       body:
           // SingleChildScrollView(
-          AdminLogIn(),
+          Starter(),
     );
   }
 }
