@@ -393,62 +393,6 @@ class _LoginPage extends State<LogIn> {
                     ),
                   ),
                 ),
-
-                // Positioned(
-                //   // group174xiZ (287:21287)
-                //   left: 24 * fem,
-                //   top: 302 * fem,
-                //   child: SizedBox(
-                //     width: 384 * fem,
-                //     height: 99 * fem,
-                //     child: Column(
-                //       crossAxisAlignment: CrossAxisAlignment.start,
-                //       children: [
-                //         Opacity(
-                //           // pleasechooseanoptionajw (I287:21287;287:21254)
-                //           opacity: 0,
-                //           child: Container(
-                //             margin: EdgeInsets.fromLTRB(
-                //                 0 * fem, 0 * fem, 44 * fem, 9 * fem),
-                //             child: TextButton(
-                //               onPressed: () {},
-                //               style: TextButton.styleFrom(
-                //                 padding: EdgeInsets.zero,
-                //               ),
-                //               child: Container(
-                //                 padding: EdgeInsets.fromLTRB(
-                //                     37 * fem, 0 * fem, 37 * fem, 0 * fem),
-                //                 height: 29 * fem,
-                //                 child: Text(
-                //                   'Invalid username or password',
-                //                   textAlign: TextAlign.center,
-                //                   style: SafeGoogleFont(
-                //                     'Segoe UI',
-                //                     20 * ffem,
-                //                     fontWeight: FontWeight.w700,
-                //                     height: 1.2575 * ffem / fem,
-                //                     color: const Color(0xffff1e60),
-                //                   ),
-                //                 ),
-                //               ),
-                //             ),
-                //           ),
-                //         ),
-                //         TextButton(
-                //           // rectangle103ZEV (I287:21287;287:21253)
-                //           onPressed: () {},
-                //           style: TextButton.styleFrom(
-                //             padding: EdgeInsets.zero,
-                //           ),
-                //           child: SizedBox(
-                //             width: double.infinity,
-                //             height: 61 * fem,
-                //           ),
-                //         ),
-                //       ],
-                //     ),
-                //   ),
-                // ),
               ],
             ),
           ),

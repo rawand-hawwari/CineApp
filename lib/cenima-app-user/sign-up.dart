@@ -5,7 +5,7 @@ import 'package:myapp/cenima-app-user/starter.dart';
 import 'package:myapp/utils.dart';
 // import 'package:sticky_headers/sticky_headers.dart';
 
-import 'bussiness-log-in.dart';
+import 'admin-log-in.dart';
 import 'home-page.dart';
 
 class SignUp extends StatefulWidget {
@@ -41,15 +41,6 @@ class _SignUpPage extends State<SignUp> {
             color: Color(0xff7e132b),
           ),
         ),
-        // Text(
-        //   'Sign Up',
-        //   style: TextStyle(
-        //     fontSize: 25,
-        //     fontWeight: FontWeight.w600,
-        //     height: 1.2575,
-        //     color: Color(0xff7e132b),
-        //   ),
-        // ),
         actions: [
           IconButton(
             onPressed: () {
@@ -240,7 +231,7 @@ class _SignUpPage extends State<SignUp> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const BussinessLogIn()),
+                                  builder: (context) => const AdminLogIn()),
                             );
                           },
                           style: TextButton.styleFrom(
