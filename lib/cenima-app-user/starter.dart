@@ -56,7 +56,7 @@ class _StarterPage extends State<Starter> {
                   alignment: Alignment.topLeft,
                   child: CarouselSlider.builder(
                       options: CarouselOptions(
-                          height: MediaQuery.of(context).size.height * 0.81,
+                          height: MediaQuery.of(context).size.height * 0.5,
                           autoPlay: true,
                           viewportFraction: 1,
                           enableInfiniteScroll: false,

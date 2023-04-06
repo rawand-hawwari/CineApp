@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 // import 'package:myapp/cenima-app-user/home-page.dart';
-import 'package:myapp/cenima-app-user/log-in.dart';
+// import 'package:myapp/cenima-app-user/log-in.dart';
 // import 'cenima-app-user/starter.dart';
 // import 'package:myapp/cenima-app-user/food-menu-selection.dart';
 // import 'package:myapp/cenima-app-user/rent-movie.dart';
+import 'package:myapp/cenima-app-user/sign-up.dart';
 
 // import 'package:myapp/cenima-app-user/help-payment-.dart';
 // import 'package:myapp/cenima-app-user/change-email-1.dart';
@@ -64,9 +65,6 @@ import 'package:myapp/cenima-app-user/log-in.dart';
 // import 'package:myapp/cenima-app-user/admin-food-list-candy-R8H.dart';
 // import 'package:myapp/cenima-app-user/admin-food-list-candy-8r1.dart';
 // import 'package:myapp/cenima-app-user/food-menu-snack-cinema-1.dart';
-// import 'package:myapp/cenima-app-user/starter-2.dart';
-// import 'package:myapp/cenima-app-user/starter-3.dart';
-// import 'package:myapp/cenima-app-user/starter-4.dart';
 // import 'package:myapp/cenima-app-user/change-password.dart';
 // import 'package:myapp/cenima-app-user/recieve-refund.dart';
 // import 'package:myapp/cenima-app-user/delete-account.dart';
@@ -93,7 +91,6 @@ import 'package:myapp/cenima-app-user/log-in.dart';
 // import 'package:myapp/cenima-app-user/movie-screen-rent-GAR.dart';
 // import 'package:myapp/cenima-app-user/movie-screen-upcomming.dart';
 // import 'package:myapp/cenima-app-user/files.dart';
-// import 'package:myapp/cenima-app-user/sign-up.dart';
 // import 'package:myapp/cenima-app-user/bussiness-sign-up.dart';
 // import 'package:myapp/cenima-app-user/remove-card.dart';
 // import 'package:myapp/cenima-app-user/remove-pay-pal.dart';
@@ -188,7 +185,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return const Scaffold(
       body:
           // SingleChildScrollView(
-          LogIn(),
+          SignUp(),
     );
   }
 }

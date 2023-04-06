@@ -14,7 +14,7 @@ class LogIn extends StatefulWidget {
 }
 
 class _LoginPage extends State<LogIn> {
-  final _formKey = GlobalKey<FormState>();
+  final _loginForm = GlobalKey<FormState>();
   // static const IconData envelope = IconData(0xf422, fontFamily: iconFont, fontPackage: iconFontPackage);
 
   @override
@@ -133,7 +133,7 @@ class _LoginPage extends State<LogIn> {
                     margin: const EdgeInsets.all(40.0),
                     padding: const EdgeInsets.only(left: 5.0, top: 500),
                     child: Form(
-                      key: _formKey,
+                      key: _loginForm,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
