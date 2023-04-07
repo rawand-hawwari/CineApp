@@ -2,11 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/cenima-app-user/log-in.dart';
 import 'package:myapp/cenima-app-user/starter.dart';
-import 'package:myapp/utils.dart';
-// import 'package:sticky_headers/sticky_headers.dart';
-
-import 'admin-log-in.dart';
-import 'home-page.dart';
+import 'package:myapp/cenima-app-user/admin-log-in.dart';
+import 'package:myapp/cenima-app-user/home-page.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});

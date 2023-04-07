@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/cenima-app-user/sign-up.dart';
+import 'package:myapp/cenima-app-user/widgets.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'log-in.dart';
 
