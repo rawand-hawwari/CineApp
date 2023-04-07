@@ -56,7 +56,6 @@ class _ALoginPage extends State<AdminLogIn> {
           width: double.infinity,
           child: SizedBox(
             width: double.infinity,
-            height: 852 * fem,
             child: Container(
               alignment: Alignment.topCenter,
               child: Column(
@@ -162,8 +161,8 @@ class _ALoginPage extends State<AdminLogIn> {
                                     height: double.infinity,
                                     decoration: BoxDecoration(
                                       border: Border.all(
-                                          color: const Color(0xff9a2044)),
-                                      color: const Color(0xffffffff),
+                                          color: const Color(0xff707070)),
+                                      color: const Color(0xff9a2044),
                                       borderRadius:
                                           BorderRadius.circular(54 * fem),
                                     ),
@@ -175,7 +174,7 @@ class _ALoginPage extends State<AdminLogIn> {
                                           fontSize: 19.8325920105 * ffem,
                                           fontWeight: FontWeight.w600,
                                           height: 1.2575 * ffem / fem,
-                                          color: const Color(0xff000000),
+                                          color: const Color(0xffffffff),
                                         ),
                                       ),
                                     ),

@@ -60,7 +60,6 @@ class _SignUpPage extends State<SignUp> {
           width: double.infinity,
           child: SizedBox(
             width: double.infinity,
-            height: 852 * fem,
             child: Container(
               margin: const EdgeInsets.all(10),
               child: Column(
@@ -128,18 +127,6 @@ class _SignUpPage extends State<SignUp> {
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(100.0)),
                               ),
-                              prefixIcon: Icon(Icons.location_on_outlined),
-                              hintText: 'Enter your address',
-                              labelText: 'Location',
-                            ),
-                          ),
-                          const Padding(padding: EdgeInsets.all(10.0)),
-                          TextFormField(
-                            decoration: const InputDecoration(
-                              border: OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(100.0)),
-                              ),
                               prefixIcon: Icon(Icons.lock_outline),
                               hintText: 'Enter your password',
                               labelText: 'Password',
@@ -181,8 +168,8 @@ class _SignUpPage extends State<SignUp> {
                                     height: double.infinity,
                                     decoration: BoxDecoration(
                                       border: Border.all(
-                                          color: const Color(0xff9a2044)),
-                                      color: const Color(0xffffffff),
+                                          color: const Color(0xff707070)),
+                                      color: const Color(0xff9a2044),
                                       borderRadius:
                                           BorderRadius.circular(54 * fem),
                                     ),
@@ -194,7 +181,7 @@ class _SignUpPage extends State<SignUp> {
                                           fontSize: 19.8325920105 * ffem,
                                           fontWeight: FontWeight.w600,
                                           height: 1.2575 * ffem / fem,
-                                          color: const Color(0xff000000),
+                                          color: const Color(0xffffffff),
                                         ),
                                       ),
                                     ),
@@ -261,9 +248,8 @@ class _SignUpPage extends State<SignUp> {
                     children: [
                       Text(
                         'Have an account?',
-                        style: SafeGoogleFont(
-                          'Segoe UI',
-                          20 * ffem,
+                        style: GoogleFonts.lato(
+                          fontSize: 20 * ffem,
                           fontWeight: FontWeight.w700,
                           height: 1.2575 * ffem / fem,
                           color: const Color(0xff000000),

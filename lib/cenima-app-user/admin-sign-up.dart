@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:myapp/cenima-app-user/admin-Home-page.dart';
 import 'package:myapp/cenima-app-user/admin-log-in.dart';
 import 'package:myapp/utils.dart';
@@ -55,7 +56,6 @@ class _ASignupPage extends State<AdminSignUp> {
           child: SizedBox(
             // bussinesssignupcxm (115:13962)
             width: double.infinity,
-            height: 852 * fem,
             child: Container(
               margin: const EdgeInsets.all(10),
               child: Column(
@@ -188,6 +188,22 @@ class _ASignupPage extends State<AdminSignUp> {
                               labelText: 'Password',
                             ),
                           ),
+                          // const Padding(padding: EdgeInsets.all(10.0)),
+                          // IntlPhoneField(
+                          //   decoration: const InputDecoration(
+                          //     counter: Offstage(),
+                          //     labelText: 'Mobile Number',
+                          //     border: OutlineInputBorder(
+                          //       borderSide: BorderSide(),
+                          //     ),
+                          //   ),
+                          //   initialCountryCode: 'IN',
+                          //   showDropdownIcon: true,
+                          //   dropdownIconPosition: IconPosition.trailing,
+                          //   onChanged: (phone) {
+                          //     print(phone.completeNumber);
+                          //   },
+                          // ),
                           const Padding(padding: EdgeInsets.all(10.0)),
                           TextFormField(
                             decoration: const InputDecoration(
@@ -203,7 +219,7 @@ class _ASignupPage extends State<AdminSignUp> {
                           const Padding(padding: EdgeInsets.all(10.0)),
                           Center(
                             child: Container(
-                              padding: const EdgeInsets.only(top: 30.0),
+                              padding: const EdgeInsets.only(top: 10.0),
                               child: TextButton(
                                 onPressed: () {
                                   Navigator.push(
@@ -225,8 +241,8 @@ class _ASignupPage extends State<AdminSignUp> {
                                     height: double.infinity,
                                     decoration: BoxDecoration(
                                       border: Border.all(
-                                          color: const Color(0xff9a2044)),
-                                      color: const Color(0xffffffff),
+                                          color: const Color(0xff707070)),
+                                      color: const Color(0xff9a2044),
                                       borderRadius:
                                           BorderRadius.circular(54 * fem),
                                     ),
@@ -238,7 +254,7 @@ class _ASignupPage extends State<AdminSignUp> {
                                           fontSize: 19.8325920105 * ffem,
                                           fontWeight: FontWeight.w600,
                                           height: 1.2575 * ffem / fem,
-                                          color: const Color(0xff000000),
+                                          color: const Color(0xffffffff),
                                         ),
                                       ),
                                     ),

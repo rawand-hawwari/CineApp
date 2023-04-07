@@ -43,7 +43,6 @@ class _StarterPage extends State<Starter> {
       body: SingleChildScrollView(
         child: SizedBox(
           child: Container(
-            height: 852 * fem,
             decoration: const BoxDecoration(
               color: Color(0xfff1f1f1),
             ),
@@ -144,7 +143,7 @@ class _StarterPage extends State<Starter> {
                   child: Center(
                     child: Container(
                       width: MediaQuery.of(context).size.width * 0.7,
-                      height: MediaQuery.of(context).size.height * 0.2,
+                      height: MediaQuery.of(context).size.height * 0.25,
                       margin: const EdgeInsets.all(10.0),
                       child: Column(
                         children: [

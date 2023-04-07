@@ -56,7 +56,6 @@ class _LoginPage extends State<LogIn> {
           width: double.infinity,
           child: SizedBox(
             width: double.infinity,
-            height: 852 * fem,
             child: Container(
               alignment: Alignment.topCenter,
               child: Column(
