@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/cenima-app-user/starter.dart';
+
+import 'cenima-app-user/admin-Home-page.dart';
 // import 'package:myapp/cenima-app-user/admin-log-in.dart';
 // import 'package:myapp/cenima-app-user/home-page.dart';
 // import 'package:myapp/cenima-app-user/log-in.dart';
@@ -186,7 +188,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return const Scaffold(
       body:
           // SingleChildScrollView(
-          Starter(),
+          AdminHomePage(),
     );
   }
 }
