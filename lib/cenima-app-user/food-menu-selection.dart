@@ -239,7 +239,7 @@ class FoodMenu extends StatelessWidget {
                     onChanged: (Object? value) {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Snacks1()),
+                        MaterialPageRoute(builder: (context) => AdminFoodMenu()),
                       );
                     },
                   ),
