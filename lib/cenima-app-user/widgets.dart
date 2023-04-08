@@ -8,6 +8,7 @@ import 'package:myapp/cenima-app-user/home-page.dart';
 import 'package:myapp/cenima-app-user/profile.dart';
 import 'package:myapp/cenima-app-user/rent-movie.dart';
 import 'package:myapp/cenima-app-user/screens.dart';
+import 'admin-log-in.dart';
 import 'admin-profile-settings.dart';
 import 'admin-profile.dart';
 import 'admin-settings.dart';
@@ -191,7 +192,7 @@ class ASettingDrawer extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const LogIn()),
+                MaterialPageRoute(builder: (context) => const AdminLogIn()),
               );
             },
           ),

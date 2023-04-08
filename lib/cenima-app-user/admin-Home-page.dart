@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/cenima-app-user/widgets.dart';
 import 'package:myapp/utils.dart';
 
@@ -34,7 +33,7 @@ class _AHomePage extends State<AdminHomePage> {
               'Ciné',
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontFamily: 'Delicious Handraw',
+                fontFamily: 'Nature Beauty Personal Use',
                 fontSize: 25,
                 fontWeight: FontWeight.w600,
                 color: Color(0xffdd204a),
