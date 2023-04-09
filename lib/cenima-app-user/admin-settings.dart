@@ -16,7 +16,7 @@ class AdminSettings extends StatelessWidget {
         // settingsadminx21 (134:14964)
         width: double.infinity,
         height: 852*fem,
-        decoration: BoxDecoration (
+        decoration: const BoxDecoration (
           color: Color(0xfff1f1f1),
         ),
         child: Stack(

@@ -10,7 +10,6 @@ class AdminHomePage extends StatefulWidget {
 }
 
 class _AHomePage extends State<AdminHomePage> {
-  final _AHomeForm = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
