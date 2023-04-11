@@ -166,11 +166,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Cine App Starter',
+      title: 'Ciné',
       theme: ThemeData(
         primarySwatch: Colors.pink,
       ),
-      home: const MyHomePage(title: 'Cine app starter page'),
+      home: const MyHomePage(title: 'Cine app'),
     );
   }
 }
