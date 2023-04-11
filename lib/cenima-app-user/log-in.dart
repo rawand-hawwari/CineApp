@@ -24,6 +24,7 @@ class _LoginPage extends State<LogIn> {
     double ffem = fem * 0.97;
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         centerTitle: true,
         backgroundColor: Colors.transparent,
         elevation: 0,

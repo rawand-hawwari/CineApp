@@ -24,6 +24,7 @@ class _SignUpPage extends State<SignUp> {
     return Scaffold(
       //container for the page heading
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         centerTitle: true,
         backgroundColor: Colors.transparent,
         elevation: 0,

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:myapp/cenima-app-user/admin-Home-page.dart';
 import 'package:myapp/cenima-app-user/admin-log-in.dart';
-import 'package:myapp/utils.dart';
 
 class AdminSignUp extends StatefulWidget {
   const AdminSignUp({super.key});
@@ -23,6 +21,7 @@ class _ASignupPage extends State<AdminSignUp> {
     double ffem = fem * 0.97;
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         centerTitle: true,
         backgroundColor: Colors.transparent,
         elevation: 0,
