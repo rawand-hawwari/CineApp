@@ -8,6 +8,7 @@ import 'package:myapp/cenima-app-user/home-page.dart';
 import 'package:myapp/cenima-app-user/profile.dart';
 import 'package:myapp/cenima-app-user/rent-movie.dart';
 import 'package:myapp/cenima-app-user/screens.dart';
+import 'admin-food-list-snack-food-updated.dart';
 import 'admin-log-in.dart';
 import 'admin-profile-settings.dart';
 import 'admin-profile.dart';
@@ -373,7 +374,7 @@ class AFooter extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => AdminFoodMenu()),
+                  MaterialPageRoute(builder: (context) => AFoodMenu()),
                 );
               },
               child: Column(

@@ -6,7 +6,7 @@ import 'package:myapp/cenima-app-user/home-page.dart';
 import 'package:myapp/utils.dart';
 import 'home-page.dart';
 
-class AdminFoodMenu extends StatelessWidget {
+class FoodMenu2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 393;
