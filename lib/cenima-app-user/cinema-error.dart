@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Unsubscribe extends StatefulWidget {
-  const Unsubscribe({super.key});
+class CinemaError extends StatefulWidget {
+  const CinemaError({super.key});
 
   @override
-  State<Unsubscribe> createState() => _UnsubscribeHelpPage();
+  State<CinemaError> createState() => _ErrorHelpPage();
 }
 
-class _UnsubscribeHelpPage extends State<Unsubscribe> {
+class _ErrorHelpPage extends State<CinemaError> {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 393;
@@ -35,7 +35,7 @@ class _UnsubscribeHelpPage extends State<Unsubscribe> {
             snap: true,
             centerTitle: true,
             title: const Text(
-              'Unsubscribe',
+              'Movie Isn\'t Playing',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 25,
@@ -56,7 +56,7 @@ class _UnsubscribeHelpPage extends State<Unsubscribe> {
                     margin: const EdgeInsets.symmetric(
                         horizontal: 15, vertical: 20),
                     child: Text(
-                      'You will find an "unsubscribe" button at the end of each email you get from us, just click on it and you will be automatically excluded.',
+                      'In an event that there is an error in schedules, or a show have been canceled, you can contact us for a refund. \nIt takes around 3 days for your problem to be processed',
                       style: GoogleFonts.ibmPlexSerif(
                         fontSize: 20 * ffem,
                         fontWeight: FontWeight.w300,

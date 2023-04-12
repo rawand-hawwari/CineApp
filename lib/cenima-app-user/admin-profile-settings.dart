@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:myapp/cenima-app-user/add-food-original.dart';
 import 'package:myapp/cenima-app-user/log-in.dart';
 import 'package:myapp/cenima-app-user/thetre-info.dart';
 import 'package:myapp/cenima-app-user/widgets.dart';
@@ -52,7 +51,9 @@ class _ASettings extends State<AProfileSettings> {
             SingleChildScrollView(
               child: Column(
                 children: [
-                  SizedBox(
+                  Container(
+                    margin: const EdgeInsets.symmetric(
+                        vertical: 15, horizontal: 10),
                     width: MediaQuery.of(context).size.width * 1.0,
                     height: MediaQuery.of(context).size.height * 0.1,
                     child: Row(

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Unsubscribe extends StatefulWidget {
-  const Unsubscribe({super.key});
+class HelpRenting extends StatefulWidget {
+  const HelpRenting({super.key});
 
   @override
-  State<Unsubscribe> createState() => _UnsubscribeHelpPage();
+  State<HelpRenting> createState() => _RentHelpPage();
 }
 
-class _UnsubscribeHelpPage extends State<Unsubscribe> {
+class _RentHelpPage extends State<HelpRenting> {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 393;
@@ -35,7 +35,7 @@ class _UnsubscribeHelpPage extends State<Unsubscribe> {
             snap: true,
             centerTitle: true,
             title: const Text(
-              'Unsubscribe',
+              'Renting',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 25,
@@ -56,7 +56,7 @@ class _UnsubscribeHelpPage extends State<Unsubscribe> {
                     margin: const EdgeInsets.symmetric(
                         horizontal: 15, vertical: 20),
                     child: Text(
-                      'You will find an "unsubscribe" button at the end of each email you get from us, just click on it and you will be automatically excluded.',
+                      'have you ever considered subscribing to an online watching service but knew you would not be using it a lot? \nDo you want to watch a certain movie but prefer not paying for a whole subscription for it? \nFor solving these issues we made the idea of renting. \nRenting is making a movie available to watch in a certain amount of time for a small fee, in this period you are allowed to watch the movie as much as you want, and then at the end of the period you can no longer access it.',
                       style: GoogleFonts.ibmPlexSerif(
                         fontSize: 20 * ffem,
                         fontWeight: FontWeight.w300,
