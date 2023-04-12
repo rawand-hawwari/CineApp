@@ -60,7 +60,7 @@ class _AccountHelpPage extends State<HelpAccount> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => DeleteAccount()),
+                              builder: (context) => const DeleteAccount()),
                         );
                       },
                       child: Container(

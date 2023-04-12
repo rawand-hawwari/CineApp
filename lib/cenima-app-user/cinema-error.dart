@@ -56,7 +56,7 @@ class _ErrorHelpPage extends State<CinemaError> {
                     margin: const EdgeInsets.symmetric(
                         horizontal: 15, vertical: 20),
                     child: Text(
-                      'In an event that there is an error in schedules, or a show have been canceled, you can contact us for a refund. \nIt takes around 3 days for your problem to be processed',
+                      'In an event that there is an error in schedules, or a show have been canceled, you can contact us for a refund. \n\nIt takes around 3 days for your problem to be processed',
                       style: GoogleFonts.ibmPlexSerif(
                         fontSize: 20 * ffem,
                         fontWeight: FontWeight.w300,

@@ -56,7 +56,7 @@ class _RentHelpPage extends State<HelpRenting> {
                     margin: const EdgeInsets.symmetric(
                         horizontal: 15, vertical: 20),
                     child: Text(
-                      'have you ever considered subscribing to an online watching service but knew you would not be using it a lot? \nDo you want to watch a certain movie but prefer not paying for a whole subscription for it? \nFor solving these issues we made the idea of renting. \nRenting is making a movie available to watch in a certain amount of time for a small fee, in this period you are allowed to watch the movie as much as you want, and then at the end of the period you can no longer access it.',
+                      'have you ever considered subscribing to an online watching service but knew you would not be using it a lot? \n\nDo you want to watch a certain movie but prefer not paying for a whole subscription for it? \n\nFor solving these issues we made the idea of renting. \n\nRenting is making a movie available to watch in a certain amount of time for a small fee, in this period you are allowed to watch the movie as much as you want, and then at the end of the period you can no longer access it.',
                       style: GoogleFonts.ibmPlexSerif(
                         fontSize: 20 * ffem,
                         fontWeight: FontWeight.w300,

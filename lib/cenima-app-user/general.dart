@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/cenima-app-user/unsubscibe.dart';
-
 import 'cinema-error.dart';
 import 'help-renting.dart';
 

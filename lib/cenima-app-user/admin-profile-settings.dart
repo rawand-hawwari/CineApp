@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/cenima-app-user/log-in.dart';
 import 'package:myapp/cenima-app-user/thetre-info.dart';
 import 'package:myapp/cenima-app-user/widgets.dart';
-
 import 'admin-profile.dart';
 import 'admin-settings.dart';
 
@@ -106,7 +105,7 @@ class _ASettings extends State<AProfileSettings> {
                           Container(
                             margin: const EdgeInsets.all(10),
                             child: Text(
-                              'Admin profile',
+                              'Profile',
                               style: GoogleFonts.lato(
                                 fontSize: 22 * ffem,
                                 fontWeight: FontWeight.w600,
