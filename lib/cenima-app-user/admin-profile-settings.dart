@@ -60,11 +60,11 @@ class _ASettings extends State<AProfileSettings> {
                         Container(
                           margin: const EdgeInsets.symmetric(
                               horizontal: 10, vertical: 10),
-                          width: MediaQuery.of(context).size.width * 0.1,
+                          width: MediaQuery.of(context).size.width * 0.15,
                           height: MediaQuery.of(context).size.height * 0.1,
                           child: Image.asset(
                             'assets/cenima-app-user/images/user.png',
-                            fit: BoxFit.fill,
+                            fit: BoxFit.cover,
                           ),
                         ),
                         Text(

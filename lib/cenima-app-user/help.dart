@@ -25,7 +25,6 @@ class _HelpPage extends State<Help> {
             leading: GestureDetector(
               child: const Icon(
                 Icons.arrow_back_ios_new_rounded,
-                // color: Colors.black,
               ),
               onTap: () {
                 Navigator.pop(context);
