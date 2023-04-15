@@ -212,7 +212,7 @@ class RentMovie extends StatelessWidget {
                                   width: 122 * fem,
                                   height: 174 * fem,
                                   child: Image.asset(
-                                    'assets/cenima-app-user/images/-6Ym.png',
+                                    'assets/cenima-app-user/images/movie-6Ym.png',
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -954,7 +954,7 @@ class RentMovie extends StatelessWidget {
                                   width: 122 * fem,
                                   height: 174 * fem,
                                   child: Image.asset(
-                                    'assets/cenima-app-user/images/-72V.png',
+                                    'assets/cenima-app-user/images/movie-72V.png',
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -1386,7 +1386,7 @@ class RentMovie extends StatelessWidget {
                                   width: 122 * fem,
                                   height: 174 * fem,
                                   child: Image.asset(
-                                    'assets/cenima-app-user/images/-SZK.png',
+                                    'assets/cenima-app-user/images/parasite.png',
                                     fit: BoxFit.cover,
                                   ),
                                 ),
