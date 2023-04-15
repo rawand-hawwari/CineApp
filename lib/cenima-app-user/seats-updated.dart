@@ -4,7 +4,12 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
-class Scene extends StatelessWidget {
+class Screens extends StatefulWidget {
+  @override
+  State<Screens> createState() => _ScreensState();
+}
+
+class _ScreensState extends State<Screens> {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 393;
