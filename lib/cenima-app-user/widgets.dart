@@ -1,6 +1,5 @@
 // widget footer
 // ignore: avoid_web_libraries_in_flutter
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/cenima-app-user/admin-Home-page.dart';
@@ -8,6 +7,7 @@ import 'package:myapp/cenima-app-user/home-page.dart';
 import 'package:myapp/cenima-app-user/profile.dart';
 import 'package:myapp/cenima-app-user/rent-movie.dart';
 import 'package:myapp/cenima-app-user/screens.dart';
+import 'package:myapp/cine_app_icons.dart';
 import 'admin-food-list-snack-food-updated.dart';
 import 'admin-log-in.dart';
 import 'admin-profile-settings.dart';
@@ -308,10 +308,10 @@ class AFooter extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.1,
                     height: MediaQuery.of(context).size.height * 0.07,
-                    child: Image.asset(
-                      'assets/cenima-app-user/images/movie-ticket-bg.png',
-                      color: const Color(0xFF3F3F3F),
-                      fit: BoxFit.fill,
+                    child: const Icon(
+                      CineApp.movie,
+                      size: 40,
+                      color: Color(0xff000000),
                     ),
                   ),
                   const Padding(padding: EdgeInsets.all(1)),
@@ -345,10 +345,10 @@ class AFooter extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.1,
                     height: MediaQuery.of(context).size.height * 0.07,
-                    child: Image.asset(
-                      'assets/cenima-app-user/images/popcorn-fid.png',
-                      color: const Color(0xFF3F3F3F),
-                      fit: BoxFit.fill,
+                    child: const Icon(
+                      CineApp.cinema_screen,
+                      size: 40,
+                      color: Color(0xff000000),
                     ),
                   ),
                   const Padding(padding: EdgeInsets.all(1)),
@@ -382,10 +382,10 @@ class AFooter extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.1,
                     height: MediaQuery.of(context).size.height * 0.07,
-                    child: Image.asset(
-                      'assets/cenima-app-user/images/popcorn.png',
-                      color: const Color(0xFF3F3F3F),
-                      fit: BoxFit.fill,
+                    child: const Icon(
+                      CineApp.popcorn,
+                      size: 40,
+                      color: Color(0xff000000),
                     ),
                   ),
                   const Padding(padding: EdgeInsets.all(1)),
@@ -419,10 +419,10 @@ class AFooter extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.1,
                     height: MediaQuery.of(context).size.height * 0.07,
-                    child: Image.asset(
-                      'assets/cenima-app-user/images/user-1-EXX.png',
-                      color: const Color(0xFF3F3F3F),
-                      fit: BoxFit.fill,
+                    child: const Icon(
+                      Icons.person,
+                      size: 40,
+                      color: Color(0xff000000),
                     ),
                   ),
                   const Padding(padding: EdgeInsets.all(1)),
