@@ -188,7 +188,7 @@ class HomePage extends StatelessWidget {
                                       width: 152 * fem,
                                       height: 215 * fem,
                                       child: Image.asset(
-                                        'assets/cenima-app-user/images/movie-2wf.png',
+                                        'assets/cenima-app-user/images/-2wf.png',
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -1898,48 +1898,47 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Profile()),
-                        );
-                      },
-                      child: Container(
-                        // component120YBX (I106:9435;9:1957)
-                        margin: EdgeInsets.fromLTRB(
-                            0 * fem, 8 * fem, 0 * fem, 15 * fem),
-                        height: double.infinity,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Container(
-                              // user1BEV (I106:9435;9:1957;1:171)
-                              margin: EdgeInsets.fromLTRB(
-                                  0 * fem, 0 * fem, 0 * fem, 4 * fem),
-                              width: 34 * fem,
-                              height: 34 * fem,
-                              child: Image.asset(
-                                'assets/cenima-app-user/images/user-1-Jsw.png',
-                                fit: BoxFit.cover,
-                              ),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Profile()),
+                              );
+                            },
+                            child: Container(
+                      // component120YBX (I106:9435;9:1957)
+                      margin: EdgeInsets.fromLTRB(
+                          0 * fem, 8 * fem, 0 * fem, 15 * fem),
+                      height: double.infinity,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Container(
+                            // user1BEV (I106:9435;9:1957;1:171)
+                            margin: EdgeInsets.fromLTRB(
+                                0 * fem, 0 * fem, 0 * fem, 4 * fem),
+                            width: 34 * fem,
+                            height: 34 * fem,
+                            child: Image.asset(
+                              'assets/cenima-app-user/images/user-1-Jsw.png',
+                              fit: BoxFit.cover,
                             ),
-                            Text(
-                              // profilec4u (I106:9435;9:1957;1:172)
-                              'Profile',
-                              textAlign: TextAlign.center,
-                              style: SafeGoogleFont(
-                                'Segoe Script',
-                                10 * ffem,
-                                fontWeight: FontWeight.w700,
-                                height: 1.2575 * ffem / fem,
-                                color: const Color(0xff000000),
-                              ),
+                          ),
+                          Text(
+                            // profilec4u (I106:9435;9:1957;1:172)
+                            'Profile',
+                            textAlign: TextAlign.center,
+                            style: SafeGoogleFont(
+                              'Segoe Script',
+                              10 * ffem,
+                              fontWeight: FontWeight.w700,
+                              height: 1.2575 * ffem / fem,
+                              color: const Color(0xff000000),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
-                    ),
+                    ),),
                   ],
                 ),
               ),
