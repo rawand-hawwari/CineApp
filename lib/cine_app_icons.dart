@@ -25,14 +25,18 @@ class CineApp {
   static const _kFontFam = 'CineApp';
   static const String? _kFontPkg = null;
 
+  // ignore: constant_identifier_names
   static const IconData cinema_ticket_1 = IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData ticket = IconData(0xe804, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData popcorn = IconData(0xe805, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  // ignore: constant_identifier_names
   static const IconData film_reel = IconData(0xe806, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  // ignore: constant_identifier_names
   static const IconData cinema_screen = IconData(0xe807, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData cinema_1 = IconData(0xe80b, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData armchair_2_1ju = IconData(0xe80c, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData armchair_1id = IconData(0xe80e, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData movie = IconData(0xe80f, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  // ignore: constant_identifier_names
   static const IconData film_play = IconData(0xe824, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }

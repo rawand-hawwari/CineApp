@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/cenima-app-user/log-in.dart';
 import 'package:myapp/cenima-app-user/thetre-info.dart';
-import 'package:myapp/cenima-app-user/widgets.dart';
+import '../reusable-widgets/reusable-widget.dart';
 import 'admin-profile.dart';
 import 'admin-settings.dart';
 

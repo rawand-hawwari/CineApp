@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/cenima-app-user/sign-up.dart';
+import 'package:myapp/reusable-widgets/reusable-widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'log-in.dart';
 
@@ -40,12 +41,9 @@ class _StarterPage extends State<Starter> {
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return Scaffold(
-      body: SingleChildScrollView(
-        child: SizedBox(
-          child: Container(
-            decoration: const BoxDecoration(
-              color: Color(0xfff1f1f1),
-            ),
+      body: Stack(
+        children: [
+          SingleChildScrollView(
             child: Column(
               children: [
                 SizedBox(
@@ -137,13 +135,11 @@ class _StarterPage extends State<Starter> {
                     ],
                   ),
                 ),
-                Container(
-                  margin: const EdgeInsets.symmetric(vertical: 50),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 40),
                   child: Center(
                     child: Container(
-                      width: MediaQuery.of(context).size.width * 0.7,
-                      height: MediaQuery.of(context).size.height * 0.25,
-                      margin: const EdgeInsets.all(10.0),
+                      margin: const EdgeInsets.all(50.0),
                       child: Column(
                         children: [
                           Text(
@@ -172,100 +168,103 @@ class _StarterPage extends State<Starter> {
                     ),
                   ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(10.0),
-                      child: TextButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const SignUp()),
-                          );
-                        },
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.zero,
-                        ),
-                        child: SizedBox(
-                          width: 144 * fem,
-                          height: 57 * fem,
-                          child: Container(
-                            // frame4EaH (I134:15173;18:475)
-                            width: double.infinity,
-                            height: double.infinity,
-                            decoration: BoxDecoration(
-                              border:
-                                  Border.all(color: const Color(0xff707070)),
-                              color: const Color(0xff9a2044),
-                              borderRadius: BorderRadius.circular(54 * fem),
-                            ),
-                            child: Center(
-                              child: Text(
-                                'Sign Up',
-                                textAlign: TextAlign.center,
-                                style: GoogleFonts.lato(
-                                  fontSize: 19.8325920105 * ffem,
-                                  fontWeight: FontWeight.w600,
-                                  height: 1.2575 * ffem / fem,
-                                  color: const Color(0xffffffff),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    const Padding(padding: EdgeInsets.all(10)),
-                    Container(
-                      padding: const EdgeInsets.all(10.0),
-                      child: TextButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const LogIn()),
-                          );
-                        },
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.zero,
-                        ),
-                        child: SizedBox(
-                          width: 144 * fem,
-                          height: 57 * fem,
-                          child: Container(
-                            // frame4EaH (I134:15173;18:475)
-                            width: double.infinity,
-                            height: double.infinity,
-                            decoration: BoxDecoration(
-                              border:
-                                  Border.all(color: const Color(0xff707070)),
-                              color: const Color(0xff9a2044),
-                              borderRadius: BorderRadius.circular(54 * fem),
-                            ),
-                            child: Center(
-                              child: Text(
-                                'Log In',
-                                textAlign: TextAlign.center,
-                                style: GoogleFonts.lato(
-                                  fontSize: 19.8325920105 * ffem,
-                                  fontWeight: FontWeight.w600,
-                                  height: 1.2575 * ffem / fem,
-                                  color: const Color(0xffffffff),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
               ],
             ),
           ),
-        ),
+          Expanded(
+            child: Align(
+              alignment: FractionalOffset.bottomCenter,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const SignUp()),
+                        );
+                      },
+                      style: TextButton.styleFrom(
+                        padding: EdgeInsets.zero,
+                      ),
+                      child: SizedBox(
+                        width: 144 * fem,
+                        height: 57 * fem,
+                        child: Container(
+                          // frame4EaH (I134:15173;18:475)
+                          width: double.infinity,
+                          height: double.infinity,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: const Color(0xff707070)),
+                            color: const Color(0xff9a2044),
+                            borderRadius: BorderRadius.circular(54 * fem),
+                          ),
+                          child: Center(
+                            child: Text(
+                              'Sign Up',
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.lato(
+                                fontSize: 19.8325920105 * ffem,
+                                fontWeight: FontWeight.w600,
+                                height: 1.2575 * ffem / fem,
+                                color: const Color(0xffffffff),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const Padding(padding: EdgeInsets.all(10)),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const LogIn()),
+                        );
+                      },
+                      style: TextButton.styleFrom(
+                        padding: EdgeInsets.zero,
+                      ),
+                      child: SizedBox(
+                        width: 144 * fem,
+                        height: 57 * fem,
+                        child: Container(
+                          // frame4EaH (I134:15173;18:475)
+                          width: double.infinity,
+                          height: double.infinity,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: const Color(0xff707070)),
+                            color: const Color(0xff9a2044),
+                            borderRadius: BorderRadius.circular(54 * fem),
+                          ),
+                          child: Center(
+                            child: Text(
+                              'Log In',
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.lato(
+                                fontSize: 19.8325920105 * ffem,
+                                fontWeight: FontWeight.w600,
+                                height: 1.2575 * ffem / fem,
+                                color: const Color(0xffffffff),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
