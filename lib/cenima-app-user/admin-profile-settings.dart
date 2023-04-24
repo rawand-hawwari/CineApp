@@ -4,7 +4,6 @@ import 'package:myapp/cenima-app-user/log-in.dart';
 import 'package:myapp/cenima-app-user/screens.dart';
 import 'package:myapp/cenima-app-user/thetre-info.dart';
 
-import 'package:myapp/cenima-app-user/widgets.dart';
 import '../cine_app_icons.dart';
 import 'admin-Home-page.dart';
 import 'admin-food-list-snack-food-updated.dart';
@@ -246,40 +245,40 @@ class _ASettings extends State<AProfileSettings> {
                 ],
               ),
             ),
-          ]
-          ),
+          ]),
         ),
       ),
-        bottomNavigationBar: BottomNavigationBarHandler(),
+      bottomNavigationBar: BottomNavigationBarHandler(),
     );
   }
 }
 
 class BottomNavigationBarHandler extends StatefulWidget {
-
   const BottomNavigationBarHandler({super.key});
 
   @override
-  State<BottomNavigationBarHandler> createState() => _BottomNavigationBarHandlerState();}
+  State<BottomNavigationBarHandler> createState() =>
+      _BottomNavigationBarHandlerState();
+}
 
-
-class _BottomNavigationBarHandlerState extends State<BottomNavigationBarHandler> {
+class _BottomNavigationBarHandlerState
+    extends State<BottomNavigationBarHandler> {
   final screenHeight = window.physicalSize.height / window.devicePixelRatio;
-  int currentIndex=3;
+  int currentIndex = 3;
   final ScrollController _homeController = ScrollController();
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Container(
         decoration: const BoxDecoration(
             color: Colors.black,
             border: Border(top: BorderSide(color: Colors.black, width: 1.0))),
         child: BottomNavigationBar(
             unselectedItemColor: Colors.black,
-            unselectedFontSize: screenHeight* 0.015,
+            unselectedFontSize: screenHeight * 0.015,
             type: BottomNavigationBarType.fixed,
             showUnselectedLabels: true,
-            selectedFontSize: screenHeight*0.02,
+            selectedFontSize: screenHeight * 0.02,
             iconSize: 40,
             selectedItemColor: const Color(0xffff2153),
             backgroundColor: Colors.white,
@@ -287,23 +286,16 @@ class _BottomNavigationBarHandlerState extends State<BottomNavigationBarHandler>
             currentIndex: currentIndex,
             items: const [
               BottomNavigationBarItem(
-                  label: 'Movie List',
-                  icon: Icon(CineApp.movie)
-              ),
+                  label: 'Movie List', icon: Icon(CineApp.movie)),
               BottomNavigationBarItem(
-                  label: 'Screens',
-                  icon: Icon(CineApp.cinema_screen)
-              ),
+                  label: 'Screens', icon: Icon(CineApp.cinema_screen)),
               BottomNavigationBarItem(
-                  label: 'Food Menu',
-                  icon: Icon(CineApp.popcorn)
-              ),
+                  label: 'Food Menu', icon: Icon(CineApp.popcorn)),
               BottomNavigationBarItem(
-                  label: 'Settings',
-                  icon: Icon(Icons.person)
-              )
+                  label: 'Settings', icon: Icon(Icons.person))
             ]));
   }
+
   void onTabTapped(int index) {
     if (currentIndex == index) {
       _homeController.animateTo(
@@ -311,39 +303,36 @@ class _BottomNavigationBarHandlerState extends State<BottomNavigationBarHandler>
         duration: const Duration(milliseconds: 500),
         curve: Curves.easeOut,
       );
-    }
-    else{
+    } else {
       switch (index) {
         case 0:
           Navigator.push(
             context,
-            MaterialPageRoute(
-                builder: (context) => const AdminHomePage()),
+            MaterialPageRoute(builder: (context) => const AdminHomePage()),
           );
           break;
         case 1:
           Navigator.push(
             context,
-            MaterialPageRoute(
-                builder: (context) => const Screens()),
+            MaterialPageRoute(builder: (context) => const Screens()),
           );
           break;
         case 2:
           Navigator.push(
             context,
-            MaterialPageRoute(
-                builder: (context) => AFoodMenu()),
+            MaterialPageRoute(builder: (context) => AFoodMenu()),
           );
           break;
         case 3:
           Navigator.push(
             context,
-            MaterialPageRoute(
-                builder: (context) => const AProfileSettings()),
+            MaterialPageRoute(builder: (context) => const AProfileSettings()),
           );
           break;
-      }}
+      }
+    }
     setState(() {
       currentIndex = index;
     });
-  }}
+  }
+}
