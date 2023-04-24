@@ -8,7 +8,6 @@ import 'package:myapp/reusable-widgets/reusable-widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'dart:ui';
 import '../cine_app_icons.dart';
-import '../utils.dart';
 import 'food-menu-selection.dart';
 
 class HomePage extends StatefulWidget {
