@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/cenima-app-user/screens.dart';
-import 'package:myapp/cenima-app-user/widgets.dart';
+import 'package:myapp/reusable-widgets/reusable-widget.dart';
 import 'package:myapp/utils.dart';
 import 'dart:ui';
 import '../cine_app_icons.dart';
@@ -10,6 +10,8 @@ import 'admin-profile-settings.dart';
 import 'admin-profile.dart';
 import 'admin-settings.dart';
 
+import '../reusable-widgets/reusable-widget.dart';
+
 class AdminHomePage extends StatefulWidget {
   const AdminHomePage({super.key});
 
@@ -18,7 +20,6 @@ class AdminHomePage extends StatefulWidget {
 }
 
 class _AHomePage extends State<AdminHomePage> {
-
   @override
   Widget build(BuildContext context) {
     double baseWidth = 393;

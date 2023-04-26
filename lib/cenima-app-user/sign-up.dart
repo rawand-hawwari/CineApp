@@ -1,4 +1,3 @@
-import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/cenima-app-user/log-in.dart';
@@ -60,8 +59,6 @@ class _SignUpPage extends State<SignUp> {
     double baseWidth = 393;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-
-
     return Scaffold(
       //container for the page heading
       appBar: AppBar(
@@ -70,7 +67,7 @@ class _SignUpPage extends State<SignUp> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         shadowColor: Colors.transparent,
-        title: Text(
+        title: const Text(
           'Sign Up',
           style: headerFont(height),
         ),
