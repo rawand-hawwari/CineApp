@@ -272,7 +272,7 @@ class _StarterPage extends State<Starter> {
 
   Widget buildImage(String urlImage, int index) => Container(
         color: Colors.black87,
-        child: Image.network(
+        child: Image.asset(
           urlImage,
           fit: BoxFit.fill,
         ),

@@ -8,6 +8,7 @@ import 'package:myapp/cenima-app-user/profile.dart';
 import 'package:myapp/cenima-app-user/rent-movie.dart';
 import 'package:myapp/cenima-app-user/screens.dart';
 import 'package:myapp/cine_app_icons.dart';
+import '../services/auth.dart';
 import 'admin-food-list-snack-food-updated.dart';
 import 'admin-log-in.dart';
 import 'admin-profile-settings.dart';
@@ -21,7 +22,8 @@ import 'help.dart';
 import 'log-in.dart';
 
 class ASettingDrawer extends StatelessWidget {
-  const ASettingDrawer({super.key});
+  final AuthServices _auth= AuthServices();
+  ASettingDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -472,7 +474,7 @@ class Footer extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const HomePage()),
+                  MaterialPageRoute(builder: (context) => HomePage()),
                 );
               },
               child: Column(

@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/services/auth.dart';
 import 'package:myapp/utils.dart';
 import 'food-menu-selection.dart';
 import 'profile.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+
+  HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     double baseWidth = 393;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
+    double width= MediaQuery.of(context).size.width;
+    double height= MediaQuery.of(context).size.height;
+
     return SizedBox(
       width: double.infinity,
       child: Container(
