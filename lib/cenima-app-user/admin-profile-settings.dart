@@ -6,7 +6,7 @@ import 'package:myapp/cenima-app-user/thetre-info.dart';
 
 import '../cine_app_icons.dart';
 import 'admin-Home-page.dart';
-import 'admin-food-list-snack-food-updated.dart';
+import 'admin-food-menu.dart';
 import '../reusable-widgets/reusable-widget.dart';
 
 import 'admin-profile.dart';

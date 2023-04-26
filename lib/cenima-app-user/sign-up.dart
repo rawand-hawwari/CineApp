@@ -14,7 +14,6 @@ class SignUp extends StatefulWidget {
 
 class _SignUpPage extends State<SignUp> {
   final _signupForm = GlobalKey<FormState>();
-  // static const IconData envelope = IconData(0xf422, fontFamily: iconFont, fontPackage: iconFontPackage);
   TextEditingController _emailTextController = TextEditingController();
   TextEditingController _passwordTextController = TextEditingController();
 

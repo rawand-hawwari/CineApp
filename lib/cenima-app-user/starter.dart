@@ -46,7 +46,6 @@ class _StarterPage extends State<Starter> {
             child: Column(
               children: [
                 SizedBox(
-                  width: MediaQuery.of(context).size.width * 1,
                   height: MediaQuery.of(context).size.height * 0.5,
                   child: Stack(
                     children: [

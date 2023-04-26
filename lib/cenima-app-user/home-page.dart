@@ -139,7 +139,7 @@ class _HomePage extends State<HomePage> {
           ),
         ),
       ),
-      drawer: const ASettingDrawer(),
+      drawer: const SettingDrawer(),
       bottomNavigationBar: const BottomNavigationBarHandler(),
     );
   }
@@ -173,6 +173,7 @@ class BottomNavigationBarHandler extends StatefulWidget {
   State<BottomNavigationBarHandler> createState() =>
       _BottomNavigationBarHandlerState();
 }
+
 class _BottomNavigationBarHandlerState
     extends State<BottomNavigationBarHandler> {
   final screenHeight = window.physicalSize.height / window.devicePixelRatio;

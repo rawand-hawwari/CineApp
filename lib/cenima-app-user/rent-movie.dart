@@ -74,7 +74,7 @@ class _RentMovie extends State<RentMovie> {
           ),
         ),
       ),
-      drawer: const ASettingDrawer(),
+      drawer: const SettingDrawer(),
       bottomNavigationBar: const BottomNavigationBarHandler(),
     );
   }

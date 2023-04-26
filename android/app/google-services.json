@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "426947305947",
+    "project_id": "cineapp-a86ac",
+    "storage_bucket": "cineapp-a86ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:426947305947:android:c7a476f232dd2764d307fe",
+        "android_client_info": {
+          "package_name": "com.example.test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "426947305947-gs5isuuh6hmpsc84qac4369hhf4otfhj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKyPza5aOFvwdF_R-p26yJn825ydW-UoA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "426947305947-gs5isuuh6hmpsc84qac4369hhf4otfhj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
