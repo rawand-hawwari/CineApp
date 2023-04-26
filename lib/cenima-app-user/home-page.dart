@@ -76,7 +76,6 @@ class _HomePage extends State<HomePage> {
                 child: Stack(
                   children: [
                     SizedBox(
-                      width: MediaQuery.of(context).size.width * 1,
                       height: MediaQuery.of(context).size.height * 0.3,
                       child: Stack(
                         children: [
@@ -131,6 +130,8 @@ class _HomePage extends State<HomePage> {
                         ],
                       ),
                     ),
+
+                    //////////////////here start the movies lists
                   ],
                 ),
               ),
@@ -143,14 +144,17 @@ class _HomePage extends State<HomePage> {
     );
   }
 
+//builder for the image carousel
   Widget buildImage(String urlImage, int index) => Container(
+        width: MediaQuery.of(context).size.width * 1.0,
         color: Colors.black87,
         child: Image.network(
           urlImage,
-          fit: BoxFit.fill,
+          fit: BoxFit.cover,
         ),
       );
 
+//builder for carousel indicator
   Widget buildIndicator() => AnimatedSmoothIndicator(
         activeIndex: activeIndex,
         count: images.length,
@@ -161,6 +165,7 @@ class _HomePage extends State<HomePage> {
       );
 }
 
+//class for bottom navigator
 class BottomNavigationBarHandler extends StatefulWidget {
   const BottomNavigationBarHandler({super.key});
 
@@ -168,7 +173,6 @@ class BottomNavigationBarHandler extends StatefulWidget {
   State<BottomNavigationBarHandler> createState() =>
       _BottomNavigationBarHandlerState();
 }
-
 class _BottomNavigationBarHandlerState
     extends State<BottomNavigationBarHandler> {
   final screenHeight = window.physicalSize.height / window.devicePixelRatio;
