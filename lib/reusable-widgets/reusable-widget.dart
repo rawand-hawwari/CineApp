@@ -8,18 +8,16 @@ import 'package:myapp/cenima-app-user/profile.dart';
 import 'package:myapp/cenima-app-user/rent-movie.dart';
 import 'package:myapp/cenima-app-user/screens.dart';
 import 'package:myapp/cine_app_icons.dart';
+import '../cenima-app-user/admin-food-list-snack-food-updated.dart';
+import '../cenima-app-user/admin-log-in.dart';
+import '../cenima-app-user/admin-profile-settings.dart';
+import '../cenima-app-user/admin-profile.dart';
+import '../cenima-app-user/admin-settings.dart';
+import '../cenima-app-user/cinema-list.dart';
+import '../cenima-app-user/contact.dart';
+import '../cenima-app-user/food-menu-selection.dart';
+import '../cenima-app-user/help.dart';
 import '../services/auth.dart';
-import 'admin-food-list-snack-food-updated.dart';
-import 'admin-log-in.dart';
-import 'admin-profile-settings.dart';
-import 'admin-profile.dart';
-import 'admin-settings.dart';
-import 'cinema-list.dart';
-import 'contact.dart';
-import 'food-menu-selection.dart';
-import 'food-menu-snack-cinema-1.dart';
-import 'help.dart';
-import 'log-in.dart';
 
 class ASettingDrawer extends StatelessWidget {
   final AuthServices _auth= AuthServices();
@@ -192,12 +190,9 @@ class ASettingDrawer extends StatelessWidget {
                 ),
               ],
             ),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const AdminLogIn()),
-              );
-            },
+            onTap: ()async {
+              await AuthServices.signOut();
+              },
           ),
         ],
       ),
@@ -474,7 +469,7 @@ class Footer extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const HomePage()),
+                  MaterialPageRoute(builder: (context) => HomePage()),
                 );
               },
               child: Column(

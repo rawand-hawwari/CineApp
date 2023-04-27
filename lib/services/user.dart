@@ -7,12 +7,14 @@ class NUser extends Equatable {
    String uid='';
    String? email;
    String name='';
+   String phoneNo='';
+   bool isAdmin=false;
 
-   NUser({required this.uid, required this.email,required this.name, });
+   NUser(this.name, this.isAdmin, this.phoneNo,{required this.uid, required this.email} );
 
   @override
   String toString() {
-    return "[$uid] - $name, $email";
+    return "[$uid] - $name, $email, $phoneNo, $isAdmin";
   }
 
   @override
@@ -20,6 +22,8 @@ class NUser extends Equatable {
         uid,
         email,
         name,
+        phoneNo,
+        isAdmin,
       ];
 
   NUser.fromSnapshot(DataSnapshot dataSnapshot) {
@@ -29,6 +33,8 @@ class NUser extends Equatable {
     if (data != null) {
       email = data["email"];
       name = data["name"];
+      phoneNo =data['phoneNo'];
+      isAdmin= data[false];
     }
   }
 

@@ -13,7 +13,6 @@ import 'admin-log-in.dart';
 import 'home-page.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-//import 'package:flushbar/flushbar.dart';
 
 class LogIn extends StatefulWidget {
   const LogIn({super.key});
@@ -187,6 +186,7 @@ class _LoginPage extends State<LogIn> {
                           ),
                         ],
                       ),
+                      //sign in button
                       Center(
                         child: Container(
                           padding: const EdgeInsets.only(top: 30.0),
@@ -204,7 +204,7 @@ class _LoginPage extends State<LogIn> {
                                       emailController.text,
                                       passwordController.text);
 
-                                  if (result?.user == null) {
+                                  if (result?.exception == true) {
                                     setState(() {
                                       isSigningIn = false;
                                     });
@@ -298,11 +298,6 @@ class _LoginPage extends State<LogIn> {
               alignment: Alignment.bottomCenter,
               child: Column(
                 children: [
-                  //  Divider(
-                  //   //height: 12,
-                  //   height: height *0.05,
-                  //   thickness: 1,
-                  // ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

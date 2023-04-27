@@ -17,7 +17,7 @@ import '../services/shared_value.dart';
 class Wrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final user = Provider.of<NUser?>(context);
+    NUser? user = Provider.of<NUser?>(context);
 
     if (user == null) {
       if (!(prevPageEvent is GoToStarterPage)) {
@@ -28,7 +28,7 @@ class Wrapper extends StatelessWidget {
       if (!(prevPageEvent is GoToMainPage)) {
         context.read<UserBloc>().add(LoadUser(user.uid));
 
-        prevPageEvent = GoToStarterPage();
+        prevPageEvent = GoToMainPage();
         context.read<PageBloc>().add(prevPageEvent!);
       }
     }
