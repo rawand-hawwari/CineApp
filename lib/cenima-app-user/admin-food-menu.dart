@@ -122,7 +122,7 @@ class _AFoodMenu extends State<AFoodMenu> {
           ),
         ),
       ),
-      drawer: const ASettingDrawer(),
+      drawer: ASettingDrawer(),
       bottomNavigationBar: const BottomNavigationBarHandler(),
     );
   }
