@@ -58,6 +58,9 @@ class _SignUpPage extends State<SignUp> {
   //   firsNameController.text = widget.registrationData.name;
   //   emailController.text = widget.registrationData.email;
   // }
+  TextEditingController _emailTextController = TextEditingController();
+  TextEditingController _passwordTextController = TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {

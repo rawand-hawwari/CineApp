@@ -2,7 +2,6 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/cenima-app-user/sign-up.dart';
-import 'package:myapp/reusable-widgets/reusable-widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'log-in.dart';
 
@@ -47,7 +46,6 @@ class _StarterPage extends State<Starter> {
             child: Column(
               children: [
                 SizedBox(
-                  width: MediaQuery.of(context).size.width * 1,
                   height: MediaQuery.of(context).size.height * 0.5,
                   child: Stack(
                     children: [
@@ -80,58 +78,6 @@ class _StarterPage extends State<Starter> {
                           child: buildIndicator(),
                         ),
                       ),
-                      //         TextButton(
-                      //           onPressed: () => {
-                      //             setState(() {
-                      //               isPressed = !isPressed;
-                      //             }),
-                      //             Navigator.push(
-                      //               context,
-                      //               MaterialPageRoute(
-                      //                   builder: (context) => const LogIn()),
-                      //             )
-                      //           },
-                      //           style: TextButton.styleFrom(
-                      //             padding: EdgeInsets.zero,
-                      //           ),
-                      //           child: SizedBox(
-                      //             width: 144 * fem,
-                      //             // height: double.infinity,
-                      //             child: Container(
-                      //               // frame4LmB (I22:411;18:475)
-                      //               // width: double.infinity,
-                      //               // height: double.infinity,
-                      //               decoration: BoxDecoration(
-                      //                 border: Border.all(
-                      //                     color: isPressed
-                      //                         ? const Color(0xff707070)
-                      //                         : const Color(0xff9a2044)),
-                      //                 color: isPressed
-                      //                     ? const Color(0xff9a2044)
-                      //                     : const Color(0xffffffff),
-                      //                 borderRadius: BorderRadius.circular(54 * fem),
-                      //               ),
-                      //               child: Center(
-                      //                 child: Text(
-                      //                   'LOG IN   ',
-                      //                   textAlign: TextAlign.center,
-                      //                   style: GoogleFonts.lato(
-                      //                     fontSize: 19.8325920105 * ffem,
-                      //                     fontWeight: FontWeight.bold,
-                      //                     height: 1.2575 * ffem / fem,
-                      //                     color: isPressed
-                      //                         ? const Color(0xffffffff)
-                      //                         : const Color(0xff000000),
-                      //                   ),
-                      //                 ),
-                      //               ),
-                      //             ),
-                      //           ),
-                      //         ),
-                      //       ],
-                      //     ),
-                      //   ),
-                      // ),
                     ],
                   ),
                 ),

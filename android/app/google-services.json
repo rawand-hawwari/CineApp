@@ -3,6 +3,7 @@
     "project_number": "217615482467",
     "project_id": "cine-app-cbd48",
     "storage_bucket": "cine-app-cbd48.appspot.com"
+
   },
   "client": [
     {
@@ -10,6 +11,7 @@
         "mobilesdk_app_id": "1:217615482467:android:d2d86f5f7eaf85f00a0256",
         "android_client_info": {
           "package_name": "com.Cine.App"
+
         }
       },
       "oauth_client": [
@@ -23,12 +25,14 @@
         },
         {
           "client_id": "217615482467-uigu361t353icreovvak07erktef57r0.apps.googleusercontent.com",
+
           "client_type": 3
         }
       ],
       "api_key": [
         {
           "current_key": "AIzaSyAh3Au4IJoktQY6PC30NdEZ1_3CLycTaq4"
+
         }
       ],
       "services": {
@@ -36,6 +40,7 @@
           "other_platform_oauth_client": [
             {
               "client_id": "217615482467-uigu361t353icreovvak07erktef57r0.apps.googleusercontent.com",
+
               "client_type": 3
             }
           ]

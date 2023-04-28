@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/cenima-app-user/starter.dart';
+import '../reusable-widgets/reusable-widget.dart';
 import 'admin-Home-page.dart';
 import 'admin-sign-up.dart';
 import 'log-in.dart';
@@ -63,14 +64,7 @@ class _ALoginPage extends State<AdminLogIn> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.7,
-                    height: MediaQuery.of(context).size.height * 0.4,
-                    child: Image.asset(
-                      'assets/cenima-app-user/images/auto-group-42rk.png',
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+                  logoWidget(),
 
                   // Log in form
                   Container(
