@@ -1,3 +1,5 @@
+// widget footer
+// ignore: avoid_web_libraries_in_flutter
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/cenima-app-user/admin-Home-page.dart';
@@ -11,9 +13,11 @@ import '../cenima-app-user/admin-profile.dart';
 import '../cenima-app-user/admin-settings.dart';
 import '../cenima-app-user/contact.dart';
 import '../cenima-app-user/help.dart';
+import '../services/auth.dart';
 
 class ASettingDrawer extends StatelessWidget {
-  const ASettingDrawer({super.key});
+  final AuthServices _auth= AuthServices();
+  ASettingDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -182,13 +186,12 @@ class ASettingDrawer extends StatelessWidget {
                 ),
               ],
             ),
-            onTap: () {
+            onTap: ()async {
+              await AuthServices.signOut();
+              },
+
               // FirebaseAuth.instace.SignOut();
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const AdminLogIn()),
-              );
-            },
+
           ),
         ],
       ),
@@ -685,7 +688,6 @@ class Footer extends StatelessWidget {
     double baseWidth = 393;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    int index = 0;
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
       width: MediaQuery.of(context).size.width * 1,
@@ -695,7 +697,7 @@ class Footer extends StatelessWidget {
         color: const Color(0xffffffff),
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.15,
@@ -704,8 +706,7 @@ class Footer extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                      builder: (context) => const AdminHomePage()),
+                  MaterialPageRoute(builder: (context) => HomePage()),
                 );
               },
               child: Column(
@@ -713,10 +714,10 @@ class Footer extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.1,
                     height: MediaQuery.of(context).size.height * 0.07,
-                    child: const Icon(
-                      CineApp.cinema_ticket_1,
-                      size: 40,
-                      color: Color(0xff000000),
+                    child: Image.asset(
+                      'assets/cenima-app-user/images/movie-ticket.png',
+                      color: const Color(0xFF3F3F3F),
+                      fit: BoxFit.fill,
                     ),
                   ),
                   const Padding(padding: EdgeInsets.all(1)),
@@ -734,7 +735,7 @@ class Footer extends StatelessWidget {
               ),
             ),
           ),
-          const Padding(padding: EdgeInsets.all(20)),
+          const Padding(padding: EdgeInsets.all(10)),
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.15,
             height: MediaQuery.of(context).size.height * 0.15,
@@ -742,7 +743,7 @@ class Footer extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const Screens()),
+                  MaterialPageRoute(builder: (context) => const RentMovie()),
                 );
               },
               child: Column(
@@ -750,10 +751,10 @@ class Footer extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.1,
                     height: MediaQuery.of(context).size.height * 0.07,
-                    child: const Icon(
-                      CineApp.film_reel,
-                      size: 40,
-                      color: Color(0xff000000),
+                    child: Image.asset(
+                      'assets/cenima-app-user/images/film-reel.png',
+                      color: const Color(0xFF3F3F3F),
+                      fit: BoxFit.fill,
                     ),
                   ),
                   const Padding(padding: EdgeInsets.all(1)),
@@ -771,7 +772,7 @@ class Footer extends StatelessWidget {
               ),
             ),
           ),
-          const Padding(padding: EdgeInsets.all(20)),
+          const Padding(padding: EdgeInsets.all(10)),
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.15,
             height: MediaQuery.of(context).size.height * 0.15,
@@ -779,7 +780,7 @@ class Footer extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => AFoodMenu()),
+                  MaterialPageRoute(builder: (context) => const CinemaList()),
                 );
               },
               child: Column(
@@ -787,10 +788,47 @@ class Footer extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.1,
                     height: MediaQuery.of(context).size.height * 0.07,
-                    child: const Icon(
-                      CineApp.popcorn,
-                      size: 40,
-                      color: Color(0xff000000),
+                    child: Image.asset(
+                      'assets/cenima-app-user/images/cinema-screen.png',
+                      color: const Color(0xFF3F3F3F),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  const Padding(padding: EdgeInsets.all(1)),
+                  Text(
+                    'Cinema List',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.caveat(
+                      fontSize: 10 * ffem,
+                      fontWeight: FontWeight.w700,
+                      height: 1.2575 * ffem / fem,
+                      color: const Color(0xff000000),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          const Padding(padding: EdgeInsets.all(10)),
+          SizedBox(
+            width: MediaQuery.of(context).size.width * 0.15,
+            height: MediaQuery.of(context).size.height * 0.15,
+            child: TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => FoodMenu()),
+                );
+              },
+              child: Column(
+                children: [
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.1,
+                    height: MediaQuery.of(context).size.height * 0.07,
+                    child: Image.asset(
+                      'assets/cenima-app-user/images/popcorn.png',
+                      color: const Color(0xFF3F3F3F),
+                      fit: BoxFit.fill,
                     ),
                   ),
                   const Padding(padding: EdgeInsets.all(1)),
@@ -808,7 +846,7 @@ class Footer extends StatelessWidget {
               ),
             ),
           ),
-          const Padding(padding: EdgeInsets.all(20)),
+          const Padding(padding: EdgeInsets.all(10)),
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.15,
             height: MediaQuery.of(context).size.height * 0.15,
@@ -816,7 +854,7 @@ class Footer extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => AProfileSettings()),
+                  MaterialPageRoute(builder: (context) => const Profile()),
                 );
               },
               child: Column(
@@ -824,10 +862,10 @@ class Footer extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.1,
                     height: MediaQuery.of(context).size.height * 0.07,
-                    child: const Icon(
-                      Icons.person,
-                      size: 40,
-                      color: Color(0xff000000),
+                    child: Image.asset(
+                      'assets/cenima-app-user/images/user-1-EXX.png',
+                      color: const Color(0xFF3F3F3F),
+                      fit: BoxFit.fill,
                     ),
                   ),
                   const Padding(padding: EdgeInsets.all(1)),
@@ -849,13 +887,4 @@ class Footer extends StatelessWidget {
       ),
     );
   }
-}
-
-Image logoWidget() {
-  return Image.asset(
-    'assets/cenima-app-user/images/auto-group-42rk.png',
-    fit: BoxFit.fitWidth,
-    width: 240,
-    height: 240,
-  );
 }

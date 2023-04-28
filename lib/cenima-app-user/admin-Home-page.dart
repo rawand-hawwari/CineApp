@@ -171,7 +171,7 @@ class _AHomePage extends State<AdminHomePage> {
           ),
         ),
       ),
-      drawer: const ASettingDrawer(),
+      drawer: ASettingDrawer(),
       bottomNavigationBar: BottomNavigationBarHandler(),
     );
   }

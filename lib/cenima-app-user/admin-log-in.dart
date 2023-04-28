@@ -5,6 +5,7 @@ import '../reusable-widgets/reusable-widget.dart';
 import 'admin-Home-page.dart';
 import 'admin-sign-up.dart';
 import 'log-in.dart';
+import 'package:email_validator/email_validator.dart';
 
 class AdminLogIn extends StatefulWidget {
   const AdminLogIn({super.key});

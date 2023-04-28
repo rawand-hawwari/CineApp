@@ -142,7 +142,7 @@ class _ScreensState extends State<Screens> {
     ],
     ),
     ),
-      bottomNavigationBar: BottomNavigationBarHandler(),
+      bottomNavigationBar: const BottomNavigationBarHandler(),
     );
   }
 }
