@@ -11,7 +11,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-
 import 'bloc/page_bloc.dart';
 import 'bloc/theme_bloc.dart';
 import 'bloc/theme_state.dart';
@@ -23,14 +22,16 @@ import 'cenima-app-user/admin-profile-settings.dart';
 //   WidgetsFlutterBinding.ensureInitialized();
 //   await Firebase.initializeApp();
 
-
 //   runApp(const MyApp());
 // }
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
- await Firebase.initializeApp();
- return runApp(const MyApp());}
+  await Firebase.initializeApp(
+    name: 'Cine App',
+  );
+  return runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -38,25 +39,27 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamProvider<NUser?>.value(
-      value: AuthServices.userStream,
-      initialData: null,
-      builder: (context, snapshot) {
-        return MultiBlocProvider(
-          providers: [
-            BlocProvider(create: (_) => PageBloc()),
-            BlocProvider(create: (_) => UserBloc()),
-            BlocProvider(create: (_) => ThemeBloc()),
-          ],
-          child: BlocBuilder<ThemeBloc, ThemeState>(
-              builder: (_, themeState) =>
-                  MaterialApp(
+        value: AuthServices.userStream,
+        initialData: null,
+        builder: (context, snapshot) {
+          return MultiBlocProvider(
+            providers: [
+              BlocProvider(create: (_) => PageBloc()),
+              BlocProvider(create: (_) => UserBloc()),
+              BlocProvider(create: (_) => ThemeBloc()),
+            ],
+            child: BlocBuilder<ThemeBloc, ThemeState>(
+                builder: (_, themeState) => MaterialApp(
+                    title: 'Ciné',
+                    debugShowCheckedModeBanner: false,
+                    theme: ThemeData(
+                      primarySwatch: Colors.pink,
+                    ),
+                    home: const MyHomePage(
                       title: 'Ciné',
-                      debugShowCheckedModeBanner: false,
-                      theme: ThemeData(primarySwatch: Colors.pink,),
-                      home: MyHomePage(title: 'Ciné',))),
-        );
-      }
-    );
+                    ))),
+          );
+        });
   }
 }
 
@@ -74,7 +77,9 @@ class _MyHomePageState extends State<MyHomePage> {
     return MaterialApp(
         title: 'Ciné',
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(primarySwatch: Colors.pink,),
+        theme: ThemeData(
+          primarySwatch: Colors.pink,
+        ),
         home: Wrapper());
   }
 }

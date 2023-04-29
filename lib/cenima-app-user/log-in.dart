@@ -1,18 +1,15 @@
 // ignore_for_file: file_names
 import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/cenima-app-user/sign-up.dart';
 import 'package:myapp/cenima-app-user/starter.dart';
-import '../bloc/page_bloc.dart';
+import 'package:myapp/reusable-widgets/reusable-widget.dart';
 import '../services/auth.dart';
 import '../shared/Theme.dart';
 import 'admin-log-in.dart';
-import 'home-page.dart';
 import 'package:email_validator/email_validator.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class LogIn extends StatefulWidget {
   const LogIn({super.key});
@@ -74,7 +71,7 @@ class _LoginPage extends State<LogIn> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              logoWidget(),
+              logowidget(),
 
             // Log in form
             Container(
@@ -537,7 +534,7 @@ class _LoginPage extends State<LogIn> {
 //                                     fontWeight: FontWeight.w400,
 //                                     height: 1.2575 * ffem / fem,
 //                                     color: const Color(0xff000000),
-//                                   ),
+                                  ),
                                 ),
                               ),
                             ),
@@ -552,7 +549,7 @@ class _LoginPage extends State<LogIn> {
             ],
           ),
         ),
-
+      ),
     );
   }
 }

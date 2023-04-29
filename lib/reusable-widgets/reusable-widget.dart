@@ -7,16 +7,20 @@ import 'package:myapp/cenima-app-user/log-in.dart';
 import 'package:myapp/cenima-app-user/screens.dart';
 import 'package:myapp/cine_app_icons.dart';
 import '../cenima-app-user/admin-food-menu.dart';
-import '../cenima-app-user/admin-log-in.dart';
 import '../cenima-app-user/admin-profile-settings.dart';
 import '../cenima-app-user/admin-profile.dart';
 import '../cenima-app-user/admin-settings.dart';
+import '../cenima-app-user/cinema-list.dart';
 import '../cenima-app-user/contact.dart';
+import '../cenima-app-user/food-menu-selection.dart';
 import '../cenima-app-user/help.dart';
+import '../cenima-app-user/home-page.dart';
+import '../cenima-app-user/profile.dart';
+import '../cenima-app-user/rent-movie.dart';
 import '../services/auth.dart';
 
 class ASettingDrawer extends StatelessWidget {
-  final AuthServices _auth= AuthServices();
+  final AuthServices _auth = AuthServices();
   ASettingDrawer({super.key});
 
   @override
@@ -186,12 +190,11 @@ class ASettingDrawer extends StatelessWidget {
                 ),
               ],
             ),
-            onTap: ()async {
+            onTap: () async {
               await AuthServices.signOut();
-              },
+            },
 
-              // FirebaseAuth.instace.SignOut();
-
+            // FirebaseAuth.instace.SignOut();
           ),
         ],
       ),
@@ -887,4 +890,14 @@ class Footer extends StatelessWidget {
       ),
     );
   }
+}
+
+Image logowidget() {
+  return Image.asset(
+    'assets/cenima-app-user/images/auto-group-42rk.png',
+    fit: BoxFit.cover,
+    width: 240,
+    height: 240,
+    color: Colors.white,
+  );
 }

@@ -64,7 +64,7 @@ class _ALoginPage extends State<AdminLogIn> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  logoWidget(),
+                  logowidget(),
 
                   // Log in form
                   Container(
