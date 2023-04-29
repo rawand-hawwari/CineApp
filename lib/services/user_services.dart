@@ -17,25 +17,25 @@ class UserServices {
     });
   }
 
-  static Future<NUser> getUser(String uid) async {
-    DocumentSnapshot snapshot = await _userCollection.doc(uid).get();
+  // static Future<NUser> getUser(String uid) async {
+  //   DocumentSnapshot snapshot = await _userCollection.doc(uid).get();
 
-    return NUser(
-      uid: snapshot.data().toString().contains('id') ? snapshot.get('id') : '',
-      email: snapshot.data().toString().contains('email')
-          ? snapshot.get('email')
-          : '',
-      snapshot.data().toString().contains('name') ? snapshot.get('name') : '',
-      snapshot.data().toString().contains('isAdmin')
-          ? snapshot.get('isAdmin')
-          : '',
-      snapshot.data().toString().contains('phoneNo')
-          ? snapshot.get('phoneNo')
-          : '',
-    );
-    // snapshot.data['email'],
-    // name: snapshot.data['name']);
-  }
+  //   return NUser(
+  //     uid: snapshot.data().toString().contains('id') ? snapshot.get('id') : '',
+  //     email: snapshot.data().toString().contains('email')
+  //         ? snapshot.get('email')
+  //         : '',
+  //     snapshot.data().toString().contains('name') ? snapshot.get('name') : '',
+  //     snapshot.data().toString().contains('isAdmin')
+  //         ? snapshot.get('isAdmin')
+  //         : '',
+  //     snapshot.data().toString().contains('phoneNo')
+  //         ? snapshot.get('phoneNo')
+  //         : '',
+  //   );
+  //   // snapshot.data['email'],
+  //   // name: snapshot.data['name']);
+  // }
 
   Stream<QuerySnapshot> get userData {
     return _userCollection.snapshots();

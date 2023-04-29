@@ -30,8 +30,8 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: const FirebaseOptions(
       apiKey: "AIzaSyAh3Au4IJoktQY6PC30NdEZ1_3CLycTaq4",
-      appId: "XXX",
-      messagingSenderId: "XXX",
+      appId: "1:217615482467:web:85fa0a8170069ea60a0256",
+      messagingSenderId: "217615482467",
       projectId: "cine-app-cbd48",
     ),
   );

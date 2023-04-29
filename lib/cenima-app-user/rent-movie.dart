@@ -1984,7 +1984,7 @@ class _BottomNavigationBarHandlerState
     extends State<BottomNavigationBarHandler> {
   final screenHeight = window.physicalSize.height / window.devicePixelRatio;
   int currentIColorsndex = 0;
-  int currentIndex = 0;
+  int currentIndex = 1;
 
   final ScrollController _homeController = ScrollController();
 
