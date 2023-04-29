@@ -898,6 +898,5 @@ Image logowidget() {
     fit: BoxFit.cover,
     width: 240,
     height: 240,
-    color: Colors.white,
   );
 }

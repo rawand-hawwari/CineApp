@@ -44,40 +44,41 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAfpAEGXg6U-9HDEqAhnBH54vdHjzR-ZAs',
-    appId: '1:426947305947:web:92f0db9be941ce1ed307fe',
-    messagingSenderId: '426947305947',
-    projectId: 'cineapp-a86ac',
-    authDomain: 'cineapp-a86ac.firebaseapp.com',
-    storageBucket: 'cineapp-a86ac.appspot.com',
-    measurementId: 'G-2E2NWBHP5W',
+    apiKey: 'AIzaSyAoLw9Mhpxq4kB9HO0HK-_rBdeWfy9ZcZ8',
+    appId: '1:217615482467:web:85fa0a8170069ea60a0256',
+    messagingSenderId: '217615482467',
+    projectId: 'cine-app-cbd48',
+    authDomain: 'cine-app-cbd48.firebaseapp.com',
+    storageBucket: 'cine-app-cbd48.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDKyPza5aOFvwdF_R-p26yJn825ydW-UoA',
-    appId: '1:426947305947:android:c7a476f232dd2764d307fe',
-    messagingSenderId: '426947305947',
-    projectId: 'cineapp-a86ac',
-    storageBucket: 'cineapp-a86ac.appspot.com',
+    apiKey: 'AIzaSyAh3Au4IJoktQY6PC30NdEZ1_3CLycTaq4',
+    appId: '1:217615482467:android:d2d86f5f7eaf85f00a0256',
+    messagingSenderId: '217615482467',
+    projectId: 'cine-app-cbd48',
+    storageBucket: 'cine-app-cbd48.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyD0B_a9nc8R7efCdFrkRUuIvpE8fJRvmv8',
-    appId: '1:426947305947:ios:04e6aeb78790e622d307fe',
-    messagingSenderId: '426947305947',
-    projectId: 'cineapp-a86ac',
-    storageBucket: 'cineapp-a86ac.appspot.com',
-    iosClientId: '426947305947-stvb3g5pa4hnufaetnhomer2mcaiq4jc.apps.googleusercontent.com',
-    iosBundleId: 'com.example.test',
+    apiKey: 'AIzaSyAif8rhuLLkSq7IiPWASK5jMn5JWAVGI4M',
+    appId: '1:217615482467:ios:f21ac530b850930a0a0256',
+    messagingSenderId: '217615482467',
+    projectId: 'cine-app-cbd48',
+    storageBucket: 'cine-app-cbd48.appspot.com',
+    androidClientId: '217615482467-id8sqonrtqg9obiu2fahsilmh0j9pa7l.apps.googleusercontent.com',
+    iosClientId: '217615482467-8mukj63ugcs1lq0tefqbhoe9hrtfhk1h.apps.googleusercontent.com',
+    iosBundleId: 'com.Cine.App',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyD0B_a9nc8R7efCdFrkRUuIvpE8fJRvmv8',
-    appId: '1:426947305947:ios:04e6aeb78790e622d307fe',
-    messagingSenderId: '426947305947',
-    projectId: 'cineapp-a86ac',
-    storageBucket: 'cineapp-a86ac.appspot.com',
-    iosClientId: '426947305947-stvb3g5pa4hnufaetnhomer2mcaiq4jc.apps.googleusercontent.com',
-    iosBundleId: 'com.example.test',
+    apiKey: 'AIzaSyAif8rhuLLkSq7IiPWASK5jMn5JWAVGI4M',
+    appId: '1:217615482467:ios:f21ac530b850930a0a0256',
+    messagingSenderId: '217615482467',
+    projectId: 'cine-app-cbd48',
+    storageBucket: 'cine-app-cbd48.appspot.com',
+    androidClientId: '217615482467-id8sqonrtqg9obiu2fahsilmh0j9pa7l.apps.googleusercontent.com',
+    iosClientId: '217615482467-8mukj63ugcs1lq0tefqbhoe9hrtfhk1h.apps.googleusercontent.com',
+    iosBundleId: 'com.Cine.App',
   );
 }

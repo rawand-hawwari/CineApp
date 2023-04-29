@@ -28,7 +28,12 @@ import 'cenima-app-user/admin-profile-settings.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    name: 'Cine App',
+    options: const FirebaseOptions(
+      apiKey: "AIzaSyAh3Au4IJoktQY6PC30NdEZ1_3CLycTaq4",
+      appId: "XXX",
+      messagingSenderId: "XXX",
+      projectId: "cine-app-cbd48",
+    ),
   );
   return runApp(const MyApp());
 }
