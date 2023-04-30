@@ -1,5 +1,6 @@
 // widget footer
 // ignore: avoid_web_libraries_in_flutter
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/cenima-app-user/admin-Home-page.dart';
@@ -427,7 +428,7 @@ class SettingDrawer extends StatelessWidget {
               ],
             ),
             onTap: () {
-              // FirebaseAuth.instace.SignOut();
+              FirebaseAuth.instance.signOut();
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const LogIn()),
