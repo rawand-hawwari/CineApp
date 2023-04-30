@@ -143,7 +143,7 @@ class _HomePage extends State<HomePage> {
           ),
         ),
       ),
-      drawer: ASettingDrawer(),
+      drawer: SettingDrawer(),
       bottomNavigationBar: const BottomNavigationBarHandler(),
     );
   }
