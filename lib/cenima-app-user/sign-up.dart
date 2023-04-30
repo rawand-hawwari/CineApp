@@ -208,6 +208,7 @@ class _SignUpPage extends State<SignUp> {
                     ),
                     const Padding(padding: EdgeInsets.all(10.0)),
                     TextFormField(
+                      obscureText: true,
                       controller: passwordController,
                       onChanged: (val) {
                         setState(() {
@@ -234,6 +235,7 @@ class _SignUpPage extends State<SignUp> {
                     ),
                     const Padding(padding: EdgeInsets.all(10.0)),
                     TextFormField(
+                      obscureText: true,
                       controller: retypePasswordController,
                       onChanged: (val) {
                         setState(() {
@@ -256,6 +258,7 @@ class _SignUpPage extends State<SignUp> {
                         hintText: 'Repeat the password',
                         labelText: 'Confirm Password',
                         errorText: isPF2Valid? (errorRetype==''?null:errorRetype ) :'Value Can\'t Be Empty',
+
 
                       ),
                     ),
@@ -360,10 +363,9 @@ class _SignUpPage extends State<SignUp> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'A Business Owner? ',
+                    'An Admin? ',
                     textAlign: TextAlign.center,
-                    style: greyTextFont(height),
-                  ),
+                    style: greyTextFont(height)),
                   const Padding(padding: EdgeInsets.all(5.0)),
                   TextButton(
                     onPressed: () {

@@ -12,7 +12,6 @@ import 'package:myapp/reusable-widgets/reusable-widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'dart:ui';
 import '../cine_app_icons.dart';
-
 import 'food-menu-selection.dart';
 
 
@@ -146,7 +145,7 @@ class _HomePage extends State<HomePage> {
           ),
         ),
       ),
-      drawer: const SettingDrawer(),
+      drawer: ASettingDrawer(),
       bottomNavigationBar: const BottomNavigationBarHandler(),
     );
   }
@@ -155,7 +154,7 @@ class _HomePage extends State<HomePage> {
   Widget buildImage(String urlImage, int index) => Container(
         width: MediaQuery.of(context).size.width * 1.0,
         color: Colors.black87,
-        child: Image.network(
+        child: Image.asset(
           urlImage,
           fit: BoxFit.cover,
         ),

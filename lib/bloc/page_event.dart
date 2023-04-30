@@ -1,14 +1,13 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-
 import '../services/registration.dart';
 
 abstract class PageEvent extends Equatable {
   const PageEvent();
 }
 
-class GoToSplashPage extends PageEvent {
+class GoToStarterPage extends PageEvent {
   @override
   List<Object> get props => [];
 }
@@ -18,7 +17,19 @@ class GoToLoginPage extends PageEvent {
   List<Object> get props => [];
 }
 
-class GoToMainPage extends PageEvent {
+class GoToHomePage extends PageEvent {
+  @override
+  List<Object> get props => [];
+}
+class GoToRentPage extends PageEvent {
+  @override
+  List<Object> get props => [];
+}
+class GoToFoodPage extends PageEvent {
+  @override
+  List<Object> get props => [];
+}
+class GoToProfilePage extends PageEvent {
   @override
   List<Object> get props => [];
 }

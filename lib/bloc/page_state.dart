@@ -25,12 +25,6 @@ class OnStarterPage extends PageState {
   List<Object> get props => [];
 }
 
-class OnMainPage extends PageState {
-
-   @override
-  List<Object> get props => [];
-}
-
 class OnRegristrationPage extends PageState {
   final RegistrationData registrationData;
 
@@ -55,5 +49,26 @@ class OnAccountConfirmationPage extends PageState {
   OnAccountConfirmationPage(this.registrationData);
 
    @override
+  List<Object> get props => [];
+}
+
+class OnHomePage extends PageState {
+
+  @override
+  List<Object> get props => [];
+}
+class OnRentPage extends PageState {
+
+  @override
+  List<Object> get props => [];
+}
+class OnFoodPage extends PageState {
+
+  @override
+  List<Object> get props => [];
+}
+class OnProfilePage extends PageState {
+
+  @override
   List<Object> get props => [];
 }

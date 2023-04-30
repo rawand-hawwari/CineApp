@@ -251,28 +251,28 @@ class _BottomNavigationBarHandlerState extends State<BottomNavigationBarHandler>
     else{
     switch (index) {
       case 0:
-        Navigator.push(
+        Navigator.pushReplacement(
           context,
           MaterialPageRoute(
               builder: (context) => const AdminHomePage()),
         );
         break;
       case 1:
-        Navigator.push(
+        Navigator.pushReplacement(
           context,
           MaterialPageRoute(
               builder: (context) => const Screens()),
         );
         break;
       case 2:
-        Navigator.push(
+        Navigator.pushReplacement(
           context,
           MaterialPageRoute(
               builder: (context) => AFoodMenu()),
         );
         break;
       case 3:
-        Navigator.push(
+        Navigator.pushReplacement(
           context,
           MaterialPageRoute(
               builder: (context) => const AProfileSettings()),
