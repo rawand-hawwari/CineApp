@@ -4,7 +4,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/cenima-app-user/admin-Home-page.dart';
-import 'package:myapp/cenima-app-user/log-in.dart';
+import 'package:myapp/cenima-app-user/home-page.dart';
+import 'package:myapp/cenima-app-user/profile.dart';
+import 'package:myapp/cenima-app-user/rent-movie.dart';
 import 'package:myapp/cenima-app-user/screens.dart';
 import 'package:myapp/cine_app_icons.dart';
 import '../cenima-app-user/admin-food-menu.dart';
@@ -899,5 +901,33 @@ Image logowidget() {
     fit: BoxFit.cover,
     width: 240,
     height: 240,
+
+    color: Colors.white,
   );
 }
+
+Future<bool> showExitPopup(BuildContext context) async {
+  return await showDialog( //show confirm dialogue
+    //the return value will be from "Yes" or "No" options
+    context: context,
+    builder: (context) => AlertDialog(
+      title: Text('Exit App'),
+      content: Text('Do you want to exit the App?'),
+      actions:[
+        ElevatedButton(
+          onPressed: () => Navigator.of(context).pop(false),
+          //return false when click on "NO"
+          child:Text('No'),
+        ),
+
+        ElevatedButton(
+          onPressed: () => Navigator.of(context).pop(true),
+          //return true when click on "Yes"
+          child:Text('Yes'),
+        ),
+
+      ],
+    ),
+  )??false; //if showDialouge had returned null, then return false
+}
+

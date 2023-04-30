@@ -12,7 +12,6 @@ import 'package:myapp/reusable-widgets/reusable-widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'dart:ui';
 import '../cine_app_icons.dart';
-
 import 'food-menu-selection.dart';
 
 class HomePage extends StatefulWidget {
@@ -144,7 +143,7 @@ class _HomePage extends State<HomePage> {
           ),
         ),
       ),
-      drawer: const SettingDrawer(),
+      drawer: ASettingDrawer(),
       bottomNavigationBar: const BottomNavigationBarHandler(),
     );
   }

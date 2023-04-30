@@ -6,6 +6,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/cenima-app-user/sign-up.dart';
 import 'package:myapp/cenima-app-user/starter.dart';
 import 'package:myapp/reusable-widgets/reusable-widget.dart';
+import '../bloc/page_bloc.dart';
+
 import '../services/auth.dart';
 import '../shared/Theme.dart';
 import 'admin-log-in.dart';
@@ -65,12 +67,11 @@ class _LoginPage extends State<LogIn> {
         ],
       ),
       body: SingleChildScrollView(
-        child: Container(
-          alignment: Alignment.topCenter,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              logowidget(),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            logowidget(),
+
 
               // Log in form
               Container(
@@ -85,6 +86,8 @@ class _LoginPage extends State<LogIn> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
+                      
+                      //email field
                         TextFormField(
                           controller: emailController,
                           keyboardType: TextInputType.emailAddress,
@@ -119,6 +122,8 @@ class _LoginPage extends State<LogIn> {
                           ),
                         ),
                         const Padding(padding: EdgeInsets.all(10.0)),
+                        
+                        //password field
                         TextFormField(
                           onChanged: (val) {
                             setState(() {
@@ -166,102 +171,97 @@ class _LoginPage extends State<LogIn> {
                         ),
 
                         const Padding(padding: EdgeInsets.all(5.0)),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Forget password?',
-                              textAlign: TextAlign.center,
-                              style: greyTextFont(height),
-                            ),
-                            const Padding(padding: EdgeInsets.all(2.7)),
-                            TextButton(
-                              onPressed: () {},
-                              style: TextButton.styleFrom(
-                                padding: EdgeInsets.zero,
-                              ),
-                              child: Text(
-                                ' Click here',
-                                textAlign: TextAlign.center,
-                                style: greyTextFont(height)
-                                    .copyWith(color: mainColor),
-                              ),
-                            ),
-                          ],
+                  // forget password text
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Forget password?',
+                        textAlign: TextAlign.center,
+                        style: greyTextFont(height),
+                      ),
+                      const Padding(padding: EdgeInsets.all(2.7)),
+                      TextButton(
+                        onPressed: () {},
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
                         ),
-                        SizedBox(height: height * .017),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Container(
-                              child: isEmailValid && isPasswordValid
-                                  ? Text(error)
-                                  : Text(
-                                      error,
-                                      style: redTextFont(height),
-                                    ),
-                            ),
-                          ],
+                        child: Text(
+                          ' Click here',
+                          textAlign: TextAlign.center,
+                          style: greyTextFont(height).copyWith(color: mainColor),
                         ),
-                        //sign in button
-                        Center(
-                          child: Container(
-                            padding: const EdgeInsets.only(top: 30.0),
-                            child: isSigningIn
-                                ? SpinKitFadingCircle(
-                                    color: mainColor,
-                                  )
-                                : TextButton(
-                                    onPressed: isEmailValid && isPasswordValid
-                                        ? () async {
-                                            setState(() {
-                                              isSigningIn = true;
-                                            });
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: height*.017),
+                  // error text
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Container(child:
+                      isEmailValid && isPasswordValid ?
+                      Text(error)
+                          :
+                      Text(error,
+                          style: redTextFont(height),
+                      ),
+                      ),
+                    ],
+                  ),
+                  //sign in button
+                  Center(
+                    child: Container(
+                      padding: const EdgeInsets.only(top: 30.0),
+                      child: isSigningIn? SpinKitFadingCircle(
+                        color: mainColor,)
+                          : TextButton(
+                            onPressed: isEmailValid && isPasswordValid
+                                ? () async {
+                              setState(() {
+                                isSigningIn = true;
+                              });
 
-                                            SignInSignUpResult? result =
-                                                await AuthServices.signIn(
-                                                    emailController.text,
-                                                    passwordController.text);
+                              SignInSignUpResult? result =
+                              await AuthServices.signIn(
+                                  emailController.text,
+                                  passwordController.text);
 
-                                            if (result?.exception == true) {
-                                              setState(() {
-                                                isSigningIn = false;
-                                              });
+                              if (result?.exception == true) {
+                                setState(() {
+                                  isSigningIn = false;
+                                });
 
-                                              if (context.mounted) {
-                                                Flushbar(
-                                                  duration: const Duration(
-                                                      seconds: 4),
-                                                  flushbarPosition:
-                                                      FlushbarPosition.TOP,
-                                                  backgroundColor:
-                                                      const Color(0xFFFF5c83),
-                                                  message: result?.message,
-                                                ).show(context);
-                                              }
-                                            }
-                                          }
-                                        : () async {
-                                            setState(() {
-                                              error =
-                                                  "Email or password invalid";
-                                            });
-                                          },
-                                    style: TextButton.styleFrom(
-                                      padding: EdgeInsets.zero,
-                                    ),
-                                    child: SizedBox(
-                                      width: 144 * fem,
-                                      height: 57 * fem,
-                                      child: Container(
-                                        width: double.infinity,
-                                        height: double.infinity,
-                                        decoration: BoxDecoration(
-                                          border: Border.all(
-                                              color: const Color(0xff707070)),
-                                          color: const Color(0xff9a2044),
-                                          borderRadius:
-                                              BorderRadius.circular(54 * fem),
+                                if (context.mounted) {
+                                  Flushbar(
+                                  duration: Duration(seconds: 4),
+                                  flushbarPosition: FlushbarPosition.TOP,
+                                  backgroundColor: Color(0xFFFF5c83),
+                                  message: result?.message,
+                                ).show(context);
+                                }
+                              }
+                            }
+                                : () async {setState((){
+                              error="Email or password invalid";
+                            });
+                            },
+                            style: TextButton.styleFrom(
+                            padding: EdgeInsets.zero,
+                            ),
+                            child: SizedBox(
+                              width: 144 * fem,
+                              height: 57 * fem,
+                                child: Container(
+                              // frame4EaH (I134:15173;18:475)
+                                  width: double.infinity,
+                                  height: double.infinity,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                    color: const Color(0xff707070)),
+                                    color: const Color(0xff9a2044),
+                                borderRadius:
+                                    BorderRadius.circular(54 * fem),
 //                             style: GoogleFonts.lato(
 //                               fontSize: 12 * ffem,
 //                               fontWeight: FontWeight.w600,
@@ -338,18 +338,19 @@ class _LoginPage extends State<LogIn> {
 //                                       height: 1.2575 * ffem / fem,
 //                                       color: const Color(0xffffffff),
 //                                     ),
-                                        ),
-                                        child: Center(
-                                          child: Text(
-                                            'Log In',
-                                            textAlign: TextAlign.center,
-                                            style: buttonTextFont(height),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
+                              ),
+                                    child: Center(
+                                      child: Text(
+                                        'Log In',
+                                        textAlign: TextAlign.center,
+                                        style: buttonTextFont(height),
+                                ),
+                            ),
                           ),
+                        ),
+                      ),
+                    ),
+
 //                       ),
 //                     ],
 //                   ),
@@ -399,162 +400,236 @@ class _LoginPage extends State<LogIn> {
 //                             ),
 //                           ),
 //                         ],
+
                         ),
                       ],
                     ),
+
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'An Admin?',
+                  textAlign: TextAlign.center,
+                  style: greyTextFont(height),
+                ),
+                const Padding(padding: EdgeInsets.all(5.0)),
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                          const AdminLogIn()),
+                    );
+                  },
+                  style: TextButton.styleFrom(
+                    padding: EdgeInsets.zero,
+                  ),
+                  child: Text(
+                    ' Click here',
+                    textAlign: TextAlign.center,
+                    style: greyTextFont(height).copyWith(color: mainColor),
                   ),
                 ),
-              ),
-              Center(
-                child: Row(
+              ],
+            ),
+          ),
+          // bottom sign up
+          Container(
+            padding: EdgeInsets.all(height*0.020),
+            decoration: BoxDecoration(border:  Border(
+              top: BorderSide(width: 1.0, color: accentColor2),
+            )),
+            // padding: EdgeInsets.only(
+            //     top: height * 0.07),
+            alignment: Alignment.bottomCenter,
+            child: Column(
+              children: [
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'A Business Owner? ',
-                      textAlign: TextAlign.center,
-                      style: greyTextFont(height),
+                      'Don\'t Have an account?',
+                      style: GoogleFonts.lato(
+                        fontSize: 18 * ffem,
+                        fontWeight: FontWeight.w700,
+                        color: const Color(0xff000000),
+                      ),
                     ),
-                    const Padding(padding: EdgeInsets.all(5.0)),
+                    const Padding(padding: EdgeInsets.all(10.0)),
+
                     TextButton(
                       onPressed: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const AdminLogIn()),
+                              builder: (context) => const SignUp()),
+
                         );
                       },
                       style: TextButton.styleFrom(
                         padding: EdgeInsets.zero,
                       ),
-                      child: Text(
-                        ' Click here',
-                        textAlign: TextAlign.center,
-                        style: greyTextFont(height).copyWith(color: mainColor),
-                      ),
+                      child: SizedBox(
+                        width: 110 * fem,
+                        height: 50 * fem,
+                        child: Container(
+                          // frame4EaH (I134:15173;18:475)
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                                color: const Color(0xff9a2044)),
+                            color: const Color(0xffffffff),
+                            borderRadius:
+                            BorderRadius.circular(54 * fem),
+                          ),
+                          child: Center(
+                            child: Text(
+                              'Sign Up',
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.lato(
+                                fontSize: 15 * ffem,
+                                fontWeight: FontWeight.w400,
+                                height: 1.2575 * ffem / fem,
+                                color: const Color(0xff000000),
+  //                    child: Text(
+    //                    ' Click here',
+      //                  textAlign: TextAlign.center,
+        //                style: greyTextFont(height).copyWith(color: mainColor),
+          //            ),
 ///////////////////////////////////
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.all(height * 0.020),
-                decoration: BoxDecoration(
-                    border: Border(
-                  top: BorderSide(width: 1.0, color: accentColor2),
-                )),
-                // padding: EdgeInsets.only(
-                //     top: height * 0.07),
-                alignment: Alignment.bottomCenter,
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Have an account?',
-                          style: GoogleFonts.lato(
-                            fontSize: 18 * ffem,
-                            fontWeight: FontWeight.w700,
-                            color: const Color(0xff000000),
-                          ),
-                        ),
-                        const Padding(padding: EdgeInsets.all(10.0)),
-                        TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const SignUp()),
-                            );
-                          },
-                          style: TextButton.styleFrom(
-                            padding: EdgeInsets.zero,
-                          ),
-                          child: SizedBox(
-                            width: 110 * fem,
-                            height: 50 * fem,
-                            child: Container(
-                              // frame4EaH (I134:15173;18:475)
-                              decoration: BoxDecoration(
-                                border:
-                                    Border.all(color: const Color(0xff9a2044)),
-                                color: const Color(0xffffffff),
-                                borderRadius: BorderRadius.circular(54 * fem),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  'Sign Up',
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.lato(
-                                    fontSize: 15 * ffem,
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.2575 * ffem / fem,
-                                    color: const Color(0xff000000),
-//                     const Divider(
-//                       height: 12,
-//                       thickness: 1,
-//                     ),
-//                     const Padding(padding: EdgeInsets.all(10.0)),
-//                     Row(
-//                       mainAxisAlignment: MainAxisAlignment.center,
-//                       children: [
-//                         Text(
-//                           'Have an account?',
-//                           style: GoogleFonts.lato(
-//                             fontSize: 18 * ffem,
-//                             fontWeight: FontWeight.w700,
-//                             height: 1.2575 * ffem / fem,
-//                             color: const Color(0xff000000),
-//                           ),
-//                         ),
-//                         const Padding(padding: EdgeInsets.all(10.0)),
-//                         TextButton(
-//                           onPressed: () {
-//                             Navigator.push(
-//                               context,
-//                               MaterialPageRoute(
-//                                   builder: (context) => const SignUp()),
-//                             );
-//                           },
-//                           style: TextButton.styleFrom(
-//                             padding: EdgeInsets.zero,
-//                           ),
-//                           child: SizedBox(
-//                             width: 110 * fem,
-//                             height: 50 * fem,
-//                             child: Container(
-//                               // frame4EaH (I134:15173;18:475)
-//                               width: double.infinity,
-//                               height: double.infinity,
-//                               decoration: BoxDecoration(
-//                                 border:
-//                                     Border.all(color: const Color(0xff9a2044)),
-//                                 color: const Color(0xffffffff),
-//                                 borderRadius: BorderRadius.circular(54 * fem),
-//                               ),
-//                               child: Center(
-//                                 child: Text(
-//                                   'Sign Up',
-//                                   textAlign: TextAlign.center,
-//                                   style: GoogleFonts.lato(
-//                                     fontSize: 15 * ffem,
-//                                     fontWeight: FontWeight.w400,
-//                                     height: 1.2575 * ffem / fem,
-//                                     color: const Color(0xff000000),
-                                  ),
-                                ),
+            //        ),
+              //    ],
+                //),
+              //),
+              //Container(
+                //padding: EdgeInsets.all(height * 0.020),
+                //decoration: BoxDecoration(
+                  //  border: Border(
+//                  top: BorderSide(width: 1.0, color: accentColor2),
+//                )),
+//                // padding: EdgeInsets.only(
+//                //     top: height * 0.07),
+//                alignment: Alignment.bottomCenter,
+//                child: Column(
+//                  children: [
+//                    Row(
+//                      mainAxisAlignment: MainAxisAlignment.center,
+//                      children: [
+//                        Text(
+//                          'Have an account?',
+//                          style: GoogleFonts.lato(
+//                            fontSize: 18 * ffem,
+//                            fontWeight: FontWeight.w700,
+//                            color: const Color(0xff000000),
+//                          ),
+//                        ),
+//                        const Padding(padding: EdgeInsets.all(10.0)),
+//                        TextButton(
+//                          onPressed: () {
+//                            Navigator.push(
+//                              context,
+//                              MaterialPageRoute(
+//                                  builder: (context) => const SignUp()),
+//                            );
+//                          },
+//                          style: TextButton.styleFrom(
+//                            padding: EdgeInsets.zero,
+//                          ),
+//                          child: SizedBox(
+//                            width: 110 * fem,
+//                            height: 50 * fem,
+//                            child: Container(
+//                              // frame4EaH (I134:15173;18:475)
+//                              decoration: BoxDecoration(
+//                                border:
+//                                    Border.all(color: const Color(0xff9a2044)),
+//                                color: const Color(0xffffffff),
+//                                borderRadius: BorderRadius.circular(54 * fem),
+//                              ),
+//                              child: Center(
+//                                child: Text(
+//                                  'Sign Up',
+//                                  textAlign: TextAlign.center,
+//                                  style: GoogleFonts.lato(
+//                                    fontSize: 15 * ffem,
+//                                    fontWeight: FontWeight.w400,
+//                                    height: 1.2575 * ffem / fem,
+//                                    color: const Color(0xff000000),
+//  //                     const Divider(
+//  //                       height: 12,
+//  //                     thickness: 1,
+//  //                   ),
+//  //                   const Padding(padding: EdgeInsets.all(10.0)),
+//  //                   Row(
+//  //                     mainAxisAlignment: MainAxisAlignment.center,
+//  //                     children: [
+//  //                       Text(
+//  //                         'Have an account?',
+//  //                         style: GoogleFonts.lato(
+//  //                           fontSize: 18 * ffem,
+//  //                           fontWeight: FontWeight.w700,
+//  //                           height: 1.2575 * ffem / fem,
+//  //                           color: const Color(0xff000000),
+//  //                         ),
+//  //                       ),
+//  //                       const Padding(padding: EdgeInsets.all(10.0)),
+//  //                       TextButton(
+//  //                         onPressed: () {
+//  //                           Navigator.push(
+//  //                             context,
+//  //                             MaterialPageRoute(
+//  //                                 builder: (context) => const SignUp()),
+//  //                           );
+//  //                         },
+//  //                         style: TextButton.styleFrom(
+//  //                           padding: EdgeInsets.zero,
+//  //                         ),
+//  //                         child: SizedBox(
+//  //                           width: 110 * fem,
+//  //                           height: 50 * fem,
+//  //                           child: Container(
+//  //                             // frame4EaH (I134:15173;18:475)
+//  //                             width: double.infinity,
+//  //                             height: double.infinity,
+//  //                             decoration: BoxDecoration(
+//  //                               border:
+//  //                                   Border.all(color: const Color(0xff9a2044)),
+//  //                               color: const Color(0xffffffff),
+//  //                               borderRadius: BorderRadius.circular(54 * fem),
+//  //                             ),
+//  //                             child: Center(
+//  //                               child: Text(
+//  //                                 'Sign Up',
+//  //                                 textAlign: TextAlign.center,
+//  //                                 style: GoogleFonts.lato(
+//  //                                   fontSize: 15 * ffem,
+//  //                                   fontWeight: FontWeight.w400,
+//  //                                   height: 1.2575 * ffem / fem,
+//  //                                   color: const Color(0xff000000),
+//                                  ),
+//                                ),
                               ),
                             ),
                           ),
                         ),
+                      ),
                       ],
                     ),
                   ],
-                ),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
+
       ),
     );
   }
