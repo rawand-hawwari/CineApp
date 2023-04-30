@@ -89,6 +89,7 @@ class _ALoginPage extends State<AdminLogIn> {
                               val.isEmpty? isEFValid= false: isEFValid=true;
                               isEmailValid? errorE= '' : errorE ='Please enter a proper email';
 
+
                             });
                           });
                         },

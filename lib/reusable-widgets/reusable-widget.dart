@@ -652,8 +652,6 @@ class Footer extends StatelessWidget {
   }
 }
 
-
-
 Image logowidget() {
   return Image.asset(
     'assets/cenima-app-user/images/auto-group-42rk.png',

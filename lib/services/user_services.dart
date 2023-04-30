@@ -3,16 +3,17 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:myapp/services/user.dart';
 
 class UserServices {
-  static final CollectionReference _userCollection = FirebaseFirestore.instance
-      .collection('users');
+  static final CollectionReference _userCollection =
+      FirebaseFirestore.instance.collection('users');
 
-  static Future<void> updateUser(NUser? user, String email, String name, String phoneNo, bool isAdmin) async {
+  static Future<void> updateUser(NUser? user, String email, String name,
+      String phoneNo, bool isAdmin) async {
     return await _userCollection.doc(user?.uid).set({
       'uid': user?.uid,
       'email': email,
       'name': name,
-      'phoneNo' : phoneNo,
-      'isAdmin' : isAdmin,
+      'phoneNo': phoneNo,
+      'isAdmin': isAdmin,
     });
   }
   List<NUser> _userInfoFromSnapshot(QuerySnapshot snapshot){
@@ -50,8 +51,8 @@ class UserServices {
     );
   }
 
+
   Stream<QuerySnapshot> get userData {
     return _userCollection.snapshots();
   }
-
 }

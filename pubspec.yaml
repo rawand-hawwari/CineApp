@@ -64,6 +64,7 @@ dependencies:
   flutter_spinkit: ^5.1.0
   another_flushbar: ^1.12.29
   flushbar: ^1.10.4
+  firebase_core: ^2.10.0
 
 dev_dependencies:
 
