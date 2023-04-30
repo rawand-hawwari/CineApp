@@ -15,7 +15,7 @@ class AFoodMenu extends StatefulWidget {
 }
 
 class _AFoodMenu extends State<AFoodMenu> {
-  String listTitle = "Snacks";
+  String listTitle = "snacks";
   bool isDrinks = false;
   bool isCandy = false;
   @override
@@ -60,7 +60,9 @@ class _AFoodMenu extends State<AFoodMenu> {
                     children: <Widget>[
                       TextButton(
                         onPressed: () {
-                          listTitle = "Snacks";
+                          setState(() {
+                            listTitle = "snacks";
+                          });
                         },
                         child: Container(
                           padding: const EdgeInsets.all(20),
@@ -77,9 +79,9 @@ class _AFoodMenu extends State<AFoodMenu> {
                       ),
                       TextButton(
                         onPressed: () {
-                          listTitle = "Candy";
-                          isCandy = true;
-                          isDrinks = false;
+                          setState(() {
+                            listTitle = "candy";
+                          });
                         },
                         child: Container(
                           padding: const EdgeInsets.all(20),
@@ -96,9 +98,9 @@ class _AFoodMenu extends State<AFoodMenu> {
                       ),
                       TextButton(
                         onPressed: () {
-                          listTitle = "Drinks";
-                          isDrinks = true;
-                          isCandy = false;
+                          setState(() {
+                            listTitle = "drinks";
+                          });
                         },
                         child: Container(
                           padding: const EdgeInsets.all(20),
@@ -116,6 +118,50 @@ class _AFoodMenu extends State<AFoodMenu> {
                     ],
                   ),
                 ),
+
+                //add item button
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: TextButton(
+                    onPressed: () {
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //       builder: (context) => const SignUp()),
+                      // );
+                    },
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                    ),
+                    child: SizedBox(
+                      width: 144 * fem,
+                      height: 57 * fem,
+                      child: Container(
+                        width: double.infinity,
+                        height: double.infinity,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: const Color(0xff707070)),
+                          color: const Color(0xff9a2044),
+                          borderRadius: BorderRadius.circular(54 * fem),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Add Item',
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.lato(
+                              fontSize: 19.8325920105 * ffem,
+                              fontWeight: FontWeight.w600,
+                              height: 1.2575 * ffem / fem,
+                              color: const Color(0xffffffff),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
+                //items list
                 ListBuilder(),
               ],
             ),
@@ -129,19 +175,7 @@ class _AFoodMenu extends State<AFoodMenu> {
 
 // ignore: non_constant_identifier_names
   Widget ListBuilder() => Center(
-        child: isCandy
-            ? const Text("Candy")
-            : isDrinks
-                ? const Text("Dricks")
-                : const Text("Snacks"),
-        // if(listTitle == "Candy"){
-        //   Text("Candy"),
-        // }else if(listTitle == "Drinks"){
-        //   Text("Dricks"),
-        // }
-        // else{
-        //   Text("Snacks"),
-        // }
+        child: Text(listTitle),
       );
 }
 
