@@ -12,8 +12,8 @@ part 'user_state.dart';
 class UserBloc extends Bloc<UserEvent, UserState> {
   UserBloc() : super(UserInitial()) {
     on<LoadUser>((event, emit) async {
-      NUser user = await UserServices.getUser(event.id);
-      return emit(UserLoaded(user));
+      //   NUser user = await UserServices.getUser(event.id);
+      //   return emit(UserLoaded(user));
     });
     on<SignOut>((event, emit) => emit(UserInitial()));
   }
