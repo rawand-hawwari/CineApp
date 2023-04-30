@@ -49,72 +49,71 @@ class _AFoodMenu extends State<AFoodMenu> {
                 ),
               ),
             ),
-
-          ),
-        ],
-        body: Container(
-          color: const Color(0xfff1f1f1),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                  color: const Color(0xFFFFFFFF),
-                  child: ButtonBar(
-                    alignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      TextButton(
-                        onPressed: () {
-                          setState(() {
-                            listTitle = "snacks";
-                          });
-                        },
-                        child: Container(
-                          padding: const EdgeInsets.all(20),
-                          child: Text(
-                            "Snacks",
-                            style: GoogleFonts.lato(
-                              fontSize: 20 * ffem,
-                              fontWeight: FontWeight.w400,
-                              height: 1.2575 * ffem / fem,
-                              color: const Color(0xff464646),
+          ],
+          body: Container(
+            color: const Color(0xfff1f1f1),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                    color: const Color(0xFFFFFFFF),
+                    child: ButtonBar(
+                      alignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        TextButton(
+                          onPressed: () {
+                            setState(() {
+                              listTitle = "snacks";
+                            });
+                          },
+                          child: Container(
+                            padding: const EdgeInsets.all(20),
+                            child: Text(
+                              "Snacks",
+                              style: GoogleFonts.lato(
+                                fontSize: 20 * ffem,
+                                fontWeight: FontWeight.w400,
+                                height: 1.2575 * ffem / fem,
+                                color: const Color(0xff464646),
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          setState(() {
-                            listTitle = "candy";
-                          });
-                        },
-                        child: Container(
-                          padding: const EdgeInsets.all(20),
-                          child: Text(
-                            "Candy",
-                            style: GoogleFonts.lato(
-                              fontSize: 20 * ffem,
-                              fontWeight: FontWeight.w400,
-                              height: 1.2575 * ffem / fem,
-                              color: const Color(0xff464646),
+                        TextButton(
+                          onPressed: () {
+                            setState(() {
+                              listTitle = "candy";
+                            });
+                          },
+                          child: Container(
+                            padding: const EdgeInsets.all(20),
+                            child: Text(
+                              "Candy",
+                              style: GoogleFonts.lato(
+                                fontSize: 20 * ffem,
+                                fontWeight: FontWeight.w400,
+                                height: 1.2575 * ffem / fem,
+                                color: const Color(0xff464646),
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          setState(() {
-                            listTitle = "drinks";
-                          });
-                        },
-                        child: Container(
-                          padding: const EdgeInsets.all(20),
-                          child: Text(
-                            "Drinks",
-                            style: GoogleFonts.lato(
-                              fontSize: 20 * ffem,
-                              fontWeight: FontWeight.w400,
-                              height: 1.2575 * ffem / fem,
-                              color: const Color(0xff464646),
+                        TextButton(
+                          onPressed: () {
+                            setState(() {
+                              listTitle = "drinks";
+                            });
+                          },
+                          child: Container(
+                            padding: const EdgeInsets.all(20),
+                            child: Text(
+                              "Drinks",
+                              style: GoogleFonts.lato(
+                                fontSize: 20 * ffem,
+                                fontWeight: FontWeight.w400,
+                                height: 1.2575 * ffem / fem,
+                                color: const Color(0xff464646),
+                              ),
                             ),
                           ),
                         ),
@@ -122,60 +121,58 @@ class _AFoodMenu extends State<AFoodMenu> {
                     ),
                   ),
 
-                ),
-
-                //add item button
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: TextButton(
-                    onPressed: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //       builder: (context) => const SignUp()),
-                      // );
-                    },
-                    style: TextButton.styleFrom(
-                      padding: EdgeInsets.zero,
-                    ),
-                    child: SizedBox(
-                      width: 144 * fem,
-                      height: 57 * fem,
-                      child: Container(
-                        width: double.infinity,
-                        height: double.infinity,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: const Color(0xff707070)),
-                          color: const Color(0xff9a2044),
-                          borderRadius: BorderRadius.circular(54 * fem),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Add Item',
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.lato(
-                              fontSize: 19.8325920105 * ffem,
-                              fontWeight: FontWeight.w600,
-                              height: 1.2575 * ffem / fem,
-                              color: const Color(0xffffffff),
+                  //add item button
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: TextButton(
+                      onPressed: () {
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //       builder: (context) => const SignUp()),
+                        // );
+                      },
+                      style: TextButton.styleFrom(
+                        padding: EdgeInsets.zero,
+                      ),
+                      child: SizedBox(
+                        width: 200 * fem,
+                        height: 30 * fem,
+                        child: Container(
+                          width: double.infinity,
+                          height: double.infinity,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: const Color(0xff707070)),
+                            color: const Color(0xff9a2044),
+                            borderRadius: BorderRadius.circular(54 * fem),
+                          ),
+                          child: Center(
+                            child: Text(
+                              'Add Item',
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.lato(
+                                fontSize: 19.8325920105 * ffem,
+                                fontWeight: FontWeight.w600,
+                                height: 1.2575 * ffem / fem,
+                                color: const Color(0xffffffff),
+                              ),
                             ),
                           ),
                         ),
                       ),
                     ),
                   ),
-                ),
 
-                //items list
-                ListBuilder(),
-              ],
+                  //items list
+                  ListBuilder(),
+                ],
+              ),
             ),
           ),
         ),
         drawer: ASettingDrawer(),
         bottomNavigationBar: const BottomNavigationBarHandler(),
       ),
-
     );
   }
 
