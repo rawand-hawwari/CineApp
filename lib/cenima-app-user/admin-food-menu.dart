@@ -125,7 +125,7 @@ class _AFoodMenu extends State<AFoodMenu> {
           ),
         ),
         drawer: ASettingDrawer(),
-        bottomNavigationBar: const BottomNavigationBarHandler(),
+        bottomNavigationBar: MBottomNavigationBarHandler(index: 2),
       ),
     );
   }
@@ -146,88 +146,4 @@ class _AFoodMenu extends State<AFoodMenu> {
         //   Text("Snacks"),
         // }
       );
-}
-
-class BottomNavigationBarHandler extends StatefulWidget {
-  const BottomNavigationBarHandler({super.key});
-
-  @override
-  State<BottomNavigationBarHandler> createState() =>
-      _BottomNavigationBarHandlerState();
-}
-
-class _BottomNavigationBarHandlerState
-    extends State<BottomNavigationBarHandler> {
-  final screenHeight = window.physicalSize.height / window.devicePixelRatio;
-  int currentIndex = 2;
-  final ScrollController _homeController = ScrollController();
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        decoration: const BoxDecoration(
-            color: Colors.black,
-            border: Border(top: BorderSide(color: Colors.black, width: 1.0))),
-        child: BottomNavigationBar(
-            unselectedItemColor: Colors.black,
-            unselectedFontSize: screenHeight * 0.015,
-            type: BottomNavigationBarType.fixed,
-            showUnselectedLabels: true,
-            selectedFontSize: screenHeight * 0.02,
-            iconSize: 40,
-            selectedItemColor: const Color(0xffff2153),
-            backgroundColor: Colors.white,
-            onTap: onTabTapped,
-            currentIndex: currentIndex,
-            items: const [
-              BottomNavigationBarItem(
-                  label: 'Movie List', icon: Icon(CineApp.movie)),
-              BottomNavigationBarItem(
-                  label: 'Screens', icon: Icon(CineApp.cinema_screen)),
-              BottomNavigationBarItem(
-                  label: 'Food Menu', icon: Icon(CineApp.popcorn)),
-              BottomNavigationBarItem(
-                  label: 'Settings', icon: Icon(Icons.person))
-            ]));
-  }
-
-  void onTabTapped(int index) {
-    if (currentIndex == index) {
-      _homeController.animateTo(
-        0.0,
-        duration: const Duration(milliseconds: 500),
-        curve: Curves.easeOut,
-      );
-    } else {
-      switch (index) {
-        case 0:
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (context) => const AdminHomePage()),
-          );
-          break;
-        case 1:
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (context) => const Screens()),
-          );
-          break;
-        case 2:
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (context) => const AFoodMenu()),
-          );
-          break;
-        case 3:
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (context) => const AProfileSettings()),
-          );
-          break;
-      }
-    }
-    setState(() {
-      currentIndex = index;
-    });
-  }
 }

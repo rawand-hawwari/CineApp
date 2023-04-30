@@ -652,6 +652,8 @@ class Footer extends StatelessWidget {
   }
 }
 
+
+
 Image logowidget() {
   return Image.asset(
     'assets/cenima-app-user/images/auto-group-42rk.png',
@@ -687,4 +689,124 @@ Future<bool> showExitPopup(BuildContext context) async {
   )??false; //if showDialouge had returned null, then return false
 }
 
+void navigatorR(BuildContext context, Widget widget){
+  Navigator.of(context).pushReplacement(_createRouteR(widget));
+}
+void navigatorL(BuildContext context, Widget widget){
+  Navigator.of(context).pushReplacement(_createRouteL(widget));
+}
 
+
+Route _createRouteL(Widget widget) {
+  return PageRouteBuilder(
+    pageBuilder: (context, animation, secondaryAnimation) =>  widget,
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      const begin = Offset(-0.5, 0.0);
+      const end = Offset.zero;
+      const curve = Curves.ease;
+      var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+      return SlideTransition(
+        position: animation.drive(tween),
+        child: child,
+      );
+    },
+  );
+}
+Route _createRouteR(Widget widget) {
+  return PageRouteBuilder(
+    pageBuilder: (context, animation, secondaryAnimation) =>  widget,
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      const begin = Offset(0.5, 0.0);
+      const end = Offset.zero;
+      const curve = Curves.ease;
+      var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+      return SlideTransition(
+        position: animation.drive(tween),
+        child: child,
+      );
+    },
+  );
+}
+
+
+
+class MBottomNavigationBarHandler extends StatefulWidget {
+  MBottomNavigationBarHandler({super.key, required this.index});
+  int index;
+  @override
+  State<MBottomNavigationBarHandler> createState() =>
+      _MBottomNavigationBarHandlerState();
+
+}
+
+class _MBottomNavigationBarHandlerState extends State<MBottomNavigationBarHandler> {
+  final ScrollController _homeController = ScrollController();
+
+  @override
+  Widget build(BuildContext context) {
+    double width= MediaQuery.of(context).size.width;
+    double height= MediaQuery.of(context).size.height;
+    return Container(
+        decoration: const BoxDecoration(
+            color: Colors.black,
+            border: Border(top: BorderSide(color: Colors.black, width: 1.0))),
+        child: BottomNavigationBar(
+            unselectedItemColor: Colors.black,
+            unselectedFontSize: height * 0.015,
+            type: BottomNavigationBarType.fixed,
+            showUnselectedLabels: true,
+            selectedFontSize: height * 0.02,
+            iconSize: 40,
+            selectedItemColor: const Color(0xffff2153),
+            backgroundColor: Colors.white,
+            onTap: onTabTapped,
+            currentIndex: widget.index,
+            items: const [
+              BottomNavigationBarItem(
+                  label: 'Movie List', icon: Icon(CineApp.movie)),
+              BottomNavigationBarItem(
+                  label: 'Screens', icon: Icon(CineApp.cinema_screen)),
+              BottomNavigationBarItem(
+                  label: 'Food Menu', icon: Icon(CineApp.popcorn)),
+              BottomNavigationBarItem(
+                  label: 'Settings', icon: Icon(Icons.person))
+            ]));
+  }
+
+  void onTabTapped(int index) {
+    if (widget.index == index) {
+      _homeController.animateTo(
+        0.0,
+        duration: const Duration(milliseconds: 500),
+        curve: Curves.easeOut,
+      );
+    } else {
+      switch (index) {
+        case 0:
+          if(widget.index<index)
+          navigatorR(context, AdminHomePage());
+          else
+            navigatorL(context, AdminHomePage());
+          break;
+        case 1:
+          if(widget.index<index)
+            navigatorR(context, Screens());
+          else
+            navigatorL(context, Screens());
+          break;
+        case 2:
+          if(widget.index<index)
+            navigatorR(context, AFoodMenu());
+          else
+            navigatorL(context, AFoodMenu());
+          break;
+        case 3:
+          if(widget.index<index)
+            navigatorR(context, AProfileSettings());
+          else
+            navigatorL(context, AProfileSettings());
+          break;
+      }
+    }
+  }
+}
