@@ -658,34 +658,34 @@ Image logowidget() {
     fit: BoxFit.cover,
     width: 240,
     height: 240,
-    color: Colors.white,
   );
 }
 
 Future<bool> showExitPopup(BuildContext context) async {
-  return await showDialog( //show confirm dialogue
-    //the return value will be from "Yes" or "No" options
-    context: context,
-    builder: (context) => AlertDialog(
-      title: Text('Exit App'),
-      content: Text('Do you want to exit the App?'),
-      actions:[
-        ElevatedButton(
-          onPressed: () => Navigator.of(context).pop(false),
-          //return false when click on "NO"
-          child:Text('No'),
+  return await showDialog(
+        //show confirm dialogue
+        //the return value will be from "Yes" or "No" options
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text('Exit App'),
+          content: Text('Do you want to exit the App?'),
+          actions: [
+            ElevatedButton(
+              onPressed: () => Navigator.of(context).pop(false),
+              //return false when click on "NO"
+              child: Text('No'),
+            ),
+            ElevatedButton(
+              onPressed: () => Navigator.of(context).pop(true),
+              //return true when click on "Yes"
+              child: Text('Yes'),
+            ),
+          ],
         ),
-
-        ElevatedButton(
-          onPressed: () => Navigator.of(context).pop(true),
-          //return true when click on "Yes"
-          child:Text('Yes'),
-        ),
-
-      ],
-    ),
-  )??false; //if showDialouge had returned null, then return false
+      ) ??
+      false; //if showDialouge had returned null, then return false
 }
+
 
 void navigatorR(BuildContext context, Widget widget){
   Navigator.of(context).pushReplacement(_createRouteR(widget));
@@ -808,3 +808,4 @@ class _MBottomNavigationBarHandlerState extends State<MBottomNavigationBarHandle
     }
   }
 }
+
