@@ -57,7 +57,7 @@ dependencies:
   email_validator: ^2.1.17
   firebase_database: ^10.1.1
   firebase_auth: ^4.4.2
-  cloud_firestore: ^4.5.2
+  cloud_firestore: ^4.5.3
   equatable: ^2.0.5
   provider: ^6.0.5
   flutter_bloc: ^8.1.2
@@ -65,6 +65,8 @@ dependencies:
   another_flushbar: ^1.12.29
   flushbar: ^1.10.4
   firebase_core: ^2.10.0
+  textfield_tags: ^2.0.2
+  image_picker: ^0.8.7+4
 
 dev_dependencies:
 

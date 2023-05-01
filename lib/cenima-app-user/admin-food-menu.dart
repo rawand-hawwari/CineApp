@@ -1,5 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/cenima-app-user/add-food-.dart';
 import 'package:myapp/cenima-app-user/screens.dart';
 import 'package:myapp/reusable-widgets/reusable-widget.dart';
 import 'dart:ui';
@@ -15,7 +17,8 @@ class AFoodMenu extends StatefulWidget {
 }
 
 class _AFoodMenu extends State<AFoodMenu> {
-  String listTitle = "snacks";
+  // List<String> menuList = [];
+
   bool isDrinks = false;
   bool isCandy = false;
   @override
@@ -63,7 +66,7 @@ class _AFoodMenu extends State<AFoodMenu> {
                         TextButton(
                           onPressed: () {
                             setState(() {
-                              listTitle = "snacks";
+                              globalData.listTitle = "snacks";
                             });
                           },
                           child: Container(
@@ -82,7 +85,7 @@ class _AFoodMenu extends State<AFoodMenu> {
                         TextButton(
                           onPressed: () {
                             setState(() {
-                              listTitle = "candy";
+                              globalData.listTitle = "candy";
                             });
                           },
                           child: Container(
@@ -101,7 +104,7 @@ class _AFoodMenu extends State<AFoodMenu> {
                         TextButton(
                           onPressed: () {
                             setState(() {
-                              listTitle = "drinks";
+                              globalData.listTitle = "drinks";
                             });
                           },
                           child: Container(
@@ -126,25 +129,24 @@ class _AFoodMenu extends State<AFoodMenu> {
                     padding: const EdgeInsets.all(10.0),
                     child: TextButton(
                       onPressed: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //       builder: (context) => const SignUp()),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => AddFood()),
+                        );
                       },
                       style: TextButton.styleFrom(
                         padding: EdgeInsets.zero,
                       ),
                       child: SizedBox(
                         width: 200 * fem,
-                        height: 30 * fem,
+                        height: 35 * fem,
                         child: Container(
                           width: double.infinity,
                           height: double.infinity,
                           decoration: BoxDecoration(
-                            border: Border.all(color: const Color(0xff707070)),
-                            color: const Color(0xff9a2044),
-                            borderRadius: BorderRadius.circular(54 * fem),
+                            color: const Color(0xffff2153),
+                            borderRadius:
+                                BorderRadius.circular(17.6289710999 * fem),
                           ),
                           child: Center(
                             child: Text(
@@ -164,6 +166,21 @@ class _AFoodMenu extends State<AFoodMenu> {
                   ),
 
                   //items list
+                  // Expanded(
+                  //   child: FutureBuilder(
+                  //     future: getMenuList(),
+                  //     builder: (context, snapshot) {
+                  //       return ListView.builder(
+                  //         itemCount: menuList.length,
+                  //         itemBuilder: ((context, index) {
+                  //           return ListTile(
+                  //             title: Text(menuList[index]),
+                  //           );
+                  //         }),
+                  //       );
+                  //     },
+                  //   ),
+                  // )
                   ListBuilder(),
                 ],
               ),
@@ -177,8 +194,54 @@ class _AFoodMenu extends State<AFoodMenu> {
   }
 
 // ignore: non_constant_identifier_names
-  Widget ListBuilder() => Center(
-        child: Text(listTitle),
+  Widget ListBuilder() => Container(
+        child: Text(globalData.listTitle),
+        // color: const Color(0xFFFFFFFF),
+        // height: MediaQuery.of(context).size.height * 0.2,
+        // child: Row(
+        //   mainAxisAlignment: MainAxisAlignment.start,
+        //   children: [
+        //     SizedBox(
+        //       width: MediaQuery.of(context).size.width * 0.4,
+        //       child: Image.asset(
+        //         'assets/cenima-app-user/images/qginngd-lsx569-LWZ.png',
+        //         fit: BoxFit.cover,
+        //       ),
+        //     ),
+        //     Column(
+        //       children: [
+        //         Container(
+        //           width: MediaQuery.of(context).size.width * 0.5,
+        //           margin: const EdgeInsets.all(10),
+        //           child: Text(
+        //             'Extra Gum Peppermint Chewing Gum\n',
+        //             textAlign: TextAlign.start,
+        //             style: GoogleFonts.lato(
+        //               fontSize: 18,
+        //               fontWeight: FontWeight.w700,
+        //               height: 1.2575,
+        //               color: const Color(0xff000000),
+        //             ),
+        //           ),
+        //         ),
+        //       ],
+        //     ),
+        //   ],
+        // ),
       );
-}
 
+  // Future getMenuList() async {
+  //   await FirebaseFirestore.instance.collection('food').get().then(
+  //         // ignore: avoid_function_literals_in_foreach_calls
+  //         (snapshot) => snapshot.docs.forEach(
+  //           (document) {
+  //             print(document.reference);
+  //             menuList.add(document.reference.id);
+  //           },
+  //         ),
+  //       );
+  // }
+}
+class globalData{
+  static String listTitle = "snacks";
+}

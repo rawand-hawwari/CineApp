@@ -124,7 +124,7 @@ class _SignUpPage extends State<SignUp> {
                           borderRadius:
                               BorderRadius.all(Radius.circular(100.0)),
                         ),
-                        prefixIcon: Icon(Icons.person_outline),
+                        prefixIcon: const Icon(Icons.person_outline),
                         hintText: 'Enter your first name',
                         labelText: 'First Name',
                         errorText: isFNFValid?null:"value can\'t be empty",
@@ -148,7 +148,7 @@ class _SignUpPage extends State<SignUp> {
                           borderRadius:
                               BorderRadius.all(Radius.circular(100.0)),
                         ),
-                        prefixIcon: Icon(Icons.person_outline),
+                        prefixIcon: const Icon(Icons.person_outline),
                         hintText: 'Enter your last name',
                         labelText: 'Last Name',
                         errorText: isLNFValid?null:"value can\'t be empty",
@@ -174,7 +174,7 @@ class _SignUpPage extends State<SignUp> {
                           borderRadius:
                               BorderRadius.all(Radius.circular(100.0)),
                         ),
-                        prefixIcon: Icon(Icons.mail_outline),
+                        prefixIcon: const Icon(Icons.mail_outline),
                         hintText: 'Enter your email',
                         labelText: 'Email',
                         errorText: isEFValid? (errorEmail==''? null : errorEmail): 'Value Can\'t Be Empty',
@@ -200,7 +200,7 @@ class _SignUpPage extends State<SignUp> {
                           borderRadius:
                               BorderRadius.all(Radius.circular(100.0)),
                         ),
-                        prefixIcon: Icon(Icons.phone),
+                        prefixIcon: const Icon(Icons.phone),
                         hintText: 'Enter your phone number',
                         labelText: 'Phone Number',
                         errorText: isPhFValid? (errorPhone==''?null:errorPhone ) :'Value Can\'t Be Empty',
@@ -227,7 +227,7 @@ class _SignUpPage extends State<SignUp> {
                           borderRadius:
                               BorderRadius.all(Radius.circular(100.0)),
                         ),
-                        prefixIcon: Icon(Icons.lock_outline),
+                        prefixIcon: const Icon(Icons.lock_outline),
                         hintText: 'Enter your password',
                         labelText: 'Password',
                         errorText: isPFValid? (errorPassword==''?null:errorPassword ) :'Value Can\'t Be Empty',
@@ -254,7 +254,7 @@ class _SignUpPage extends State<SignUp> {
                           borderRadius:
                               BorderRadius.all(Radius.circular(100.0)),
                         ),
-                        prefixIcon: Icon(Icons.lock_outline),
+                        prefixIcon: const Icon(Icons.lock_outline),
                         hintText: 'Repeat the password',
                         labelText: 'Confirm Password',
                         errorText: isPF2Valid? (errorRetype==''?null:errorRetype ) :'Value Can\'t Be Empty',
@@ -308,9 +308,9 @@ class _SignUpPage extends State<SignUp> {
 
                               if(context.mounted){
                                 Flushbar(
-                                duration: Duration(seconds: 4),
+                                duration: const Duration(seconds: 4),
                                 flushbarPosition: FlushbarPosition.TOP,
-                                backgroundColor: Color(0xFFFF5c83),
+                                backgroundColor: const Color(0xFFFF5c83),
                                 message: result?.message,
                               ).show(context);}
                             }
