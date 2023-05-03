@@ -17,9 +17,8 @@ class AddFood extends StatefulWidget {
 }
 
 class _AddFood extends State<AddFood> {
-  final _signupForm = GlobalKey<FormState>();
-  // ignore: non_constant_identifier_names
-  final TextEditingController _NameController = TextEditingController();
+  final _addMenuItem = GlobalKey<FormState>();
+  final TextEditingController _nameController = TextEditingController();
   final TextEditingController _flavorsController = TextEditingController();
   final TextEditingController _priceController = TextEditingController();
   final TextEditingController _sPriceController = TextEditingController();
@@ -50,7 +49,7 @@ class _AddFood extends State<AddFood> {
   String size = '';
   List<String> tags = [];
 
-  String imagePath = 'assets/cenima-app-user/images/';
+  String imagePath = 'assets/cenima-app-user/images/food-menu/';
   bool isImageChosen = false;
 
   //image picker to get image path
@@ -113,7 +112,7 @@ class _AddFood extends State<AddFood> {
                     padding: EdgeInsets.symmetric(
                         horizontal: width * 0.05, vertical: height * 0.01),
                     child: Form(
-                      key: _signupForm,
+                      key: _addMenuItem,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
@@ -129,7 +128,7 @@ class _AddFood extends State<AddFood> {
                           ),
                           const Padding(padding: EdgeInsets.only(bottom: 5)),
                           TextFormField(
-                            controller: _NameController,
+                            controller: _nameController,
                             onChanged: (val) {
                               setState(() {
                                 error = '';
@@ -192,7 +191,8 @@ class _AddFood extends State<AddFood> {
                               const Padding(padding: EdgeInsets.all(10)),
                               TextButton(
                                 onPressed: () {
-                                  imagePath = 'assets/cenima-app-user/images/';
+                                  imagePath =
+                                      'assets/cenima-app-user/images/food-menu/';
                                   _pickImage();
                                 },
                                 child: Container(
@@ -473,7 +473,7 @@ class _AddFood extends State<AddFood> {
                                               });
 
                                               Map<String, String> dataToAdd = {
-                                                'name': _NameController.text,
+                                                'name': _nameController.text,
                                                 'image': imagePath,
                                                 'flavors':
                                                     _flavorsController.text,

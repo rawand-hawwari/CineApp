@@ -1,11 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/cenima-app-user/add-food-.dart';
+import 'package:myapp/cenima-app-user/edit-food.dart';
 import 'package:myapp/cenima-app-user/screens.dart';
 import 'package:myapp/reusable-widgets/reusable-widget.dart';
 import 'dart:ui';
 import '../cine_app_icons.dart';
+import '../shared/Theme.dart';
 import 'admin-Home-page.dart';
 import 'admin-profile-settings.dart';
 
@@ -16,13 +19,30 @@ class AFoodMenu extends StatefulWidget {
   State<AFoodMenu> createState() => _AFoodMenu();
 }
 
+// ignore: camel_case_types
+class globalData {
+  static String listTitle = "snacks";
+  static String itemId = '';
+}
+
 class _AFoodMenu extends State<AFoodMenu> {
   // List<String> menuList = [];
+  // final _db = FirebaseFirestore.instance;
+  final Stream<QuerySnapshot>? menuStream =
+      FirebaseFirestore.instance.collection('food').snapshots();
+
+  final CollectionReference<Map<String, dynamic>> _db =
+      FirebaseFirestore.instance.collection('food');
+
+  int checkTypeCount = 0;
 
   bool isDrinks = false;
   bool isCandy = false;
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
+
     double baseWidth = 393;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
@@ -166,22 +186,10 @@ class _AFoodMenu extends State<AFoodMenu> {
                   ),
 
                   //items list
-                  // Expanded(
-                  //   child: FutureBuilder(
-                  //     future: getMenuList(),
-                  //     builder: (context, snapshot) {
-                  //       return ListView.builder(
-                  //         itemCount: menuList.length,
-                  //         itemBuilder: ((context, index) {
-                  //           return ListTile(
-                  //             title: Text(menuList[index]),
-                  //           );
-                  //         }),
-                  //       );
-                  //     },
-                  //   ),
-                  // )
-                  ListBuilder(),
+                  // ignore: unnecessary_null_comparison
+
+                  ListBuilder(height, width)
+                  // : const Text('empty list'),
                 ],
               ),
             ),
@@ -194,54 +202,156 @@ class _AFoodMenu extends State<AFoodMenu> {
   }
 
 // ignore: non_constant_identifier_names
-  Widget ListBuilder() => Container(
-        child: Text(globalData.listTitle),
-        // color: const Color(0xFFFFFFFF),
-        // height: MediaQuery.of(context).size.height * 0.2,
-        // child: Row(
-        //   mainAxisAlignment: MainAxisAlignment.start,
-        //   children: [
-        //     SizedBox(
-        //       width: MediaQuery.of(context).size.width * 0.4,
-        //       child: Image.asset(
-        //         'assets/cenima-app-user/images/qginngd-lsx569-LWZ.png',
-        //         fit: BoxFit.cover,
-        //       ),
-        //     ),
-        //     Column(
-        //       children: [
-        //         Container(
-        //           width: MediaQuery.of(context).size.width * 0.5,
-        //           margin: const EdgeInsets.all(10),
-        //           child: Text(
-        //             'Extra Gum Peppermint Chewing Gum\n',
-        //             textAlign: TextAlign.start,
-        //             style: GoogleFonts.lato(
-        //               fontSize: 18,
-        //               fontWeight: FontWeight.w700,
-        //               height: 1.2575,
-        //               color: const Color(0xff000000),
-        //             ),
-        //           ),
-        //         ),
-        //       ],
-        //     ),
-        //   ],
-        // ),
-      );
+  Widget ListBuilder(double height, double width) => StreamBuilder<
+          QuerySnapshot>(
+      stream: menuStream,
+      builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+        if (snapshot.hasError) {
+          return const Text('Something went wrong');
+        }
 
-  // Future getMenuList() async {
-  //   await FirebaseFirestore.instance.collection('food').get().then(
-  //         // ignore: avoid_function_literals_in_foreach_calls
-  //         (snapshot) => snapshot.docs.forEach(
-  //           (document) {
-  //             print(document.reference);
-  //             menuList.add(document.reference.id);
-  //           },
-  //         ),
-  //       );
-  // }
-}
-class globalData{
-  static String listTitle = "snacks";
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return SpinKitFadingCircle(
+            color: mainColor,
+          );
+        }
+
+        return SizedBox(
+          // height: height * 1,
+          height: MediaQuery.of(context).size.height * 1,
+          width: width * 1,
+          child: ListView(
+            children: snapshot.data!.docs.map((DocumentSnapshot document) {
+              Map<String, dynamic> data =
+                  document.data()! as Map<String, dynamic>;
+              if (data['type'] != globalData.listTitle) {
+                checkTypeCount += 1;
+                if (data.length == checkTypeCount) {
+                  return const Center(
+                    child: Text(
+                      'This List is empty',
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.w600,
+                        color: Color(0xffff1e60),
+                      ),
+                    ),
+                  );
+                }
+              }
+              return Padding(
+                padding: const EdgeInsets.only(top: 5),
+                child: Container(
+                    child: data['type'] == globalData.listTitle
+                        ? SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.2,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Container(
+                                  height:
+                                      MediaQuery.of(context).size.height * 1,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.4,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: const Color(0xff707070)),
+                                    color: data['image'] == ''
+                                        ? const Color(0xFFFFFFFF)
+                                            .withOpacity(0.3)
+                                        : const Color(0xFFFFFFFF),
+                                  ),
+                                  child: data['image'] == ''
+                                      ? const Text('No Image Available')
+                                      : Image.asset(
+                                          data['image'],
+                                          fit: BoxFit.fitWidth,
+                                        ),
+                                ),
+                                Container(
+                                  // alignment: Alignment.centerLeft,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.6,
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 10),
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Expanded(
+                                            child: Padding(
+                                              padding: const EdgeInsets.only(
+                                                  top: 10),
+                                              child: Text(
+                                                data['name'],
+                                                softWrap: true,
+                                                style: GoogleFonts.lato(
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.w700,
+                                                  height: 1.2575,
+                                                  color:
+                                                      const Color(0xff000000),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          Align(
+                                            alignment: Alignment.topCenter,
+                                            child: IconButton(
+                                              onPressed: () {
+                                                _db.doc(document.id).delete();
+                                              },
+                                              icon: const Icon(
+                                                  Icons.delete_outline),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      TextButton(
+                                        onPressed: () {
+                                          globalData.itemId = document.id;
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const EditFood()),
+                                          );
+                                        },
+                                        child: Container(
+                                          padding: const EdgeInsets.symmetric(
+                                              vertical: 10, horizontal: 25),
+                                          decoration: const BoxDecoration(
+                                              color: Color(0xffff2153),
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(100))),
+                                          child: Text(
+                                            'Edit',
+                                            style: GoogleFonts.lato(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w600,
+                                              color: const Color(0xffffffff),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
+                        : Container()),
+              );
+            }).toList(),
+          ),
+        );
+      });
 }
