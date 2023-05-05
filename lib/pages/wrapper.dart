@@ -14,7 +14,6 @@ import '../cenima-app-user/sign-up.dart';
 import '../cenima-app-user/starter.dart';
 import '../services/shared_value.dart';
 
-
 class Wrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -35,8 +34,8 @@ class Wrapper extends StatelessWidget {
     }
 
     return BlocBuilder<PageBloc, PageState>(
-        builder: (_, pageState) => (true/*pageState is OnStarterPage*/)
+        builder: (_, pageState) => (true /*pageState is OnStarterPage*/)
             ? AdminHomePage() /*Starter()*/
-                    : HomePage());
+            : HomePage());
   }
 }

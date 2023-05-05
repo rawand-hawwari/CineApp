@@ -3,6 +3,7 @@ import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/cenima-app-user/home-page.dart';
 import 'package:myapp/cenima-app-user/sign-up.dart';
 import 'package:myapp/cenima-app-user/starter.dart';
 import 'package:myapp/reusable-widgets/reusable-widget.dart';
@@ -242,6 +243,15 @@ class _LoginPage extends State<LogIn> {
                                                 message: result?.message,
                                               ).show(context);
                                             }
+                                          }
+                                          if (isSigningIn) {
+                                            // ignore: use_build_context_synchronously
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const HomePage()),
+                                            );
                                           }
                                         }
                                       : () async {

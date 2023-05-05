@@ -428,6 +428,11 @@ class SettingDrawer extends StatelessWidget {
             ),
             onTap: () async {
               await AuthServices.signOut();
+              // ignore: use_build_context_synchronously
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(builder: (context) => const Profile()),
+              // );
             },
           ),
         ],
