@@ -1,7 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -496,6 +494,9 @@ class _EditFood extends State<EditFood> {
                                                     });
                                                   }
                                                 } else {
+                                                  sizeSet.contains('')
+                                                      ? sizeSet.remove('')
+                                                      : null;
                                                   if (isSmallChecked) {
                                                     sizeSet.contains('s')
                                                         ? null
@@ -548,6 +549,9 @@ class _EditFood extends State<EditFood> {
                                                                 .text;
                                                   }
                                                 } else {
+                                                  prices.containsKey('')
+                                                      ? prices.remove('')
+                                                      : null;
                                                   if (isSmallChecked) {
                                                     if (prices
                                                         .containsKey('s')) {

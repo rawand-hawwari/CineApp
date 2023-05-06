@@ -7,11 +7,11 @@ import 'package:myapp/cenima-app-user/edit-food.dart';
 import 'package:myapp/reusable-widgets/reusable-widget.dart';
 import '../shared/Theme.dart';
 
-class AFoodMenu extends StatefulWidget {
-  const AFoodMenu({super.key});
+class FoodMenu extends StatefulWidget {
+  const FoodMenu({super.key});
 
   @override
-  State<AFoodMenu> createState() => _AFoodMenu();
+  State<FoodMenu> createState() => _FoodMenu();
 }
 
 // ignore: camel_case_types
@@ -20,7 +20,7 @@ class globalData {
   static String itemId = '';
 }
 
-class _AFoodMenu extends State<AFoodMenu> {
+class _FoodMenu extends State<FoodMenu> {
   // List<String> menuList = [];
   // final _db = FirebaseFirestore.instance;
   final Stream<QuerySnapshot>? menuStream =
@@ -138,52 +138,7 @@ class _AFoodMenu extends State<AFoodMenu> {
                       ],
                     ),
                   ),
-
-                  //add item button
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => AddFood()),
-                        );
-                      },
-                      style: TextButton.styleFrom(
-                        padding: EdgeInsets.zero,
-                      ),
-                      child: SizedBox(
-                        width: 200 * fem,
-                        height: 35 * fem,
-                        child: Container(
-                          width: double.infinity,
-                          height: double.infinity,
-                          decoration: BoxDecoration(
-                            color: const Color(0xffff2153),
-                            borderRadius:
-                                BorderRadius.circular(17.6289710999 * fem),
-                          ),
-                          child: Center(
-                            child: Text(
-                              'Add Item',
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.lato(
-                                fontSize: 19.8325920105 * ffem,
-                                fontWeight: FontWeight.w600,
-                                height: 1.2575 * ffem / fem,
-                                color: const Color(0xffffffff),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-
-                  //items list
-                  // ignore: unnecessary_null_comparison
-
-                  ListBuilder(height, width)
+                  listBuilder(height, width)
                   // : const Text('empty list'),
                 ],
               ),
@@ -191,13 +146,13 @@ class _AFoodMenu extends State<AFoodMenu> {
           ),
         ),
         drawer: ASettingDrawer(),
-        bottomNavigationBar: MBottomNavigationBarHandler(index: 2),
+        bottomNavigationBar: UBottomNavigationBarHandler(index: 2),
       ),
     );
   }
 
 // ignore: non_constant_identifier_names
-  Widget ListBuilder(double height, double width) => StreamBuilder<
+  Widget listBuilder(double height, double width) => StreamBuilder<
           QuerySnapshot>(
       stream: menuStream,
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -218,6 +173,14 @@ class _AFoodMenu extends State<AFoodMenu> {
             children: snapshot.data!.docs.map((DocumentSnapshot document) {
               Map<String, dynamic> data =
                   document.data()! as Map<String, dynamic>;
+              List<String> sizelist = [];
+              String size = '';
+              data['sizes'].contains('s') ? sizelist.add('Small') : null;
+              data['sizes'].contains('m') ? sizelist.add('Medium') : null;
+              data['sizes'].contains('l') ? sizelist.add('Large') : null;
+
+              size = sizelist.join(',');
+
               if (data['type'] != globalData.listTitle) {
                 checkTypeCount += 1;
                 if (data.length == checkTypeCount) {
@@ -269,73 +232,45 @@ class _AFoodMenu extends State<AFoodMenu> {
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 10),
                                   child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                    // mainAxisAlignment:
+                                    // MainAxisAlignment.spaceEvenly,
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Expanded(
-                                            child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  top: 10),
-                                              child: Text(
-                                                data['name'],
-                                                softWrap: true,
-                                                style: GoogleFonts.lato(
-                                                  fontSize: 18,
+                                      Text(
+                                        data['name'],
+                                        softWrap: true,
+                                        style: GoogleFonts.lato(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w700,
+                                          color: const Color(0xff000000),
+                                        ),
+                                      ),
+                                      const Padding(padding: EdgeInsets.all(5)),
+                                      data['flavors'] == ''
+                                          ? Container()
+                                          : Text(
+                                              data['flavors'],
+                                              softWrap: true,
+                                              style: GoogleFonts.lato(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.w700,
+                                                  color:
+                                                      const Color(0xFF616161)),
+                                            ),
+                                      const Padding(padding: EdgeInsets.all(5)),
+                                      data['sizes'] == ''
+                                          ? Container()
+                                          : Text(
+                                              size,
+                                              softWrap: true,
+                                              style: GoogleFonts.lato(
+                                                  fontSize: 14,
                                                   fontWeight: FontWeight.w700,
                                                   height: 1.2575,
                                                   color:
-                                                      const Color(0xff000000),
-                                                ),
-                                              ),
+                                                      const Color(0xFF616161)),
                                             ),
-                                          ),
-                                          Align(
-                                            alignment: Alignment.topCenter,
-                                            child: IconButton(
-                                              onPressed: () {
-                                                _db.doc(document.id).delete();
-                                              },
-                                              icon: const Icon(
-                                                  Icons.delete_outline),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      TextButton(
-                                        onPressed: () {
-                                          globalData.itemId = document.id;
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    const EditFood()),
-                                          );
-                                        },
-                                        child: Container(
-                                          padding: const EdgeInsets.symmetric(
-                                              vertical: 10, horizontal: 25),
-                                          decoration: const BoxDecoration(
-                                              color: Color(0xffff2153),
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(100))),
-                                          child: Text(
-                                            'Edit',
-                                            style: GoogleFonts.lato(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.w600,
-                                              color: const Color(0xffffffff),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
                                     ],
                                   ),
                                 ),

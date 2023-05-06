@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/cenima-app-user/screens.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/reusable-widgets/reusable-widget.dart';
-import 'package:myapp/utils.dart';
-import 'dart:ui';
-import '../cine_app_icons.dart';
-import 'admin-food-menu.dart';
-import 'admin-profile-settings.dart';
+import 'add-movie.dart';
 
 class AdminHomePage extends StatefulWidget {
   const AdminHomePage({super.key});
@@ -17,6 +13,9 @@ class AdminHomePage extends StatefulWidget {
 class _AHomePage extends State<AdminHomePage> {
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
+
     double baseWidth = 393;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
@@ -51,7 +50,55 @@ class _AHomePage extends State<AdminHomePage> {
             child: Column(
               children: [
                 SingleChildScrollView(
-                  child: Container(),
+                  child: Column(
+                    children: [
+                      Container(),
+                      Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: TextButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => AddMovie()),
+                                );
+                              },
+                              style: TextButton.styleFrom(
+                                padding: EdgeInsets.zero,
+                              ),
+                              child: SizedBox(
+                                width: 150 * fem,
+                                height: 35 * fem,
+                                child: Container(
+                                  width: double.infinity,
+                                  height: double.infinity,
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xffff2153),
+                                    borderRadius:
+                                        BorderRadius.circular(17.6289710999 * fem),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      'Add Movie',
+                                      textAlign: TextAlign.center,
+                                      style: GoogleFonts.lato(
+                                        fontSize: 19.8325920105 * ffem,
+                                        fontWeight: FontWeight.w600,
+                                        height: 1.2575 * ffem / fem,
+                                        color: const Color(0xffffffff),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                   //   width: double.infinity,
                   //   decoration: const BoxDecoration(
                   //     color: Color(0xfff1f1f1),
