@@ -62,7 +62,7 @@ class _AHomePage extends State<AdminHomePage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => AddMovie()),
+                                      builder: (context) => const AddMovie()),
                                 );
                               },
                               style: TextButton.styleFrom(

@@ -1670,26 +1670,29 @@ class _HomePage extends State<HomePage> {
                   return Padding(
                     padding: const EdgeInsets.all(5),
                     child: Center(
-                      child: Column(children: [
-                        SizedBox(
-                          height: height * 0.25,
-                          width: width * 0.35,
-                          child: Image.asset(
-                            data['poster'],
-                            fit: BoxFit.cover,
+                      child: GestureDetector(
+                        onTap: () {},
+                        child: Column(children: [
+                          SizedBox(
+                            height: height * 0.25,
+                            width: width * 0.35,
+                            child: Image.asset(
+                              data['poster'],
+                              fit: BoxFit.cover,
+                            ),
                           ),
-                        ),
-                        const Padding(padding: EdgeInsets.only(top: 5)),
-                        Text(
-                          data['title'],
-                          softWrap: true,
-                          style: GoogleFonts.lato(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w700,
-                            color: const Color(0xff464646),
+                          const Padding(padding: EdgeInsets.only(top: 5)),
+                          Text(
+                            data['title'],
+                            softWrap: true,
+                            style: GoogleFonts.lato(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w700,
+                              color: const Color(0xff464646),
+                            ),
                           ),
-                        ),
-                      ]),
+                        ]),
+                      ),
                     ),
                   );
                 }).toList(),

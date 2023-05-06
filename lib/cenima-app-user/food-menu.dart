@@ -200,81 +200,85 @@ class _FoodMenu extends State<FoodMenu> {
                 padding: const EdgeInsets.only(top: 5),
                 child: Container(
                     child: data['type'] == globalData.listTitle
-                        ? SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.2,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Container(
-                                  height:
-                                      MediaQuery.of(context).size.height * 1,
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.4,
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                        color: const Color(0xff707070)),
-                                    color: data['image'] == ''
-                                        ? const Color(0xFFFFFFFF)
-                                            .withOpacity(0.3)
-                                        : const Color(0xFFFFFFFF),
+                        ? GestureDetector(
+                            onTap: () {},
+                            child: SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.2,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    height:
+                                        MediaQuery.of(context).size.height * 1,
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.4,
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                          color: const Color(0xff707070)),
+                                      color: data['image'] == ''
+                                          ? const Color(0xFFFFFFFF)
+                                              .withOpacity(0.3)
+                                          : const Color(0xFFFFFFFF),
+                                    ),
+                                    child: data['image'] == ''
+                                        ? const Text('No Image Available')
+                                        : Image.asset(
+                                            data['image'],
+                                            fit: BoxFit.fitWidth,
+                                          ),
                                   ),
-                                  child: data['image'] == ''
-                                      ? const Text('No Image Available')
-                                      : Image.asset(
-                                          data['image'],
-                                          fit: BoxFit.fitWidth,
+                                  Container(
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.6,
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 10),
+                                    child: Column(
+                                      // mainAxisAlignment:
+                                      // MainAxisAlignment.spaceEvenly,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          data['name'],
+                                          softWrap: true,
+                                          style: GoogleFonts.lato(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w700,
+                                            color: const Color(0xff000000),
+                                          ),
                                         ),
-                                ),
-                                Container(
-                                  // alignment: Alignment.centerLeft,
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.6,
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 10),
-                                  child: Column(
-                                    // mainAxisAlignment:
-                                    // MainAxisAlignment.spaceEvenly,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        data['name'],
-                                        softWrap: true,
-                                        style: GoogleFonts.lato(
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w700,
-                                          color: const Color(0xff000000),
-                                        ),
-                                      ),
-                                      const Padding(padding: EdgeInsets.all(5)),
-                                      data['flavors'] == ''
-                                          ? Container()
-                                          : Text(
-                                              data['flavors'],
-                                              softWrap: true,
-                                              style: GoogleFonts.lato(
-                                                  fontSize: 14,
-                                                  fontWeight: FontWeight.w700,
-                                                  color:
-                                                      const Color(0xFF616161)),
-                                            ),
-                                      const Padding(padding: EdgeInsets.all(5)),
-                                      data['sizes'] == ''
-                                          ? Container()
-                                          : Text(
-                                              size,
-                                              softWrap: true,
-                                              style: GoogleFonts.lato(
-                                                  fontSize: 14,
-                                                  fontWeight: FontWeight.w700,
-                                                  height: 1.2575,
-                                                  color:
-                                                      const Color(0xFF616161)),
-                                            ),
-                                    ],
+                                        const Padding(
+                                            padding: EdgeInsets.all(5)),
+                                        data['flavors'] == ''
+                                            ? Container()
+                                            : Text(
+                                                data['flavors'],
+                                                softWrap: true,
+                                                style: GoogleFonts.lato(
+                                                    fontSize: 14,
+                                                    fontWeight: FontWeight.w700,
+                                                    color: const Color(
+                                                        0xFF616161)),
+                                              ),
+                                        const Padding(
+                                            padding: EdgeInsets.all(5)),
+                                        data['sizes'] == ''
+                                            ? Container()
+                                            : Text(
+                                                size,
+                                                softWrap: true,
+                                                style: GoogleFonts.lato(
+                                                    fontSize: 14,
+                                                    fontWeight: FontWeight.w700,
+                                                    height: 1.2575,
+                                                    color: const Color(
+                                                        0xFF616161)),
+                                              ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           )
                         : Container()),
