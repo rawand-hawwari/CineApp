@@ -1,3 +1,4 @@
+import 'package:myapp/cenima-app-user/admin-log-in.dart';
 import 'package:myapp/cenima-app-user/home-page.dart';
 import 'package:myapp/cenima-app-user/log-in.dart';
 import 'package:myapp/services/user.dart';
@@ -21,12 +22,12 @@ class Wrapper extends StatelessWidget {
     NUser? user = Provider.of<NUser?>(context);
 
     if (user == null) {
-      if (!(prevPageEvent is GoToStarterPage)) {
+      if (prevPageEvent is! GoToStarterPage) {
         prevPageEvent = GoToStarterPage();
         context.read<PageBloc>().add(prevPageEvent!);
       }
     } else {
-      if (!(prevPageEvent is GoToHomePage)) {
+      if (prevPageEvent is! GoToHomePage) {
         context.read<UserBloc>().add(LoadUser(user.uid));
 
         prevPageEvent = GoToHomePage();
@@ -36,7 +37,7 @@ class Wrapper extends StatelessWidget {
 
     return BlocBuilder<PageBloc, PageState>(
         builder: (_, pageState) => (true/*pageState is OnStarterPage*/)
-            ? AdminHomePage() /*Starter()*/
+            ? HomePage()
                     : HomePage());
   }
 }

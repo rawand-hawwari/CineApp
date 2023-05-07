@@ -57,6 +57,11 @@ class OnHomePage extends PageState {
   @override
   List<Object> get props => [];
 }
+class OnAHomePage extends PageState {
+
+  @override
+  List<Object> get props => [];
+}
 class OnRentPage extends PageState {
 
   @override

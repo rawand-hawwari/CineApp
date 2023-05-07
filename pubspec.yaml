@@ -65,6 +65,9 @@ dependencies:
   another_flushbar: ^1.12.29
   flushbar: ^1.10.4
   firebase_core: ^2.10.0
+  http: ^0.13.6
+  tmdb_api:
+  shimmer_animation: ^2.1.0+1
 
 dev_dependencies:
 
