@@ -269,7 +269,6 @@ class _BottomNavigationBarHandlerState
 _printHeading({required String heading, required BuildContext context}) {
   MovieService ser= MovieService();
   ser.getShowingNow();
-  ser.getMovie();
   return Padding(
     padding: const EdgeInsets.only(left: 20.0, top: 5, right: 10),
     child: Row(

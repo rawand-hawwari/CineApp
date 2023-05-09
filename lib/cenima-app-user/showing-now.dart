@@ -15,45 +15,45 @@ class Scene extends StatelessWidget {
     double baseWidth = 393;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return  Scaffold(
-        body: NestedScrollView(
-          floatHeaderSlivers: true,
-          headerSliverBuilder: (context, innerBoxIsScrolled) => [
+    return Scaffold(
+      body: NestedScrollView(
+        floatHeaderSlivers: true,
+        headerSliverBuilder: (context, innerBoxIsScrolled) => [
           SliverAppBar(
-              leading: GestureDetector(
-                child: const Icon(
-                  Icons.arrow_back_ios_new_rounded,
-                ),
-                onTap: () {
-                  Navigator.pop(context);
-                },
+            leading: GestureDetector(
+              child: const Icon(
+                Icons.arrow_back_ios_new_rounded,
               ),
-              iconTheme: const IconThemeData(
-                color: Color(0xffdd204a),
-              ),
-              backgroundColor: const Color(0xfff1f1f1),
-              floating: true,
-              snap: true,
-              centerTitle: true,
-              title: const Text(
-                'Showing now',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w600,
-                  color: Color(0xff4b4a4a),
-                ),
-              ),
+              onTap: () {
+                Navigator.pop(context);
+              },
             ),
-          ],
-          body:  Container(
-            color: Color(0xfff1f1f1),
-           padding: const EdgeInsets.all(16.0),
-            // color: const Color(0xfff1f1f1),
-            child: const SingleChildScrollView(
-              child: ShowingListAll(),
+            iconTheme: const IconThemeData(
+              color: Color(0xffdd204a),
+            ),
+            backgroundColor: const Color(0xfff1f1f1),
+            floating: true,
+            snap: true,
+            centerTitle: true,
+            title: const Text(
+              'Showing now',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.w600,
+                color: Color(0xff4b4a4a),
+              ),
             ),
           ),
+        ],
+        body: Container(
+          color: Color(0xfff1f1f1),
+          padding: const EdgeInsets.all(16.0),
+          // color: const Color(0xfff1f1f1),
+          child: const SingleChildScrollView(
+            child: ShowingListAll(),
+          ),
+        ),
       ),
     );
 
