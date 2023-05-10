@@ -21,6 +21,10 @@ class GoToHomePage extends PageEvent {
   @override
   List<Object> get props => [];
 }
+class GoToAHomePage extends PageEvent {
+  @override
+  List<Object> get props => [];
+}
 class GoToRentPage extends PageEvent {
   @override
   List<Object> get props => [];

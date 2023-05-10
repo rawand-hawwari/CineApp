@@ -1,14 +1,25 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:myapp/cenima-app-user/showing-now.dart';
+import 'package:myapp/services/Movie%20service.dart';
+
+import 'package:myapp/services/auth.dart';
+import 'package:myapp/services/upcomming.dart';
+import 'package:myapp/shared/Theme.dart';
+import 'package:myapp/utils.dart';
 
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/cenima-app-user/profile.dart';
+import 'package:myapp/cenima-app-user/rent-movie.dart';
+import 'package:myapp/cenima-app-user/showing-now.dart';
 import 'package:myapp/cenima-app-user/search.dart';
 import 'package:myapp/reusable-widgets/reusable-widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../shared/Theme.dart';
+import 'dart:ui';
+import '../cine_app_icons.dart';
+import '../services/Showing now.dart';
+import 'food-menu-selection.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -74,9 +85,10 @@ class _HomePage extends State<HomePage> {
             ),
           ),
         ],
-        body: Container(
-          color: const Color(0xfff1f1f1),
-          child: Column(
+        body: MediaQuery.removePadding(
+          removeTop: true,
+          context: context,
+          child: ListView(
             children: [
               SingleChildScrollView(
                 child: Column(
@@ -1601,6 +1613,10 @@ class _HomePage extends State<HomePage> {
                   ],
                 ),
               ),
+              _printHeading(heading: 'Showing now', context: context),
+              const ShowingList(),
+              _printHeading(heading: 'upcomming', context: context),
+              const UpcommingList(),
             ],
           ),
         ),
@@ -1696,4 +1712,36 @@ class _HomePage extends State<HomePage> {
               ),
             );
           });
+}
+
+_printHeading({required String heading, required BuildContext context}) {
+  MovieService ser= MovieService();
+  ser.getShowingNow();
+  return Padding(
+    padding: const EdgeInsets.only(left: 20.0, top: 5, right: 10),
+    child: Row(
+      children: [
+        const SizedBox(width: 5),
+        Text(
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+          heading.toUpperCase(),
+        ),
+        const Spacer(),
+        TextButton(
+          onPressed: () {
+            print(ser.showingNow2);
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const Scene()),
+            );
+          },
+          child:
+           Text("View All", style: TextStyle(color: mainColor)),
+        ),
+      ],
+    ),
+  );
 }
