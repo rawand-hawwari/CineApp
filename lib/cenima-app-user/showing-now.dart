@@ -7,9 +7,7 @@ import 'package:myapp/utils.dart';
 import '../services/Showing now.dart';
 import '../shared/Theme.dart';
 
-class Scene extends StatelessWidget {
-  const Scene({super.key});
-
+class ShowingMovieList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 393;

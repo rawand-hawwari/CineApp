@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/cenima-app-user/home-page.dart';
 import 'package:myapp/cenima-app-user/sign-up.dart';
 import 'package:myapp/cenima-app-user/starter.dart';
 import 'package:myapp/reusable-widgets/reusable-widget.dart';
@@ -207,26 +208,40 @@ class _LoginPage extends State<LogIn> {
                                       isSigningIn = false;
                                     });
 
-                                    if (context.mounted) {
-                                      Flushbar(
-                                      duration: Duration(seconds: 4),
-                                      flushbarPosition: FlushbarPosition.TOP,
-                                      backgroundColor: Color(0xFFFF5c83),
-                                      message: result?.message,
-                                    ).show(context);
-                                    }
-                                  }
-                                }
-                                    : () async {setState((){
-                                  error="Email or password invalid";
-                                });
-                                },
-                                style: TextButton.styleFrom(
-                                padding: EdgeInsets.zero,
-                                ),
-                                child: SizedBox(
-                                  width: 144 * fem,
-                                  height: 57 * fem,
+
+                                            if (context.mounted) {
+                                              Flushbar(
+                                                duration:
+                                                    const Duration(seconds: 4),
+                                                flushbarPosition:
+                                                    FlushbarPosition.TOP,
+                                                backgroundColor:
+                                                    const Color(0xFFFF5c83),
+                                                message: result?.message,
+                                              ).show(context);
+                                            }
+                                          }
+                                          if (isSigningIn) {
+                                            // ignore: use_build_context_synchronously
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const HomePage()),
+                                            );
+                                          }
+                                        }
+                                      : () async {
+                                          setState(() {
+                                            error = "Email or password invalid";
+                                          });
+                                        },
+                                  style: TextButton.styleFrom(
+                                    padding: EdgeInsets.zero,
+                                  ),
+                                  child: SizedBox(
+                                    width: 144 * fem,
+                                    height: 57 * fem,
                                     child: Container(
                                   // frame4EaH (I134:15173;18:475)
                                       width: double.infinity,

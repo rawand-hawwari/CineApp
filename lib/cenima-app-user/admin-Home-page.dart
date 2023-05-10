@@ -1,16 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/cenima-app-user/screens.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/reusable-widgets/reusable-widget.dart';
-import 'package:myapp/utils.dart';
-import 'dart:ui';
-import '../cine_app_icons.dart';
-import 'admin-food-menu.dart';
-import 'admin-profile-settings.dart';
+import 'add-movie.dart';
 
 class AdminHomePage extends StatefulWidget {
   const AdminHomePage({super.key});
-
-
 
   @override
   State<AdminHomePage> createState() => _AHomePage();
@@ -19,6 +13,8 @@ class AdminHomePage extends StatefulWidget {
 class _AHomePage extends State<AdminHomePage> {
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
 
     double baseWidth = 393;
     double fem = MediaQuery.of(context).size.width / baseWidth;
@@ -54,123 +50,171 @@ class _AHomePage extends State<AdminHomePage> {
             child: Column(
               children: [
                 SingleChildScrollView(
-                  child: Container(
-                    width: double.infinity,
-                    decoration: const BoxDecoration(
-                      color: Color(0xfff1f1f1),
-                    ),
-                    child: Column(
-                      children: [
-                        const Padding(padding: EdgeInsets.all(20)),
-                        SizedBox(
-                          width: 215 * fem,
-                          height: 214 * fem,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Container(
-                                margin: EdgeInsets.fromLTRB(
-                                    31 * fem, 0 * fem, 53.99 * fem, 55 * fem),
-                                child: TextButton(
-                                  onPressed: () {},
-                                  style: TextButton.styleFrom(
-                                    padding: EdgeInsets.zero,
-                                  ),
-                                  child: Container(
-                                    padding: EdgeInsets.fromLTRB(
-                                        24 * fem, 0 * fem, 24.01 * fem, 0 * fem),
-                                    width: double.infinity,
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Container(
-                                          margin: EdgeInsets.fromLTRB(0.01 * fem,
-                                              0 * fem, 0 * fem, 11.13 * fem),
-                                          width: 41.87 * fem,
-                                          height: 41.87 * fem,
-                                          child: Image.asset(
-                                            'assets/cenima-app-user/images/calendar.png',
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        Text(
-                                          'Thu, 08 Dec',
-                                          textAlign: TextAlign.center,
-                                          style: SafeGoogleFont(
-                                            'Lucida Bright',
-                                            16.5271606445 * ffem,
-                                            fontWeight: FontWeight.w600,
-                                            height: 1.2575 * ffem / fem,
-                                            color: const Color(0xff777777),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
+                  child: Column(
+                    children: [
+                      Container(),
+                      Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: TextButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => AddMovie()),
+                                );
+                              },
+                              style: TextButton.styleFrom(
+                                padding: EdgeInsets.zero,
                               ),
-                              Container(
-                                // thislistisemptyJwf (115:14395)
-                                margin: EdgeInsets.fromLTRB(
-                                    0 * fem, 0 * fem, 0 * fem, 14 * fem),
-                                child: Text(
-                                  'This List is empty',
-                                  style: SafeGoogleFont(
-                                    'Tw Cen MT',
-                                    30 * ffem,
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.2575 * ffem / fem,
-                                    color: const Color(0xffff1e60),
+                              child: SizedBox(
+                                width: 150 * fem,
+                                height: 35 * fem,
+                                child: Container(
+                                  width: double.infinity,
+                                  height: double.infinity,
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xffff2153),
+                                    borderRadius:
+                                        BorderRadius.circular(17.6289710999 * fem),
                                   ),
-                                ),
-                              ),
-                              Container(
-                                // secondarybuttont9B (115:14396)
-                                margin: EdgeInsets.fromLTRB(
-                                    24 * fem, 0 * fem, 43 * fem, 0 * fem),
-                                child: TextButton(
-                                  onPressed: () {},
-                                  style: TextButton.styleFrom(
-                                    padding: EdgeInsets.zero,
-                                  ),
-                                  child: Container(
-                                    width: double.infinity,
-                                    height: 33 * fem,
-                                    decoration: BoxDecoration(
-                                      color: const Color(0xffff2153),
-                                      borderRadius: BorderRadius.circular(
-                                          17.6289710999 * fem),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: const Color(0x29000000),
-                                          offset:
-                                              Offset(0 * fem, 3.3054320812 * fem),
-                                          blurRadius: 0.2754526734 * fem,
-                                        ),
-                                      ],
-                                    ),
-                                    child: Center(
-                                      child: Text(
-                                        'EDIT',
-                                        style: SafeGoogleFont(
-                                          'Lucida Bright',
-                                          13 * ffem,
-                                          fontWeight: FontWeight.w600,
-                                          height: 1.2575 * ffem / fem,
-                                          color: const Color(0xffffffff),
-                                        ),
+                                  child: Center(
+                                    child: Text(
+                                      'Add Movie',
+                                      textAlign: TextAlign.center,
+                                      style: GoogleFonts.lato(
+                                        fontSize: 19.8325920105 * ffem,
+                                        fontWeight: FontWeight.w600,
+                                        height: 1.2575 * ffem / fem,
+                                        color: const Color(0xffffffff),
                                       ),
                                     ),
                                   ),
                                 ),
                               ),
-                            ],
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
+                        ],
+                      ),
+                    ],
                   ),
+                  //   width: double.infinity,
+                  //   decoration: const BoxDecoration(
+                  //     color: Color(0xfff1f1f1),
+                  //   ),
+                  //   child: Column(
+                  //     children: [
+                  //       const Padding(padding: EdgeInsets.all(20)),
+                  //       SizedBox(
+                  //         width: 215 * fem,
+                  //         height: 214 * fem,
+                  //         child: Column(
+                  //           crossAxisAlignment: CrossAxisAlignment.center,
+                  //           children: [
+                  //             Container(
+                  //               margin: EdgeInsets.fromLTRB(
+                  //                   31 * fem, 0 * fem, 53.99 * fem, 55 * fem),
+                  //               child: TextButton(
+                  //                 onPressed: () {},
+                  //                 style: TextButton.styleFrom(
+                  //                   padding: EdgeInsets.zero,
+                  //                 ),
+                  //                 child: Container(
+                  //                   padding: EdgeInsets.fromLTRB(
+                  //                       24 * fem, 0 * fem, 24.01 * fem, 0 * fem),
+                  //                   width: double.infinity,
+                  //                   child: Column(
+                  //                     crossAxisAlignment:
+                  //                         CrossAxisAlignment.center,
+                  //                     children: [
+                  //                       Container(
+                  //                         margin: EdgeInsets.fromLTRB(0.01 * fem,
+                  //                             0 * fem, 0 * fem, 11.13 * fem),
+                  //                         width: 41.87 * fem,
+                  //                         height: 41.87 * fem,
+                  //                         child: Image.asset(
+                  //                           'assets/cenima-app-user/images/calendar.png',
+                  //                           fit: BoxFit.cover,
+                  //                         ),
+                  //                       ),
+                  //                       Text(
+                  //                         'Thu, 08 Dec',
+                  //                         textAlign: TextAlign.center,
+                  //                         style: SafeGoogleFont(
+                  //                           'Lucida Bright',
+                  //                           16.5271606445 * ffem,
+                  //                           fontWeight: FontWeight.w600,
+                  //                           height: 1.2575 * ffem / fem,
+                  //                           color: const Color(0xff777777),
+                  //                         ),
+                  //                       ),
+                  //                     ],
+                  //                   ),
+                  //                 ),
+                  //               ),
+                  //             ),
+                  //             Container(
+                  //               // thislistisemptyJwf (115:14395)
+                  //               margin: EdgeInsets.fromLTRB(
+                  //                   0 * fem, 0 * fem, 0 * fem, 14 * fem),
+                  //               child: Text(
+                  //                 'This List is empty',
+                  //                 style: SafeGoogleFont(
+                  //                   'Tw Cen MT',
+                  //                   30 * ffem,
+                  //                   fontWeight: FontWeight.w400,
+                  //                   height: 1.2575 * ffem / fem,
+                  //                   color: const Color(0xffff1e60),
+                  //                 ),
+                  //               ),
+                  //             ),
+                  //             Container(
+                  //               // secondarybuttont9B (115:14396)
+                  //               margin: EdgeInsets.fromLTRB(
+                  //                   24 * fem, 0 * fem, 43 * fem, 0 * fem),
+                  //               child: TextButton(
+                  //                 onPressed: () {},
+                  //                 style: TextButton.styleFrom(
+                  //                   padding: EdgeInsets.zero,
+                  //                 ),
+                  //                 child: Container(
+                  //                   width: double.infinity,
+                  //                   height: 33 * fem,
+                  //                   decoration: BoxDecoration(
+                  //                     color: const Color(0xffff2153),
+                  //                     borderRadius: BorderRadius.circular(
+                  //                         17.6289710999 * fem),
+                  //                     boxShadow: [
+                  //                       BoxShadow(
+                  //                         color: const Color(0x29000000),
+                  //                         offset:
+                  //                             Offset(0 * fem, 3.3054320812 * fem),
+                  //                         blurRadius: 0.2754526734 * fem,
+                  //                       ),
+                  //                     ],
+                  //                   ),
+                  //                   child: Center(
+                  //                     child: Text(
+                  //                       'EDIT',
+                  //                       style: SafeGoogleFont(
+                  //                         'Lucida Bright',
+                  //                         13 * ffem,
+                  //                         fontWeight: FontWeight.w600,
+                  //                         height: 1.2575 * ffem / fem,
+                  //                         color: const Color(0xffffffff),
+                  //                       ),
+                  //                     ),
+                  //                   ),
+                  //                 ),
+                  //               ),
+                  //             ),
+                  //           ],
+                  //         ),
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
                 ),
               ],
             ),
@@ -182,5 +226,3 @@ class _AHomePage extends State<AdminHomePage> {
     );
   }
 }
-
-

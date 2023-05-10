@@ -33,7 +33,6 @@ class _ASettings extends State<AProfileSettings> {
           floatHeaderSlivers: true,
           headerSliverBuilder: (context, innerBoxIsScrolled) => [
             const SliverAppBar(
-              automaticallyImplyLeading: false,
               iconTheme: IconThemeData(
                 color: Color(0xff000000),
               ),
@@ -42,10 +41,10 @@ class _ASettings extends State<AProfileSettings> {
               snap: true,
               centerTitle: true,
               title: Text(
-                'Profile',
+                'Ciné',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  // fontFamily: 'Roboto',
+                  fontFamily: 'Nature Beauty Personal Use',
                   fontSize: 25,
                   fontWeight: FontWeight.w600,
                   color: Color(0xffdd204a),
@@ -90,8 +89,8 @@ class _ASettings extends State<AProfileSettings> {
                     ),
                     Container(
                       color: Colors.white,
-                      margin:
-                          const EdgeInsets.symmetric(horizontal: 25, vertical: 5),
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 25, vertical: 5),
                       padding: const EdgeInsets.all(10),
                       width: MediaQuery.of(context).size.width * 1,
                       height: MediaQuery.of(context).size.height * 0.1,
@@ -129,8 +128,8 @@ class _ASettings extends State<AProfileSettings> {
                     ),
                     Container(
                       color: Colors.white,
-                      margin:
-                          const EdgeInsets.symmetric(horizontal: 25, vertical: 5),
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 25, vertical: 5),
                       padding: const EdgeInsets.all(10),
                       width: MediaQuery.of(context).size.width * 1,
                       height: MediaQuery.of(context).size.height * 0.1,
@@ -168,8 +167,8 @@ class _ASettings extends State<AProfileSettings> {
                     ),
                     Container(
                       color: Colors.white,
-                      margin:
-                          const EdgeInsets.symmetric(horizontal: 25, vertical: 5),
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 25, vertical: 5),
                       padding: const EdgeInsets.all(10),
                       width: MediaQuery.of(context).size.width * 1,
                       height: MediaQuery.of(context).size.height * 0.1,
@@ -207,8 +206,8 @@ class _ASettings extends State<AProfileSettings> {
                     ),
                     Container(
                       color: Colors.white,
-                      margin:
-                          const EdgeInsets.symmetric(horizontal: 25, vertical: 5),
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 25, vertical: 5),
                       padding: const EdgeInsets.all(10),
                       width: MediaQuery.of(context).size.width * 1,
                       height: MediaQuery.of(context).size.height * 0.1,
