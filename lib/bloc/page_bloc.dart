@@ -16,6 +16,7 @@ class PageBloc extends Bloc<PageEvent, PageState> {
     on<GoToRentPage>((event, emit) => emit(OnRentPage()));
     on<GoToFoodPage>((event, emit) => emit(OnFoodPage()));
     on<GoToProfilePage>((event, emit) => emit(OnProfilePage()));
+    on<GoToAHomePage>((event,emit)=> emit(OnAHomePage()));
     on<GoToPreferencePage>((event, emit) => emit(OnPreferencePage(event.registrationData)));
     on<GoToRegristationPage>((event, emit) => emit(OnRegristrationPage(event.registrationData)));
     on<GoToAccountConfirmationPage>((event, emit) => emit(OnAccountConfirmationPage(event.registrationData)));

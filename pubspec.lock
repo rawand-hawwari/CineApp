@@ -225,6 +225,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.17.0"
+  colorize:
+    dependency: transitive
+    description:
+      name: colorize
+      sha256: "584746cd6ba1cba0633b6720f494fe6f9601c4170f0666c1579d2aa2a61071ba"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.0"
   convert:
     dependency: transitive
     description:
@@ -265,6 +273,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.0"
+  dio:
+    dependency: transitive
+    description:
+      name: dio
+      sha256: "0894a098594263fe1caaba3520e3016d8a855caeb010a882273189cca10f11e9"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.1.1"
   email_validator:
     dependency: "direct main"
     description:
@@ -481,13 +497,13 @@ packages:
     source: hosted
     version: "2.2.0"
   http:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: http
-      sha256: "6aa2946395183537c8b880962d935877325d6a09a2867c3970c05c0fed6ac482"
+      sha256: "5895291c13fa8a3bd82e76d5627f69e0d85ca6a30dcac95c4ea19a5d555879c2"
       url: "https://pub.dev"
     source: hosted
-    version: "0.13.5"
+    version: "0.13.6"
   http_multi_server:
     dependency: transitive
     description:
@@ -816,6 +832,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.3"
+  shimmer_animation:
+    dependency: "direct main"
+    description:
+      name: shimmer_animation
+      sha256: "1f12d0f3fc20acbf2dcf8438b79f4268c523d55b2f3de55cf49e5bd3acbc5719"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.0+1"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -917,6 +941,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.1"
+  tmdb_api:
+    dependency: "direct main"
+    description:
+      name: tmdb_api
+      sha256: "31f6ff1bc361ccabf5b5ccc52542e5f9b8db61dcebb74712f9ca8a77dadc7d57"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.5"
   typed_data:
     dependency: transitive
     description:
