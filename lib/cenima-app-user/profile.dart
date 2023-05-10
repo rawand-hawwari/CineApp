@@ -1,4 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/cenima-app-user/log-in.dart';
 import 'package:myapp/cenima-app-user/thetre-info.dart';
@@ -13,9 +16,51 @@ class Profile extends StatefulWidget {
   State<Profile> createState() => _Profile();
 }
 
+// late FirebaseAuth _auth;
+// User _user = Rxn<User>()
+// // final _user = <User>();
+// late Stream<User?> _authStateChanges;
+// void initAuth() async {
+//   await Future.delayed(const Duration(seconds: 2));
+//   _auth = FirebaseAuth.instance;
+//   _authStateChanges = _auth.authStateChanges();
+//   _authStateChanges.listen((User? user) {
+//     //  _user. = user;
+//     print("...user id ${user?.uid}...");
+//   });
+// }
+
 class _Profile extends State<Profile> {
+  String uid = FirebaseAuth.instance.currentUser == null
+      ? ""
+      : FirebaseAuth.instance.currentUser!.uid;
+  CollectionReference user = FirebaseFirestore.instance.collection("users");
+  // Map<String, dynamic> userInfo = {};
+  String name = '';
+  String image = '';
+
+  Future getUserInfo() async {
+    if (uid != null) {
+      final documents = await user.doc(uid).get();
+      Map<String, dynamic> data = documents.data()! as Map<String, dynamic>;
+      setState(() {
+        name = data['name'];
+        image = data['pfp'];
+      });
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getUserInfo();
+  }
+
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
+
     double baseWidth = 393;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
@@ -54,22 +99,27 @@ class _Profile extends State<Profile> {
                     Container(
                       margin: const EdgeInsets.symmetric(
                           vertical: 15, horizontal: 10),
-                      width: MediaQuery.of(context).size.width * 1.0,
-                      height: MediaQuery.of(context).size.height * 0.1,
+                      width: width * 0.3,
+                      height: height * 0.1,
                       child: Row(
                         children: [
                           Container(
                             margin: const EdgeInsets.symmetric(
                                 horizontal: 10, vertical: 10),
-                            width: MediaQuery.of(context).size.width * 0.15,
-                            height: MediaQuery.of(context).size.height * 0.1,
+                            width: 240,
+                            height: 240,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(100),
+                            ),
                             child: Image.asset(
-                              'assets/cenima-app-user/images/user.png',
+                              image == ""
+                                  ? 'assets/cenima-app-user/images/user.png'
+                                  : image,
                               fit: BoxFit.cover,
                             ),
                           ),
                           Text(
-                            'User Name',
+                            name == "" ? 'User Name' : name,
                             style: GoogleFonts.lato(
                               fontSize: 27 * ffem,
                               fontWeight: FontWeight.w400,
@@ -85,8 +135,8 @@ class _Profile extends State<Profile> {
                       margin: const EdgeInsets.symmetric(
                           horizontal: 25, vertical: 5),
                       padding: const EdgeInsets.all(10),
-                      width: MediaQuery.of(context).size.width * 1,
-                      height: MediaQuery.of(context).size.height * 0.1,
+                      width: width * 1,
+                      height: height * 0.1,
                       alignment: Alignment.centerLeft,
                       child: TextButton(
                         onPressed: () {

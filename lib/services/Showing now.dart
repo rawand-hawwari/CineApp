@@ -17,30 +17,32 @@ class ShowingList extends StatelessWidget {
     Size deviceSize = MediaQuery.of(context).size;
     MovieService ser = MovieService();
     return SizedBox(
-        height: deviceSize.height * 0.34,
-        child: FutureBuilder(
-            future: ser.getShowingNow(),
-            builder: (BuildContext ctx, AsyncSnapshot<dynamic> snapshot) {
-              ConnectionState state = snapshot.connectionState;
+      height: deviceSize.height * 0.34,
+      child: FutureBuilder(
+        future: ser.getShowingNow(),
+        builder: (BuildContext ctx, AsyncSnapshot<dynamic> snapshot) {
+          ConnectionState state = snapshot.connectionState;
 
-              // loading
-              if (state == ConnectionState.waiting) {
-                return const Center(child: ItemSkeleton());
-              }
-              // error
-              else if (snapshot.hasError) {
-                return const Center(
-                  child: Text(
-                    'Loading Error',
-                    style: TextStyle(fontSize: 20, color: Colors.red),
-                  ),
-                );
-              }
-              // loaded
-              else {
-                return _printMovies(ser);
-              }
-            }));
+          // loading
+          if (state == ConnectionState.waiting) {
+            return const Center(child: ItemSkeleton());
+          }
+          // error
+          else if (snapshot.hasError) {
+            return const Center(
+              child: Text(
+                'Loading Error',
+                style: TextStyle(fontSize: 20, color: Colors.red),
+              ),
+            );
+          }
+          // loaded
+          else {
+            return _printMovies(ser);
+          }
+        },
+      ),
+    );
   }
 
   _printMovies(MovieService ser) {
@@ -122,7 +124,7 @@ class _ShowingListAllState extends State<ShowingListAll> {
     Size deviceSize = MediaQuery.of(context).size;
     MovieService ser = MovieService();
     double width = deviceSize.width;
-    return Container(
+    return SizedBox(
         height: deviceSize.height + 200,
         child: FutureBuilder(
             future: Future.wait(

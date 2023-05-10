@@ -442,44 +442,42 @@ Image logowidget() {
     fit: BoxFit.cover,
     width: 240,
     height: 240,
-    color: Colors.white,
   );
 }
 
 Future<bool> showExitPopup(BuildContext context) async {
-  return await showDialog( //show confirm dialogue
-    //the return value will be from "Yes" or "No" options
-    context: context,
-    builder: (context) => AlertDialog(
-      actionsAlignment: MainAxisAlignment.center,
-      title: Text('Exit App'),
-      content: Text('Do you want to exit the App?'),
-      actions:[
-        Padding(
-          padding: const EdgeInsets.all(25.0),
-          child: ElevatedButton(
-            onPressed: () => Navigator.of(context).pop(false),
-            //return false when click on "NO"
-            child:Text('No'),
-          ),
+  return await showDialog(
+        //show confirm dialogue
+        //the return value will be from "Yes" or "No" options
+        context: context,
+        builder: (context) => AlertDialog(
+          actionsAlignment: MainAxisAlignment.center,
+          title: Text('Exit App'),
+          content: Text('Do you want to exit the App?'),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.all(25.0),
+              child: ElevatedButton(
+                onPressed: () => Navigator.of(context).pop(false),
+                //return false when click on "NO"
+                child: Text('No'),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(25.0),
+              child: ElevatedButton(
+                onPressed: () => Navigator.of(context).pop(true),
+                //return true when click on "Yes"
+                child: Text('Yes'),
+              ),
+            ),
+          ],
         ),
-
-        Padding(
-          padding: const EdgeInsets.all(25.0),
-          child: ElevatedButton(
-            onPressed: () => Navigator.of(context).pop(true),
-            //return true when click on "Yes"
-            child:Text('Yes'),
-          ),
-        ),
-
-      ],
-    ),
-  )??false; //if showDialouge had returned null, then return false
+      ) ??
+      false; //if showDialouge had returned null, then return false
 }
 
-void navigatorR(BuildContext context, Widget widget){
-
+void navigatorR(BuildContext context, Widget widget) {
   Navigator.of(context).pushReplacement(_createRouteR(widget));
 }
 

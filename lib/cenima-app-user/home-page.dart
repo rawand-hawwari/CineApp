@@ -59,11 +59,7 @@ class _HomePage extends State<HomePage> {
               IconButton(
                   icon: const Icon(Icons.search),
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const SearchPage()),
-                    );
+                    showSearch(context: context, delegate: SearchPage());
                   })
             ],
             title: const Text(
@@ -268,7 +264,7 @@ _printHeading({required String heading, required BuildContext context}) {
             print(ser.showingNow2);
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => ShowingMovieList()),
+              MaterialPageRoute(builder: (context) => const ShowingMovieList()),
             );
           },
           child: Text("View All", style: TextStyle(color: mainColor)),
