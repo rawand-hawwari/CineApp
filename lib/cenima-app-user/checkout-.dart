@@ -186,7 +186,7 @@ class Scene extends StatelessWidget {
                       Container(
                         // firstcinemagreenlawnaveislipte (94:10142)
                         constraints: BoxConstraints (
-                          maxWidth: 282*fem,
+                          // maxWidth: 282*fem,
                         ),
                         child: Text(
                           'First Cinema- Greenlawn Ave, Islip Terrace, New York(NY), 11752\nDec 00, 2022 - 00:00 -M - Screen 1 ',
@@ -467,7 +467,7 @@ class Scene extends StatelessWidget {
                               // largecocacolasoftdrinks8g5 (101:13145)
                               margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 137*fem, 0*fem),
                               constraints: BoxConstraints (
-                                maxWidth: 137*fem,
+                                // maxWidth: 137*fem,
                               ),
                               child: Text(
                                 '1 Extra Gum Peppermint Chewing Gum\n',

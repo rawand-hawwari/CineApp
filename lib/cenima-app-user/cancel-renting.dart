@@ -38,7 +38,7 @@ class Scene extends StatelessWidget {
                     // areyousureyouwanttocancelyourb (114:12657)
                     margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 31.61*fem, 0*fem),
                     constraints: BoxConstraints (
-                      maxWidth: 222*fem,
+                      // maxWidth: 222*fem,
                     ),
                     child: Text(
                       'Are you sure you want to\ncancel Renting?',
