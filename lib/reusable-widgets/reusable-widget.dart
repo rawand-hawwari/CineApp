@@ -9,11 +9,9 @@ import 'package:myapp/cenima-app-user/rent-movie.dart';
 import 'package:myapp/cenima-app-user/screens.dart';
 import 'package:myapp/cine_app_icons.dart';
 import '../cenima-app-user/admin-food-menu.dart';
-import '../cenima-app-user/admin-log-in.dart';
 import '../cenima-app-user/admin-profile-settings.dart';
 import '../cenima-app-user/admin-profile.dart';
 import '../cenima-app-user/admin-settings.dart';
-import '../cenima-app-user/cinema-list.dart';
 import '../cenima-app-user/contact.dart';
 import '../cenima-app-user/food-menu.dart';
 import '../cenima-app-user/help.dart';
@@ -431,76 +429,6 @@ class SettingDrawer extends StatelessWidget {
               //   MaterialPageRoute(builder: (context) => const Profile()),
               // );
             },
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class Header extends StatelessWidget {
-  const Header({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    double baseWidth = 393;
-    double fem = MediaQuery.of(context).size.width / baseWidth;
-    double ffem = fem * 0.97;
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
-      width: MediaQuery.of(context).size.width * 1,
-      height: MediaQuery.of(context).size.height * 0.12,
-      decoration: BoxDecoration(
-        border: Border.all(color: const Color(0xff707070)),
-        color: const Color(0xffffffff),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.1,
-            height: MediaQuery.of(context).size.height * 0.1,
-            child: IconButton(
-              onPressed: () {},
-              padding: const EdgeInsets.all(0.0),
-              icon: const Icon(
-                Icons.dehaze_rounded,
-                size: 40,
-              ),
-              color: const Color(0xff000000),
-            ),
-          ),
-          Padding(
-              padding: EdgeInsets.only(
-                  left: MediaQuery.of(context).size.width * 0.23)),
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.3,
-            child: Text(
-              'Ciné',
-              textAlign: TextAlign.center,
-              style: GoogleFonts.caveat(
-                fontSize: 25 * ffem,
-                fontWeight: FontWeight.w600,
-                height: 1.1 * ffem / fem,
-                color: const Color(0xffdd204a),
-              ),
-            ),
-          ),
-          Padding(
-              padding: EdgeInsets.only(
-                  left: MediaQuery.of(context).size.width * 0.23)),
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.1,
-            height: MediaQuery.of(context).size.height * 0.1,
-            child: IconButton(
-              onPressed: () {},
-              padding: const EdgeInsets.all(0.0),
-              icon: const Icon(
-                Icons.search,
-                size: 40,
-              ),
-              color: const Color(0xff000000),
-            ),
           ),
         ],
       ),
