@@ -32,6 +32,7 @@ class _LoginPage extends State<LogIn> {
   bool isSigningIn = false;
   bool isEFValid = true;
   bool isPFValid = true;
+  bool isObscured = true;
   String error = '';
   String errorP = '';
   String errorE = '';
@@ -114,7 +115,7 @@ class _LoginPage extends State<LogIn> {
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(100.0)),
                               ),
-                              prefixIcon: Icon(Icons.mail_outline),
+                              prefixIcon: const Icon(Icons.mail_outline),
                               hintText: 'Enter your email',
                               labelText: 'Email',
                               errorText: isEFValid
@@ -144,14 +145,26 @@ class _LoginPage extends State<LogIn> {
                               });
                             },
                             controller: passwordController,
+                            obscureText: isObscured,
+                            keyboardType: TextInputType.visiblePassword,
                             decoration: InputDecoration(
                               border: const OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(100.0)),
                               ),
-                              prefixIcon: Icon(Icons.lock_outline),
+                              prefixIcon: const Icon(Icons.lock_outline),
                               hintText: 'Enter your password',
                               labelText: 'Password',
+                              suffixIcon: IconButton(
+                                icon: isObscured
+                                    ? const Icon(Icons.visibility)
+                                    : const Icon(Icons.visibility_off),
+                                onPressed: () {
+                                  setState(() {
+                                    isObscured = !isObscured;
+                                  });
+                                },
+                              ),
                               errorText: isPFValid
                                   ? (errorP == '' ? null : errorP)
                                   : 'Value Can\'t Be Empty',
