@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:myapp/services/Movie%20service.dart';
 
 import 'package:myapp/services/auth.dart';
@@ -18,7 +19,6 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'dart:ui';
 import '../cine_app_icons.dart';
 import '../services/Showing now.dart';
-import 'food-menu-selection.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -1566,56 +1566,12 @@ class _HomePage extends State<HomePage> {
                     // ),
 
                     //////////////////here start the movies lists
-                    Padding(
-                      padding: const EdgeInsets.all(10),
-                      child: Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Showing Now',
-                                style: GoogleFonts.lato(
-                                  fontSize: 20 * ffem,
-                                  fontWeight: FontWeight.w700,
-                                  color: const Color(0xff000000),
-                                  // decoration: TextDecoration.none
-                                ),
-                              ),
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            ShowingMovieList()),
-                                  );
-                                },
-                                // style: TextButton.styleFrom(
-                                //   padding: EdgeInsets.zero,
-                                // ),
-                                child: Text(
-                                  'See All >',
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.lato(
-                                    fontSize: 15 * ffem,
-                                    fontWeight: FontWeight.w700,
-                                    color: const Color(0xffff2153),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          showingListBuilder(height, width),
-                        ],
-                      ),
-                    ),
                   ],
                 ),
               ),
-              _printHeading(heading: 'Showing now', context: context),
+              _printHeadingS(heading: 'Showing now', context: context),
               const ShowingList(),
-              _printHeading(heading: 'upcomming', context: context),
+              _printHeadingU(heading: 'upcomming', context: context),
               const UpcommingList(),
             ],
           ),
@@ -1714,7 +1670,39 @@ class _HomePage extends State<HomePage> {
           });
 }
 
-_printHeading({required String heading, required BuildContext context}) {
+_printHeadingS({required String heading, required BuildContext context}) {
+  MovieService ser= MovieService();
+  ser.getShowingNow();
+  return Padding(
+    padding: const EdgeInsets.only(left: 20.0, top: 5, right: 10),
+    child: Row(
+      children: [
+        const SizedBox(width: 5),
+        Text(
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+          heading.toUpperCase(),
+        ),
+        const Spacer(),
+        TextButton(
+          onPressed: () {
+            print('wgh');
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => ShowingNowList()),
+            );
+          },
+          child:
+           Text("View All", style: TextStyle(color: mainColor)),
+        ),
+      ],
+    ),
+  );
+}
+
+_printHeadingU({required String heading, required BuildContext context}) {
   MovieService ser= MovieService();
   ser.getShowingNow();
   return Padding(
@@ -1735,11 +1723,11 @@ _printHeading({required String heading, required BuildContext context}) {
             Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => const Scene()),
+                  builder: (context) => ShowingNowList()),
             );
           },
           child:
-           Text("View All", style: TextStyle(color: mainColor)),
+          Text("View All", style: TextStyle(color: mainColor)),
         ),
       ],
     ),

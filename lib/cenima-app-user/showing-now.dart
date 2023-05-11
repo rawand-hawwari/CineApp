@@ -7,7 +7,7 @@ import 'package:myapp/utils.dart';
 import '../services/Showing now.dart';
 import '../shared/Theme.dart';
 
-class ShowingMovieList extends StatelessWidget {
+class ShowingNowList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 393;

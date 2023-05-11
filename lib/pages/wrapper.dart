@@ -9,7 +9,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import '../bloc/page_bloc.dart';
 import '../bloc/page_event.dart';
 import '../bloc/page_state.dart';
-import '../bloc/user_bloc.dart';
 import '../cenima-app-user/admin-Home-page.dart';
 import '../cenima-app-user/sign-up.dart';
 import '../cenima-app-user/starter.dart';
@@ -20,6 +19,7 @@ class Wrapper extends StatelessWidget {
   Widget build(BuildContext context) {
     NUser? user = Provider.of<NUser?>(context);
 
+
     if (user == null) {
       if (prevPageEvent is! GoToStarterPage) {
         prevPageEvent = GoToStarterPage();
@@ -27,17 +27,19 @@ class Wrapper extends StatelessWidget {
       }
     } else {
       if (prevPageEvent is! GoToHomePage) {
-        context.read<UserBloc>().add(LoadUser(user.uid));
-
+        if(user.isAdmin==false)
         prevPageEvent = GoToHomePage();
+        else
+          prevPageEvent = GoToAHomePage();
         context.read<PageBloc>().add(prevPageEvent!);
       }
     }
 
     return BlocBuilder<PageBloc, PageState>(
-        builder: (_, pageState) => (true/*pageState is OnStarterPage*/)
-            ? HomePage()
-                    : HomePage());
+        builder: (_, pageState) => (pageState is OnStarterPage)
+            ? Starter()
+                    : (pageState is OnHomePage)? HomePage(): AdminHomePage()
+    );
 
   }
 }

@@ -60,7 +60,7 @@ class _LoginPage extends State<LogIn> {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.push(
+              Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(builder: (context) => const Starter()),
               );
@@ -318,7 +318,7 @@ class _LoginPage extends State<LogIn> {
                       Text(
                         'Don\'t Have an account?',
                         style: GoogleFonts.lato(
-                          fontSize: 18 * ffem,
+                          fontSize: height * 0.022,
                           fontWeight: FontWeight.w700,
                           color: const Color(0xff000000),
                         ),
@@ -336,7 +336,7 @@ class _LoginPage extends State<LogIn> {
                           padding: EdgeInsets.zero,
                         ),
                         child: SizedBox(
-                          width: 110 * fem,
+                          width: width * 0.27,
                           height: 50 * fem,
                           child: Container(
                             // frame4EaH (I134:15173;18:475)
@@ -352,7 +352,7 @@ class _LoginPage extends State<LogIn> {
                                 'Sign Up',
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.lato(
-                                  fontSize: 15 * ffem,
+                                  fontSize: height * 0.02,
                                   fontWeight: FontWeight.w400,
                                   height: 1.2575 * ffem / fem,
                                   color: const Color(0xff000000),

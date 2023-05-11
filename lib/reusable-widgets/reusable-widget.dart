@@ -514,7 +514,6 @@ Image logowidget() {
     fit: BoxFit.cover,
     width: 240,
     height: 240,
-    color: Colors.white,
   );
 }
 
@@ -549,6 +548,11 @@ Future<bool> showExitPopup(BuildContext context) async {
     ),
   )??false; //if showDialouge had returned null, then return false
 }
+
+void backNavigator(BuildContext context, Widget widget){
+  Navigator.of(context).pushReplacement(_createRouteL(widget));
+}
+
 
 void navigatorR(BuildContext context, Widget widget){
 

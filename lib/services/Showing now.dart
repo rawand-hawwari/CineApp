@@ -7,8 +7,6 @@ import 'package:myapp/services/string_helper.dart';
 import 'package:myapp/shared/Theme.dart';
 import '../utils.dart';
 import 'items_skeleton.dart';
-import 'package:http/http.dart' as movieModel;
-import 'package:tmdb_api/tmdb_api.dart';
 
 
 class ShowingList extends StatelessWidget {
@@ -145,7 +143,7 @@ class _ShowingListAllState extends State<ShowingListAll> {
               // loading
               if (state == ConnectionState.waiting) {
                 return Center(
-                    child: ItemSkeletonV(length: ser.showingNow.length)
+                    child: ItemSkeletonV(length: 10)
                 );
               }
               // error
@@ -167,29 +165,6 @@ class _ShowingListAllState extends State<ShowingListAll> {
               }
             }));
   }
-
-/*
-  ratingLoop(MovieService service){
-    List rating=[];
-    rating.length=service.showingNow.length;
-    service.getShowingNow();
-    for(int i=0;i<service.showingNow.length-1; i++) {
-      service.getRelease(service.showingNow[i]['id']);
-      print(service.release.toString());
-      for(int z=0; z<service.release.length-1; z++){
-        print("second loop");
-        if(service.release[z]['iso_3166_1']=='US') {
-          rating[z]=service.release[z]['release_dates'][0]['certification'];
-          print('why doesnt this prnt');
-        }
-        else{
-          rating[z]='N/A';
-        }
-      }
-    }
-    return rating;
-  }
-*/
 
   _printMovies(MovieService ser, double width) {
     var image_url = 'https://image.tmdb.org/t/p/w500/';

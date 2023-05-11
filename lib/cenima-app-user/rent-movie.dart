@@ -31,7 +31,10 @@ class _RentMovie extends State<RentMovie> {
     double ffem = fem * 0.97;
 
     return WillPopScope(
-      onWillPop: () => showExitPopup(context),
+      onWillPop: () {
+       backNavigator(context, HomePage());
+       return Future.value(false);
+       },
       child: Scaffold(
         body: NestedScrollView(
           floatHeaderSlivers: true,

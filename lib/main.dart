@@ -14,7 +14,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'bloc/page_bloc.dart';
 import 'bloc/theme_bloc.dart';
 import 'bloc/theme_state.dart';
-import 'bloc/user_bloc.dart';
 import 'cenima-app-user/admin-Home-page.dart';
 import 'cenima-app-user/admin-profile-settings.dart';
 
@@ -50,7 +49,6 @@ class MyApp extends StatelessWidget {
           return MultiBlocProvider(
             providers: [
               BlocProvider(create: (_) => PageBloc()),
-              BlocProvider(create: (_) => UserBloc()),
               BlocProvider(create: (_) => ThemeBloc()),
             ],
             child: BlocBuilder<ThemeBloc, ThemeState>(
