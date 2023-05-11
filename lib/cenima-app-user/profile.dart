@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/cenima-app-user/log-in.dart';
 import 'package:myapp/cenima-app-user/thetre-info.dart';
+import 'package:myapp/cine_app_icons.dart';
 import '../reusable-widgets/reusable-widget.dart';
 import 'admin-profile.dart';
 import 'admin-settings.dart';
@@ -15,20 +16,6 @@ class Profile extends StatefulWidget {
   @override
   State<Profile> createState() => _Profile();
 }
-
-// late FirebaseAuth _auth;
-// User _user = Rxn<User>()
-// // final _user = <User>();
-// late Stream<User?> _authStateChanges;
-// void initAuth() async {
-//   await Future.delayed(const Duration(seconds: 2));
-//   _auth = FirebaseAuth.instance;
-//   _authStateChanges = _auth.authStateChanges();
-//   _authStateChanges.listen((User? user) {
-//     //  _user. = user;
-//     print("...user id ${user?.uid}...");
-//   });
-// }
 
 class _Profile extends State<Profile> {
   String uid = FirebaseAuth.instance.currentUser == null
@@ -156,7 +143,7 @@ class _Profile extends State<Profile> {
                             Container(
                               margin: const EdgeInsets.all(10),
                               child: Text(
-                                'Profile',
+                                'Account',
                                 style: GoogleFonts.lato(
                                   fontSize: 22 * ffem,
                                   fontWeight: FontWeight.w600,
@@ -179,23 +166,62 @@ class _Profile extends State<Profile> {
                       alignment: Alignment.centerLeft,
                       child: TextButton(
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => TheaterInformation()),
-                          );
+                          // Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(
+                          //       builder: (context) => TheaterInformation()),
+                          // );
                         },
                         child: Row(
                           children: [
                             const Icon(
-                              Icons.person_outline,
+                              CineApp.ticket,
                               size: 29,
                               color: Color(0xff707070),
                             ),
                             Container(
                               margin: const EdgeInsets.all(10),
                               child: Text(
-                                'Theatre Information',
+                                'Bookings',
+                                style: GoogleFonts.lato(
+                                  fontSize: 22 * ffem,
+                                  fontWeight: FontWeight.w600,
+                                  height: 1.2575 * ffem / fem,
+                                  color: const Color(0xff7e132b),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Container(
+                      color: Colors.white,
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 25, vertical: 5),
+                      padding: const EdgeInsets.all(10),
+                      width: MediaQuery.of(context).size.width * 1,
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      alignment: Alignment.centerLeft,
+                      child: TextButton(
+                        onPressed: () {
+                          // Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(
+                          //       builder: (context) => const LogIn()),
+                          // );
+                        },
+                        child: Row(
+                          children: [
+                            const Icon(
+                              CineApp.movie,
+                              size: 29,
+                              color: Color(0xff707070),
+                            ),
+                            Container(
+                              margin: const EdgeInsets.all(10),
+                              child: Text(
+                                'Rented Movies',
                                 style: GoogleFonts.lato(
                                   fontSize: 22 * ffem,
                                   fontWeight: FontWeight.w600,
@@ -221,7 +247,7 @@ class _Profile extends State<Profile> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => AdminSettings()),
+                                builder: (context) => const AdminSettings()),
                           );
                         },
                         child: Row(
