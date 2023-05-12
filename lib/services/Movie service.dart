@@ -49,7 +49,7 @@ class MovieService {
     await getIDs();
     int count=-1;
     TMDB tmdb = TMDB(ApiKeys(apiKey, accessToken),
-        logConfig: ConfigLogger(showLogs: true, showErrorLogs: true));
+        logConfig: const ConfigLogger(showLogs: true, showErrorLogs: true));
     Map Result = await tmdb.v3.search.queryMovies(query,primaryReleaseYear: 2023);
     for(int i=0;i<Result['results'].length; i++)
     {

@@ -9,7 +9,6 @@ import '../cenima-app-user/movie-details-book.dart';
 import '../utils.dart';
 import 'items_skeleton.dart';
 
-
 class ShowingList extends StatelessWidget {
   const ShowingList({Key? key}) : super(key: key);
 
@@ -161,7 +160,7 @@ class _ShowingListAllState extends State<ShowingListAll> {
                   child: _printMovies(ser, width),
                   );
               }
-            }));
+            },),);
   }
 
   _printMovies(MovieService ser, double width) {
@@ -301,6 +300,7 @@ class _ShowingListAllState extends State<ShowingListAll> {
       },
     );
   }
+
 }
 
 
