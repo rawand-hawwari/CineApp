@@ -1,10 +1,15 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:myapp/services/user_services.dart';
+import 'firebase_options.dart';
 
 import 'package:flutter/material.dart';
+import 'package:myapp/cenima-app-user/starter.dart';
 import 'package:myapp/pages/wrapper.dart';
 import 'package:myapp/services/auth.dart';
 import 'package:myapp/services/user.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'bloc/page_bloc.dart';
@@ -73,12 +78,20 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    NUser? user = Provider.of<NUser?>(context);
     return MaterialApp(
         title: 'Ciné',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.pink,
         ),
-        home: Wrapper());
-  }
+        home: FutureBuilder(
+        future: UserServices.getUser(user?.uid),
+          builder: (context, AsyncSnapshot<NUser?>? snapshot) {
+          print('this is the data inside the snapshot$snapshot');
+            return Wrapper(isAdmin: snapshot?.data?.isAdmin);}
+        )
+    );
 }
+}
+

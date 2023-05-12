@@ -8,7 +8,7 @@ class NUser extends Equatable {
    String? email;
    String name='';
    String phoneNo='';
-   bool isAdmin=false;
+   bool isAdmin;
 
    NUser(this.name, this.isAdmin, this.phoneNo,{required this.uid, required this.email} );
 
@@ -25,17 +25,4 @@ class NUser extends Equatable {
         phoneNo,
         isAdmin,
       ];
-
-  NUser.fromSnapshot(DataSnapshot dataSnapshot) {
-    uid = dataSnapshot.key!;
-    var data = dataSnapshot.value as Map?;
-
-    if (data != null) {
-      email = data["email"];
-      name = data["name"];
-      phoneNo =data['phoneNo'];
-      isAdmin= data[false];
-    }
   }
-
-}

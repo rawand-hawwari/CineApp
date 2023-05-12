@@ -3,8 +3,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/cenima-app-user/log-in.dart';
 import 'package:myapp/cenima-app-user/screens.dart';
 import 'package:myapp/cenima-app-user/thetre-info.dart';
+import 'package:tmdb_api/tmdb_api.dart';
 
 import '../cine_app_icons.dart';
+import '../main.dart';
+import '../pages/wrapper.dart';
+import '../services/auth.dart';
 import 'admin-Home-page.dart';
 import 'admin-food-menu.dart';
 import '../reusable-widgets/reusable-widget.dart';
@@ -21,6 +25,7 @@ class AProfileSettings extends StatefulWidget {
 }
 
 class _ASettings extends State<AProfileSettings> {
+  final AuthServices _auth = AuthServices();
   @override
   Widget build(BuildContext context) {
     double baseWidth = 393;
@@ -213,11 +218,11 @@ class _ASettings extends State<AProfileSettings> {
                       height: MediaQuery.of(context).size.height * 0.1,
                       alignment: Alignment.centerLeft,
                       child: TextButton(
-                        onPressed: () {
-                          Navigator.push(
+                        onPressed: ()  {
+                          AuthServices.signOut();
+                          Navigator.pushReplacement(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => const LogIn()),
+                            MaterialPageRoute(builder: (context) => MyHomePage(title: 'Ciné',)),
                           );
                         },
                         child: Row(
@@ -254,3 +259,5 @@ class _ASettings extends State<AProfileSettings> {
     );
   }
 }
+
+

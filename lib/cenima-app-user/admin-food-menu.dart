@@ -75,65 +75,69 @@ class _AFoodMenu extends State<AFoodMenu> {
                 children: [
                   Container(
                     color: const Color(0xFFFFFFFF),
-                    child: ButtonBar(
-                      alignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        TextButton(
-                          onPressed: () {
-                            setState(() {
-                              globalData.listTitle = "snacks";
-                            });
-                          },
-                          child: Container(
-                            padding: const EdgeInsets.all(20),
-                            child: Text(
-                              "Snacks",
-                              style: GoogleFonts.lato(
-                                fontSize: 20 * ffem,
-                                fontWeight: FontWeight.w400,
-                                height: 1.2575 * ffem / fem,
-                                color: const Color(0xff464646),
+                    child: Row(
+                      children: [
+                        ButtonBar(
+                          alignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            TextButton(
+                              onPressed: () {
+                                setState(() {
+                                  globalData.listTitle = "snacks";
+                                });
+                              },
+                              child: Container(
+                                padding: const EdgeInsets.all(20),
+                                child: Text(
+                                  "Snacks",
+                                  style: GoogleFonts.lato(
+                                    fontSize: width* 0.040,
+                                    fontWeight: FontWeight.w400,
+                                    height: 1.2575 * ffem / fem,
+                                    color: const Color(0xff464646),
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
-                        ),
-                        TextButton(
-                          onPressed: () {
-                            setState(() {
-                              globalData.listTitle = "candy";
-                            });
-                          },
-                          child: Container(
-                            padding: const EdgeInsets.all(20),
-                            child: Text(
-                              "Candy",
-                              style: GoogleFonts.lato(
-                                fontSize: 20 * ffem,
-                                fontWeight: FontWeight.w400,
-                                height: 1.2575 * ffem / fem,
-                                color: const Color(0xff464646),
+                            TextButton(
+                              onPressed: () {
+                                setState(() {
+                                  globalData.listTitle = "candy";
+                                });
+                              },
+                              child: Container(
+                                padding: const EdgeInsets.all(20),
+                                child: Text(
+                                  "Candy",
+                                  style: GoogleFonts.lato(
+                                    fontSize: width* 0.040,
+                                    fontWeight: FontWeight.w400,
+                                    height: 1.2575 * ffem / fem,
+                                    color: const Color(0xff464646),
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
-                        ),
-                        TextButton(
-                          onPressed: () {
-                            setState(() {
-                              globalData.listTitle = "drinks";
-                            });
-                          },
-                          child: Container(
-                            padding: const EdgeInsets.all(20),
-                            child: Text(
-                              "Drinks",
-                              style: GoogleFonts.lato(
-                                fontSize: 20 * ffem,
-                                fontWeight: FontWeight.w400,
-                                height: 1.2575 * ffem / fem,
-                                color: const Color(0xff464646),
+                            TextButton(
+                              onPressed: () {
+                                setState(() {
+                                  globalData.listTitle = "drinks";
+                                });
+                              },
+                              child: Container(
+                                padding: const EdgeInsets.all(20),
+                                child: Text(
+                                  "Drinks",
+                                  style: GoogleFonts.lato(
+                                    fontSize: width* 0.040,
+                                    fontWeight: FontWeight.w400,
+                                    height: 1.2575 * ffem / fem,
+                                    color: const Color(0xff464646),
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
+                          ],
                         ),
                       ],
                     ),

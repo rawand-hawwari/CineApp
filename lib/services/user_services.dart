@@ -40,15 +40,11 @@ class UserServices {
       snapshot.data().toString().contains('phoneNo') ? snapshot.get('phoneNo') : '',
     );*/
   }
-  static Future<NUser> getUser(String uid) async {
+  static Future<NUser> getUser(String? uid) async {
     DocumentSnapshot snapshot = await _userCollection.doc(uid).get();
-
-    return NUser(uid: snapshot.data().toString().contains('id') ? snapshot.get('id') : '',
-      email: snapshot.data().toString().contains('email') ? snapshot.get('email') : '',
-      snapshot.data().toString().contains('name') ? snapshot.get('name') : '',
-      snapshot.data().toString().contains('isAdmin') ? snapshot.get('isAdmin') : '',
-      snapshot.data().toString().contains('phoneNo') ? snapshot.get('phoneNo') : '',
-    );
+    final data = snapshot.data() as Map<String, dynamic>;
+    print("did you enter get user$data ");
+    return NUser(data['name'], data['isAdmin'], data['phoneNo'], uid: data['uid'], email: data['email']);
   }
 
 
