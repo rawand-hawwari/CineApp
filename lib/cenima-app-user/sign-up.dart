@@ -11,6 +11,7 @@ import '../bloc/page_bloc.dart';
 import '../bloc/page_event.dart';
 import '../services/auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import '../services/shared_value.dart';
 import '../shared/Theme.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -84,10 +85,7 @@ class _SignUpPage extends State<SignUp> {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Starter()),
-              );
+              Navigator.pop(context);
             },
             icon: const Icon(Icons.close),
             color: const Color(0xff000000),
@@ -300,7 +298,7 @@ class _SignUpPage extends State<SignUp> {
                                 phoneController.text, false
                             );
 
-                            if (result?.exception == true) {
+                            if (result?.exception == true||result?.user==null) {
                               setState(() {
                                 isSigningUp = false;
                               });
@@ -369,12 +367,11 @@ class _SignUpPage extends State<SignUp> {
                   const Padding(padding: EdgeInsets.all(5.0)),
                   TextButton(
                     onPressed: () {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                            builder: (context) =>
-                            const AdminLogIn()),
-                      );
+                            builder: (context) => AdminLogIn()),);
+
                     },
                     style: TextButton.styleFrom(
                       padding: EdgeInsets.zero,
@@ -412,11 +409,11 @@ class _SignUpPage extends State<SignUp> {
                       const Padding(padding: EdgeInsets.all(10.0)),
                       TextButton(
                         onPressed: () {
-                          Navigator.push(
+                          Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const SignUp()),
-                          );
+                                builder: (context) => LogIn()),);
+
                         },
                         style: TextButton.styleFrom(
                           padding: EdgeInsets.zero,

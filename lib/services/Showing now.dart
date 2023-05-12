@@ -116,11 +116,6 @@ class ShowingListAll extends StatefulWidget {
 }
 
 class _ShowingListAllState extends State<ShowingListAll> {
-  var movies;
-  final String apiKey='c288e07bc074b958bfa1c394b65a75c6';
-  final accessToken='eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMjg4ZTA3YmMwNzRiOTU4YmZhMWMzOTRiNjVhNzVjNiIsInN1YiI6IjY0NTYyMTdkNjA2MjBhMDBlM2NmOGFkZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.G9atRC-6DNzfXJGTcw-ySmQepEnkCx5HF1SrMN2kM0I';
-  late List info;
-
 
 
   @override
@@ -169,10 +164,10 @@ class _ShowingListAllState extends State<ShowingListAll> {
   _printMovies(MovieService ser, double width) {
     var image_url = 'https://image.tmdb.org/t/p/w500/';
     return ListView.builder(
+      padding: EdgeInsets.zero,
       scrollDirection: Axis.vertical,
       itemCount: ser.showingNow.length,
       itemBuilder: (BuildContext ctx, int i) {
-        ser.getGenres(536554);
         ser.getRelease(ser.showingNow[i]['id']);
         return Padding(
           padding: const EdgeInsets.only(left: 10, top: 10, right: 10, bottom: 10),

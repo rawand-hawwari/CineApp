@@ -1,10 +1,14 @@
 import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/cenima-app-user/starter.dart';
 import 'package:myapp/reusable-widgets/reusable-widget.dart';
+import '../bloc/page_bloc.dart';
+import '../bloc/page_event.dart';
 import '../services/auth.dart';
+import '../services/shared_value.dart';
 import '../shared/Theme.dart';
 import 'package:email_validator/email_validator.dart';
 
@@ -55,10 +59,8 @@ class _ALoginPage extends State<AdminLogIn> {
           actions: [
             IconButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Starter()),
-                );
+                Navigator.pop(context);
+
               },
               icon: const Icon(Icons.close),
               color: const Color(0xff000000),
@@ -194,11 +196,11 @@ class _ALoginPage extends State<AdminLogIn> {
                                   });
 
                                   SignInSignUpResult? result =
-                                  await AuthServices.signIn(
+                                  await AuthServices.signInA(
                                       emailController.text,
                                       passwordController.text);
 
-                                  if (result?.exception == true) {
+                                  if (result?.exception == true||result?.user==null) {
                                     setState(() {
                                       isSigningIn = false;
                                     });
@@ -211,6 +213,9 @@ class _ALoginPage extends State<AdminLogIn> {
                                         message: result?.message,
                                       ).show(context);
                                     }
+                                  }
+                                  else{
+                                    Navigator.pop(context);
                                   }
                                 }
                                     : () async {setState((){
@@ -263,12 +268,11 @@ class _ALoginPage extends State<AdminLogIn> {
                       const Padding(padding: EdgeInsets.all(5.0)),
                       TextButton(
                         onPressed: () {
-                          Navigator.push(
+                          Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) =>
-                                const LogIn()),
-                          );
+                                builder: (context) => LogIn()),);
+
                         },
                         style: TextButton.styleFrom(
                           padding: EdgeInsets.zero,

@@ -8,7 +8,9 @@ import 'package:myapp/cenima-app-user/home-page.dart';
 import 'package:myapp/cenima-app-user/sign-up.dart';
 import 'package:myapp/cenima-app-user/starter.dart';
 import 'package:myapp/reusable-widgets/reusable-widget.dart';
+import 'package:myapp/services/shared_value.dart';
 import '../bloc/page_bloc.dart';
+import '../bloc/page_event.dart';
 import '../services/auth.dart';
 import '../shared/Theme.dart';
 import 'admin-log-in.dart';
@@ -60,10 +62,7 @@ class _LoginPage extends State<LogIn> {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => const Starter()),
-              );
+              Navigator.pop(context);
             },
             icon: const Icon(Icons.close),
             color: const Color(0xff000000),
@@ -199,37 +198,29 @@ class _LoginPage extends State<LogIn> {
                                   });
 
                                   SignInSignUpResult? result =
-                                  await AuthServices.signIn(
+                                  await AuthServices.signInU(
                                       emailController.text,
                                       passwordController.text);
 
-                                  if (result?.exception == true) {
+                                  if (result?.exception == true||result?.user==null) {
                                     setState(() {
                                       isSigningIn = false;
                                     });
-
-
-                                            if (context.mounted) {
-                                              Flushbar(
-                                                duration:
-                                                    const Duration(seconds: 4),
-                                                flushbarPosition:
-                                                    FlushbarPosition.TOP,
-                                                backgroundColor:
-                                                    const Color(0xFFFF5c83),
-                                                message: result?.message,
-                                              ).show(context);
+                                    if (context.mounted) {
+                                      Flushbar(
+                                        duration:
+                                        const Duration(seconds: 4),
+                                        flushbarPosition:
+                                        FlushbarPosition.TOP,
+                                        backgroundColor:
+                                        const Color(0xFFFF5c83),
+                                        message: result?.message,
+                                        ).show(context);
                                             }
                                           }
-                                          if (isSigningIn) {
-                                            // ignore: use_build_context_synchronously
-                                            Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      const HomePage()),
-                                            );
-                                          }
+                                  else{
+                                    Navigator.pop(context);
+                                  }
                                         }
                                       : () async {
                                           setState(() {
@@ -282,12 +273,10 @@ class _LoginPage extends State<LogIn> {
                   const Padding(padding: EdgeInsets.all(5.0)),
                   TextButton(
                     onPressed: () {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                            builder: (context) =>
-                            const AdminLogIn()),
-                      );
+                            builder: (context) => AdminLogIn()),);
                     },
                     style: TextButton.styleFrom(
                       padding: EdgeInsets.zero,
@@ -326,11 +315,10 @@ class _LoginPage extends State<LogIn> {
                       const Padding(padding: EdgeInsets.all(10.0)),
                       TextButton(
                         onPressed: () {
-                          Navigator.push(
+                          Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const SignUp()),
-                          );
+                                builder: (context) => SignUp()),);
                         },
                         style: TextButton.styleFrom(
                           padding: EdgeInsets.zero,

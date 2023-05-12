@@ -17,6 +17,7 @@ import '../cenima-app-user/cinema-list.dart';
 import '../cenima-app-user/contact.dart';
 import '../cenima-app-user/food-menu.dart';
 import '../cenima-app-user/help.dart';
+import '../pages/wrapper.dart';
 import '../services/auth.dart';
 
 //admin setting menu
@@ -190,6 +191,10 @@ class ASettingDrawer extends StatelessWidget {
             ),
             onTap: () async {
               await AuthServices.signOut();
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => Wrapper()),
+              );
             },
           ),
         ],
@@ -425,11 +430,10 @@ class SettingDrawer extends StatelessWidget {
             ),
             onTap: () async {
               await AuthServices.signOut();
-              // ignore: use_build_context_synchronously
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(builder: (context) => const Profile()),
-              // );
+              Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => Wrapper()),
+              );
             },
           ),
         ],

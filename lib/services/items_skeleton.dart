@@ -49,27 +49,25 @@ class ItemSkeletonV extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height,
-      child: ListView.separated(
-          scrollDirection: Axis.vertical,
-          separatorBuilder: ((context, index) => const SizedBox(width: 10,)),
-          itemCount: length,
-          itemBuilder: (context, index) {
-            return Padding(
-              padding: const EdgeInsets.only(left: 20, top: 0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  getSkeleton(height: 190, width: 125),
-                  getSkeleton(height: 10, width: 100),
-                  getSkeleton(height: 10, width: 70)
-                ],
-              ),
-            );
-          }),
-    );
+    double width=MediaQuery.of(context).size.width;
+    return ListView.separated(
+      padding: EdgeInsets.zero,
+        scrollDirection: Axis.vertical,
+        separatorBuilder: ((context, index) => const SizedBox(width: 10,)),
+        itemCount: length,
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.only(left: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                getSkeleton(height: 190, width: 120),
+                getSkeleton(height: 30, width: width-210),
+              ],
+            ),
+          );
+        });
   }
 
   Widget getSkeleton({required double height,required double width}){

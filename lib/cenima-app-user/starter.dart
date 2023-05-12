@@ -1,8 +1,12 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/bloc/page_event.dart';
 import 'package:myapp/cenima-app-user/sign-up.dart';
+import 'package:myapp/services/shared_value.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import '../bloc/page_bloc.dart';
 import 'log-in.dart';
 
 class Starter extends StatefulWidget {
@@ -130,9 +134,7 @@ class _StarterPage extends State<Starter> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const SignUp()),
-                        );
-                      },
+                              builder: (context) => SignUp()),);                      },
                       style: TextButton.styleFrom(
                         padding: EdgeInsets.zero,
                       ),
@@ -172,9 +174,7 @@ class _StarterPage extends State<Starter> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const LogIn()),
-                        );
-                      },
+                              builder: (context) => LogIn()),);                       },
                       style: TextButton.styleFrom(
                         padding: EdgeInsets.zero,
                       ),
