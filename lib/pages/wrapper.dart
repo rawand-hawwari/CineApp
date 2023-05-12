@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:myapp/cenima-app-user/admin-log-in.dart';
 import 'package:myapp/cenima-app-user/home-page.dart';
 import 'package:myapp/cenima-app-user/log-in.dart';
@@ -13,6 +14,7 @@ import '../bloc/page_state.dart';
 import '../cenima-app-user/admin-Home-page.dart';
 import '../cenima-app-user/sign-up.dart';
 import '../cenima-app-user/starter.dart';
+import '../main.dart';
 import '../services/shared_value.dart';
 
 class Wrapper extends StatelessWidget {
@@ -22,7 +24,9 @@ class Wrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("checking is amdin$isAdmin");
     NUser? user = Provider.of<NUser?>(context);
+
 
     if (user == null) {
       print("wrapper first if");
@@ -33,9 +37,11 @@ class Wrapper extends StatelessWidget {
       }
     }
     else {
+      print("this is else");
       if (!(prevPageEvent is GoToHomePage)||!(prevPageEvent is GoToAHomePage)) {
         if(isAdmin==false)
           {
+            print("you're supposed to be here");
             prevPageEvent = GoToHomePage();
           }
         else

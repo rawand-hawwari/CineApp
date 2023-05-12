@@ -96,7 +96,6 @@ class _AHomePage extends State<AdminHomePage> {
                                         ),
                                       );
                                     }).toList(),
-                                    isExpanded: true,
                                     onChanged: (String? value) {
                                       setState(() {
                                         if (value == null) {

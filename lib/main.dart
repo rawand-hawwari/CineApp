@@ -78,6 +78,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    NUser? user = Provider.of<NUser?>(context);
     return MaterialApp(
         title: 'Ciné',
         debugShowCheckedModeBanner: false,
@@ -86,9 +87,9 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         home: FutureBuilder(
         future: UserServices.getUser(user?.uid),
-          builder: (context, AsyncSnapshot<NUser?> snapshot) {
+          builder: (context, AsyncSnapshot<NUser?>? snapshot) {
           print('this is the data inside the snapshot$snapshot');
-            return Wrapper(isAdmin: snapshot.data?.isAdmin);}
+            return Wrapper(isAdmin: snapshot?.data?.isAdmin);}
         )
     );
 }

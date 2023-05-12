@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import '../services/Showing now.dart';
 
 
-class ShowingMovieList extends StatelessWidget {
-  const ShowingMovieList({super.key});
+class ShowingNowList extends StatelessWidget {
+  const ShowingNowList({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +14,7 @@ class ShowingMovieList extends StatelessWidget {
           SliverAppBar(
             leading: GestureDetector(
               child: const Icon(
-                Icons.arrow_back_ios_new_rounded,
-              ),
+                Icons.arrow_back_ios_new_rounded,),
               onTap: () {
                 Navigator.pop(context);
               },

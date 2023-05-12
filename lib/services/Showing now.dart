@@ -5,6 +5,7 @@ import 'package:myapp/services/Movie%20service.dart';
 import 'package:myapp/services/movie.dart';
 import 'package:myapp/services/string_helper.dart';
 import 'package:myapp/shared/Theme.dart';
+import '../cenima-app-user/movie-details-book.dart';
 import '../utils.dart';
 import 'items_skeleton.dart';
 
@@ -52,11 +53,13 @@ class ShowingList extends StatelessWidget {
   }
 
   _printMovies(MovieService ser) {
+
     var image_url = 'https://image.tmdb.org/t/p/w500/';
     return ListView.builder(
       scrollDirection: Axis.horizontal,
       itemCount: 5,
       itemBuilder: (BuildContext ctx, int i) {
+
         return Padding(
           padding: const EdgeInsets.only(left: 10, top: 10, right: 10),
           child: GestureDetector(
@@ -168,12 +171,18 @@ class _ShowingListAllState extends State<ShowingListAll> {
       scrollDirection: Axis.vertical,
       itemCount: ser.showingNow.length,
       itemBuilder: (BuildContext ctx, int i) {
+        double width = MediaQuery.of(ctx).size.width;
+        double height = MediaQuery.of(ctx).size.height;
         ser.getGenres(536554);
         ser.getRelease(ser.showingNow[i]['id']);
         return Padding(
           padding: const EdgeInsets.only(left: 10, top: 10, right: 10, bottom: 10),
           child: GestureDetector(
             onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) =>  MovieDetailsBook()),
+              );
             },
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -224,48 +233,63 @@ class _ShowingListAllState extends State<ShowingListAll> {
                         ),
                       ),
                       const Padding(padding: EdgeInsets.all(5)),
-                      Container(
-                        width: 50,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: const Color(0xff707070)),
-                          color: const Color(0xff7e132b),
-                        ),
-                        child: Center(
-                          child: Text(
-                            ser.showingNow[i]['original_language'] == 'en'
-                                ? "English"
-                                : ser.showingNow[i]['original_language'] == 'es'
-                                    ? "Spanich"
-                                    : ser.showingNow[i]['original_language'] ==
-                                            'fi'
-                                        ? "Finnis"
-                                        : ser.showingNow[i]
-                                                    ['original_language'] ==
-                                                'ar'
-                                            ? "Arabic"
-                                            : ser.showingNow[i]
-                                                ['original_language'],
-                            style: SafeGoogleFont(
-                              'Lucida Bright',
-                              12,
-                              fontWeight: FontWeight.w400,
-                              color: const Color(0xffffffff),
+                      Row(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.only(top: 0,left: 20, bottom: 2,right: 20),
+                            decoration: BoxDecoration(
+                              border: Border.all(color: const Color(0xff707070)),
+                              color: const Color(0xff7e132b),
+                            ),
+                            child: Text(
+                              ser.showingNow[i]['original_language'] == 'en'
+                                  ? "English"
+                                  : ser.showingNow[i]['original_language'] == 'es'
+                                      ? "Spanich"
+                                      : ser.showingNow[i]['original_language'] ==
+                                              'fi'
+                                          ? "Finnis"
+                                          : ser.showingNow[i]
+                                                      ['original_language'] ==
+                                                  'ar'
+                                              ? "Arabic"
+                                              : ser.showingNow[i]
+                                                  ['original_language'],
+                              style: SafeGoogleFont(
+                                'Lucida Bright',
+                                12,
+                                fontWeight: FontWeight.w400,
+                                color: const Color(0xffffffff),
+                              ),
                             ),
                           ),
-                        ),
-                      ),
-                      const Padding(padding: EdgeInsets.all(5)),
-                      SizedBox(
-                        width: width - 177,
-                        child: Text(
-                          ser.allRatings[i],
-                          style: SafeGoogleFont(
-                            'Lucida Bright',
-                            14,
-                            fontWeight: FontWeight.w400,
-                            color: const Color(0xFFF44336),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              padding: EdgeInsets.only(top: 0,left: 20, bottom: 2,right: 20),
+                              decoration: BoxDecoration (
+                                color: Color(0xff9a2044),
+                                borderRadius: BorderRadius.circular(height*0.022),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Color(0x29000000),
+                                    offset: Offset(0, height*0.005),
+                                    blurRadius: height*0.007,
+                                  ),
+                                ],
+                              ),
+                              child: Text(
+                                ser.allRatings[i]==''?'N/A':ser.allRatings[i],
+                                style: SafeGoogleFont (
+                                  'Lucida Bright',
+                                  height*0.020,
+                                  fontWeight: FontWeight.w600,
+                                  color: Color(0xffffffff),
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
+                        ],
                       ),
                     ],
                   ),

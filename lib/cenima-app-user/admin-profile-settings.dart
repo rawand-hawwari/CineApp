@@ -6,6 +6,7 @@ import 'package:myapp/cenima-app-user/thetre-info.dart';
 import 'package:tmdb_api/tmdb_api.dart';
 
 import '../cine_app_icons.dart';
+import '../main.dart';
 import '../pages/wrapper.dart';
 import '../services/auth.dart';
 import 'admin-Home-page.dart';
@@ -221,8 +222,8 @@ class _ASettings extends State<AProfileSettings> {
                           AuthServices.signOut();
                           Navigator.pushReplacement(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => Wrapper()),);
+                            MaterialPageRoute(builder: (context) => MyHomePage(title: 'Ciné',)),
+                          );
                         },
                         child: Row(
                           children: [
