@@ -416,7 +416,7 @@ class Scene extends StatelessWidget {
                           Container(
                             // bookticketxY5 (I278:19904;279:20968;1:172)
                             constraints: BoxConstraints (
-                              maxWidth: 46*fem,
+                              // maxWidth: 46*fem,
                             ),
                             child: Text(
                               'Movies &\nSchedules',
@@ -452,7 +452,7 @@ class Scene extends StatelessWidget {
                           Container(
                             // foodmenuKYy (I278:19904;279:20970;1:172)
                             constraints: BoxConstraints (
-                              maxWidth: 35*fem,
+                              // maxWidth: 35*fem,
                             ),
                             child: Text(
                               'Screens\n& Seats ',
@@ -488,7 +488,7 @@ class Scene extends StatelessWidget {
                           Container(
                             // foodmenuhbT (I278:19904;279:20969;1:172)
                             constraints: BoxConstraints (
-                              maxWidth: 25*fem,
+                              // maxWidth: 25*fem,
                             ),
                             child: Text(
                               'Food\nMenu',
@@ -524,7 +524,7 @@ class Scene extends StatelessWidget {
                           Container(
                             // profile6Qd (I278:19904;279:20971;1:172)
                             constraints: BoxConstraints (
-                              maxWidth: 39*fem,
+                              // maxWidth: 39*fem,
                             ),
                             child: Text(
                               'Profile &\nSettings',

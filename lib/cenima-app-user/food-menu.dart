@@ -29,8 +29,6 @@ class _FoodMenu extends State<FoodMenu> {
   final CollectionReference<Map<String, dynamic>> _db =
       FirebaseFirestore.instance.collection('food');
 
-  int checkTypeCount = 0;
-
   bool isDrinks = false;
   bool isCandy = false;
   @override
@@ -173,6 +171,7 @@ class _FoodMenu extends State<FoodMenu> {
             children: snapshot.data!.docs.map((DocumentSnapshot document) {
               Map<String, dynamic> data =
                   document.data()! as Map<String, dynamic>;
+              int checkTypeCount = 0;
               List<String> sizelist = [];
               String size = '';
               data['sizes'].contains('s') ? sizelist.add('Small') : null;
@@ -226,7 +225,6 @@ class _FoodMenu extends State<FoodMenu> {
                                         ),
                                 ),
                                 Container(
-                                  // alignment: Alignment.centerLeft,
                                   width:
                                       MediaQuery.of(context).size.width * 0.6,
                                   padding: const EdgeInsets.symmetric(

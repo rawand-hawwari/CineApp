@@ -251,7 +251,7 @@ class Scene extends StatelessWidget {
               // wellsendyouinstructionsonhowto (134:15115)
               margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 49*fem, 344*fem),
               constraints: BoxConstraints (
-                maxWidth: 262*fem,
+                // maxWidth: 262*fem,
               ),
               child: Text(
                 'we\'ll send you instructions on how to set a new password ',

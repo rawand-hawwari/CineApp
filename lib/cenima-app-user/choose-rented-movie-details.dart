@@ -51,7 +51,7 @@ class Scene extends StatelessWidget {
                   child: SizedBox(
                     child: Container(
                       constraints: BoxConstraints (
-                        maxWidth: 129*fem,
+                        // maxWidth: 129*fem,
                       ),
                       child: RichText(
                         text: TextSpan(
@@ -368,7 +368,7 @@ class Scene extends StatelessWidget {
                                   // firstcinemagreenlawnaveislipte (182:19454)
                                   margin: EdgeInsets.fromLTRB(1*fem, 0*fem, 0*fem, 0*fem),
                                   constraints: BoxConstraints (
-                                    maxWidth: 127*fem,
+                                    // maxWidth: 127*fem,
                                   ),
                                   child: Text(
                                     'Duration:- 2 Hours 22 Min\nAge Rating:- R\nLanguage:- English',

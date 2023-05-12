@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/cenima-app-user/search-movie.dart';
 import 'package:myapp/reusable-widgets/reusable-widget.dart';
 import 'add-movie.dart';
 
@@ -11,6 +12,17 @@ class AdminHomePage extends StatefulWidget {
 }
 
 class _AHomePage extends State<AdminHomePage> {
+  String dropdownVal = 'Sun, 21 May';
+  List<String> age = [
+    'Sun, 21 May',
+    'Mon, 22 May',
+    'Tue, 23 May',
+    'Wed, 24 May',
+    'Thu, 25 May',
+    'Fri, 26 May',
+    'Sat, 27 May'
+  ];
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -52,50 +64,95 @@ class _AHomePage extends State<AdminHomePage> {
                 SingleChildScrollView(
                   child: Column(
                     children: [
-                      Container(),
-                      Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: TextButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => AddMovie()),
-                                );
-                              },
-                              style: TextButton.styleFrom(
-                                padding: EdgeInsets.zero,
-                              ),
-                              child: SizedBox(
-                                width: 150 * fem,
-                                height: 35 * fem,
-                                child: Container(
-                                  width: double.infinity,
-                                  height: double.infinity,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xffff2153),
-                                    borderRadius:
-                                        BorderRadius.circular(17.6289710999 * fem),
+                      Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: Column(
+                                children: [
+                                  TextButton(
+                                    onPressed: () {},
+                                    child: const Icon(
+                                      Icons.date_range,
+                                      color: Color(0xffff2153),
+                                      size: 30,
+                                    ),
                                   ),
-                                  child: Center(
-                                    child: Text(
-                                      'Add Movie',
-                                      textAlign: TextAlign.center,
-                                      style: GoogleFonts.lato(
-                                        fontSize: 19.8325920105 * ffem,
-                                        fontWeight: FontWeight.w600,
-                                        height: 1.2575 * ffem / fem,
-                                        color: const Color(0xffffffff),
+                                  DropdownButton(
+                                    value: dropdownVal,
+                                    items: age.map((String value) {
+                                      return DropdownMenuItem<String>(
+                                        value: value,
+                                        child: Text(
+                                          value,
+                                          style: GoogleFonts.lato(
+                                              fontSize: 20 * ffem,
+                                              fontWeight: FontWeight.w400,
+                                              height: 1.2575 * ffem / fem,
+                                              color: const Color(0xFF323232)),
+                                        ),
+                                      );
+                                    }).toList(),
+                                    isExpanded: true,
+                                    onChanged: (String? value) {
+                                      setState(() {
+                                        if (value == null) {
+                                          dropdownVal = 'choose';
+                                        } else {
+                                          dropdownVal = value;
+                                        }
+                                      });
+                                    },
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: TextButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const SearchMovie()),
+                                  );
+                                },
+                                style: TextButton.styleFrom(
+                                  padding: EdgeInsets.zero,
+                                ),
+                                child: SizedBox(
+                                  width: 150 * fem,
+                                  height: 35 * fem,
+                                  child: Container(
+                                    width: double.infinity,
+                                    height: double.infinity,
+                                    decoration: BoxDecoration(
+                                      color: const Color(0xffff2153),
+                                      borderRadius: BorderRadius.circular(
+                                          17.6289710999 * fem),
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        'Add Movie',
+                                        textAlign: TextAlign.center,
+                                        style: GoogleFonts.lato(
+                                          fontSize: 19.8325920105 * ffem,
+                                          fontWeight: FontWeight.w600,
+                                          height: 1.2575 * ffem / fem,
+                                          color: const Color(0xffffffff),
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ],
                   ),
