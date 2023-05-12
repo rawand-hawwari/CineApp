@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import '../services/Showing now.dart';
 
-
-class ShowingMovieList extends StatelessWidget {
-  const ShowingMovieList({super.key});
+class ShowingNowList extends StatelessWidget {
+  const ShowingNowList({super.key});
 
   @override
   Widget build(BuildContext context) {

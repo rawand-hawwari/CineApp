@@ -4,7 +4,6 @@ import 'package:myapp/shared/Theme.dart';
 import '../utils.dart';
 import 'items_skeleton.dart';
 
-
 class ShowingList extends StatelessWidget {
   const ShowingList({Key? key}) : super(key: key);
 
@@ -126,39 +125,38 @@ class _ShowingListAllState extends State<ShowingListAll> {
     MovieService ser = MovieService();
     double width = deviceSize.width;
     return SizedBox(
-        height: deviceSize.height + 200,
-        child: FutureBuilder(
-            future: Future.wait(
-                [ser.getShowingNow(), ser.getAllRelease(), ser.getAllGenres()]),
-            builder: (BuildContext ctx, AsyncSnapshot<dynamic> snapshot) {
-              ConnectionState state = snapshot.connectionState;
+      height: deviceSize.height + 200,
+      child: FutureBuilder(
+        future: Future.wait(
+            [ser.getShowingNow(), ser.getAllRelease(), ser.getAllGenres()]),
+        builder: (BuildContext ctx, AsyncSnapshot<dynamic> snapshot) {
+          ConnectionState state = snapshot.connectionState;
 
-              // loading
-              if (state == ConnectionState.waiting) {
-                return const Center(
-                    child: ItemSkeletonV(length: 10)
-                );
+          // loading
+          if (state == ConnectionState.waiting) {
+            return const Center(child: ItemSkeletonV(length: 10));
 //                     child: ItemSkeletonV(length: ser.showingNow.length));
-
-              }
-              // error
-              else if (snapshot.hasError) {
-                print(snapshot.error);
-                return const Center(
-                  child: Text(
-                    'Loading Error',
-                    style: TextStyle(fontSize: 20, color: Colors.red),
-                  ),
-                );
-              }
-              // loaded
-              else {
-                return Padding(
-                  padding: const EdgeInsets.only(bottom: 100),
-                  child: _printMovies(ser, width),
-                );
-              }
-            }));
+          }
+          // error
+          else if (snapshot.hasError) {
+            print(snapshot.error);
+            return const Center(
+              child: Text(
+                'Loading Error',
+                style: TextStyle(fontSize: 20, color: Colors.red),
+              ),
+            );
+          }
+          // loaded
+          else {
+            return Padding(
+              padding: const EdgeInsets.only(bottom: 100),
+              child: _printMovies(ser, width),
+            );
+          }
+        },
+      ),
+    );
   }
 
   _printMovies(MovieService ser, double width) {
@@ -276,4 +274,5 @@ class _ShowingListAllState extends State<ShowingListAll> {
       },
     );
   }
+
 }
