@@ -135,7 +135,7 @@ class _ShowingListAllState extends State<ShowingListAll> {
 
               // loading
               if (state == ConnectionState.waiting) {
-                return Center(
+                return const Center(
                     child: ItemSkeletonV(length: 10)
                 );
 //                     child: ItemSkeletonV(length: ser.showingNow.length));

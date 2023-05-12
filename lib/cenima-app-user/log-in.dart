@@ -56,63 +56,69 @@ class _LoginPage extends State<LogIn> {
             'Log In',
             style: headerFont(height),
           ),
-        actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => const Starter()),
-              );
-            },
-            icon: const Icon(Icons.close),
-            color: const Color(0xff000000),
-          )
-        ],
-      ),
-      body: SingleChildScrollView(
-        child: Container(
-          alignment: Alignment.topCenter,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              logowidget(),
-            // Log in form
-            Container(
-              padding: EdgeInsets.symmetric(
-                  horizontal: width * 0.1,
-                  vertical: 10),
-              child: Theme(
-                data:Theme.of(context).copyWith(
-                  colorScheme: ThemeData().colorScheme.copyWith(primary: mainColor)),
-                child: Form(
-                  key: _loginForm,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      // email filed
-                      TextFormField(
-                        controller: emailController,
-                        onChanged: (val) {
-                            setState(() {
-                            isEmailValid = EmailValidator.validate(val);
-                            error='';
-                          });
-                            Future.delayed(const Duration(milliseconds: 1000), () {
+          actions: [
+            IconButton(
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Starter()),
+                );
+              },
+              icon: const Icon(Icons.close),
+              color: const Color(0xff000000),
+            )
+          ],
+        ),
+        body: SingleChildScrollView(
+          child: Container(
+            alignment: Alignment.topCenter,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                logowidget(),
+                // Log in form
+                Container(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: width * 0.1, vertical: 10),
+                  child: Theme(
+                    data: Theme.of(context).copyWith(
+                        colorScheme: ThemeData()
+                            .colorScheme
+                            .copyWith(primary: mainColor)),
+                    child: Form(
+                      key: _loginForm,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          // email filed
+                          TextFormField(
+                            controller: emailController,
+                            onChanged: (val) {
                               setState(() {
                                 isEmailValid = EmailValidator.validate(val);
                                 error = '';
                               });
-                              Future.delayed(const Duration(milliseconds: 1000),
-                                  () {
-                                setState(() {
-                                  val.isEmpty
-                                      ? isEFValid = false
-                                      : isEFValid = true;
-                                  isEmailValid
-                                      ? errorE = ''
-                                      : errorE = 'Please enter a proper email';
-                                });
-                              });
+                              Future.delayed(
+                                const Duration(milliseconds: 1000),
+                                () {
+                                  setState(() {
+                                    isEmailValid = EmailValidator.validate(val);
+                                    error = '';
+                                  });
+                                  Future.delayed(
+                                      const Duration(milliseconds: 1000), () {
+                                    setState(() {
+                                      val.isEmpty
+                                          ? isEFValid = false
+                                          : isEFValid = true;
+                                      isEmailValid
+                                          ? errorE = ''
+                                          : errorE =
+                                              'Please enter a proper email';
+                                    });
+                                  });
+                                },
+                              );
                             },
                             decoration: InputDecoration(
                               border: const OutlineInputBorder(
