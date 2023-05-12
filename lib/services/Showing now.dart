@@ -7,7 +7,6 @@ import 'items_skeleton.dart';
 class ShowingList extends StatelessWidget {
   const ShowingList({Key? key}) : super(key: key);
 
-  @override
   void initState() {
     MovieService().getShowingNow();
   }
@@ -116,6 +115,7 @@ class _ShowingListAllState extends State<ShowingListAll> {
 
   @override
   void initState() {
+    super.initState();
     MovieService().getShowingNow();
   }
 
