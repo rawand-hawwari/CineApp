@@ -21,6 +21,8 @@ class MovieService {
   List Genres2=[];
   List allGenres=[];
   List IDs=[];
+  List upcommingsIDs=[];
+  List searchResult=[];
 
   final String apiKey = 'c288e07bc074b958bfa1c394b65a75c6';
   final String api = '9djdukx46bs5sbesbqfa3ytf';
@@ -42,6 +44,24 @@ class MovieService {
     Map showingNowResult = await tmdb.v3.movies.getNowPlaying();
     showingNow = showingNowResult['results'];
     return showingNow;
+  }
+  Future Search(String query) async {
+    await getIDs();
+    int count=-1;
+    TMDB tmdb = TMDB(ApiKeys(apiKey, accessToken),
+        logConfig: ConfigLogger(showLogs: true, showErrorLogs: true));
+    Map Result = await tmdb.v3.search.queryMovies(query,primaryReleaseYear: 2023);
+    for(int i=0;i<Result['results'].length; i++)
+    {
+      for(int z=0; z<IDs.length; z++){
+      if(Result['results'][i]['id']==IDs[z]){
+        count++;
+        searchResult.length=count+1;
+      searchResult[count]=Result['results'][i];
+      }
+      }
+    }
+    return searchResult;
   }
 
   getDetails(int Id) async {
@@ -73,7 +93,7 @@ class MovieService {
     return Genres2;
   }
 
-  getUpcomming() async {
+  Future getUpcomming() async {
     TMDB tmdb = TMDB(ApiKeys(apiKey, accessToken),
         logConfig: ConfigLogger(showLogs: true, showErrorLogs: true));
     Map upcommingResult = await tmdb.v3.movies.getUpcoming();

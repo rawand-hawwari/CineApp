@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../services/Showing now.dart';
 
+
 class ShowingMovieList extends StatelessWidget {
   const ShowingMovieList({super.key});
 

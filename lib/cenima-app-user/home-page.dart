@@ -14,6 +14,7 @@ import 'package:myapp/reusable-widgets/reusable-widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../services/Showing now.dart';
 
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -140,9 +141,9 @@ class _HomePage extends State<HomePage> {
                   ],
                 ),
               ),
-              _printHeading(heading: 'Showing now', context: context),
+              _printHeadingS(heading: 'Showing now', context: context),
               const ShowingList(),
-              _printHeading(heading: 'upcomming', context: context),
+              _printHeadingU(heading: 'upcomming', context: context),
               const UpcommingList(),
             ],
           ),
@@ -244,8 +245,9 @@ class _HomePage extends State<HomePage> {
           });
 }
 
-_printHeading({required String heading, required BuildContext context}) {
-  MovieService ser = MovieService();
+_printHeadingS({required String heading, required BuildContext context}) {
+  MovieService ser= MovieService();
+
   ser.getShowingNow();
   return Padding(
     padding: const EdgeInsets.only(left: 20.0, top: 5, right: 10),
@@ -261,13 +263,47 @@ _printHeading({required String heading, required BuildContext context}) {
         const Spacer(),
         TextButton(
           onPressed: () {
-            print(ser.showingNow2);
+            print('wgh');
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const ShowingMovieList()),
+              MaterialPageRoute(
+                  builder: (context) => ShowingNowList()),
+
             );
           },
           child: Text("View All", style: TextStyle(color: mainColor)),
+        ),
+      ],
+    ),
+  );
+}
+
+_printHeadingU({required String heading, required BuildContext context}) {
+  MovieService ser= MovieService();
+  ser.getShowingNow();
+  return Padding(
+    padding: const EdgeInsets.only(left: 20.0, top: 5, right: 10),
+    child: Row(
+      children: [
+        const SizedBox(width: 5),
+        Text(
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+          heading.toUpperCase(),
+        ),
+        const Spacer(),
+        TextButton(
+          onPressed: () {
+            print(ser.showingNow2);
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => ShowingNowList()),
+            );
+          },
+          child:
+          Text("View All", style: TextStyle(color: mainColor)),
         ),
       ],
     ),
