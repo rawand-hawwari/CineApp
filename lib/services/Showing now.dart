@@ -168,6 +168,7 @@ class _ShowingListAllState extends State<ShowingListAll> {
       scrollDirection: Axis.vertical,
       itemCount: ser.showingNow.length,
       itemBuilder: (BuildContext ctx, int i) {
+        ser.getGenres(536554);
         ser.getRelease(ser.showingNow[i]['id']);
         return Padding(
           padding: const EdgeInsets.only(left: 10, top: 10, right: 10, bottom: 10),
@@ -186,7 +187,7 @@ class _ShowingListAllState extends State<ShowingListAll> {
                     fit: BoxFit.cover,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 5,
                 ),
                 SizedBox(
@@ -194,68 +195,78 @@ class _ShowingListAllState extends State<ShowingListAll> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                           SizedBox(
-                            width: 5,
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      SizedBox(
+                        width: width - 177,
+                        child: Text(
+                          ser.showingNow[i]['title'],
+                          style: SafeGoogleFont(
+                            'Lucida Bright',
+                            22,
+                            fontWeight: FontWeight.w600,
+                            color: const Color(0xff7e132b),
                           ),
-                          SizedBox(
-                            width: width-177,
-                            child: Text(
-                              ser.showingNow[i]['title'],
-                              style: SafeGoogleFont (
-                                'Lucida Bright',
-                                22,
-                                fontWeight: FontWeight.w600,
-                                color: Color(0xff7e132b),
-                              ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      SizedBox(
+                        width: width - 177,
+                        child: Text(
+                          ser.showingNow[i]['id'].toString(),
+                          style: TextStyle(
+                              color: mainColor,
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      const Padding(padding: EdgeInsets.all(5)),
+                      Container(
+                        width: 50,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: const Color(0xff707070)),
+                          color: const Color(0xff7e132b),
+                        ),
+                        child: Center(
+                          child: Text(
+                            ser.showingNow[i]['original_language'] == 'en'
+                                ? "English"
+                                : ser.showingNow[i]['original_language'] == 'es'
+                                    ? "Spanich"
+                                    : ser.showingNow[i]['original_language'] ==
+                                            'fi'
+                                        ? "Finnis"
+                                        : ser.showingNow[i]
+                                                    ['original_language'] ==
+                                                'ar'
+                                            ? "Arabic"
+                                            : ser.showingNow[i]
+                                                ['original_language'],
+                            style: SafeGoogleFont(
+                              'Lucida Bright',
+                              12,
+                              fontWeight: FontWeight.w400,
+                              color: const Color(0xffffffff),
                             ),
                           ),
-                          SizedBox(
-                            height: 5,
+                        ),
+                      ),
+                      const Padding(padding: EdgeInsets.all(5)),
+                      SizedBox(
+                        width: width - 177,
+                        child: Text(
+                          ser.allRatings[i],
+                          style: SafeGoogleFont(
+                            'Lucida Bright',
+                            14,
+                            fontWeight: FontWeight.w400,
+                            color: const Color(0xFFF44336),
                           ),
-                          SizedBox(
-                            width: width-177,
-                            child: Text(
-                              ser.showingNow[i]['id'].toString(),
-                              style: TextStyle(color: mainColor,
-                                  fontSize: 12, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Row(
-                            children: [
-                              Container(
-                                width: 50,
-                                decoration: BoxDecoration (
-                                  border: Border.all(color: Color(0xff707070)),
-                                  color: Color(0xff7e132b),
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    ser.showingNow[i]['original_language']=='en'?"English": 'no',
-                                    style: SafeGoogleFont (
-                                      'Lucida Bright',
-                                      12,
-                                      fontWeight: FontWeight.w400,
-                                      color: Color(0xffffffff),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Center(
-                                child: Text(ser.allRatings[i],
-                                  style: SafeGoogleFont (
-                                    'Lucida Bright',
-                                    12,
-                                    fontWeight: FontWeight.w400,
-                                    color: Colors.red,
-                                  ),
-                                ),
-                              ),
-
-                            ],
-                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),

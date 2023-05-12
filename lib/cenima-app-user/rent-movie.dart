@@ -51,11 +51,7 @@ class _RentMovie extends State<RentMovie> {
                 IconButton(
                     icon: const Icon(Icons.search),
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const SearchPage()),
-                      );
+                      showSearch(context: context, delegate: SearchPage());
                     })
               ],
               title: const Text(
@@ -144,7 +140,7 @@ class _BottomNavigationBarHandlerState
         case 0:
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) =>  HomePage()),
+            MaterialPageRoute(builder: (context) => HomePage()),
           );
           break;
         case 1:

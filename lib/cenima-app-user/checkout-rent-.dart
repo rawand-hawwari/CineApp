@@ -192,7 +192,7 @@ class Scene extends StatelessWidget {
                     Container(
                       // firstcinemagreenlawnaveislipte (113:16436)
                       constraints: BoxConstraints (
-                        maxWidth: 127*fem,
+                        // maxWidth: 127*fem,
                       ),
                       child: Text(
                         'Duration:- 2 Hours 22 Min\nAge Rating:- R\nLanguage:- English',
@@ -250,7 +250,7 @@ class Scene extends StatelessWidget {
                               // standardticketa1iGm (113:16442)
                               margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 135*fem, 0*fem),
                               constraints: BoxConstraints (
-                                maxWidth: 139*fem,
+                                // maxWidth: 139*fem,
                               ),
                               child: Text(
                                 'Avatar The Way of Water \n(6 Months)',

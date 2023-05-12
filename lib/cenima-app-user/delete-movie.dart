@@ -38,7 +38,7 @@ class Scene extends StatelessWidget {
                     // areyousureyouwanttocancelyourb (134:15260)
                     margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 38.61*fem, 0*fem),
                     constraints: BoxConstraints (
-                      maxWidth: 222*fem,
+                      // maxWidth: 222*fem,
                     ),
                     child: Text(
                       'Are you sure you want to\ndelete this Item?',

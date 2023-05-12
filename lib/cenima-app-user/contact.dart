@@ -39,7 +39,7 @@ class Contact extends StatelessWidget {
                       // haveaquestionfaceaproblempleas (1:1098)
                       margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 38*fem, 34*fem),
                       constraints: BoxConstraints (
-                        maxWidth: 293*fem,
+                        // maxWidth: 293*fem,
                       ),
                       child: Text(
                         'Have a question? face a problem?\nplease write to us.',
@@ -473,7 +473,7 @@ class Contact extends StatelessWidget {
                     Container(
                       // greenlawnaveislipterracenewyor (1:1115)
                       constraints: BoxConstraints (
-                        maxWidth: 185*fem,
+                        // maxWidth: 185*fem,
                       ),
                       child: RichText(
                         text: TextSpan(

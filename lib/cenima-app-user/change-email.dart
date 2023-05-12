@@ -31,7 +31,7 @@ class Scene extends StatelessWidget {
               // areyousureyouwanttochangeyoure (1:822)
               margin: EdgeInsets.fromLTRB(3.78*fem, 0*fem, 0*fem, 5*fem),
               constraints: BoxConstraints (
-                maxWidth: 222*fem,
+                // maxWidth: 222*fem,
               ),
               child: Text(
                 'Are you sure you want to\n change your email?',

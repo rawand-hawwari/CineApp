@@ -71,6 +71,7 @@ dependencies:
   textfield_tags: ^2.0.2
   image_picker: ^0.8.7+4
   language_picker: ^0.4.3
+  flutter_localized_locales: ^2.0.4
 
 dev_dependencies:
 

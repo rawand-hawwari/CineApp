@@ -29,7 +29,6 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: const FirebaseOptions(
-
       apiKey: "AIzaSyAh3Au4IJoktQY6PC30NdEZ1_3CLycTaq4",
       appId: "1:217615482467:web:85fa0a8170069ea60a0256",
       messagingSenderId: "217615482467",
@@ -79,7 +78,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    NUser? user = Provider.of<NUser?>(context);
     return MaterialApp(
         title: 'Ciné',
         debugShowCheckedModeBanner: false,
@@ -95,3 +93,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
 }
 }
+

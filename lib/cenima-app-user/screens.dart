@@ -1,4 +1,4 @@
-import 'dart:ffi';
+// import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
@@ -198,23 +198,25 @@ class _DropdownButtonState extends State<DropdownButtonC> {
       }).toList(),
     );
   }
+
   Widget _contentListView() {
-    return ListView.builder(itemCount: 20, itemBuilder: (context, index) =>
-        Card(
-            child: ListTile(title:
-            Text(index.toString()),
-            onTap: () => print('hithere'),
+    return ListView.builder(
+        itemCount: 20,
+        itemBuilder: (context, index) => Card(
+                child: ListTile(
+              title: Text(index.toString()),
+              onTap: () => print('hithere'),
             )));
   }
+
   Widget _contentGridView() {
-    return GridView.builder(itemCount: 20, itemBuilder: (context, index) =>
-        Card(
-            child: GridTile(
-              child:
-                Text(index.toString()),
+    return GridView.builder(
+        itemCount: 20,
+        itemBuilder: (context, index) => Card(
+                child: GridTile(
+              child: Text(index.toString()),
             )),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3));
+        gridDelegate:
+            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3));
   }
-
 }
-

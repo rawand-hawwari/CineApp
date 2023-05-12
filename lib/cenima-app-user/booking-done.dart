@@ -77,7 +77,7 @@ class Scene extends StatelessWidget {
               // thisactioncannotbeundonec4m (101:13153)
               margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 67.5*fem, 66*fem),
               constraints: BoxConstraints (
-                maxWidth: 254*fem,
+                // maxWidth: 254*fem,
               ),
               child: Text(
                 'Check your ticket list in your profile page for your ticket',

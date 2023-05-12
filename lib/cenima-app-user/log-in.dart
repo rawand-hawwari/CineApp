@@ -8,9 +8,7 @@ import 'package:myapp/cenima-app-user/home-page.dart';
 import 'package:myapp/cenima-app-user/sign-up.dart';
 import 'package:myapp/cenima-app-user/starter.dart';
 import 'package:myapp/reusable-widgets/reusable-widget.dart';
-import 'package:myapp/services/shared_value.dart';
 import '../bloc/page_bloc.dart';
-import '../bloc/page_event.dart';
 import '../services/auth.dart';
 import '../shared/Theme.dart';
 import 'admin-log-in.dart';
@@ -32,11 +30,12 @@ class _LoginPage extends State<LogIn> {
   bool isEmailValid = false;
   bool isPasswordValid = false;
   bool isSigningIn = false;
-  bool isEFValid= true;
-  bool isPFValid= true;
-  String error='';
-  String errorP='';
-  String errorE='';
+  bool isEFValid = true;
+  bool isPFValid = true;
+  bool isObscured = true;
+  String error = '';
+  String errorP = '';
+  String errorE = '';
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +61,10 @@ class _LoginPage extends State<LogIn> {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.pop(context);
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const Starter()),
+              );
             },
             icon: const Icon(Icons.close),
             color: const Color(0xff000000),
@@ -133,6 +135,8 @@ class _LoginPage extends State<LogIn> {
 
                         },
                         controller: passwordController,
+                        obscureText: isObscured,
+                        keyboardType: TextInputType.visiblePassword,
                         decoration: InputDecoration(
                           border: const OutlineInputBorder(
                             borderRadius:

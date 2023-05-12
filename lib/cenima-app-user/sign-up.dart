@@ -37,6 +37,8 @@ class _SignUpPage extends State<SignUp> {
   bool isPasswordValid = false;
   bool isPassword2Valid = false;
   bool isPhoneValid = true;
+  bool isObscured = true;
+  bool isObscuredConfirm = true;
 
   bool isEFValid= true;
   bool isFNFValid= true;
@@ -206,7 +208,7 @@ class _SignUpPage extends State<SignUp> {
                     ),
                     const Padding(padding: EdgeInsets.all(10.0)),
                     TextFormField(
-                      obscureText: true,
+                      obscureText: isObscured,
                       controller: passwordController,
                       onChanged: (val) {
                         setState(() {
@@ -219,7 +221,8 @@ class _SignUpPage extends State<SignUp> {
                             isPasswordValid? errorPassword= '' :errorPassword='Password must be 6 characters long';
                           });
                         });
-                        },
+                      },
+                      keyboardType: TextInputType.visiblePassword,
                       decoration: InputDecoration(
                         border: const OutlineInputBorder(
                           borderRadius:
@@ -228,7 +231,19 @@ class _SignUpPage extends State<SignUp> {
                         prefixIcon: const Icon(Icons.lock_outline),
                         hintText: 'Enter your password',
                         labelText: 'Password',
-                        errorText: isPFValid? (errorPassword==''?null:errorPassword ) :'Value Can\'t Be Empty',
+                        errorText: isPFValid
+                            ? (errorPassword == '' ? null : errorPassword)
+                            : 'Value Can\'t Be Empty',
+                        suffixIcon: IconButton(
+                          icon: isObscured
+                              ? const Icon(Icons.visibility)
+                              : const Icon(Icons.visibility_off),
+                          onPressed: () {
+                            setState(() {
+                              isObscured = !isObscured;
+                            });
+                          },
+                        ),
                       ),
                     ),
                     const Padding(padding: EdgeInsets.all(10.0)),
@@ -255,9 +270,19 @@ class _SignUpPage extends State<SignUp> {
                         prefixIcon: const Icon(Icons.lock_outline),
                         hintText: 'Repeat the password',
                         labelText: 'Confirm Password',
-                        errorText: isPF2Valid? (errorRetype==''?null:errorRetype ) :'Value Can\'t Be Empty',
-
-
+                        suffixIcon: IconButton(
+                          icon: isObscuredConfirm
+                              ? const Icon(Icons.visibility)
+                              : const Icon(Icons.visibility_off),
+                          onPressed: () {
+                            setState(() {
+                              isObscuredConfirm = !isObscuredConfirm;
+                            });
+                          },
+                        ),
+                        errorText: isPF2Valid
+                            ? (errorRetype == '' ? null : errorRetype)
+                            : 'Value Can\'t Be Empty',
                       ),
                     ),
                     SizedBox(height: height*.013),
@@ -412,8 +437,8 @@ class _SignUpPage extends State<SignUp> {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => LogIn()),);
-
+                                builder: (context) => const SignUp()),
+                          );
                         },
                         style: TextButton.styleFrom(
                           padding: EdgeInsets.zero,
@@ -432,7 +457,7 @@ class _SignUpPage extends State<SignUp> {
                             ),
                             child: Center(
                               child: Text(
-                                'Sign In',
+                                'Log in',
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.lato(
                                   fontSize: 15 * ffem,

@@ -1,14 +1,10 @@
 import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/cenima-app-user/starter.dart';
 import 'package:myapp/reusable-widgets/reusable-widget.dart';
-import '../bloc/page_bloc.dart';
-import '../bloc/page_event.dart';
 import '../services/auth.dart';
-import '../services/shared_value.dart';
 import '../shared/Theme.dart';
 import 'package:email_validator/email_validator.dart';
 
@@ -29,11 +25,12 @@ class _ALoginPage extends State<AdminLogIn> {
   bool isEmailValid = false;
   bool isPasswordValid = false;
   bool isSigningIn = false;
-  bool isEFValid= true;
-  bool isPFValid= true;
-  String error='';
-  String errorP='';
-  String errorE='';
+  bool isEFValid = true;
+  bool isPFValid = true;
+  bool isObscured = true;
+  String error = '';
+  String errorP = '';
+  String errorE = '';
 
   @override
   Widget build(BuildContext context) {
@@ -59,8 +56,10 @@ class _ALoginPage extends State<AdminLogIn> {
           actions: [
             IconButton(
               onPressed: () {
-                Navigator.pop(context);
-
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Starter()),
+                );
               },
               icon: const Icon(Icons.close),
               color: const Color(0xff000000),
@@ -131,6 +130,8 @@ class _ALoginPage extends State<AdminLogIn> {
 
                             },
                             controller: passwordController,
+                            keyboardType: TextInputType.visiblePassword,
+                            obscureText: isObscured,
                             decoration: InputDecoration(
                               border: const OutlineInputBorder(
                                 borderRadius:
@@ -139,7 +140,19 @@ class _ALoginPage extends State<AdminLogIn> {
                               prefixIcon: Icon(Icons.lock_outline),
                               hintText: 'Enter your password',
                               labelText: 'Password',
-                              errorText: isPFValid? (errorP==''?null:errorP ) :'Value Can\'t Be Empty',
+                              suffixIcon: IconButton(
+                                icon: isObscured
+                                    ? const Icon(Icons.visibility)
+                                    : const Icon(Icons.visibility_off),
+                                onPressed: () {
+                                  setState(() {
+                                    isObscured = !isObscured;
+                                  });
+                                },
+                              ),
+                              errorText: isPFValid
+                                  ? (errorP == '' ? null : errorP)
+                                  : 'Value Can\'t Be Empty',
                             ),
                           ),
 
@@ -271,8 +284,9 @@ class _ALoginPage extends State<AdminLogIn> {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => LogIn()),);
-
+                                builder: (context) =>
+                                const LogIn()),
+                          );
                         },
                         style: TextButton.styleFrom(
                           padding: EdgeInsets.zero,

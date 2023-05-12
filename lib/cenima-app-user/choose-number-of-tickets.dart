@@ -319,7 +319,7 @@ class Scene extends StatelessWidget {
                       // firstcinemagreenlawnaveislipte (78:13960)
                       margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 25*fem),
                       constraints: BoxConstraints (
-                        maxWidth: 282*fem,
+                        // maxWidth: 282*fem,
                       ),
                       child: Text(
                         'First Cinema- Greenlawn Ave, Islip Terrace, New York(NY), 11752\nDec 00, 2022 - 00:00 -M - Screen 1 ',
@@ -336,7 +336,7 @@ class Scene extends StatelessWidget {
                       // choosethenumberofticketsK4q (78:13958)
                       width: double.infinity,
                       constraints: BoxConstraints (
-                        maxWidth: 218*fem,
+                        // maxWidth: 218*fem,
                       ),
                       child: Text(
                         'Choose The Number Of Tickets',
