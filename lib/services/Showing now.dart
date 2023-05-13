@@ -1,9 +1,5 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:myapp/services/Movie%20service.dart';
-import 'package:myapp/services/movie.dart';
-import 'package:myapp/services/string_helper.dart';
 import 'package:myapp/shared/Theme.dart';
 import '../cenima-app-user/movie-details-book.dart';
 import '../utils.dart';
@@ -12,7 +8,6 @@ import 'items_skeleton.dart';
 class ShowingList extends StatelessWidget {
   const ShowingList({Key? key}) : super(key: key);
 
-  @override
   void initState() {
     MovieService().getShowingNow();
   }
@@ -20,20 +15,17 @@ class ShowingList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size deviceSize = MediaQuery.of(context).size;
-    MovieService ser= MovieService();
+    MovieService ser = MovieService();
     return Container(
         height: deviceSize.height * 0.34,
         child: FutureBuilder(
-            future:
-            ser.getShowingNow(),
+            future: ser.getShowingNow(),
             builder: (BuildContext ctx, AsyncSnapshot<dynamic> snapshot) {
               ConnectionState state = snapshot.connectionState;
 
               // loading
               if (state == ConnectionState.waiting) {
-                return const Center(
-                    child: ItemSkeleton()
-                );
+                return const Center(child: ItemSkeleton());
               }
               // error
               else if (snapshot.hasError) {
@@ -58,7 +50,6 @@ class ShowingList extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       itemCount: 5,
       itemBuilder: (BuildContext ctx, int i) {
-
         return Padding(
           padding: const EdgeInsets.only(left: 10, top: 10, right: 10),
           child: GestureDetector(
@@ -68,13 +59,14 @@ class ShowingList extends StatelessWidget {
                 MaterialPageRoute(builder: (context) =>  MovieDetailsBook(id: ser.showingNow[i]['id'])),
               );
             },
+
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: Image.network(
-                    image_url+ser.showingNow[i]['poster_path'],
+                    image_url + ser.showingNow[i]['poster_path'],
                     height: 190,
                     width: 120,
                     fit: BoxFit.cover,
@@ -113,7 +105,6 @@ class ShowingList extends StatelessWidget {
   }
 }
 
-
 class ShowingListAll extends StatefulWidget {
   const ShowingListAll({Key? key}) : super(key: key);
 
@@ -122,49 +113,49 @@ class ShowingListAll extends StatefulWidget {
 }
 
 class _ShowingListAllState extends State<ShowingListAll> {
-
-
   @override
   void initState() {
+    super.initState();
     MovieService().getShowingNow();
   }
 
   @override
   Widget build(BuildContext context) {
     Size deviceSize = MediaQuery.of(context).size;
-    MovieService ser= MovieService();
-    double width= deviceSize.width;
-    return Container(
-        height: deviceSize.height+200,
-        child: FutureBuilder(
-            future: Future.wait([ser.getShowingNow(),ser.getAllRelease(),ser.getAllGenres()]),
-            builder: (BuildContext ctx, AsyncSnapshot<dynamic> snapshot) {
-              ConnectionState state = snapshot.connectionState;
+    MovieService ser = MovieService();
+    double width = deviceSize.width;
+    return SizedBox(
+      height: deviceSize.height *1,
+      child: FutureBuilder(
+        future: Future.wait(
+            [ser.getShowingNow(), ser.getAllRelease(), ser.getAllGenres()]),
+        builder: (BuildContext ctx, AsyncSnapshot<dynamic> snapshot) {
+          ConnectionState state = snapshot.connectionState;
 
-              // loading
-              if (state == ConnectionState.waiting) {
-                return Center(
-                    child: ItemSkeletonV(length: 10)
-                );
-              }
-              // error
-              else if (snapshot.hasError) {
-                print(snapshot.error);
-                return const Center(
-                  child: Text(
-                    'Loading Error',
-                    style: TextStyle(fontSize: 20, color: Colors.red),
-                  ),
-                );
-              }
-              // loaded
-              else {
-                return Padding(
-                  padding: const EdgeInsets.only(bottom: 100),
-                  child: _printMovies(ser, width),
-                  );
-              }
-            },),);
+          // loading
+          if (state == ConnectionState.waiting) {
+            return const Center(child: ItemSkeletonV(length: 10));
+          }
+          // error
+          else if (snapshot.hasError) {
+            print(snapshot.error);
+            return const Center(
+              child: Text(
+                'Loading Error',
+                style: TextStyle(fontSize: 20, color: Colors.red),
+              ),
+            );
+          }
+          // loaded
+          else {
+            return Padding(
+              padding: const EdgeInsets.only(bottom: 0),
+              child: _printMovies(ser, width),
+            );
+          }
+        },
+      ),
+    );
   }
   String Genres(List genres){
     String newGenres='';
@@ -184,7 +175,8 @@ class _ShowingListAllState extends State<ShowingListAll> {
         double width = MediaQuery.of(ctx).size.width;
         double height = MediaQuery.of(ctx).size.height;
         return Padding(
-          padding: const EdgeInsets.only(left: 10, top: 10, right: 10, bottom: 10),
+          padding:
+              const EdgeInsets.only(left: 10, top: 10, right: 10, bottom: 10),
           child: GestureDetector(
             onTap: () {
               Navigator.push(
@@ -198,7 +190,7 @@ class _ShowingListAllState extends State<ShowingListAll> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: Image.network(
-                    image_url+ser.showingNow[i]['poster_path'],
+                    image_url + ser.showingNow[i]['poster_path'],
                     height: 190,
                     width: 120,
                     fit: BoxFit.cover,
@@ -208,7 +200,7 @@ class _ShowingListAllState extends State<ShowingListAll> {
                   width: 5,
                 ),
                 SizedBox(
-                  width: width-177,
+                  width: width - 177,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -244,9 +236,11 @@ class _ShowingListAllState extends State<ShowingListAll> {
                       Row(
                         children: [
                           Container(
-                            padding: EdgeInsets.only(top: 0,left: 20, bottom: 2,right: 20),
+                            padding: const EdgeInsets.only(
+                                top: 0, left: 20, bottom: 2, right: 20),
                             decoration: BoxDecoration(
-                              border: Border.all(color: const Color(0xff707070)),
+                              border:
+                                  Border.all(color: const Color(0xff707070)),
                               color: const Color(0xff7e132b),
                             ),
                             child: Text(
@@ -270,25 +264,29 @@ class _ShowingListAllState extends State<ShowingListAll> {
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
-                              padding: EdgeInsets.only(top: 0,left: 20, bottom: 2,right: 20),
-                              decoration: BoxDecoration (
-                                color: Color(0xff9a2044),
-                                borderRadius: BorderRadius.circular(height*0.022),
+                              padding: const EdgeInsets.only(
+                                  top: 0, left: 20, bottom: 2, right: 20),
+                              decoration: BoxDecoration(
+                                color: const Color(0xff9a2044),
+                                borderRadius:
+                                    BorderRadius.circular(height * 0.022),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Color(0x29000000),
-                                    offset: Offset(0, height*0.005),
-                                    blurRadius: height*0.007,
+                                    color: const Color(0x29000000),
+                                    offset: Offset(0, height * 0.005),
+                                    blurRadius: height * 0.007,
                                   ),
                                 ],
                               ),
                               child: Text(
-                                ser.allRatings[i]==''?'N/A':ser.allRatings[i],
-                                style: SafeGoogleFont (
+                                ser.allRatings[i] == ''
+                                    ? 'N/A'
+                                    : ser.allRatings[i],
+                                style: SafeGoogleFont(
                                   'Lucida Bright',
-                                  height*0.020,
+                                  height * 0.020,
                                   fontWeight: FontWeight.w600,
-                                  color: Color(0xffffffff),
+                                  color: const Color(0xffffffff),
                                 ),
                               ),
                             ),
@@ -305,7 +303,4 @@ class _ShowingListAllState extends State<ShowingListAll> {
       },
     );
   }
-
 }
-
-
