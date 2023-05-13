@@ -16,7 +16,14 @@ class GoToLoginPage extends PageEvent {
   @override
   List<Object> get props => [];
 }
-
+class GoToSignUpPage extends PageEvent {
+  @override
+  List<Object> get props => [];
+}
+class GoToALoginPage extends PageEvent {
+  @override
+  List<Object> get props => [];
+}
 class GoToHomePage extends PageEvent {
   @override
   List<Object> get props => [];
@@ -25,6 +32,19 @@ class GoToAHomePage extends PageEvent {
   @override
   List<Object> get props => [];
 }
+class GoToScreensPage extends PageEvent {
+  @override
+  List<Object> get props => [];
+}
+class GoToAdminFoodmenuPage extends PageEvent {
+  @override
+  List<Object> get props => [];
+}
+class GoToAdminSettingsPage extends PageEvent {
+  @override
+  List<Object> get props => [];
+}
+
 class GoToRentPage extends PageEvent {
   @override
   List<Object> get props => [];

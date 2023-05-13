@@ -29,8 +29,6 @@ class _AFoodMenu extends State<AFoodMenu> {
   final CollectionReference<Map<String, dynamic>> _db =
       FirebaseFirestore.instance.collection('food');
 
-  int checkTypeCount = 0;
-
   bool isDrinks = false;
   bool isCandy = false;
   @override
@@ -75,65 +73,67 @@ class _AFoodMenu extends State<AFoodMenu> {
                 children: [
                   Container(
                     color: const Color(0xFFFFFFFF),
-                    child: ButtonBar(
-                      alignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        TextButton(
-                          onPressed: () {
-                            setState(() {
-                              globalData.listTitle = "snacks";
-                            });
-                          },
-                          child: Container(
-                            padding: const EdgeInsets.all(20),
-                            child: Text(
-                              "Snacks",
-                              style: GoogleFonts.lato(
-                                fontSize: 20 * ffem,
-                                fontWeight: FontWeight.w400,
-                                height: 1.2575 * ffem / fem,
-                                color: const Color(0xff464646),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        ButtonBar(
+                          alignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            TextButton(
+                              onPressed: () {
+                                setState(() {
+                                  globalData.listTitle = "snacks";
+                                });
+                              },
+                              child: Container(
+                                padding: const EdgeInsets.all(15),
+                                child: Text(
+                                  "Snacks",
+                                  style: GoogleFonts.lato(
+                                    fontSize: width * 0.045,
+                                    fontWeight: FontWeight.w400,
+                                    color: const Color(0xff464646),
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
-                        ),
-                        TextButton(
-                          onPressed: () {
-                            setState(() {
-                              globalData.listTitle = "candy";
-                            });
-                          },
-                          child: Container(
-                            padding: const EdgeInsets.all(20),
-                            child: Text(
-                              "Candy",
-                              style: GoogleFonts.lato(
-                                fontSize: 20 * ffem,
-                                fontWeight: FontWeight.w400,
-                                height: 1.2575 * ffem / fem,
-                                color: const Color(0xff464646),
+                            TextButton(
+                              onPressed: () {
+                                setState(() {
+                                  globalData.listTitle = "candy";
+                                });
+                              },
+                              child: Container(
+                                padding: const EdgeInsets.all(15),
+                                child: Text(
+                                  "Candy",
+                                  style: GoogleFonts.lato(
+                                    fontSize: width * 0.045,
+                                    fontWeight: FontWeight.w400,
+                                    color: const Color(0xff464646),
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
-                        ),
-                        TextButton(
-                          onPressed: () {
-                            setState(() {
-                              globalData.listTitle = "drinks";
-                            });
-                          },
-                          child: Container(
-                            padding: const EdgeInsets.all(20),
-                            child: Text(
-                              "Drinks",
-                              style: GoogleFonts.lato(
-                                fontSize: 20 * ffem,
-                                fontWeight: FontWeight.w400,
-                                height: 1.2575 * ffem / fem,
-                                color: const Color(0xff464646),
+                            TextButton(
+                              onPressed: () {
+                                setState(() {
+                                  globalData.listTitle = "drinks";
+                                });
+                              },
+                              child: Container(
+                                padding: const EdgeInsets.all(15),
+                                child: Text(
+                                  "Drinks",
+                                  style: GoogleFonts.lato(
+                                    fontSize: width * 0.045,
+                                    fontWeight: FontWeight.w400,
+                                    color: const Color(0xff464646),
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
+                          ],
                         ),
                       ],
                     ),
@@ -146,7 +146,8 @@ class _AFoodMenu extends State<AFoodMenu> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => AddFood()),
+                          MaterialPageRoute(
+                              builder: (context) => const AddFood()),
                         );
                       },
                       style: TextButton.styleFrom(
@@ -216,18 +217,19 @@ class _AFoodMenu extends State<AFoodMenu> {
           width: width * 1,
           child: ListView(
             children: snapshot.data!.docs.map((DocumentSnapshot document) {
+              int checkTypeCount = 0;
               Map<String, dynamic> data =
                   document.data()! as Map<String, dynamic>;
               if (data['type'] != globalData.listTitle) {
                 checkTypeCount += 1;
                 if (data.length == checkTypeCount) {
-                  return const Center(
+                  return Center(
                     child: Text(
                       'This List is empty',
                       style: TextStyle(
-                        fontSize: 30,
+                        fontSize: width * 0.05,
                         fontWeight: FontWeight.w600,
-                        color: Color(0xffff1e60),
+                        color: const Color(0xffff1e60),
                       ),
                     ),
                   );
@@ -238,15 +240,13 @@ class _AFoodMenu extends State<AFoodMenu> {
                 child: Container(
                     child: data['type'] == globalData.listTitle
                         ? SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.2,
+                            height: height * 0.2,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Container(
-                                  height:
-                                      MediaQuery.of(context).size.height * 1,
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.4,
+                                  height: height * 1,
+                                  width: width * 0.4,
                                   decoration: BoxDecoration(
                                     border: Border.all(
                                         color: const Color(0xff707070)),
@@ -288,9 +288,8 @@ class _AFoodMenu extends State<AFoodMenu> {
                                                 data['name'],
                                                 softWrap: true,
                                                 style: GoogleFonts.lato(
-                                                  fontSize: 18,
+                                                  fontSize: width * 0.05,
                                                   fontWeight: FontWeight.w700,
-                                                  height: 1.2575,
                                                   color:
                                                       const Color(0xff000000),
                                                 ),
@@ -321,7 +320,7 @@ class _AFoodMenu extends State<AFoodMenu> {
                                         },
                                         child: Container(
                                           padding: const EdgeInsets.symmetric(
-                                              vertical: 10, horizontal: 25),
+                                              vertical: 5, horizontal: 20),
                                           decoration: const BoxDecoration(
                                               color: Color(0xffff2153),
                                               borderRadius: BorderRadius.all(

@@ -18,10 +18,35 @@ class OnLoginPage extends PageState {
    @override
   List<Object> get props => [];
 }
+class OnSignUpPage extends PageState {
+
+  @override
+  List<Object> get props => [];
+}
+class OnALoginPage extends PageState {
+
+  @override
+  List<Object> get props => [];
+}
 
 class OnStarterPage extends PageState {
 
    @override
+  List<Object> get props => [];
+}
+class OnScreensPage extends PageState {
+
+  @override
+  List<Object> get props => [];
+}
+class OnAdminFoodMenuPage extends PageState {
+
+  @override
+  List<Object> get props => [];
+}
+class OnAdminSettingsPage extends PageState {
+
+  @override
   List<Object> get props => [];
 }
 

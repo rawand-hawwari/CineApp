@@ -1,10 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/cenima-app-user/log-in.dart';
-import 'package:myapp/cenima-app-user/thetre-info.dart';
 import 'package:myapp/cine_app_icons.dart';
 import '../reusable-widgets/reusable-widget.dart';
 import 'admin-profile.dart';
@@ -27,6 +25,7 @@ class _Profile extends State<Profile> {
   String image = '';
 
   Future getUserInfo() async {
+    // ignore: unnecessary_null_comparison
     if (uid != null) {
       final documents = await user.doc(uid).get();
       Map<String, dynamic> data = documents.data()! as Map<String, dynamic>;
@@ -86,31 +85,34 @@ class _Profile extends State<Profile> {
                     Container(
                       margin: const EdgeInsets.symmetric(
                           vertical: 15, horizontal: 10),
-                      width: width * 0.3,
-                      height: height * 0.1,
                       child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Container(
                             margin: const EdgeInsets.symmetric(
                                 horizontal: 10, vertical: 10),
-                            width: 240,
-                            height: 240,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(100),
-                            ),
-                            child: Image.asset(
-                              image == ""
-                                  ? 'assets/cenima-app-user/images/user.png'
-                                  : image,
-                              fit: BoxFit.cover,
+                            width: width * 0.25,
+                            height: width * 0.25,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(100.0),
+                              child: Image.asset(
+                                image == ""
+                                    ? 'assets/cenima-app-user/images/user.png'
+                                    : image,
+                                height: 100.0,
+                                width: 100.0,
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                           Text(
-                            name == "" ? 'User Name' : name,
+                            name == ""
+                                ? 'User Name'
+                                : name.replaceAll("-", " "),
                             style: GoogleFonts.lato(
                               fontSize: 27 * ffem,
                               fontWeight: FontWeight.w400,
-                              height: 1.2575 * ffem / fem,
                               color: const Color(0xffaf1b1b),
                             ),
                           ),

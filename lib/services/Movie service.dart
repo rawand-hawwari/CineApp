@@ -64,7 +64,7 @@ class MovieService {
     return searchResult;
   }
 
-  getDetails(int Id) async {
+  Future getDetails(int Id) async {
     TMDB tmdb = TMDB(ApiKeys(apiKey, accessToken),
         logConfig: ConfigLogger(showLogs: true, showErrorLogs: true));
     Map infoResult = await tmdb.v3.movies.getDetails(Id);

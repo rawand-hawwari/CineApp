@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/services/Movie%20service.dart';
 import 'package:myapp/shared/Theme.dart';
+import '../cenima-app-user/movie-details-book.dart';
 import '../utils.dart';
 import 'items_skeleton.dart';
 
@@ -15,33 +16,31 @@ class ShowingList extends StatelessWidget {
   Widget build(BuildContext context) {
     Size deviceSize = MediaQuery.of(context).size;
     MovieService ser = MovieService();
-    return SizedBox(
-      height: deviceSize.height * 0.34,
-      child: FutureBuilder(
-        future: ser.getShowingNow(),
-        builder: (BuildContext ctx, AsyncSnapshot<dynamic> snapshot) {
-          ConnectionState state = snapshot.connectionState;
+    return Container(
+        height: deviceSize.height * 0.34,
+        child: FutureBuilder(
+            future: ser.getShowingNow(),
+            builder: (BuildContext ctx, AsyncSnapshot<dynamic> snapshot) {
+              ConnectionState state = snapshot.connectionState;
 
-          // loading
-          if (state == ConnectionState.waiting) {
-            return const Center(child: ItemSkeleton());
-          }
-          // error
-          else if (snapshot.hasError) {
-            return const Center(
-              child: Text(
-                'Loading Error',
-                style: TextStyle(fontSize: 20, color: Colors.red),
-              ),
-            );
-          }
-          // loaded
-          else {
-            return _printMovies(ser);
-          }
-        },
-      ),
-    );
+              // loading
+              if (state == ConnectionState.waiting) {
+                return const Center(child: ItemSkeleton());
+              }
+              // error
+              else if (snapshot.hasError) {
+                return const Center(
+                  child: Text(
+                    'Loading Error',
+                    style: TextStyle(fontSize: 20, color: Colors.red),
+                  ),
+                );
+              }
+              // loaded
+              else {
+                return _printMovies(ser);
+              }
+            }));
   }
 
   _printMovies(MovieService ser) {
@@ -107,12 +106,6 @@ class ShowingListAll extends StatefulWidget {
 }
 
 class _ShowingListAllState extends State<ShowingListAll> {
-  var movies;
-  final String apiKey = 'c288e07bc074b958bfa1c394b65a75c6';
-  final accessToken =
-      'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMjg4ZTA3YmMwNzRiOTU4YmZhMWMzOTRiNjVhNzVjNiIsInN1YiI6IjY0NTYyMTdkNjA2MjBhMDBlM2NmOGFkZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.G9atRC-6DNzfXJGTcw-ySmQepEnkCx5HF1SrMN2kM0I';
-  late List info;
-
   @override
   void initState() {
     super.initState();
@@ -125,7 +118,7 @@ class _ShowingListAllState extends State<ShowingListAll> {
     MovieService ser = MovieService();
     double width = deviceSize.width;
     return SizedBox(
-      height: deviceSize.height + 200,
+      height: deviceSize.height *1,
       child: FutureBuilder(
         future: Future.wait(
             [ser.getShowingNow(), ser.getAllRelease(), ser.getAllGenres()]),
@@ -135,7 +128,6 @@ class _ShowingListAllState extends State<ShowingListAll> {
           // loading
           if (state == ConnectionState.waiting) {
             return const Center(child: ItemSkeletonV(length: 10));
-//                     child: ItemSkeletonV(length: ser.showingNow.length));
           }
           // error
           else if (snapshot.hasError) {
@@ -150,7 +142,7 @@ class _ShowingListAllState extends State<ShowingListAll> {
           // loaded
           else {
             return Padding(
-              padding: const EdgeInsets.only(bottom: 100),
+              padding: const EdgeInsets.only(bottom: 0),
               child: _printMovies(ser, width),
             );
           }
@@ -162,16 +154,25 @@ class _ShowingListAllState extends State<ShowingListAll> {
   _printMovies(MovieService ser, double width) {
     var image_url = 'https://image.tmdb.org/t/p/w500/';
     return ListView.builder(
+      padding: EdgeInsets.zero,
       scrollDirection: Axis.vertical,
       itemCount: ser.showingNow.length,
       itemBuilder: (BuildContext ctx, int i) {
+        double width = MediaQuery.of(ctx).size.width;
+        double height = MediaQuery.of(ctx).size.height;
         ser.getGenres(536554);
         ser.getRelease(ser.showingNow[i]['id']);
         return Padding(
           padding:
               const EdgeInsets.only(left: 10, top: 10, right: 10, bottom: 10),
           child: GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const MovieDetailsBook()),
+              );
+            },
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -221,48 +222,71 @@ class _ShowingListAllState extends State<ShowingListAll> {
                         ),
                       ),
                       const Padding(padding: EdgeInsets.all(5)),
-                      Container(
-                        width: 50,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: const Color(0xff707070)),
-                          color: const Color(0xff7e132b),
-                        ),
-                        child: Center(
-                          child: Text(
-                            ser.showingNow[i]['original_language'] == 'en'
-                                ? "English"
-                                : ser.showingNow[i]['original_language'] == 'es'
-                                    ? "Spanich"
-                                    : ser.showingNow[i]['original_language'] ==
-                                            'fi'
-                                        ? "Finnis"
-                                        : ser.showingNow[i]
-                                                    ['original_language'] ==
-                                                'ar'
-                                            ? "Arabic"
-                                            : ser.showingNow[i]
-                                                ['original_language'],
-                            style: SafeGoogleFont(
-                              'Lucida Bright',
-                              12,
-                              fontWeight: FontWeight.w400,
-                              color: const Color(0xffffffff),
+                      Row(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.only(
+                                top: 0, left: 20, bottom: 2, right: 20),
+                            decoration: BoxDecoration(
+                              border:
+                                  Border.all(color: const Color(0xff707070)),
+                              color: const Color(0xff7e132b),
+                            ),
+                            child: Text(
+                              ser.showingNow[i]['original_language'] == 'en'
+                                  ? "English"
+                                  : ser.showingNow[i]['original_language'] ==
+                                          'es'
+                                      ? "Spanich"
+                                      : ser.showingNow[i]
+                                                  ['original_language'] ==
+                                              'fi'
+                                          ? "Finnis"
+                                          : ser.showingNow[i]
+                                                      ['original_language'] ==
+                                                  'ar'
+                                              ? "Arabic"
+                                              : ser.showingNow[i]
+                                                  ['original_language'],
+                              style: SafeGoogleFont(
+                                'Lucida Bright',
+                                12,
+                                fontWeight: FontWeight.w400,
+                                color: const Color(0xffffffff),
+                              ),
                             ),
                           ),
-                        ),
-                      ),
-                      const Padding(padding: EdgeInsets.all(5)),
-                      SizedBox(
-                        width: width - 177,
-                        child: Text(
-                          ser.allRatings[i],
-                          style: SafeGoogleFont(
-                            'Lucida Bright',
-                            14,
-                            fontWeight: FontWeight.w400,
-                            color: const Color(0xFFF44336),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              padding: const EdgeInsets.only(
+                                  top: 0, left: 20, bottom: 2, right: 20),
+                              decoration: BoxDecoration(
+                                color: const Color(0xff9a2044),
+                                borderRadius:
+                                    BorderRadius.circular(height * 0.022),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: const Color(0x29000000),
+                                    offset: Offset(0, height * 0.005),
+                                    blurRadius: height * 0.007,
+                                  ),
+                                ],
+                              ),
+                              child: Text(
+                                ser.allRatings[i] == ''
+                                    ? 'N/A'
+                                    : ser.allRatings[i],
+                                style: SafeGoogleFont(
+                                  'Lucida Bright',
+                                  height * 0.020,
+                                  fontWeight: FontWeight.w600,
+                                  color: const Color(0xffffffff),
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
+                        ],
                       ),
                     ],
                   ),
@@ -274,5 +298,4 @@ class _ShowingListAllState extends State<ShowingListAll> {
       },
     );
   }
-
 }

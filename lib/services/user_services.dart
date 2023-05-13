@@ -16,21 +16,27 @@ class UserServices {
       'isAdmin': isAdmin,
     });
   }
-  List<NUser> _userInfoFromSnapshot(QuerySnapshot snapshot){
 
-    return snapshot.docs.map((doc) => NUser(
-      doc.data().toString().contains('name')? doc.get('id') : '',
-      doc.data().toString().contains('phoneNo') ? doc.get('phoneNo') : '',
-      doc.data().toString().contains('isAdmin') ? doc.get('isAdmin') : '',
-      uid: doc.data().toString().contains('id') ? doc.get('id') : '',
-      email: doc.data().toString().contains('email') ? doc.get('email') : '',
-
-    )
-    ).toList();
+  List<NUser> _userInfoFromSnapshot(QuerySnapshot snapshot) {
+    return snapshot.docs
+        .map((doc) => NUser(
+              doc.data().toString().contains('name') ? doc.get('id') : '',
+              doc.data().toString().contains('phoneNo')
+                  ? doc.get('phoneNo')
+                  : '',
+              doc.data().toString().contains('isAdmin')
+                  ? doc.get('isAdmin')
+                  : '',
+              uid: doc.data().toString().contains('id') ? doc.get('id') : '',
+              email: doc.data().toString().contains('email')
+                  ? doc.get('email')
+                  : '',
+            ))
+        .toList();
   }
 
-   Stream<List<NUser>> get user  {
-   // DocumentSnapshot snapshot = await _userCollection.doc(uid).get();
+  Stream<List<NUser>> get user {
+    // DocumentSnapshot snapshot = await _userCollection.doc(uid).get();
 
     return _userCollection.snapshots().map(_userInfoFromSnapshot);
     /*return NUser(uid: snapshot.data().toString().contains('id') ? snapshot.get('id') : '',
@@ -40,17 +46,14 @@ class UserServices {
       snapshot.data().toString().contains('phoneNo') ? snapshot.get('phoneNo') : '',
     );*/
   }
-  static Future<NUser> getUser(String uid) async {
+
+  static Future<NUser> getUser(String? uid) async {
     DocumentSnapshot snapshot = await _userCollection.doc(uid).get();
-
-    return NUser(uid: snapshot.data().toString().contains('id') ? snapshot.get('id') : '',
-      email: snapshot.data().toString().contains('email') ? snapshot.get('email') : '',
-      snapshot.data().toString().contains('name') ? snapshot.get('name') : '',
-      snapshot.data().toString().contains('isAdmin') ? snapshot.get('isAdmin') : '',
-      snapshot.data().toString().contains('phoneNo') ? snapshot.get('phoneNo') : '',
-    );
+    final data = snapshot.data() as Map<String, dynamic>;
+    print("did you enter get user$data ");
+    return NUser(data['name'], data['isAdmin'], data['phoneNo'],
+        uid: data['uid'], email: data['email']);
   }
-
 
   Stream<QuerySnapshot> get userData {
     return _userCollection.snapshots();
