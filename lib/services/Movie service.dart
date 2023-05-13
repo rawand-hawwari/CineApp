@@ -11,15 +11,22 @@ var image_url = 'https://image.tmdb.org/t/p/w500/';
 class MovieService {
   List showingNow = [];
   List upcomming = [];
+  List upcomming2=[];
   List Info = [];
   List showingNow2 = [];
   List release = [];
+  List release2=[];
+  List release3=[];
   String rating = '';
   String rating2='';
+  String rating3='';
   List allRatings=[];
+  List allRatingsUpcomming =[];
   List Genres = [];
   List Genres2=[];
+  List Genres3=[];
   List allGenres=[];
+  List allGenresUpcomming=[];
   List IDs=[];
   List upcommingsIDs=[];
   List searchResult=[];
@@ -45,6 +52,7 @@ class MovieService {
     showingNow = showingNowResult['results'];
     return showingNow;
   }
+
   Future Search(String query) async {
     await getIDs();
     int count=-1;
@@ -68,7 +76,11 @@ class MovieService {
     TMDB tmdb = TMDB(ApiKeys(apiKey, accessToken),
         logConfig: ConfigLogger(showLogs: true, showErrorLogs: true));
     Map infoResult = await tmdb.v3.movies.getDetails(Id);
-    Info = [infoResult['id'],infoResult['title'],infoResult['release_date'],infoResult['poster_path'],infoResult['overview'],infoResult['original_language']];
+    Info = [infoResult['id'],infoResult['title'],
+      infoResult['release_date'],infoResult['poster_path'],
+      infoResult['overview'],infoResult['original_language'],
+      infoResult['vote_average'],infoResult['runtime']
+      ,infoResult['release_date'],infoResult['tagline']];
     print("hell" + Info.toString());
     return Info;
   }
@@ -80,6 +92,7 @@ class MovieService {
     Genres = infoResult['genres'];
     return Genres;
   }
+
   Future getAllGenres() async {
     await getIDs();
     Genres2.length=IDs.length;
@@ -92,6 +105,19 @@ class MovieService {
     }
     return Genres2;
   }
+  Future getAllUpcommingGenres() async {
+    await getUpIDs();
+    Genres3.length=upcommingsIDs.length;
+    TMDB tmdb = TMDB(ApiKeys(apiKey, accessToken),
+        logConfig: ConfigLogger(showLogs: true, showErrorLogs: true));
+
+    for(int i=0; i<upcommingsIDs.length;i++){
+      Map infoResult = await tmdb.v3.movies.getDetails(upcommingsIDs[i]);
+      Genres3[i] = infoResult['genres'];
+    }
+    return Genres3;
+  }
+
 
   Future getUpcomming() async {
     TMDB tmdb = TMDB(ApiKeys(apiKey, accessToken),
@@ -101,7 +127,7 @@ class MovieService {
     return upcomming;
   }
 
-   getRelease(int id) async {
+   Future getRelease(int id) async {
     TMDB tmdb = TMDB(ApiKeys(apiKey, accessToken),
         logConfig: ConfigLogger(showLogs: true, showErrorLogs: true));
     Map releaseResult = await tmdb.v3.movies.getReleaseDates(id);
@@ -113,6 +139,7 @@ class MovieService {
     }
     return rating;
   }
+
   Future getAllRelease() async {
     await getIDs();
     allRatings.length=IDs.length;
@@ -120,16 +147,35 @@ class MovieService {
         logConfig: ConfigLogger(showLogs: true, showErrorLogs: true));
     for(int i=0;i<IDs.length;i++){
       Map releaseResult = await tmdb.v3.movies.getReleaseDates(IDs[i]);
-      release = releaseResult['results'];
-      for(int i=0; i<release.length; i++){
-        if(release[i]['iso_3166_1']=='US'){
-          rating2=release[i]['release_dates'][0]['certification'];
+      release2 = releaseResult['results'];
+      for(int i=0; i<release2.length; i++){
+        if(release2[i]['iso_3166_1']=='US'){
+          rating2=release2[i]['release_dates'][0]['certification'];
         }
       }
       allRatings[i]=rating2;
     }
     return allRatings;
   }
+
+  Future getAllUpcommingRelease() async {
+    await getUpIDs();
+    allRatingsUpcomming.length=upcommingsIDs.length;
+    TMDB tmdb = TMDB(ApiKeys(apiKey, accessToken),
+        logConfig: ConfigLogger(showLogs: true, showErrorLogs: true));
+    for(int i=0;i<upcommingsIDs.length;i++){
+      Map releaseResult = await tmdb.v3.movies.getReleaseDates(upcommingsIDs[i]);
+      release3 = releaseResult['results'];
+      for(int i=0; i<release3.length; i++){
+        if(release3[i]['iso_3166_1']=='US'){
+          rating3=release3[i]['release_dates'][0]['certification'];
+        }
+      }
+      allRatingsUpcomming[i]=rating3;
+    }
+    return allRatingsUpcomming;
+  }
+
 
   getIDs() async {
     TMDB tmdb = TMDB(ApiKeys(apiKey, accessToken),
@@ -141,6 +187,20 @@ class MovieService {
       {
         IDs[i]=showingNow2[i]['id'];
       }
+    return IDs;
+
+  }
+
+  getUpIDs() async {
+    TMDB tmdb = TMDB(ApiKeys(apiKey, accessToken),
+        logConfig: ConfigLogger(showLogs: true, showErrorLogs: true));
+    Map upcommingResults = await tmdb.v3.movies.getUpcoming();
+    upcomming2 = upcommingResults['results'];
+    upcommingsIDs.length=upcomming2.length;
+    for(int i=0;i<upcomming2.length; i++)
+    {
+      upcommingsIDs[i]=upcomming2[i]['id'];
+    }
     return IDs;
 
   }

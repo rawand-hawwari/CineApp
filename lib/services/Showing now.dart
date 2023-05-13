@@ -47,12 +47,12 @@ class ShowingList extends StatelessWidget {
               }
               // loaded
               else {
-                return _printMovies(ser);
+                return _printMovies(ser,context);
               }
             }));
   }
 
-  _printMovies(MovieService ser) {
+  _printMovies(MovieService ser, BuildContext context) {
 
     var image_url = 'https://image.tmdb.org/t/p/w500/';
     return ListView.builder(
@@ -64,6 +64,10 @@ class ShowingList extends StatelessWidget {
           padding: const EdgeInsets.only(left: 10, top: 10, right: 10),
           child: GestureDetector(
             onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) =>  MovieDetailsBook(id: ser.showingNow[i]['id'])),
+              );
             },
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -163,6 +167,13 @@ class _ShowingListAllState extends State<ShowingListAll> {
               }
             }));
   }
+  String Genres(List genres){
+    String newGenres='';
+    for(int i=0; i<genres.length; i++){
+      newGenres=newGenres+genres[i]['name']+((i==genres.length-1)?"":', ');
+    }
+    return newGenres;
+  }
 
   _printMovies(MovieService ser, double width) {
     var image_url = 'https://image.tmdb.org/t/p/w500/';
@@ -173,15 +184,13 @@ class _ShowingListAllState extends State<ShowingListAll> {
       itemBuilder: (BuildContext ctx, int i) {
         double width = MediaQuery.of(ctx).size.width;
         double height = MediaQuery.of(ctx).size.height;
-        ser.getGenres(536554);
-        ser.getRelease(ser.showingNow[i]['id']);
         return Padding(
           padding: const EdgeInsets.only(left: 10, top: 10, right: 10, bottom: 10),
           child: GestureDetector(
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) =>  MovieDetailsBook()),
+                MaterialPageRoute(builder: (context) =>  MovieDetailsBook(id: ser.showingNow[i]['id'])),
               );
             },
             child: Row(
@@ -225,7 +234,7 @@ class _ShowingListAllState extends State<ShowingListAll> {
                       SizedBox(
                         width: width - 177,
                         child: Text(
-                          ser.showingNow[i]['id'].toString(),
+                          Genres(ser.Genres2[i]),
                           style: TextStyle(
                               color: mainColor,
                               fontSize: 12,
@@ -242,19 +251,15 @@ class _ShowingListAllState extends State<ShowingListAll> {
                               color: const Color(0xff7e132b),
                             ),
                             child: Text(
-                              ser.showingNow[i]['original_language'] == 'en'
-                                  ? "English"
-                                  : ser.showingNow[i]['original_language'] == 'es'
-                                      ? "Spanich"
-                                      : ser.showingNow[i]['original_language'] ==
-                                              'fi'
-                                          ? "Finnis"
-                                          : ser.showingNow[i]
-                                                      ['original_language'] ==
-                                                  'ar'
-                                              ? "Arabic"
-                                              : ser.showingNow[i]
-                                                  ['original_language'],
+                              ser.showingNow[i]['original_language'] == 'en' ? "English"
+                                  : ser.showingNow[i]['original_language'] == 'es' ? "Spanish"
+                                  : ser.showingNow[i]['original_language'] == 'fi' ? "Finnish"
+                                  : ser.showingNow[i]['original_language'] == 'ar' ? "Arabic"
+                                  : ser.showingNow[i]['original_language']=='fr'? "French"
+                                  : ser.showingNow[i]['original_language']=="ko"? "Korean"
+                                  :ser.showingNow[i]['original_language']=="ja"? "japanese"
+                                  :ser.showingNow[i]['original_language']=="ru"? "Russian"
+                                  :ser.showingNow[i]['original_language'],
                               style: SafeGoogleFont(
                                 'Lucida Bright',
                                 12,

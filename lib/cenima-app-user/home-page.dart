@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:myapp/cenima-app-user/upcomming.dart';
 import 'package:myapp/services/Movie%20service.dart';
 
 import 'package:myapp/services/upcomming.dart';
@@ -299,7 +300,7 @@ _printHeadingU({required String heading, required BuildContext context}) {
             Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => ShowingNowList()),
+                  builder: (context) => UpcommingNowList()),
             );
           },
           child:

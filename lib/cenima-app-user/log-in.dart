@@ -146,6 +146,16 @@ class _LoginPage extends State<LogIn> {
                           hintText: 'Enter your password',
                           labelText: 'Password',
                           errorText: isPFValid? (errorP==''?null:errorP ) :'Value Can\'t Be Empty',
+                          suffixIcon: IconButton(
+                            icon: isObscured
+                                ? const Icon(Icons.visibility)
+                                : const Icon(Icons.visibility_off),
+                            onPressed: () {
+                              setState(() {
+                                isObscured = !isObscured;
+                              });
+                            },
+                          ),
                         ),
                       ),
 
