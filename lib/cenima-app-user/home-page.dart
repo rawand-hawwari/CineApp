@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:myapp/cenima-app-user/upcomming.dart';
 import 'package:myapp/services/Movie%20service.dart';
 
 import 'package:myapp/services/upcomming.dart';
@@ -13,6 +14,7 @@ import 'package:myapp/cenima-app-user/search.dart';
 import 'package:myapp/reusable-widgets/reusable-widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../services/Showing now.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -172,6 +174,76 @@ class _HomePage extends State<HomePage> {
           dotColor: Colors.white,
         ),
       );
+
+  Widget showingListBuilder(double height, double width) =>
+      StreamBuilder<QuerySnapshot>(
+          stream: menuStream,
+          builder:
+              (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+            if (snapshot.hasError) {
+              return const Text('Something went wrong');
+            }
+
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return SpinKitFadingCircle(
+                color: mainColor,
+              );
+            }
+
+            return SizedBox(
+              height: height * 0.3,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: snapshot.data!.docs.map((DocumentSnapshot document) {
+                  Map<String, dynamic> data =
+                      document.data()! as Map<String, dynamic>;
+                  // if (data['type'] != globalData.listTitle) {
+                  //   checkTypeCount += 1;
+                  //   if (data.length == checkTypeCount) {
+                  //     return const Center(
+                  //       child: Text(
+                  //         'This List is empty',
+                  //         style: TextStyle(
+                  //           fontSize: 30,
+                  //           fontWeight: FontWeight.w600,
+                  //           color: Color(0xffff1e60),
+                  //         ),
+                  //       ),
+                  //     );
+                  //   }
+                  // }
+                  return Padding(
+                    padding: const EdgeInsets.all(5),
+                    child: Center(
+                      child: GestureDetector(
+                        onTap: () {},
+                        child: Column(children: [
+                          SizedBox(
+                            height: height * 0.25,
+                            width: width * 0.35,
+                            child: Image.asset(
+                              data['poster'],
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          const Padding(padding: EdgeInsets.only(top: 5)),
+                          Text(
+                            data['title'],
+                            softWrap: true,
+                            style: GoogleFonts.lato(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w700,
+                              color: const Color(0xff464646),
+                            ),
+                          ),
+                        ]),
+                      ),
+                    ),
+                  );
+                }).toList(),
+              ),
+            );
+          });
 }
 
 _printHeadingS({required String heading, required BuildContext context}) {
@@ -195,7 +267,9 @@ _printHeadingS({required String heading, required BuildContext context}) {
             print('wgh');
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const ShowingNowList()),
+              MaterialPageRoute(
+                  builder: (context) => ShowingNowList()),
+
             );
           },
           child: Text("View All", style: TextStyle(color: mainColor)),
@@ -206,7 +280,7 @@ _printHeadingS({required String heading, required BuildContext context}) {
 }
 
 _printHeadingU({required String heading, required BuildContext context}) {
-  MovieService ser = MovieService();
+  MovieService ser= MovieService();
   ser.getShowingNow();
   return Padding(
     padding: const EdgeInsets.only(left: 20.0, top: 5, right: 10),
@@ -225,10 +299,12 @@ _printHeadingU({required String heading, required BuildContext context}) {
             print(ser.showingNow2);
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => ShowingNowList()),
+              MaterialPageRoute(
+                  builder: (context) => UpcommingNowList()),
             );
           },
-          child: Text("View All", style: TextStyle(color: mainColor)),
+          child:
+          Text("View All", style: TextStyle(color: mainColor)),
         ),
       ],
     ),

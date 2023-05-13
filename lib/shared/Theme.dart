@@ -13,6 +13,13 @@ TextStyle greyTextFont(double h) {
     color: const Color(0xff828282),
   );
 }
+TextStyle movieInfoTitle (double height) {
+return GoogleFonts.varela(
+fontSize: height*0.018,
+fontWeight: FontWeight.w600,
+color: Color(0xff7e132b),
+);
+}
 
 TextStyle redTextFont(double h) {
   return GoogleFonts.raleway(
@@ -27,6 +34,13 @@ TextStyle buttonTextFont(double h) {
     fontSize: h * 0.025,
     fontWeight: FontWeight.w600,
     color: const Color(0xffffffff),
+  );
+}
+TextStyle movieInfo(double height){
+  return GoogleFonts.notoSans(
+      fontSize: height*0.017,
+      fontWeight: FontWeight.w400,
+      color: Color(0xff000000),
   );
 }
 

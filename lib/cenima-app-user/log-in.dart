@@ -98,29 +98,76 @@ class _LoginPage extends State<LogIn> {
                                 isEmailValid = EmailValidator.validate(val);
                                 error = '';
                               });
-                              Future.delayed(const Duration(milliseconds: 1000),
-                                  () {
-                                setState(() {
-                                  val.isEmpty
-                                      ? isEFValid = false
-                                      : isEFValid = true;
-                                  isEmailValid
-                                      ? errorE = ''
-                                      : errorE = 'Please enter a proper email';
-                                });
+                            });
+                        },
+                        decoration: InputDecoration(
+                          border: const OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(100.0)),
+
+                          ),
+                          prefixIcon: Icon(Icons.mail_outline),
+                          hintText: 'Enter your email',
+                          labelText: 'Email',
+                          errorText: isEFValid? (errorE==''? null : errorE): 'Value Can\'t Be Empty',
+
+                        ),
+                      ),
+                      const Padding(padding: EdgeInsets.all(10.0)),
+                      // password field
+                      TextFormField(
+                        onChanged: (val) {
+                          setState(() {
+                            isPasswordValid = val.length >= 6;
+                            error='';
+                          });
+                          Future.delayed(const Duration(milliseconds: 1000), () {
+                            setState(() {
+                              val.isEmpty? isPFValid= false: isPFValid=true;
+                              isPasswordValid? errorP= '' :errorP='Password must be 6 characters long';
+                            });
+                          });
+
+                        },
+                        controller: passwordController,
+                        obscureText: isObscured,
+                        keyboardType: TextInputType.visiblePassword,
+                        decoration: InputDecoration(
+                          border: const OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(100.0)),
+                          ),
+                          prefixIcon: Icon(Icons.lock_outline),
+                          hintText: 'Enter your password',
+                          labelText: 'Password',
+                          errorText: isPFValid? (errorP==''?null:errorP ) :'Value Can\'t Be Empty',
+                          suffixIcon: IconButton(
+                            icon: isObscured
+                                ? const Icon(Icons.visibility)
+                                : const Icon(Icons.visibility_off),
+                            onPressed: () {
+                              setState(() {
+                                isObscured = !isObscured;
                               });
                             },
-                            decoration: InputDecoration(
-                              border: const OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(100.0)),
-                              ),
-                              prefixIcon: Icon(Icons.mail_outline),
-                              hintText: 'Enter your email',
-                              labelText: 'Email',
-                              errorText: isEFValid
-                                  ? (errorE == '' ? null : errorE)
-                                  : 'Value Can\'t Be Empty',
+                          ),
+                        ),
+                      ),
+
+                      const Padding(padding: EdgeInsets.all(5.0)),
+                      // forget password text
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Forget password?',
+                            textAlign: TextAlign.center,
+                            style: greyTextFont(height),
+                          ),
+                          const Padding(padding: EdgeInsets.all(2.7)),
+                          TextButton(
+                            onPressed: () {},
+                            style: TextButton.styleFrom(
+                              padding: EdgeInsets.zero,
                             ),
                           ),
                           const Padding(padding: EdgeInsets.all(10.0)),

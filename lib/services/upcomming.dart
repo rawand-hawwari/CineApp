@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myapp/services/Movie%20service.dart';
 import 'package:myapp/services/movie.dart';
 import 'package:myapp/services/string_helper.dart';
+import '../cenima-app-user/movie-details-book.dart';
 import '../shared/Theme.dart';
 import '../utils.dart';
 import 'items_skeleton.dart';
@@ -107,16 +108,11 @@ class UpcommingListAll extends StatefulWidget {
 }
 
 class _UpcommingListAllState extends State<UpcommingListAll> {
-  var movies;
-  final String apiKey='c288e07bc074b958bfa1c394b65a75c6';
-  final accessToken='eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMjg4ZTA3YmMwNzRiOTU4YmZhMWMzOTRiNjVhNzVjNiIsInN1YiI6IjY0NTYyMTdkNjA2MjBhMDBlM2NmOGFkZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.G9atRC-6DNzfXJGTcw-ySmQepEnkCx5HF1SrMN2kM0I';
-  late List info;
-
 
 
   @override
   void initState() {
-    MovieService().getUpcomming();
+    MovieService().getShowingNow();
   }
 
   @override
@@ -127,14 +123,14 @@ class _UpcommingListAllState extends State<UpcommingListAll> {
     return Container(
         height: deviceSize.height+200,
         child: FutureBuilder(
-            future: Future.wait([ser.getUpcomming(),ser.getAllRelease(),ser.getAllGenres()]),
+            future: Future.wait([ser.getUpcomming(),ser.getAllUpcommingRelease(),ser.getAllUpcommingGenres()]),
             builder: (BuildContext ctx, AsyncSnapshot<dynamic> snapshot) {
               ConnectionState state = snapshot.connectionState;
 
               // loading
               if (state == ConnectionState.waiting) {
                 return Center(
-                    child: ItemSkeletonV(length: ser.showingNow.length)
+                    child: ItemSkeletonV(length: 10)
                 );
               }
               // error
@@ -156,19 +152,31 @@ class _UpcommingListAllState extends State<UpcommingListAll> {
               }
             }));
   }
+  String Genres(List genres){
+    String newGenres='';
+    for(int i=0; i<genres.length; i++){
+      newGenres=newGenres+genres[i]['name']+((i==genres.length-1)?"":', ');
+    }
+    return newGenres;
+  }
 
   _printMovies(MovieService ser, double width) {
     var image_url = 'https://image.tmdb.org/t/p/w500/';
     return ListView.builder(
+      padding: EdgeInsets.zero,
       scrollDirection: Axis.vertical,
-      itemCount: ser.showingNow.length,
+      itemCount: ser.upcomming.length,
       itemBuilder: (BuildContext ctx, int i) {
-        ser.getGenres(536554);
-        ser.getRelease(ser.showingNow[i]['id']);
+        double width = MediaQuery.of(ctx).size.width;
+        double height = MediaQuery.of(ctx).size.height;
         return Padding(
           padding: const EdgeInsets.only(left: 10, top: 10, right: 10, bottom: 10),
           child: GestureDetector(
             onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) =>  MovieDetailsBook(id: ser.upcomming[i]['id'])),
+              );
             },
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -176,13 +184,13 @@ class _UpcommingListAllState extends State<UpcommingListAll> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: Image.network(
-                    image_url+ser.showingNow[i]['poster_path'],
+                    image_url+ser.upcomming[i]['poster_path'],
                     height: 190,
                     width: 120,
                     fit: BoxFit.cover,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 5,
                 ),
                 SizedBox(
@@ -190,66 +198,95 @@ class _UpcommingListAllState extends State<UpcommingListAll> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         width: 5,
                       ),
                       SizedBox(
-                        width: width-177,
+                        width: width - 177,
                         child: Text(
-                          ser.showingNow[i]['title'],
-                          style: SafeGoogleFont (
+                          ser.upcomming[i]['title'],
+                          style: SafeGoogleFont(
                             'Lucida Bright',
                             22,
                             fontWeight: FontWeight.w600,
-                            color: Color(0xff7e132b),
+                            color: const Color(0xff7e132b),
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       SizedBox(
-                        width: width-177,
+                        width: width - 177,
                         child: Text(
-                          ser.showingNow[i]['id'].toString(),
-                          style: TextStyle(color: mainColor,
-                              fontSize: 12, fontWeight: FontWeight.bold),
+                          Genres(ser.Genres3[i]),
+                          style: TextStyle(
+                              color: mainColor,
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold),
                         ),
                       ),
-                      SizedBox(
-                        height: 5,
-                      ),
+                      const Padding(padding: EdgeInsets.all(5)),
                       Row(
                         children: [
                           Container(
-                            width: 50,
-                            decoration: BoxDecoration (
-                              border: Border.all(color: Color(0xff707070)),
-                              color: Color(0xff7e132b),
+                            padding: EdgeInsets.only(top: 0,left: 20, bottom: 2,right: 20),
+                            decoration: BoxDecoration(
+                              border: Border.all(color: const Color(0xff707070)),
+                              color: const Color(0xff7e132b),
                             ),
-                            child: Center(
+                            child: Text(
+                              ser.upcomming[i]['original_language'] == 'en'
+                                  ? "English"
+                                  : ser.upcomming[i]['original_language'] == 'es'
+                                  ? "Spanish"
+                                  : ser.upcomming[i]['original_language'] == 'fi' ?
+                                    "Finnish"
+                                  : ser.upcomming[i]['original_language'] == 'ar' ?
+                                    "Arabic"
+                                  : ser.upcomming[i]['original_language']=='fr'?
+                                    "French"
+                                  : ser.upcomming[i]['original_language']=="ko"?
+                                  "Korean"
+                                  :ser.upcomming[i]['original_language']=="ja"?
+                                  "japanese"
+                                  :ser.upcomming[i]['original_language']=="ru"?
+                                  "Russian"
+                                  :ser.upcomming[i]['original_language'],
+                              style: SafeGoogleFont(
+                                'Lucida Bright',
+                                12,
+                                fontWeight: FontWeight.w400,
+                                color: const Color(0xffffffff),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              padding: EdgeInsets.only(top: 0,left: 20, bottom: 2,right: 20),
+                              decoration: BoxDecoration (
+                                color: Color(0xff9a2044),
+                                borderRadius: BorderRadius.circular(height*0.022),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Color(0x29000000),
+                                    offset: Offset(0, height*0.005),
+                                    blurRadius: height*0.007,
+                                  ),
+                                ],
+                              ),
                               child: Text(
-                                ser.showingNow[i]['original_language']=='en'?"English": 'no',
+                                ser.allRatingsUpcomming[i]==''?'N/A':ser.allRatingsUpcomming[i],
                                 style: SafeGoogleFont (
                                   'Lucida Bright',
-                                  12,
-                                  fontWeight: FontWeight.w400,
+                                  height*0.020,
+                                  fontWeight: FontWeight.w600,
                                   color: Color(0xffffffff),
                                 ),
                               ),
                             ),
                           ),
-                          Center(
-                            child: Text(ser.allRatings[i],
-                              style: SafeGoogleFont (
-                                'Lucida Bright',
-                                12,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.red,
-                              ),
-                            ),
-                          ),
-
                         ],
                       ),
                     ],
