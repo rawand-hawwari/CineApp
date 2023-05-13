@@ -247,7 +247,7 @@ class _HomePage extends State<HomePage> {
 }
 
 _printHeadingS({required String heading, required BuildContext context}) {
-  MovieService ser= MovieService();
+  MovieService ser = MovieService();
 
   ser.getShowingNow();
   return Padding(
