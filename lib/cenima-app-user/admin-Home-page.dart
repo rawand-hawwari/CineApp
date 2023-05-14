@@ -23,12 +23,6 @@ class _AHomePage extends State<AdminHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
-
-    double baseWidth = 393;
-    double fem = MediaQuery.of(context).size.width / baseWidth;
-    double ffem = fem * 0.97;
     return WillPopScope(
       onWillPop: () => showExitPopup(context),
       child: Scaffold(
@@ -57,7 +51,7 @@ class _AHomePage extends State<AdminHomePage> {
           ],
           body: Container(
             color: const Color(0xfff1f1f1),
-            child: const ShowingListAll(),
+            child: const ShowingListAdmin(),
           ),
         ),
         drawer: ASettingDrawer(),

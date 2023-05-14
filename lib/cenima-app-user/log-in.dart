@@ -1,20 +1,15 @@
 // ignore_for_file: file_names
 import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:myapp/cenima-app-user/home-page.dart';
 import 'package:myapp/cenima-app-user/sign-up.dart';
 import 'package:myapp/cenima-app-user/starter.dart';
 import 'package:myapp/reusable-widgets/reusable-widget.dart';
-import '../bloc/page_bloc.dart';
 import '../services/auth.dart';
 import '../shared/Theme.dart';
 import 'admin-log-in.dart';
-import 'home-page.dart';
 import 'package:email_validator/email_validator.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class LogIn extends StatefulWidget {
   const LogIn({super.key});
@@ -98,76 +93,18 @@ class _LoginPage extends State<LogIn> {
                                 isEmailValid = EmailValidator.validate(val);
                                 error = '';
                               });
-                            });
-                        },
-                        decoration: InputDecoration(
-                          border: const OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(100.0)),
-
-                          ),
-                          prefixIcon: Icon(Icons.mail_outline),
-                          hintText: 'Enter your email',
-                          labelText: 'Email',
-                          errorText: isEFValid? (errorE==''? null : errorE): 'Value Can\'t Be Empty',
-
-                        ),
-                      ),
-                      const Padding(padding: EdgeInsets.all(10.0)),
-                      // password field
-                      TextFormField(
-                        onChanged: (val) {
-                          setState(() {
-                            isPasswordValid = val.length >= 6;
-                            error='';
-                          });
-                          Future.delayed(const Duration(milliseconds: 1000), () {
-                            setState(() {
-                              val.isEmpty? isPFValid= false: isPFValid=true;
-                              isPasswordValid? errorP= '' :errorP='Password must be 6 characters long';
-                            });
-                          });
-
-                        },
-                        controller: passwordController,
-                        obscureText: isObscured,
-                        keyboardType: TextInputType.visiblePassword,
-                        decoration: InputDecoration(
-                          border: const OutlineInputBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(100.0)),
-                          ),
-                          prefixIcon: Icon(Icons.lock_outline),
-                          hintText: 'Enter your password',
-                          labelText: 'Password',
-                          errorText: isPFValid? (errorP==''?null:errorP ) :'Value Can\'t Be Empty',
-                          suffixIcon: IconButton(
-                            icon: isObscured
-                                ? const Icon(Icons.visibility)
-                                : const Icon(Icons.visibility_off),
-                            onPressed: () {
-                              setState(() {
-                                isObscured = !isObscured;
-                              });
                             },
-                          ),
-                        ),
-                      ),
-
-                      const Padding(padding: EdgeInsets.all(5.0)),
-                      // forget password text
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'Forget password?',
-                            textAlign: TextAlign.center,
-                            style: greyTextFont(height),
-                          ),
-                          const Padding(padding: EdgeInsets.all(2.7)),
-                          TextButton(
-                            onPressed: () {},
-                            style: TextButton.styleFrom(
-                              padding: EdgeInsets.zero,
+                            decoration: InputDecoration(
+                              border: const OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(100.0)),
+                              ),
+                              prefixIcon: const Icon(Icons.mail_outline),
+                              hintText: 'Enter your email',
+                              labelText: 'Email',
+                              errorText: isEFValid
+                                  ? (errorE == '' ? null : errorE)
+                                  : 'Value Can\'t Be Empty',
                             ),
                           ),
                           const Padding(padding: EdgeInsets.all(10.0)),
@@ -199,40 +136,51 @@ class _LoginPage extends State<LogIn> {
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(100.0)),
                               ),
-                              prefixIcon: Icon(Icons.lock_outline),
+                              prefixIcon: const Icon(Icons.lock_outline),
                               hintText: 'Enter your password',
                               labelText: 'Password',
                               errorText: isPFValid
                                   ? (errorP == '' ? null : errorP)
                                   : 'Value Can\'t Be Empty',
+                              suffixIcon: IconButton(
+                                icon: isObscured
+                                    ? const Icon(Icons.visibility)
+                                    : const Icon(Icons.visibility_off),
+                                onPressed: () {
+                                  setState(() {
+                                    isObscured = !isObscured;
+                                  });
+                                },
+                              ),
                             ),
                           ),
-
                           const Padding(padding: EdgeInsets.all(5.0)),
                           // forget password text
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Forget password?',
-                                textAlign: TextAlign.center,
-                                style: greyTextFont(height),
-                              ),
-                              const Padding(padding: EdgeInsets.all(2.7)),
-                              TextButton(
-                                onPressed: () {},
-                                style: TextButton.styleFrom(
-                                  padding: EdgeInsets.zero,
-                                ),
-                                child: Text(
-                                  ' Click here',
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Forget password?',
                                   textAlign: TextAlign.center,
-                                  style: greyTextFont(height)
-                                      .copyWith(color: mainColor),
+                                  style: greyTextFont(height),
                                 ),
-                              ),
-                            ],
-                          ),
+                                const Padding(
+                                  padding: EdgeInsets.all(2.7),
+                                ),
+                                TextButton(
+                                  onPressed: () {},
+                                  style: TextButton.styleFrom(
+                                    padding: EdgeInsets.zero,
+                                  ),
+                                  child: Text(
+                                    ' Click here',
+                                    textAlign: TextAlign.center,
+                                    style: greyTextFont(height)
+                                        .copyWith(color: mainColor),
+                                  ),
+                                ),
+                                const Padding(padding: EdgeInsets.all(10.0)),
+                              ]),
                           SizedBox(height: height * .017),
                           // error text
                           Row(
@@ -285,6 +233,7 @@ class _LoginPage extends State<LogIn> {
                                                   ).show(context);
                                                 }
                                               } else {
+                                                // ignore: use_build_context_synchronously
                                                 Navigator.pop(context);
                                               }
                                             }
@@ -343,7 +292,7 @@ class _LoginPage extends State<LogIn> {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => AdminLogIn()),
+                                builder: (context) => const AdminLogIn()),
                           );
                         },
                         style: TextButton.styleFrom(
