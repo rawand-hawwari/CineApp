@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:myapp/services/user_services.dart';
+import 'bloc/dateCubit.dart';
 import 'firebase_options.dart';
 
 import 'package:flutter/material.dart';
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
             providers: [
               BlocProvider(create: (_) => PageBloc()),
               BlocProvider(create: (_) => ThemeBloc()),
+              BlocProvider(create: (_)=> dateCubit(context: context)..getDates()),
             ],
             child: BlocBuilder<ThemeBloc, ThemeState>(
                 builder: (_, themeState) => MaterialApp(

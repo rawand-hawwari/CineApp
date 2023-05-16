@@ -6,7 +6,7 @@ import 'package:myapp/cenima-app-user/admin-Home-page.dart';
 import 'package:myapp/cenima-app-user/home-page.dart';
 import 'package:myapp/cenima-app-user/profile.dart';
 import 'package:myapp/cenima-app-user/rent-movie.dart';
-import 'package:myapp/cenima-app-user/screens.dart';
+import 'package:myapp/cenima-app-user/screens page.dart';
 import 'package:myapp/cine_app_icons.dart';
 import '../cenima-app-user/admin-food-menu.dart';
 import '../cenima-app-user/admin-profile-settings.dart';
@@ -588,9 +588,9 @@ class _MBottomNavigationBarHandlerState
           break;
         case 1:
           if (widget.index < index)
-            navigatorR(context, Screens());
+            navigatorR(context, ScreensPage());
           else
-            navigatorL(context, Screens());
+            navigatorL(context, ScreensPage());
           break;
         case 2:
           if (widget.index < index)

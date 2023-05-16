@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/cenima-app-user/log-in.dart';
-import 'package:myapp/cenima-app-user/screens.dart';
+import 'package:myapp/cenima-app-user/screens page.dart';
 import 'package:myapp/cenima-app-user/thetre-info.dart';
 import 'package:tmdb_api/tmdb_api.dart';
 

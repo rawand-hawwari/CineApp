@@ -6,3 +6,5 @@ String imageBaseURL = "https://image.tmdb.org/t/p";
 
 PageEvent? prevPageEvent;
 PageEvent? currentPage;
+bool isExpandedInformation=true;
+bool isExpandedSchedules=true;
