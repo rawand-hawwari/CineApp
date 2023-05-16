@@ -52,7 +52,6 @@ class MyApp extends StatelessWidget {
             providers: [
               BlocProvider(create: (_) => PageBloc()),
               BlocProvider(create: (_) => ThemeBloc()),
-              BlocProvider(create: (_)=> dateCubit(context: context)..getDates()),
             ],
             child: BlocBuilder<ThemeBloc, ThemeState>(
                 builder: (_, themeState) => MaterialApp(

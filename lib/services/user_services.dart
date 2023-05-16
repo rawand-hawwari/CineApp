@@ -16,7 +16,6 @@ class UserServices {
       'isAdmin': isAdmin,
     });
   }
-
   List<NUser> _userInfoFromSnapshot(QuerySnapshot snapshot){
 
     return snapshot.docs.map((doc) => NUser(
@@ -44,6 +43,7 @@ class UserServices {
   static Future<NUser> getUser(String? uid) async {
     DocumentSnapshot snapshot = await _userCollection.doc(uid).get();
     final data = snapshot.data() as Map<String, dynamic>;
+    print("did you enter get user$data ");
     return NUser(data['name'], data['isAdmin'], data['phoneNo'], uid: data['uid'], email: data['email']);
   }
 

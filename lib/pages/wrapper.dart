@@ -1,22 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/cenima-app-user/admin-log-in.dart';
 import 'package:myapp/cenima-app-user/home-page.dart';
-import 'package:myapp/cenima-app-user/log-in.dart';
 import 'package:myapp/services/user.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:myapp/services/user_services.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import '../bloc/page_bloc.dart';
 import '../bloc/page_event.dart';
 import '../bloc/page_state.dart';
 import '../cenima-app-user/admin-Home-page.dart';
-import '../cenima-app-user/sign-up.dart';
 import '../cenima-app-user/starter.dart';
-import '../main.dart';
 import '../services/shared_value.dart';
 
+// ignore: must_be_immutable
 class Wrapper extends StatelessWidget {
   Wrapper({this.isAdmin});
 
@@ -27,7 +22,6 @@ class Wrapper extends StatelessWidget {
     print("checking is amdin$isAdmin");
     NUser? user = Provider.of<NUser?>(context);
 
-
     if (user == null) {
       print("wrapper first if");
       print('is user null? $user');
@@ -35,18 +29,16 @@ class Wrapper extends StatelessWidget {
         prevPageEvent = GoToStarterPage();
         BlocProvider.of<PageBloc>(context).add(prevPageEvent!);
       }
-    }
-    else {
+    } else {
       print("this is else");
-      if (!(prevPageEvent is GoToHomePage)||!(prevPageEvent is GoToAHomePage)) {
-        if(isAdmin==false)
-          {
-            print("you're supposed to be here");
-            prevPageEvent = GoToHomePage();
-          }
-        else
-         {
-           prevPageEvent = GoToAHomePage();}
+      if (!(prevPageEvent is GoToHomePage) ||
+          !(prevPageEvent is GoToAHomePage)) {
+        if (isAdmin == false) {
+          print("you're supposed to be here");
+          prevPageEvent = GoToHomePage();
+        } else {
+          prevPageEvent = GoToAHomePage();
+        }
         BlocProvider.of<PageBloc>(context).add(prevPageEvent!);
       }
     }
@@ -54,8 +46,8 @@ class Wrapper extends StatelessWidget {
     return BlocBuilder<PageBloc, PageState>(
         builder: (_, pageState) => (pageState is OnStarterPage)
             ? Starter()
-            : (pageState is OnHomePage)? HomePage()
-            : AdminHomePage());
-
+            : (pageState is OnHomePage)
+                ? HomePage()
+                : AdminHomePage());
   }
 }

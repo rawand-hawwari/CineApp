@@ -14,11 +14,12 @@ class SearchMovie extends StatefulWidget {
 }
 
 class _SearchMovie extends State<SearchMovie> {
-  TextEditingController _controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
   List searchResult = [];
 
   @override
   void initState() {
+    super.initState();
     setState(() {
       searchResult = MovieService().Search(_controller.text) as List;
       searchResult;
