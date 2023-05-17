@@ -18,14 +18,14 @@ const List<String> list = <String>[
   'Third cinema'
 ];
 
-class Screens extends StatefulWidget {
-  const Screens({super.key});
+class ScreensPage extends StatefulWidget {
+  const ScreensPage({super.key});
 
   @override
-  State<Screens> createState() => _ScreensState();
+  State<ScreensPage> createState() => _ScreensPageState();
 }
 
-class _ScreensState extends State<Screens> {
+class _ScreensPageState extends State<ScreensPage> {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 393;

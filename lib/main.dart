@@ -1,16 +1,23 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:myapp/services/user_services.dart';
+import 'bloc/dateCubit.dart';
+import 'firebase_options.dart';
 
 import 'package:flutter/material.dart';
+import 'package:myapp/cenima-app-user/starter.dart';
 import 'package:myapp/pages/wrapper.dart';
 import 'package:myapp/services/auth.dart';
 import 'package:myapp/services/user.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'bloc/page_bloc.dart';
 import 'bloc/theme_bloc.dart';
 import 'bloc/theme_state.dart';
+import 'cenima-app-user/admin-Home-page.dart';
+import 'cenima-app-user/admin-profile-settings.dart';
 
 // Future<void> main() async {
 //   WidgetsFlutterBinding.ensureInitialized();
@@ -80,10 +87,12 @@ class _MyHomePageState extends State<MyHomePage> {
           primarySwatch: Colors.pink,
         ),
         home: FutureBuilder(
-            future: UserServices.getUser(user?.uid),
-            builder: (context, AsyncSnapshot<NUser?>? snapshot) {
-              print('this is the data inside the snapshot$snapshot');
-              return Wrapper(isAdmin: snapshot?.data?.isAdmin);
-            }));
-  }
+        future: UserServices.getUser(user?.uid),
+          builder: (context, AsyncSnapshot<NUser?>? snapshot) {
+          print('this is the data inside the snapshot$snapshot');
+            return Wrapper(isAdmin: snapshot?.data?.isAdmin);}
+        )
+    );
 }
+}
+

@@ -1,18 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/gestures.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'dart:ui';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/bloc/dateCubit.dart';
+import 'package:myapp/cenima-app-user/pick-a-seat-a.dart';
 import 'package:myapp/utils.dart';
 import '../services/Movie service.dart';
 import '../services/detail_skeleton.dart';
 import '../shared/Theme.dart';
 
-// ignore: must_be_immutable
-class MovieDetailsBook extends StatelessWidget {
+
+class MovieDetailsBook extends StatefulWidget {
+
   final int id;
 
   MovieDetailsBook({super.key, required this.id});
 
+  @override
+  State<MovieDetailsBook> createState() => _MovieDetailsBookState();
+}
+
+class _MovieDetailsBookState extends State<MovieDetailsBook> {
   late Size deviceSize;
+
   late BuildContext context;
+
   late Map arguments;
+  @override
 
   void initState() {
     MovieService().getShowingNow();
@@ -20,16 +35,32 @@ class MovieDetailsBook extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    DateTime currentDate = DateTime.now();
+    double baseWidth = 393;
+    double fem = MediaQuery
+        .of(context)
+        .size
+        .width / baseWidth;
+    double ffem = fem * 0.97;
+    double width = MediaQuery
+        .of(context)
+        .size
+        .width;
+    double height = MediaQuery
+        .of(context)
+        .size
+        .height;
 
     this.context = context;
     deviceSize = MediaQuery.of(context).size;
     MovieService ser = MovieService();
 
+
     return Container(
         height: deviceSize.height * 0.34,
         child: FutureBuilder(
             future: Future.wait(
-                [ser.getDetails(id), ser.getRelease(id), ser.getGenres(id)]),
+                [ser.getDetails(widget.id), ser.getRelease(widget.id), ser.getGenres(widget.id)]),
             // Firebase read operation , which gives future
             builder: (BuildContext ctx, AsyncSnapshot<dynamic> snapshot) {
               ConnectionState state = snapshot.connectionState;
@@ -77,16 +108,15 @@ class MovieDetailsBook extends StatelessWidget {
     return newGenres;
   }
 
-  _printMovieDetail(
-      {required MovieService ser, required BuildContext context}) {
+  _printMovieDetail({required MovieService ser, required BuildContext context}) {
+    bool isSelected=false;
     double baseWidth = 393;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     var image_url = 'https://image.tmdb.org/t/p/w500/';
-    print(ser.Genres.toString());
-    print(ser.rating);
+
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -171,7 +201,7 @@ class MovieDetailsBook extends StatelessWidget {
                           ],
                         ),
                         child: Text(
-                          ser.rating,
+                          ser.rating==''?'N/A':ser.rating,
                           style: SafeGoogleFont(
                             'Lucida Bright',
                             height * 0.027,
@@ -343,66 +373,102 @@ class MovieDetailsBook extends StatelessWidget {
                         height * 0.028,
                         fontWeight: FontWeight.w700,
                       ),
-                    ),
-                    children: <Widget>[
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(
-                            44 * fem, 20 * fem, 44 * fem, 0),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
+                      child: ExpansionTile(
+                        initiallyExpanded: true,
+                        iconColor: mainColor,
+                        title: Text(
+                          'Schedules',
+                          style: SafeGoogleFont(
+                            'Segoe UI',
+                            height * 0.028,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                        children: <Widget>[
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(
+                                44 * fem, 20 * fem, 44 * fem, 0),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                TextButton(
-                                  onPressed: () {},
-                                  style: TextButton.styleFrom(
-                                    padding: EdgeInsets.zero,
-                                  ),
-                                  child: Container(
-                                    // calendarRHw (I187:18999;187:19413;1:39)
-                                    margin: EdgeInsets.fromLTRB(0.01 * fem,
-                                        0 * fem, 0 * fem, 11.13 * fem),
-                                    width: 38 * fem,
-                                    height: 38 * fem,
-                                    child: Image.asset(
-                                      'assets/cenima-app-user/images/calendar-qCq.png',
-                                      fit: BoxFit.cover,
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    TextButton(
+                                      onPressed: () {
+
+                                      },
+                                      style: TextButton.styleFrom(
+                                        padding: EdgeInsets.zero,
+                                      ),
+                                      child: Container(
+                                        // calendarRHw (I187:18999;187:19413;1:39)
+                                        margin: EdgeInsets.fromLTRB(
+                                            0.01 * fem, 0 * fem, 0 * fem,
+                                            11.13 * fem),
+                                        width: 38 * fem,
+                                        height: 38 * fem,
+                                        child: Image.asset(
+                                          'assets/cenima-app-user/images/calendar-qCq.png',
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                    BlocBuilder<dateCubit, List<dynamic>>(
+                                        builder: (context, dates) {
+                                          String selectedValue = dates[0];
+                                          return DropdownButton(
+                                            value: selectedValue,
+                                            style: SafeGoogleFont(
+                                              'Lucida Bright',
+                                              15 * ffem,
+                                              fontWeight: FontWeight.w600,
+                                              height: 1.2575 * ffem / fem,
+                                              color: Color(0xff777777),
+                                            ),
+                                            onChanged: (String? newValue){
+                                              setState(() {
+                                                selectedValue = newValue!;
+                                              });
+                                            },
+                                            items: [
+                                              DropdownMenuItem(child: Text(dates[0].toString()),value: dates[0].toString()),
+                                              DropdownMenuItem(child: Text(dates[1].toString()),value: dates[1].toString()),
+                                              DropdownMenuItem(child: Text(dates[2].toString()),value: dates[2].toString()),
+                                              DropdownMenuItem(child: Text(dates[3].toString()),value: dates[3].toString()),
+                                              DropdownMenuItem(child: Text(dates[4].toString()),value: dates[4].toString()),
+                                              DropdownMenuItem(child: Text(dates[5].toString()),value: dates[5].toString()),
+                                              DropdownMenuItem(child: Text(dates[6].toString()),value: dates[6].toString()),
+                                            ],
+                                          );
+                                        }
                                     ),
                                   ),
                                 ),
-                                Text(
-                                  // thu08decctD (I187:18999;187:19413;1:40)
-                                  'Thu, 08 Dec',
-                                  textAlign: TextAlign.center,
-                                  style: SafeGoogleFont(
-                                    'Lucida Bright',
-                                    15 * ffem,
-                                    fontWeight: FontWeight.w600,
-                                    height: 1.2575 * ffem / fem,
-                                    color: Color(0xff777777),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const Spacer(),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                TextButton(
-                                  onPressed: () {},
-                                  style: TextButton.styleFrom(
-                                    padding: EdgeInsets.zero,
-                                  ),
-                                  child: Container(
-                                    width: 38 * fem,
-                                    height: 38 * fem,
-                                    child: Image.asset(
-                                      'assets/cenima-app-user/images/edit.png',
-                                      fit: BoxFit.cover,
+                                const Spacer(),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(builder: (context) => SeatSelection()),);
+                                      },
+                                      style: TextButton.styleFrom(
+                                        padding: EdgeInsets.zero,
+                                      ),
+                                      child: Container(
+                                        width: 38 * fem,
+                                        height: 38 * fem,
+                                        child: Image.asset(
+                                          'assets/cenima-app-user/images/edit.png',
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
                                     ),
-                                  ),
-                                ),
+
+                                    
                                 Text(
                                   // filters3Vf (I187:18999;187:19414;157:16836)
                                   'Filters',
@@ -417,16 +483,15 @@ class MovieDetailsBook extends StatelessWidget {
                                 ),
                               ],
                             ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        height: (height * 0.05) * 10,
-                        child: GridView.builder(
-                          physics: NeverScrollableScrollPhysics(),
-                          itemCount: 10,
-                          gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
+                          ),
+                          //schedule buttons
+                          Container(
+                            height: (height * 0.05) * 10,
+                            child: GridView.builder(
+                              physics: NeverScrollableScrollPhysics(),
+                              itemCount: 10,
+                              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+
                                   childAspectRatio: 2.3,
                                   crossAxisCount: 3,
                                   crossAxisSpacing: 1,
@@ -479,117 +544,6 @@ class MovieDetailsBook extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-
-  _getFloatingBookTicketsButton() {
-    return Container(
-      height: deviceSize.height * 0.05,
-      width: deviceSize.width * 0.9,
-      child: ElevatedButton(
-          // style: ElevatedButton.styleFrom(primary: MyTheme.splash),
-          onPressed: () {
-            // Navigator.pushNamed(context, RouteConstants.BOOKING,arguments: {'movieName' : movie.title,'theatreName' : arguments['theatreName']});
-          },
-          child: Text(
-            'Book Tickets',
-            // style: MyTheme.currentTheme.textTheme.displayMedium,
-          )),
-    );
-  }
-
-  _printYoutubePlayer() {
-    int length = 10;
-    // String id = Movie.convertToYoutubeID(movie.trailer);
-    if (/*id.*/ length > 12) {
-      return Container(
-        height: deviceSize.height * 0.2,
-        margin: const EdgeInsets.only(left: 15, right: 15, top: 10),
-        decoration: BoxDecoration(
-          borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(10), topRight: Radius.circular(10)),
-          border: Border.all(width: 2, color: Colors.black),
-          // image: DecorationImage(image: NetworkImage(movie.trailer))
-        ),
-      );
-    }
-/*
-    else{
-      YoutubePlayerController _controller = YoutubePlayerController(
-        initialVideoId: YoutubePlayer.convertUrlToId(id)??'tOlsYCsXJdY',
-        flags: const YoutubePlayerFlags(
-          autoPlay: false,
-          mute: false,
-          forceHD: true,
-        ),
-      );
-      return Column(
-        children: [
-          Container(
-            width: deviceSize.width*0.92,
-            height: deviceSize.height*0.2,
-            margin: const EdgeInsets.only(top: 10,left: 15,right: 15),
-            decoration: BoxDecoration(
-                borderRadius: const BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(10)),
-                border: Border.all(width: 2,color: Colors.black)
-            ),
-            child: YoutubePlayer(
-              controller: _controller,
-            ),
-          ),
-          Container(
-              height : deviceSize.height*0.025,
-              width: deviceSize.width*0.92,
-              decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10)),
-                  color: Colors.black
-              ),
-              child: Align(
-                alignment: Alignment.center,
-                child: Text('Trailer'.toUpperCase(),style: const TextStyle(color: Colors.white,fontWeight: FontWeight.bold)),
-              )
-          )
-        ],
-      );
-    }
-*/
-  }
-
-  _printRating() {
-    return Container(
-      margin: const EdgeInsets.only(left: 15, right: 15),
-      child: Row(
-        children: [
-          // SvgPicture.asset('assets/icons/heart.svg'),
-          const SizedBox(width: 5),
-          // Text(movie.imdb_rating,style: const TextStyle(color: Colors.red,fontSize: 20,fontWeight: FontWeight.bold)),
-        ],
-      ),
-    );
-  }
-
-  _printFramesAndLanguages() {
-    return Container(
-      margin: const EdgeInsets.only(left: 15, right: 15),
-      child: Row(
-        children: [
-          _getGreyContainer(Text(
-            '2D',
-          )),
-          const SizedBox(width: 5),
-          _getGreyContainer(Text('Original Language'))
-        ],
-      ),
-    );
-  }
-
-  _getGreyContainer(Widget child) {
-    return Container(
-      padding: const EdgeInsets.all(8),
-      decoration: BoxDecoration(
-        color: Colors.grey.shade400,
-      ),
-      child: child,
     );
   }
 }
