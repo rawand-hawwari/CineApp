@@ -68,103 +68,16 @@ class _RentMovie extends State<RentMovie> {
           ],
           body: Container(
             color: const Color(0xfff1f1f1),
-            child: Column(
+            child: const Column(
               children: [
-                const SingleChildScrollView(),
+                SingleChildScrollView(),
               ],
             ),
           ),
         ),
         drawer: ASettingDrawer(),
-        bottomNavigationBar: const BottomNavigationBarHandler(),
+        bottomNavigationBar: UBottomNavigationBarHandler(index: 1)
       ),
     );
-  }
-}
-
-//class for bottom navigator
-class BottomNavigationBarHandler extends StatefulWidget {
-  const BottomNavigationBarHandler({super.key});
-
-  @override
-  State<BottomNavigationBarHandler> createState() =>
-      _BottomNavigationBarHandlerState();
-}
-
-class _BottomNavigationBarHandlerState
-    extends State<BottomNavigationBarHandler> {
-  final screenHeight = window.physicalSize.height / window.devicePixelRatio;
-  int currentIColorsndex = 0;
-  int currentIndex = 1;
-
-  final ScrollController _homeController = ScrollController();
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        decoration: const BoxDecoration(
-            color: Colors.black,
-            border: Border(top: BorderSide(color: Colors.black, width: 1.0))),
-        child: BottomNavigationBar(
-            unselectedItemColor: Colors.black,
-            unselectedFontSize: screenHeight * 0.015,
-            type: BottomNavigationBarType.fixed,
-            showUnselectedLabels: true,
-            selectedFontSize: screenHeight * 0.02,
-            iconSize: 40,
-            selectedItemColor: const Color(0xffff2153),
-            backgroundColor: Colors.white,
-            onTap: onTabTapped,
-            currentIndex: currentIndex,
-            items: const [
-              BottomNavigationBarItem(
-                  label: 'Book Ticket', icon: Icon(CineApp.cinema_ticket_1)),
-              BottomNavigationBarItem(
-                  label: 'Rent Movie', icon: Icon(CineApp.film_reel)),
-              BottomNavigationBarItem(
-                  label: 'Food Menu', icon: Icon(CineApp.popcorn)),
-              BottomNavigationBarItem(
-                  label: 'Settings', icon: Icon(Icons.person))
-            ]));
-  }
-
-  void onTabTapped(int index) {
-    if (currentIndex == index) {
-      _homeController.animateTo(
-        0.0,
-        duration: const Duration(milliseconds: 500),
-        curve: Curves.easeOut,
-      );
-    } else {
-      switch (index) {
-        case 0:
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => HomePage()),
-          );
-          break;
-        case 1:
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const RentMovie()),
-          );
-          break;
-        case 2:
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => FoodMenu()),
-          );
-          break;
-        case 3:
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const Profile()),
-          );
-          break;
-      }
-    }
-    setState(() {
-      currentIndex = index;
-    });
   }
 }

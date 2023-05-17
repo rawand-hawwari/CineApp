@@ -6,14 +6,14 @@ import 'package:myapp/utils.dart';
 
 import '../shared/Theme.dart';
 
-class EditMovieSchedual extends StatefulWidget {
-  const EditMovieSchedual({super.key});
+class EditMovieSchedule extends StatefulWidget {
+  const EditMovieSchedule({super.key});
 
   @override
-  State<EditMovieSchedual> createState() => _EditMovieSchedual();
+  State<EditMovieSchedule> createState() => _EditMovieSchedule();
 }
 
-class _EditMovieSchedual extends State<EditMovieSchedual> {
+class _EditMovieSchedule extends State<EditMovieSchedule> {
   List<String> screens = [
     "Screen 1",
     "Screen 2",
@@ -35,6 +35,9 @@ class _EditMovieSchedual extends State<EditMovieSchedual> {
     'AM',
     'PM',
   ];
+  String time = "";
+  Map<String, String> schedulesToAdd = {};
+
   @override
   void initState() {
     super.initState();
@@ -67,7 +70,7 @@ class _EditMovieSchedual extends State<EditMovieSchedual> {
             snap: true,
             centerTitle: true,
             title: Text(
-              'Edit Schedual-Date',
+              'Edit Schedule-Date',
               textAlign: TextAlign.center,
               style: TextStyle(
                 // fontFamily: 'Nature Beauty Personal Use',
@@ -80,160 +83,70 @@ class _EditMovieSchedual extends State<EditMovieSchedual> {
         ],
         body: Column(
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                //copy last day schedual
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: SizedBox(
-                    width: width * 0.65,
-                    child: TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom(
-                        padding: EdgeInsets.zero,
-                      ),
-                      child: Container(
-                        padding: const EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                          color: const Color(0xffff2153),
-                          borderRadius:
-                              BorderRadius.circular(17.6289710999 * fem),
-                        ),
-                        child: Center(
-                          child: Text(
-                            "COPY YESTERDAY'S SCHEDULE",
-                            textAlign: TextAlign.center,
-                            style: SafeGoogleFont(
-                              'Lucida Bright',
-                              width * 0.04,
-                              fontWeight: FontWeight.w400,
-                              color: const Color(0xffffffff),
+            SizedBox(
+              // height: height * 1,
+              child: Stack(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      //copy last day schedule
+                      Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: SizedBox(
+                          width: width * 0.65,
+                          child: TextButton(
+                            onPressed: () {},
+                            style: TextButton.styleFrom(
+                              padding: EdgeInsets.zero,
+                            ),
+                            child: Container(
+                              padding: const EdgeInsets.all(5),
+                              decoration: BoxDecoration(
+                                color: const Color(0xffff2153),
+                                borderRadius:
+                                    BorderRadius.circular(17.6289710999 * fem),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  "COPY YESTERDAY'S SCHEDULE",
+                                  textAlign: TextAlign.center,
+                                  style: SafeGoogleFont(
+                                    'Lucida Bright',
+                                    width * 0.04,
+                                    fontWeight: FontWeight.w400,
+                                    color: const Color(0xffffffff),
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                  ),
-                ),
-                // scheduals for screens list
-                // const EditSchedual(),
-                screenListBuilder(),
-                // Container(
-                //   child: ListView(
-                //     children: screens.map((strone) {
-                //       return Container(
-                //         // margin: EdgeInsets.all(5),
-                //         // padding: EdgeInsets.all(15),
-                //         color: Colors.green[100],
-                //         child: Card(
-                //           margin: EdgeInsets.zero,
-                //           shape: const RoundedRectangleBorder(
-                //             side: BorderSide(
-                //               color: Color(0xff707070),
-                //               width: 1,
-                //             ),
-                //           ),
-                //           child: ExpansionTile(
-                //             initiallyExpanded: true,
-                //             iconColor: mainColor,
-                //             title: Text(
-                //               strone,
-                //               style: SafeGoogleFont(
-                //                 'Segoe UI',
-                //                 height * 0.028,
-                //                 fontWeight: FontWeight.w700,
-                //               ),
-                //             ),
-                //             children: <Widget>[
-                //               Row(
-                //                 mainAxisAlignment:
-                //                     MainAxisAlignment.spaceBetween,
-                //                 children: [
-                //                   Column(
-                //                     crossAxisAlignment:
-                //                         CrossAxisAlignment.center,
-                //                     children: [
-                //                       const Icon(Icons.date_range),
-                //                       DropdownButton(
-                //                         value: dropdownVal,
-                //                         items: age.map((String value) {
-                //                           return DropdownMenuItem<String>(
-                //                             value: value,
-                //                             child: Text(
-                //                               value,
-                //                               style: GoogleFonts.lato(
-                //                                   fontSize: 20,
-                //                                   fontWeight: FontWeight.w400,
-                //                                   color:
-                //                                       const Color(0xFF323232)),
-                //                             ),
-                //                           );
-                //                         }).toList(),
-                //                         onChanged: (String? value) {
-                //                           setState(() {
-                //                             if (value == null) {
-                //                               dropdownVal = 'choose';
-                //                             } else {
-                //                               dropdownVal = value;
-                //                               // isAgeValid = true;
-                //                               // error = '';
-                //                             }
-                //                           });
-                //                         },
-                //                       ),
-                //                     ],
-                //                   ),
-                //                   Padding(
-                //                     padding: const EdgeInsets.all(15.0),
-                //                     child: SizedBox(
-                //                       width: width * 0.65,
-                //                       child: TextButton(
-                //                         onPressed: () {},
-                //                         style: TextButton.styleFrom(
-                //                           padding: EdgeInsets.zero,
-                //                         ),
-                //                         child: Container(
-                //                           padding: const EdgeInsets.all(5),
-                //                           decoration: BoxDecoration(
-                //                             color: const Color(0xffff2153),
-                //                             borderRadius:
-                //                                 BorderRadius.circular(20),
-                //                           ),
-                //                           child: Center(
-                //                             child: Text(
-                //                               "Add New Time",
-                //                               textAlign: TextAlign.center,
-                //                               style: SafeGoogleFont(
-                //                                 'Lucida Bright',
-                //                                 width * 0.04,
-                //                                 fontWeight: FontWeight.w400,
-                //                                 color: const Color(0xffffffff),
-                //                               ),
-                //                             ),
-                //                           ),
-                //                         ),
-                //                       ),
-                //                     ),
-                //                   ),
-                //                 ],
-                //               ),
-                //             ],
-                //           ),
-                //         ),
-                //       );
-                //     }).toList(),
-                //   ),
-                // )
+                      // schedules for screens list
+                      // const Editschedule(),
+                      screenListBuilder(),
 
-                //save button
-                Align(
-                  alignment: FractionalOffset.bottomCenter,
+                      //save button
+
+                      // Align(
+                      //   alignment: Alignment.bottomCenter,
+                      //   child: Text('data'),
+                      // )
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: SizedBox(
+                height: height * 0.1,
+                child: Align(
+                  alignment: Alignment.bottomCenter,
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(10),
                     child: SizedBox(
                       width: width * 0.3,
-                      height: height * 0.05,
                       child: TextButton(
                         onPressed: () {
                           Navigator.push(
@@ -249,14 +162,14 @@ class _EditMovieSchedual extends State<EditMovieSchedual> {
                           padding: const EdgeInsets.all(10),
                           decoration: BoxDecoration(
                             color: const Color(0xffff2153),
-                            borderRadius: BorderRadius.circular(54 * fem),
+                            borderRadius: BorderRadius.circular(100),
                           ),
                           child: Center(
                             child: Text(
                               'Save',
                               textAlign: TextAlign.center,
                               style: GoogleFonts.lato(
-                                fontSize: width * 0.055,
+                                fontSize: width * 0.05,
                                 fontWeight: FontWeight.w600,
                                 color: const Color(0xffffffff),
                               ),
@@ -267,8 +180,8 @@ class _EditMovieSchedual extends State<EditMovieSchedual> {
                     ),
                   ),
                 ),
-              ],
-            ),
+              ),
+            )
           ],
         ),
       ),
@@ -1184,6 +1097,8 @@ class _EditMovieSchedual extends State<EditMovieSchedual> {
                         child: TextButton(
                           onPressed: () {
                             setState(() {
+                              time = "";
+                              dropdownTimeVal[screens.indexOf(strone)];
                               gridChild[screens.indexOf(strone)].add(
                                 Row(
                                   mainAxisAlignment:
@@ -1211,6 +1126,13 @@ class _EditMovieSchedual extends State<EditMovieSchedual> {
                                           contentPadding: EdgeInsets.all(5),
                                           hintStyle: TextStyle(fontSize: 14),
                                         ),
+                                        onChanged: (String? value) {
+                                          setState(() {
+                                            time == ""
+                                                ? time = controller.text
+                                                : time = controller.text + time;
+                                          });
+                                        },
                                       ),
                                     ),
                                     SizedBox(
@@ -1244,6 +1166,8 @@ class _EditMovieSchedual extends State<EditMovieSchedual> {
                                               dropdownTimeVal[screens
                                                   .indexOf(strone)] = value;
                                             }
+                                            time +=
+                                                " ${dropdownTimeVal[screens.indexOf(strone)]}";
                                           });
                                         },
                                       ),
@@ -1251,6 +1175,12 @@ class _EditMovieSchedual extends State<EditMovieSchedual> {
                                   ],
                                 ),
                               );
+                              time;
+                              schedulesToAdd.addEntries({
+                                "Screen": strone,
+                                "date": dropdownVal[screens.indexOf(strone)],
+                                "time": time,
+                              }.entries);
                             });
                           },
                           style: TextButton.styleFrom(

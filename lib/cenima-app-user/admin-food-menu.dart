@@ -288,7 +288,7 @@ class _AFoodMenu extends State<AFoodMenu> {
                                                 data['name'],
                                                 softWrap: true,
                                                 style: GoogleFonts.lato(
-                                                  fontSize: width * 0.05,
+                                                  fontSize: width * 0.045,
                                                   fontWeight: FontWeight.w700,
                                                   color:
                                                       const Color(0xff000000),

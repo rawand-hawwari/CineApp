@@ -75,7 +75,6 @@ class _GeneralHelpPage extends State<General> {
                           style: GoogleFonts.lato(
                             fontSize: 22 * ffem,
                             fontWeight: FontWeight.w600,
-                            height: 1.2575 * ffem / fem,
                             color: const Color(0xff7e132b),
                           ),
                         ),
