@@ -160,7 +160,6 @@ class _LoginPage extends State<LogIn> {
                                   textAlign: TextAlign.center,
                                   style: greyTextFont(height).copyWith(color: mainColor),
                                 ),
-                              ),
                             ],
                       ),
                           SizedBox(height: height*.017),
