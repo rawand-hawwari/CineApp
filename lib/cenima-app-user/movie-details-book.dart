@@ -122,7 +122,7 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Color(0x44000000),
+        backgroundColor: const Color(0x44000000),
         elevation: 0,
         leading: IconButton(onPressed: () =>
         {
@@ -139,7 +139,7 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
             23 * ffem,
             fontWeight: FontWeight.w700,
             height: 1.2575 * ffem / fem,
-            color: Color(0xffffffff),
+            color: const Color(0xffffffff),
           ),
         ),
       ),
@@ -185,15 +185,15 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
-                        padding: EdgeInsets.only(
+                        padding: const EdgeInsets.only(
                             top: 0, left: 20, bottom: 2, right: 20),
                         decoration: BoxDecoration(
-                          color: Color(0xff9a2044),
+                          color: const Color(0xff9a2044),
                           borderRadius: BorderRadius.circular(17.6289710999 *
                               fem),
                           boxShadow: [
                             BoxShadow(
-                              color: Color(0x29000000),
+                              color: const Color(0x29000000),
                               offset: Offset(0 * fem, 3.3054320812 * fem),
                               blurRadius: 0.2754526734 * fem,
                             ),
@@ -205,7 +205,7 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
                             'Lucida Bright',
                             height * 0.027,
                             fontWeight: FontWeight.w600,
-                            color: Color(0xffffffff),
+                            color: const Color(0xffffffff),
                           ),
                         ),
                       ),
