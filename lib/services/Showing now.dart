@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:myapp/cenima-app-user/add-movie.dart';
-import 'package:myapp/cenima-app-user/edit-schedual.dart';
+import 'package:myapp/cenima-app-user/edit-schedule.dart';
 import 'package:myapp/services/Movie%20service.dart';
 import 'package:myapp/shared/Theme.dart';
 import '../cenima-app-user/movie-details-book.dart';
@@ -24,7 +23,7 @@ class ShowingList extends StatelessWidget {
   Widget build(BuildContext context) {
     Size deviceSize = MediaQuery.of(context).size;
     MovieService ser = MovieService();
-    return Container(
+    return SizedBox(
         height: deviceSize.height * 0.34,
         child: FutureBuilder(
             future: ser.getShowingNow(),
@@ -459,7 +458,7 @@ class _ShowingListAdmin extends State<ShowingListAdmin> {
                                 ser.showingNow[i]['title'],
                                 style: SafeGoogleFont(
                                   'Lucida Bright',
-                                  22,
+                                  width * 0.05,
                                   fontWeight: FontWeight.w600,
                                   color: const Color(0xff7e132b),
                                 ),
@@ -475,7 +474,7 @@ class _ShowingListAdmin extends State<ShowingListAdmin> {
                                 Genres(ser.Genres2[i]),
                                 style: TextStyle(
                                     color: mainColor,
-                                    fontSize: 12,
+                                    fontSize: width * 0.03,
                                     fontWeight: FontWeight.bold),
                               ),
                             ),
@@ -575,7 +574,7 @@ class _ShowingListAdmin extends State<ShowingListAdmin> {
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
-                                    const EditMovieSchedual()),
+                                    const EditMovieSchedule()),
                           );
                         },
                         child: Container(

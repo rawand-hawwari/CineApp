@@ -15,7 +15,6 @@ import 'package:myapp/reusable-widgets/reusable-widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../services/Showing now.dart';
 
-
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -40,10 +39,6 @@ class _HomePage extends State<HomePage> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-
-    double baseWidth = 393;
-    double fem = MediaQuery.of(context).size.width / baseWidth;
-    double ffem = fem * 0.97;
 
     return Scaffold(
       body: NestedScrollView(
@@ -85,14 +80,14 @@ class _HomePage extends State<HomePage> {
                 child: Column(
                   children: [
                     SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.3,
+                      height: height * 0.3,
                       child: Stack(
                         children: [
                           Container(
                             alignment: Alignment.topLeft,
                             child: CarouselSlider.builder(
                                 options: CarouselOptions(
-                                    height: MediaQuery.of(context).size.height *
+                                    height: height *
                                         0.5,
                                     autoPlay: true,
                                     viewportFraction: 1,
@@ -122,15 +117,12 @@ class _HomePage extends State<HomePage> {
                             child: Container(
                                 child: activeIndex == 0
                                     ? SizedBox(
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.3,
+                                        width: width * 0.3,
                                         child: Text(
                                           "50% off on 2 tickets \n\n use code 50OFF!",
                                           style: GoogleFonts.lato(
-                                            fontSize: 25 * ffem,
+                                            fontSize: width * 0.05,
                                             fontWeight: FontWeight.w400,
-                                            height: 1.2575 * ffem / fem,
                                             color: const Color(0xffffffff),
                                           ),
                                         ))
@@ -197,21 +189,6 @@ class _HomePage extends State<HomePage> {
                 children: snapshot.data!.docs.map((DocumentSnapshot document) {
                   Map<String, dynamic> data =
                       document.data()! as Map<String, dynamic>;
-                  // if (data['type'] != globalData.listTitle) {
-                  //   checkTypeCount += 1;
-                  //   if (data.length == checkTypeCount) {
-                  //     return const Center(
-                  //       child: Text(
-                  //         'This List is empty',
-                  //         style: TextStyle(
-                  //           fontSize: 30,
-                  //           fontWeight: FontWeight.w600,
-                  //           color: Color(0xffff1e60),
-                  //         ),
-                  //       ),
-                  //     );
-                  //   }
-                  // }
                   return Padding(
                     padding: const EdgeInsets.all(5),
                     child: Center(
@@ -267,9 +244,7 @@ _printHeadingS({required String heading, required BuildContext context}) {
             print('wgh');
             Navigator.push(
               context,
-              MaterialPageRoute(
-                  builder: (context) => ShowingNowList()),
-
+              MaterialPageRoute(builder: (context) => ShowingNowList()),
             );
           },
           child: Text("View All", style: TextStyle(color: mainColor)),
@@ -280,7 +255,7 @@ _printHeadingS({required String heading, required BuildContext context}) {
 }
 
 _printHeadingU({required String heading, required BuildContext context}) {
-  MovieService ser= MovieService();
+  MovieService ser = MovieService();
   ser.getShowingNow();
   return Padding(
     padding: const EdgeInsets.only(left: 20.0, top: 5, right: 10),
@@ -288,7 +263,7 @@ _printHeadingU({required String heading, required BuildContext context}) {
       children: [
         const SizedBox(width: 5),
         Text(
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.bold,
           ),
           heading.toUpperCase(),
@@ -299,12 +274,10 @@ _printHeadingU({required String heading, required BuildContext context}) {
             print(ser.showingNow2);
             Navigator.push(
               context,
-              MaterialPageRoute(
-                  builder: (context) => UpcommingNowList()),
+              MaterialPageRoute(builder: (context) => UpcommingNowList()),
             );
           },
-          child:
-          Text("View All", style: TextStyle(color: mainColor)),
+          child: Text("View All", style: TextStyle(color: mainColor)),
         ),
       ],
     ),

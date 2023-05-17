@@ -73,65 +73,67 @@ class _FoodMenu extends State<FoodMenu> {
                 children: [
                   Container(
                     color: const Color(0xFFFFFFFF),
-                    child: ButtonBar(
-                      alignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        TextButton(
-                          onPressed: () {
-                            setState(() {
-                              globalData.listTitle = "snacks";
-                            });
-                          },
-                          child: Container(
-                            padding: const EdgeInsets.all(20),
-                            child: Text(
-                              "Snacks",
-                              style: GoogleFonts.lato(
-                                fontSize: 20 * ffem,
-                                fontWeight: FontWeight.w400,
-                                height: 1.2575 * ffem / fem,
-                                color: const Color(0xff464646),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        ButtonBar(
+                          alignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            TextButton(
+                              onPressed: () {
+                                setState(() {
+                                  globalData.listTitle = "snacks";
+                                });
+                              },
+                              child: Container(
+                                padding: const EdgeInsets.all(15),
+                                child: Text(
+                                  "Snacks",
+                                  style: GoogleFonts.lato(
+                                    fontSize: width * 0.045,
+                                    fontWeight: FontWeight.w400,
+                                    color: const Color(0xff464646),
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
-                        ),
-                        TextButton(
-                          onPressed: () {
-                            setState(() {
-                              globalData.listTitle = "candy";
-                            });
-                          },
-                          child: Container(
-                            padding: const EdgeInsets.all(20),
-                            child: Text(
-                              "Candy",
-                              style: GoogleFonts.lato(
-                                fontSize: 20 * ffem,
-                                fontWeight: FontWeight.w400,
-                                height: 1.2575 * ffem / fem,
-                                color: const Color(0xff464646),
+                            TextButton(
+                              onPressed: () {
+                                setState(() {
+                                  globalData.listTitle = "candy";
+                                });
+                              },
+                              child: Container(
+                                padding: const EdgeInsets.all(15),
+                                child: Text(
+                                  "Candy",
+                                  style: GoogleFonts.lato(
+                                    fontSize: width * 0.045,
+                                    fontWeight: FontWeight.w400,
+                                    color: const Color(0xff464646),
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
-                        ),
-                        TextButton(
-                          onPressed: () {
-                            setState(() {
-                              globalData.listTitle = "drinks";
-                            });
-                          },
-                          child: Container(
-                            padding: const EdgeInsets.all(20),
-                            child: Text(
-                              "Drinks",
-                              style: GoogleFonts.lato(
-                                fontSize: 20 * ffem,
-                                fontWeight: FontWeight.w400,
-                                height: 1.2575 * ffem / fem,
-                                color: const Color(0xff464646),
+                            TextButton(
+                              onPressed: () {
+                                setState(() {
+                                  globalData.listTitle = "drinks";
+                                });
+                              },
+                              child: Container(
+                                padding: const EdgeInsets.all(15),
+                                child: Text(
+                                  "Drinks",
+                                  style: GoogleFonts.lato(
+                                    fontSize: width * 0.045,
+                                    fontWeight: FontWeight.w400,
+                                    color: const Color(0xff464646),
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
+                          ],
                         ),
                       ],
                     ),
@@ -230,8 +232,6 @@ class _FoodMenu extends State<FoodMenu> {
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 10),
                                   child: Column(
-                                    // mainAxisAlignment:
-                                    // MainAxisAlignment.spaceEvenly,
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
@@ -239,7 +239,7 @@ class _FoodMenu extends State<FoodMenu> {
                                         data['name'],
                                         softWrap: true,
                                         style: GoogleFonts.lato(
-                                          fontSize: 18,
+                                          fontSize: width * 0.045,
                                           fontWeight: FontWeight.w700,
                                           color: const Color(0xff000000),
                                         ),

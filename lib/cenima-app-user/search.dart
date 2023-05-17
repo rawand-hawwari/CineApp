@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../services/Movie service.dart';
 import '../services/items_skeleton.dart';
@@ -40,21 +41,23 @@ class SearchPage extends SearchDelegate {
   @override
   Widget buildResults(BuildContext context) {
     Size deviceSize = MediaQuery.of(context).size;
-    double width = deviceSize.width;
     MovieService ser = MovieService();
+    double width = deviceSize.width;
     return SizedBox(
-      // height: deviceSize.height * 0.34,
+      height: deviceSize.height * 1,
       child: FutureBuilder(
-        future: ser.getShowingNow(),
+        future: Future.wait(
+            [ser.Search(query), ser.getAllRelease(), ser.getAllGenres()]),
         builder: (BuildContext ctx, AsyncSnapshot<dynamic> snapshot) {
           ConnectionState state = snapshot.connectionState;
 
           // loading
           if (state == ConnectionState.waiting) {
-            return const Center(child: ItemSkeleton());
+            return const Center(child: ItemSkeletonV(length: 10));
           }
           // error
           else if (snapshot.hasError) {
+            print(snapshot.error);
             return const Center(
               child: Text(
                 'Loading Error',
@@ -64,7 +67,10 @@ class SearchPage extends SearchDelegate {
           }
           // loaded
           else {
-            return _printMovies(ser, width);
+            return Padding(
+              padding: const EdgeInsets.only(bottom: 0),
+              child: _printMovies(ser, width),
+            );
           }
         },
       ),
@@ -74,30 +80,63 @@ class SearchPage extends SearchDelegate {
   @override
   Widget buildSuggestions(BuildContext context) {
     return const Center(
-      child: Text("Search Movies"),
+      child: Text(
+        "Search Movies Here",
+      ),
     );
+  }
+
+  String Genres(List genres) {
+    String newGenres = '';
+    for (int i = 0; i < genres.length; i++) {
+      newGenres = newGenres +
+          genres[i]['name'] +
+          ((i == genres.length - 1) ? "" : ', ');
+    }
+    return newGenres;
   }
 
   _printMovies(MovieService ser, double width) {
     var image_url = 'https://image.tmdb.org/t/p/w500/';
+    if (ser.searchResult.isEmpty) {
+      return Center(
+        child: Text(
+          "No available movies with '$query' in it, Please try again",
+          style: GoogleFonts.ibmPlexSerif(
+            fontSize: width * 0.035,
+            fontWeight: FontWeight.w300,
+            color: const Color(0xff000000),
+          ),
+        ),
+      );
+    }
     return ListView.builder(
+      padding: EdgeInsets.zero,
       scrollDirection: Axis.vertical,
-      itemCount: ser.showingNow.length,
+      itemCount: ser.searchResult.length,
       itemBuilder: (BuildContext ctx, int i) {
-        ser.getGenres(536554);
-        ser.getRelease(ser.showingNow[i]['id']);
+        double width = MediaQuery.of(ctx).size.width;
+        double height = MediaQuery.of(ctx).size.height;
+
         return Padding(
           padding:
               const EdgeInsets.only(left: 10, top: 10, right: 10, bottom: 10),
           child: GestureDetector(
-            onTap: () {},
+            onTap: () {
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //       builder: (context) =>
+              //           MovieDetailsBook(id: ser.showingNow[i]['id'])),
+              // );
+            },
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: Image.network(
-                    image_url + ser.showingNow[i]['poster_path'],
+                    image_url + ser.searchResult[i]['poster_path'],
                     height: 190,
                     width: 120,
                     fit: BoxFit.cover,
@@ -117,7 +156,7 @@ class SearchPage extends SearchDelegate {
                       SizedBox(
                         width: width - 177,
                         child: Text(
-                          ser.showingNow[i]['title'],
+                          ser.searchResult[i]['title'],
                           style: SafeGoogleFont(
                             'Lucida Bright',
                             22,
@@ -132,7 +171,7 @@ class SearchPage extends SearchDelegate {
                       SizedBox(
                         width: width - 177,
                         child: Text(
-                          ser.showingNow[i]['id'].toString(),
+                          Genres(ser.Genres2[i]),
                           style: TextStyle(
                               color: mainColor,
                               fontSize: 12,
@@ -140,48 +179,88 @@ class SearchPage extends SearchDelegate {
                         ),
                       ),
                       const Padding(padding: EdgeInsets.all(5)),
-                      Container(
-                        width: 50,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: const Color(0xff707070)),
-                          color: const Color(0xff7e132b),
-                        ),
-                        child: Center(
-                          child: Text(
-                            ser.showingNow[i]['original_language'] == 'en'
-                                ? "English"
-                                : ser.showingNow[i]['original_language'] == 'es'
-                                    ? "Spanich"
-                                    : ser.showingNow[i]['original_language'] ==
-                                            'fi'
-                                        ? "Finnis"
-                                        : ser.showingNow[i]
-                                                    ['original_language'] ==
-                                                'ar'
-                                            ? "Arabic"
-                                            : ser.showingNow[i]
-                                                ['original_language'],
-                            style: SafeGoogleFont(
-                              'Lucida Bright',
-                              12,
-                              fontWeight: FontWeight.w400,
-                              color: const Color(0xffffffff),
+                      Row(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.only(
+                                top: 0, left: 20, bottom: 2, right: 20),
+                            decoration: BoxDecoration(
+                              border:
+                                  Border.all(color: const Color(0xff707070)),
+                              color: const Color(0xff7e132b),
+                            ),
+                            child: Text(
+                              ser.searchResult[i]['original_language'] == 'en'
+                                  ? "English"
+                                  : ser.searchResult[i]['original_language'] ==
+                                          'es'
+                                      ? "Spanish"
+                                      : ser.searchResult[i]
+                                                  ['original_language'] ==
+                                              'fi'
+                                          ? "Finnish"
+                                          : ser.searchResult[i]
+                                                      ['original_language'] ==
+                                                  'ar'
+                                              ? "Arabic"
+                                              : ser.searchResult[i][
+                                                          'original_language'] ==
+                                                      'fr'
+                                                  ? "French"
+                                                  : ser.searchResult[i][
+                                                              'original_language'] ==
+                                                          "ko"
+                                                      ? "Korean"
+                                                      : ser.searchResult[i][
+                                                                  'original_language'] ==
+                                                              "ja"
+                                                          ? "japanese"
+                                                          : ser.searchResult[i]
+                                                                      ['original_language'] ==
+                                                                  "ru"
+                                                              ? "Russian"
+                                                              : ser.searchResult[i]['original_language'] == "zh"
+                                                                  ? "Chinese"
+                                                                  : ser.searchResult[i]['original_language'],
+                              style: SafeGoogleFont(
+                                'Lucida Bright',
+                                12,
+                                fontWeight: FontWeight.w400,
+                                color: const Color(0xffffffff),
+                              ),
                             ),
                           ),
-                        ),
-                      ),
-                      const Padding(padding: EdgeInsets.all(5)),
-                      SizedBox(
-                        width: width - 177,
-                        child: Text(
-                          ser.allRatings[i],
-                          style: SafeGoogleFont(
-                            'Lucida Bright',
-                            14,
-                            fontWeight: FontWeight.w400,
-                            color: const Color(0xFFF44336),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              padding: const EdgeInsets.only(
+                                  top: 0, left: 20, bottom: 2, right: 20),
+                              decoration: BoxDecoration(
+                                color: const Color(0xff9a2044),
+                                borderRadius:
+                                    BorderRadius.circular(height * 0.022),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: const Color(0x29000000),
+                                    offset: Offset(0, height * 0.005),
+                                    blurRadius: height * 0.007,
+                                  ),
+                                ],
+                              ),
+                              child: Text(
+                                ser.allRatings[i] == ''
+                                    ? 'N/A'
+                                    : ser.allRatings[i],
+                                style: SafeGoogleFont(
+                                  'Lucida Bright',
+                                  height * 0.020,
+                                  fontWeight: FontWeight.w600,
+                                  color: const Color(0xffffffff),
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
+                        ],
                       ),
                     ],
                   ),
@@ -194,34 +273,3 @@ class SearchPage extends SearchDelegate {
     );
   }
 }
-
-// class _SearchPage extends State<SearchPage> {
-//   @override
-//   Widget build(BuildContext context) {
-//     double baseWidth = 393;
-//     double fem = MediaQuery.of(context).size.width / baseWidth;
-//     double ffem = fem * 0.97;
-//     var _controller = TextEditingController();
-
-//     return Scaffold(
-//       appBar: AppBar(
-//         iconTheme: const IconThemeData(
-//           color: Color(0xFF000000),
-//         ),
-//         backgroundColor: Colors.white,
-//         title: TextField(
-//           controller: _controller,
-//           decoration: InputDecoration(
-//               border: InputBorder.none,
-//               prefixIcon: const Icon(Icons.search),
-//               suffixIcon: IconButton(
-//                   icon: const Icon(Icons.clear),
-//                   onPressed: () {
-//                     _controller.clear();
-//                   }),
-//               hintText: 'Search...'),
-//         ),
-//       ),
-//     );
-//   }
-// }
