@@ -1,19 +1,15 @@
 // ignore_for_file: file_names
 import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:myapp/cenima-app-user/home-page.dart';
 import 'package:myapp/cenima-app-user/sign-up.dart';
 import 'package:myapp/cenima-app-user/starter.dart';
 import 'package:myapp/reusable-widgets/reusable-widget.dart';
 import '../services/auth.dart';
 import '../shared/Theme.dart';
 import 'admin-log-in.dart';
-import 'home-page.dart';
 import 'package:email_validator/email_validator.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class LogIn extends StatefulWidget {
   const LogIn({super.key});
@@ -161,21 +157,10 @@ class _LoginPage extends State<LogIn> {
                           const Padding(padding: EdgeInsets.all(5.0)),
                       // forget password text
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Forget password?',
-                                textAlign: TextAlign.center,
-                                style: greyTextFont(height),
-                              ),
-                              const Padding(padding: EdgeInsets.all(2.7)),
-                              TextButton(
-                                onPressed: () {},
-                                style: TextButton.styleFrom(
-                                  padding: EdgeInsets.zero,
-                                ),
-                                child: Text(
-                                  ' Click here',
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Forget password?',
                                   textAlign: TextAlign.center,
                                   style: greyTextFont(height).copyWith(color: mainColor),
                                 ),
@@ -183,6 +168,26 @@ class _LoginPage extends State<LogIn> {
                             ],
                       ),
                           SizedBox(height: height*.017),
+//                                   style: greyTextFont(height),
+//                                 ),
+//                                 const Padding(
+//                                   padding: EdgeInsets.all(2.7),
+//                                 ),
+//                                 TextButton(
+//                                   onPressed: () {},
+//                                   style: TextButton.styleFrom(
+//                                     padding: EdgeInsets.zero,
+//                                   ),
+//                                   child: Text(
+//                                     ' Click here',
+//                                     textAlign: TextAlign.center,
+//                                     style: greyTextFont(height)
+//                                         .copyWith(color: mainColor),
+//                                   ),
+//                                 ),
+//                                 const Padding(padding: EdgeInsets.all(10.0)),
+//                               ]),
+//                           SizedBox(height: height * .017),
                           // error text
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -229,7 +234,7 @@ class _LoginPage extends State<LogIn> {
                                             const Color(0xFFFF5c83),
                                             message: result?.message,
                                             ).show(context);
-                                                }
+                                        }
                                               }
                                       else{
                                         Navigator.pop(context);}
@@ -289,6 +294,7 @@ class _LoginPage extends State<LogIn> {
                             context,
                             MaterialPageRoute(
                                 builder: (context) => AdminLogIn()),);
+
                         },
                         style: TextButton.styleFrom(
                           padding: EdgeInsets.zero,

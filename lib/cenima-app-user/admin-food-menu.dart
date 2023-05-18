@@ -183,9 +183,7 @@ class _AFoodMenu extends State<AFoodMenu> {
 
                   //items list
                   // ignore: unnecessary_null_comparison
-
                   ListBuilder(height, width)
-                  // : const Text('empty list'),
                 ],
               ),
             ),
@@ -220,6 +218,7 @@ class _AFoodMenu extends State<AFoodMenu> {
               int checkTypeCount = 0;
               Map<String, dynamic> data =
                   document.data()! as Map<String, dynamic>;
+              //if list is empty
               if (data['type'] != globalData.listTitle) {
                 checkTypeCount += 1;
                 if (data.length == checkTypeCount) {
@@ -235,6 +234,7 @@ class _AFoodMenu extends State<AFoodMenu> {
                   );
                 }
               }
+              // items
               return Padding(
                 padding: const EdgeInsets.only(top: 5),
                 child: Container(
@@ -288,7 +288,7 @@ class _AFoodMenu extends State<AFoodMenu> {
                                                 data['name'],
                                                 softWrap: true,
                                                 style: GoogleFonts.lato(
-                                                  fontSize: width * 0.05,
+                                                  fontSize: width * 0.045,
                                                   fontWeight: FontWeight.w700,
                                                   color:
                                                       const Color(0xff000000),
