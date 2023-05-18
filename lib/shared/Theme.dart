@@ -53,3 +53,19 @@ TextStyle headerFont(double h) {
     color: Color(0xff7e132b),
   );
 }
+
+TextStyle checkStyle(){
+return TextStyle(
+color: Color(0xff7e132b),
+fontSize: 18,
+);
+}
+
+TextStyle checkStyle1(){
+  return GoogleFonts.notoSans(
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+    color: Color(0xff000000),
+  );
+}
+

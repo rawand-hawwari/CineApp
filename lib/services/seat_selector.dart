@@ -1,22 +1,32 @@
+import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:myapp/bloc/dateCubit.dart';
 import 'package:myapp/cenima-app-user/screens page.dart';
+import 'package:myapp/shared/Theme.dart';
 import '../utils.dart';
 import 'Screens.dart';
 
 
-class SeatSelectionWidget extends StatelessWidget {
+class SeatSelectionWidget extends StatefulWidget {
+  @override
+  State<SeatSelectionWidget> createState() => _SeatSelectionWidgetState();
+}
+
+class _SeatSelectionWidgetState extends State<SeatSelectionWidget> {
 //  SeatSelectionWidget(this.noOfSeatsChosenP, this.noOfSeatsChosenS);
   late Size deviceSize;
-  late List<dynamic> props;
-  Set seatGapRoyale = {28, 47};
-  Set seatGapExecutive = {1, 10, 19};
+
   List<String> rowNames = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I','J','K'];
+
   Set selectedSeatsPre= {};
+
   Set selectedSeatsSta= {};
+
   int noOfSeatsChosenP=2;
+
   int noOfSeatsChosenS=2;
+
   Screens screen= Screens('screen 1', [], [], 57, 19, 151, 19, {28, 47}, {1, 10, 19});
 
   @override
@@ -89,20 +99,39 @@ class SeatSelectionWidget extends StatelessWidget {
                                 return (!screen.gapsPremuim.contains(index))
                                     ? GestureDetector(
                                         onTap: () {
+                                          print(selectedSeatsPre.contains(index).toString());
+                                          print(index);
                                           //royale booked list
                                           if(!screen.bookedPremuim.contains(index)){
                                             // selected seats, is it equal to the number of seats chosen
                                             if (selectedSeatsPre.length == noOfSeatsChosenP) {
                                               if(selectedSeatsPre.contains(index)) {
-                                                selectedSeatsPre.remove(index);
+                                                setState(() {
+                                                  selectedSeatsPre.remove(index);
+                                                });                                              }
+                                              else if (context.mounted) {
+                                                Flushbar(
+                                                  duration:
+                                                  const Duration(seconds: 4),
+                                                  flushbarPosition:
+                                                  FlushbarPosition.TOP,
+                                                  backgroundColor:
+                                                  const Color(0xFFFF5c83),
+                                                  message: "The number of seats have exceeded the number you selected!",
+                                                ).show(context);
                                               }
-                                              else{print("flashbar you exeeded the no of seats");}
                                             }
                                             else {
                                               if(selectedSeatsPre.contains(index)) {
-                                                selectedSeatsPre.remove(index);
+                                                  setState(() {
+                                                    selectedSeatsPre.remove(index);
+                                                  });
                                               }
-                                              else {selectedSeatsPre.add(index);}
+                                              else {
+                                                setState(() {
+                                                  selectedSeatsPre.add(index);
+                                                });
+                                                }
                                             }
                                           }
                                         },
@@ -112,23 +141,50 @@ class SeatSelectionWidget extends StatelessWidget {
                                             borderRadius:
                                                 BorderRadius.circular(5),
                                             // props 2 is royale booking
-                                            color: (selectedSeatsPre.contains(index))
-                                                ? Colors.redAccent
+                                            /*color: (selectedSeatsPre.contains(index))
+                                                ? mainColor
                                                 : (screen.bookedPremuim.contains(index))
                                                   ? Colors.grey
-                                                  : Colors.white,
-                                            border: Border.all(
+                                                  : Colors.white,*/
+                                           /* border: Border.all(
                                                 color: (screen.bookedPremuim.contains(index))
                                                 ? Colors.grey
                                                 : Colors.redAccent,
-                                                width: 2),
+                                                width: 2),*/
                                           ),
                                           height: 28,
                                           width: 28,
                                           margin: EdgeInsets.all(2),
-                                          child: Center(
-                                              child: Text(((index % screen.noOfSeatsinPremuimRow) + 1)
-                                                  .toString())),
+                                          child: Stack(
+                                            children: [
+                                              Center(
+                                                child: (selectedSeatsPre.contains(index))
+                                                    ? Image.asset(
+                                          'assets/cenima-app-user/images/armchair-2-Xos.png',
+                                          fit: BoxFit.cover,
+                                        )
+                                                    : (screen.bookedPremuim.contains(index))
+                                                    ? Image.asset(
+                                                  'assets/cenima-app-user/images/armchair-2-jYh.png',
+                                                  fit: BoxFit.cover,
+                                                )
+                                                    : Image.asset(
+                                                  'assets/cenima-app-user/images/armchair-2-wQ9.png',
+                                                  fit: BoxFit.cover,
+                                                ),
+
+                                              ),
+                                              Center(
+                                                  child: Text(((index % screen.noOfSeatsinStandardRow) + 1).toString()
+                                                    , style: SafeGoogleFont (
+                                                      'Lucida Bright',
+                                                      height*0.017,
+                                                      fontWeight: FontWeight.w600,
+                                                      color: Colors.black54,
+                                                    ),)),
+                                            ],
+                                          ),
+
                                         ),
                                       )
                                     : Container(
@@ -193,15 +249,20 @@ class SeatSelectionWidget extends StatelessWidget {
                                         if(!screen.bookedStandard.contains(index)){
                                           if (selectedSeatsSta.length == noOfSeatsChosenS) {
                                             if(selectedSeatsSta.contains(index)) {
-                                              selectedSeatsSta.remove(index);
+                                              setState(() {
+                                                selectedSeatsSta.remove(index);
+                                              });
                                             }
                                             else{print("flashbar you exeeded the no of seats");}
                                           }
                                           else {
                                             if(selectedSeatsSta.contains(index)) {
-                                              selectedSeatsSta.remove(index);
-                                            }
-                                            else {selectedSeatsSta.add(index);}
+                                              setState(() {
+                                                selectedSeatsSta.remove(index);
+                                              });                                            }
+                                            else {setState(() {
+                                              selectedSeatsSta.add(index);
+                                            });}
                                           }
                                         }
                                       },
@@ -209,22 +270,50 @@ class SeatSelectionWidget extends StatelessWidget {
                                           padding: const EdgeInsets.all(2),
                                           decoration: BoxDecoration(
                                             borderRadius: BorderRadius.circular(5),
-                                            color: (selectedSeatsSta.contains(index))
-                                                ? Colors.green
+                                            /*color: (selectedSeatsSta.contains(index))
+                                                ? mainColor
                                                 : (screen.bookedStandard.contains(index))
                                                   ? Colors.grey
-                                                  : Colors.white,
+                                                  : Colors.white,*/
+/*
                                             border:Border.all(
                                               color: (screen.bookedStandard.contains(index))
                                                   ? Colors.grey
                                                   : Colors.green,
                                               width: 2),
+*/
                                           ),
                                           height: 28,
                                           width: 28,
                                           margin: const EdgeInsets.all(2),
-                                          child: Center(
-                                              child: Text(((index % 19) + 1).toString())),
+                                          child: Stack(
+                                            children: [
+                                              Center(
+                                                child: (selectedSeatsSta.contains(index))
+                                                    ? Image.asset(
+                                                        'assets/cenima-app-user/images/armchair-qQh.png',
+                                                    fit: BoxFit.cover,
+                                                    )
+                                                    : (screen.bookedStandard.contains(index))
+                                                    ? Image.asset(
+                                                    'assets/cenima-app-user/images/armchair-HhF.png',
+                                                    fit: BoxFit.cover,)
+                                                    : Image.asset(
+                                                  'assets/cenima-app-user/images/armchair-4jF.png',
+                                                  fit: BoxFit.fill,
+                                                ),
+
+                                              ),
+                                              Center(
+                                                  child: Text(((index % screen.noOfSeatsinStandardRow) + 1).toString()
+                                                    , style: SafeGoogleFont (
+                                                      'Lucida Bright',
+                                                      height*0.017,
+                                                      fontWeight: FontWeight.w600,
+                                                      color: Colors.black54,
+                                                    ),)),
+                                            ],
+                                          ),
                                         ),
                                     )
                                     : Container(
@@ -238,7 +327,7 @@ class SeatSelectionWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-                
+
                 SizedBox(height: deviceSize.height * 0.02),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

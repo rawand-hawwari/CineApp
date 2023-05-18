@@ -447,9 +447,6 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
                                   children: [
                                     TextButton(
                                       onPressed: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(builder: (context) => SeatSelection()),);
                                       },
                                       style: TextButton.styleFrom(
                                         padding: EdgeInsets.zero,
@@ -494,7 +491,11 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
                               itemBuilder: (context, index) =>
                                   GridTile(
                                     child: TextButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(builder: (context) => SeatSelection()),);
+                                      },
                                       style: TextButton.styleFrom(
                                         padding: EdgeInsets.zero,
                                       ),

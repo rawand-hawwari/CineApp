@@ -8,7 +8,6 @@ import 'package:myapp/cenima-app-user/home-page.dart';
 import 'package:myapp/cenima-app-user/sign-up.dart';
 import 'package:myapp/cenima-app-user/starter.dart';
 import 'package:myapp/reusable-widgets/reusable-widget.dart';
-import '../bloc/page_bloc.dart';
 import '../services/auth.dart';
 import '../shared/Theme.dart';
 import 'admin-log-in.dart';
@@ -61,10 +60,7 @@ class _LoginPage extends State<LogIn> {
           actions: [
             IconButton(
               onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Starter()),
-                );
+                Navigator.pop(context);
               },
               icon: const Icon(Icons.close),
               color: const Color(0xff000000),
@@ -97,9 +93,16 @@ class _LoginPage extends State<LogIn> {
                             controller: emailController,
                             onChanged: (val) {
                               setState(() {
-                                val.isEmpty? isEFValid= false: isEFValid=true;
-                                isEmailValid? errorE= '' : errorE ='Please enter a proper email';
-
+                                isEmailValid = EmailValidator.validate(val);
+                                error = '';
+                              });
+                              Future.delayed(const Duration(milliseconds: 1000), () {
+                                setState(() {
+                                  val.isEmpty ? isEFValid = false : isEFValid = true;
+                                  isEmailValid
+                                      ? errorE = ''
+                                      : errorE = 'Please enter a proper email';
+                                });
                               });
                             },
                           decoration: InputDecoration(
@@ -229,8 +232,7 @@ class _LoginPage extends State<LogIn> {
                                                 }
                                               }
                                       else{
-                                        Navigator.pop(context);
-                                      }
+                                        Navigator.pop(context);}
                                             }
                                           : () async {
                                               setState(() {
