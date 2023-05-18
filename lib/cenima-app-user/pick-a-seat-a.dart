@@ -13,15 +13,21 @@ import '../services/seat_selector.dart';
 //Color(0xfff1f1f1); slightly white color for background of seats selection
 
 class SeatSelection extends StatefulWidget {
+  const SeatSelection(this.noOfSeatsChosenS, this.noOfSeatsChosenP, {super.key});
+  final int noOfSeatsChosenP;
+  final int noOfSeatsChosenS;
+
   @override
-  State<SeatSelection> createState() => _SeatSelectionState();
+  State<SeatSelection> createState() => _SeatSelectionState(noOfSeatsChosenS,noOfSeatsChosenP);
 }
 
 class _SeatSelectionState extends State<SeatSelection> {
+  _SeatSelectionState(this.noOfSeatsChosenS, this.noOfSeatsChosenP);
+
   Set selectedSeatsPre= {};
   Set selectedSeatsSta= {};
-  int noOfSeatsChosenP=5;
-  int noOfSeatsChosenS=5;
+  int noOfSeatsChosenP;
+  int noOfSeatsChosenS;
   bool openCheck=false;
   Screens screen= Screens('screen 1', [], [], 57, 19, 152, 19, {28, 47}, {1, 10, 19});
 
@@ -218,7 +224,7 @@ class _SeatSelectionState extends State<SeatSelection> {
                                   children: [
                                     _getHeading(
                                       //ticket object + royale seats
-                                        "premium"),
+                                        "Prime"),
                                     Divider(
                                       height: deviceSize.height * 0.009,
                                     ),

@@ -9,6 +9,7 @@ import 'package:myapp/utils.dart';
 import '../services/Movie service.dart';
 import '../services/detail_skeleton.dart';
 import '../shared/Theme.dart';
+import 'choose-number-of-tickets.dart';
 
 
 class MovieDetailsBook extends StatefulWidget {
@@ -494,7 +495,7 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
                                       onPressed: () {
                                         Navigator.push(
                                           context,
-                                          MaterialPageRoute(builder: (context) => SeatSelection()),);
+                                          MaterialPageRoute(builder: (context) => ChooseNoOfTcikets()/*SeatSelection()*/),);
                                       },
                                       style: TextButton.styleFrom(
                                         padding: EdgeInsets.zero,

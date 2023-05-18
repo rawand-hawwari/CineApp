@@ -68,8 +68,8 @@ class _RentMovie extends State<RentMovie> {
           ],
           body: Container(
             color: const Color(0xfff1f1f1),
-            child: const Column(
-              children: [
+            child: Column(
+              children: const [
                 SingleChildScrollView(),
               ],
             ),
