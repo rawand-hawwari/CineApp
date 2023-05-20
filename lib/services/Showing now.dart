@@ -1,4 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/cenima-app-user/edit-schedule.dart';
 import 'package:myapp/cenima-app-user/movie-details-rent.dart';
@@ -11,6 +13,8 @@ import 'items_skeleton.dart';
 // ignore: camel_case_types
 class globalData {
   static int movieId = 0;
+  static int movieIdRent = 0;
+  static String movieTitleRent = "";
 }
 
 class ShowingList extends StatelessWidget {
@@ -619,6 +623,11 @@ class ShowingListRent extends StatefulWidget {
 }
 
 class _ShowingListRent extends State<ShowingListRent> {
+  List info = [];
+
+  final Stream<QuerySnapshot>? moviesStream =
+      FirebaseFirestore.instance.collection('rented-movies').snapshots();
+
   @override
   void initState() {
     super.initState();
@@ -628,39 +637,230 @@ class _ShowingListRent extends State<ShowingListRent> {
   @override
   Widget build(BuildContext context) {
     Size deviceSize = MediaQuery.of(context).size;
+    Map<String, List> movieInfo = {};
     MovieService ser = MovieService();
     double width = deviceSize.width;
+    double height = deviceSize.height;
+
+    var imageUrl = 'https://image.tmdb.org/t/p/w500/';
     return SizedBox(
       height: deviceSize.height * 1,
-      child: FutureBuilder(
-        future: Future.wait(
-            [ser.getShowingNow(), ser.getAllRelease(), ser.getAllGenres()]),
-        builder: (BuildContext ctx, AsyncSnapshot<dynamic> snapshot) {
-          ConnectionState state = snapshot.connectionState;
+      child: StreamBuilder<QuerySnapshot>(
+          stream: moviesStream,
+          builder:
+              (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+            if (snapshot.hasError) {
+              return const Text('Something went wrong');
+            }
 
-          // loading
-          if (state == ConnectionState.waiting) {
-            return const Center(child: ItemSkeletonV(length: 10));
-          }
-          // error
-          else if (snapshot.hasError) {
-            print(snapshot.error);
-            return const Center(
-              child: Text(
-                'Loading Error',
-                style: TextStyle(fontSize: 20, color: Colors.red),
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return SpinKitFadingCircle(
+                color: mainColor,
+              );
+            }
+            //loaded
+            return SizedBox(
+              height: MediaQuery.of(context).size.height * 1,
+              width: width * 1,
+              child: ListView(
+                children: snapshot.data!.docs.map((DocumentSnapshot document) {
+                  Map<String, dynamic> data =
+                      document.data()! as Map<String, dynamic>;
+
+                  setState(() {
+                    info = ser.getDetails(data['movieId']) as List;
+                    ser.getGenres(data['movieId']);
+                    ser.getRelease(data['movieId']);
+                  });
+                  return Padding(
+                    padding: const EdgeInsets.only(
+                        left: 10, top: 10, right: 10, bottom: 10),
+                    child: GestureDetector(
+                      //move to rent details page
+                      onTap: () {
+                        setState(() {
+                          globalData.movieIdRent = data['movieId'];
+                          globalData.movieTitleRent = info[1];
+                        });
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  MovieDetailsRent(id: data['movieId'])),
+                        );
+                      },
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          //movie poster
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Image.network(
+                              imageUrl + info[3],
+                              height: 190,
+                              width: 120,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 5,
+                          ),
+                          //movie info col
+                          SizedBox(
+                            width: width - 177,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const SizedBox(
+                                  width: 5,
+                                ),
+                                //movie title
+                                SizedBox(
+                                  width: width - 177,
+                                  child: Text(
+                                    info[1],
+                                    style: SafeGoogleFont(
+                                      'Lucida Bright',
+                                      22,
+                                      fontWeight: FontWeight.w600,
+                                      color: const Color(0xff7e132b),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                //movie genre
+                                SizedBox(
+                                  width: width - 177,
+                                  child: Text(
+                                    Genres(ser.Genres),
+                                    style: TextStyle(
+                                        color: mainColor,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                                const Padding(padding: EdgeInsets.all(5)),
+                                //movie lang and age rating
+                                Row(
+                                  children: [
+                                    //movie language
+                                    Container(
+                                      padding: const EdgeInsets.only(
+                                          top: 0,
+                                          left: 20,
+                                          bottom: 2,
+                                          right: 20),
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                            color: const Color(0xff707070)),
+                                        color: const Color(0xff7e132b),
+                                      ),
+                                      child: Text(
+                                        info[5] == 'en'
+                                            ? "English"
+                                            : info[5] == 'es'
+                                                ? "Spanish"
+                                                : info[5] == 'fi'
+                                                    ? "Finnish"
+                                                    : info[5] == 'ar'
+                                                        ? "Arabic"
+                                                        : info[5] == 'fr'
+                                                            ? "French"
+                                                            : info[5] == "ko"
+                                                                ? "Korean"
+                                                                : info[5] ==
+                                                                        "ja"
+                                                                    ? "japanese"
+                                                                    : info[5] ==
+                                                                            "ru"
+                                                                        ? "Russian"
+                                                                        : info[
+                                                                            5],
+                                        style: SafeGoogleFont(
+                                          'Lucida Bright',
+                                          12,
+                                          fontWeight: FontWeight.w400,
+                                          color: const Color(0xffffffff),
+                                        ),
+                                      ),
+                                    ),
+                                    //age rating
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Container(
+                                        padding: const EdgeInsets.only(
+                                            top: 0,
+                                            left: 20,
+                                            bottom: 2,
+                                            right: 20),
+                                        decoration: BoxDecoration(
+                                          color: const Color(0xff9a2044),
+                                          borderRadius: BorderRadius.circular(
+                                              height * 0.022),
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: const Color(0x29000000),
+                                              offset: Offset(0, height * 0.005),
+                                              blurRadius: height * 0.007,
+                                            ),
+                                          ],
+                                        ),
+                                        child: Text(
+                                          ser.rating == '' ? 'N/A' : ser.rating,
+                                          style: SafeGoogleFont(
+                                            'Lucida Bright',
+                                            height * 0.020,
+                                            fontWeight: FontWeight.w600,
+                                            color: const Color(0xffffffff),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                }).toList(),
               ),
             );
-          }
-          // loaded
-          else {
-            return Padding(
-              padding: const EdgeInsets.only(bottom: 0),
-              child: _printMovies(ser, width),
-            );
-          }
-        },
-      ),
+          }),
+
+      // FutureBuilder(
+      //   future: Future.wait(
+      //       [ser.getShowingNow(), ser.getAllRelease(), ser.getAllGenres()]),
+      //   builder: (BuildContext ctx, AsyncSnapshot<dynamic> snapshot) {
+      //     ConnectionState state = snapshot.connectionState;
+
+      //     // loading
+      //     if (state == ConnectionState.waiting) {
+      //       return const Center(child: ItemSkeletonV(length: 10));
+      //     }
+      //     // error
+      //     else if (snapshot.hasError) {
+      //       print(snapshot.error);
+      //       return const Center(
+      //         child: Text(
+      //           'Loading Error',
+      //           style: TextStyle(fontSize: 20, color: Colors.red),
+      //         ),
+      //       );
+      //     }
+      //     // loaded
+      //     else {
+      //       return Padding(
+      //         padding: const EdgeInsets.only(bottom: 0),
+      //         child: _printMovies(ser, width),
+      //       );
+      //     }
+      //   },
+      // ),
     );
   }
 
@@ -688,6 +888,10 @@ class _ShowingListRent extends State<ShowingListRent> {
               const EdgeInsets.only(left: 10, top: 10, right: 10, bottom: 10),
           child: GestureDetector(
             onTap: () {
+              setState(() {
+                globalData.movieIdRent = ser.showingNow[i]['id'];
+                globalData.movieTitleRent = ser.showingNow[i]['title'];
+              });
               Navigator.push(
                 context,
                 MaterialPageRoute(
