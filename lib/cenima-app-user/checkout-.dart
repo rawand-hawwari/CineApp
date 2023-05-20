@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
 class Checkout extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 393;
@@ -30,6 +28,7 @@ class Checkout extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration (
                     color: Color(0xfff1f1f1),
+/////
                   ),
                 ),
               ),
@@ -54,6 +53,7 @@ class Checkout extends StatelessWidget {
                         blurRadius: 2*fem,
                       ),
                     ],
+////////////
                   ),
                 ),
               ),
@@ -75,7 +75,7 @@ class Checkout extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                     height: 1.2575*ffem/fem,
                     color: Color(0xff7e132b),
-                  ),
+////////////                  ),
                 ),
               ),
             ),
@@ -97,6 +97,7 @@ class Checkout extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                     height: 1.2575*ffem/fem,
                     color: Color(0xff797979),
+////////////
                   ),
                 ),
               ),
@@ -139,13 +140,13 @@ class Checkout extends StatelessWidget {
                         height: 1.2575*ffem/fem,
                         fontStyle: FontStyle.italic,
                         color: Color(0xff000000),
-                      ),
+////////////                      ),
                     ),
                   ),
                 ],
               ),
             ),
-          ),
+         ),
           Positioned(
             // orderdetails1MP (94:10141)
             left: 0*fem,
@@ -190,7 +191,7 @@ class Checkout extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           height: 1.2575*ffem/fem,
                           color: Color(0xff797979),
-                        ),
+////////////                        ),
                       ),
                     ),
                   ],
@@ -239,13 +240,13 @@ class Checkout extends StatelessWidget {
                             margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 154*fem, 0*fem),
                             child: RichText(
                               text: TextSpan(
-                                style: SafeGoogleFont (
+////////////                                style: SafeGoogleFont (
                                   'Segoe UI',
                                   14*ffem,
                                   fontWeight: FontWeight.w300,
                                   height: 1.2575*ffem/fem,
                                   fontStyle: FontStyle.italic,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                                 children: [
                                   TextSpan(
@@ -265,7 +266,7 @@ class Checkout extends StatelessWidget {
                                 ],
                               ),
                             ),
-                          ),
+////////////                          ),
                           Text(
                             // jodUqs (94:10149)
                             '16.00 JOD',
@@ -299,7 +300,7 @@ class Checkout extends StatelessWidget {
                                   fontWeight: FontWeight.w300,
                                   height: 1.2575*ffem/fem,
                                   fontStyle: FontStyle.italic,
-                                  color: Color(0xff000000),
+                                  color: const Color(0xff000000),
                                 ),
                                 children: [
                                   TextSpan(
@@ -331,7 +332,7 @@ class Checkout extends StatelessWidget {
                                 fontWeight: FontWeight.w300,
                                 height: 1.2575*ffem/fem,
                                 fontStyle: FontStyle.italic,
-                                color: Color(0xff000000),
+                                color: const Color(0xff000000),
                               ),
                             ),
                           ),
@@ -404,10 +405,11 @@ class Checkout extends StatelessWidget {
                               height: 1.2575*ffem/fem,
                               fontStyle: FontStyle.italic,
                               color: Color(0xff000000),
-                            ),
+////////////                            ),
                           ),
                         ],
                       ),
+////////////
                     ),
                     Container(
                       // autogrouphxsdJWh (W2Ys13mhYdXZJujabsHXSD)
@@ -471,7 +473,7 @@ class Checkout extends StatelessWidget {
                                 height: 1.2575*ffem/fem,
                                 fontStyle: FontStyle.italic,
                                 color: Color(0xff000000),
-                              ),
+////////////                              ),
                             ),
                           ),
                           Container(
@@ -491,6 +493,7 @@ class Checkout extends StatelessWidget {
                           ),
                         ],
                       ),
+////////////
                     ),
                     Container(
                       // autogroupjjuur8D (W2YsgrxhBybrvFaXsxJJUu)
@@ -575,8 +578,9 @@ class Checkout extends StatelessWidget {
                       fontWeight: FontWeight.w300,
                       height: 1.2575*ffem/fem,
                       fontStyle: FontStyle.italic,
-                      color: Color(0xff000000),
+                      color: const Color(0xff000000),
                     ),
+////////////
                     children: [
                       TextSpan(
                         text: 'Including Taxe',
@@ -587,7 +591,7 @@ class Checkout extends StatelessWidget {
                           height: 1.2575*ffem/fem,
                           fontStyle: FontStyle.italic,
                           color: Color(0xff000000),
-                        ),
+////////////                        ),
                       ),
                       TextSpan(
                         text: 's %',
@@ -597,7 +601,7 @@ class Checkout extends StatelessWidget {
                 ),
               ),
             ),
-          ),
+////////////          ),
           Positioned(
             // line3vmb (94:10167)
             left: 0*fem,
@@ -609,10 +613,11 @@ class Checkout extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration (
                     color: Color(0xff707070),
-                  ),
+////////////                  ),
                 ),
               ),
             ),
+////////////
           ),
           Positioned(
             // paymentv9K (101:13144)
@@ -665,6 +670,7 @@ class Checkout extends StatelessWidget {
                                     height: 18.52*fem,
                                     child: Image.asset(
                                       'assets/cenima-app-user/images/checkcircle-V9F.png',
+////////////
                                       width: 19*fem,
                                       height: 18.52*fem,
                                     ),
@@ -679,7 +685,7 @@ class Checkout extends StatelessWidget {
                                   style: TextButton.styleFrom (
                                     padding: EdgeInsets.zero,
                                   ),
-                                  child: Container(
+                                  child: SizedBox(
                                     width: 19*fem,
                                     height: 18.52*fem,
                                     child: Image.asset(
@@ -705,7 +711,7 @@ class Checkout extends StatelessWidget {
                                     height: 18.52*fem,
                                   ),
                                 ),
-                              ),
+////////////                              ),
                             ],
                           ),
                         ),
@@ -723,7 +729,7 @@ class Checkout extends StatelessWidget {
                                 child: Image.asset(
                                   'assets/cenima-app-user/images/credit-card-1.png',
                                   fit: BoxFit.cover,
-                                ),
+////////////                                ),
                               ),
                               Container(
                                 // money1uHP (94:10174)
@@ -779,8 +785,9 @@ class Checkout extends StatelessWidget {
                                       fontWeight: FontWeight.w300,
                                       height: 1.2575*ffem/fem,
                                       fontStyle: FontStyle.italic,
-                                      color: Color(0xff000000),
+                                      color: const Color(0xff000000),
                                     ),
+////////////
                                     children: [
                                       TextSpan(
                                         text: 'cash on arriva',
@@ -791,7 +798,7 @@ class Checkout extends StatelessWidget {
                                           height: 1.2575*ffem/fem,
                                           fontStyle: FontStyle.italic,
                                           color: Color(0xff000000),
-                                        ),
+////////////                                        ),
                                       ),
                                       TextSpan(
                                         text: 'l',
@@ -799,7 +806,8 @@ class Checkout extends StatelessWidget {
                                     ],
                                   ),
                                 ),
-                              ),
+////////////
+                                      ),
                               Text(
                                 // paypalxEy (94:10166)
                                 'Paypal',
@@ -810,7 +818,7 @@ class Checkout extends StatelessWidget {
                                   height: 1.2575*ffem/fem,
                                   fontStyle: FontStyle.italic,
                                   color: Color(0xff000000),
-                                ),
+////////////                                ),
                               ),
                             ],
                           ),
@@ -858,7 +866,7 @@ class Checkout extends StatelessWidget {
                 ),
               ),
             ),
-          ),
+////////////          ),
           Positioned(
             // group84J7o (115:14732)
             left: 234*fem,
@@ -896,12 +904,12 @@ class Checkout extends StatelessWidget {
                     child: Image.asset(
                       'assets/cenima-app-user/images/arrow-down-sign-to-navigate-wnu.png',
                       fit: BoxFit.cover,
-                    ),
+////////////                    ),
                   ),
                 ],
               ),
             ),
-          ),
+////////////          ),
           Positioned(
             // mainbuttoncJq (97:10351)
             left: 77*fem,
@@ -933,12 +941,13 @@ class Checkout extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                         height: 1.2575*ffem/fem,
                         color: Color(0xffffffff),
-                      ),
+////////////                      ),
                     ),
                   ),
                 ),
               ),
             ),
+////////////
           ),
           Positioned(
             // iosstatusbarwithnotchsf5k9 (94:10178)
@@ -962,11 +971,13 @@ class Checkout extends StatelessWidget {
                         height: 30*fem,
                         child: Image.asset(
                           'assets/cenima-app-user/images/notch-QX7.png',
+////////////
                           width: 219*fem,
                           height: 30*fem,
                         ),
                       ),
                     ),
+////////////
                   ),
                   Positioned(
                     // timesJd (I94:10178;9:73)
@@ -985,6 +996,7 @@ class Checkout extends StatelessWidget {
                             height: 1.4*ffem/fem,
                             letterSpacing: -0.3199999928*fem,
                             color: Color(0xff020202),
+////////////
                           ),
                         ),
                       ),

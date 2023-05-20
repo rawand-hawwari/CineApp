@@ -67,7 +67,7 @@ class _ASettings extends State<AdminSettings> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ChangePassword()),
+                              builder: (context) => const ChangePassword()),
                         );
                       },
                       child: Row(
@@ -105,7 +105,7 @@ class _ASettings extends State<AdminSettings> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Invite()),
+                          MaterialPageRoute(builder: (context) => const Invite()),
                         );
                       },
                       child: Row(
@@ -143,7 +143,7 @@ class _ASettings extends State<AdminSettings> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Contact()),
+                          MaterialPageRoute(builder: (context) => const Contact()),
                         );
                       },
                       child: Row(

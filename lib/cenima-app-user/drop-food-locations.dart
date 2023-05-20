@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
 class Scene extends StatelessWidget {
+  const Scene({super.key});
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 386;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return Container(
+    return SizedBox(
       width: double.infinity,
-      child: Container(
+      child: SizedBox(
         // dropfoodlocationsYNZ (151:17021)
         width: double.infinity,
         height: 219*fem,
@@ -28,8 +27,8 @@ class Scene extends StatelessWidget {
                   height: 168*fem,
                   child: Container(
                     decoration: BoxDecoration (
-                      border: Border.all(color: Color(0xff707070)),
-                      color: Color(0xffffffff),
+                      border: Border.all(color: const Color(0xff707070)),
+                      color: const Color(0xffffffff),
                     ),
                   ),
                 ),
@@ -55,7 +54,7 @@ class Scene extends StatelessWidget {
                       22.0362129211*ffem,
                       fontWeight: FontWeight.w400,
                       height: 1.2575*ffem/fem,
-                      color: Color(0xff464646),
+                      color: const Color(0xff464646),
                     ),
                   ),
                 ),
@@ -81,7 +80,7 @@ class Scene extends StatelessWidget {
                       22.0362129211*ffem,
                       fontWeight: FontWeight.w400,
                       height: 1.2575*ffem/fem,
-                      color: Color(0xff464646),
+                      color: const Color(0xff464646),
                     ),
                   ),
                 ),
@@ -102,7 +101,7 @@ class Scene extends StatelessWidget {
                     22.0362129211*ffem,
                     fontWeight: FontWeight.w400,
                     height: 1.2575*ffem/fem,
-                    color: Color(0xffe1e1e1),
+                    color: const Color(0xffe1e1e1),
                   ),
                 ),
               ),
@@ -122,7 +121,7 @@ class Scene extends StatelessWidget {
                     22.0362129211*ffem,
                     fontWeight: FontWeight.w400,
                     height: 1.2575*ffem/fem,
-                    color: Color(0xffe1e1e1),
+                    color: const Color(0xffe1e1e1),
                   ),
                 ),
               ),
@@ -142,8 +141,8 @@ class Scene extends StatelessWidget {
                     ),
                     child: Container(
                       decoration: BoxDecoration (
-                        border: Border.all(color: Color(0xff707070)),
-                        color: Color(0xffffffff),
+                        border: Border.all(color: const Color(0xff707070)),
+                        color: const Color(0xffffffff),
                       ),
                     ),
                   ),
@@ -180,7 +179,7 @@ class Scene extends StatelessWidget {
                       22.0362129211*ffem,
                       fontWeight: FontWeight.w400,
                       height: 1.2575*ffem/fem,
-                      color: Color(0xff464646),
+                      color: const Color(0xff464646),
                     ),
                   ),
                 ),

@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
 class Scene extends StatelessWidget {
+  const Scene({super.key});
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 393;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return Container(
+    return SizedBox(
       width: double.infinity,
       child: Container(
         // filesbo3 (1:1866)
         width: double.infinity,
         height: 852*fem,
-        decoration: BoxDecoration (
+        decoration: const BoxDecoration (
           color: Color(0xfff1f1f1),
         ),
         child: Stack(
@@ -70,7 +69,7 @@ class Scene extends StatelessWidget {
               child: Container(
                 width: 393*fem,
                 height: 44*fem,
-                decoration: BoxDecoration (
+                decoration: const BoxDecoration (
                   color: Color(0xffffffff),
                 ),
                 child: Stack(
@@ -107,7 +106,7 @@ class Scene extends StatelessWidget {
                               fontWeight: FontWeight.w600,
                               height: 1.4*ffem/fem,
                               letterSpacing: -0.3199999928*fem,
-                              color: Color(0xff020202),
+                              color: const Color(0xff020202),
                             ),
                           ),
                         ),

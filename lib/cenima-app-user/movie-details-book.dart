@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/bloc/dateCubit.dart';
 import 'package:myapp/cenima-app-user/pick-a-seat-a.dart';
 import 'package:myapp/utils.dart';
@@ -11,11 +8,11 @@ import '../services/detail_skeleton.dart';
 import '../shared/Theme.dart';
 import 'choose-number-of-tickets.dart';
 
-
 class MovieDetailsBook extends StatefulWidget {
   final int id;
 
   MovieDetailsBook({required this.id});
+
 
   @override
   State<MovieDetailsBook> createState() => _MovieDetailsBookState();
@@ -24,6 +21,7 @@ class MovieDetailsBook extends StatefulWidget {
 class _MovieDetailsBookState extends State<MovieDetailsBook> {
   late Size deviceSize;
 
+  @override
   late BuildContext context;
 
   late Map arguments;
@@ -36,31 +34,25 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
   Widget build(BuildContext context) {
     DateTime currentDate = DateTime.now();
     double baseWidth = 393;
-    double fem = MediaQuery
-        .of(context)
-        .size
-        .width / baseWidth;
+    double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    double width = MediaQuery
-        .of(context)
-        .size
-        .width;
-    double height = MediaQuery
-        .of(context)
-        .size
-        .height;
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
+
     this.context = context;
     deviceSize = MediaQuery
         .of(context)
         .size;
     MovieService ser = MovieService();
 
-
-    return Container(
+    return SizedBox(
         height: deviceSize.height * 0.34,
         child: FutureBuilder(
-            future: Future.wait(
-                [ser.getDetails(widget.id), ser.getRelease(widget.id), ser.getGenres(widget.id)]),
+            future: Future.wait([
+              ser.getDetails(widget.id),
+              ser.getRelease(widget.id),
+              ser.getGenres(widget.id)
+            ]),
             // Firebase read operation , which gives future
             builder:
                 (BuildContext ctx, AsyncSnapshot<dynamic> snapshot) {
@@ -68,7 +60,7 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
 
               // loading
               if (state == ConnectionState.waiting) {
-                return Scaffold(
+                return const Scaffold(
                   body: DetailScreenSkeleton(),
                 );
               }
@@ -96,7 +88,7 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
   }
 
   String minutesToMinutesHours(int Min) {
-    int hours = (Min / 60).toInt();
+    int hours = Min ~/ 60;
     int minutes = Min - (hours * 60);
     return "$hours Hours $minutes Min";
   }
@@ -110,8 +102,9 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
     return newGenres;
   }
 
-  _printMovieDetail({required MovieService ser, required BuildContext context}) {
-    bool isSelected=false;
+  _printMovieDetail(
+      {required MovieService ser, required BuildContext context}) {
+    bool isSelected = false;
     double baseWidth = 393;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
@@ -149,7 +142,7 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
         child: Column(
           children: [
             //poster
-            Container(
+            SizedBox(
               height: height * 0.4,
               child: Stack(
                 alignment: Alignment.topLeft,
@@ -159,7 +152,7 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
                     child: SizedBox(
                       width: width,
                       child: Image.network(
-                        image_url + ser.Info[3],
+                        imageUrl + ser.Info[3],
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -175,7 +168,7 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
                           'Lucida Bright',
                           height * 0.027,
                           fontWeight: FontWeight.w400,
-                          color: Color(0xffffffff),
+                          color: const Color(0xffffffff),
                         ),
                       ),
                     ),
@@ -201,7 +194,7 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
                           ],
                         ),
                         child: Text(
-                          ser.rating==''?'N/A':ser.rating,
+                          ser.rating == '' ? 'N/A' : ser.rating,
                           style: SafeGoogleFont(
                             'Lucida Bright',
                             height * 0.027,
@@ -369,40 +362,39 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
                           color: Color(0xff707070),
                           width: 1,
                         ),
+////////////
                       ),
-                      child: ExpansionTile(
-                        initiallyExpanded: true,
-                        iconColor: mainColor,
-                        title: Text(
-                          'Schedules',
-                          style: SafeGoogleFont(
-                            'Segoe UI',
-                            height * 0.028,
-                            fontWeight: FontWeight.w700,
-                          ),
+                    ),
+                    child: ExpansionTile(
+                      initiallyExpanded: true,
+                      iconColor: mainColor,
+                      title: Text(
+                        'Schedules',
+                        style: SafeGoogleFont(
+                          'Segoe UI',
+                          height * 0.028,
+                          fontWeight: FontWeight.w700,
                         ),
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.fromLTRB(
-                                44 * fem, 20 * fem, 44 * fem, 0),
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Column(
+                      ),
+                      children: <Widget>[
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(
+                              44 * fem, 20 * fem, 44 * fem, 0),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Column(
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     TextButton(
-                                      onPressed: () {
-
-                                      },
+                                      onPressed: () {},
                                       style: TextButton.styleFrom(
                                         padding: EdgeInsets.zero,
                                       ),
                                       child: Container(
                                         // calendarRHw (I187:18999;187:19413;1:39)
-                                        margin: EdgeInsets.fromLTRB(
-                                            0.01 * fem, 0 * fem, 0 * fem,
-                                            11.13 * fem),
+                                        margin: EdgeInsets.fromLTRB(0.01 * fem,
+                                            0 * fem, 0 * fem, 11.13 * fem),
                                         width: 38 * fem,
                                         height: 38 * fem,
                                         child: Image.asset(
@@ -413,6 +405,7 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
                                     ),
                                     BlocBuilder<dateCubit, List<dynamic>>(
                                         builder: (context, dates) {
+////////////
                                           String selectedValue = dates[0];
                                           return DropdownButton(
                                             value: selectedValue,
@@ -458,9 +451,56 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
                                         child: Image.asset(
                                           'assets/cenima-app-user/images/edit.png',
                                           fit: BoxFit.cover,
+////////////
                                         ),
-                                      ),
+                                        onChanged: (String? newValue) {
+                                          setState(() {
+                                            selectedValue = newValue!;
+                                          });
+                                        },
+                                        items: [
+                                          DropdownMenuItem(
+                                              value: dates[0].toString(),
+                                              child: Text(dates[0].toString())),
+                                          DropdownMenuItem(
+                                              value: dates[1].toString(),
+                                              child: Text(dates[1].toString())),
+                                          DropdownMenuItem(
+                                              value: dates[2].toString(),
+                                              child: Text(dates[2].toString())),
+                                          DropdownMenuItem(
+                                              value: dates[3].toString(),
+                                              child: Text(dates[3].toString())),
+                                          DropdownMenuItem(
+                                              value: dates[4].toString(),
+                                              child: Text(dates[4].toString())),
+                                          DropdownMenuItem(
+                                              value: dates[5].toString(),
+                                              child: Text(dates[5].toString())),
+                                          DropdownMenuItem(
+                                              value: dates[6].toString(),
+                                              child: Text(dates[6].toString())),
+                                        ],
+                                      );
+                                    }),
+                                  ]),
+                              const Spacer(),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  TextButton(
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const SeatSelection()),
+                                      );
+                                    },
+                                    style: TextButton.styleFrom(
+                                      padding: EdgeInsets.zero,
                                     ),
+////////////
                                     Text(
                                       // filters3Vf (I187:18999;187:19414;157:16836)
                                       'Filters',
@@ -532,15 +572,17 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
                                           ),
                                         ),
                                       ),
-                                    ),
+////////////                                    ),
                                   ),
                             ),
                           ),
+////////////
                         ],
                       ),
                     ),
                   ],
                 )
+////////////
             ),
           ],
         ),

@@ -2,18 +2,10 @@ import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:myapp/cenima-app-user/log-in.dart';
-import 'package:myapp/cenima-app-user/starter.dart';
 import 'package:myapp/cenima-app-user/admin-log-in.dart';
-import 'package:myapp/cenima-app-user/home-page.dart';
 import 'package:another_flushbar/flushbar.dart';
-import '../bloc/page_bloc.dart';
-import '../bloc/page_event.dart';
 import '../services/auth.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import '../services/shared_value.dart';
 import '../shared/Theme.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -61,8 +53,8 @@ class _SignUpPage extends State<SignUp> {
   //   firsNameController.text = widget.registrationData.name;
   //   emailController.text = widget.registrationData.email;
   // }
-  TextEditingController _emailTextController = TextEditingController();
-  TextEditingController _passwordTextController = TextEditingController();
+  final TextEditingController _emailTextController = TextEditingController();
+  final TextEditingController _passwordTextController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -127,7 +119,7 @@ class _SignUpPage extends State<SignUp> {
                         prefixIcon: const Icon(Icons.person_outline),
                         hintText: 'Enter your first name',
                         labelText: 'First Name',
-                        errorText: isFNFValid ? null : "value can\'t be empty",
+                        errorText: isFNFValid ? null : "value can't be empty",
                       ),
                     ),
                     const Padding(padding: EdgeInsets.all(10.0)),
@@ -153,7 +145,7 @@ class _SignUpPage extends State<SignUp> {
                         prefixIcon: const Icon(Icons.person_outline),
                         hintText: 'Enter your last name',
                         labelText: 'Last Name',
-                        errorText: isLNFValid ? null : "value can\'t be empty",
+                        errorText: isLNFValid ? null : "value can't be empty",
                       ),
                     ),
                     const Padding(padding: EdgeInsets.all(10.0)),
@@ -430,7 +422,7 @@ class _SignUpPage extends State<SignUp> {
                     onPressed: () {
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (context) => AdminLogIn()),
+                        MaterialPageRoute(builder: (context) => const AdminLogIn()),
                       );
                     },
                     style: TextButton.styleFrom(

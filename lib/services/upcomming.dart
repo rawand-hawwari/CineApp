@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/services/Movie%20service.dart';
-import 'package:myapp/services/movie.dart';
-import 'package:myapp/services/string_helper.dart';
 import '../cenima-app-user/movie-details-book.dart';
 import '../shared/Theme.dart';
 import '../utils.dart';
@@ -14,7 +12,7 @@ class UpcommingList extends StatelessWidget {
   Widget build(BuildContext context) {
     Size deviceSize = MediaQuery.of(context).size;
     MovieService ser= MovieService();
-    return Container(
+    return SizedBox(
         height: deviceSize.height * 0.34,
         child: FutureBuilder(
             future:
@@ -45,7 +43,7 @@ class UpcommingList extends StatelessWidget {
   }
 
   _printMovies(MovieService ser) {
-    var image_url = 'https://image.tmdb.org/t/p/w500/';
+    var imageUrl = 'https://image.tmdb.org/t/p/w500/';
     return ListView.builder(
       scrollDirection: Axis.horizontal,
       itemCount: 5,
@@ -61,7 +59,7 @@ class UpcommingList extends StatelessWidget {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: Image.network(
-                    image_url+ser.upcomming[i]['poster_path'],
+                    imageUrl+ser.upcomming[i]['poster_path'],
                     height: 190,
                     width: 120,
                     fit: BoxFit.cover,
@@ -120,7 +118,7 @@ class _UpcommingListAllState extends State<UpcommingListAll> {
     Size deviceSize = MediaQuery.of(context).size;
     MovieService ser= MovieService();
     double width= deviceSize.width;
-    return Container(
+    return SizedBox(
         height: deviceSize.height+200,
         child: FutureBuilder(
             future: Future.wait([ser.getUpcomming(),ser.getAllUpcommingRelease(),ser.getAllUpcommingGenres()]),
@@ -129,7 +127,7 @@ class _UpcommingListAllState extends State<UpcommingListAll> {
 
               // loading
               if (state == ConnectionState.waiting) {
-                return Center(
+                return const Center(
                     child: ItemSkeletonV(length: 10)
                 );
               }
@@ -161,7 +159,7 @@ class _UpcommingListAllState extends State<UpcommingListAll> {
   }
 
   _printMovies(MovieService ser, double width) {
-    var image_url = 'https://image.tmdb.org/t/p/w500/';
+    var imageUrl = 'https://image.tmdb.org/t/p/w500/';
     return ListView.builder(
       padding: EdgeInsets.zero,
       scrollDirection: Axis.vertical,
@@ -184,7 +182,7 @@ class _UpcommingListAllState extends State<UpcommingListAll> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: Image.network(
-                    image_url+ser.upcomming[i]['poster_path'],
+                    imageUrl+ser.upcomming[i]['poster_path'],
                     height: 190,
                     width: 120,
                     fit: BoxFit.cover,
@@ -230,7 +228,7 @@ class _UpcommingListAllState extends State<UpcommingListAll> {
                       Row(
                         children: [
                           Container(
-                            padding: EdgeInsets.only(top: 0,left: 20, bottom: 2,right: 20),
+                            padding: const EdgeInsets.only(top: 0,left: 20, bottom: 2,right: 20),
                             decoration: BoxDecoration(
                               border: Border.all(color: const Color(0xff707070)),
                               color: const Color(0xff7e132b),
@@ -264,13 +262,13 @@ class _UpcommingListAllState extends State<UpcommingListAll> {
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
-                              padding: EdgeInsets.only(top: 0,left: 20, bottom: 2,right: 20),
+                              padding: const EdgeInsets.only(top: 0,left: 20, bottom: 2,right: 20),
                               decoration: BoxDecoration (
-                                color: Color(0xff9a2044),
+                                color: const Color(0xff9a2044),
                                 borderRadius: BorderRadius.circular(height*0.022),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Color(0x29000000),
+                                    color: const Color(0x29000000),
                                     offset: Offset(0, height*0.005),
                                     blurRadius: height*0.007,
                                   ),
@@ -282,7 +280,7 @@ class _UpcommingListAllState extends State<UpcommingListAll> {
                                   'Lucida Bright',
                                   height*0.020,
                                   fontWeight: FontWeight.w600,
-                                  color: Color(0xffffffff),
+                                  color: const Color(0xffffffff),
                                 ),
                               ),
                             ),

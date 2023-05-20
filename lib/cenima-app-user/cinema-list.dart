@@ -104,7 +104,7 @@ class CinemaList extends StatelessWidget {
                                           ),
                                           Container(
                                             // greenlawnaveislipterracenewyor (1:1067)
-                                            constraints: BoxConstraints(
+                                            constraints: const BoxConstraints(
                                               // maxWidth: 162 * fem,
                                             ),
                                             child: RichText(
@@ -308,7 +308,7 @@ class CinemaList extends StatelessWidget {
                                                 ),
                                                 Container(
                                                   // duncanstjacksonvilleillinoisil (1:1055)
-                                                  constraints: BoxConstraints(
+                                                  constraints: const BoxConstraints(
                                                     // maxWidth: 178 * fem,
                                                   ),
                                                   child: RichText(
@@ -507,7 +507,7 @@ class CinemaList extends StatelessWidget {
                                                 ),
                                                 Container(
                                                   // davisdr1belvidereillinoisil610 (1:1059)
-                                                  constraints: BoxConstraints(
+                                                  constraints: const BoxConstraints(
                                                     // maxWidth: 178 * fem,
                                                   ),
                                                   child: RichText(
@@ -702,7 +702,7 @@ class CinemaList extends StatelessWidget {
                                           ),
                                           Container(
                                             // pennsylvaniaavestoneharbornewj (1:1063)
-                                            constraints: BoxConstraints(
+                                            constraints: const BoxConstraints(
                                               // maxWidth: 180 * fem,
                                             ),
                                             child: RichText(
@@ -954,7 +954,7 @@ class CinemaList extends StatelessWidget {
                               ),
                               Container(
                                 // booktickettcD (I75:1431;18:359;1:172)
-                                constraints: BoxConstraints(
+                                constraints: const BoxConstraints(
                                   // maxWidth: 28 * fem,
                                 ),
                                 child: Text(
@@ -994,7 +994,7 @@ class CinemaList extends StatelessWidget {
                           ),
                           Container(
                             // rentmoviesh5o (I75:1431;18:361;1:172)
-                            constraints: BoxConstraints(
+                            constraints: const BoxConstraints(
                               // maxWidth: 31 * fem,
                             ),
                             child: Text(
@@ -1039,7 +1039,7 @@ class CinemaList extends StatelessWidget {
                           ),
                           Container(
                             // cinemalistUXo (I75:1431;18:360;1:172)
-                            constraints: BoxConstraints(
+                            constraints: const BoxConstraints(
                               // maxWidth: 34 * fem,
                             ),
                             child: Text(
@@ -1077,7 +1077,7 @@ class CinemaList extends StatelessWidget {
                           ),
                           Container(
                             // foodmenuK4Z (I75:1431;18:362;1:172)
-                            constraints: BoxConstraints(
+                            constraints: const BoxConstraints(
                               // maxWidth: 25 * fem,
                             ),
                             child: Text(

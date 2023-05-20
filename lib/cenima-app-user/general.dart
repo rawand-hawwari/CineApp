@@ -60,7 +60,7 @@ class _GeneralHelpPage extends State<General> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => Unsubscribe()),
+                              builder: (context) => const Unsubscribe()),
                         );
                       },
                       child: Container(
@@ -85,7 +85,7 @@ class _GeneralHelpPage extends State<General> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => HelpRenting()),
+                              builder: (context) => const HelpRenting()),
                         );
                       },
                       child: Container(
@@ -111,7 +111,7 @@ class _GeneralHelpPage extends State<General> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => CinemaError()),
+                              builder: (context) => const CinemaError()),
                         );
                       },
                       child: Container(

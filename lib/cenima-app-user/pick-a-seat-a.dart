@@ -96,11 +96,11 @@ class _SeatSelectionState extends State<SeatSelection> {
                           'Lucida Bright',
                           height*0.015,
                           fontWeight: FontWeight.w400,
-                          color: Color(0xff797979),
+                          color: const Color(0xff797979),
                         ),
                       ),
                     ),
-                    Container(
+                    SizedBox(
                       width: width*0.5,
                       child: Text(
                         'Screen 1 ',
@@ -108,7 +108,7 @@ class _SeatSelectionState extends State<SeatSelection> {
                           'Lucida Bright',
                           height*0.015,
                           fontWeight: FontWeight.w400,
-                          color: Color(0xff797979),
+                          color: const Color(0xff797979),
                         ),
                       ),
                     ),
@@ -122,20 +122,20 @@ class _SeatSelectionState extends State<SeatSelection> {
             Container(
               // themenuJHb (1:1682)
               margin: EdgeInsets.fromLTRB(0.01*fem, 0*fem, 0*fem, 3*fem),
-              padding: EdgeInsets.only(top: 7),
+              padding: const EdgeInsets.only(top: 7),
               child: Text(
                 'The Menu',
                 style: SafeGoogleFont (
                   'Lucida Bright',
                   height*0.017,
                   fontWeight: FontWeight.w600,
-                  color: Color(0xff797979),
+                  color: const Color(0xff797979),
                 ),
               ),
             ),
           ],
         ),
-        shape:ContinuousRectangleBorder(
+        shape:const ContinuousRectangleBorder(
             side: BorderSide(
                 width: 1,
                 color: Color(0xff707070)
@@ -532,6 +532,7 @@ class _SeatSelectionState extends State<SeatSelection> {
                               ],
                             ),
                           ),
+                                
                           //row of available and selected chairs
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.center,

@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
 class Contact extends StatelessWidget {
+  const Contact({super.key});
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 393;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return Container(
+    return SizedBox(
       width: double.infinity,
       child: Container(
         // contactusFdw (1:1094)
         width: double.infinity,
         height: 1206*fem,
-        decoration: BoxDecoration (
+        decoration: const BoxDecoration (
           color: Color(0xfff1f1f1),
         ),
         child: Stack(
@@ -29,7 +28,7 @@ class Contact extends StatelessWidget {
                 padding: EdgeInsets.fromLTRB(30*fem, 8*fem, 30*fem, 31*fem),
                 width: 391*fem,
                 height: 742*fem,
-                decoration: BoxDecoration (
+                decoration: const BoxDecoration (
                   color: Color(0xfff1f1f1),
                 ),
                 child: Column(
@@ -38,7 +37,7 @@ class Contact extends StatelessWidget {
                     Container(
                       // haveaquestionfaceaproblempleas (1:1098)
                       margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 38*fem, 34*fem),
-                      constraints: BoxConstraints (
+                      constraints: const BoxConstraints (
                         // maxWidth: 293*fem,
                       ),
                       child: Text(
@@ -48,7 +47,7 @@ class Contact extends StatelessWidget {
                           20*ffem,
                           fontWeight: FontWeight.w700,
                           height: 1.2575*ffem/fem,
-                          color: Color(0xff000000),
+                          color: const Color(0xff000000),
                         ),
                       ),
                     ),
@@ -58,8 +57,8 @@ class Contact extends StatelessWidget {
                       padding: EdgeInsets.fromLTRB(17*fem, 15*fem, 173*fem, 14*fem),
                       width: double.infinity,
                       decoration: BoxDecoration (
-                        border: Border.all(color: Color(0xff707070)),
-                        color: Color(0xffffffff),
+                        border: Border.all(color: const Color(0xff707070)),
+                        color: const Color(0xffffffff),
                         borderRadius: BorderRadius.circular(29*fem),
                       ),
                       child: Row(
@@ -85,7 +84,7 @@ class Contact extends StatelessWidget {
                                 20*ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2575*ffem/fem,
-                                color: Color(0xff8b8b8b),
+                                color: const Color(0xff8b8b8b),
                               ),
                             ),
                           ),
@@ -98,8 +97,8 @@ class Contact extends StatelessWidget {
                       padding: EdgeInsets.fromLTRB(17*fem, 15*fem, 215*fem, 14*fem),
                       width: double.infinity,
                       decoration: BoxDecoration (
-                        border: Border.all(color: Color(0xff707070)),
-                        color: Color(0xffffffff),
+                        border: Border.all(color: const Color(0xff707070)),
+                        color: const Color(0xffffffff),
                         borderRadius: BorderRadius.circular(29*fem),
                       ),
                       child: Row(
@@ -125,7 +124,7 @@ class Contact extends StatelessWidget {
                                 20*ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2575*ffem/fem,
-                                color: Color(0xff8b8b8b),
+                                color: const Color(0xff8b8b8b),
                               ),
                             ),
                           ),
@@ -150,8 +149,8 @@ class Contact extends StatelessWidget {
                                 child: Container(
                                   decoration: BoxDecoration (
                                     borderRadius: BorderRadius.circular(29*fem),
-                                    border: Border.all(color: Color(0xff707070)),
-                                    color: Color(0xffffffff),
+                                    border: Border.all(color: const Color(0xff707070)),
+                                    color: const Color(0xffffffff),
                                   ),
                                 ),
                               ),
@@ -172,7 +171,7 @@ class Contact extends StatelessWidget {
                                       20*ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.2575*ffem/fem,
-                                      color: Color(0xff8b8b8b),
+                                      color: const Color(0xff8b8b8b),
                                     ),
                                     children: [
                                       TextSpan(
@@ -182,10 +181,10 @@ class Contact extends StatelessWidget {
                                           20*ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.2575*ffem/fem,
-                                          color: Color(0xff8b8b8b),
+                                          color: const Color(0xff8b8b8b),
                                         ),
                                       ),
-                                      TextSpan(
+                                      const TextSpan(
                                         text: 'er',
                                       ),
                                     ],
@@ -235,7 +234,7 @@ class Contact extends StatelessWidget {
                                           22.0362129211*ffem,
                                           fontWeight: FontWeight.w400,
                                           height: 1.2575*ffem/fem,
-                                          color: Color(0xffa6a6a6),
+                                          color: const Color(0xffa6a6a6),
                                         ),
                                       ),
                                     ),
@@ -263,8 +262,8 @@ class Contact extends StatelessWidget {
                       padding: EdgeInsets.fromLTRB(17*fem, 15*fem, 198*fem, 14*fem),
                       width: double.infinity,
                       decoration: BoxDecoration (
-                        border: Border.all(color: Color(0xff707070)),
-                        color: Color(0xffffffff),
+                        border: Border.all(color: const Color(0xff707070)),
+                        color: const Color(0xffffffff),
                         borderRadius: BorderRadius.circular(29*fem),
                       ),
                       child: Row(
@@ -290,7 +289,7 @@ class Contact extends StatelessWidget {
                                 20*ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2575*ffem/fem,
-                                color: Color(0xff8b8b8b),
+                                color: const Color(0xff8b8b8b),
                               ),
                             ),
                           ),
@@ -304,8 +303,8 @@ class Contact extends StatelessWidget {
                       width: 329*fem,
                       height: 224*fem,
                       decoration: BoxDecoration (
-                        border: Border.all(color: Color(0xff707070)),
-                        color: Color(0xffffffff),
+                        border: Border.all(color: const Color(0xff707070)),
+                        color: const Color(0xffffffff),
                         borderRadius: BorderRadius.circular(29*fem),
                       ),
                       child: RichText(
@@ -315,7 +314,7 @@ class Contact extends StatelessWidget {
                             20*ffem,
                             fontWeight: FontWeight.w400,
                             height: 1.2575*ffem/fem,
-                            color: Color(0xffa6a6a6),
+                            color: const Color(0xffa6a6a6),
                           ),
                           children: [
                             TextSpan(
@@ -325,10 +324,10 @@ class Contact extends StatelessWidget {
                                 20*ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2575*ffem/fem,
-                                color: Color(0xffa6a6a6),
+                                color: const Color(0xffa6a6a6),
                               ),
                             ),
-                            TextSpan(
+                            const TextSpan(
                               text: 'e...',
                             ),
                           ],
@@ -346,7 +345,7 @@ class Contact extends StatelessWidget {
                           11*ffem,
                           fontWeight: FontWeight.w600,
                           height: 1.2575*ffem/fem,
-                          color: Color(0xffff2153),
+                          color: const Color(0xffff2153),
                         ),
                       ),
                     ),
@@ -370,8 +369,8 @@ class Contact extends StatelessWidget {
                                 width: 112*fem,
                                 height: double.infinity,
                                 decoration: BoxDecoration (
-                                  border: Border.all(color: Color(0xff707070)),
-                                  color: Color(0xffffffff),
+                                  border: Border.all(color: const Color(0xff707070)),
+                                  color: const Color(0xffffffff),
                                 ),
                                 child: Center(
                                   child: Text(
@@ -381,7 +380,7 @@ class Contact extends StatelessWidget {
                                       20*ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.2575*ffem/fem,
-                                      color: Color(0xff464646),
+                                      color: const Color(0xff464646),
                                     ),
                                   ),
                                 ),
@@ -398,7 +397,7 @@ class Contact extends StatelessWidget {
                                   20*ffem,
                                   fontWeight: FontWeight.w400,
                                   height: 1.2575*ffem/fem,
-                                  color: Color(0xffa6a6a6),
+                                  color: const Color(0xffa6a6a6),
                                 ),
                                 children: [
                                   TextSpan(
@@ -408,10 +407,10 @@ class Contact extends StatelessWidget {
                                       20*ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.2575*ffem/fem,
-                                      color: Color(0xffa6a6a6),
+                                      color: const Color(0xffa6a6a6),
                                     ),
                                   ),
-                                  TextSpan(
+                                  const TextSpan(
                                     text: '*',
                                   ),
                                 ],
@@ -429,7 +428,7 @@ class Contact extends StatelessWidget {
               // contactdetailsmqf (1:1138)
               left: 19*fem,
               top: 990*fem,
-              child: Container(
+              child: SizedBox(
                 width: 332*fem,
                 height: 185*fem,
                 child: Column(
@@ -452,7 +451,7 @@ class Contact extends StatelessWidget {
                                 22*ffem,
                                 fontWeight: FontWeight.w600,
                                 height: 1.2575*ffem/fem,
-                                color: Color(0xff7e132b),
+                                color: const Color(0xff7e132b),
                               ),
                             ),
                           ),
@@ -464,7 +463,7 @@ class Contact extends StatelessWidget {
                               22*ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.2575*ffem/fem,
-                              color: Color(0xff7e132b),
+                              color: const Color(0xff7e132b),
                             ),
                           ),
                         ],
@@ -472,7 +471,7 @@ class Contact extends StatelessWidget {
                     ),
                     Container(
                       // greenlawnaveislipterracenewyor (1:1115)
-                      constraints: BoxConstraints (
+                      constraints: const BoxConstraints (
                         // maxWidth: 185*fem,
                       ),
                       child: RichText(
@@ -483,7 +482,7 @@ class Contact extends StatelessWidget {
                             fontWeight: FontWeight.w300,
                             height: 1.2575*ffem/fem,
                             fontStyle: FontStyle.italic,
-                            color: Color(0xff000000),
+                            color: const Color(0xff000000),
                           ),
                           children: [
                             TextSpan(
@@ -494,10 +493,10 @@ class Contact extends StatelessWidget {
                                 fontWeight: FontWeight.w300,
                                 height: 1.2575*ffem/fem,
                                 fontStyle: FontStyle.italic,
-                                color: Color(0xff000000),
+                                color: const Color(0xff000000),
                               ),
                             ),
-                            TextSpan(
+                            const TextSpan(
                               text: ' Islip Terrace, New York(NY), 11752',
                             ),
                           ],
@@ -537,7 +536,7 @@ class Contact extends StatelessWidget {
                                       fontWeight: FontWeight.w300,
                                       height: 1.2575*ffem/fem,
                                       fontStyle: FontStyle.italic,
-                                      color: Color(0xff000000),
+                                      color: const Color(0xff000000),
                                     ),
                                     children: [
                                       TextSpan(
@@ -548,10 +547,10 @@ class Contact extends StatelessWidget {
                                           fontWeight: FontWeight.w300,
                                           height: 1.2575*ffem/fem,
                                           fontStyle: FontStyle.italic,
-                                          color: Color(0xff000000),
+                                          color: const Color(0xff000000),
                                         ),
                                       ),
-                                      TextSpan(
+                                      const TextSpan(
                                         text: '55',
                                       ),
                                     ],
@@ -589,7 +588,7 @@ class Contact extends StatelessWidget {
                                       fontWeight: FontWeight.w300,
                                       height: 1.2575*ffem/fem,
                                       fontStyle: FontStyle.italic,
-                                      color: Color(0xff000000),
+                                      color: const Color(0xff000000),
                                     ),
                                     children: [
                                       TextSpan(
@@ -600,10 +599,10 @@ class Contact extends StatelessWidget {
                                           fontWeight: FontWeight.w300,
                                           height: 1.2575*ffem/fem,
                                           fontStyle: FontStyle.italic,
-                                          color: Color(0xff000000),
+                                          color: const Color(0xff000000),
                                         ),
                                       ),
-                                      TextSpan(
+                                      const TextSpan(
                                         text: '66',
                                       ),
                                     ],
@@ -641,7 +640,7 @@ class Contact extends StatelessWidget {
                                       fontWeight: FontWeight.w300,
                                       height: 1.2575*ffem/fem,
                                       fontStyle: FontStyle.italic,
-                                      color: Color(0xff000000),
+                                      color: const Color(0xff000000),
                                     ),
                                     children: [
                                       TextSpan(
@@ -652,10 +651,10 @@ class Contact extends StatelessWidget {
                                           fontWeight: FontWeight.w300,
                                           height: 1.2575*ffem/fem,
                                           fontStyle: FontStyle.italic,
-                                          color: Color(0xff000000),
+                                          color: const Color(0xff000000),
                                         ),
                                       ),
-                                      TextSpan(
+                                      const TextSpan(
                                         text: ' ',
                                       ),
                                     ],
@@ -693,7 +692,7 @@ class Contact extends StatelessWidget {
                                     fontWeight: FontWeight.w300,
                                     height: 1.2575*ffem/fem,
                                     fontStyle: FontStyle.italic,
-                                    color: Color(0xff000000),
+                                    color: const Color(0xff000000),
                                   ),
                                 ),
                               ],
@@ -715,8 +714,8 @@ class Contact extends StatelessWidget {
                 width: 393*fem,
                 height: 70*fem,
                 decoration: BoxDecoration (
-                  border: Border.all(color: Color(0xffc2c2c2)),
-                  color: Color(0xffffffff),
+                  border: Border.all(color: const Color(0xffc2c2c2)),
+                  color: const Color(0xffffffff),
                 ),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -742,7 +741,7 @@ class Contact extends StatelessWidget {
                           20*ffem,
                           fontWeight: FontWeight.w700,
                           height: 1.2575*ffem/fem,
-                          color: Color(0xff000000),
+                          color: const Color(0xff000000),
                         ),
                       ),
                     ),
@@ -767,7 +766,7 @@ class Contact extends StatelessWidget {
               child: Container(
                 width: 393*fem,
                 height: 44*fem,
-                decoration: BoxDecoration (
+                decoration: const BoxDecoration (
                   color: Color(0xffffffff),
                 ),
                 child: Stack(
@@ -804,7 +803,7 @@ class Contact extends StatelessWidget {
                               fontWeight: FontWeight.w600,
                               height: 1.4*ffem/fem,
                               letterSpacing: -0.3199999928*fem,
-                              color: Color(0xff020202),
+                              color: const Color(0xff020202),
                             ),
                           ),
                         ),

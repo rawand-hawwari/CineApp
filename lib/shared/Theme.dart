@@ -17,7 +17,7 @@ TextStyle movieInfoTitle (double height) {
 return GoogleFonts.varela(
 fontSize: height*0.018,
 fontWeight: FontWeight.w600,
-color: Color(0xff7e132b),
+color: const Color(0xff7e132b),
 );
 }
 
@@ -40,7 +40,7 @@ TextStyle movieInfo(double height){
   return GoogleFonts.notoSans(
       fontSize: height*0.017,
       fontWeight: FontWeight.w400,
-      color: Color(0xff000000),
+      color: const Color(0xff000000),
   );
 }
 

@@ -1,16 +1,8 @@
 // import 'dart:ffi';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:myapp/cine_app_icons.dart';
 import 'package:myapp/utils.dart';
-import 'package:myapp/cine_app_icons.dart';
 import '../reusable-widgets/reusable-widget.dart';
-import 'admin-Home-page.dart';
-import 'admin-food-menu.dart';
-import 'admin-profile-settings.dart';
 
 const List<String> list = <String>[
   'First cinema',
@@ -75,7 +67,7 @@ class _ScreensPageState extends State<ScreensPage> {
               Container(
                 margin: const EdgeInsets.only(top: 10.0),
                 child: SingleChildScrollView(
-                  child: Container(
+                  child: SizedBox(
                     width: 353 * fem,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -83,10 +75,10 @@ class _ScreensPageState extends State<ScreensPage> {
                         Container(
                           width: double.infinity,
                           decoration: BoxDecoration(
-                            color: Color(0xffffffff),
+                            color: const Color(0xffffffff),
                             boxShadow: [
                               BoxShadow(
-                                color: Color(0x29000000),
+                                color: const Color(0x29000000),
                                 offset: Offset(0 * fem, 3 * fem),
                                 blurRadius: 1.5 * fem,
                               ),
@@ -97,7 +89,7 @@ class _ScreensPageState extends State<ScreensPage> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
-                                padding: EdgeInsets.all(10),
+                                padding: const EdgeInsets.all(10),
                                 child: Text(
                                   'SCREEN 1',
                                   style: SafeGoogleFont(
@@ -105,7 +97,7 @@ class _ScreensPageState extends State<ScreensPage> {
                                     22 * ffem,
                                     fontWeight: FontWeight.w600,
                                     height: 1.2575 * ffem / fem,
-                                    color: Color(0xff7e132b),
+                                    color: const Color(0xff7e132b),
                                   ),
                                 ),
                               ),
@@ -122,7 +114,7 @@ class _ScreensPageState extends State<ScreensPage> {
                                     22 * ffem,
                                     fontWeight: FontWeight.w400,
                                     height: 1.2575 * ffem / fem,
-                                    color: Color(0xff000000),
+                                    color: const Color(0xff000000),
                                   ),
                                 ),
                               ),
@@ -130,7 +122,7 @@ class _ScreensPageState extends State<ScreensPage> {
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.only(top: 10.0),
+                          margin: const EdgeInsets.only(top: 10.0),
                           child: TextButton(
                             onPressed: () {},
                             style: TextButton.styleFrom(
@@ -144,7 +136,7 @@ class _ScreensPageState extends State<ScreensPage> {
                                 19.8325920105 * ffem,
                                 fontWeight: FontWeight.w600,
                                 height: 1.2575 * ffem / fem,
-                                color: Color(0xffff2153),
+                                color: const Color(0xffff2153),
                               ), // style
                             ),
                           ),
@@ -217,6 +209,6 @@ class _DropdownButtonState extends State<DropdownButtonC> {
               child: Text(index.toString()),
             )),
         gridDelegate:
-            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3));
+            const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3));
   }
 }
