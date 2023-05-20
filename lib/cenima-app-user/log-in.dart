@@ -1,15 +1,19 @@
 // ignore_for_file: file_names
 import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/cenima-app-user/home-page.dart';
 import 'package:myapp/cenima-app-user/sign-up.dart';
 import 'package:myapp/cenima-app-user/starter.dart';
 import 'package:myapp/reusable-widgets/reusable-widget.dart';
 import '../services/auth.dart';
 import '../shared/Theme.dart';
 import 'admin-log-in.dart';
+import 'home-page.dart';
 import 'package:email_validator/email_validator.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LogIn extends StatefulWidget {
   const LogIn({super.key});
@@ -54,10 +58,7 @@ class _LoginPage extends State<LogIn> {
           actions: [
             IconButton(
               onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Starter()),
-                );
+                Navigator.pop(context);
               },
               icon: const Icon(Icons.close),
               color: const Color(0xff000000),
@@ -93,12 +94,10 @@ class _LoginPage extends State<LogIn> {
                                 isEmailValid = EmailValidator.validate(val);
                                 error = '';
                               });
-                              Future.delayed(const Duration(milliseconds: 1000),
-                                  () {
+                              Future.delayed(const Duration(milliseconds: 1000), () {
                                 setState(() {
-                                  val.isEmpty
-                                      ? isEFValid = false
-                                      : isEFValid = true;
+                                  val.isEmpty ? isEFValid = false : isEFValid = true;
+
                                   isEmailValid
                                       ? errorE = ''
                                       : errorE = 'Please enter a proper email';
@@ -174,12 +173,23 @@ class _LoginPage extends State<LogIn> {
                               Text(
                                 'Forget password?',
                                 textAlign: TextAlign.center,
-                                style: greyTextFont(height)
-                                    .copyWith(color: mainColor),
+                                style: greyTextFont(height),
+                              ),
+                              const Padding(padding: EdgeInsets.all(2.7)),
+                              TextButton(
+                                onPressed: () {},
+                                style: TextButton.styleFrom(
+                                  padding: EdgeInsets.zero,
+                                ),
+                                child: Text(
+                                  ' Click here',
+                                  textAlign: TextAlign.center,
+                                  style: greyTextFont(height).copyWith(color: mainColor),
+                                ),
                               ),
                             ],
-                          ),
-                          SizedBox(height: height * .017),
+                      ),
+                          SizedBox(height: height*.017),
                           // error text
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -214,26 +224,26 @@ class _LoginPage extends State<LogIn> {
                                                       emailController.text,
                                                       passwordController.text);
 
-                                              if (result?.exception == true ||
-                                                  result?.user == null) {
-                                                setState(() {
-                                                  isSigningIn = false;
-                                                });
-                                                if (context.mounted) {
-                                                  Flushbar(
-                                                    duration: const Duration(
-                                                        seconds: 4),
-                                                    flushbarPosition:
-                                                        FlushbarPosition.TOP,
-                                                    backgroundColor:
-                                                        const Color(0xFFFF5c83),
-                                                    message: result?.message,
-                                                  ).show(context);
+////////////
+                                      if (result?.exception == true||result?.user==null) {
+                                        setState(() {
+                                          isSigningIn = false;
+                                        });
+                                        if (context.mounted) {
+                                          Flushbar(
+                                            duration:
+                                            const Duration(seconds: 4),
+                                            flushbarPosition:
+                                            FlushbarPosition.TOP,
+                                            backgroundColor:
+                                            const Color(0xFFFF5c83),
+                                            message: result?.message,
+                                            ).show(context);
                                                 }
-                                              } else {
-                                                Navigator.pop(context);
                                               }
-                                            }
+                                      else{
+                                        Navigator.pop(context);}
+////////////                                            }
                                           : () async {
                                               setState(() {
                                                 error =
@@ -289,8 +299,8 @@ class _LoginPage extends State<LogIn> {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const AdminLogIn()),
-                          );
+                                builder: (context) => AdminLogIn()),);
+
                         },
                         style: TextButton.styleFrom(
                           padding: EdgeInsets.zero,

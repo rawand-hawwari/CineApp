@@ -347,8 +347,7 @@ class _SignUpPage extends State<SignUp> {
                                                 phoneController.text,
                                                 false);
 
-                                        if (result?.exception == true ||
-                                            result?.user == null) {
+                                        if (result?.exception == true || result?.user == null) {
                                           setState(() {
                                             isSigningUp = false;
                                           });
@@ -365,6 +364,8 @@ class _SignUpPage extends State<SignUp> {
                                             ).show(context);
                                           }
                                         }
+                                        else{
+                                          Navigator.pop(context);}
                                       }
                                     : () async {
                                         setState(() {
