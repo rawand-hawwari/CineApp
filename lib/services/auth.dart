@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:myapp/bloc/page_event.dart';
 import 'package:myapp/services/user.dart';
 import 'package:myapp/services/user_services.dart';
 
@@ -41,7 +40,6 @@ class AuthServices {
             return "Too many requests to log into this account.";
             break;
           case "ERROR_OPERATION_NOT_ALLOWED":
-          case "operation-not-allowed":
             return "Server error, please try again later.";
             break;
           case "ERROR_INVALID_EMAIL":
@@ -98,7 +96,6 @@ class AuthServices {
             return "Too many requests to log into this account.";
             break;
           case "ERROR_OPERATION_NOT_ALLOWED":
-          case "operation-not-allowed":
             return "Server error, please try again later.";
             break;
           case "ERROR_INVALID_EMAIL":
@@ -153,7 +150,6 @@ class AuthServices {
             return "Too many requests to log into this account.";
             break;
           case "ERROR_OPERATION_NOT_ALLOWED":
-          case "operation-not-allowed":
             return "Server error, please try again later.";
             break;
           case "ERROR_INVALID_EMAIL":
@@ -207,6 +203,6 @@ class CustomException implements Exception {
   });
   @override
   String toString() {
-    return '$message';
+    return message;
   }
 }

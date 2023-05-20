@@ -6,13 +6,6 @@ import '../services/items_skeleton.dart';
 import '../shared/Theme.dart';
 import '../utils.dart';
 
-// class SearchPage extends StatefulWidget {
-//   const SearchPage({super.key});
-
-//   @override
-//   State<SearchPage> createState() => _SearchPage();
-// }
-
 class SearchPage extends SearchDelegate {
   @override
   List<Widget>? buildActions(BuildContext context) {
@@ -97,7 +90,7 @@ class SearchPage extends SearchDelegate {
   }
 
   _printMovies(MovieService ser, double width) {
-    var image_url = 'https://image.tmdb.org/t/p/w500/';
+    var imageUrl = 'https://image.tmdb.org/t/p/w500/';
     if (ser.searchResult.isEmpty) {
       return Center(
         child: Text(
@@ -136,7 +129,7 @@ class SearchPage extends SearchDelegate {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: Image.network(
-                    image_url + ser.searchResult[i]['poster_path'],
+                    imageUrl + ser.searchResult[i]['poster_path'],
                     height: 190,
                     width: 120,
                     fit: BoxFit.cover,

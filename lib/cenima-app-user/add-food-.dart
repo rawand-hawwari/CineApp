@@ -148,7 +148,7 @@ class _AddFood extends State<AddFood> {
                             fillColor: const Color(0xFFFFFFFF),
                             hintText: 'Enter item name',
                             errorText:
-                                isNFValid ? null : "value can\'t be empty",
+                                isNFValid ? null : "value can't be empty",
                           ),
                         ),
                         const Padding(padding: EdgeInsets.all(10.0)),
@@ -259,7 +259,7 @@ class _AddFood extends State<AddFood> {
                             fillColor: const Color(0xFFFFFFFF),
                             hintText: 'Enter flavors',
                             errorText:
-                                isNFValid ? null : "value can\'t be empty",
+                                isNFValid ? null : "value can't be empty",
                           ),
                         ),
                         const Padding(padding: EdgeInsets.all(10.0)),
@@ -404,7 +404,7 @@ class _AddFood extends State<AddFood> {
                             ),
                           ],
                         ),
-                        //sign up button
+                        //add food button
                         Center(
                           child: Container(
                             padding: const EdgeInsets.only(top: 30.0),

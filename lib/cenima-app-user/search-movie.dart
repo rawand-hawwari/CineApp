@@ -933,7 +933,7 @@ class _SearchMovie extends State<SearchMovie> {
   }
 
   _printMovies(MovieService ser, double width) {
-    var image_url = 'https://image.tmdb.org/t/p/w500/';
+    var imageUrl = 'https://image.tmdb.org/t/p/w500/';
     return ListView.builder(
       scrollDirection: Axis.vertical,
       itemCount: ser.searchResult.length,
@@ -951,7 +951,7 @@ class _SearchMovie extends State<SearchMovie> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: Image.network(
-                    image_url + ser.showingNow[i]['poster_path'],
+                    imageUrl + ser.showingNow[i]['poster_path'],
                     height: 190,
                     width: 120,
                     fit: BoxFit.cover,

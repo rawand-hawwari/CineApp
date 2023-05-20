@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'dart:ui';
 import 'package:myapp/bloc/dateCubit.dart';
 import 'package:myapp/cenima-app-user/pick-a-seat-a.dart';
 import 'package:myapp/utils.dart';
@@ -12,7 +10,7 @@ import '../shared/Theme.dart';
 class MovieDetailsBook extends StatefulWidget {
   final int id;
 
-  MovieDetailsBook({super.key, required this.id});
+  const MovieDetailsBook({super.key, required this.id});
 
   @override
   State<MovieDetailsBook> createState() => _MovieDetailsBookState();
@@ -21,6 +19,7 @@ class MovieDetailsBook extends StatefulWidget {
 class _MovieDetailsBookState extends State<MovieDetailsBook> {
   late Size deviceSize;
 
+  @override
   late BuildContext context;
 
   late Map arguments;
@@ -42,7 +41,7 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
     deviceSize = MediaQuery.of(context).size;
     MovieService ser = MovieService();
 
-    return Container(
+    return SizedBox(
         height: deviceSize.height * 0.34,
         child: FutureBuilder(
             future: Future.wait([
@@ -56,7 +55,7 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
 
               // loading
               if (state == ConnectionState.waiting) {
-                return Scaffold(
+                return const Scaffold(
                   body: DetailScreenSkeleton(),
                 );
               }
@@ -82,7 +81,7 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
   }
 
   String minutesToMinutesHours(int Min) {
-    int hours = (Min / 60).toInt();
+    int hours = Min ~/ 60;
     int minutes = Min - (hours * 60);
     return "$hours Hours $minutes Min";
   }
@@ -105,7 +104,7 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
     double ffem = fem * 0.97;
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    var image_url = 'https://image.tmdb.org/t/p/w500/';
+    var imageUrl = 'https://image.tmdb.org/t/p/w500/';
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -138,7 +137,7 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
         child: Column(
           children: [
             //poster
-            Container(
+            SizedBox(
               height: height * 0.4,
               child: Stack(
                 alignment: Alignment.topLeft,
@@ -148,7 +147,7 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
                     child: SizedBox(
                       width: width,
                       child: Image.network(
-                        image_url + ser.Info[3],
+                        imageUrl + ser.Info[3],
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -164,7 +163,7 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
                           'Lucida Bright',
                           height * 0.027,
                           fontWeight: FontWeight.w400,
-                          color: Color(0xffffffff),
+                          color: const Color(0xffffffff),
                         ),
                       ),
                     ),
@@ -230,7 +229,7 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
                       ),
                       children: <Widget>[
                         Padding(
-                          padding: EdgeInsets.only(left: 5),
+                          padding: const EdgeInsets.only(left: 5),
                           child: ListTile(
                             title: Text(
                               ser.Info[4],
@@ -238,20 +237,20 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
                                 'Lucida Bright',
                                 height * 0.020,
                                 fontWeight: FontWeight.w400,
-                                color: Color(0xff464646),
+                                color: const Color(0xff464646),
                               ),
                             ),
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.only(left: 5),
+                          padding: const EdgeInsets.only(left: 5),
                           child: ListTile(
                             title: Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text('Genres:-  ',
                                     style: movieInfoTitle(height)),
-                                Container(
+                                SizedBox(
                                   width: width * 0.6,
                                   child: Text(
                                     Genres(ser.Genres),
@@ -259,7 +258,7 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
                                       'Cambria',
                                       height * 0.020,
                                       fontWeight: FontWeight.w400,
-                                      color: Color(0xffff2153),
+                                      color: const Color(0xffff2153),
                                     ),
                                   ),
                                 ),
@@ -268,14 +267,14 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.only(left: 5),
+                          padding: const EdgeInsets.only(left: 5),
                           child: ListTile(
                             title: Row(
                               children: [
                                 Text('Language:-  ',
                                     style: movieInfoTitle(height)),
                                 Container(
-                                  padding: EdgeInsets.only(
+                                  padding: const EdgeInsets.only(
                                       top: 0, left: 20, bottom: 2, right: 20),
                                   decoration: BoxDecoration(
                                     border: Border.all(
@@ -316,7 +315,7 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.only(left: 5),
+                          padding: const EdgeInsets.only(left: 5),
                           child: ListTile(
                             title: Row(
                               children: [
@@ -331,7 +330,7 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.only(left: 5),
+                          padding: const EdgeInsets.only(left: 5),
                           child: ListTile(
                             title: Row(
                               children: [
@@ -350,7 +349,7 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
                   ),
                   Card(
                     margin: EdgeInsets.zero,
-                    shape: RoundedRectangleBorder(
+                    shape: const RoundedRectangleBorder(
                       side: BorderSide(
                         color: Color(0xff707070),
                         width: 1,
@@ -404,7 +403,7 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
                                           15 * ffem,
                                           fontWeight: FontWeight.w600,
                                           height: 1.2575 * ffem / fem,
-                                          color: Color(0xff777777),
+                                          color: const Color(0xff777777),
                                         ),
                                         onChanged: (String? newValue) {
                                           setState(() {
@@ -413,26 +412,26 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
                                         },
                                         items: [
                                           DropdownMenuItem(
-                                              child: Text(dates[0].toString()),
-                                              value: dates[0].toString()),
+                                              value: dates[0].toString(),
+                                              child: Text(dates[0].toString())),
                                           DropdownMenuItem(
-                                              child: Text(dates[1].toString()),
-                                              value: dates[1].toString()),
+                                              value: dates[1].toString(),
+                                              child: Text(dates[1].toString())),
                                           DropdownMenuItem(
-                                              child: Text(dates[2].toString()),
-                                              value: dates[2].toString()),
+                                              value: dates[2].toString(),
+                                              child: Text(dates[2].toString())),
                                           DropdownMenuItem(
-                                              child: Text(dates[3].toString()),
-                                              value: dates[3].toString()),
+                                              value: dates[3].toString(),
+                                              child: Text(dates[3].toString())),
                                           DropdownMenuItem(
-                                              child: Text(dates[4].toString()),
-                                              value: dates[4].toString()),
+                                              value: dates[4].toString(),
+                                              child: Text(dates[4].toString())),
                                           DropdownMenuItem(
-                                              child: Text(dates[5].toString()),
-                                              value: dates[5].toString()),
+                                              value: dates[5].toString(),
+                                              child: Text(dates[5].toString())),
                                           DropdownMenuItem(
-                                              child: Text(dates[6].toString()),
-                                              value: dates[6].toString()),
+                                              value: dates[6].toString(),
+                                              child: Text(dates[6].toString())),
                                         ],
                                       );
                                     }),
@@ -447,7 +446,7 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                SeatSelection()),
+                                                const SeatSelection()),
                                       );
                                     },
                                     style: TextButton.styleFrom(

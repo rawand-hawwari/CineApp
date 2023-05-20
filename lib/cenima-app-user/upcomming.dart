@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/services/upcomming.dart';
-import '../services/Showing now.dart';
 
 
 class UpcommingNowList extends StatelessWidget {

@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
 class Invite extends StatelessWidget {
+  const Invite({super.key});
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 393;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return Container(
+    return SizedBox(
       width: double.infinity,
-      child: Container(
+      child: SizedBox(
         // varifyemailQMj (134:15063)
         width: double.infinity,
         height: 852 * fem,
@@ -28,8 +27,8 @@ class Invite extends StatelessWidget {
                   height: 852 * fem,
                   child: Container(
                     decoration: BoxDecoration(
-                      border: Border.all(color: Color(0xff707070)),
-                      color: Color(0xffffffff),
+                      border: Border.all(color: const Color(0xff707070)),
+                      color: const Color(0xffffffff),
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(42 * fem),
                         topRight: Radius.circular(42 * fem),
@@ -54,7 +53,7 @@ class Invite extends StatelessWidget {
                       13 * ffem,
                       fontWeight: FontWeight.w600,
                       height: 1.2575 * ffem / fem,
-                      color: Color(0xff828282),
+                      color: const Color(0xff828282),
                     ),
                   ),
                 ),
@@ -75,7 +74,7 @@ class Invite extends StatelessWidget {
                       20 * ffem,
                       fontWeight: FontWeight.w700,
                       height: 1.2575 * ffem / fem,
-                      color: Color(0xff000000),
+                      color: const Color(0xff000000),
                     ),
                   ),
                 ),
@@ -100,8 +99,8 @@ class Invite extends StatelessWidget {
                     width: double.infinity,
                     height: double.infinity,
                     decoration: BoxDecoration(
-                      border: Border.all(color: Color(0xff707070)),
-                      color: Color(0xff9a2044),
+                      border: Border.all(color: const Color(0xff707070)),
+                      color: const Color(0xff9a2044),
                       borderRadius: BorderRadius.circular(54 * fem),
                     ),
                     child: Center(
@@ -113,7 +112,7 @@ class Invite extends StatelessWidget {
                           19.8325920105 * ffem,
                           fontWeight: FontWeight.w600,
                           height: 1.2575 * ffem / fem,
-                          color: Color(0xffffffff),
+                          color: const Color(0xffffffff),
                         ),
                       ),
                     ),
@@ -131,8 +130,8 @@ class Invite extends StatelessWidget {
                 width: 328 * fem,
                 height: 56 * fem,
                 decoration: BoxDecoration(
-                  border: Border.all(color: Color(0xff020202)),
-                  color: Color(0xffffffff),
+                  border: Border.all(color: const Color(0xff020202)),
+                  color: const Color(0xffffffff),
                   borderRadius: BorderRadius.circular(25 * fem),
                 ),
                 child: Row(
@@ -161,7 +160,7 @@ class Invite extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           height: 1.2 * ffem / fem,
                           letterSpacing: 0.150000006 * fem,
-                          color: Color(0xff757575),
+                          color: const Color(0xff757575),
                         ),
                       ),
                     ),
@@ -179,8 +178,8 @@ class Invite extends StatelessWidget {
                 width: 391 * fem,
                 height: 70 * fem,
                 decoration: BoxDecoration(
-                  border: Border.all(color: Color(0xffc2c2c2)),
-                  color: Color(0xffffffff),
+                  border: Border.all(color: const Color(0xffc2c2c2)),
+                  color: const Color(0xffffffff),
                 ),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -208,7 +207,7 @@ class Invite extends StatelessWidget {
                           20 * ffem,
                           fontWeight: FontWeight.w700,
                           height: 1.2575 * ffem / fem,
-                          color: Color(0xff000000),
+                          color: const Color(0xff000000),
                         ),
                       ),
                     ),
@@ -234,7 +233,7 @@ class Invite extends StatelessWidget {
               child: Container(
                 width: 391 * fem,
                 height: 44 * fem,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color(0xffffffff),
                 ),
                 child: Stack(
@@ -271,7 +270,7 @@ class Invite extends StatelessWidget {
                               fontWeight: FontWeight.w600,
                               height: 1.4 * ffem / fem,
                               letterSpacing: -0.3199999928 * fem,
-                              color: Color(0xff020202),
+                              color: const Color(0xff020202),
                             ),
                           ),
                         ),

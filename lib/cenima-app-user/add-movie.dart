@@ -5,7 +5,6 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:language_picker/language_picker_dropdown.dart';
 import 'package:language_picker/languages.dart';
-import 'package:language_picker/utils/utils.dart';
 
 import '../reusable-widgets/reusable-widget.dart';
 import 'package:image_picker/image_picker.dart';
@@ -156,7 +155,7 @@ class _AddMovie extends State<AddMovie> {
                           fillColor: const Color(0xFFFFFFFF),
                           hintText: 'Enter the movie title',
                           errorText:
-                              isTValid ? null : "value can\'t be empty",
+                              isTValid ? null : "value can't be empty",
                         ),
                       ),
                       const Padding(padding: EdgeInsets.all(10.0)),
@@ -259,7 +258,7 @@ class _AddMovie extends State<AddMovie> {
                           fillColor: const Color(0xFFFFFFFF),
                           hintText: 'Movie Description...',
                           errorText:
-                              isDValid ? null : "value can\'t be empty",
+                              isDValid ? null : "value can't be empty",
                         ),
                       ),
                       const Padding(padding: EdgeInsets.all(10.0)),
@@ -299,7 +298,7 @@ class _AddMovie extends State<AddMovie> {
                           fillColor: const Color(0xFFFFFFFF),
                           hintText: 'Select Movie Genre',
                           errorText:
-                              isGValid ? null : "value can\'t be empty",
+                              isGValid ? null : "value can't be empty",
                         ),
                       ),
                       const Padding(padding: EdgeInsets.all(10.0)),
@@ -542,7 +541,7 @@ class _AddMovie extends State<AddMovie> {
                           hintText: 'Enter director name',
                           errorText: isDirectorValid
                               ? null
-                              : "value can\'t be empty",
+                              : "value can't be empty",
                         ),
                       ),
                       const Padding(padding: EdgeInsets.all(10.0)),
@@ -591,7 +590,7 @@ class _AddMovie extends State<AddMovie> {
                           fillColor: const Color(0xFFFFFFFF),
                           hintText: 'Enter Writer name',
                           errorText:
-                              isWValid ? null : "value can\'t be empty",
+                              isWValid ? null : "value can't be empty",
                         ),
                       ),
                       const Padding(padding: EdgeInsets.all(10.0)),
@@ -646,7 +645,7 @@ class _AddMovie extends State<AddMovie> {
                           fillColor: const Color(0xFFFFFFFF),
                           hintText: '0.0',
                           errorText:
-                              isRValid ? null : "value can\'t be empty",
+                              isRValid ? null : "value can't be empty",
                         ),
                       ),
                       const Padding(padding: EdgeInsets.all(10.0)),

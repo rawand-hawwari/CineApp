@@ -86,7 +86,7 @@ class _AccountHelpPage extends State<HelpAccount> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => HelpChangeEmail()),
+                              builder: (context) => const HelpChangeEmail()),
                         );
                       },
                       child: Container(

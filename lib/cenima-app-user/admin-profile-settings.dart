@@ -2,22 +2,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:myapp/cenima-app-user/log-in.dart';
-import 'package:myapp/cenima-app-user/screens page.dart';
 import 'package:myapp/cenima-app-user/thetre-info.dart';
-import 'package:tmdb_api/tmdb_api.dart';
 
-import '../cine_app_icons.dart';
 import '../main.dart';
-import '../pages/wrapper.dart';
 import '../services/auth.dart';
-import 'admin-Home-page.dart';
-import 'admin-food-menu.dart';
 import '../reusable-widgets/reusable-widget.dart';
 
 import 'admin-profile.dart';
 import 'admin-settings.dart';
-import 'dart:ui';
 
 class AProfileSettings extends StatefulWidget {
   const AProfileSettings({super.key});
@@ -142,7 +134,7 @@ class _ASettings extends State<AProfileSettings> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => AdminProfile()),
+                                builder: (context) => const AdminProfile()),
                           );
                         },
                         child: Row(
@@ -181,7 +173,7 @@ class _ASettings extends State<AProfileSettings> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => TheaterInformation()),
+                                builder: (context) => const TheaterInformation()),
                           );
                         },
                         child: Row(
@@ -220,7 +212,7 @@ class _ASettings extends State<AProfileSettings> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => AdminSettings()),
+                                builder: (context) => const AdminSettings()),
                           );
                         },
                         child: Row(
@@ -260,7 +252,7 @@ class _ASettings extends State<AProfileSettings> {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => MyHomePage(
+                                builder: (context) => const MyHomePage(
                                       title: 'Ciné',
                                     )),
                           );

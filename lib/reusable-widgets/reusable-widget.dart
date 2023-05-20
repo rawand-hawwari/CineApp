@@ -109,7 +109,7 @@ class ASettingDrawer extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => AdminSettings()),
+                MaterialPageRoute(builder: (context) => const AdminSettings()),
               );
             },
           ),
@@ -163,7 +163,7 @@ class ASettingDrawer extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Contact()),
+                MaterialPageRoute(builder: (context) => const Contact()),
               );
             },
           ),
@@ -193,7 +193,7 @@ class ASettingDrawer extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => MyHomePage(
+                    builder: (context) => const MyHomePage(
                           title: 'Ciné',
                         )),
               );
@@ -298,7 +298,7 @@ class SettingDrawer extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => AdminProfile()),
+                MaterialPageRoute(builder: (context) => const AdminProfile()),
               );
             },
           ),
@@ -325,7 +325,7 @@ class SettingDrawer extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => AdminProfile()),
+                MaterialPageRoute(builder: (context) => const AdminProfile()),
               );
             },
           ),
@@ -352,7 +352,7 @@ class SettingDrawer extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => AdminSettings()),
+                MaterialPageRoute(builder: (context) => const AdminSettings()),
               );
             },
           ),
@@ -406,7 +406,7 @@ class SettingDrawer extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Contact()),
+                MaterialPageRoute(builder: (context) => const Contact()),
               );
             },
           ),
@@ -435,7 +435,7 @@ class SettingDrawer extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => MyHomePage(
+                    builder: (context) => const MyHomePage(
                           title: 'Ciné',
                         )),
               );
@@ -463,15 +463,15 @@ Future<bool> showExitPopup(BuildContext context) async {
         context: context,
         builder: (context) => AlertDialog(
           actionsAlignment: MainAxisAlignment.center,
-          title: Text('Exit App'),
-          content: Text('Do you want to exit the App?'),
+          title: const Text('Exit App'),
+          content: const Text('Do you want to exit the App?'),
           actions: [
             Padding(
               padding: const EdgeInsets.all(25.0),
               child: ElevatedButton(
                 onPressed: () => Navigator.of(context).pop(false),
                 //return false when click on "NO"
-                child: Text('No'),
+                child: const Text('No'),
               ),
             ),
             Padding(
@@ -479,7 +479,7 @@ Future<bool> showExitPopup(BuildContext context) async {
               child: ElevatedButton(
                 onPressed: () => Navigator.of(context).pop(true),
                 //return true when click on "Yes"
-                child: Text('Yes'),
+                child: const Text('Yes'),
               ),
             ),
           ],
@@ -585,28 +585,32 @@ class _MBottomNavigationBarHandlerState
     } else {
       switch (index) {
         case 0:
-          if (widget.index < index)
-            navigatorR(context, AdminHomePage());
-          else
-            navigatorL(context, AdminHomePage());
+          if (widget.index < index) {
+            navigatorR(context, const AdminHomePage());
+          } else {
+            navigatorL(context, const AdminHomePage());
+          }
           break;
         case 1:
-          if (widget.index < index)
-            navigatorR(context, ScreensPage());
-          else
-            navigatorL(context, ScreensPage());
+          if (widget.index < index) {
+            navigatorR(context, const ScreensPage());
+          } else {
+            navigatorL(context, const ScreensPage());
+          }
           break;
         case 2:
-          if (widget.index < index)
-            navigatorR(context, AFoodMenu());
-          else
-            navigatorL(context, AFoodMenu());
+          if (widget.index < index) {
+            navigatorR(context, const AFoodMenu());
+          } else {
+            navigatorL(context, const AFoodMenu());
+          }
           break;
         case 3:
-          if (widget.index < index)
-            navigatorR(context, AProfileSettings());
-          else
-            navigatorL(context, AProfileSettings());
+          if (widget.index < index) {
+            navigatorR(context, const AProfileSettings());
+          } else {
+            navigatorL(context, const AProfileSettings());
+          }
           break;
       }
     }
@@ -666,28 +670,32 @@ class _UBottomNavigationBarHandlerState
     } else {
       switch (index) {
         case 0:
-          if (widget.index < index)
-            navigatorR(context, HomePage());
-          else
-            navigatorL(context, HomePage());
+          if (widget.index < index) {
+            navigatorR(context, const HomePage());
+          } else {
+            navigatorL(context, const HomePage());
+          }
           break;
         case 1:
-          if (widget.index < index)
-            navigatorR(context, RentMovie());
-          else
-            navigatorL(context, RentMovie());
+          if (widget.index < index) {
+            navigatorR(context, const RentMovie());
+          } else {
+            navigatorL(context, const RentMovie());
+          }
           break;
         case 2:
-          if (widget.index < index)
-            navigatorR(context, FoodMenu());
-          else
-            navigatorL(context, FoodMenu());
+          if (widget.index < index) {
+            navigatorR(context, const FoodMenu());
+          } else {
+            navigatorL(context, const FoodMenu());
+          }
           break;
         case 3:
-          if (widget.index < index)
-            navigatorR(context, Profile());
-          else
-            navigatorL(context, Profile());
+          if (widget.index < index) {
+            navigatorR(context, const Profile());
+          } else {
+            navigatorL(context, const Profile());
+          }
           break;
       }
     }

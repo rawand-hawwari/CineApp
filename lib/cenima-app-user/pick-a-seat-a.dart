@@ -1,8 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
 import '../services/Movie service.dart';
@@ -10,6 +7,8 @@ import '../services/seat_selector.dart';
 //Color(0xfff1f1f1); slightly white color for background of seats selection
 
 class SeatSelection extends StatelessWidget {
+  const SeatSelection({super.key});
+
   @override
   Widget build(BuildContext context) {
     MovieService ser= MovieService();
@@ -57,6 +56,7 @@ class SeatSelection extends StatelessWidget {
           ),
         ),],
         bottom: PreferredSize(
+            preferredSize: Size.zero,
             child: Padding(
               padding:  EdgeInsets.only(left: width*0.19, bottom: 3),
               child: Align(
@@ -71,11 +71,11 @@ class SeatSelection extends StatelessWidget {
                           'Lucida Bright',
                           height*0.015,
                           fontWeight: FontWeight.w400,
-                          color: Color(0xff797979),
+                          color: const Color(0xff797979),
                         ),
                       ),
                     ),
-                    Container(
+                    SizedBox(
                       width: width*0.5,
                       child: Text(
                         'Screen 1 ',
@@ -83,35 +83,34 @@ class SeatSelection extends StatelessWidget {
                           'Lucida Bright',
                           height*0.015,
                           fontWeight: FontWeight.w400,
-                          color: Color(0xff797979),
+                          color: const Color(0xff797979),
                         ),
                       ),
                     ),
                   ],
                 ),
               ),
-            ),
-            preferredSize: Size.zero),
+            )),
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               // themenuJHb (1:1682)
               margin: EdgeInsets.fromLTRB(0.01*fem, 0*fem, 0*fem, 3*fem),
-              padding: EdgeInsets.only(top: 7),
+              padding: const EdgeInsets.only(top: 7),
               child: Text(
                 'The Menu',
                 style: SafeGoogleFont (
                   'Lucida Bright',
                   height*0.017,
                   fontWeight: FontWeight.w600,
-                  color: Color(0xff797979),
+                  color: const Color(0xff797979),
                 ),
               ),
             ),
           ],
         ),
-        shape:ContinuousRectangleBorder(
+        shape:const ContinuousRectangleBorder(
             side: BorderSide(
                 width: 1,
                 color: Color(0xff707070)
@@ -129,12 +128,12 @@ class SeatSelection extends StatelessWidget {
                   width: 393*fem,
                   height: height*0.07,
                   decoration: BoxDecoration (
-                    border: Border.all(color: Color(0xff707070)),
-                    color: Color(0xffffffff),
+                    border: Border.all(color: const Color(0xff707070)),
+                    color: const Color(0xffffffff),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black,
-                        offset: Offset(0, 20),
+                        offset: const Offset(0, 20),
                         blurRadius: 2*fem,
                       ),
                     ],
@@ -147,7 +146,7 @@ class SeatSelection extends StatelessWidget {
                       'Lucida Bright',
                       height*0.022,
                       fontWeight: FontWeight.w600,
-                      color: Color(0xff4b4a4a),
+                      color: const Color(0xff4b4a4a),
                     ),
                   ),
                 ),
@@ -171,10 +170,10 @@ class SeatSelection extends StatelessWidget {
                                 'Lucida Bright',
                                 height* 0.014,
                                 fontWeight: FontWeight.w600,
-                                color: Color(0xffff2153),
+                                color: const Color(0xffff2153),
                               ),
                             ),
-                            Spacer(),
+                            const Spacer(),
                             Text(
                               // prime12jodV8R (1:1690)
                               'Prime :- 12 JOD',
@@ -183,7 +182,7 @@ class SeatSelection extends StatelessWidget {
                                 'Lucida Bright',
                                 height* 0.014,
                                 fontWeight: FontWeight.w600,
-                                color: Color(0xffff2153),
+                                color: const Color(0xffff2153),
                               ),
                             ),
                           ],
@@ -217,14 +216,14 @@ class SeatSelection extends StatelessWidget {
                                       'Lucida Bright',
                                       11*ffem,
                                       fontWeight: FontWeight.w600,
-                                      color: Color(0xff777777),
+                                      color: const Color(0xff777777),
                                     ),
                                   ),
                                 ),
                               ],
                             ),
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
@@ -248,13 +247,13 @@ class SeatSelection extends StatelessWidget {
                                     11*ffem,
                                     fontWeight: FontWeight.w600,
                                     height: 1.2575*ffem/fem,
-                                    color: Color(0xff777777),
+                                    color: const Color(0xff777777),
                                   ),
                                 ),
                               ),
                             ],
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Padding(
                             padding:  EdgeInsets.only(right: width*0.05),
                             child: Row(
@@ -290,7 +289,7 @@ class SeatSelection extends StatelessWidget {
                                       11*ffem,
                                       fontWeight: FontWeight.w600,
                                       height: 1.2575*ffem/fem,
-                                      color: Color(0xff777777),
+                                      color: const Color(0xff777777),
                                     ),
                                   ),
                                 ),
@@ -342,14 +341,14 @@ class SeatSelection extends StatelessWidget {
                                       11*ffem,
                                       fontWeight: FontWeight.w600,
                                       height: 1.2575*ffem/fem,
-                                      color: Color(0xff777777),
+                                      color: const Color(0xff777777),
                                     ),
                                   ),
                                 ),
                               ],
                             ),
                           ),
-                          Spacer(),
+                          const Spacer(),
                           //wheelchar and text
                           Padding(
                             padding:  EdgeInsets.only(right: width*0.15),
@@ -377,7 +376,7 @@ class SeatSelection extends StatelessWidget {
                                       11*ffem,
                                       fontWeight: FontWeight.w600,
                                       height: 1.2575*ffem/fem,
-                                      color: Color(0xff777777),
+                                      color: const Color(0xff777777),
                                     ),
                                   ),
                                 ),
@@ -402,7 +401,7 @@ class SeatSelection extends StatelessWidget {
                               'Lucida Bright',
                               18*ffem,
                               fontWeight: FontWeight.w600,
-                              color: Color(0xff777777),
+                              color: const Color(0xff777777),
                             ),
                           ),
                         ),
@@ -415,8 +414,8 @@ class SeatSelection extends StatelessWidget {
                       Container(
                         height: 82*fem,
                         decoration: BoxDecoration (
-                          border: Border.all(color: Color(0xff707070)),
-                          color: Color(0xffffffff),
+                          border: Border.all(color: const Color(0xff707070)),
+                          color: const Color(0xffffffff),
                         ),
                         child: Row(
                           children: [
@@ -446,7 +445,7 @@ class SeatSelection extends StatelessWidget {
                                               'Lucida Bright',
                                               height*0.02,
                                               fontWeight: FontWeight.w600,
-                                              color: Color(0xff9e9e9e),
+                                              color: const Color(0xff9e9e9e),
                                             ),
                                           ),
                                           Text(
@@ -457,13 +456,13 @@ class SeatSelection extends StatelessWidget {
                                               'Lucida Bright',
                                               height*0.02,
                                               fontWeight: FontWeight.w600,
-                                              color: Color(0xff777777),
+                                              color: const Color(0xff777777),
                                             ),
                                           ),
                                         ],
                                       ),
                                     ),
-                                    Spacer(),
+                                    const Spacer(),
                                     Container(
                                       // arrowdownsigntonavigatea9T (I79:14546;104:8327;78:6711)
                                       margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 1*fem),
@@ -481,13 +480,13 @@ class SeatSelection extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            Spacer(),
+                            const Spacer(),
                             TextButton(
                               onPressed: () {},
                               style: TextButton.styleFrom (
                                 padding: EdgeInsets.zero,
                               ),
-                              child: Container(
+                              child: SizedBox(
                                 width: 140*fem,
                                 height: 52*fem,
                                 child: Container(
@@ -495,8 +494,8 @@ class SeatSelection extends StatelessWidget {
                                   width: double.infinity,
                                   height: double.infinity,
                                   decoration: BoxDecoration (
-                                    border: Border.all(color: Color(0xff707070)),
-                                    color: Color(0xff9a2044),
+                                    border: Border.all(color: const Color(0xff707070)),
+                                    color: const Color(0xff9a2044),
                                     borderRadius: BorderRadius.circular(54*fem),
                                   ),
                                   child: Center(
@@ -507,7 +506,7 @@ class SeatSelection extends StatelessWidget {
                                         'Lucida Bright',
                                         height*0.02,
                                         fontWeight: FontWeight.w600,
-                                        color: Color(0xffffffff),
+                                        color: const Color(0xffffffff),
                                       ),
                                     ),
                                   ),

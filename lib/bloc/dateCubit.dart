@@ -2,7 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 
 class dateCubit extends Cubit<List<dynamic>> {
-  final date= new Date();
+  final date= Date();
   BuildContext context;
   dateCubit({required this.context}) : super([]);
 

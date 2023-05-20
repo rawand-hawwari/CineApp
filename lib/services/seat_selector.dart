@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:myapp/bloc/dateCubit.dart';
-import 'package:myapp/cenima-app-user/screens page.dart';
 import '../utils.dart';
 import 'Screens.dart';
 
@@ -18,6 +15,8 @@ class SeatSelectionWidget extends StatelessWidget {
   int noOfSeatsChosenP=2;
   int noOfSeatsChosenS=2;
   Screens screen= Screens('screen 1', [], [], 57, 19, 151, 19, {28, 47}, {1, 10, 19});
+
+  SeatSelectionWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +46,7 @@ class SeatSelectionWidget extends StatelessWidget {
                           physics: const NeverScrollableScrollPhysics(),
                           itemCount: 3,
                           itemBuilder: ((context, index) {
-                            return Container(
+                            return SizedBox(
                               height: 35,
                               width: 28,
                               child: Center(
@@ -58,7 +57,7 @@ class SeatSelectionWidget extends StatelessWidget {
                                     'Lucida Bright',
                                     height*0.017,
                                     fontWeight: FontWeight.w600,
-                                    color: Color(0xff797979),
+                                    color: const Color(0xff797979),
                                   ),
                                 ),
                               ),
@@ -82,7 +81,7 @@ class SeatSelectionWidget extends StatelessWidget {
                           height: deviceSize.height * 0.154,
                           width: deviceSize.width * 1.58,
                           child: GridView.extent(
-                            physics:NeverScrollableScrollPhysics(),
+                            physics:const NeverScrollableScrollPhysics(),
                               mainAxisSpacing: 5,
                               maxCrossAxisExtent: 32,
                               children: List.generate(57, (index) {
@@ -107,7 +106,7 @@ class SeatSelectionWidget extends StatelessWidget {
                                           }
                                         },
                                         child: Container(
-                                          padding: EdgeInsets.all(2),
+                                          padding: const EdgeInsets.all(2),
                                           decoration: BoxDecoration(
                                             borderRadius:
                                                 BorderRadius.circular(5),
@@ -125,7 +124,7 @@ class SeatSelectionWidget extends StatelessWidget {
                                           ),
                                           height: 28,
                                           width: 28,
-                                          margin: EdgeInsets.all(2),
+                                          margin: const EdgeInsets.all(2),
                                           child: Center(
                                               child: Text(((index % screen.noOfSeatsinPremuimRow) + 1)
                                                   .toString())),
@@ -134,7 +133,7 @@ class SeatSelectionWidget extends StatelessWidget {
                                     : Container(
                                         height: 28,
                                         width: 28,
-                                        margin: EdgeInsets.all(2),
+                                        margin: const EdgeInsets.all(2),
                                       );
                               })),
                         ),
@@ -149,10 +148,10 @@ class SeatSelectionWidget extends StatelessWidget {
                       height: deviceSize.height * 0.37,
                       padding: EdgeInsets.only(top: deviceSize.height *0.032),
                       child: ListView.builder(
-                        physics: NeverScrollableScrollPhysics(),
+                        physics: const NeverScrollableScrollPhysics(),
                           itemCount: 8,
                           itemBuilder: ((context, index) {
-                            return Container(
+                            return SizedBox(
                               height: 32,
                               width: 28,
                               child: Center(
@@ -162,7 +161,7 @@ class SeatSelectionWidget extends StatelessWidget {
                                     'Lucida Bright',
                                     height*0.017,
                                     fontWeight: FontWeight.w600,
-                                    color: Color(0xff797979),
+                                    color: const Color(0xff797979),
                                   ),
                                 ),
                               ),
@@ -183,7 +182,7 @@ class SeatSelectionWidget extends StatelessWidget {
                           height: deviceSize.height * 0.35,
                           width: deviceSize.width * 1.55,
                           child: GridView.extent(
-                            physics: NeverScrollableScrollPhysics(),
+                            physics: const NeverScrollableScrollPhysics(),
                               mainAxisSpacing: 1,
                               maxCrossAxisExtent: 32,
                               children: List.generate(screen.noOfSeatsStandard, (index) {

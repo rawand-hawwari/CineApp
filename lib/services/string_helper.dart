@@ -7,7 +7,7 @@ class StringHelper{
         sb.write(list[i]);
       }
       else{
-        sb.write(list[i]+" | ");
+        sb.write("${list[i]} | ");
       }
     }
     return sb.toString();
