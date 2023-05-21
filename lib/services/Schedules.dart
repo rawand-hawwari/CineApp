@@ -8,7 +8,7 @@ class ScheduleService {
       FirebaseFirestore.instance.collection('schedules');
 
   static Future<void> updateSchedule(
-      String movieId, String screen, List time, List date, String id) async {
+      int movieId, String screen, List time, List date, String id) async {
     return await _scheduleCollection.doc(id).update({
       'movieId': movieId,
       'screen': screen,

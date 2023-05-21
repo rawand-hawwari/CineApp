@@ -17,7 +17,7 @@ class globalData {
   static String date = "";
   static String screen = "";
   static int index = _EditMovieSchedule().screens.indexOf(screen);
-  static List<List<String>> times = [[]];
+  static List<List<dynamic>> times = [[]];
 }
 
 class EditMovieSchedule extends StatefulWidget {
@@ -96,6 +96,7 @@ class _EditMovieSchedule extends State<EditMovieSchedule> {
   @override
   void initState() {
     super.initState();
+    globalData.times = [];
     for (int i = 0; i < screens.length; i++) {
       setState(() {
         globalData.dropdownVal.add(date.first);
@@ -103,6 +104,7 @@ class _EditMovieSchedule extends State<EditMovieSchedule> {
         globalData.times.add([]);
       });
     }
+    globalData.times;
   }
 
   @override

@@ -31,7 +31,7 @@ class _EditSchedual extends State<EditSchedual> {
       .snapshots();
 
   String error = "";
-  List<String> times = [];
+  List<dynamic> times = [];
   List<String> timeperiod = [
     'AM',
     'PM',
@@ -44,10 +44,11 @@ class _EditSchedual extends State<EditSchedual> {
   bool isAdding = false;
   bool isNew = false;
   String schedule = "";
-  List<String> dates = [];
+  List<dynamic> dates = [];
   String date = glob.globalData.dropdownVal[glob.globalData.index];
   Map<String, dynamic> sData = {};
   Map<String, dynamic>? data = {};
+  List<String> timeList = [];
 
   //function to fetch data from database
 
@@ -80,13 +81,24 @@ class _EditSchedual extends State<EditSchedual> {
             data['date'].contains(date)
                 ? dates = data['date']
                 : dates.add(date);
+
+            dates;
           });
         });
       } else {
         print("null was founded");
       }
     }
-    dates;
+
+    setState(() {
+      for (int i = 0; i < dates.length; i++) {
+        timeList.add("");
+      }
+      for (int i = 0; i < sData["times"].length; i++) {
+        timeList[i] = sData["times"][i];
+      }
+      timeList;
+    });
   }
 
   @override
@@ -395,23 +407,21 @@ class _EditSchedual extends State<EditSchedual> {
                                           setState(() {
                                             schedule = times.join(',');
                                           });
-                                          if (sData.containsValue(date)) {
-                                            glob.globalData.times[
-                                                    dates.indexOf(date)] =
-                                                schedule as List<String>;
-                                            glob.globalData.times;
-                                          }
+                                          glob.globalData
+                                                  .times[dates.indexOf(date)] =
+                                              timeList;
+                                          glob.globalData.times;
                                           times;
                                           setState(() {
-                                            glob.globalData.times[
-                                                dates.indexOf(date)] = times;
-                                            screen =
-                                                dates.indexOf(date) as String;
+                                            timeList;
+                                            timeList[dates.indexOf(date)] =
+                                                schedule;
+                                            timeList;
                                           });
                                           glob.globalData.times;
+                                          timeList;
                                           isNew;
                                           dates;
-                                          glob.globalData.screen;
                                           screen;
                                           if (times.isNotEmpty) {
                                             if (isNew) {
@@ -420,7 +430,7 @@ class _EditSchedual extends State<EditSchedual> {
                                                 'date': dates,
                                                 'movieId':
                                                     global.globalData.movieId,
-                                                'times': schedule,
+                                                'times': timeList,
                                                 'id':
                                                     "${global.globalData.movieId} $screen",
                                               };
@@ -433,15 +443,16 @@ class _EditSchedual extends State<EditSchedual> {
                                                 isAdding = true;
                                               });
                                             } else {
-                                              ScheduleService.updateSchedule(
-                                                global.globalData.movieId
-                                                    as String,
-                                                screen,
-                                                times,
-                                                dates,
-                                                "${global.globalData.movieId as String} $screen",
-                                              );
-
+                                              _scheduleCollection
+                                                  .doc(
+                                                      "${global.globalData.movieId} $screen")
+                                                  .update({
+                                                'movieId':
+                                                    global.globalData.movieId,
+                                                'screen': screen,
+                                                'times': timeList,
+                                                'date': dates,
+                                              });
                                               setState(() {
                                                 isAdding = true;
                                               });
@@ -470,114 +481,6 @@ class _EditSchedual extends State<EditSchedual> {
                     ],
                   ),
                 ],
-              ),
-            ),
-            Positioned(
-              bottom: 0,
-              child: Align(
-                alignment: Alignment.bottomCenter,
-                child: Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: SizedBox(
-                    width: width * 0.3,
-                    child: Center(
-                      child: Container(
-                        child: isAdding
-                            ? SpinKitFadingCircle(
-                                color: mainColor,
-                              )
-                            : TextButton(
-                                style: TextButton.styleFrom(
-                                  padding: EdgeInsets.zero,
-                                ),
-                                child: Container(
-                                  padding: const EdgeInsets.all(10),
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xffff2153),
-                                    borderRadius: BorderRadius.circular(100),
-                                  ),
-                                  child: Center(
-                                    child: Text(
-                                      'Save',
-                                      textAlign: TextAlign.center,
-                                      style: GoogleFonts.lato(
-                                        fontSize: width * 0.05,
-                                        fontWeight: FontWeight.w600,
-                                        color: const Color(0xffffffff),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                onPressed: () {
-                                  setState(() {
-                                    schedule = times.join(',');
-                                  });
-                                  if (sData.containsValue(date)) {
-                                    glob.globalData.times[dates.indexOf(date)] =
-                                        schedule as List<String>;
-                                    glob.globalData.times;
-                                  }
-                                  times;
-                                  setState(() {
-                                    glob.globalData.times[dates.indexOf(date)] =
-                                        times;
-                                    screen = dates.indexOf(date) as String;
-                                  });
-                                  glob.globalData.times;
-                                  isNew;
-                                  dates;
-                                  glob.globalData.screen;
-                                  screen;
-                                  if (times.isNotEmpty) {
-                                    if (isNew) {
-                                      Map<String, dynamic> dataToAdd = {
-                                        'screen': screen,
-                                        'date': dates,
-                                        'movieId': global.globalData.movieId,
-                                        'times': schedule,
-                                        'id':
-                                            "${global.globalData.movieId} $screen",
-                                      };
-                                      dataToAdd;
-                                      _scheduleCollection
-                                          .doc(
-                                              "${global.globalData.movieId} $screen")
-                                          .set(dataToAdd);
-                                      setState(() {
-                                        isAdding = true;
-                                      });
-                                    } else {
-                                      ScheduleService.updateSchedule(
-                                        global.globalData.movieId as String,
-                                        screen,
-                                        times,
-                                        dates,
-                                        "${global.globalData.movieId as String} $screen",
-                                      );
-
-                                      setState(() {
-                                        isAdding = true;
-                                      });
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const glob.EditMovieSchedule()),
-                                      );
-                                    }
-                                  }
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const glob.EditMovieSchedule()),
-                                  );
-                                },
-                              ),
-                      ),
-                    ),
-                  ),
-                ),
               ),
             ),
           ],

@@ -354,6 +354,9 @@ class _ShowingListAdmin extends State<ShowingListAdmin> {
   void initState() {
     super.initState();
     MovieService().getShowingNow();
+    setState(() {
+      globalData.movieId = 0;
+    });
   }
 
   @override
