@@ -183,54 +183,43 @@ class _EditMovieSchedule extends State<EditMovieSchedule> {
                       // schedules for screens list
                       // const Editschedule(),
                       screenListBuilder(),
-
-                      //save button
-                      Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Padding(
-                          padding: const EdgeInsets.all(10),
-                          child: SizedBox(
-                            width: width * 0.3,
-                            child: TextButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const AdminHomePage()),
-                                );
-                              },
-                              style: TextButton.styleFrom(
-                                padding: EdgeInsets.zero,
-                              ),
-                              child: Container(
-                                padding: const EdgeInsets.all(10),
-                                decoration: BoxDecoration(
-                                  color: const Color(0xffff2153),
-                                  borderRadius: BorderRadius.circular(100),
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    'Save',
-                                    textAlign: TextAlign.center,
-                                    style: GoogleFonts.lato(
-                                      fontSize: width * 0.05,
-                                      fontWeight: FontWeight.w600,
-                                      color: const Color(0xffffffff),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
                     ],
                   ),
                 ],
               ),
             ),
           ],
+        ),
+      ),
+      //save button
+      floatingActionButton: Container(
+        margin: EdgeInsets.only(right: width * 0.31),
+        width: width * 0.3,
+        height: height * 0.05,
+        child: TextButton(
+          onPressed: () {},
+          style: TextButton.styleFrom(
+            padding: EdgeInsets.zero,
+          ),
+          child: Container(
+            decoration: BoxDecoration(
+              border: Border.all(color: const Color(0xff707070)),
+              color: const Color(0xffff2153),
+              borderRadius: BorderRadius.circular(54 * fem),
+            ),
+            child: Center(
+              child: Text(
+                'Save',
+                textAlign: TextAlign.center,
+                style: SafeGoogleFont(
+                  'Lucida Bright',
+                  height * 0.02,
+                  fontWeight: FontWeight.w600,
+                  color: const Color(0xffffffff),
+                ),
+              ),
+            ),
+          ),
         ),
       ),
     );
@@ -1220,7 +1209,7 @@ class _EditMovieSchedule extends State<EditMovieSchedule> {
                               globalData.times[screens.indexOf(strone)][index],
                               style: SafeGoogleFont(
                                 'Lucida Bright',
-                                height * 0.022,
+                                height * 0.02,
                                 fontWeight: FontWeight.w600,
                                 color: const Color(0xffffffff),
                               ),

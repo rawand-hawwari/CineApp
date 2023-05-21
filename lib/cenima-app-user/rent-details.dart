@@ -123,18 +123,18 @@ class _ChoosePeriod extends State<ChoosePeriod> {
                 children: [
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
                         children: [
                           Container(
-                            // ticketsMWm (78:13961)
                             margin: EdgeInsets.fromLTRB(
                                 width * 0.09, 0, 0, 0 * fem),
                             child: Text(
                               'Renting Period',
                               style: SafeGoogleFont(
                                 'Lucida Bright',
-                                18 * ffem,
+                                width * 0.045,
                                 fontWeight: FontWeight.w600,
                                 height: 1.2575 * ffem / fem,
                                 color: const Color(0xff7e132b),
@@ -155,13 +155,13 @@ class _ChoosePeriod extends State<ChoosePeriod> {
                           ),
                         ],
                       ),
-                      const Spacer(),
+                      // const Spacer(),
                       //period number changer
                       Container(
                         margin: EdgeInsets.fromLTRB(0, 0, width * 0.03, 0),
-                        width: 120 * fem,
+                        // width: 120 * fem,
                         child: SizedBox(
-                          width: 120 * fem,
+                          width: width * 0.34,
                           height: 45 * fem,
                           child: Container(
                             decoration: BoxDecoration(
@@ -170,6 +170,7 @@ class _ChoosePeriod extends State<ChoosePeriod> {
                                   Border.all(color: const Color(0xff7e132b)),
                             ),
                             child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 IconButton(
                                   highlightColor:
@@ -178,7 +179,7 @@ class _ChoosePeriod extends State<ChoosePeriod> {
                                       const Color(0xFFFFFFFF).withOpacity(0),
                                   icon: Icon(
                                     Icons.remove,
-                                    size: 25 * ffem,
+                                    size: width * 0.045,
                                     color: const Color(0xff000000),
                                   ),
                                   onPressed: () {
@@ -191,7 +192,7 @@ class _ChoosePeriod extends State<ChoosePeriod> {
                                     });
                                   },
                                 ),
-                                const Spacer(),
+                                // const Spacer(),
                                 SizedBox(
                                   width: 30 * fem,
                                   height: 22 * fem,
@@ -200,14 +201,14 @@ class _ChoosePeriod extends State<ChoosePeriod> {
                                     textAlign: TextAlign.center,
                                     style: SafeGoogleFont(
                                       'Adamina',
-                                      19 * ffem,
+                                      width * 0.045,
                                       fontWeight: FontWeight.w400,
                                       letterSpacing: -0.3199999928 * fem,
                                       color: const Color(0xff000000),
                                     ),
                                   ),
                                 ),
-                                const Spacer(),
+                                // const Spacer(),
                                 IconButton(
                                   highlightColor:
                                       const Color(0xFFFFFFFF).withOpacity(0),
@@ -215,7 +216,7 @@ class _ChoosePeriod extends State<ChoosePeriod> {
                                       const Color(0xFFFFFFFF).withOpacity(0),
                                   icon: Icon(
                                     Icons.add,
-                                    size: 25 * ffem,
+                                    size: width * 0.045,
                                     color: const Color(0xff000000),
                                   ),
                                   onPressed: () {
