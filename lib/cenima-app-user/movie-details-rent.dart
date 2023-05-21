@@ -74,7 +74,8 @@ class _MovieDetailsRent extends State<MovieDetailsRent> {
               else {
                 return _printMovieDetail(ser: ser, context: context);
               }
-            }));
+            }),
+            );
   }
 
   String minutesToMinutesHours(int Min) {

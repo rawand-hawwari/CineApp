@@ -7,6 +7,10 @@ import '../services/Movie service.dart';
 import '../services/Screens.dart';
 import '../shared/Theme.dart';
 
+class globalData {
+  static double total = 0.00;
+}
+
 class RentDetails extends StatelessWidget {
   const RentDetails({super.key});
 
@@ -15,6 +19,8 @@ class RentDetails extends StatelessWidget {
     double baseWidth = 393;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return SizedBox(
       width: double.infinity,
       child: Container(
@@ -842,37 +848,39 @@ class RentDetails extends StatelessWidget {
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
-                                    Container(
-                                      // totalX9P (I224:19157;268:39361)
-                                      margin: EdgeInsets.fromLTRB(
-                                          0 * fem, 2 * fem, 46 * fem, 0 * fem),
-                                      child: Text(
-                                        'TOTAL',
-                                        textAlign: TextAlign.center,
-                                        style: SafeGoogleFont(
-                                          'Lucida Bright',
-                                          16 * ffem,
-                                          fontWeight: FontWeight.w600,
-                                          height: 1.2575 * ffem / fem,
-                                          color: const Color(0xff9e9e9e),
+                                    Column(
+                                      children: [
+                                        Container(
+                                          margin: EdgeInsets.fromLTRB(0 * fem,
+                                              2 * fem, 46 * fem, 0 * fem),
+                                          child: Text(
+                                            'TOTAL',
+                                            textAlign: TextAlign.center,
+                                            style: SafeGoogleFont(
+                                              'Lucida Bright',
+                                              width * 0.02,
+                                              fontWeight: FontWeight.w600,
+                                              height: 1.2575 * ffem / fem,
+                                              color: const Color(0xff9e9e9e),
+                                            ),
+                                          ),
                                         ),
-                                      ),
-                                    ),
-                                    Container(
-                                      // jodgRb (I224:19157;268:39360)
-                                      margin: EdgeInsets.fromLTRB(
-                                          0 * fem, 0 * fem, 0 * fem, 2 * fem),
-                                      child: Text(
-                                        '00.00 JOD',
-                                        style: SafeGoogleFont(
-                                          'Segoe UI',
-                                          16 * ffem,
-                                          fontWeight: FontWeight.w300,
-                                          height: 1.2575 * ffem / fem,
-                                          fontStyle: FontStyle.italic,
-                                          color: const Color(0xff000000),
+                                        Container(
+                                          margin: EdgeInsets.fromLTRB(0 * fem,
+                                              0 * fem, 0 * fem, 2 * fem),
+                                          child: Text(
+                                            '00.00 JOD',
+                                            style: SafeGoogleFont(
+                                              'Segoe UI',
+                                              16 * ffem,
+                                              fontWeight: FontWeight.w300,
+                                              height: 1.2575 * ffem / fem,
+                                              fontStyle: FontStyle.italic,
+                                              color: const Color(0xff000000),
+                                            ),
+                                          ),
                                         ),
-                                      ),
+                                      ],
                                     ),
                                   ],
                                 ),
@@ -1012,7 +1020,7 @@ class _ChoosePeriod extends State<ChoosePeriod> {
   int rentPeriod = 0;
   Screens screen =
       Screens('screen 1', [], [], 57, 19, 152, 19, {28, 47}, {1, 10, 19});
-  double total = 1.40;
+  double fees = 1.50;
   @override
   Widget build(BuildContext context) {
     int limitStandard =
@@ -1175,6 +1183,7 @@ class _ChoosePeriod extends State<ChoosePeriod> {
                                       if (rentPeriod > 0) {
                                         rentPeriod--;
                                       }
+                                      globalData.total = fees * rentPeriod;
                                     });
                                   },
                                 ),
@@ -1221,6 +1230,7 @@ class _ChoosePeriod extends State<ChoosePeriod> {
                                               "You can't add more than 10 Tickets!",
                                         ).show(context);
                                       }
+                                      globalData.total = fees * rentPeriod;
                                     });
                                   },
                                 ),
@@ -1270,8 +1280,22 @@ class _ChoosePeriod extends State<ChoosePeriod> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
+                            margin: const EdgeInsets.only(left: 10),
+                            padding: const EdgeInsets.all(10),
+                            child: Container(
                               margin: const EdgeInsets.all(3),
-                              child: Text("Total: ${rentPeriod * 1.50}")),
+                              child: Text(
+                                "TOTAL: ${globalData.total} JOD",
+                                style: SafeGoogleFont(
+                                  'Lucida Bright',
+                                  width * 0.055,
+                                  fontWeight: FontWeight.w600,
+                                  height: 1.2575 * ffem / fem,
+                                  color: const Color(0xff9e9e9e),
+                                ),
+                              ),
+                            ),
+                          ),
                           TextButton(
                             onPressed: () {
                               Navigator.pushReplacement(
