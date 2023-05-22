@@ -1,9 +1,8 @@
+import 'package:another_flushbar/flushbar.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:myapp/reusable-widgets/reusable-widget.dart';
 import '../shared/Theme.dart';
 import '../utils.dart';
 import '../services/Showing now.dart' as global;
@@ -190,7 +189,26 @@ class _EditSchedual extends State<EditSchedual> {
                         child: SizedBox(
                           width: width * 0.65,
                           child: TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              if (dates.indexOf(date) > 0) {
+                                setState(() {
+                                  timeList[dates.indexOf(date)] =
+                                      timeList[dates.indexOf(date) - 1];
+                                  times =
+                                      timeList[dates.indexOf(date)].split(',');
+                                  times;
+                                  timeList;
+                                });
+                              } else {
+                                Flushbar(
+                                  duration: const Duration(seconds: 4),
+                                  flushbarPosition: FlushbarPosition.TOP,
+                                  backgroundColor: const Color(0xFFFF5c83),
+                                  message:
+                                      "Yesterday's schedule is not available!",
+                                ).show(context);
+                              }
+                            },
                             style: TextButton.styleFrom(
                               padding: EdgeInsets.zero,
                             ),
@@ -527,11 +545,7 @@ class _EditSchedual extends State<EditSchedual> {
                 );
               }
             }
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => const glob.EditMovieSchedule()),
-            );
+            Navigator.pop(context);
           },
         ),
       ),

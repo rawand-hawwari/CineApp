@@ -147,41 +147,7 @@ class _EditMovieSchedule extends State<EditMovieSchedule> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      //copy last day schedule
-                      Padding(
-                        padding: const EdgeInsets.all(15.0),
-                        child: SizedBox(
-                          width: width * 0.65,
-                          child: TextButton(
-                            onPressed: () {},
-                            style: TextButton.styleFrom(
-                              padding: EdgeInsets.zero,
-                            ),
-                            child: Container(
-                              padding: const EdgeInsets.all(5),
-                              decoration: BoxDecoration(
-                                color: const Color(0xffff2153),
-                                borderRadius:
-                                    BorderRadius.circular(17.6289710999 * fem),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  "COPY YESTERDAY'S SCHEDULE",
-                                  textAlign: TextAlign.center,
-                                  style: SafeGoogleFont(
-                                    'Lucida Bright',
-                                    width * 0.04,
-                                    fontWeight: FontWeight.w400,
-                                    color: const Color(0xffffffff),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
                       // schedules for screens list
-                      // const Editschedule(),
                       screenListBuilder(),
                     ],
                   ),
