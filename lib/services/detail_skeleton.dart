@@ -17,9 +17,9 @@ class DetailScreenSkeleton extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           getSkeleton(height: deviceSize.height*0.35, width: double.infinity),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           getSkeleton(height: deviceSize.height*0.02, width: deviceSize.width*0.5),
           SizedBox(height: deviceSize.height*0.6),
           getSkeleton(height: deviceSize.height*0.02, width: deviceSize.width*0.5),
@@ -31,7 +31,7 @@ class DetailScreenSkeleton extends StatelessWidget {
   
   Widget getSkeleton({required double height,required double width}){
     return Shimmer(
-        duration: Duration(seconds: 2),
+        duration: const Duration(seconds: 2),
         color: Colors.black12.withOpacity(0.15),
         child : Container(
         height: height,

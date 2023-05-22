@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
 class Scene extends StatelessWidget {
+  const Scene({super.key});
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 393;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return Container(
+    return SizedBox(
       width: double.infinity,
       child: Container(
         // areyousureGyj (325:21551)
         padding: EdgeInsets.fromLTRB(33*fem, 18*fem, 9*fem, 31*fem),
         width: double.infinity,
-        decoration: BoxDecoration (
+        decoration: const BoxDecoration (
           image: DecorationImage (
             fit: BoxFit.cover,
             image: AssetImage (
@@ -37,7 +36,7 @@ class Scene extends StatelessWidget {
                   Container(
                     // areyousureyouwanttocancelyourb (325:21554)
                     margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 28.11*fem, 0*fem),
-                    constraints: BoxConstraints (
+                    constraints: const BoxConstraints (
                       // maxWidth: 243*fem,
                     ),
                     child: Text(
@@ -48,7 +47,7 @@ class Scene extends StatelessWidget {
                         21*ffem,
                         fontWeight: FontWeight.w600,
                         height: 1.2575*ffem/fem,
-                        color: Color(0xff4b4a4a),
+                        color: const Color(0xff4b4a4a),
                       ),
                     ),
                   ),
@@ -89,7 +88,7 @@ class Scene extends StatelessWidget {
                   15*ffem,
                   fontWeight: FontWeight.w400,
                   height: 1.2575*ffem/fem,
-                  color: Color(0xffff2153),
+                  color: const Color(0xffff2153),
                 ),
               ),
             ),
@@ -113,11 +112,11 @@ class Scene extends StatelessWidget {
                         width: 104*fem,
                         height: double.infinity,
                         decoration: BoxDecoration (
-                          color: Color(0xffff2153),
+                          color: const Color(0xffff2153),
                           borderRadius: BorderRadius.circular(17.6289710999*fem),
                           boxShadow: [
                             BoxShadow(
-                              color: Color(0x29000000),
+                              color: const Color(0x29000000),
                               offset: Offset(0*fem, 3.3054320812*fem),
                               blurRadius: 0.2754526734*fem,
                             ),
@@ -131,7 +130,7 @@ class Scene extends StatelessWidget {
                               17.6289710999*ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.2575*ffem/fem,
-                              color: Color(0xffffffff),
+                              color: const Color(0xffffffff),
                             ),
                           ),
                         ),
@@ -148,11 +147,11 @@ class Scene extends StatelessWidget {
                       width: 118*fem,
                       height: double.infinity,
                       decoration: BoxDecoration (
-                        color: Color(0xffff2153),
+                        color: const Color(0xffff2153),
                         borderRadius: BorderRadius.circular(17.6289710999*fem),
                         boxShadow: [
                           BoxShadow(
-                            color: Color(0x29000000),
+                            color: const Color(0x29000000),
                             offset: Offset(0*fem, 3.3054320812*fem),
                             blurRadius: 0.2754526734*fem,
                           ),
@@ -166,7 +165,7 @@ class Scene extends StatelessWidget {
                             17.6289710999*ffem,
                             fontWeight: FontWeight.w600,
                             height: 1.2575*ffem/fem,
-                            color: Color(0xffffffff),
+                            color: const Color(0xffffffff),
                           ),
                         ),
                       ),

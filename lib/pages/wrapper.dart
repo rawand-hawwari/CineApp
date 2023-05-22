@@ -13,7 +13,7 @@ import '../services/shared_value.dart';
 
 // ignore: must_be_immutable
 class Wrapper extends StatelessWidget {
-  Wrapper({this.isAdmin});
+  Wrapper({super.key, this.isAdmin});
 
   bool? isAdmin;
 
@@ -24,14 +24,14 @@ class Wrapper extends StatelessWidget {
 
     if (user == null) {
       print('is user null? $user');
-      if (!(prevPageEvent is GoToStarterPage)) {
+      if (prevPageEvent is! GoToStarterPage) {
         prevPageEvent = GoToStarterPage();
         BlocProvider.of<PageBloc>(context).add(prevPageEvent!);
       }
     } else {
       print("this is else");
-      if (!(prevPageEvent is GoToHomePage) ||
-          !(prevPageEvent is GoToAHomePage)) {
+      if (prevPageEvent is! GoToHomePage ||
+          prevPageEvent is! GoToAHomePage) {
         if (isAdmin == false) {
           print("you're supposed to be here");
           prevPageEvent = GoToHomePage();
@@ -44,9 +44,9 @@ class Wrapper extends StatelessWidget {
 
     return BlocBuilder<PageBloc, PageState>(
         builder: (_, pageState) => (pageState is OnStarterPage)
-            ? Starter()
+            ? const Starter()
             : (pageState is OnHomePage)
-                ? HomePage()
-                : AdminHomePage());
+                ? const HomePage()
+                : const AdminHomePage());
   }
 }

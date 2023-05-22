@@ -4,8 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/bloc/dateCubit.dart';
-import 'package:myapp/cenima-app-user/SeatSelection.dart';
-import 'package:myapp/services/booking.dart';
+import 'package:myapp/cenima-app-user/pick-a-seat-a.dart';
 import 'package:myapp/utils.dart';
 import '../services/Movie service.dart';
 import '../services/detail_skeleton.dart';
@@ -26,8 +25,6 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
   late Size deviceSize;
 
   late BuildContext context;
-  Set selectedSeatsPre={};
-  Set selectedSeatsSta={};
 
   late Map arguments;
   @override
@@ -92,7 +89,7 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
               }
               // loaded
               else {
-                return _printMovieDetail(bookingDetails,ser: ser, context: context);
+                return _printMovieDetail(ser: ser, context: context);
               }
             }
         )
@@ -497,13 +494,9 @@ class _MovieDetailsBookState extends State<MovieDetailsBook> {
                                   GridTile(
                                     child: TextButton(
                                       onPressed: () {
-                                        Navigator.pushReplacement(
+                                        Navigator.push(
                                           context,
-                                          MaterialPageRoute(builder: (context) => ChooseNoOfTcikets(ser.Info[1], bookingDetails,selectedSeatsSta,selectedSeatsPre)),).then((_) {
-                                            setState(() {
-
-                                            });
-                                        });
+                                          MaterialPageRoute(builder: (context) => ChooseNoOfTcikets()/*SeatSelection()*/),);
                                       },
                                       style: TextButton.styleFrom(
                                         padding: EdgeInsets.zero,

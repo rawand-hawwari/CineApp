@@ -247,7 +247,7 @@ _printHeadingS({required String heading, required BuildContext context}) {
             print('wgh');
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => ShowingNowList()),
+              MaterialPageRoute(builder: (context) => const ShowingNowList()),
             );
           },
           child: Text("View All", style: TextStyle(color: mainColor)),
@@ -277,7 +277,7 @@ _printHeadingU({required String heading, required BuildContext context}) {
             print(ser.showingNow2);
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => UpcommingNowList()),
+              MaterialPageRoute(builder: (context) => const UpcommingNowList()),
             );
           },
           child: Text("View All", style: TextStyle(color: mainColor)),

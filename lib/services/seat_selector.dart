@@ -29,6 +29,8 @@ class _SeatSelectionWidgetState extends State<SeatSelectionWidget> {
 
   Screens screen= Screens('screen 1', [], [], 57, 19, 151, 19, {28, 47}, {1, 10, 19});
 
+  SeatSelectionWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     deviceSize = MediaQuery.of(context).size;
@@ -57,7 +59,7 @@ class _SeatSelectionWidgetState extends State<SeatSelectionWidget> {
                           physics: const NeverScrollableScrollPhysics(),
                           itemCount: 3,
                           itemBuilder: ((context, index) {
-                            return Container(
+                            return SizedBox(
                               height: 35,
                               width: 28,
                               child: Center(
@@ -68,7 +70,7 @@ class _SeatSelectionWidgetState extends State<SeatSelectionWidget> {
                                     'Lucida Bright',
                                     height*0.017,
                                     fontWeight: FontWeight.w600,
-                                    color: Color(0xff797979),
+                                    color: const Color(0xff797979),
                                   ),
                                 ),
                               ),
@@ -92,7 +94,7 @@ class _SeatSelectionWidgetState extends State<SeatSelectionWidget> {
                           height: deviceSize.height * 0.154,
                           width: deviceSize.width * 1.58,
                           child: GridView.extent(
-                            physics:NeverScrollableScrollPhysics(),
+                            physics:const NeverScrollableScrollPhysics(),
                               mainAxisSpacing: 5,
                               maxCrossAxisExtent: 32,
                               children: List.generate(57, (index) {
@@ -136,7 +138,7 @@ class _SeatSelectionWidgetState extends State<SeatSelectionWidget> {
                                           }
                                         },
                                         child: Container(
-                                          padding: EdgeInsets.all(2),
+                                          padding: const EdgeInsets.all(2),
                                           decoration: BoxDecoration(
                                             borderRadius:
                                                 BorderRadius.circular(5),
@@ -184,13 +186,12 @@ class _SeatSelectionWidgetState extends State<SeatSelectionWidget> {
                                                     ),)),
                                             ],
                                           ),
-
                                         ),
                                       )
                                     : Container(
                                         height: 28,
                                         width: 28,
-                                        margin: EdgeInsets.all(2),
+                                        margin: const EdgeInsets.all(2),
                                       );
                               })),
                         ),
@@ -205,10 +206,10 @@ class _SeatSelectionWidgetState extends State<SeatSelectionWidget> {
                       height: deviceSize.height * 0.37,
                       padding: EdgeInsets.only(top: deviceSize.height *0.032),
                       child: ListView.builder(
-                        physics: NeverScrollableScrollPhysics(),
+                        physics: const NeverScrollableScrollPhysics(),
                           itemCount: 8,
                           itemBuilder: ((context, index) {
-                            return Container(
+                            return SizedBox(
                               height: 32,
                               width: 28,
                               child: Center(
@@ -218,7 +219,7 @@ class _SeatSelectionWidgetState extends State<SeatSelectionWidget> {
                                     'Lucida Bright',
                                     height*0.017,
                                     fontWeight: FontWeight.w600,
-                                    color: Color(0xff797979),
+                                    color: const Color(0xff797979),
                                   ),
                                 ),
                               ),
@@ -239,7 +240,7 @@ class _SeatSelectionWidgetState extends State<SeatSelectionWidget> {
                           height: deviceSize.height * 0.35,
                           width: deviceSize.width * 1.55,
                           child: GridView.extent(
-                            physics: NeverScrollableScrollPhysics(),
+                            physics: const NeverScrollableScrollPhysics(),
                               mainAxisSpacing: 1,
                               maxCrossAxisExtent: 32,
                               children: List.generate(screen.noOfSeatsStandard, (index) {

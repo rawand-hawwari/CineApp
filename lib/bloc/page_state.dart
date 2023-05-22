@@ -53,7 +53,7 @@ class OnAdminSettingsPage extends PageState {
 class OnRegristrationPage extends PageState {
   final RegistrationData registrationData;
 
-  OnRegristrationPage(this.registrationData);
+  const OnRegristrationPage(this.registrationData);
 
    @override
   List<Object> get props => [];
@@ -62,7 +62,7 @@ class OnRegristrationPage extends PageState {
 class OnPreferencePage extends PageState {
   final RegistrationData registrationData;
 
-  OnPreferencePage(this.registrationData);
+  const OnPreferencePage(this.registrationData);
 
    @override
   List<Object> get props => [];
@@ -71,7 +71,7 @@ class OnPreferencePage extends PageState {
 class OnAccountConfirmationPage extends PageState {
   final RegistrationData registrationData;
 
-  OnAccountConfirmationPage(this.registrationData);
+  const OnAccountConfirmationPage(this.registrationData);
 
    @override
   List<Object> get props => [];

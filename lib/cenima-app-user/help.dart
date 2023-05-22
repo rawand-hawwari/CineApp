@@ -59,7 +59,7 @@ class _HelpPage extends State<Help> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => General()),
+                          MaterialPageRoute(builder: (context) => const General()),
                         );
                       },
                       child: Container(
@@ -85,7 +85,7 @@ class _HelpPage extends State<Help> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => HelpAccount()),
+                              builder: (context) => const HelpAccount()),
                         );
                       },
                       child: Container(
@@ -111,7 +111,7 @@ class _HelpPage extends State<Help> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => HelpPayment()),
+                              builder: (context) => const HelpPayment()),
                         );
                       },
                       child: Container(

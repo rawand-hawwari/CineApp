@@ -38,24 +38,22 @@ class _LoginPage extends State<LogIn> {
 
   @override
   Widget build(BuildContext context) {
-
-    double width= MediaQuery.of(context).size.width;
-    double height= MediaQuery.of(context).size.height;
-
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
 
     double baseWidth = 393;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        centerTitle: true,
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        shadowColor: Colors.transparent,
-        title: Text(
-          'Log In',
-          style: headerFont(height),
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          centerTitle: true,
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          shadowColor: Colors.transparent,
+          title: Text(
+            'Log In',
+            style: headerFont(height),
           ),
           actions: [
             IconButton(
@@ -99,67 +97,76 @@ class _LoginPage extends State<LogIn> {
                               Future.delayed(const Duration(milliseconds: 1000), () {
                                 setState(() {
                                   val.isEmpty ? isEFValid = false : isEFValid = true;
+
                                   isEmailValid
                                       ? errorE = ''
                                       : errorE = 'Please enter a proper email';
                                 });
                               });
                             },
-                          decoration: InputDecoration(
-                          border: const OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(100.0)),
-
+                            decoration: InputDecoration(
+                              border: const OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(100.0)),
+                              ),
+                              prefixIcon: const Icon(Icons.mail_outline),
+                              hintText: 'Enter your email',
+                              labelText: 'Email',
+                              errorText: isEFValid
+                                  ? (errorE == '' ? null : errorE)
+                                  : 'Value Can\'t Be Empty',
+                            ),
                           ),
-                          prefixIcon: Icon(Icons.mail_outline),
-                          hintText: 'Enter your email',
-                          labelText: 'Email',
-                          errorText: isEFValid? (errorE==''? null : errorE): 'Value Can\'t Be Empty',
-
-                        ),
-                           ),
                           const Padding(padding: EdgeInsets.all(10.0)),
-                      // password field
+                          // password field
                           TextFormField(
                             onChanged: (val) {
                               setState(() {
                                 isPasswordValid = val.length >= 6;
-                                error='';
+                                error = '';
                               });
-                              Future.delayed(const Duration(milliseconds: 1000), () {
+                              Future.delayed(const Duration(milliseconds: 1000),
+                                  () {
                                 setState(() {
-                                  val.isEmpty? isPFValid= false: isPFValid=true;
-                                  isPasswordValid? errorP= '' :errorP='Password must be 6 characters long';
+                                  val.isEmpty
+                                      ? isPFValid = false
+                                      : isPFValid = true;
+                                  isPasswordValid
+                                      ? errorP = ''
+                                      : errorP =
+                                          'Password must be 6 characters long';
                                 });
                               });
-
                             },
-                        controller: passwordController,
-                        obscureText: isObscured,
-                        keyboardType: TextInputType.visiblePassword,
-                        decoration: InputDecoration(
-                          border: const OutlineInputBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(100.0)),
+                            controller: passwordController,
+                            obscureText: isObscured,
+                            keyboardType: TextInputType.visiblePassword,
+                            decoration: InputDecoration(
+                              border: const OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(100.0)),
+                              ),
+                              prefixIcon: const Icon(Icons.lock_outline),
+                              hintText: 'Enter your password',
+                              labelText: 'Password',
+                              errorText: isPFValid
+                                  ? (errorP == '' ? null : errorP)
+                                  : 'Value Can\'t Be Empty',
+                              suffixIcon: IconButton(
+                                icon: isObscured
+                                    ? const Icon(Icons.visibility)
+                                    : const Icon(Icons.visibility_off),
+                                onPressed: () {
+                                  setState(() {
+                                    isObscured = !isObscured;
+                                  });
+                                },
+                              ),
+                            ),
                           ),
-                          prefixIcon: Icon(Icons.lock_outline),
-                          hintText: 'Enter your password',
-                          labelText: 'Password',
-                          errorText: isPFValid? (errorP==''?null:errorP ) :'Value Can\'t Be Empty',
-                          suffixIcon: IconButton(
-                            icon: isObscured
-                                ? const Icon(Icons.visibility)
-                                : const Icon(Icons.visibility_off),
-                            onPressed: () {
-                              setState(() {
-                                isObscured = !isObscured;
-                              });
-                            },
-                          ),
-                        ),
-                      ),
 
                           const Padding(padding: EdgeInsets.all(5.0)),
-                      // forget password text
+                          // forget password text
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -187,34 +194,37 @@ class _LoginPage extends State<LogIn> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                                Container(child:
-                                  isEmailValid && isPasswordValid ?
-                                  Text(error)
-                                    :
-                                  Text(error,
-                                    style: redTextFont(height),
-                              ),
+                              Container(
+                                child: isEmailValid && isPasswordValid
+                                    ? Text(error)
+                                    : Text(
+                                        error,
+                                        style: redTextFont(height),
+                                      ),
                               ),
                             ],
                           ),
-                      //sign in button
+                          //login button
                           Center(
                             child: Container(
                               padding: const EdgeInsets.only(top: 30.0),
-                              child: isSigningIn? SpinKitFadingCircle(
-                                color: mainColor,)
+                              child: isSigningIn
+                                  ? SpinKitFadingCircle(
+                                      color: mainColor,
+                                    )
                                   : TextButton(
-                                    onPressed: isEmailValid && isPasswordValid
-                                        ? () async {
-                                      setState(() {
-                                        isSigningIn = true;
-                                      });
+                                      onPressed: isEmailValid && isPasswordValid
+                                          ? () async {
+                                              setState(() {
+                                                isSigningIn = true;
+                                              });
 
-                                      SignInSignUpResult? result =
-                                      await AuthServices.signInU(
-                                          emailController.text,
-                                          passwordController.text);
+                                              SignInSignUpResult? result =
+                                                  await AuthServices.signInU(
+                                                      emailController.text,
+                                                      passwordController.text);
 
+////////////
                                       if (result?.exception == true||result?.user==null) {
                                         setState(() {
                                           isSigningIn = false;
@@ -233,10 +243,11 @@ class _LoginPage extends State<LogIn> {
                                               }
                                       else{
                                         Navigator.pop(context);}
-                                            }
+////////////                                            }
                                           : () async {
                                               setState(() {
-                                                error = "Email or password invalid";
+                                                error =
+                                                    "Email or password invalid";
                                               });
                                             },
                                       style: TextButton.styleFrom(
@@ -246,34 +257,34 @@ class _LoginPage extends State<LogIn> {
                                         width: 144 * fem,
                                         height: 57 * fem,
                                         child: Container(
-                                      // frame4EaH (I134:15173;18:475)
+                                          // frame4EaH (I134:15173;18:475)
                                           width: double.infinity,
                                           height: double.infinity,
                                           decoration: BoxDecoration(
                                             border: Border.all(
-                                            color: const Color(0xff707070)),
+                                                color: const Color(0xff707070)),
                                             color: const Color(0xff9a2044),
-                                        borderRadius:
-                                            BorderRadius.circular(54 * fem),
+                                            borderRadius:
+                                                BorderRadius.circular(54 * fem),
+                                          ),
+                                          child: Center(
+                                            child: Text(
+                                              'Log In',
+                                              textAlign: TextAlign.center,
+                                              style: buttonTextFont(height),
                                             ),
-                                            child: Center(
-                                              child: Text(
-                                                'Log In',
-                                                textAlign: TextAlign.center,
-                                                style: buttonTextFont(height),
+                                          ),
                                         ),
+                                      ),
                                     ),
-                              ),
                             ),
                           ),
-                        ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
                 ),
-              ),
-            ),
-              Center(
+                Center(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -289,6 +300,7 @@ class _LoginPage extends State<LogIn> {
                             context,
                             MaterialPageRoute(
                                 builder: (context) => AdminLogIn()),);
+
                         },
                         style: TextButton.styleFrom(
                           padding: EdgeInsets.zero,
@@ -296,16 +308,18 @@ class _LoginPage extends State<LogIn> {
                         child: Text(
                           ' Click here',
                           textAlign: TextAlign.center,
-                          style: greyTextFont(height).copyWith(color: mainColor),
+                          style:
+                              greyTextFont(height).copyWith(color: mainColor),
                         ),
                       ),
                     ],
                   ),
                 ),
-            // bottom sign up
-              Container(
-                  padding: EdgeInsets.all(height*0.020),
-                  decoration: BoxDecoration(border:  Border(
+                // bottom sign up
+                Container(
+                  padding: EdgeInsets.all(height * 0.020),
+                  decoration: BoxDecoration(
+                      border: Border(
                     top: BorderSide(width: 1.0, color: accentColor2),
                   )),
                   // padding: EdgeInsets.only(
@@ -330,7 +344,8 @@ class _LoginPage extends State<LogIn> {
                               Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => SignUp()),);
+                                    builder: (context) => const SignUp()),
+                              );
                             },
                             style: TextButton.styleFrom(
                               padding: EdgeInsets.zero,
@@ -344,8 +359,7 @@ class _LoginPage extends State<LogIn> {
                                   border: Border.all(
                                       color: const Color(0xff9a2044)),
                                   color: const Color(0xffffffff),
-                                  borderRadius:
-                                  BorderRadius.circular(54 * fem),
+                                  borderRadius: BorderRadius.circular(54 * fem),
                                 ),
                                 child: Center(
                                   child: Text(
@@ -363,14 +377,13 @@ class _LoginPage extends State<LogIn> {
                             ),
                           ),
                         ],
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-    )
-    );
+          ),
+        ));
   }
 }

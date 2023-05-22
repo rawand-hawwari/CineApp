@@ -1,5 +1,3 @@
-import 'dart:async';
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import '../services/registration.dart';
 
@@ -61,7 +59,7 @@ class GoToProfilePage extends PageEvent {
 class GoToRegristationPage extends PageEvent {
   final RegistrationData registrationData;
 
-  GoToRegristationPage(this.registrationData);
+  const GoToRegristationPage(this.registrationData);
 
   @override
   List<Object> get props => [];
@@ -70,7 +68,7 @@ class GoToRegristationPage extends PageEvent {
 class GoToPreferencePage extends PageEvent {
   final RegistrationData registrationData;
 
-  GoToPreferencePage(this.registrationData);
+  const GoToPreferencePage(this.registrationData);
 
   @override
   List<Object> get props => [];
@@ -79,7 +77,7 @@ class GoToPreferencePage extends PageEvent {
 class GoToAccountConfirmationPage extends PageEvent {
   final RegistrationData registrationData;
 
-  GoToAccountConfirmationPage(this.registrationData);
+  const GoToAccountConfirmationPage(this.registrationData);
 
   @override
   List<Object> get props => [];

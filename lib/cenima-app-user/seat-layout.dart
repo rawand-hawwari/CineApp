@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
 class Scene extends StatelessWidget {
+  const Scene({super.key});
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 393;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return Container(
+    return SizedBox(
       width: double.infinity,
       child: Container(
         // seatlayoutKCH (119:15491)
         width: double.infinity,
-        decoration: BoxDecoration (
+        decoration: const BoxDecoration (
           color: Color(0xfff1f1f1),
         ),
         child: Column(
@@ -25,7 +24,7 @@ class Scene extends StatelessWidget {
               // iosstatusbarwithnotchsfuwB (119:15636)
               width: double.infinity,
               height: 44*fem,
-              decoration: BoxDecoration (
+              decoration: const BoxDecoration (
                 color: Color(0xffffffff),
               ),
               child: Stack(
@@ -62,7 +61,7 @@ class Scene extends StatelessWidget {
                             fontWeight: FontWeight.w600,
                             height: 1.4*ffem/fem,
                             letterSpacing: -0.3199999928*fem,
-                            color: Color(0xff020202),
+                            color: const Color(0xff020202),
                           ),
                         ),
                       ),
@@ -130,11 +129,11 @@ class Scene extends StatelessWidget {
               padding: EdgeInsets.fromLTRB(17*fem, 22*fem, 156*fem, 10*fem),
               width: double.infinity,
               decoration: BoxDecoration (
-                border: Border.all(color: Color(0xff707070)),
-                color: Color(0xffffffff),
+                border: Border.all(color: const Color(0xff707070)),
+                color: const Color(0xffffffff),
                 boxShadow: [
                   BoxShadow(
-                    color: Color(0x3f4e4e4e),
+                    color: const Color(0x3f4e4e4e),
                     offset: Offset(0*fem, 4*fem),
                     blurRadius: 2*fem,
                   ),
@@ -162,13 +161,13 @@ class Scene extends StatelessWidget {
                       22*ffem,
                       fontWeight: FontWeight.w600,
                       height: 1.2575*ffem/fem,
-                      color: Color(0xff4b4a4a),
+                      color: const Color(0xff4b4a4a),
                     ),
                   ),
                 ],
               ),
             ),
-            Container(
+            SizedBox(
               // autogroupi94yiyj (W2X1doLXUhNPxcnxPji94y)
               width: 394*fem,
               height: 759*fem,
@@ -183,7 +182,7 @@ class Scene extends StatelessWidget {
                         width: 391*fem,
                         height: 742*fem,
                         child: Container(
-                          decoration: BoxDecoration (
+                          decoration: const BoxDecoration (
                             color: Color(0xfff1f1f1),
                           ),
                         ),
@@ -208,7 +207,7 @@ class Scene extends StatelessWidget {
                     // screenbxy (119:15632)
                     left: 8*fem,
                     top: 100.5*fem,
-                    child: Container(
+                    child: SizedBox(
                       width: 381*fem,
                       height: 27.5*fem,
                       child: Stack(
@@ -229,7 +228,7 @@ class Scene extends StatelessWidget {
                                     12*ffem,
                                     fontWeight: FontWeight.w600,
                                     height: 1.2575*ffem/fem,
-                                    color: Color(0xff777777),
+                                    color: const Color(0xff777777),
                                   ),
                                 ),
                               ),
@@ -259,7 +258,7 @@ class Scene extends StatelessWidget {
                     // inactiveseatstMj (119:16014)
                     left: 24.9345703125*fem,
                     top: 169.9377441406*fem,
-                    child: Container(
+                    child: SizedBox(
                       width: 364.66*fem,
                       height: 287.06*fem,
                       child: Row(
@@ -288,7 +287,7 @@ class Scene extends StatelessWidget {
                                           style: TextButton.styleFrom (
                                             padding: EdgeInsets.zero,
                                           ),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: double.infinity,
                                             height: 20.23*fem,
                                             child: Align(
@@ -314,7 +313,7 @@ class Scene extends StatelessWidget {
                                           style: TextButton.styleFrom (
                                             padding: EdgeInsets.zero,
                                           ),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: double.infinity,
                                             height: 20.26*fem,
                                             child: Align(
@@ -340,7 +339,7 @@ class Scene extends StatelessWidget {
                                           style: TextButton.styleFrom (
                                             padding: EdgeInsets.zero,
                                           ),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: double.infinity,
                                             child: Center(
                                               // armchair2K4y (I119:16010;143:20736)
@@ -375,7 +374,7 @@ class Scene extends StatelessWidget {
                                           style: TextButton.styleFrom (
                                             padding: EdgeInsets.zero,
                                           ),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: double.infinity,
                                             height: 20.23*fem,
                                             child: Align(
@@ -401,7 +400,7 @@ class Scene extends StatelessWidget {
                                           style: TextButton.styleFrom (
                                             padding: EdgeInsets.zero,
                                           ),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: double.infinity,
                                             height: 20.26*fem,
                                             child: Align(
@@ -427,7 +426,7 @@ class Scene extends StatelessWidget {
                                           style: TextButton.styleFrom (
                                             padding: EdgeInsets.zero,
                                           ),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: double.infinity,
                                             height: 20.26*fem,
                                             child: Align(
@@ -451,7 +450,7 @@ class Scene extends StatelessWidget {
                                         style: TextButton.styleFrom (
                                           padding: EdgeInsets.zero,
                                         ),
-                                        child: Container(
+                                        child: SizedBox(
                                           width: double.infinity,
                                           height: 20.26*fem,
                                           child: Align(
@@ -486,7 +485,7 @@ class Scene extends StatelessWidget {
                                                 style: TextButton.styleFrom (
                                                   padding: EdgeInsets.zero,
                                                 ),
-                                                child: Container(
+                                                child: SizedBox(
                                                   width: double.infinity,
                                                   height: double.infinity,
                                                   child: Align(
@@ -512,7 +511,7 @@ class Scene extends StatelessWidget {
                                                 style: TextButton.styleFrom (
                                                   padding: EdgeInsets.zero,
                                                 ),
-                                                child: Container(
+                                                child: SizedBox(
                                                   width: double.infinity,
                                                   child: Center(
                                                     // armchair2Qqj (I119:16016;143:20736)
@@ -534,7 +533,7 @@ class Scene extends StatelessWidget {
                                               style: TextButton.styleFrom (
                                                 padding: EdgeInsets.zero,
                                               ),
-                                              child: Container(
+                                              child: SizedBox(
                                                 width: double.infinity,
                                                 child: Center(
                                                   // armchair2Uz1 (I119:16011;143:20736)
@@ -574,7 +573,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -600,7 +599,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -626,7 +625,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -652,7 +651,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -676,7 +675,7 @@ class Scene extends StatelessWidget {
                                   style: TextButton.styleFrom (
                                     padding: EdgeInsets.zero,
                                   ),
-                                  child: Container(
+                                  child: SizedBox(
                                     width: double.infinity,
                                     height: 20.26*fem,
                                     child: Align(
@@ -700,7 +699,7 @@ class Scene extends StatelessWidget {
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.center,
                                     children: [
-                                      Container(
+                                      SizedBox(
                                         // seatpremtjX (119:16019)
                                         width: double.infinity,
                                         height: 20.2*fem,
@@ -710,7 +709,7 @@ class Scene extends StatelessWidget {
                                           style: TextButton.styleFrom (
                                             padding: EdgeInsets.zero,
                                           ),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: double.infinity,
                                             height: double.infinity,
                                             child: Align(
@@ -737,7 +736,7 @@ class Scene extends StatelessWidget {
                                         style: TextButton.styleFrom (
                                           padding: EdgeInsets.zero,
                                         ),
-                                        child: Container(
+                                        child: SizedBox(
                                           width: double.infinity,
                                           child: Center(
                                             // armchair2stH (I119:16018;143:20736)
@@ -761,7 +760,7 @@ class Scene extends StatelessWidget {
                                         style: TextButton.styleFrom (
                                           padding: EdgeInsets.zero,
                                         ),
-                                        child: Container(
+                                        child: SizedBox(
                                           width: double.infinity,
                                           child: Center(
                                             // armchair2JMK (I119:16015;143:20736)
@@ -798,7 +797,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -824,7 +823,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -853,7 +852,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: double.infinity,
                                       child: Align(
@@ -879,7 +878,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -903,7 +902,7 @@ class Scene extends StatelessWidget {
                                   style: TextButton.styleFrom (
                                     padding: EdgeInsets.zero,
                                   ),
-                                  child: Container(
+                                  child: SizedBox(
                                     width: double.infinity,
                                     height: 20.26*fem,
                                     child: Align(
@@ -927,7 +926,7 @@ class Scene extends StatelessWidget {
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.center,
                                     children: [
-                                      Container(
+                                      SizedBox(
                                         // seatprem9pR (119:16021)
                                         width: double.infinity,
                                         height: 20.2*fem,
@@ -937,7 +936,7 @@ class Scene extends StatelessWidget {
                                           style: TextButton.styleFrom (
                                             padding: EdgeInsets.zero,
                                           ),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: double.infinity,
                                             height: double.infinity,
                                             child: Align(
@@ -964,7 +963,7 @@ class Scene extends StatelessWidget {
                                         style: TextButton.styleFrom (
                                           padding: EdgeInsets.zero,
                                         ),
-                                        child: Container(
+                                        child: SizedBox(
                                           width: double.infinity,
                                           child: Center(
                                             // armchair2xJ1 (I119:16020;143:20736)
@@ -988,7 +987,7 @@ class Scene extends StatelessWidget {
                                         style: TextButton.styleFrom (
                                           padding: EdgeInsets.zero,
                                         ),
-                                        child: Container(
+                                        child: SizedBox(
                                           width: double.infinity,
                                           child: Center(
                                             // armchair2BCh (I119:16043;143:20736)
@@ -1025,7 +1024,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -1051,7 +1050,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -1077,7 +1076,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -1103,7 +1102,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -1127,7 +1126,7 @@ class Scene extends StatelessWidget {
                                   style: TextButton.styleFrom (
                                     padding: EdgeInsets.zero,
                                   ),
-                                  child: Container(
+                                  child: SizedBox(
                                     width: double.infinity,
                                     height: 20.26*fem,
                                     child: Align(
@@ -1151,7 +1150,7 @@ class Scene extends StatelessWidget {
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.center,
                                     children: [
-                                      Container(
+                                      SizedBox(
                                         // seatprem733 (119:16024)
                                         width: double.infinity,
                                         height: 20.2*fem,
@@ -1161,7 +1160,7 @@ class Scene extends StatelessWidget {
                                           style: TextButton.styleFrom (
                                             padding: EdgeInsets.zero,
                                           ),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: double.infinity,
                                             height: double.infinity,
                                             child: Align(
@@ -1188,7 +1187,7 @@ class Scene extends StatelessWidget {
                                         style: TextButton.styleFrom (
                                           padding: EdgeInsets.zero,
                                         ),
-                                        child: Container(
+                                        child: SizedBox(
                                           width: double.infinity,
                                           child: Center(
                                             // armchair2GMB (I119:16023;143:20736)
@@ -1212,7 +1211,7 @@ class Scene extends StatelessWidget {
                                         style: TextButton.styleFrom (
                                           padding: EdgeInsets.zero,
                                         ),
-                                        child: Container(
+                                        child: SizedBox(
                                           width: double.infinity,
                                           child: Center(
                                             // armchair2k9s (I119:16044;143:20736)
@@ -1249,7 +1248,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -1275,7 +1274,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -1311,7 +1310,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -1337,7 +1336,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -1366,7 +1365,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: double.infinity,
                                       child: Align(
@@ -1392,7 +1391,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       child: Center(
                                         // armchair2oFB (I119:16025;143:20736)
@@ -1416,7 +1415,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       child: Center(
                                         // armchair2rMs (I119:16045;143:20736)
@@ -1451,7 +1450,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -1477,7 +1476,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -1513,7 +1512,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -1539,7 +1538,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -1568,7 +1567,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: double.infinity,
                                       child: Align(
@@ -1594,7 +1593,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       child: Center(
                                         // armchair2idb (I119:16027;143:20736)
@@ -1618,7 +1617,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       child: Center(
                                         // armchair2xgM (I119:16046;143:20736)
@@ -1653,7 +1652,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -1679,7 +1678,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -1715,7 +1714,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -1741,7 +1740,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -1770,7 +1769,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: double.infinity,
                                       child: Align(
@@ -1796,7 +1795,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       child: Center(
                                         // armchair2toX (I119:16029;143:20736)
@@ -1820,7 +1819,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       child: Center(
                                         // armchair2w9X (I119:16047;143:20736)
@@ -1855,7 +1854,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -1881,7 +1880,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -1910,7 +1909,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: double.infinity,
                                       child: Align(
@@ -1936,7 +1935,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -1960,7 +1959,7 @@ class Scene extends StatelessWidget {
                                   style: TextButton.styleFrom (
                                     padding: EdgeInsets.zero,
                                   ),
-                                  child: Container(
+                                  child: SizedBox(
                                     width: double.infinity,
                                     height: 20.26*fem,
                                     child: Align(
@@ -1984,7 +1983,7 @@ class Scene extends StatelessWidget {
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.center,
                                     children: [
-                                      Container(
+                                      SizedBox(
                                         // seatpremt9s (119:16032)
                                         width: double.infinity,
                                         height: 20.2*fem,
@@ -1994,7 +1993,7 @@ class Scene extends StatelessWidget {
                                           style: TextButton.styleFrom (
                                             padding: EdgeInsets.zero,
                                           ),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: double.infinity,
                                             height: double.infinity,
                                             child: Align(
@@ -2021,7 +2020,7 @@ class Scene extends StatelessWidget {
                                         style: TextButton.styleFrom (
                                           padding: EdgeInsets.zero,
                                         ),
-                                        child: Container(
+                                        child: SizedBox(
                                           width: double.infinity,
                                           child: Center(
                                             // armchair2gNZ (I119:16031;143:20736)
@@ -2045,7 +2044,7 @@ class Scene extends StatelessWidget {
                                         style: TextButton.styleFrom (
                                           padding: EdgeInsets.zero,
                                         ),
-                                        child: Container(
+                                        child: SizedBox(
                                           width: double.infinity,
                                           child: Center(
                                             // armchair2uuX (I119:16048;143:20736)
@@ -2082,7 +2081,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -2108,7 +2107,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -2137,7 +2136,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: double.infinity,
                                       child: Align(
@@ -2163,7 +2162,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -2187,7 +2186,7 @@ class Scene extends StatelessWidget {
                                   style: TextButton.styleFrom (
                                     padding: EdgeInsets.zero,
                                   ),
-                                  child: Container(
+                                  child: SizedBox(
                                     width: double.infinity,
                                     height: 20.26*fem,
                                     child: Align(
@@ -2211,7 +2210,7 @@ class Scene extends StatelessWidget {
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.center,
                                     children: [
-                                      Container(
+                                      SizedBox(
                                         // seatpremjim (119:16035)
                                         width: double.infinity,
                                         height: 20.2*fem,
@@ -2221,7 +2220,7 @@ class Scene extends StatelessWidget {
                                           style: TextButton.styleFrom (
                                             padding: EdgeInsets.zero,
                                           ),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: double.infinity,
                                             height: double.infinity,
                                             child: Align(
@@ -2248,7 +2247,7 @@ class Scene extends StatelessWidget {
                                         style: TextButton.styleFrom (
                                           padding: EdgeInsets.zero,
                                         ),
-                                        child: Container(
+                                        child: SizedBox(
                                           width: double.infinity,
                                           child: Center(
                                             // armchair2wLy (I119:16034;143:20736)
@@ -2272,7 +2271,7 @@ class Scene extends StatelessWidget {
                                         style: TextButton.styleFrom (
                                           padding: EdgeInsets.zero,
                                         ),
-                                        child: Container(
+                                        child: SizedBox(
                                           width: double.infinity,
                                           child: Center(
                                             // armchair2N4u (I119:16049;143:20736)
@@ -2309,7 +2308,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -2335,7 +2334,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -2364,7 +2363,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: double.infinity,
                                       child: Align(
@@ -2390,7 +2389,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -2414,7 +2413,7 @@ class Scene extends StatelessWidget {
                                   style: TextButton.styleFrom (
                                     padding: EdgeInsets.zero,
                                   ),
-                                  child: Container(
+                                  child: SizedBox(
                                     width: double.infinity,
                                     height: 20.26*fem,
                                     child: Align(
@@ -2438,7 +2437,7 @@ class Scene extends StatelessWidget {
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.center,
                                     children: [
-                                      Container(
+                                      SizedBox(
                                         // seatpremREm (119:16038)
                                         width: double.infinity,
                                         height: 20.2*fem,
@@ -2448,7 +2447,7 @@ class Scene extends StatelessWidget {
                                           style: TextButton.styleFrom (
                                             padding: EdgeInsets.zero,
                                           ),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: double.infinity,
                                             height: double.infinity,
                                             child: Align(
@@ -2475,7 +2474,7 @@ class Scene extends StatelessWidget {
                                         style: TextButton.styleFrom (
                                           padding: EdgeInsets.zero,
                                         ),
-                                        child: Container(
+                                        child: SizedBox(
                                           width: double.infinity,
                                           child: Center(
                                             // armchair26n9 (I119:16037;143:20736)
@@ -2499,7 +2498,7 @@ class Scene extends StatelessWidget {
                                         style: TextButton.styleFrom (
                                           padding: EdgeInsets.zero,
                                         ),
-                                        child: Container(
+                                        child: SizedBox(
                                           width: double.infinity,
                                           child: Center(
                                             // armchair2XFB (I119:16050;143:20736)
@@ -2536,7 +2535,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -2562,7 +2561,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -2586,7 +2585,7 @@ class Scene extends StatelessWidget {
                                   style: TextButton.styleFrom (
                                     padding: EdgeInsets.zero,
                                   ),
-                                  child: Container(
+                                  child: SizedBox(
                                     width: double.infinity,
                                     height: 20.26*fem,
                                     child: Align(
@@ -2610,7 +2609,7 @@ class Scene extends StatelessWidget {
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.center,
                                     children: [
-                                      Container(
+                                      SizedBox(
                                         // seatpremKpZ (119:16042)
                                         width: double.infinity,
                                         height: 20.2*fem,
@@ -2620,7 +2619,7 @@ class Scene extends StatelessWidget {
                                           style: TextButton.styleFrom (
                                             padding: EdgeInsets.zero,
                                           ),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: double.infinity,
                                             height: double.infinity,
                                             child: Align(
@@ -2641,7 +2640,7 @@ class Scene extends StatelessWidget {
                                       SizedBox(
                                         height: 14.88*fem,
                                       ),
-                                      Container(
+                                      SizedBox(
                                         // seatpremdcH (119:16041)
                                         width: double.infinity,
                                         height: 20.2*fem,
@@ -2651,7 +2650,7 @@ class Scene extends StatelessWidget {
                                           style: TextButton.styleFrom (
                                             padding: EdgeInsets.zero,
                                           ),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: double.infinity,
                                             height: double.infinity,
                                             child: Align(
@@ -2678,7 +2677,7 @@ class Scene extends StatelessWidget {
                                         style: TextButton.styleFrom (
                                           padding: EdgeInsets.zero,
                                         ),
-                                        child: Container(
+                                        child: SizedBox(
                                           width: double.infinity,
                                           child: Center(
                                             // armchair21uf (I119:16040;143:20736)
@@ -2702,7 +2701,7 @@ class Scene extends StatelessWidget {
                                         style: TextButton.styleFrom (
                                           padding: EdgeInsets.zero,
                                         ),
-                                        child: Container(
+                                        child: SizedBox(
                                           width: double.infinity,
                                           child: Center(
                                             // armchair2Efw (I119:16051;143:20736)
@@ -2723,7 +2722,7 @@ class Scene extends StatelessWidget {
                               ],
                             ),
                           ),
-                          Container(
+                          SizedBox(
                             // autogroupc6tmq9w (W2XvETN2ykLu5edcaTC6tM)
                             width: 20.26*fem,
                             height: double.infinity,
@@ -2738,7 +2737,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -2764,7 +2763,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       height: 20.26*fem,
                                       child: Align(
@@ -2790,7 +2789,7 @@ class Scene extends StatelessWidget {
                                     style: TextButton.styleFrom (
                                       padding: EdgeInsets.zero,
                                     ),
-                                    child: Container(
+                                    child: SizedBox(
                                       width: double.infinity,
                                       child: Center(
                                         // armchair2VxZ (I119:16052;143:20736)
@@ -2822,8 +2821,8 @@ class Scene extends StatelessWidget {
                       width: 393*fem,
                       height: 82*fem,
                       decoration: BoxDecoration (
-                        border: Border.all(color: Color(0xff707070)),
-                        color: Color(0xffffffff),
+                        border: Border.all(color: const Color(0xff707070)),
+                        color: const Color(0xffffffff),
                       ),
                       child: TextButton(
                         // mainbutton6qs (131:14332)
@@ -2831,7 +2830,7 @@ class Scene extends StatelessWidget {
                         style: TextButton.styleFrom (
                           padding: EdgeInsets.zero,
                         ),
-                        child: Container(
+                        child: SizedBox(
                           width: double.infinity,
                           height: double.infinity,
                           child: Container(
@@ -2839,8 +2838,8 @@ class Scene extends StatelessWidget {
                             width: double.infinity,
                             height: double.infinity,
                             decoration: BoxDecoration (
-                              border: Border.all(color: Color(0xff707070)),
-                              color: Color(0xffff2153),
+                              border: Border.all(color: const Color(0xff707070)),
+                              color: const Color(0xffff2153),
                               borderRadius: BorderRadius.circular(54*fem),
                             ),
                             child: Center(
@@ -2852,7 +2851,7 @@ class Scene extends StatelessWidget {
                                   19.8325920105*ffem,
                                   fontWeight: FontWeight.w600,
                                   height: 1.2575*ffem/fem,
-                                  color: Color(0xffffffff),
+                                  color: const Color(0xffffffff),
                                 ),
                               ),
                             ),
@@ -2876,7 +2875,7 @@ class Scene extends StatelessWidget {
                             15*ffem,
                             fontWeight: FontWeight.w400,
                             height: 1.2575*ffem/fem,
-                            color: Color(0xff8a8a8a),
+                            color: const Color(0xff8a8a8a),
                           ),
                         ),
                       ),
@@ -2895,11 +2894,11 @@ class Scene extends StatelessWidget {
                         width: 148*fem,
                         height: 33*fem,
                         decoration: BoxDecoration (
-                          color: Color(0xffff2153),
+                          color: const Color(0xffff2153),
                           borderRadius: BorderRadius.circular(17.6289710999*fem),
                           boxShadow: [
                             BoxShadow(
-                              color: Color(0x29000000),
+                              color: const Color(0x29000000),
                               offset: Offset(0*fem, 3.3054320812*fem),
                               blurRadius: 0.2754526734*fem,
                             ),
@@ -2913,7 +2912,7 @@ class Scene extends StatelessWidget {
                               13*ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.2575*ffem/fem,
-                              color: Color(0xffffffff),
+                              color: const Color(0xffffffff),
                             ),
                           ),
                         ),
@@ -2933,11 +2932,11 @@ class Scene extends StatelessWidget {
                         width: 148*fem,
                         height: 33*fem,
                         decoration: BoxDecoration (
-                          color: Color(0xffff2153),
+                          color: const Color(0xffff2153),
                           borderRadius: BorderRadius.circular(17.6289710999*fem),
                           boxShadow: [
                             BoxShadow(
-                              color: Color(0x29000000),
+                              color: const Color(0x29000000),
                               offset: Offset(0*fem, 3.3054320812*fem),
                               blurRadius: 0.2754526734*fem,
                             ),
@@ -2951,7 +2950,7 @@ class Scene extends StatelessWidget {
                               13*ffem,
                               fontWeight: FontWeight.w600,
                               height: 1.2575*ffem/fem,
-                              color: Color(0xffffffff),
+                              color: const Color(0xffffffff),
                             ),
                           ),
                         ),

@@ -1,4 +1,3 @@
-import '../bloc/page_bloc.dart';
 import '../bloc/page_event.dart';
 
 String apiKey = "ad66558901e20adfd57c1b1228b46b5f";

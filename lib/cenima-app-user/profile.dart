@@ -136,7 +136,7 @@ class _Profile extends State<Profile> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => AdminProfile()),
+                                builder: (context) => const AdminProfile()),
                           );
                         },
                         child: Row(

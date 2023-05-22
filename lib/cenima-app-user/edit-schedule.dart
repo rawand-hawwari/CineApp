@@ -1,10 +1,24 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/cenima-app-user/admin-Home-page.dart';
+import 'package:myapp/cenima-app-user/schedule-e.dart';
+import 'package:myapp/services/Schedules.dart';
 import 'package:myapp/utils.dart';
+import '../services/Showing now.dart' as global;
 
 import '../shared/Theme.dart';
+
+// ignore: camel_case_types
+class globalData {
+  static List<String> dropdownVal = [];
+  static String date = "";
+  static String screen = "";
+  static int index = _EditMovieSchedule().screens.indexOf(screen);
+  static List<List<String>> times = [[]];
+}
 
 class EditMovieSchedule extends StatefulWidget {
   const EditMovieSchedule({super.key});
@@ -14,13 +28,16 @@ class EditMovieSchedule extends StatefulWidget {
 }
 
 class _EditMovieSchedule extends State<EditMovieSchedule> {
+  final CollectionReference _scheduleCollection =
+      FirebaseFirestore.instance.collection('schedules');
+
   List<String> screens = [
     "Screen 1",
     "Screen 2",
     "Screen 3",
   ];
-  List<String> dropdownVal = [];
-  List<String> age = [
+  // List<String> dropdownVal = [];
+  List<String> date = [
     'Mon, 22 May',
     'Tue, 23 May',
     'Wed, 24 May',
@@ -29,7 +46,6 @@ class _EditMovieSchedule extends State<EditMovieSchedule> {
     'Sat, 27 May',
     'Sun, 28 May',
   ];
-  List<List<Widget>> gridChild = [[]];
   List<String> dropdownTimeVal = [];
   List<String> timeperiod = [
     'AM',
@@ -38,14 +54,53 @@ class _EditMovieSchedule extends State<EditMovieSchedule> {
   String time = "";
   Map<String, String> schedulesToAdd = {};
 
+  // List<String> times = [];
+  Map<String, dynamic> sData = {};
+
+  //function to fetch data from database
+  Future getSchedule(int movieId, String screen, String date) async {
+    // try {
+    String id = "$movieId $screen";
+    final documents = await _scheduleCollection.doc(id).get();
+    if (!documents.exists || documents == null) {
+      print("null was founded");
+    } else {
+      Map<String, dynamic> data = documents.data()! as Map<String, dynamic>;
+      if (documents != null && data != null) {
+        setState(() {
+          sData = {
+            "movieId": data['movieId'],
+            "id": data['id'],
+            "screen": data['screen'],
+            "date": data['date'],
+            "times": data['times'],
+          };
+          data['date'].contains(date)
+              ? globalData.times[screens.indexOf(screen)] =
+                  data['times'][data['date'].indexOf(date)].split(',')
+              : globalData.times[screens.indexOf(screen)] = [];
+        });
+        print(sData);
+      } else {
+        print("null was founded");
+      }
+    }
+    // } on PlatformException catch (e) {
+    //   setState(() {
+    //     sData = {};
+    //   });
+    //   print(e);
+    // }
+  }
+
   @override
   void initState() {
     super.initState();
     for (int i = 0; i < screens.length; i++) {
       setState(() {
-        dropdownVal.add("");
+        globalData.dropdownVal.add(date.first);
         dropdownTimeVal.add("");
-        gridChild.add([]);
+        globalData.times.add([]);
       });
     }
   }
@@ -128,60 +183,51 @@ class _EditMovieSchedule extends State<EditMovieSchedule> {
                       screenListBuilder(),
 
                       //save button
-
-                      // Align(
-                      //   alignment: Alignment.bottomCenter,
-                      //   child: Text('data'),
-                      // )
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            Expanded(
-              child: SizedBox(
-                height: height * 0.1,
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Padding(
-                    padding: const EdgeInsets.all(10),
-                    child: SizedBox(
-                      width: width * 0.3,
-                      child: TextButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const AdminHomePage()),
-                          );
-                        },
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.zero,
-                        ),
-                        child: Container(
+                      Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Padding(
                           padding: const EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            color: const Color(0xffff2153),
-                            borderRadius: BorderRadius.circular(100),
-                          ),
-                          child: Center(
-                            child: Text(
-                              'Save',
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.lato(
-                                fontSize: width * 0.05,
-                                fontWeight: FontWeight.w600,
-                                color: const Color(0xffffffff),
+                          child: SizedBox(
+                            width: width * 0.3,
+                            child: TextButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const AdminHomePage()),
+                                );
+                              },
+                              style: TextButton.styleFrom(
+                                padding: EdgeInsets.zero,
+                              ),
+                              child: Container(
+                                padding: const EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  color: const Color(0xffff2153),
+                                  borderRadius: BorderRadius.circular(100),
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    'Save',
+                                    textAlign: TextAlign.center,
+                                    style: GoogleFonts.lato(
+                                      fontSize: width * 0.05,
+                                      fontWeight: FontWeight.w600,
+                                      color: const Color(0xffffffff),
+                                    ),
+                                  ),
+                                ),
                               ),
                             ),
                           ),
                         ),
                       ),
-                    ),
+                    ],
                   ),
-                ),
+                ],
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -1024,13 +1070,19 @@ class _EditMovieSchedule extends State<EditMovieSchedule> {
   Widget screenListBuilder() {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    final TextEditingController controller = TextEditingController();
 
     return SizedBox(
       height: height * 0.8,
       child: ListView(
         children: screens.map((strone) {
-          setState(() {});
+          setState(() {
+            globalData.screen = strone;
+            globalData.date = globalData.dropdownVal[screens.indexOf(strone)];
+            getSchedule(global.globalData.movieId, strone,
+                globalData.dropdownVal[screens.indexOf(strone)]);
+
+            globalData.times[screens.indexOf(strone)];
+          });
           return Card(
             margin: EdgeInsets.zero,
             shape: const RoundedRectangleBorder(
@@ -1063,10 +1115,13 @@ class _EditMovieSchedule extends State<EditMovieSchedule> {
                         children: [
                           const Icon(Icons.date_range),
                           DropdownButton(
-                            value: dropdownVal[screens.indexOf(strone)] == ""
+                            value: globalData
+                                        .dropdownVal[screens.indexOf(strone)] ==
+                                    ""
                                 ? "Mon, 22 May"
-                                : dropdownVal[screens.indexOf(strone)],
-                            items: age.map((String value) {
+                                : globalData
+                                    .dropdownVal[screens.indexOf(strone)],
+                            items: date.map((String value) {
                               return DropdownMenuItem<String>(
                                 value: value,
                                 child: Text(
@@ -1081,10 +1136,11 @@ class _EditMovieSchedule extends State<EditMovieSchedule> {
                             onChanged: (String? value) {
                               setState(() {
                                 if (value == null) {
-                                  dropdownVal[screens.indexOf(strone)] =
-                                      'Mon, 22 May';
+                                  globalData.dropdownVal[
+                                      screens.indexOf(strone)] = 'Mon, 22 May';
                                 } else {
-                                  dropdownVal[screens.indexOf(strone)] = value;
+                                  globalData.dropdownVal[
+                                      screens.indexOf(strone)] = value;
                                 }
                               });
                             },
@@ -1097,91 +1153,15 @@ class _EditMovieSchedule extends State<EditMovieSchedule> {
                         child: TextButton(
                           onPressed: () {
                             setState(() {
-                              time = "";
-                              dropdownTimeVal[screens.indexOf(strone)];
-                              gridChild[screens.indexOf(strone)].add(
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    SizedBox(
-                                      width: width * 0.2,
-                                      height: 30,
-                                      child: TextField(
-                                        keyboardType: const TextInputType
-                                            .numberWithOptions(decimal: true),
-                                        inputFormatters: [
-                                          FilteringTextInputFormatter.allow(
-                                              RegExp(r'^\d{0,2}\:?\d{0,2}')),
-                                        ],
-                                        controller: controller,
-                                        decoration: const InputDecoration(
-                                          border: OutlineInputBorder(
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(50)),
-                                          ),
-                                          filled: true,
-                                          fillColor: Color(0xFFFFFFFF),
-                                          hintText: '00:00',
-                                          contentPadding: EdgeInsets.all(5),
-                                          hintStyle: TextStyle(fontSize: 14),
-                                        ),
-                                        onChanged: (String? value) {
-                                          setState(() {
-                                            time == ""
-                                                ? time = controller.text
-                                                : time = controller.text + time;
-                                          });
-                                        },
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      width: width * 0.2,
-                                      child: DropdownButton(
-                                        value: dropdownTimeVal[
-                                                    screens.indexOf(strone)] ==
-                                                ""
-                                            ? "AM"
-                                            : dropdownTimeVal[
-                                                screens.indexOf(strone)],
-                                        items: timeperiod.map((String value) {
-                                          return DropdownMenuItem<String>(
-                                            value: value,
-                                            child: Text(
-                                              value,
-                                              style: GoogleFonts.lato(
-                                                  fontSize: 20,
-                                                  fontWeight: FontWeight.w400,
-                                                  color:
-                                                      const Color(0xFF323232)),
-                                            ),
-                                          );
-                                        }).toList(),
-                                        onChanged: (String? value) {
-                                          setState(() {
-                                            if (value == null) {
-                                              dropdownTimeVal[screens
-                                                  .indexOf(strone)] = 'AM';
-                                            } else {
-                                              dropdownTimeVal[screens
-                                                  .indexOf(strone)] = value;
-                                            }
-                                            time +=
-                                                " ${dropdownTimeVal[screens.indexOf(strone)]}";
-                                          });
-                                        },
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              );
-                              time;
-                              schedulesToAdd.addEntries({
-                                "Screen": strone,
-                                "date": dropdownVal[screens.indexOf(strone)],
-                                "time": time,
-                              }.entries);
+                              globalData.screen = strone;
+                              globalData.date = globalData
+                                  .dropdownVal[screens.indexOf(strone)];
                             });
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const EditSchedual()),
+                            );
                           },
                           style: TextButton.styleFrom(
                             padding: EdgeInsets.zero,
@@ -1211,15 +1191,42 @@ class _EditMovieSchedule extends State<EditMovieSchedule> {
                     ],
                   ),
                 ),
+
+                //showing times schedules
                 SizedBox(
-                  width: width * 0.9,
-                  height: height * 0.2,
-                  child: GridView.count(
-                    childAspectRatio: height / width,
-                    crossAxisCount: 2,
-                    children: List.generate(
-                        gridChild[screens.indexOf(strone)].length,
-                        (index) => gridChild[screens.indexOf(strone)][index]),
+                  height: (height * 0.2),
+                  child: GridView.builder(
+                    itemCount: globalData.times[screens.indexOf(strone)].length,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                            childAspectRatio: 2.3,
+                            crossAxisCount: 3,
+                            crossAxisSpacing: 1,
+                            mainAxisSpacing: 1),
+                    itemBuilder: (context, index) => GridTile(
+                      child: Center(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            padding: const EdgeInsets.only(
+                                top: 0, left: 20, bottom: 2, right: 20),
+                            decoration: BoxDecoration(
+                              color: const Color(0xffff2153),
+                              borderRadius: BorderRadius.circular(50),
+                            ),
+                            child: Text(
+                              globalData.times[screens.indexOf(strone)][index],
+                              style: SafeGoogleFont(
+                                'Lucida Bright',
+                                height * 0.022,
+                                fontWeight: FontWeight.w600,
+                                color: const Color(0xffffffff),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ],
@@ -1230,7 +1237,82 @@ class _EditMovieSchedule extends State<EditMovieSchedule> {
     );
   }
 
-  // Widget screenListBuilder() {
+  // Widget timeListBuilder(double height, double width, String strone) =>
+  //     StreamBuilder<QuerySnapshot>(
+  //         stream: scheduleStream,
+  //         builder:
+  //             (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+  //           if (snapshot.hasError) {
+  //             return const Text('Something went wrong');
+  //           }
+
+  //           if (snapshot.connectionState == ConnectionState.waiting) {
+  //             return SpinKitFadingCircle(
+  //               color: mainColor,
+  //             );
+  //           }
+
+  //           return SizedBox(
+  //             height: height * 0.2,
+  //             width: width * 1,
+  //             child: ListView(
+  //               children: snapshot.data!.docs.map((DocumentSnapshot document) {
+  //                 Map<String, dynamic> data =
+  //                     document.data()! as Map<String, dynamic>;
+
+  //                 if (data['screen'] == strone &&
+  //                     data['date'] ==
+  //                         globalData.dropdownVal[globalData.index]) {
+  //                   setState(() {
+  //                     globalData.times[screens.indexOf(strone)] +=
+  //                         data['times'];
+  //                   });
+  //                   return SizedBox(
+  //                     height: (height * 0.7),
+  //                     child: GridView.builder(
+  //                       itemCount:
+  //                           globalData.times[screens.indexOf(strone)].length,
+  //                       gridDelegate:
+  //                           const SliverGridDelegateWithFixedCrossAxisCount(
+  //                               childAspectRatio: 2.3,
+  //                               crossAxisCount: 3,
+  //                               crossAxisSpacing: 1,
+  //                               mainAxisSpacing: 1),
+  //                       itemBuilder: (context, index) => GridTile(
+  //                         child: Center(
+  //                           child: Padding(
+  //                             padding: const EdgeInsets.all(8.0),
+  //                             child: Container(
+  //                               padding: const EdgeInsets.only(
+  //                                   top: 0, left: 20, bottom: 2, right: 20),
+  //                               decoration: BoxDecoration(
+  //                                 color: const Color(0xffff2153),
+  //                                 borderRadius: BorderRadius.circular(50),
+  //                               ),
+  //                               child: Text(
+  //                                 globalData.times[screens.indexOf(strone)]
+  //                                     [index],
+  //                                 style: SafeGoogleFont(
+  //                                   'Lucida Bright',
+  //                                   height * 0.022,
+  //                                   fontWeight: FontWeight.w600,
+  //                                   color: const Color(0xffffffff),
+  //                                 ),
+  //                               ),
+  //                             ),
+  //                           ),
+  //                         ),
+  //                       ),
+  //                     ),
+  //                   );
+  //                 } else {
+  //                   return Container();
+  //                 }
+  //               }).toList(),
+  //             ),
+  //           );
+  //         });
+
   //   double width = MediaQuery.of(context).size.width;
   //   double height = MediaQuery.of(context).size.height;
   //   final TextEditingController _controller = TextEditingController();

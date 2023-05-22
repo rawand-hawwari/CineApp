@@ -57,18 +57,20 @@ import '../utils.dart';
 // }
 
 class AdminProfile extends StatelessWidget {
+  const AdminProfile({super.key});
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 393;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return Container(
+    return SizedBox(
       width: double.infinity,
       child: Container(
         // adminprofilekxM (132:14496)
         width: double.infinity,
         height: 852 * fem,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color(0xfff1f1f1),
         ),
         child: Stack(
@@ -82,7 +84,7 @@ class AdminProfile extends StatelessWidget {
                   width: 391 * fem,
                   height: 742 * fem,
                   child: Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Color(0xfff1f1f1),
                     ),
                   ),
@@ -131,7 +133,7 @@ class AdminProfile extends StatelessWidget {
                                 22.0362129211 * ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2575 * ffem / fem,
-                                color: Color(0xff7e132b),
+                                color: const Color(0xff7e132b),
                               ),
                             ),
                           ),
@@ -148,7 +150,7 @@ class AdminProfile extends StatelessWidget {
                                 20.9344024658 * ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2575 * ffem / fem,
-                                color: Color(0xffff1e60),
+                                color: const Color(0xffff1e60),
                               ),
                             ),
                           ),
@@ -166,7 +168,7 @@ class AdminProfile extends StatelessWidget {
                           22.0362129211 * ffem,
                           fontWeight: FontWeight.w400,
                           height: 1.2575 * ffem / fem,
-                          color: Color(0xff383838),
+                          color: const Color(0xff383838),
                         ),
                       ),
                     ),
@@ -216,7 +218,7 @@ class AdminProfile extends StatelessWidget {
                                 22.0362129211 * ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2575 * ffem / fem,
-                                color: Color(0xff7e132b),
+                                color: const Color(0xff7e132b),
                               ),
                             ),
                           ),
@@ -233,7 +235,7 @@ class AdminProfile extends StatelessWidget {
                                 20.9344024658 * ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2575 * ffem / fem,
-                                color: Color(0xffff1e60),
+                                color: const Color(0xffff1e60),
                               ),
                             ),
                           ),
@@ -251,7 +253,7 @@ class AdminProfile extends StatelessWidget {
                           22.0362129211 * ffem,
                           fontWeight: FontWeight.w400,
                           height: 1.2575 * ffem / fem,
-                          color: Color(0xff383838),
+                          color: const Color(0xff383838),
                         ),
                       ),
                     ),
@@ -301,7 +303,7 @@ class AdminProfile extends StatelessWidget {
                                 22.0362129211 * ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2575 * ffem / fem,
-                                color: Color(0xff7e132b),
+                                color: const Color(0xff7e132b),
                               ),
                             ),
                           ),
@@ -318,7 +320,7 @@ class AdminProfile extends StatelessWidget {
                                 20.9344024658 * ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2575 * ffem / fem,
-                                color: Color(0xffff1e60),
+                                color: const Color(0xffff1e60),
                               ),
                             ),
                           ),
@@ -336,7 +338,7 @@ class AdminProfile extends StatelessWidget {
                           22.0362129211 * ffem,
                           fontWeight: FontWeight.w400,
                           height: 1.2575 * ffem / fem,
-                          color: Color(0xff383838),
+                          color: const Color(0xff383838),
                         ),
                       ),
                     ),
@@ -386,7 +388,7 @@ class AdminProfile extends StatelessWidget {
                                   22.0362129211 * ffem,
                                   fontWeight: FontWeight.w400,
                                   height: 1.0888671674 * ffem / fem,
-                                  color: Color(0xff7e132b),
+                                  color: const Color(0xff7e132b),
                                 ),
                                 children: [
                                   TextSpan(
@@ -396,7 +398,7 @@ class AdminProfile extends StatelessWidget {
                                       20 * ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.2575 * ffem / fem,
-                                      color: Color(0xff7e132b),
+                                      color: const Color(0xff7e132b),
                                     ),
                                   ),
                                   TextSpan(
@@ -406,7 +408,7 @@ class AdminProfile extends StatelessWidget {
                                       20 * ffem,
                                       fontWeight: FontWeight.w400,
                                       height: 1.2575 * ffem / fem,
-                                      color: Color(0xff7e132b),
+                                      color: const Color(0xff7e132b),
                                     ),
                                   ),
                                 ],
@@ -426,7 +428,7 @@ class AdminProfile extends StatelessWidget {
                                 20.9344024658 * ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2575 * ffem / fem,
-                                color: Color(0xffff1e60),
+                                color: const Color(0xffff1e60),
                               ),
                             ),
                           ),
@@ -444,7 +446,7 @@ class AdminProfile extends StatelessWidget {
                           20 * ffem,
                           fontWeight: FontWeight.w400,
                           height: 1.2575 * ffem / fem,
-                          color: Color(0xff383838),
+                          color: const Color(0xff383838),
                         ),
                       ),
                     ),
@@ -462,8 +464,8 @@ class AdminProfile extends StatelessWidget {
                 width: 393 * fem,
                 height: 70 * fem,
                 decoration: BoxDecoration(
-                  border: Border.all(color: Color(0xffc2c2c2)),
-                  color: Color(0xffffffff),
+                  border: Border.all(color: const Color(0xffc2c2c2)),
+                  color: const Color(0xffffffff),
                 ),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -491,7 +493,7 @@ class AdminProfile extends StatelessWidget {
                           20 * ffem,
                           fontWeight: FontWeight.w700,
                           height: 1.2575 * ffem / fem,
-                          color: Color(0xff000000),
+                          color: const Color(0xff000000),
                         ),
                       ),
                     ),
@@ -517,7 +519,7 @@ class AdminProfile extends StatelessWidget {
               child: Container(
                 width: 393 * fem,
                 height: 44 * fem,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color(0xffffffff),
                 ),
                 child: Stack(
@@ -554,7 +556,7 @@ class AdminProfile extends StatelessWidget {
                               fontWeight: FontWeight.w600,
                               height: 1.4 * ffem / fem,
                               letterSpacing: -0.3199999928 * fem,
-                              color: Color(0xff020202),
+                              color: const Color(0xff020202),
                             ),
                           ),
                         ),

@@ -28,7 +28,7 @@ class ItemSkeleton extends StatelessWidget {
   
   Widget getSkeleton({required double height,required double width}){
     return Shimmer(
-        duration: Duration(seconds: 2),
+        duration: const Duration(seconds: 2),
       color: Colors.black12.withOpacity(0.15),
       child : Container(
         height: height,
@@ -72,7 +72,7 @@ class ItemSkeletonV extends StatelessWidget {
 
   Widget getSkeleton({required double height,required double width}){
     return Shimmer(
-        duration: Duration(seconds: 2),
+        duration: const Duration(seconds: 2),
         color: Colors.black12.withOpacity(0.15),
         child : Container(
           height: height,

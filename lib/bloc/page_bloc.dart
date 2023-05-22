@@ -1,10 +1,7 @@
-import 'dart:async';
 import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
 import 'package:myapp/bloc/page_event.dart';
 import 'package:myapp/bloc/page_state.dart';
 
-import '../services/registration.dart';
 
 
 class PageBloc extends Bloc<PageEvent, PageState> {

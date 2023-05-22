@@ -104,7 +104,7 @@ class _ALoginPage extends State<AdminLogIn> {
                               border: const OutlineInputBorder(
                                 borderRadius: BorderRadius.all(Radius.circular(100.0)),
                               ),
-                              prefixIcon: Icon(Icons.mail_outline),
+                              prefixIcon: const Icon(Icons.mail_outline),
                               hintText: 'Enter your email',
                               labelText: 'Email',
                               errorText: isEFValid? (errorE==''? null : errorE): 'Value Can\'t Be Empty',
@@ -135,7 +135,7 @@ class _ALoginPage extends State<AdminLogIn> {
                                 borderRadius:
                                 BorderRadius.all(Radius.circular(100.0)),
                               ),
-                              prefixIcon: Icon(Icons.lock_outline),
+                              prefixIcon: const Icon(Icons.lock_outline),
                               hintText: 'Enter your password',
                               labelText: 'Password',
                               suffixIcon: IconButton(
@@ -218,9 +218,9 @@ class _ALoginPage extends State<AdminLogIn> {
 
                                     if (context.mounted) {
                                       Flushbar(
-                                        duration: Duration(seconds: 4),
+                                        duration: const Duration(seconds: 4),
                                         flushbarPosition: FlushbarPosition.TOP,
-                                        backgroundColor: Color(0xFFFF5c83),
+                                        backgroundColor: const Color(0xFFFF5c83),
                                         message: result?.message,
                                       ).show(context);
                                     }

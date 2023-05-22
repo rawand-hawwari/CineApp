@@ -1,35 +1,30 @@
-import 'dart:convert';
-
-import 'package:http/http.dart' as movieModel;
 import 'package:tmdb_api/tmdb_api.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-
-import 'movie.dart';
 
 var image_url = 'https://image.tmdb.org/t/p/w500/';
 
 class MovieService {
   List showingNow = [];
   List upcomming = [];
-  List upcomming2=[];
+  List upcomming2 = [];
   List Info = [];
   List showingNow2 = [];
   List release = [];
-  List release2=[];
-  List release3=[];
+  List release2 = [];
+  List release3 = [];
   String rating = '';
-  String rating2='';
-  String rating3='';
-  List allRatings=[];
-  List allRatingsUpcomming =[];
+  String rating2 = '';
+  String rating3 = '';
+  List allRatings = [];
+  List allRatingsUpcomming = [];
   List Genres = [];
-  List Genres2=[];
-  List Genres3=[];
-  List allGenres=[];
-  List allGenresUpcomming=[];
-  List IDs=[];
-  List upcommingsIDs=[];
-  List searchResult=[];
+  List Genres2 = [];
+  List Genres3 = [];
+  List allGenres = [];
+  List allGenresUpcomming = [];
+  List IDs = [];
+  List upcommingsIDs = [];
+  List searchResult = [];
 
   final String apiKey = 'c288e07bc074b958bfa1c394b65a75c6';
   final String api = '9djdukx46bs5sbesbqfa3ytf';
@@ -44,10 +39,9 @@ class MovieService {
     return showingNow2;
   }*/
 
-
   Future getShowingNow() async {
     TMDB tmdb = TMDB(ApiKeys(apiKey, accessToken),
-        logConfig: ConfigLogger(showLogs: true, showErrorLogs: true));
+        logConfig: const ConfigLogger(showLogs: true, showErrorLogs: true));
     Map showingNowResult = await tmdb.v3.movies.getNowPlaying();
     showingNow = showingNowResult['results'];
     return showingNow;
@@ -55,18 +49,18 @@ class MovieService {
 
   Future Search(String query) async {
     await getIDs();
-    int count=-1;
+    int count = -1;
     TMDB tmdb = TMDB(ApiKeys(apiKey, accessToken),
         logConfig: const ConfigLogger(showLogs: true, showErrorLogs: true));
-    Map Result = await tmdb.v3.search.queryMovies(query,primaryReleaseYear: 2023);
-    for(int i=0;i<Result['results'].length; i++)
-    {
-      for(int z=0; z<IDs.length; z++){
-      if(Result['results'][i]['id']==IDs[z]){
-        count++;
-        searchResult.length=count+1;
-      searchResult[count]=Result['results'][i];
-      }
+    Map Result =
+        await tmdb.v3.search.queryMovies(query, primaryReleaseYear: 2023);
+    for (int i = 0; i < Result['results'].length; i++) {
+      for (int z = 0; z < IDs.length; z++) {
+        if (Result['results'][i]['id'] == IDs[z]) {
+          count++;
+          searchResult.length = count + 1;
+          searchResult[count] = Result['results'][i];
+        }
       }
     }
     return searchResult;
@@ -74,20 +68,27 @@ class MovieService {
 
   Future getDetails(int Id) async {
     TMDB tmdb = TMDB(ApiKeys(apiKey, accessToken),
-        logConfig: ConfigLogger(showLogs: true, showErrorLogs: true));
+        logConfig: const ConfigLogger(showLogs: true, showErrorLogs: true));
     Map infoResult = await tmdb.v3.movies.getDetails(Id);
-    Info = [infoResult['id'],infoResult['title'],
-      infoResult['release_date'],infoResult['poster_path'],
-      infoResult['overview'],infoResult['original_language'],
-      infoResult['vote_average'],infoResult['runtime']
-      ,infoResult['release_date'],infoResult['tagline']];
-    print("hell" + Info.toString());
+    Info = [
+      infoResult['id'],
+      infoResult['title'],
+      infoResult['release_date'],
+      infoResult['poster_path'],
+      infoResult['overview'],
+      infoResult['original_language'],
+      infoResult['vote_average'],
+      infoResult['runtime'],
+      infoResult['release_date'],
+      infoResult['tagline']
+    ];
+    print("hell$Info");
     return Info;
   }
 
   Future getGenres(int id) async {
     TMDB tmdb = TMDB(ApiKeys(apiKey, accessToken),
-        logConfig: ConfigLogger(showLogs: true, showErrorLogs: true));
+        logConfig: const ConfigLogger(showLogs: true, showErrorLogs: true));
     Map infoResult = await tmdb.v3.movies.getDetails(id);
     Genres = infoResult['genres'];
     return Genres;
@@ -95,46 +96,46 @@ class MovieService {
 
   Future getAllGenres() async {
     await getIDs();
-    Genres2.length=IDs.length;
+    Genres2.length = IDs.length;
     TMDB tmdb = TMDB(ApiKeys(apiKey, accessToken),
-        logConfig: ConfigLogger(showLogs: true, showErrorLogs: true));
+        logConfig: const ConfigLogger(showLogs: true, showErrorLogs: true));
 
-    for(int i=0; i<IDs.length;i++){
+    for (int i = 0; i < IDs.length; i++) {
       Map infoResult = await tmdb.v3.movies.getDetails(IDs[i]);
       Genres2[i] = infoResult['genres'];
     }
     return Genres2;
   }
+
   Future getAllUpcommingGenres() async {
     await getUpIDs();
-    Genres3.length=upcommingsIDs.length;
+    Genres3.length = upcommingsIDs.length;
     TMDB tmdb = TMDB(ApiKeys(apiKey, accessToken),
-        logConfig: ConfigLogger(showLogs: true, showErrorLogs: true));
+        logConfig: const ConfigLogger(showLogs: true, showErrorLogs: true));
 
-    for(int i=0; i<upcommingsIDs.length;i++){
+    for (int i = 0; i < upcommingsIDs.length; i++) {
       Map infoResult = await tmdb.v3.movies.getDetails(upcommingsIDs[i]);
       Genres3[i] = infoResult['genres'];
     }
     return Genres3;
   }
 
-
   Future getUpcomming() async {
     TMDB tmdb = TMDB(ApiKeys(apiKey, accessToken),
-        logConfig: ConfigLogger(showLogs: true, showErrorLogs: true));
+        logConfig: const ConfigLogger(showLogs: true, showErrorLogs: true));
     Map upcommingResult = await tmdb.v3.movies.getUpcoming();
     upcomming = upcommingResult['results'];
     return upcomming;
   }
 
-   Future getRelease(int id) async {
+  Future getRelease(int id) async {
     TMDB tmdb = TMDB(ApiKeys(apiKey, accessToken),
-        logConfig: ConfigLogger(showLogs: true, showErrorLogs: true));
+        logConfig: const ConfigLogger(showLogs: true, showErrorLogs: true));
     Map releaseResult = await tmdb.v3.movies.getReleaseDates(id);
     release = releaseResult['results'];
-    for(int i=0; i<release.length; i++){
-      if(release[i]['iso_3166_1']=='US'){
-        rating=release[i]['release_dates'][0]['certification'];
+    for (int i = 0; i < release.length; i++) {
+      if (release[i]['iso_3166_1'] == 'US') {
+        rating = release[i]['release_dates'][0]['certification'];
       }
     }
     return rating;
@@ -142,70 +143,64 @@ class MovieService {
 
   Future getAllRelease() async {
     await getIDs();
-    allRatings.length=IDs.length;
+    allRatings.length = IDs.length;
     TMDB tmdb = TMDB(ApiKeys(apiKey, accessToken),
-        logConfig: ConfigLogger(showLogs: true, showErrorLogs: true));
-    for(int i=0;i<IDs.length;i++){
+        logConfig: const ConfigLogger(showLogs: true, showErrorLogs: true));
+    for (int i = 0; i < IDs.length; i++) {
       Map releaseResult = await tmdb.v3.movies.getReleaseDates(IDs[i]);
       release2 = releaseResult['results'];
-      for(int i=0; i<release2.length; i++){
-        if(release2[i]['iso_3166_1']=='US'){
-          rating2=release2[i]['release_dates'][0]['certification'];
+      for (int i = 0; i < release2.length; i++) {
+        if (release2[i]['iso_3166_1'] == 'US') {
+          rating2 = release2[i]['release_dates'][0]['certification'];
         }
       }
-      allRatings[i]=rating2;
+      allRatings[i] = rating2;
     }
     return allRatings;
   }
 
   Future getAllUpcommingRelease() async {
     await getUpIDs();
-    allRatingsUpcomming.length=upcommingsIDs.length;
+    allRatingsUpcomming.length = upcommingsIDs.length;
     TMDB tmdb = TMDB(ApiKeys(apiKey, accessToken),
-        logConfig: ConfigLogger(showLogs: true, showErrorLogs: true));
-    for(int i=0;i<upcommingsIDs.length;i++){
-      Map releaseResult = await tmdb.v3.movies.getReleaseDates(upcommingsIDs[i]);
+        logConfig: const ConfigLogger(showLogs: true, showErrorLogs: true));
+    for (int i = 0; i < upcommingsIDs.length; i++) {
+      Map releaseResult =
+          await tmdb.v3.movies.getReleaseDates(upcommingsIDs[i]);
       release3 = releaseResult['results'];
-      for(int i=0; i<release3.length; i++){
-        if(release3[i]['iso_3166_1']=='US'){
-          rating3=release3[i]['release_dates'][0]['certification'];
+      for (int i = 0; i < release3.length; i++) {
+        if (release3[i]['iso_3166_1'] == 'US') {
+          rating3 = release3[i]['release_dates'][0]['certification'];
         }
       }
-      allRatingsUpcomming[i]=rating3;
+      allRatingsUpcomming[i] = rating3;
     }
     return allRatingsUpcomming;
   }
 
-
   getIDs() async {
     TMDB tmdb = TMDB(ApiKeys(apiKey, accessToken),
-        logConfig: ConfigLogger(showLogs: true, showErrorLogs: true));
+        logConfig: const ConfigLogger(showLogs: true, showErrorLogs: true));
     Map showingNowResult = await tmdb.v3.movies.getNowPlaying();
     showingNow2 = showingNowResult['results'];
-    IDs.length=showingNow2.length;
-    for(int i=0;i<showingNow2.length; i++)
-      {
-        IDs[i]=showingNow2[i]['id'];
-      }
+    IDs.length = showingNow2.length;
+    for (int i = 0; i < showingNow2.length; i++) {
+      IDs[i] = showingNow2[i]['id'];
+    }
     return IDs;
-
   }
 
   getUpIDs() async {
     TMDB tmdb = TMDB(ApiKeys(apiKey, accessToken),
-        logConfig: ConfigLogger(showLogs: true, showErrorLogs: true));
+        logConfig: const ConfigLogger(showLogs: true, showErrorLogs: true));
     Map upcommingResults = await tmdb.v3.movies.getUpcoming();
     upcomming2 = upcommingResults['results'];
-    upcommingsIDs.length=upcomming2.length;
-    for(int i=0;i<upcomming2.length; i++)
-    {
-      upcommingsIDs[i]=upcomming2[i]['id'];
+    upcommingsIDs.length = upcomming2.length;
+    for (int i = 0; i < upcomming2.length; i++) {
+      upcommingsIDs[i] = upcomming2[i]['id'];
     }
     return IDs;
-
   }
-
-
 }
 
 class MovieDatabase {
