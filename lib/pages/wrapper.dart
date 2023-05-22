@@ -23,7 +23,6 @@ class Wrapper extends StatelessWidget {
     NUser? user = Provider.of<NUser?>(context);
 
     if (user == null) {
-      print("wrapper first if");
       print('is user null? $user');
       if (!(prevPageEvent is GoToStarterPage)) {
         prevPageEvent = GoToStarterPage();

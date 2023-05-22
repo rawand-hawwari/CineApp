@@ -7,6 +7,7 @@ import 'package:myapp/cine_app_icons.dart';
 import '../reusable-widgets/reusable-widget.dart';
 import 'admin-profile.dart';
 import 'admin-settings.dart';
+import 'home-page.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -51,7 +52,10 @@ class _Profile extends State<Profile> {
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return WillPopScope(
-      onWillPop: () => showExitPopup(context),
+      onWillPop: () {
+        backNavigator(context, HomePage());
+        return Future.value(false);
+      },
       child: Scaffold(
         body: NestedScrollView(
           floatHeaderSlivers: true,
