@@ -398,17 +398,15 @@ class _EditSchedual extends State<EditSchedual> {
                         children: [
                           Container(
                             margin: const EdgeInsets.symmetric(horizontal: 15),
-                            child: Align(
-                              alignment: FractionalOffset.centerLeft,
-                              child: Text(
-                                "Click on the show time to delete it",
-                                textAlign: TextAlign.start,
-                                style: SafeGoogleFont(
-                                  'Lucida Bright',
-                                  width * 0.04,
-                                  fontWeight: FontWeight.w400,
-                                  color: const Color(0xFFB1B1B1),
-                                ),
+                            alignment: FractionalOffset.centerLeft,
+                            child: Text(
+                              "Click on the show time to delete it",
+                              textAlign: TextAlign.start,
+                              style: SafeGoogleFont(
+                                'Lucida Bright',
+                                width * 0.04,
+                                fontWeight: FontWeight.w400,
+                                color: const Color(0xFFB1B1B1),
                               ),
                             ),
                           ),
@@ -497,7 +495,7 @@ class _EditSchedual extends State<EditSchedual> {
             setState(() {
               schedule = times.join(',');
             });
-            glob.globalData.times[dates.indexOf(date)] = timeList;
+            glob.globalData.times[glob.globalData.index] = timeList;
             glob.globalData.times;
             times;
             setState(() {
@@ -535,17 +533,16 @@ class _EditSchedual extends State<EditSchedual> {
                   'times': timeList,
                   'date': dates,
                 });
-                setState(() {
-                  isAdding = true;
-                });
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const glob.EditMovieSchedule()),
-                );
               }
             }
-            Navigator.pop(context);
+            setState(() {
+              isAdding = true;
+            });
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const glob.EditMovieSchedule()),
+            );
           },
         ),
       ),

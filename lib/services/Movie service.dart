@@ -83,6 +83,7 @@ class MovieService {
       infoResult['tagline']
     ];
     print("hell$Info");
+
     return Info;
   }
 

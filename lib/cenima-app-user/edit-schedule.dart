@@ -1,11 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/cenima-app-user/admin-Home-page.dart';
 import 'package:myapp/cenima-app-user/schedule-e.dart';
-import 'package:myapp/services/Schedules.dart';
 import 'package:myapp/utils.dart';
 import '../services/Showing now.dart' as global;
 
@@ -163,7 +161,12 @@ class _EditMovieSchedule extends State<EditMovieSchedule> {
         width: width * 0.3,
         height: height * 0.05,
         child: TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const AdminHomePage()),
+            );
+          },
           style: TextButton.styleFrom(
             padding: EdgeInsets.zero,
           ),
