@@ -1,4 +1,4 @@
- import 'package:another_flushbar/flushbar.dart';
+import 'package:another_flushbar/flushbar.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
@@ -57,21 +57,19 @@ class _ChooseNoOfTciketsState extends State<ChooseNoOfTcikets> {
     int limitPrime=(screen.noOfSeatsPremuim-screen.bookedPremuim.length<10)?screen.noOfSeatsPremuim-screen.bookedPremuim.length:10;
     Ticket ticket= Ticket(numOfSeats: 0, ticketPrice: bookingDetails, date: '', time: '', movie: movieName, seatNumbers: [], ticketNo: '');
 
-
-    MovieService ser= MovieService();
+    MovieService ser = MovieService();
     Size deviceSize = MediaQuery.of(context).size;
-    double width= deviceSize.width;
-    double height= deviceSize.height;
+    double width = deviceSize.width;
+    double height = deviceSize.height;
     double baseWidth = 393;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-
 
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
         shadowColor: Colors.transparent,
-        toolbarHeight: height*0.1,
+        toolbarHeight: height * 0.1,
         iconTheme: const IconThemeData(
           color: Color(0xffdd204a),
         ),
@@ -92,11 +90,12 @@ class _ChooseNoOfTciketsState extends State<ChooseNoOfTcikets> {
                 child: Image.asset(
                   'assets/cenima-app-user/images/close-2r9.png',
                   fit: BoxFit.cover,
+
                 ),
               ),
             ),
           ),
-        ),],
+        ],
         bottom: PreferredSize(
             preferredSize: Size.zero,
             child: Padding(
@@ -106,26 +105,24 @@ class _ChooseNoOfTciketsState extends State<ChooseNoOfTcikets> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(
-                      child: Text(
-                        'Dec 00, 2022 - 00:00 -AM',
-                        style: SafeGoogleFont (
-                          'Lucida Bright',
-                          height*0.015,
-                          fontWeight: FontWeight.w400,
-                          color: Color(0xff797979),
-                        ),
+                    Text(
+                      'Dec 00, 2022 - 00:00 -AM',
+                      style: SafeGoogleFont(
+                        'Lucida Bright',
+                        height * 0.015,
+                        fontWeight: FontWeight.w400,
+                        color: const Color(0xff797979),
                       ),
                     ),
-                    Container(
-                      width: width*0.5,
+                    SizedBox(
+                      width: width * 0.5,
                       child: Text(
                         'Screen 1 ',
-                        style: SafeGoogleFont (
+                        style: SafeGoogleFont(
                           'Lucida Bright',
-                          height*0.015,
+                          height * 0.015,
                           fontWeight: FontWeight.w400,
-                          color: Color(0xff797979),
+                          color: const Color(0xff797979),
                         ),
                       ),
                     ),
@@ -138,26 +135,24 @@ class _ChooseNoOfTciketsState extends State<ChooseNoOfTcikets> {
           children: [
             Container(
               // themenuJHb (1:1682)
-              margin: EdgeInsets.fromLTRB(0.01*fem, 0*fem, 0*fem, 3*fem),
-              padding: EdgeInsets.only(top: 7),
+              margin:
+                  EdgeInsets.fromLTRB(0.01 * fem, 0 * fem, 0 * fem, 3 * fem),
+              padding: const EdgeInsets.only(top: 7),
               child: Text(
                 movieName,
                 style: SafeGoogleFont (
+
                   'Lucida Bright',
-                  height*0.017,
+                  height * 0.017,
                   fontWeight: FontWeight.w600,
-                  color: Color(0xff797979),
+                  color: const Color(0xff797979),
                 ),
               ),
             ),
           ],
         ),
-        shape:ContinuousRectangleBorder(
-            side: BorderSide(
-                width: 1,
-                color: Color(0xff707070)
-            )
-        ),
+        shape: const ContinuousRectangleBorder(
+            side: BorderSide(width: 1, color: Color(0xff707070))),
         centerTitle: false,
         backgroundColor: const Color(0xffffffff),
       ),
@@ -167,17 +162,18 @@ class _ChooseNoOfTciketsState extends State<ChooseNoOfTcikets> {
             children: [
               // choose no of ticekts bar
               Container(
-                padding: EdgeInsets.fromLTRB(0*fem, 8*fem, 0*fem, 21*fem),
-                width: 393*fem,
-                height: height*0.07,
-                decoration: BoxDecoration (
-                  border: Border.all(color: Color(0xff707070)),
+                padding:
+                    EdgeInsets.fromLTRB(0 * fem, 8 * fem, 0 * fem, 21 * fem),
+                width: 393 * fem,
+                height: height * 0.07,
+                decoration: BoxDecoration(
+                  border: Border.all(color: const Color(0xff707070)),
                   color: Colors.white,
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey,
-                      offset: Offset(0, 2),
-                      blurRadius: 2*fem,
+                      offset: const Offset(0, 2),
+                      blurRadius: 2 * fem,
                     ),
                   ],
                 ),
@@ -185,231 +181,232 @@ class _ChooseNoOfTciketsState extends State<ChooseNoOfTcikets> {
                   // pleasepickaseatuEm (1:1667)
                   'Choose The Number Of Tickets',
                   textAlign: TextAlign.center,
-                  style: SafeGoogleFont (
+                  style: SafeGoogleFont(
                     'Lucida Bright',
-                    height*0.023,
+                    height * 0.023,
                     fontWeight: FontWeight.w600,
-                    color: Color(0xff4b4a4a),
+                    color: const Color(0xff4b4a4a),
                   ),
                 ),
               ),
               // noOftickets
-              SizedBox(height: height*0.06,),
+              SizedBox(
+                height: height * 0.06,
+              ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
                     // ticketsMWm (78:13961)
-                    margin: EdgeInsets.fromLTRB(width*0.09, 0, 0, 0*fem),
+                    margin: EdgeInsets.fromLTRB(width * 0.09, 0, 0, 0 * fem),
                     child: Text(
                       'Standard Tickets',
-                      style: SafeGoogleFont (
+                      style: SafeGoogleFont(
                         'Lucida Bright',
-                        18*ffem,
+                        18 * ffem,
                         fontWeight: FontWeight.w600,
-                        height: 1.2575*ffem/fem,
-                        color: Color(0xff7e132b),
+                        height: 1.2575 * ffem / fem,
+                        color: const Color(0xff7e132b),
                       ),
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Container(
-                    margin: EdgeInsets.fromLTRB(0, 0, width*0.03, 0*fem),
-                    width: 120*fem,
+                    margin: EdgeInsets.fromLTRB(0, 0, width * 0.03, 0 * fem),
+                    width: 120 * fem,
                     child: SizedBox(
-                      width: 120*fem,
-                      height: 45*fem,
+                      width: 120 * fem,
+                      height: 45 * fem,
                       child: Container(
-                        decoration: BoxDecoration (
-                          borderRadius: BorderRadius.circular(15*fem),
-                          border: Border.all(color: Color(0xff7e132b)),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15 * fem),
+                          border: Border.all(color: const Color(0xff7e132b)),
                         ),
                         child: Row(
                           children: [
                             Container(
-                              margin: EdgeInsets.only(left: 2),
-                              width: 21*fem,
-                              height: 21*fem,
+                              margin: const EdgeInsets.only(left: 2),
+                              width: 21 * fem,
+                              height: 21 * fem,
                               child: TextButton(
                                 onPressed: () {
                                   setState(() {
-                                    if(standardTicket>0){
+                                    if (standardTicket > 0) {
                                       standardTicket--;
                                       bookingDetails.selectedStandard=standardTicket;
                                     }
                                   });
                                 },
-                                style: TextButton.styleFrom (
+                                style: TextButton.styleFrom(
                                   padding: EdgeInsets.zero,
                                 ),
                                 child: Text(
                                   '-',
                                   textAlign: TextAlign.center,
-                                  style: SafeGoogleFont (
+                                  style: SafeGoogleFont(
                                     'Adamina',
-                                    25*ffem,
+                                    25 * ffem,
                                     fontWeight: FontWeight.w400,
-                                    height: 0.84*ffem/fem,
-                                    letterSpacing: -0.3199999928*fem,
-                                    color: Color(0xff000000),
+                                    height: 0.84 * ffem / fem,
+                                    letterSpacing: -0.3199999928 * fem,
+                                    color: const Color(0xff000000),
                                   ),
                                 ),
                               ),
                             ),
-                            Spacer(),
+                            const Spacer(),
                             SizedBox(
-                              width: 30*fem,
-                              height: 22*fem,
+                              width: 30 * fem,
+                              height: 22 * fem,
                               child: Text(
                                 standardTicket.toString(),
                                 textAlign: TextAlign.center,
-                                style: SafeGoogleFont (
+                                style: SafeGoogleFont(
                                   'Adamina',
-                                  19*ffem,
+                                  19 * ffem,
                                   fontWeight: FontWeight.w400,
-                                  height: 1.1052631579*ffem/fem,
-                                  letterSpacing: -0.3199999928*fem,
-                                  color: Color(0xff000000),
+                                  height: 1.1052631579 * ffem / fem,
+                                  letterSpacing: -0.3199999928 * fem,
+                                  color: const Color(0xff000000),
                                 ),
                               ),
                             ),
-                            Spacer(),
+                            const Spacer(),
                             Container(
-                              margin: EdgeInsets.only(right: 2),
-                              width: 21*fem,
-                              height: 21*fem,
+                              margin: const EdgeInsets.only(right: 2),
+                              width: 21 * fem,
+                              height: 21 * fem,
                               child: TextButton(
                                 onPressed: () {
                                   setState(() {
-                                    if(standardTicket<limitStandard){
+                                    if (standardTicket < limitStandard) {
                                       standardTicket++;
                                       bookingDetails.selectedStandard=standardTicket;
                                     }
                                     else if (context.mounted) {
+
                                       Flushbar(
-                                        duration:
-                                        const Duration(seconds: 4),
-                                        flushbarPosition:
-                                        FlushbarPosition.TOP,
+                                        duration: const Duration(seconds: 4),
+                                        flushbarPosition: FlushbarPosition.TOP,
                                         backgroundColor:
-                                        const Color(0xFFFF5c83),
-                                        message: "You can't add more than 10 Tickets!",
+                                            const Color(0xFFFF5c83),
+                                        message:
+                                            "You can't add more than 10 Tickets!",
                                       ).show(context);
                                     }
-
                                   });
                                 },
-                                style: TextButton.styleFrom (
+                                style: TextButton.styleFrom(
                                   padding: EdgeInsets.zero,
                                 ),
                                 child: Text(
                                   '+',
                                   textAlign: TextAlign.center,
-                                  style: SafeGoogleFont (
+                                  style: SafeGoogleFont(
                                     'Adamina',
-                                    25*ffem,
+                                    25 * ffem,
                                     fontWeight: FontWeight.w400,
-                                    height: 0.84*ffem/fem,
-                                    letterSpacing: -0.3199999928*fem,
-                                    color: Color(0xff000000),
+                                    height: 0.84 * ffem / fem,
+                                    letterSpacing: -0.3199999928 * fem,
+                                    color: const Color(0xff000000),
                                   ),
                                 ),
                               ),
                             ),
                           ],
                         ),
-
                       ),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: height*0.03,),
+              SizedBox(
+                height: height * 0.03,
+              ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
                     // ticketsMWm (78:13961)
-                    margin: EdgeInsets.fromLTRB(width*0.09, 0, 0, 0*fem),
+                    margin: EdgeInsets.fromLTRB(width * 0.09, 0, 0, 0 * fem),
                     child: Text(
                       'Prime Tickets',
-                      style: SafeGoogleFont (
+                      style: SafeGoogleFont(
                         'Lucida Bright',
-                        18*ffem,
+                        18 * ffem,
                         fontWeight: FontWeight.w600,
-                        height: 1.2575*ffem/fem,
-                        color: Color(0xff7e132b),
+                        height: 1.2575 * ffem / fem,
+                        color: const Color(0xff7e132b),
                       ),
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Container(
-                    margin: EdgeInsets.fromLTRB(0, 0, width*0.03, 0*fem),
+                    margin: EdgeInsets.fromLTRB(0, 0, width * 0.03, 0 * fem),
                     // incrementwjs (79:14480)
-                    width: 120*fem,
+                    width: 120 * fem,
                     child: SizedBox(
-                      width: 120*fem,
-                      height: 45*fem,
+                      width: 120 * fem,
+                      height: 45 * fem,
                       child: Container(
-                        decoration: BoxDecoration (
-                          borderRadius: BorderRadius.circular(15*fem),
-                          border: Border.all(color: Color(0xff7e132b)),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15 * fem),
+                          border: Border.all(color: const Color(0xff7e132b)),
                         ),
                         child: Row(
                           children: [
                             Container(
-                              margin: EdgeInsets.only(left: 2),
-                              width: 21*fem,
-                              height: 21*fem,
+                              margin: const EdgeInsets.only(left: 2),
+                              width: 21 * fem,
+                              height: 21 * fem,
                               child: TextButton(
                                 onPressed: () {
                                   setState(() {
-                                    if(primeTicket>0){
+                                    if (primeTicket > 0) {
                                       primeTicket--;
                                       bookingDetails.selectedPrime=primeTicket;
                                     }
                                   });
-
                                 },
-                                style: TextButton.styleFrom (
+                                style: TextButton.styleFrom(
                                   padding: EdgeInsets.zero,
                                 ),
                                 child: Text(
                                   '-',
                                   textAlign: TextAlign.center,
-                                  style: SafeGoogleFont (
+                                  style: SafeGoogleFont(
                                     'Adamina',
-                                    25*ffem,
+                                    25 * ffem,
                                     fontWeight: FontWeight.w400,
-                                    height: 0.84*ffem/fem,
-                                    letterSpacing: -0.3199999928*fem,
-                                    color: Color(0xff000000),
+                                    height: 0.84 * ffem / fem,
+                                    letterSpacing: -0.3199999928 * fem,
+                                    color: const Color(0xff000000),
                                   ),
                                 ),
                               ),
                             ),
-                            Spacer(),
+                            const Spacer(),
                             SizedBox(
-                              width: 30*fem,
-                              height: 22*fem,
+                              width: 30 * fem,
+                              height: 22 * fem,
                               child: Text(
                                 primeTicket.toString(),
                                 textAlign: TextAlign.center,
-                                style: SafeGoogleFont (
+                                style: SafeGoogleFont(
                                   'Adamina',
-                                  19*ffem,
+                                  19 * ffem,
                                   fontWeight: FontWeight.w400,
-                                  height: 1.1052631579*ffem/fem,
-                                  letterSpacing: -0.3199999928*fem,
-                                  color: Color(0xff000000),
+                                  height: 1.1052631579 * ffem / fem,
+                                  letterSpacing: -0.3199999928 * fem,
+                                  color: const Color(0xff000000),
                                 ),
                               ),
                             ),
-                            Spacer(),
+                            const Spacer(),
                             Container(
-                              margin: EdgeInsets.only(right: 2),
-                              width: 21*fem,
-                              height: 21*fem,
+                              margin: const EdgeInsets.only(right: 2),
+                              width: 21 * fem,
+                              height: 21 * fem,
                               child: TextButton(
                                 onPressed: () {
                                   setState(() {
@@ -418,59 +415,57 @@ class _ChooseNoOfTciketsState extends State<ChooseNoOfTcikets> {
                                       bookingDetails.selectedPrime=primeTicket;
                                     }
                                     else if (context.mounted) {
+
                                       Flushbar(
-                                        duration:
-                                        const Duration(seconds: 4),
-                                        flushbarPosition:
-                                        FlushbarPosition.TOP,
+                                        duration: const Duration(seconds: 4),
+                                        flushbarPosition: FlushbarPosition.TOP,
                                         backgroundColor:
-                                        const Color(0xFFFF5c83),
-                                        message: "You can't add more than 10 Tickets!",
+                                            const Color(0xFFFF5c83),
+                                        message:
+                                            "You can't add more than 10 Tickets!",
                                       ).show(context);
                                     }
-
                                   });
                                 },
-                                style: TextButton.styleFrom (
+                                style: TextButton.styleFrom(
                                   padding: EdgeInsets.zero,
                                 ),
                                 child: Text(
                                   '+',
                                   textAlign: TextAlign.center,
-                                  style: SafeGoogleFont (
+                                  style: SafeGoogleFont(
                                     'Adamina',
-                                    25*ffem,
+                                    25 * ffem,
                                     fontWeight: FontWeight.w400,
-                                    height: 0.84*ffem/fem,
-                                    letterSpacing: -0.3199999928*fem,
-                                    color: Color(0xff000000),
+                                    height: 0.84 * ffem / fem,
+                                    letterSpacing: -0.3199999928 * fem,
+                                    color: const Color(0xff000000),
                                   ),
                                 ),
                               ),
                             ),
                           ],
                         ),
-
                       ),
                     ),
                   ),
                 ],
               ),
-              Spacer(),
+              const Spacer(),
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Column(
                   children: [
                     // bottom navigator
                     Container(
-                      height: 82*fem,
-                      decoration: BoxDecoration (
-                        border: Border.all(color: Color(0xff707070)),
-                        color: Color(0xffffffff),
+                      height: 82 * fem,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: const Color(0xff707070)),
+                        color: const Color(0xffffffff),
                       ),
                       child: Row(
                         children: [
-                          Spacer(),
+                          const Spacer(),
                           TextButton(
                             onPressed: () {
                               if(primeTicket+standardTicket==0){
@@ -498,32 +493,33 @@ class _ChooseNoOfTciketsState extends State<ChooseNoOfTcikets> {
                                 );
                               }
 
+
                             },
-                            style: TextButton.styleFrom (
+                            style: TextButton.styleFrom(
                               padding: EdgeInsets.zero,
                             ),
                             child: Container(
-                              width: 140*fem,
-                              height: 52*fem,
-                              padding:  EdgeInsets.fromLTRB(0, 0, 10, 0*fem),
+                              width: 140 * fem,
+                              height: 52 * fem,
+                              padding: EdgeInsets.fromLTRB(0, 0, 10, 0 * fem),
                               child: Container(
                                 // frame4XMX (I79:14546;104:8327;78:6712;18:475)
                                 width: double.infinity,
                                 height: double.infinity,
-                                decoration: BoxDecoration (
-                                  border: Border.all(color: Color(0xff707070)),
-                                  color: Color(0xff9a2044),
-                                  borderRadius: BorderRadius.circular(54*fem),
+                                decoration: BoxDecoration(
+                                  border: Border.all(color: const Color(0xff707070)),
+                                  color: const Color(0xff9a2044),
+                                  borderRadius: BorderRadius.circular(54 * fem),
                                 ),
                                 child: Center(
                                   child: Text(
                                     'CONTINUE',
                                     textAlign: TextAlign.center,
-                                    style: SafeGoogleFont (
+                                    style: SafeGoogleFont(
                                       'Lucida Bright',
-                                      height*0.02,
+                                      height * 0.02,
                                       fontWeight: FontWeight.w600,
-                                      color: Color(0xffffffff),
+                                      color: const Color(0xffffffff),
                                     ),
                                   ),
                                 ),
@@ -544,7 +540,7 @@ class _ChooseNoOfTciketsState extends State<ChooseNoOfTcikets> {
             child: Padding(
               padding: const EdgeInsets.only(bottom: 10.0),
               child: TextButton(
-                  onPressed: (){
+                  onPressed: () {
                     setState(() {
                       openCheck=!openCheck;
                       if(rotate==0){
@@ -553,7 +549,7 @@ class _ChooseNoOfTciketsState extends State<ChooseNoOfTcikets> {
                       else{rotate=0;}
                     });
                   },
-                  style: TextButton.styleFrom (
+                  style: TextButton.styleFrom(
                     padding: EdgeInsets.zero,
                   ),
                   child:openCheck? Container(
@@ -625,40 +621,41 @@ class _ChooseNoOfTciketsState extends State<ChooseNoOfTcikets> {
                           width: 179*fem,
                           decoration: BoxDecoration (
                             borderRadius: BorderRadius.circular(11*fem),
+
                           ),
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Padding(
-                                padding:  EdgeInsets.only(top: height*0.015),
+                                padding: EdgeInsets.only(top: height * 0.015),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Text(
-                                      '',
+                                      'TOTAL',
                                       textAlign: TextAlign.center,
-                                      style: SafeGoogleFont (
+                                      style: SafeGoogleFont(
                                         'Lucida Bright',
-                                        height*0.02,
+                                        height * 0.02,
                                         fontWeight: FontWeight.w600,
-                                        color: Color(0xff9e9e9e),
+                                        color: const Color(0xff9e9e9e),
                                       ),
                                     ),
                                     Text(
                                       // jodaFw (I79:14546;104:8327;78:6709)
-                                      '',
+                                      '00 JOD',
                                       textAlign: TextAlign.center,
-                                      style: SafeGoogleFont (
+                                      style: SafeGoogleFont(
                                         'Lucida Bright',
-                                        height*0.02,
+                                        height * 0.02,
                                         fontWeight: FontWeight.w600,
-                                        color: Color(0xff777777),
+                                        color: const Color(0xff777777),
                                       ),
                                     ),
                                   ],
                                 ),
                               ),
-                              Spacer(),
+                              const Spacer(),
                               Container(
                                 // arrowdownsigntonavigatea9T (I79:14546;104:8327;78:6711)
                                 margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 1*fem),
@@ -675,18 +672,82 @@ class _ChooseNoOfTciketsState extends State<ChooseNoOfTcikets> {
                                         fit: BoxFit.cover,
                                       ),
                                     ),
+
                                   ),
                                 ),
                               ),
                             ],
                           ),
-                        )])
-              ),
+                        )
+                      : Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                              printCheck(width, height),
+                              Container(
+                                padding: EdgeInsets.fromLTRB(
+                                    42.5 * fem, 0 * fem, 0 * fem, 0 * fem),
+                                width: 179 * fem,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(11 * fem),
+                                ),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Padding(
+                                      padding:
+                                          EdgeInsets.only(top: height * 0.015),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            '',
+                                            textAlign: TextAlign.center,
+                                            style: SafeGoogleFont(
+                                              'Lucida Bright',
+                                              height * 0.02,
+                                              fontWeight: FontWeight.w600,
+                                              color: const Color(0xff9e9e9e),
+                                            ),
+                                          ),
+                                          Text(
+                                            // jodaFw (I79:14546;104:8327;78:6709)
+                                            '',
+                                            textAlign: TextAlign.center,
+                                            style: SafeGoogleFont(
+                                              'Lucida Bright',
+                                              height * 0.02,
+                                              fontWeight: FontWeight.w600,
+                                              color: const Color(0xff777777),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    const Spacer(),
+                                    Container(
+                                      // arrowdownsigntonavigatea9T (I79:14546;104:8327;78:6711)
+                                      margin: EdgeInsets.fromLTRB(
+                                          0 * fem, 0 * fem, 0 * fem, 1 * fem),
+                                      width: 25 * fem,
+                                      height: 25 * fem,
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(11 * fem),
+                                        child: Image.asset(
+                                          'assets/cenima-app-user/images/arrow-down-sign-to-navigate-i9B.png',
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ])),
             ),
           ),
         ],
       ),
-
     );
   }
   printCheck(double width, double height){
@@ -830,4 +891,3 @@ class _ChooseNoOfTciketsState extends State<ChooseNoOfTcikets> {
 
   }
 }
-

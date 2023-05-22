@@ -4,9 +4,7 @@ import 'package:myapp/bloc/Payment.dart';
 import 'package:myapp/services/user_services.dart';
 import 'package:myapp/shared/Theme.dart';
 import 'bloc/dateCubit.dart';
-
 import 'firebase_options.dart';
-
 import 'package:flutter/material.dart';
 import 'package:myapp/cenima-app-user/starter.dart';
 import 'package:myapp/pages/wrapper.dart';
@@ -102,12 +100,10 @@ class _MyHomePageState extends State<MyHomePage> {
           primarySwatch: Colors.pink,
         ),
         home: FutureBuilder(
-        future: UserServices.getUser(user?.uid),
-          builder: (context, AsyncSnapshot<NUser?>? snapshot) {
-          print('this is the data inside the snapshot$snapshot');
-            return Wrapper(isAdmin: snapshot?.data?.isAdmin);}
-        )
-    );
+            future: UserServices.getUser(user?.uid),
+            builder: (context, AsyncSnapshot<NUser?>? snapshot) {
+              print('this is the data inside the snapshot$snapshot');
+              return Wrapper(isAdmin: snapshot?.data?.isAdmin);
+            }));
+  }
 }
-}
-

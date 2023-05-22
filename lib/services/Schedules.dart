@@ -6,6 +6,7 @@ class ScheduleService {
 
   static Future<void> updateSchedule(int movieId ,String screen ,List time, String date) async {
     return await _scheduleCollection.doc(movieId.toString()).set({
+
       'movieId': movieId,
       'screen': screen,
       'time': time,

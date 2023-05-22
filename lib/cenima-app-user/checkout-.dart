@@ -43,8 +43,6 @@ class _CheckOutState extends State<CheckOut> {
   int counter=0;
 
 
-
-
   @override
   Widget build(BuildContext context) {
     Ticket? dummy= Ticket(numOfSeats: 0, ticketPrice:bookingDetails , date: 'date', time: 'time', movie: 'movie', seatNumbers: [], ticketNo: 'ticketNo');
@@ -273,6 +271,7 @@ class _CheckOutState extends State<CheckOut> {
                               "Booking Fees",
                               textAlign: TextAlign.center,
                               style: checkStyle1()
+
                           ),
                           Spacer(),
                           Text(
@@ -308,6 +307,7 @@ class _CheckOutState extends State<CheckOut> {
                             fontWeight: FontWeight.w600,
                             height: 1.2575*ffem/fem,
                             color: Color(0xff7e132b),
+
                           ),
                         ),
                       ),
@@ -407,6 +407,7 @@ class _CheckOutState extends State<CheckOut> {
                       ),
 
                     ],
+
                   ),
                 ),
               ),
@@ -462,6 +463,7 @@ class _CheckOutState extends State<CheckOut> {
                       color: Color(0xffffffff),
                     ),
                   ),
+
                 ),
               ),
             ),
@@ -494,3 +496,4 @@ class _CheckOutState extends State<CheckOut> {
   }
 
 }
+

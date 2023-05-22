@@ -599,6 +599,7 @@ Future showBookedPopup1(BuildContext context,double width, double height,Ticket 
 
 
 
+
 void backNavigator(BuildContext context, Widget widget) {
   Navigator.of(context).pushReplacement(_createRouteL(widget));
 }

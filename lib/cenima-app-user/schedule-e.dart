@@ -1,12 +1,8 @@
-import 'dart:html';
-
+import 'package:another_flushbar/flushbar.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:myapp/services/Schedules.dart';
-
 import '../shared/Theme.dart';
 import '../utils.dart';
 import '../services/Showing now.dart' as global;
@@ -31,7 +27,7 @@ class _EditSchedual extends State<EditSchedual> {
       .snapshots();
 
   String error = "";
-  List<String> times = [];
+  List<dynamic> times = [];
   List<String> timeperiod = [
     'AM',
     'PM',
@@ -44,13 +40,53 @@ class _EditSchedual extends State<EditSchedual> {
   bool isAdding = false;
   bool isNew = false;
   String schedule = "";
-  List<String> dates = [];
+  List<dynamic> dates = [];
   String date = glob.globalData.dropdownVal[glob.globalData.index];
   Map<String, dynamic> sData = {};
   Map<String, dynamic>? data = {};
+  List<String> timeList = [];
+  int i = 0;
+
+  //popup message for delete configeration
+  Future<bool> showDeleteConfirmation(BuildContext context, int index) async {
+    return await showDialog(
+          //show confirm dialogue
+          //the return value will be from "Yes" or "No" options
+          context: context,
+          builder: (context) => AlertDialog(
+            actionsAlignment: MainAxisAlignment.center,
+            title: const Text('Delete'),
+            content:
+                const Text('Do you want to delete this time from schedule?'),
+            actions: [
+              Padding(
+                padding: const EdgeInsets.all(25.0),
+                child: ElevatedButton(
+                  onPressed: () => Navigator.pop(context),
+                  //return false when click on "NO"
+                  child: const Text('No'),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(25.0),
+                child: ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      times.removeAt(index);
+                    });
+                    Navigator.pop(context);
+                  },
+                  //return true when click on "Yes"
+                  child: const Text('Yes'),
+                ),
+              ),
+            ],
+          ),
+        ) ??
+        false; //if showDialouge had returned null, then return false
+  }
 
   //function to fetch data from database
-
   Future getSchedule(int movieId, String screen, String date) async {
     // try {
     String id = "$movieId $screen";
@@ -80,13 +116,24 @@ class _EditSchedual extends State<EditSchedual> {
             data['date'].contains(date)
                 ? dates = data['date']
                 : dates.add(date);
+
+            dates;
           });
         });
       } else {
         print("null was founded");
       }
     }
-    dates;
+
+    setState(() {
+      for (int i = 0; i < dates.length; i++) {
+        timeList.add("");
+      }
+      for (int i = 0; i < sData["times"].length; i++) {
+        timeList[i] = sData["times"][i];
+      }
+      timeList;
+    });
   }
 
   @override
@@ -142,7 +189,26 @@ class _EditSchedual extends State<EditSchedual> {
                         child: SizedBox(
                           width: width * 0.65,
                           child: TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              if (dates.indexOf(date) > 0) {
+                                setState(() {
+                                  timeList[dates.indexOf(date)] =
+                                      timeList[dates.indexOf(date) - 1];
+                                  times =
+                                      timeList[dates.indexOf(date)].split(',');
+                                  times;
+                                  timeList;
+                                });
+                              } else {
+                                Flushbar(
+                                  duration: const Duration(seconds: 4),
+                                  flushbarPosition: FlushbarPosition.TOP,
+                                  backgroundColor: const Color(0xFFFF5c83),
+                                  message:
+                                      "Yesterday's schedule is not available!",
+                                ).show(context);
+                              }
+                            },
                             style: TextButton.styleFrom(
                               padding: EdgeInsets.zero,
                             ),
@@ -184,7 +250,7 @@ class _EditSchedual extends State<EditSchedual> {
                                           decimal: true),
                                   inputFormatters: [
                                     FilteringTextInputFormatter.allow(
-                                        RegExp(r'^\d{0,2}\:?\d{0,2}')),
+                                        RegExp(r'^[0-9:]+$')),
                                   ],
                                   controller: controller,
                                   onChanged: (value) {
@@ -261,8 +327,18 @@ class _EditSchedual extends State<EditSchedual> {
                               onPressed: () {
                                 if (isValid) {
                                   setState(() {
-                                    time =
-                                        "${controller.text} $dropdownTimeVal";
+                                    if (controller.text.length == 4) {
+                                      time =
+                                          '${controller.text.substring(0, 2)}:${controller.text.substring(2, 4)}';
+                                    } else if (controller.text.length == 3) {
+                                      time =
+                                          '0${controller.text.substring(0, 1)}:${controller.text.substring(1, 3)}';
+                                    } else if (controller.text.length == 2) {
+                                      time = '${controller.text}:00';
+                                    } else if (controller.text.length == 1) {
+                                      time = '0${controller.text}:00';
+                                    }
+                                    time += dropdownTimeVal;
                                     if (times.contains(time)) {
                                       error = 'This time is already available';
                                     } else {
@@ -318,269 +394,156 @@ class _EditSchedual extends State<EditSchedual> {
                         ],
                       ),
                       //Showing movie time
-                      SizedBox(
-                        height: (height * 0.7),
-                        child: GridView.builder(
-                          itemCount: times.length,
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                                  childAspectRatio: 2.3,
-                                  crossAxisCount: 3,
-                                  crossAxisSpacing: 1,
-                                  mainAxisSpacing: 1),
-                          itemBuilder: (context, index) => GridTile(
-                            child: Center(
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Container(
-                                  padding: const EdgeInsets.only(
-                                      top: 0, left: 20, bottom: 2, right: 20),
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xffff2153),
-                                    borderRadius: BorderRadius.circular(50),
-                                  ),
-                                  child: Text(
-                                    times[index],
-                                    style: SafeGoogleFont(
-                                      'Lucida Bright',
-                                      height * 0.022,
-                                      fontWeight: FontWeight.w600,
-                                      color: const Color(0xffffffff),
+                      Column(
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.symmetric(horizontal: 15),
+                            alignment: FractionalOffset.centerLeft,
+                            child: Text(
+                              "Click on the show time to delete it",
+                              textAlign: TextAlign.start,
+                              style: SafeGoogleFont(
+                                'Lucida Bright',
+                                width * 0.04,
+                                fontWeight: FontWeight.w400,
+                                color: const Color(0xFFB1B1B1),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: (height * 0.5) - 215,
+                            child: GridView.builder(
+                              itemCount: times.length,
+                              gridDelegate:
+                                  const SliverGridDelegateWithFixedCrossAxisCount(
+                                      childAspectRatio: 2.3,
+                                      crossAxisCount: 3,
+                                      crossAxisSpacing: 1,
+                                      mainAxisSpacing: 1),
+                              itemBuilder: (context, index) => GridTile(
+                                child: TextButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      i = index;
+                                      showDeleteConfirmation(context, index);
+                                    });
+                                  },
+                                  child: Center(
+                                    child: Container(
+                                      padding: const EdgeInsets.only(
+                                          top: 0,
+                                          left: 20,
+                                          bottom: 2,
+                                          right: 20),
+                                      decoration: BoxDecoration(
+                                        color: const Color(0xffff2153),
+                                        borderRadius: BorderRadius.circular(50),
+                                      ),
+                                      child: Text(
+                                        times[index],
+                                        style: SafeGoogleFont(
+                                          'Lucida Bright',
+                                          height * 0.02,
+                                          fontWeight: FontWeight.w600,
+                                          color: const Color(0xffffffff),
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
                             ),
                           ),
-                        ),
-                      ),
-
-                      //save button
-                      Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Padding(
-                          padding: const EdgeInsets.all(10),
-                          child: SizedBox(
-                            width: width * 0.3,
-                            child: Center(
-                              child: Container(
-                                child: isAdding
-                                    ? SpinKitFadingCircle(
-                                        color: mainColor,
-                                      )
-                                    : TextButton(
-                                        style: TextButton.styleFrom(
-                                          padding: EdgeInsets.zero,
-                                        ),
-                                        child: Container(
-                                          padding: const EdgeInsets.all(10),
-                                          decoration: BoxDecoration(
-                                            color: const Color(0xffff2153),
-                                            borderRadius:
-                                                BorderRadius.circular(100),
-                                          ),
-                                          child: Center(
-                                            child: Text(
-                                              'Save',
-                                              textAlign: TextAlign.center,
-                                              style: GoogleFonts.lato(
-                                                fontSize: width * 0.05,
-                                                fontWeight: FontWeight.w600,
-                                                color: const Color(0xffffffff),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        onPressed: () {
-                                          setState(() {
-                                            schedule = times.join(',');
-                                          });
-                                          if (sData.containsValue(date)) {
-                                            glob.globalData.times[
-                                                    dates.indexOf(date)] =
-                                                schedule as List<String>;
-                                            glob.globalData.times;
-                                          }
-                                          times;
-                                          setState(() {
-                                            glob.globalData.times[
-                                                dates.indexOf(date)] = times;
-                                            screen =
-                                                dates.indexOf(date) as String;
-                                          });
-                                          glob.globalData.times;
-                                          isNew;
-                                          dates;
-                                          glob.globalData.screen;
-                                          screen;
-                                          if (times.isNotEmpty) {
-                                            if (isNew) {
-                                              Map<String, dynamic> dataToAdd = {
-                                                'screen': screen,
-                                                'date': dates,
-                                                'movieId':
-                                                    global.globalData.movieId,
-                                                'times': schedule,
-                                                'id':
-                                                    "${global.globalData.movieId} $screen",
-                                              };
-                                              dataToAdd;
-                                              _scheduleCollection
-                                                  .doc(
-                                                      "${global.globalData.movieId} $screen")
-                                                  .set(dataToAdd);
-                                              setState(() {
-                                                isAdding = true;
-                                              });
-                                            } else {
-                                              ScheduleService.updateSchedule(
-                                                global.globalData.movieId
-                                                    as String,
-                                                screen,
-                                                times,
-                                                dates,
-                                                "${global.globalData.movieId as String} $screen",
-                                              );
-
-                                              setState(() {
-                                                isAdding = true;
-                                              });
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        const glob
-                                                            .EditMovieSchedule()),
-                                              );
-                                            }
-                                          }
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) => const glob
-                                                    .EditMovieSchedule()),
-                                          );
-                                        },
-                                      ),
-                              ),
-                            ),
-                          ),
-                        ),
+                        ],
                       ),
                     ],
                   ),
                 ],
               ),
             ),
-            Positioned(
-              bottom: 0,
-              child: Align(
-                alignment: Alignment.bottomCenter,
-                child: Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: SizedBox(
-                    width: width * 0.3,
-                    child: Center(
-                      child: Container(
-                        child: isAdding
-                            ? SpinKitFadingCircle(
-                                color: mainColor,
-                              )
-                            : TextButton(
-                                style: TextButton.styleFrom(
-                                  padding: EdgeInsets.zero,
-                                ),
-                                child: Container(
-                                  padding: const EdgeInsets.all(10),
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xffff2153),
-                                    borderRadius: BorderRadius.circular(100),
-                                  ),
-                                  child: Center(
-                                    child: Text(
-                                      'Save',
-                                      textAlign: TextAlign.center,
-                                      style: GoogleFonts.lato(
-                                        fontSize: width * 0.05,
-                                        fontWeight: FontWeight.w600,
-                                        color: const Color(0xffffffff),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                onPressed: () {
-                                  setState(() {
-                                    schedule = times.join(',');
-                                  });
-                                  if (sData.containsValue(date)) {
-                                    glob.globalData.times[dates.indexOf(date)] =
-                                        schedule as List<String>;
-                                    glob.globalData.times;
-                                  }
-                                  times;
-                                  setState(() {
-                                    glob.globalData.times[dates.indexOf(date)] =
-                                        times;
-                                    screen = dates.indexOf(date) as String;
-                                  });
-                                  glob.globalData.times;
-                                  isNew;
-                                  dates;
-                                  glob.globalData.screen;
-                                  screen;
-                                  if (times.isNotEmpty) {
-                                    if (isNew) {
-                                      Map<String, dynamic> dataToAdd = {
-                                        'screen': screen,
-                                        'date': dates,
-                                        'movieId': global.globalData.movieId,
-                                        'times': schedule,
-                                        'id':
-                                            "${global.globalData.movieId} $screen",
-                                      };
-                                      dataToAdd;
-                                      _scheduleCollection
-                                          .doc(
-                                              "${global.globalData.movieId} $screen")
-                                          .set(dataToAdd);
-                                      setState(() {
-                                        isAdding = true;
-                                      });
-                                    } else {
-                                      ScheduleService.updateSchedule(
-                                        global.globalData.movieId as String,
-                                        screen,
-                                        times,
-                                        dates,
-                                        "${global.globalData.movieId as String} $screen",
-                                      );
-
-                                      setState(() {
-                                        isAdding = true;
-                                      });
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const glob.EditMovieSchedule()),
-                                      );
-                                    }
-                                  }
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const glob.EditMovieSchedule()),
-                                  );
-                                },
-                              ),
-                      ),
-                    ),
-                  ),
+          ],
+        ),
+      ),
+      //save button
+      floatingActionButton: Container(
+        margin: EdgeInsets.only(right: width * 0.31),
+        width: width * 0.3,
+        height: height * 0.05,
+        child: TextButton(
+          style: TextButton.styleFrom(
+            padding: EdgeInsets.zero,
+          ),
+          child: Container(
+            // padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: const Color(0xffff2153),
+              borderRadius: BorderRadius.circular(100),
+            ),
+            child: Center(
+              child: Text(
+                'Save',
+                textAlign: TextAlign.center,
+                style: GoogleFonts.lato(
+                  fontSize: width * 0.05,
+                  fontWeight: FontWeight.w600,
+                  color: const Color(0xffffffff),
                 ),
               ),
             ),
-          ],
+          ),
+          onPressed: () {
+            setState(() {
+              schedule = times.join(',');
+            });
+            glob.globalData.times[glob.globalData.index] = timeList;
+            glob.globalData.times;
+            times;
+            setState(() {
+              timeList;
+              timeList[dates.indexOf(date)] = schedule;
+              timeList;
+            });
+            glob.globalData.times;
+            timeList;
+            isNew;
+            dates;
+            screen;
+            if (times.isNotEmpty) {
+              if (isNew) {
+                Map<String, dynamic> dataToAdd = {
+                  'screen': screen,
+                  'date': dates,
+                  'movieId': global.globalData.movieId,
+                  'times': timeList,
+                  'id': "${global.globalData.movieId} $screen",
+                };
+                dataToAdd;
+                _scheduleCollection
+                    .doc("${global.globalData.movieId} $screen")
+                    .set(dataToAdd);
+                setState(() {
+                  isAdding = true;
+                });
+              } else {
+                _scheduleCollection
+                    .doc("${global.globalData.movieId} $screen")
+                    .update({
+                  'movieId': global.globalData.movieId,
+                  'screen': screen,
+                  'times': timeList,
+                  'date': dates,
+                });
+              }
+            }
+            setState(() {
+              isAdding = true;
+            });
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const glob.EditMovieSchedule()),
+            );
+          },
         ),
       ),
     );

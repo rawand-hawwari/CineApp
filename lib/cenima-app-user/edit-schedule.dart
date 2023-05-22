@@ -1,11 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/cenima-app-user/admin-Home-page.dart';
 import 'package:myapp/cenima-app-user/schedule-e.dart';
-import 'package:myapp/services/Schedules.dart';
 import 'package:myapp/utils.dart';
 import '../services/Showing now.dart' as global;
 
@@ -17,7 +15,7 @@ class globalData {
   static String date = "";
   static String screen = "";
   static int index = _EditMovieSchedule().screens.indexOf(screen);
-  static List<List<String>> times = [[]];
+  static List<List<dynamic>> times = [[]];
 }
 
 class EditMovieSchedule extends StatefulWidget {
@@ -96,6 +94,7 @@ class _EditMovieSchedule extends State<EditMovieSchedule> {
   @override
   void initState() {
     super.initState();
+    globalData.times = [];
     for (int i = 0; i < screens.length; i++) {
       setState(() {
         globalData.dropdownVal.add(date.first);
@@ -103,6 +102,7 @@ class _EditMovieSchedule extends State<EditMovieSchedule> {
         globalData.times.add([]);
       });
     }
+    globalData.times;
   }
 
   @override
@@ -145,90 +145,50 @@ class _EditMovieSchedule extends State<EditMovieSchedule> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      //copy last day schedule
-                      Padding(
-                        padding: const EdgeInsets.all(15.0),
-                        child: SizedBox(
-                          width: width * 0.65,
-                          child: TextButton(
-                            onPressed: () {},
-                            style: TextButton.styleFrom(
-                              padding: EdgeInsets.zero,
-                            ),
-                            child: Container(
-                              padding: const EdgeInsets.all(5),
-                              decoration: BoxDecoration(
-                                color: const Color(0xffff2153),
-                                borderRadius:
-                                    BorderRadius.circular(17.6289710999 * fem),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  "COPY YESTERDAY'S SCHEDULE",
-                                  textAlign: TextAlign.center,
-                                  style: SafeGoogleFont(
-                                    'Lucida Bright',
-                                    width * 0.04,
-                                    fontWeight: FontWeight.w400,
-                                    color: const Color(0xffffffff),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
                       // schedules for screens list
-                      // const Editschedule(),
                       screenListBuilder(),
-
-                      //save button
-                      Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Padding(
-                          padding: const EdgeInsets.all(10),
-                          child: SizedBox(
-                            width: width * 0.3,
-                            child: TextButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const AdminHomePage()),
-                                );
-                              },
-                              style: TextButton.styleFrom(
-                                padding: EdgeInsets.zero,
-                              ),
-                              child: Container(
-                                padding: const EdgeInsets.all(10),
-                                decoration: BoxDecoration(
-                                  color: const Color(0xffff2153),
-                                  borderRadius: BorderRadius.circular(100),
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    'Save',
-                                    textAlign: TextAlign.center,
-                                    style: GoogleFonts.lato(
-                                      fontSize: width * 0.05,
-                                      fontWeight: FontWeight.w600,
-                                      color: const Color(0xffffffff),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
                     ],
                   ),
                 ],
               ),
             ),
           ],
+        ),
+      ),
+      //save button
+      floatingActionButton: Container(
+        margin: EdgeInsets.only(right: width * 0.31),
+        width: width * 0.3,
+        height: height * 0.05,
+        child: TextButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const AdminHomePage()),
+            );
+          },
+          style: TextButton.styleFrom(
+            padding: EdgeInsets.zero,
+          ),
+          child: Container(
+            decoration: BoxDecoration(
+              border: Border.all(color: const Color(0xff707070)),
+              color: const Color(0xffff2153),
+              borderRadius: BorderRadius.circular(54 * fem),
+            ),
+            child: Center(
+              child: Text(
+                'Save',
+                textAlign: TextAlign.center,
+                style: SafeGoogleFont(
+                  'Lucida Bright',
+                  height * 0.02,
+                  fontWeight: FontWeight.w600,
+                  color: const Color(0xffffffff),
+                ),
+              ),
+            ),
+          ),
         ),
       ),
     );
@@ -1218,7 +1178,7 @@ class _EditMovieSchedule extends State<EditMovieSchedule> {
                               globalData.times[screens.indexOf(strone)][index],
                               style: SafeGoogleFont(
                                 'Lucida Bright',
-                                height * 0.022,
+                                height * 0.02,
                                 fontWeight: FontWeight.w600,
                                 color: const Color(0xffffffff),
                               ),
