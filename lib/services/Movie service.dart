@@ -8,6 +8,7 @@ class MovieService {
   List upcomming = [];
   List upcomming2 = [];
   List Info = [];
+  List<List> allRentInfo = [];
   List showingNow2 = [];
   List release = [];
   List release2 = [];
@@ -16,15 +17,19 @@ class MovieService {
   String rating2 = '';
   String rating3 = '';
   List allRatings = [];
+  List allRatingsRent = [];
   List allRatingsUpcomming = [];
   List Genres = [];
   List Genres2 = [];
   List Genres3 = [];
+  List allRentGenres = [];
   List allGenres = [];
   List allGenresUpcomming = [];
   List IDs = [];
   List upcommingsIDs = [];
   List searchResult = [];
+  List docList = [];
+  List rentId = [];
 
   final String apiKey = 'c288e07bc074b958bfa1c394b65a75c6';
   final String api = '9djdukx46bs5sbesbqfa3ytf';
@@ -108,6 +113,44 @@ class MovieService {
     return Genres2;
   }
 
+  Future getAllGenresRent() async {
+    await rentedMovies();
+    allRentGenres.length = rentId.length;
+    TMDB tmdb = TMDB(ApiKeys(apiKey, accessToken),
+        logConfig: const ConfigLogger(showLogs: true, showErrorLogs: true));
+
+    for (int i = 0; i < rentId.length; i++) {
+      Map infoResult = await tmdb.v3.movies.getDetails(rentId[i]);
+      allRentGenres[i] = infoResult['genres'];
+    }
+    return allRentGenres;
+  }
+
+  Future getAllDetailsRent() async {
+    await rentedMovies();
+    allRentGenres.length = rentId.length;
+    TMDB tmdb = TMDB(ApiKeys(apiKey, accessToken),
+        logConfig: const ConfigLogger(showLogs: true, showErrorLogs: true));
+
+    for (int i = 0; i < rentId.length; i++) {
+      Map infoResult = await tmdb.v3.movies.getDetails(rentId[i]);
+      Info = [
+        infoResult['id'],
+        infoResult['title'],
+        infoResult['release_date'],
+        infoResult['poster_path'],
+        infoResult['overview'],
+        infoResult['original_language'],
+        infoResult['vote_average'],
+        infoResult['runtime'],
+        infoResult['release_date'],
+        infoResult['tagline']
+      ];
+      allRentInfo.add(Info);
+    }
+    return allRentInfo;
+  }
+
   Future getAllUpcommingGenres() async {
     await getUpIDs();
     Genres3.length = upcommingsIDs.length;
@@ -160,6 +203,24 @@ class MovieService {
     return allRatings;
   }
 
+  Future getAllReleaseRent() async {
+    await rentedMovies();
+    allRatingsRent.length = rentId.length;
+    TMDB tmdb = TMDB(ApiKeys(apiKey, accessToken),
+        logConfig: const ConfigLogger(showLogs: true, showErrorLogs: true));
+    for (int i = 0; i < rentId.length; i++) {
+      Map releaseResult = await tmdb.v3.movies.getReleaseDates(rentId[i]);
+      release2 = releaseResult['results'];
+      for (int i = 0; i < release2.length; i++) {
+        if (release2[i]['iso_3166_1'] == 'US') {
+          rating2 = release2[i]['release_dates'][0]['certification'];
+        }
+      }
+      allRatingsRent[i] = rating2;
+    }
+    return allRatingsRent;
+  }
+
   Future getAllUpcommingRelease() async {
     await getUpIDs();
     allRatingsUpcomming.length = upcommingsIDs.length;
@@ -201,6 +262,32 @@ class MovieService {
       upcommingsIDs[i] = upcomming2[i]['id'];
     }
     return IDs;
+  }
+
+  rentedMovies() async {
+    final CollectionReference rented =
+        FirebaseFirestore.instance.collection('rented-movies');
+    return await rented.get().then((value) {
+      // print(value.docs.toList());
+      for (final child in value.docs) {
+        docList.add(child.id);
+      }
+
+      for (final index in docList) {
+        final docRef = rented.doc(index);
+        docRef.get().then((DocumentSnapshot doc) {
+          final docData = doc.data() as Map<String, dynamic>;
+          // print(docData);
+          rentId.add(docData['movieId']);
+          print(rentId);
+          print(rentId.length);
+        });
+      }
+
+      print(docList);
+      print(rentId);
+      return rentId;
+    });
   }
 }
 

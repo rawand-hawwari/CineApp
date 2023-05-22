@@ -626,15 +626,13 @@ class ShowingListRent extends StatefulWidget {
 }
 
 class _ShowingListRent extends State<ShowingListRent> {
-  List info = [];
-
   final Stream<QuerySnapshot>? moviesStream =
       FirebaseFirestore.instance.collection('rented-movies').snapshots();
 
   @override
   void initState() {
     super.initState();
-    MovieService().getShowingNow();
+    MovieService().getAllDetailsRent();
   }
 
   @override
@@ -645,8 +643,11 @@ class _ShowingListRent extends State<ShowingListRent> {
     return SizedBox(
       height: deviceSize.height * 1,
       child: FutureBuilder(
-        future: Future.wait(
-            [ser.getShowingNow(), ser.getAllRelease(), ser.getAllGenres()]),
+        future: Future.wait([
+          ser.getAllDetailsRent(),
+          ser.getAllReleaseRent(),
+          ser.getAllGenresRent()
+        ]),
         builder: (BuildContext ctx, AsyncSnapshot<dynamic> snapshot) {
           ConnectionState state = snapshot.connectionState;
 
@@ -691,24 +692,25 @@ class _ShowingListRent extends State<ShowingListRent> {
     return ListView.builder(
       padding: EdgeInsets.zero,
       scrollDirection: Axis.vertical,
-      itemCount: ser.showingNow.length,
+      itemCount: ser.allRentInfo.length,
       itemBuilder: (BuildContext ctx, int i) {
         double width = MediaQuery.of(ctx).size.width;
         double height = MediaQuery.of(ctx).size.height;
-        return Padding(
+        return 
+        Padding(
           padding:
               const EdgeInsets.only(left: 10, top: 10, right: 10, bottom: 10),
           child: GestureDetector(
             onTap: () {
               setState(() {
-                globalData.movieId = ser.showingNow[i]['id'];
-                globalData.movieTitleRent = ser.showingNow[i]['title'];
+                globalData.movieId = ser.allRentInfo[i][0];
+                globalData.movieTitleRent = ser.allRentInfo[i][1];
               });
               Navigator.push(
                 context,
                 MaterialPageRoute(
                     builder: (context) =>
-                        MovieDetailsRent(id: ser.showingNow[i]['id'])),
+                        MovieDetailsRent(id: ser.allRentInfo[i][0])),
               );
             },
             child: Row(
@@ -717,7 +719,7 @@ class _ShowingListRent extends State<ShowingListRent> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: Image.network(
-                    imageUrl + ser.showingNow[i]['poster_path'],
+                    imageUrl + ser.allRentInfo[i][3],
                     height: 190,
                     width: 120,
                     fit: BoxFit.cover,
@@ -737,7 +739,7 @@ class _ShowingListRent extends State<ShowingListRent> {
                       SizedBox(
                         width: width - 177,
                         child: Text(
-                          ser.showingNow[i]['title'],
+                          ser.allRentInfo[i][1],
                           style: SafeGoogleFont(
                             'Lucida Bright',
                             22,
@@ -752,7 +754,7 @@ class _ShowingListRent extends State<ShowingListRent> {
                       SizedBox(
                         width: width - 177,
                         child: Text(
-                          Genres(ser.Genres2[i]),
+                          Genres(ser.allRentGenres[i]),
                           style: TextStyle(
                               color: mainColor,
                               fontSize: 12,
@@ -771,35 +773,28 @@ class _ShowingListRent extends State<ShowingListRent> {
                               color: const Color(0xff7e132b),
                             ),
                             child: Text(
-                              ser.showingNow[i]['original_language'] == 'en'
+                              ser.allRentInfo[i][5] == 'en'
                                   ? "English"
-                                  : ser.showingNow[i]['original_language'] ==
-                                          'es'
+                                  : ser.allRentInfo[i][5] == 'es'
                                       ? "Spanish"
-                                      : ser.showingNow[i]['original_language'] ==
-                                              'fi'
+                                      : ser.allRentInfo[i][5] == 'fi'
                                           ? "Finnish"
-                                          : ser.showingNow[i]['original_language'] ==
-                                                  'ar'
+                                          : ser.allRentInfo[i][5] == 'ar'
                                               ? "Arabic"
-                                              : ser.showingNow[i][
-                                                          'original_language'] ==
-                                                      'fr'
+                                              : ser.allRentInfo[i][5] == 'fr'
                                                   ? "French"
-                                                  : ser.showingNow[i][
-                                                              'original_language'] ==
+                                                  : ser.allRentInfo[i][5] ==
                                                           "ko"
                                                       ? "Korean"
-                                                      : ser.showingNow[i][
-                                                                  'original_language'] ==
+                                                      : ser.allRentInfo[i][5] ==
                                                               "ja"
                                                           ? "japanese"
-                                                          : ser.showingNow[i][
-                                                                      'original_language'] ==
+                                                          : ser.allRentInfo[i]
+                                                                      [5] ==
                                                                   "ru"
                                                               ? "Russian"
-                                                              : ser.showingNow[i]
-                                                                  ['original_language'],
+                                                              : ser.allRentInfo[
+                                                                  i][5],
                               style: SafeGoogleFont(
                                 'Lucida Bright',
                                 12,
@@ -826,7 +821,7 @@ class _ShowingListRent extends State<ShowingListRent> {
                                 ],
                               ),
                               child: Text(
-                                ser.allRatings[i] == ''
+                                ser.allRatingsRent[i] == ''
                                     ? 'N/A'
                                     : ser.allRatings[i],
                                 style: SafeGoogleFont(
@@ -851,3 +846,480 @@ class _ShowingListRent extends State<ShowingListRent> {
     );
   }
 }
+
+// class _ShowingListAdmin extends State<ShowingListAdmin> {
+//   @override
+//   void initState() {
+//     super.initState();
+//     MovieService().getAllDetailsRent();
+//     setState(() {
+//       globalData.movieId = 0;
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     Size deviceSize = MediaQuery.of(context).size;
+//     MovieService ser = MovieService();
+//     double width = deviceSize.width;
+//     return SizedBox(
+//       height: deviceSize.height * 1,
+//       child: FutureBuilder(
+//         future: Future.wait([
+//           ser.getAllDetailsRent(),
+//           ser.getAllReleaseRent(),
+//           ser.getAllGenresRent()
+//         ]),
+//         builder: (BuildContext ctx, AsyncSnapshot<dynamic> snapshot) {
+//           ConnectionState state = snapshot.connectionState;
+
+//           // loading
+//           if (state == ConnectionState.waiting) {
+//             return const Center(child: ItemSkeletonV(length: 10));
+//           }
+//           // error
+//           else if (snapshot.hasError) {
+//             print(snapshot.error);
+//             return const Center(
+//               child: Text(
+//                 'Loading Error',
+//                 style: TextStyle(fontSize: 20, color: Colors.red),
+//               ),
+//             );
+//           }
+//           // loaded
+//           else {
+//             return Padding(
+//               padding: const EdgeInsets.only(bottom: 0),
+//               child: _printMovies2(ser, width),
+//             );
+//           }
+//         },
+//       ),
+//     );
+//   }
+
+//   String Genres(List genres) {
+//     String newGenres = '';
+//     for (int i = 0; i < genres.length; i++) {
+//       newGenres = newGenres +
+//           genres[i]['name'] +
+//           ((i == genres.length - 1) ? "" : ', ');
+//     }
+//     return newGenres;
+//   }
+
+//   _printMovies(MovieService ser, double width) {
+//     var imageUrl = 'https://image.tmdb.org/t/p/w500/';
+//     return ListView.builder(
+//       padding: EdgeInsets.zero,
+//       scrollDirection: Axis.vertical,
+//       itemCount: ser.showingNow.length,
+//       itemBuilder: (BuildContext ctx, int i) {
+//         double width = MediaQuery.of(ctx).size.width;
+//         double height = MediaQuery.of(ctx).size.height;
+//         return Padding(
+//           padding:
+//               const EdgeInsets.only(left: 10, top: 10, right: 10, bottom: 10),
+//           child: GestureDetector(
+//             onTap: () {
+//               Navigator.push(
+//                 context,
+//                 MaterialPageRoute(
+//                     builder: (context) =>
+//                         MovieDetailsBook(id: ser.showingNow[i]['id'])),
+//               );
+//             },
+//             child: Row(
+//               crossAxisAlignment: CrossAxisAlignment.start,
+//               children: [
+//                 //poster
+//                 ClipRRect(
+//                   borderRadius: BorderRadius.circular(10),
+//                   child: Image.network(
+//                     imageUrl + ser.showingNow[i]['poster_path'],
+//                     height: 190,
+//                     width: 120,
+//                     fit: BoxFit.cover,
+//                   ),
+//                 ),
+//                 const SizedBox(
+//                   width: 5,
+//                 ),
+//                 SizedBox(
+//                   height: 190,
+//                   child: Column(
+//                     mainAxisAlignment: MainAxisAlignment.spaceAround,
+//                     crossAxisAlignment: CrossAxisAlignment.start,
+//                     children: [
+//                       SizedBox(
+//                         width: width - 177,
+//                         child: Column(
+//                           crossAxisAlignment: CrossAxisAlignment.start,
+//                           children: [
+//                             const SizedBox(
+//                               width: 5,
+//                             ),
+//                             //movie title
+//                             SizedBox(
+//                               width: width - 177,
+//                               child: Text(
+//                                 ser.showingNow[i]['title'],
+//                                 style: SafeGoogleFont(
+//                                   'Lucida Bright',
+//                                   width * 0.05,
+//                                   fontWeight: FontWeight.w600,
+//                                   color: const Color(0xff7e132b),
+//                                 ),
+//                               ),
+//                             ),
+//                             const SizedBox(
+//                               height: 5,
+//                             ),
+//                             //genres
+//                             SizedBox(
+//                               width: width - 177,
+//                               child: Text(
+//                                 Genres(ser.Genres2[i]),
+//                                 style: TextStyle(
+//                                     color: mainColor,
+//                                     fontSize: width * 0.03,
+//                                     fontWeight: FontWeight.bold),
+//                               ),
+//                             ),
+//                             const Padding(padding: EdgeInsets.all(5)),
+//                             Row(
+//                               children: [
+//                                 //language
+//                                 Container(
+//                                   padding: const EdgeInsets.only(
+//                                       top: 0, left: 20, bottom: 2, right: 20),
+//                                   decoration: BoxDecoration(
+//                                     border: Border.all(
+//                                         color: const Color(0xff707070)),
+//                                     color: const Color(0xff7e132b),
+//                                   ),
+//                                   child: Text(
+//                                     ser.showingNow[i]['original_language'] ==
+//                                             'en'
+//                                         ? "English"
+//                                         : ser.showingNow[i]
+//                                                     ['original_language'] ==
+//                                                 'es'
+//                                             ? "Spanish"
+//                                             : ser.showingNow[i]
+//                                                         ['original_language'] ==
+//                                                     'fi'
+//                                                 ? "Finnish"
+//                                                 : ser.showingNow[i][
+//                                                             'original_language'] ==
+//                                                         'ar'
+//                                                     ? "Arabic"
+//                                                     : ser.showingNow[i][
+//                                                                 'original_language'] ==
+//                                                             'fr'
+//                                                         ? "French"
+//                                                         : ser.showingNow[i][
+//                                                                     'original_language'] ==
+//                                                                 "ko"
+//                                                             ? "Korean"
+//                                                             : ser.showingNow[i]
+//                                                                         ['original_language'] ==
+//                                                                     "ja"
+//                                                                 ? "japanese"
+//                                                                 : ser.showingNow[i]['original_language'] == "ru"
+//                                                                     ? "Russian"
+//                                                                     : ser.showingNow[i]['original_language'],
+//                                     style: SafeGoogleFont(
+//                                       'Lucida Bright',
+//                                       12,
+//                                       fontWeight: FontWeight.w400,
+//                                       color: const Color(0xffffffff),
+//                                     ),
+//                                   ),
+//                                 ),
+//                                 //age rating
+//                                 Padding(
+//                                   padding: const EdgeInsets.all(8.0),
+//                                   child: Container(
+//                                     padding: const EdgeInsets.only(
+//                                         top: 0, left: 20, bottom: 2, right: 20),
+//                                     decoration: BoxDecoration(
+//                                       color: const Color(0xff9a2044),
+//                                       borderRadius:
+//                                           BorderRadius.circular(height * 0.022),
+//                                       boxShadow: [
+//                                         BoxShadow(
+//                                           color: const Color(0x29000000),
+//                                           offset: Offset(0, height * 0.005),
+//                                           blurRadius: height * 0.007,
+//                                         ),
+//                                       ],
+//                                     ),
+//                                     child: Text(
+//                                       ser.allRatings[i] == ''
+//                                           ? 'N/A'
+//                                           : ser.allRatings[i],
+//                                       style: SafeGoogleFont(
+//                                         'Lucida Bright',
+//                                         height * 0.020,
+//                                         fontWeight: FontWeight.w600,
+//                                         color: const Color(0xffffffff),
+//                                       ),
+//                                     ),
+//                                   ),
+//                                 ),
+//                               ],
+//                             ),
+//                           ],
+//                         ),
+//                       ),
+//                       TextButton(
+//                         onPressed: () {
+//                           setState(() {
+//                             globalData.movieId = ser.showingNow[i]['id'];
+//                             globalData.movieId;
+//                           });
+//                           Navigator.push(
+//                             context,
+//                             MaterialPageRoute(
+//                                 builder: (context) =>
+//                                     const EditMovieSchedule()),
+//                           );
+//                         },
+//                         child: Container(
+//                           padding: const EdgeInsets.symmetric(
+//                               horizontal: 10, vertical: 3),
+//                           decoration: BoxDecoration(
+//                             color: const Color(0xFFFFFFFF),
+//                             borderRadius: BorderRadius.circular(50),
+//                             border: Border.all(
+//                               color: const Color(0xff9a2044),
+//                             ),
+//                           ),
+//                           child: Text(
+//                             'Edit Schedual',
+//                             style: GoogleFonts.lato(
+//                               fontSize: 14,
+//                               fontWeight: FontWeight.w600,
+//                               color: const Color(0xff9a2044),
+//                             ),
+//                           ),
+//                         ),
+//                       ),
+//                     ],
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           ),
+//         );
+//       },
+//     );
+//   }
+
+//   _printMovies2(MovieService ser, double width) {
+//     var imageUrl = 'https://image.tmdb.org/t/p/w500/';
+//     return ListView.builder(
+//       padding: EdgeInsets.zero,
+//       scrollDirection: Axis.vertical,
+//       itemCount: ser.allRentInfo.length,
+//       itemBuilder: (BuildContext ctx, int i) {
+//         double width = MediaQuery.of(ctx).size.width;
+//         double height = MediaQuery.of(ctx).size.height;
+//         return Padding(
+//           padding:
+//               const EdgeInsets.only(left: 10, top: 10, right: 10, bottom: 10),
+//           child: GestureDetector(
+//             onTap: () {
+//               Navigator.push(
+//                 context,
+//                 MaterialPageRoute(
+//                     builder: (context) =>
+//                         MovieDetailsBook(id: ser.allRentInfo[i][0])),
+//               );
+//             },
+//             child: Row(
+//               crossAxisAlignment: CrossAxisAlignment.start,
+//               children: [
+//                 //poster
+//                 ClipRRect(
+//                   borderRadius: BorderRadius.circular(10),
+//                   child: Image.network(
+//                     imageUrl + ser.allRentInfo[i][3],
+//                     height: 190,
+//                     width: 120,
+//                     fit: BoxFit.cover,
+//                   ),
+//                 ),
+//                 const SizedBox(
+//                   width: 5,
+//                 ),
+//                 SizedBox(
+//                   height: 190,
+//                   child: Column(
+//                     mainAxisAlignment: MainAxisAlignment.spaceAround,
+//                     crossAxisAlignment: CrossAxisAlignment.start,
+//                     children: [
+//                       SizedBox(
+//                         width: width - 177,
+//                         child: Column(
+//                           crossAxisAlignment: CrossAxisAlignment.start,
+//                           children: [
+//                             const SizedBox(
+//                               width: 5,
+//                             ),
+//                             //movie title
+//                             SizedBox(
+//                               width: width - 177,
+//                               child: Text(
+//                                 ser.allRentInfo[i][1],
+//                                 style: SafeGoogleFont(
+//                                   'Lucida Bright',
+//                                   width * 0.05,
+//                                   fontWeight: FontWeight.w600,
+//                                   color: const Color(0xff7e132b),
+//                                 ),
+//                               ),
+//                             ),
+//                             const SizedBox(
+//                               height: 5,
+//                             ),
+//                             //genres
+//                             SizedBox(
+//                               width: width - 177,
+//                               child: Text(
+//                                 Genres(ser.allRentGenres[i]),
+//                                 style: TextStyle(
+//                                     color: mainColor,
+//                                     fontSize: width * 0.03,
+//                                     fontWeight: FontWeight.bold),
+//                               ),
+//                             ),
+//                             const Padding(padding: EdgeInsets.all(5)),
+//                             Row(
+//                               children: [
+//                                 //language
+//                                 Container(
+//                                   padding: const EdgeInsets.only(
+//                                       top: 0, left: 20, bottom: 2, right: 20),
+//                                   decoration: BoxDecoration(
+//                                     border: Border.all(
+//                                         color: const Color(0xff707070)),
+//                                     color: const Color(0xff7e132b),
+//                                   ),
+//                                   child: Text(
+//                                     ser.allRentInfo[i][5] == 'en'
+//                                         ? "English"
+//                                         : ser.allRentInfo[i][5] == 'es'
+//                                             ? "Spanish"
+//                                             : ser.allRentInfo[i][5] == 'fi'
+//                                                 ? "Finnish"
+//                                                 : ser.allRentInfo[i][5] == 'ar'
+//                                                     ? "Arabic"
+//                                                     : ser.allRentInfo[i][5] ==
+//                                                             'fr'
+//                                                         ? "French"
+//                                                         : ser.allRentInfo[i]
+//                                                                     [5] ==
+//                                                                 "ko"
+//                                                             ? "Korean"
+//                                                             : ser.allRentInfo[i]
+//                                                                         [5] ==
+//                                                                     "ja"
+//                                                                 ? "japanese"
+//                                                                 : ser.allRentInfo[i]
+//                                                                             [
+//                                                                             5] ==
+//                                                                         "ru"
+//                                                                     ? "Russian"
+//                                                                     : ser.allRentInfo[
+//                                                                         i][5],
+//                                     style: SafeGoogleFont(
+//                                       'Lucida Bright',
+//                                       12,
+//                                       fontWeight: FontWeight.w400,
+//                                       color: const Color(0xffffffff),
+//                                     ),
+//                                   ),
+//                                 ),
+//                                 //age rating
+//                                 Padding(
+//                                   padding: const EdgeInsets.all(8.0),
+//                                   child: Container(
+//                                     padding: const EdgeInsets.only(
+//                                         top: 0, left: 20, bottom: 2, right: 20),
+//                                     decoration: BoxDecoration(
+//                                       color: const Color(0xff9a2044),
+//                                       borderRadius:
+//                                           BorderRadius.circular(height * 0.022),
+//                                       boxShadow: [
+//                                         BoxShadow(
+//                                           color: const Color(0x29000000),
+//                                           offset: Offset(0, height * 0.005),
+//                                           blurRadius: height * 0.007,
+//                                         ),
+//                                       ],
+//                                     ),
+//                                     child: Text(
+//                                       ser.allRatings[i] == ''
+//                                           ? 'N/A'
+//                                           : ser.allRatings[i],
+//                                       style: SafeGoogleFont(
+//                                         'Lucida Bright',
+//                                         height * 0.020,
+//                                         fontWeight: FontWeight.w600,
+//                                         color: const Color(0xffffffff),
+//                                       ),
+//                                     ),
+//                                   ),
+//                                 ),
+//                               ],
+//                             ),
+//                           ],
+//                         ),
+//                       ),
+//                       TextButton(
+//                         onPressed: () {
+//                           setState(() {
+//                             globalData.movieId = ser.showingNow[i]['id'];
+//                             globalData.movieId;
+//                           });
+//                           Navigator.push(
+//                             context,
+//                             MaterialPageRoute(
+//                                 builder: (context) =>
+//                                     const EditMovieSchedule()),
+//                           );
+//                         },
+//                         child: Container(
+//                           padding: const EdgeInsets.symmetric(
+//                               horizontal: 10, vertical: 3),
+//                           decoration: BoxDecoration(
+//                             color: const Color(0xFFFFFFFF),
+//                             borderRadius: BorderRadius.circular(50),
+//                             border: Border.all(
+//                               color: const Color(0xff9a2044),
+//                             ),
+//                           ),
+//                           child: Text(
+//                             'Edit Schedual',
+//                             style: GoogleFonts.lato(
+//                               fontSize: 14,
+//                               fontWeight: FontWeight.w600,
+//                               color: const Color(0xff9a2044),
+//                             ),
+//                           ),
+//                         ),
+//                       ),
+//                     ],
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           ),
+//         );
+//       },
+//     );
+//   }
+// }

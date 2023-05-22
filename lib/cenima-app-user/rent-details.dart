@@ -1,8 +1,7 @@
 import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
-import 'package:myapp/cenima-app-user/pick-a-seat-a.dart';
 import 'package:myapp/utils.dart';
-import '../services/Showing now.dart' as global;
+import 'rent-movie.dart' as global;
 import '../services/Movie service.dart';
 import '../services/Screens.dart';
 import '../shared/Theme.dart';
