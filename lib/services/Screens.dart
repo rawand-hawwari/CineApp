@@ -12,11 +12,7 @@ class Screens{
   late Set <int> gapsPremuim;
 
   Screens(this.screenName, this.bookedPremuim, this.bookedStandard,this.noOfSeatsPremuim, this.noOfSeatsinPremuimRow, this.noOfSeatsStandard, this.noOfSeatsinStandardRow, this.gapsPremuim, this.gapsStandard);
-  // seat layout contins number of seats with how much a row has so the generater can take those
-  // readyly and build the page with it(instead of it being hardcoded like the example
-  // also i'm thinking of building the screens as i wanted it witht the ability to add
-  // the way the layout looks, but instead of marking them manually to make them decide it with
-  // values(number of gaps and thier places,
+
 }
 class ScreenService{
   static final CollectionReference _screenCollection =

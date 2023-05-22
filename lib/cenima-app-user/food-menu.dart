@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/cenima-app-user/Admin-add-food-.dart';
+import 'package:myapp/cenima-app-user/edit-food.dart';
 import 'package:myapp/reusable-widgets/reusable-widget.dart';
 import '../shared/Theme.dart';
 
@@ -39,7 +41,10 @@ class _FoodMenu extends State<FoodMenu> {
     double ffem = fem * 0.97;
 
     return WillPopScope(
-      onWillPop: () => showExitPopup(context),
+      onWillPop: () {
+        backNavigator(context, HomePage());
+        return Future.value(false);
+      },
       child: Scaffold(
         body: NestedScrollView(
           floatHeaderSlivers: true,

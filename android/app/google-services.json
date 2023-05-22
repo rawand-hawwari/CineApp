@@ -37,6 +37,13 @@
             {
               "client_id": "217615482467-uigu361t353icreovvak07erktef57r0.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "217615482467-8mukj63ugcs1lq0tefqbhoe9hrtfhk1h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.Cine.App"
+              }
             }
           ]
         }
@@ -74,6 +81,13 @@
             {
               "client_id": "217615482467-uigu361t353icreovvak07erktef57r0.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "217615482467-8mukj63ugcs1lq0tefqbhoe9hrtfhk1h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.Cine.App"
+              }
             }
           ]
         }

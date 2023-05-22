@@ -40,110 +40,113 @@ class _HomePage extends State<HomePage> {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
 
-    return Scaffold(
-      body: NestedScrollView(
-        floatHeaderSlivers: true,
-        headerSliverBuilder: (context, innerBoxIsScrolled) => [
-          SliverAppBar(
-            iconTheme: const IconThemeData(
-              color: Color(0xff000000),
-            ),
-            backgroundColor: const Color(0xffffffff),
-            floating: true,
-            snap: true,
-            centerTitle: true,
-            actions: [
-              IconButton(
-                  icon: const Icon(Icons.search),
-                  onPressed: () {
-                    showSearch(context: context, delegate: SearchPage());
-                  })
-            ],
-            title: const Text(
-              'Ciné',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Nature Beauty Personal Use',
-                fontSize: 25,
-                fontWeight: FontWeight.w600,
-                color: Color(0xffdd204a),
+    return WillPopScope(
+      onWillPop: () => showExitPopup(context),
+      child: Scaffold(
+        body: NestedScrollView(
+          floatHeaderSlivers: true,
+          headerSliverBuilder: (context, innerBoxIsScrolled) => [
+            SliverAppBar(
+              iconTheme: const IconThemeData(
+                color: Color(0xff000000),
               ),
-            ),
-          ),
-        ],
-        body: MediaQuery.removePadding(
-          removeTop: true,
-          context: context,
-          child: ListView(
-            children: [
-              SingleChildScrollView(
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: height * 0.3,
-                      child: Stack(
-                        children: [
-                          Container(
-                            alignment: Alignment.topLeft,
-                            child: CarouselSlider.builder(
-                                options: CarouselOptions(
-                                    height: height *
-                                        0.5,
-                                    autoPlay: true,
-                                    viewportFraction: 1,
-                                    onPageChanged: (index, reason) => setState(
-                                          () => activeIndex = index,
-                                        )),
-                                itemCount: images.length,
-                                itemBuilder: (context, index, realIndex) {
-                                  String urlImage = images[index];
-
-                                  return buildImage(urlImage, index);
-                                }),
-                          ),
-                          Positioned(
-                            bottom: 10,
-                            right: 0,
-                            left: 0,
-                            child: Container(
-                              alignment: Alignment.center,
-                              child: buildIndicator(),
-                            ),
-                          ),
-                          Positioned(
-                            right: 10,
-                            bottom: 0,
-                            top: 20,
-                            child: Container(
-                                child: activeIndex == 0
-                                    ? SizedBox(
-                                        width: width * 0.3,
-                                        child: Text(
-                                          "50% off on 2 tickets \n\n use code 50OFF!",
-                                          style: GoogleFonts.lato(
-                                            fontSize: width * 0.05,
-                                            fontWeight: FontWeight.w400,
-                                            color: const Color(0xffffffff),
-                                          ),
-                                        ))
-                                    : const Text("")),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
+              backgroundColor: const Color(0xffffffff),
+              floating: true,
+              snap: true,
+              centerTitle: true,
+              actions: [
+                IconButton(
+                    icon: const Icon(Icons.search),
+                    onPressed: () {
+                      showSearch(context: context, delegate: SearchPage());
+                    })
+              ],
+              title: const Text(
+                'Ciné',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Nature Beauty Personal Use',
+                  fontSize: 25,
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xffdd204a),
                 ),
               ),
-              _printHeadingS(heading: 'Showing now', context: context),
-              const ShowingList(),
-              _printHeadingU(heading: 'upcomming', context: context),
-              const UpcommingList(),
-            ],
+            ),
+          ],
+          body: MediaQuery.removePadding(
+            removeTop: true,
+            context: context,
+            child: ListView(
+              children: [
+                SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: height * 0.3,
+                        child: Stack(
+                          children: [
+                            Container(
+                              alignment: Alignment.topLeft,
+                              child: CarouselSlider.builder(
+                                  options: CarouselOptions(
+                                      height: height *
+                                          0.5,
+                                      autoPlay: true,
+                                      viewportFraction: 1,
+                                      onPageChanged: (index, reason) => setState(
+                                            () => activeIndex = index,
+                                          )),
+                                  itemCount: images.length,
+                                  itemBuilder: (context, index, realIndex) {
+                                    String urlImage = images[index];
+
+                                    return buildImage(urlImage, index);
+                                  }),
+                            ),
+                            Positioned(
+                              bottom: 10,
+                              right: 0,
+                              left: 0,
+                              child: Container(
+                                alignment: Alignment.center,
+                                child: buildIndicator(),
+                              ),
+                            ),
+                            Positioned(
+                              right: 10,
+                              bottom: 0,
+                              top: 20,
+                              child: Container(
+                                  child: activeIndex == 0
+                                      ? SizedBox(
+                                          width: width * 0.3,
+                                          child: Text(
+                                            "50% off on 2 tickets \n\n use code 50OFF!",
+                                            style: GoogleFonts.lato(
+                                              fontSize: width * 0.05,
+                                              fontWeight: FontWeight.w400,
+                                              color: const Color(0xffffffff),
+                                            ),
+                                          ))
+                                      : const Text("")),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                _printHeadingS(heading: 'Showing now', context: context),
+                const ShowingList(),
+                _printHeadingU(heading: 'upcomming', context: context),
+                const UpcommingList(),
+              ],
+            ),
           ),
         ),
+        drawer: SettingDrawer(),
+        bottomNavigationBar: UBottomNavigationBarHandler(index: 0),
       ),
-      drawer: SettingDrawer(),
-      bottomNavigationBar: UBottomNavigationBarHandler(index: 0),
     );
   }
 
